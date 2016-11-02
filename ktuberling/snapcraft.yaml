@@ -1,0 +1,78 @@
+---
+name: ktuberling
+version: 16.08.2
+summary: A simple constructor game suitable for children and adults alike
+description: "<p>KTuberling is a drawing toy for small children with several activites.</p><p>*
+    Give the potato a funny face, clothes, and other goodies * Build a small town,
+    complete with school, zoo, and fire department * Create a fantastic moonscape
+    with spaceships and aliens</p><p>KTuberling can speak the name of each the object
+    in several languages, to assist in learning basic vocabulary.</p><p>This package
+    is part of the KDE games module.</p>"
+confinement: strict
+grade: devel
+apps:
+    ktuberling:
+        command: kf5-launch ktuberling
+        plugs:
+        - kde-frameworks-5-plug
+        - home
+        - x11
+        - opengl
+        - network
+        - network-bind
+        - unity7
+        - pulseaudio
+plugs:
+    kde-frameworks-5-plug:
+        content: kde-frameworks-5-all
+        interface: content
+        default-provider: kde-frameworks-5
+        target: kf5
+parts:
+    kde-frameworks-5-dev:
+        plugin: dump
+        snap:
+        - "-*"
+        source: "/home/me/Downloads/kde-frameworks-5-dev_amd64.tar.xz"
+    kde-frameworks-5-env:
+        plugin: dump
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+        snap:
+        - kf5-launch
+        - kf5
+        source: https://github.com/apachelogger/kf5-snap-env.git
+    ktuberling:
+        after:
+        - kde-frameworks-5-dev
+        plugin: cmake
+        build-packages:
+        - libkf5kdegames-dev
+        - libkf5kdelibs4support-dev
+        - libphonon4qt5-dev
+        - libphonon4qt5experimental-dev
+        - libpulse0
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+        snap:
+        - "$exclusion"
+        source: http://download.kde.org/stable/applications/16.08.2/src/ktuberling-16.08.2.tar.xz
+        configflags:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
