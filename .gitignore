@@ -1,0 +1,6 @@
+/*/parts/
+/*/prime/
+/*/stage/
+*.snap
+*.tar.*
+builddir
