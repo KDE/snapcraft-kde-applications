@@ -47,6 +47,7 @@ parts:
         - libnova-dev
         - libindi-dev
         - wcslib-dev
+        - kdoctools-dev
     stage-packages:
         - indi-bin
     filesets:
