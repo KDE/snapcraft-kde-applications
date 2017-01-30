@@ -19,6 +19,8 @@
 # You should have received a copy of the GNU Lesser General Public
 # License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
+require 'open-uri'
+
 SOURCES = [
   'deb http://archive.neon.kde.org/user xenial main',
   'deb http://archive.neon.kde.org/release xenial main'
@@ -35,5 +37,10 @@ system('apt-key', 'adv',
        '--recv', ARCHIVE_KEY) || raise
 system('apt', 'update') || raise
 system('apt', 'install', '-y', 'snapcraft') || raise
+
+patch = open('https://github.com/snapcore/snapcraft/commit/75a79bb10e1a922e2a06e4a0708c51eb742dc463.patch')
+patch_file = File.absolute_path("#{Dir.pwd}/1658155.patch")
+File.write(patch_file, patch.read)
+system("patch -t -p1 < #{patch_file}", chdir: '/usr/lib/python3/dist-packages')
 
 system('snapcraft', '--debug', chdir: builddir) || raise
