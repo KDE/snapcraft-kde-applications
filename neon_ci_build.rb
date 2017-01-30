@@ -33,6 +33,6 @@ end
 system('apt-key', 'adv',
        '--keyserver', 'keyserver.ubuntu.com',
        '--recv', ARCHIVE_KEY) || raise
-system('apt', 'update') || raise
+system('apt', 'update') # ignore errors here. snapcraft will handle it.
 
 system('snapcraft', chdir: builddir) || raise
