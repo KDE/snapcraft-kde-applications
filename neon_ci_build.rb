@@ -36,4 +36,4 @@ system('apt-key', 'adv',
 system('apt', 'update') || raise
 system('apt', 'install', '-y', 'snapcraft') || raise
 
-system('snapcraft', chdir: builddir) || raise
+system('snapcraft', '--debug', chdir: builddir) || raise
