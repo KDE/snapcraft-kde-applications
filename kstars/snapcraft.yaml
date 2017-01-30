@@ -20,6 +20,12 @@ apps:
       - serial-port
       - camera
 
+slots:
+  session-dbus-interface:
+    interface: dbus
+    name: org.kde.kstars
+    bus: session
+
 plugs:
   kde-frameworks-5-plug:
     interface: content
