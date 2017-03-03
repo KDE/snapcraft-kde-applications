@@ -36,11 +36,11 @@ plugs:
 parts:
   kde-frameworks-5-dev:
     plugin: dump
-    snap: [-*]
+    prime: [-*]
     source: http://build.neon.kde.org/job/kde-frameworks-5-release_amd64.snap/lastSuccessfulBuild/artifact/kde-frameworks-5-dev_amd64.tar.xz
   kde-frameworks-5-env:
     plugin: dump
-    snap: [kf5-launch, kf5]
+    prime: [kf5-launch, kf5]
     source: http://github.com/apachelogger/kf5-snap-env.git
   kstars:
     after: [kde-frameworks-5-dev]
@@ -51,6 +51,7 @@ parts:
         - zlib1g-dev
         - libcfitsio3-dev
         - libnova-dev
+        - libgsl-dev
         - libindi-dev
         - wcslib-dev
         - kdoctools-dev
@@ -60,12 +61,18 @@ parts:
     filesets:
         exclusion:
             - "-usr/lib/*/cmake/*"
+            - "-usr/lib/*/libgnutls.so.*"
+            - "-usr/lib/*/libgssapi_krb5.so.*"
+            - "-usr/lib/*/libhogweed.so.*"
+            - "-usr/lib/*/libk5crypto.so.*"
+            - "-usr/lib/*/libkrb5.so.*"
+            - "-usr/lib/*/libkrb5support.so.*"
+            - "-usr/lib/*/libnettle.so.*"
             - "-usr/include/*"
             - "-usr/share/ECM/*"
             - "-usr/share/doc/*"
             - "-usr/share/man/*"
-            - "-usr/share/icons/breeze-dark*"
-    snap:
+    prime:
         - "$exclusion"
     source: git://anongit.kde.org/kstars.git
     #source: /home/jasem/Projects/kstars
