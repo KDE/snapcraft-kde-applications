@@ -17,8 +17,16 @@ apps:
       - network-bind # gethotnewstuff needs network IO
       - unity7 # notifications
       - pulseaudio # sound notifications
+      # Follow are needed for INDI hardware support
       - serial-port
       - camera
+      - gpio
+      - hardware-observe
+      - hidraw
+      - i2c
+      - location-control
+      - location-observe
+      - raw-usb
 
 slots:
   session-dbus-interface:
@@ -44,7 +52,7 @@ parts:
     source: http://github.com/apachelogger/kf5-snap-env.git
   runime:
     plugin: stage-debs
-    debs: [indi-bin]
+    debs: [indi-bin, libindi1, libindi-data, libusb-1.0.0, indi-full]
     exclude-debs: [libgnutls30, libkrb5-dbg, nettle-dbg, libkrb5support0]
   kstars:
     after: [kde-frameworks-5-dev]
