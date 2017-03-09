@@ -42,6 +42,10 @@ parts:
     plugin: dump
     prime: [kf5-launch, kf5]
     source: http://github.com/apachelogger/kf5-snap-env.git
+  runime:
+    plugin: stage-debs
+    debs: [indi-bin]
+    exclude-debs: [libgnutls30, libkrb5-dbg, nettle-dbg, libkrb5support0]
   kstars:
     after: [kde-frameworks-5-dev]
     plugin: cmake
