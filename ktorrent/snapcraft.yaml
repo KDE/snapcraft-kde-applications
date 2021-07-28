@@ -1,0 +1,125 @@
+---
+name: ktorrent
+adopt-info: ktorrent
+confinement: strict
+grade: stable
+base: core20
+apps:
+    ktorrent:
+        extensions:
+        - kde-neon
+        command: usr/bin/ktorrent
+        plugs:
+        - kde-frameworks-5-plug
+        - home
+        - network
+        - network-bind
+        - audio-playback
+        - network-observe
+        - browser-support
+        common-id: org.kde.ktorrent.desktop
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.kde.ktorrent
+        bus: session
+parts:
+    patches:
+        source: patches
+        plugin: dump
+        prime:
+        - "-*"
+    qca:
+        source: https://invent.kde.org/libraries/qca.git
+        source-tag: v2.3.3
+        source-depth: 0
+        plugin: cmake
+        build-packages:
+        - libsasl2-dev
+        - libssl-dev
+        - ca-certificates
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DBUILD_TRANSLATIONS=NO"
+    libktorrent:
+        after:
+        - qca
+        - patches
+        plugin: cmake
+        build-packages:
+        - libboost-dev
+        - libgcrypt20-dev
+        - libgmp-dev
+        stage-packages:
+        - libgcrypt20
+        - libgmp10
+        - libgmpxx4ldbl
+        source: https://download.kde.org/stable/release-service/21.04.1/src/libktorrent-21.04.1.tar.xz
+        override-pull: |
+            snapcraftctl pull
+            patch -p1 < $SNAPCRAFT_STAGE/libktorrentlink.diff
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+            - "-usr/bin/X11"
+            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+            - "-usr/lib/aspell/*"
+        prime:
+        - "$exclusion"
+    ktorrent:
+        after:
+        - libktorrent
+        plugin: cmake
+        build-packages:
+        - kross-dev
+        - libboost-dev
+        - libgeoip-dev
+        - libphonon4qt5-dev
+        - libphonon4qt5experimental-dev
+        - libtag1-dev
+        - libkf5doctools-dev
+        stage-packages:
+        - kross
+        - libgeoip1
+        - geoip-bin
+        - libtag1v5
+        source: http://download.kde.org/stable/release-service/21.04.3/src/ktorrent-21.04.3.tar.xz
+        override-pull: |
+            snapcraftctl pull
+            patch -p1 < $SNAPCRAFT_STAGE/ktorrent-link.diff
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
+        parse-info:
+        - usr/share/metainfo/org.kde.ktorrent.appdata.xml
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+            - "-usr/bin/X11"
+            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+            - "-usr/lib/aspell/*"
+        prime:
+        - "$exclusion"
+version: 21.04.3

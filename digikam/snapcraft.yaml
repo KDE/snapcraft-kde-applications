@@ -1,0 +1,179 @@
+---
+name: digikam
+base: core20
+version: 7.3.0
+adopt-info: digikam
+grade: stable
+confinement: strict
+apps:
+    digikam:
+        environment:
+            DK_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/plugins/digikam"
+        command: usr/bin/digikam
+        common-id: org.kde.digikam.desktop
+        extensions:
+        - kde-neon
+        plugs:
+        - audio-playback
+        - browser-support
+        - camera
+        - home
+        - mount-observe
+        - network
+        - network-bind
+        - removable-media
+        - udisks2
+layout:
+    "/usr/share/marble":
+        symlink: "$SNAP/usr/share/marble"
+    "/usr/share/qt5":
+        symlink: "$SNAP/kf5/usr/share/qt5"
+    "/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib":
+        bind: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
+    "/usr/share/alsa":
+        bind: "$SNAP/usr/share/alsa"
+parts:
+    opencv:
+        source: https://github.com/opencv/opencv/archive/3.4.9.zip
+        source-subdir: opencv-3.4.9
+        plugin: cmake
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/"
+        prime:
+        - "-include"
+    marble:
+        source: https://invent.kde.org/education/marble.git
+        source-tag: v20.04.0
+        source-type: git
+        plugin: cmake
+        build-packages:
+        - docbook-xml
+        - docbook-xsl
+        build-environment:
+        -   PATH: "/usr/lib/ccache:$PATH"
+        cmake-parameters:
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DWITH_KF5=TRUE"
+        - "-DWITH_DESIGNER_PLUGIN=OFF"
+        - "-DBUILD_MARBLE_TESTS=OFF"
+        - "-DBUILD_MARBLE_TOOLS=OFF"
+        - "-DBUILD_MARBLE_EXAMPLES=OFF"
+        - "-DBUILD_MARBLE_APPS=OFF"
+        - "-DBUILD_WITH_DBUS=ON"
+        - "-DBUILD_TESTING=OFF"
+        - "-Wno-dev"
+    lensfun:
+        source: https://github.com/lensfun/lensfun.git
+        plugin: cmake
+        cmake-parameters:
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DBUILD_STATIC=OFF"
+        - "-DBUILD_WITH_MSVC_STATIC_RUNTIME=OFF"
+        - "-DBUILD_TESTS=OFF"
+        - "-DBUILD_LENSTOOL=OFF"
+        - "-DBUILD_DOC=OFF"
+        - "-DINSTALL_PYTHON_MODULE=OFF"
+        - "-DINSTALL_HELPER_SCRIPTS=OFF"
+    qtav:
+        source: https://github.com/wang-bin/QtAV.git
+        plugin: cmake
+        build-packages:
+        - libavcodec-dev
+        - libavdevice-dev
+        - libavfilter-dev
+        - libavformat-dev
+        - libavresample-dev
+        - libavutil-dev
+        - libpulse-dev
+        stage-packages:
+        - libavcodec58
+        - libavdevice58
+        - libavfilter7
+        - libavformat58
+        - libavresample4
+        - libavutil56
+        - libswscale5
+        build-environment:
+        -   PATH: "/usr/lib/ccache:$PATH"
+        cmake-parameters:
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DBUILD_TESTS=OFF"
+        - "-DBUILD_EXAMPLES=OFF"
+        - "-DBUILD_PLAYERS=OFF"
+        - "-DBUILD_QT5OPENGL=ON"
+        - "-DBUILD_QML=OFF"
+    digikam:
+        after:
+        - qtav
+        - marble
+        - opencv
+        - lensfun
+        source: http://download.kde.org/stable/digikam/7.3.0/digikam-7.3.0.tar.xz
+        source-checksum: sha256/cd87ece143aefa02e692a4af5c3c3cc107b9a4d61804d79fa77dd2e344798a17
+        plugin: cmake
+        stage-packages:
+        - libexif12
+        - libgphoto2-6
+        - libgphoto2-port12
+        - libjpeg8
+        - libjpeg-turbo8
+        - liblensfun1
+        - liblqr-1-0
+        - libltdl7
+        - libtbb2
+        build-packages:
+        - bison
+        - ccache
+        - doxygen
+        - g++
+        - libboost-graph-dev
+        - libegl1-mesa-dev
+        - libeigen3-dev
+        - libexpat1-dev
+        - libfl-dev
+        - libglib2.0-dev
+        - libjpeg-dev
+        - liblensfun-dev
+        - libmagickcore-dev
+        - libpng-dev
+        - libsane-dev
+        - libsqlite3-dev
+        - libtiff-dev
+        - libxslt1-dev
+        build-environment:
+        -   PATH: "/usr/lib/ccache:$PATH"
+        -   LD_LIBRARY_PATH: "$SNAPCRAFT_STAGE/usr/lib:$SNAPCRAFT_STAGE/usr/lib/$SNAPCRAFT_ARCH_TRIPLET"
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+        - "-DBUILD_TESTING=OFF"
+        - "-DDIGIKAMSC_CHECKOUT_PO=OFF"
+        - "-DDIGIKAMSC_CHECKOUT_DOC=OFF"
+        - "-DDIGIKAMSC_COMPILE_PO=OFF"
+        - "-DDIGIKAMSC_COMPILE_DOC=ON"
+        - "-DDIGIKAMSC_COMPILE_DIGIKAM=ON"
+        - "-DENABLE_KFILEMETADATASUPPORT=OFF"
+        - "-DENABLE_AKONADICONTACTSUPPORT=OFF"
+        - "-DENABLE_MYSQLSUPPORT=OFF"
+        - "-DENABLE_INTERNALMYSQL=OFF"
+        - "-DENABLE_MEDIAPLAYER=ON"
+        - "-DENABLE_LCMS2=ON"
+        - "-DDIGIKAMSC_USE_PRIVATE_KDEGRAPHICS=OFF"
+        - "-DENABLE_DBUS=ON"
+        - "-DENABLE_APPSTYLES=ON"
+        - "-DENABLE_QWEBENGINE=ON"
+        - "-DOpenCV_DIR=$SNAPCRAFT_STAGE/usr/share/OpenCV"
+        - "-DENABLE_FACESENGINE_DNN=ON"
+        - -DCMAKE_PREFIX_PATH="$SNAPCRAFT_STAGE/usr"
+        - "-Wno-dev"
+        parse-info:
+        - usr/share/metainfo/org.kde.digikam.appdata.xml
+        override-build: |
+            snapcraftctl build
+
+            sed -i "${SNAPCRAFT_PART_INSTALL}/usr/share/applications/org.kde.digikam.desktop" -e 's|Icon=digikam$|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/digikam.svg|'
+
+            cd "${SNAPCRAFT_PART_INSTALL}/usr/share/icons/hicolor/scalable/apps"
+            gzip -d -c digikam.svgz > digikam.svg

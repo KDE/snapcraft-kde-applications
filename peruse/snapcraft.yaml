@@ -1,26 +1,36 @@
 ---
-name: konversation
+name: peruse
+version: '1.2'
 confinement: strict
 grade: stable
 base: core20
-adopt-info: konversation
+adopt-info: peruse
 apps:
-    konversation:
-        extensions:
-        - kde-neon
-        common-id: org.kde.konversation.desktop
-        command: usr/bin/konversation
+    peruse:
+        common-id: org.kde.peruse.desktop
+        command: kf5-launch peruse
         plugs:
+        - kde-frameworks-5-plug
         - home
+        - x11
+        - opengl
         - network
         - network-bind
         - audio-playback
-        - removable-media
+        - desktop
+        - desktop-legacy
+        - network-observe
 slots:
     session-dbus-interface:
         interface: dbus
-        name: org.kde.konversation
+        name: org.kde.peruse
         bus: session
+plugs:
+    kde-frameworks-5-qt-5-15-plug:
+        content: kde-frameworks-5-qt-5-15-core20-all
+        interface: content
+        default-provider: kde-frameworks-5-qt-5-15-core20
+        target: kf5
 package-repositories:
 -   type: apt
     components:
@@ -31,18 +41,22 @@ package-repositories:
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
-    konversation:
-        build-environment:
-        -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
+    peruse:
+        parse-info: [usr/share/appdata/org.kde.peruse.appdata.xml]
+        build-snaps:
+        - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
+        after:
+        - kde-frameworks-5-env
         plugin: cmake
+        build-environment:
+        - CMAKE_BUILD_PARALLEL_LEVEL: "4"
         build-packages:
         - libkf5doctools-dev
-        - libphonon4qt5-dev
-        - libphonon4qt5experimental-dev
-        - libqca-qt5-2-dev
         stage-packages:
-        - libqca-qt5-2
-        source: http://download.kde.org/stable/release-service/21.04.3/src/konversation-21.04.3.tar.xz
+        - qml-module-org-kde-kirigami
+        - qml-module-org-kde-newstuff
+        - qml-module-qt-labs-folderlistmodel
+        source: http://download.kde.org/stable/peruse/peruse-1.2.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -51,8 +65,6 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
-        parse-info:
-        - usr/share/metainfo/org.kde.konversation.appdata.xml
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"
@@ -66,4 +78,6 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 21.04.3
+    kde-frameworks-5-env:
+        plugin: dump
+        source: https://anongit.kde.org/snap-kf5-launcher.git

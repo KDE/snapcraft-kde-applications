@@ -1,0 +1,100 @@
+---
+name: neochat
+base: core20
+adopt-info: neochat
+grade: stable
+confinement: strict
+
+apps:
+  neochat:
+    command: usr/bin/neochat
+    common-id: org.kde.neochat
+    plugs:
+    - audio-playback
+    - network
+    - network-manager-observe
+    - password-manager-service
+    environment:
+      QML2_IMPORT_PATH: $SNAP/usr/lib/x86_64-linux-gnu/qml
+      QT_QPA_PLATFORMTHEME: flatpak
+      QT_QPA_FLATPAK_PLATFORMTHEME: kde
+    extensions:
+    - kde-neon
+
+slots:
+  session-dbus-interface:
+    interface: dbus
+    name: org.kde.neochat
+    bus: session
+
+parts:
+  qtkeychain:
+    source: https://github.com/frankosterfeld/qtkeychain.git
+    source-tag: "v0.10.0"
+    source-depth: 0
+    plugin: cmake
+    cmake-parameters:
+    - -DCMAKE_INSTALL_PREFIX=/usr
+    - -DCMAKE_BUILD_TYPE=Release
+    - -DBUILD_TRANSLATIONS=NO
+  libmatrixclient:
+    source: https://github.com/quotient-im/libQuotient.git
+    source-tag: "0.6.7"
+    source-depth: 0
+    plugin: cmake
+    cmake-parameters:
+    - -DCMAKE_INSTALL_PREFIX=/usr
+    - -DCMAKE_BUILD_TYPE=Release
+    - -DBUILD_TESTING=OFF
+  # SDK snap is missing kirigami development assets.
+  kirigami:
+    source: https://invent.kde.org/frameworks/kirigami.git
+    source-tag: "v5.79.0"
+    source-depth: 0
+    plugin: cmake
+    cmake-parameters:
+    - -DCMAKE_INSTALL_PREFIX=/usr
+    - -DCMAKE_BUILD_TYPE=Release
+    - -DBUILD_TESTING=OFF
+    prime:
+    - -*
+  qqc2desktopstyle:
+    after:
+    - kirigami
+    source: https://invent.kde.org/frameworks/qqc2-desktop-style.git
+    source-tag: "v5.79.0"
+    source-depth: 0
+    plugin: cmake
+    cmake-parameters:
+    - -DCMAKE_INSTALL_PREFIX=/usr
+    - -DCMAKE_BUILD_TYPE=Release
+    - -DBUILD_TESTING=OFF
+    - -DCMAKE_PREFIX_PATH=$SNAPCRAFT_STAGE/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/cmake/KF5Kirigami2
+  kquickimageeditor:
+    source: https://download.kde.org/stable/kquickimageeditor/0.1/kquickimageeditor-0.1.2.tar.xz
+    source-checksum: sha256/37d54981a1c7dbb48ca45a7df37b8871bf1751e4c0484eeaddc548804ee18a04
+    plugin: cmake
+    cmake-parameters:
+    - -DCMAKE_INSTALL_PREFIX=/usr
+    - -DCMAKE_BUILD_TYPE=Release
+    - -DBUILD_TESTING=OFF
+    build-packages:
+    - libglu1-mesa-dev
+  neochat:
+    after:
+    - qtkeychain
+    - libmatrixclient
+    - qqc2desktopstyle
+    - kquickimageeditor
+    source: https://download.kde.org/stable/neochat/1.2.0/neochat-1.2.0.tar.xz
+    plugin: cmake
+    cmake-parameters:
+    - -DCMAKE_INSTALL_PREFIX=/usr
+    - -DCMAKE_BUILD_TYPE=Release
+    stage-packages:
+    - libcmark0.29.0
+    build-packages:
+    - libcmark-dev
+    parse-info:
+    - usr/share/metainfo/org.kde.neochat.appdata.xml
+
