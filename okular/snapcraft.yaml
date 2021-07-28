@@ -1,0 +1,207 @@
+---
+name: okular
+confinement: strict
+grade: stable
+base: core20
+adopt-info: okular
+apps:
+    okular:
+        extensions:
+        - kde-neon
+        common-id: org.kde.okular.desktop
+        command: usr/bin/okular
+        plugs:
+        - kde-frameworks-5-plug
+        - home
+        - network
+        - network-bind
+        - audio-playback
+        - cups-control
+        - removable-media
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.kde.okular
+        bus: session
+plugs:
+    kde-frameworks-5-plug:
+        content: kde-frameworks-5-qt-5-15-core20-all
+        interface: content
+        default-provider: kde-frameworks-5-qt-5-15-core20
+        target: kf5
+package-repositories:
+-   type: apt
+    components:
+    - main
+    suites:
+    - focal
+    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
+    url: http://origin.archive.neon.kde.org/user
+    key-server: keyserver.ubuntu.com
+parts:
+    poppler:
+        plugin: cmake
+        source: https://poppler.freedesktop.org/poppler-21.04.0.tar.xz
+        build-environment:
+        -   CMAKE_BUILD_PARALLEL_LEVEL: '1'
+        -   VERBOSE: '1'
+        build-packages:
+        - libfreetype6-dev
+        - libfontconfig1-dev
+        - libjpeg-dev
+        - libtiff-dev
+        - zlib1g-dev
+        - libnss3-dev
+        - liblcms2-dev
+        - libcurl4-nss-dev
+        - libopenjp2-7-dev
+        - libboost-dev
+        stage-packages:
+        - libasn1-8-heimdal
+        - libbrotli1
+        - libcurl3-nss
+        - libdouble-conversion3
+        - libfontconfig1
+        - libfreetype6
+        - libgl1
+        - libglvnd0
+        - libglx0
+        - libgraphite2-3
+        - libgssapi3-heimdal
+        - libharfbuzz0b
+        - libhcrypto4-heimdal
+        - libheimbase1-heimdal
+        - libheimntlm0-heimdal
+        - libhx509-5-heimdal
+        - libicu66
+        - libjbig0
+        - libjpeg-turbo8
+        - libkrb5-26-heimdal
+        - liblcms2-2
+        - libldap-2.4-2
+        - libnghttp2-14
+        - libnspr4
+        - libnss3
+        - libpcre2-16-0
+        - libpng16-16
+        - libpsl5
+        - libroken18-heimdal
+        - librtmp1
+        - libsasl2-2
+        - libssh-4
+        - libtiff5
+        - libwebp6
+        - libwind0-heimdal
+        - libx11-6
+        - libxau6
+        - libxcb1
+        - libxdmcp6
+        - libmd4c0
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_QT5=ON"
+        - "-DENABLE_LIBOPENJPEG=unmaintained"
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+            - "-usr/bin/X11"
+            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+            - "-usr/lib/aspell/*"
+        prime:
+        - "$exclusion"
+    okular:
+        parse-info:
+        - usr/share/metainfo/org.kde.okular.appdata.xml
+        after:
+        - poppler
+        plugin: cmake
+        build-environment:
+        -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
+        build-packages:
+        - libchm-dev
+        - libdjvulibre-dev
+        - libepub-dev
+        - libfreetype6-dev
+        - libjpeg-dev
+        - libkf5kexiv2-dev
+        - libkf5khtml-dev
+        - libkf5kjs-dev
+        - libqca-qt5-2-dev
+        - libqmobipocket-dev
+        - libspectre-dev
+        - libtiff5-dev
+        - pkg-config
+        - zlib1g-dev
+        - libphonon4qt5-dev
+        - libphonon4qt5experimental-dev
+        - docbook-xml
+        - docbook-xsl
+        - libzip-dev
+        - libqt5texttospeech5-dev
+        - libkf5purpose-dev
+        - kirigami2-dev
+        - libmarkdown2-dev
+        stage-packages:
+        - cups-bsd
+        - ghostscript
+        - libchm1
+        - libdjvulibre21
+        - libepub0
+        - libkf5kexiv2-15.0.0
+        - libkf5khtml5
+        - libkf5khtml-bin
+        - libkf5js5
+        - libkf5purpose5
+        - libkf5jsapi5
+        - libqca-qt5-2
+        - libqmobipocket2
+        - libspectre1
+        - libtiffxx5
+        - freeglut3
+        - qml-module-org-kde-kirigami2
+        - qml-module-qtquick-controls
+        - qml-module-org-kde-kquickcontrolsaddons
+        - qml-module-qtgraphicaleffects
+        - qml-module-qtquick-controls2
+        - libglu1-mesa
+        - libmarkdown2
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+            - "-usr/bin/X11"
+            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+            - "-usr/lib/aspell/*"
+        prime:
+        - usr/
+        - "-usr/lib/*/libQt5*"
+        - "-usr/lib/*/libKF5[A-I]*"
+        - "-usr/lib/*/libKF5[L-O]*"
+        - "-usr/lib/*/libKF5[Q-Z]*"
+        - "-usr/lib/*/libKF5KIO*"
+        - "-usr/lib/*/libKF5Kirigami*"
+        - "-usr/lib/*/libKF5JobWidgets*"
+        - "-usr/lib/*/libKF5Package*"
+        - "-usr/lib/*/libKF5Parts*"
+        - "$exclusion"
+        source: http://download.kde.org/stable/release-service/21.04.3/src/okular-21.04.3.tar.xz
+        cmake-parameters:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/x86_64-linux-gnu/qt5/plugins/"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
+version: 21.04.3

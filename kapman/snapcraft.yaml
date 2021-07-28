@@ -1,19 +1,15 @@
 ---
-name: ktuberling
+name: kapman
 confinement: strict
 grade: stable
 base: core20
-adopt-info: ktuberling
+adopt-info: kapman
 apps:
-    ktuberling:
+    kapman:
         extensions:
         - kde-neon
-        common-id: org.kde.ktuberling.desktop
-        command: usr/bin/ktuberling
-        environment:
-            GST_PLUGIN_PATH: "$SNAP/usr/lib/x86_64-linux-gnu/gstreamer-1.0"
-            GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/x86_64-linux-gnu/gstreamer-1.0"
-            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/x86_64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
+        common-id: org.kde.kapman.desktop
+        command: usr/bin/kapman
         plugs:
         - home
         - network
@@ -23,7 +19,7 @@ apps:
 slots:
     session-dbus-interface:
         interface: dbus
-        name: org.kde.ktuberling
+        name: org.kde.kapman
         bus: session
 package-repositories:
 -   type: apt
@@ -34,6 +30,11 @@ package-repositories:
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
+layout:
+    "/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib":
+        bind: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
+    "/usr/share/alsa":
+        bind: "$SNAP/usr/share/alsa"
 parts:
     libkdegames:
         plugin: cmake
@@ -62,21 +63,22 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-    ktuberling:
+    kapman:
         after:
         - libkdegames
         parse-info:
-        - usr/share/metainfo/org.kde.ktuberling.appdata.xml
+        - usr/share/metainfo/org.kde.kapman.appdata.xml
+        build-snaps:
+        - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
         plugin: cmake
         build-packages:
-        - libkf5kdelibs4support-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
+        - libkf5doctools-dev
         stage-packages:
-        - libkf5kdelibs4support5
-        - libgstreamer1.0-0
-        - gstreamer1.0-plugins-good
-        source: http://download.kde.org/stable/release-service/21.04.3/src/ktuberling-21.04.3.tar.xz
+        - libasound2-data
+        - libasound2-plugins
+        source: http://download.kde.org/stable/release-service/21.04.3/src/kapman-21.04.3.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -98,4 +100,5 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
+        - "-etc/alsa/conf.d/99-pulse.conf"
 version: 21.04.3

@@ -1,0 +1,91 @@
+---
+name: dolphin
+confinement: strict
+grade: stable
+base: core20
+adopt-info: dolphin
+apps:
+    dolphin:
+        common-id: org.kde.dolphin.desktop
+        command: kf5-launch dolphin
+        plugs:
+        - kde-frameworks-5-plug
+        - home
+        - x11
+        - opengl
+        - network
+        - network-bind
+        - audio-playback
+        - removable-media
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.kde.dolphin
+        bus: session
+plugs:
+    kde-frameworks-5-plug:
+        content: kde-frameworks-5-qt-5-15-core20-all
+        interface: content
+        default-provider: kde-frameworks-5-qt-5-15-core20
+        target: kf5
+package-repositories:
+-   type: apt
+    components:
+    - main
+    suites:
+    - focal
+    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
+    url: http://origin.archive.neon.kde.org/user
+    key-server: keyserver.ubuntu.com
+parts:
+    dolphin:
+        build-snaps:
+        - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
+        after:
+        - kde-frameworks-5-env
+        plugin: cmake
+        build-packages:
+        - libkf5baloowidgets-dev
+        - libphonon4qt5experimental-dev
+        - pkg-config
+        - kuserfeedback-dev
+        - libphonon4qt5-dev
+        - libkf5doctools-dev
+        build-environment:
+        -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
+        stage-packages:
+        - dolphin-plugins
+        - libglu1-mesa
+        - freeglut3
+        - libphonon4qt5experimental4
+        - libkf5baloowidgets5
+        - libkuserfeedbackcore1
+        - libkuserfeedbackwidgets1
+        source: http://download.kde.org/stable/release-service/21.04.3/src/dolphin-21.04.3.tar.xz
+        cmake-parameters:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
+        parse-info:
+        - usr/share/metainfo/org.kde.dolphin.appdata.xml
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+            - "-usr/bin/X11"
+            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+            - "-usr/lib/aspell/*"
+        prime:
+        - "$exclusion"
+    kde-frameworks-5-env:
+        plugin: dump
+        source: https://invent.kde.org/packaging/snap-kf5-launcher.git
+version: 21.04.3

@@ -1,0 +1,67 @@
+---
+name: kate
+confinement: classic
+grade: stable
+base: core20
+adopt-info: kate
+apps:
+    kate:
+        common-id: org.kde.kate.desktop
+        command: usr/bin/kate
+        environment:
+            QT_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins:$SNAPCRAFT_ARCH_TRIPLET/usr/lib/x86_64-linux-gnu"
+package-repositories:
+-   type: apt
+    components:
+    - main
+    suites:
+    - focal
+    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
+    url: http://origin.archive.neon.kde.org/user
+    key-server: keyserver.ubuntu.com
+parts:
+    kate:
+        parse-info:
+        - usr/share/metainfo/org.kde.kate.appdata.xml
+        plugin: cmake
+        build-snaps:
+        - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
+        build-packages:
+        - libgit2-dev
+        - libkf5doctools-dev
+        stage-packages:
+        - libgit2-28
+        - konsole-kpart
+        - libkf5declarative5
+        - libkf5kiofilewidgets5
+        - libkf5plasma5
+        - libkf5syntaxhighlighting5
+        - libkf5texteditor5
+        - libkf5threadweaver5
+        - libqt5qmlmodels5
+        - libqt5quick5
+        - libqt5sql5
+        - libeditorconfig0
+        source: http://download.kde.org/stable/release-service/21.04.3/src/kate-21.04.3.tar.xz
+        cmake-parameters:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+            - "-usr/bin/X11"
+            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+            - "-usr/lib/aspell/*"
+        prime:
+        - "$exclusion"
+version: 21.04.3

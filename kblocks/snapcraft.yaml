@@ -14,6 +14,9 @@ apps:
     - audio-playback
     - alsa
     - network
+    environment:
+      QT_QPA_PLATFORMTHEME: flatpak
+      QT_QPA_FLATPAK_PLATFORMTHEME: kde
 slots:
   session-dbus-interface:
     interface: dbus

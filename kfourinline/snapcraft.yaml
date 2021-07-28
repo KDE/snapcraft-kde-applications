@@ -1,30 +1,21 @@
 ---
-name: ktuberling
+name: kfourinline
 confinement: strict
 grade: stable
 base: core20
-adopt-info: ktuberling
+adopt-info: kfourinline
 apps:
-    ktuberling:
+    kfourinline:
         extensions:
         - kde-neon
-        common-id: org.kde.ktuberling.desktop
-        command: usr/bin/ktuberling
-        environment:
-            GST_PLUGIN_PATH: "$SNAP/usr/lib/x86_64-linux-gnu/gstreamer-1.0"
-            GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/x86_64-linux-gnu/gstreamer-1.0"
-            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/x86_64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
+        common-id: org.kde.kfourinline.desktop
+        command: usr/bin/kfourinline
         plugs:
         - home
         - network
         - network-bind
         - audio-playback
         - removable-media
-slots:
-    session-dbus-interface:
-        interface: dbus
-        name: org.kde.ktuberling
-        bus: session
 package-repositories:
 -   type: apt
     components:
@@ -62,21 +53,15 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-    ktuberling:
+    kfourinline:
         after:
         - libkdegames
         parse-info:
-        - usr/share/metainfo/org.kde.ktuberling.appdata.xml
+        - usr/share/metainfo/org.kde.kfourinline.appdata.xml
         plugin: cmake
         build-packages:
-        - libkf5kdelibs4support-dev
-        - libphonon4qt5-dev
-        - libphonon4qt5experimental-dev
-        stage-packages:
-        - libkf5kdelibs4support5
-        - libgstreamer1.0-0
-        - gstreamer1.0-plugins-good
-        source: http://download.kde.org/stable/release-service/21.04.3/src/ktuberling-21.04.3.tar.xz
+        - libkf5doctools-dev
+        source: http://download.kde.org/stable/release-service/21.04.3/src/kfourinline-21.04.3.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
