@@ -49,7 +49,7 @@ parts:
   # SDK snap is missing kirigami development assets.
   kirigami:
     source: https://invent.kde.org/frameworks/kirigami.git
-    source-tag: "v5.79.0"
+    source-tag: "v5.83.0"
     source-depth: 0
     plugin: cmake
     cmake-parameters:
@@ -62,7 +62,7 @@ parts:
     after:
     - kirigami
     source: https://invent.kde.org/frameworks/qqc2-desktop-style.git
-    source-tag: "v5.79.0"
+    source-tag: "v5.83.0"
     source-depth: 0
     plugin: cmake
     cmake-parameters:
