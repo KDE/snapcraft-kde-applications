@@ -10,14 +10,13 @@ apps:
     command: usr/bin/neochat
     common-id: org.kde.neochat
     plugs:
+    - home
     - audio-playback
     - network
     - network-manager-observe
     - password-manager-service
     environment:
       QML2_IMPORT_PATH: $SNAP/usr/lib/x86_64-linux-gnu/qml
-      QT_QPA_PLATFORMTHEME: flatpak
-      QT_QPA_FLATPAK_PLATFORMTHEME: kde
     extensions:
     - kde-neon
 
