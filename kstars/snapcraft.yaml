@@ -12,7 +12,6 @@ apps:
         common-id: org.kde.kstars.desktop
         command: usr/bin/kstars
         plugs:
-        - kde-frameworks-5-plug
         - home
         - network
         - network-bind
@@ -52,8 +51,6 @@ package-repositories:
 parts:
     kstars:
         plugin: cmake
-        build-environment:
-        -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
         build-packages:
         - libeigen3-dev
         - zlib1g-dev
@@ -184,21 +181,3 @@ parts:
         source: http://download.kde.org/stable/kstars/kstars-3.5.4.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DENABLE_TESTING=OFF"
-        - "-DBUILD_TESTING=OFF"
-        - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
-        filesets:
-            exclusion:
-            - "-usr/lib/*/cmake/*"
-            - "-usr/include/*"
-            - "-usr/share/ECM/*"
-            - "-usr/share/doc/*"
-            - "-usr/share/man/*"
-            - "-usr/share/icons/breeze-dark*"
-            - "-usr/bin/X11"
-            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
-            - "-usr/lib/aspell/*"
-        prime:
-        - "$exclusion"
