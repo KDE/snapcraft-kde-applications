@@ -17,6 +17,8 @@ apps:
     - password-manager-service
     environment:
       QML2_IMPORT_PATH: $SNAP/usr/lib/x86_64-linux-gnu/qml
+      QT_QPA_PLATFORMTHEME: flatpak
+      QT_QPA_FLATPAK_PLATFORMTHEME: kde
     extensions:
     - kde-neon
 
