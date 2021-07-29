@@ -37,6 +37,8 @@ parts:
         source: https://github.com/opencv/opencv/archive/3.4.9.zip
         source-subdir: opencv-3.4.9
         plugin: cmake
+        build-packages:
+        - libglib2.0-dev
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/"
         prime:
