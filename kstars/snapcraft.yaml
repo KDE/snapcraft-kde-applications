@@ -37,14 +37,6 @@ package-repositories:
     - main
     suites:
     - focal
-    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: http://origin.archive.neon.kde.org/user
-    key-server: keyserver.ubuntu.com
--   type: apt
-    components:
-    - main
-    suites:
-    - focal
     key-id: 7DA5C2D272B4C6F8E7CEA9C6487CEC2B3F33A288
     url: http://ppa.launchpad.net/mutlaqja/ppa/ubuntu
     key-server: keyserver.ubuntu.com

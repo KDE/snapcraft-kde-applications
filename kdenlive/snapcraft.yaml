@@ -68,7 +68,7 @@ parts:
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
     kdenlive-launch:
-        source: http://download.kde.org/stable/release-service/21.04.3/src/kdenlive-21.04.3.tar.xz
+        source: kdenlive-launch/
         plugin: dump
         prime:
         - kdenlive-launch
