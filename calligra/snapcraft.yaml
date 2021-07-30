@@ -115,7 +115,6 @@ parts:
     - okular-dev
     - cauchy-dev
     - qtdeclarative5-dev
-    - libkchart-dev
     stage-packages:
     - libqca-qt5-2
     - libetonyek-0.1-1
