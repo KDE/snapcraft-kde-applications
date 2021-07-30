@@ -61,6 +61,15 @@ apps:
     - network-bind
     - audio-playback
     - removable-media
+package-repositories:
+-   type: apt
+    components:
+    - main
+    suites:
+    - focal
+    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
+    url: http://origin.archive.neon.kde.org/user
+    key-server: keyserver.ubuntu.com
 slots:
   session-dbus-interface:
     interface: dbus
