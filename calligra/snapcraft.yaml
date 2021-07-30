@@ -108,6 +108,14 @@ parts:
     - pstoedit
     - shared-mime-info
     - zlib1g-dev
+    - libkf5calendarcore-dev
+    - libkf5akonadi-dev
+    - libkf5akonadicontact-dev
+    - libkf5contacts-dev
+    - okular-dev
+    - cauchy-dev
+    - qtdeclarative5-dev
+    - libkchart-dev
     stage-packages:
     - libqca-qt5-2
     - libetonyek-0.1-1
@@ -124,6 +132,7 @@ parts:
     - libwpd-0.10-10
     - libwpg-0.3-3
     - libwps-0.4-4
+    - libfontconfig1
     parse-info:
     - usr/share/metainfo/org.kde.calligrawords.appdata.xml
     - usr/share/metainfo/org.kde.calligrasheets.appdata.xml
