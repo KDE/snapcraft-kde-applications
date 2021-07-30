@@ -84,6 +84,7 @@ parts:
     - libkgantt-dev
     - libkproperty3-dev
     - libkreport3-dev
+    - libkf5doctools-dev
     - liblcms2-dev
     - libmarble-dev
     - libodfgen-dev

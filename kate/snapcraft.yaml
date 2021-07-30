@@ -6,7 +6,6 @@ base: core20
 adopt-info: kate
 apps:
     kate:
-        common-id: org.kde.kate.desktop
         command: usr/bin/kate
         environment:
             QT_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins:$SNAPCRAFT_ARCH_TRIPLET/usr/lib/x86_64-linux-gnu"
