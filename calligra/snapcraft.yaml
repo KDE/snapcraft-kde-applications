@@ -11,7 +11,6 @@ apps:
     - kde-neon
     command: usr/bin/calligra
     plugs:
-    - kde-frameworks-5-plug
     - home
     - network
     - network-bind
@@ -23,7 +22,6 @@ apps:
     common-id: org.kde.calligrawords.desktop
     command: usr/bin/calligrawords
     plugs:
-    - kde-frameworks-5-plug
     - home
     - network
     - network-bind
@@ -35,7 +33,6 @@ apps:
     common-id: org.kde.calligrastage.desktop
     command: usr/bin/calligrastage
     plugs:
-    - kde-frameworks-5-plug
     - home
     - network
     - network-bind
@@ -47,7 +44,6 @@ apps:
     common-id: org.kde.calligrasheets.desktop
     command: usr/bin/calligrasheets
     plugs:
-    - kde-frameworks-5-plug
     - home
     - network
     - network-bind
@@ -74,7 +70,6 @@ parts:
   calligra:
     after:
     - kdelibs4support
-    - kross
     plugin: cmake
     build-packages:
     - libboost-dev
@@ -170,7 +165,7 @@ parts:
     - libnm-dev
     - libkf5doctools-dev
     - kded5
-    source: https://download.kde.org/stable/frameworks/5.79/portingAids/kdelibs4support-5.79.0.tar.xz
+    source: https://download.kde.org/stable/frameworks/5.79/portingAids/kdelibs4support-5.83.0.tar.xz
     cmake-parameters:
     - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
     - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -193,27 +188,3 @@ parts:
     prime:
     - "$exclusion"
     - "-usr/lib/*/libexec/kf5/fileshareset"
-  kross:
-    plugin: cmake
-    source: https://download.kde.org/stable/frameworks/5.79/portingAids/kross-5.79.0.tar.xz
-    cmake-parameters:
-    - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
-    - "-DCMAKE_INSTALL_PREFIX=/usr"
-    - "-DCMAKE_BUILD_TYPE=Release"
-    - "-DENABLE_TESTING=OFF"
-    - "-DBUILD_TESTING=OFF"
-    - "-DKDE_SKIP_TEST_SETTINGS=ON"
-    - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
-    filesets:
-        exclusion:
-        - "-usr/lib/*/cmake/*"
-        - "-usr/include/*"
-        - "-usr/share/ECM/*"
-        - "-usr/share/doc/*"
-        - "-usr/share/man/*"
-        - "-usr/share/icons/breeze-dark*"
-        - "-usr/bin/X11"
-        - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
-        - "-usr/lib/aspell/*"
-    prime:
-    - "$exclusion"
