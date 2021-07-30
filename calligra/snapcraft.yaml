@@ -132,27 +132,7 @@ parts:
     - usr/share/metainfo/org.kde.karbon.appdata.xml
     source: https://download.kde.org/stable/calligra/3.2.1/calligra-3.2.1.tar.xz
     cmake-parameters:
-    - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
     - "-DCMAKE_INSTALL_PREFIX=/usr"
-    - "-DCMAKE_BUILD_TYPE=Release"
-    - "-DENABLE_TESTING=OFF"
-    - "-DBUILD_TESTING=OFF"
-    - "-DKDE_SKIP_TEST_SETTINGS=ON"
-    - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/x86_64-linux-gnu/qt5/plugins/"
-    - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
-    filesets:
-        exclusion:
-        - "-usr/lib/*/cmake/*"
-        - "-usr/include/*"
-        - "-usr/share/ECM/*"
-        - "-usr/share/doc/*"
-        - "-usr/share/man/*"
-        - "-usr/share/icons/breeze-dark*"
-        - "-usr/bin/X11"
-        - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
-        - "-usr/lib/aspell/*"
-    prime:
-    - "$exclusion"
   kdelibs4support:
     plugin: cmake
     build-packages:
@@ -165,26 +145,8 @@ parts:
     - libnm-dev
     - libkf5doctools-dev
     - kded5
-    source: https://download.kde.org/stable/frameworks/5.79/portingAids/kdelibs4support-5.83.0.tar.xz
+    source: https://download.kde.org/stable/frameworks/5.83/portingAids/kdelibs4support-5.83.0.tar.xz
     cmake-parameters:
-    - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
     - "-DCMAKE_INSTALL_PREFIX=/usr"
-    - "-DCMAKE_BUILD_TYPE=Release"
-    - "-DENABLE_TESTING=OFF"
-    - "-DBUILD_TESTING=OFF"
-    - "-DKDE_SKIP_TEST_SETTINGS=ON"
-    - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
-    filesets:
-        exclusion:
-        - "-usr/lib/*/cmake/*"
-        - "-usr/include/*"
-        - "-usr/share/ECM/*"
-        - "-usr/share/doc/*"
-        - "-usr/share/man/*"
-        - "-usr/share/icons/breeze-dark*"
-        - "-usr/bin/X11"
-        - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
-        - "-usr/lib/aspell/*"
     prime:
-    - "$exclusion"
     - "-usr/lib/*/libexec/kf5/fileshareset"
