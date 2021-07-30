@@ -68,8 +68,6 @@ slots:
     bus: session
 parts:
   calligra:
-    after:
-    - kdelibs4support
     plugin: cmake
     build-packages:
     - libboost-dev
@@ -133,21 +131,3 @@ parts:
     source: https://download.kde.org/stable/calligra/3.2.1/calligra-3.2.1.tar.xz
     cmake-parameters:
     - "-DCMAKE_INSTALL_PREFIX=/usr"
-  kdelibs4support:
-    plugin: cmake
-    build-packages:
-    - extra-cmake-modules
-    - cmake
-    - kgendesignerplugin
-    - libintl-perl
-    - network-manager-dev
-    - libsm-dev
-    - libnm-dev
-    - libkf5doctools-dev
-    - libssl-dev
-    - kded5
-    source: https://download.kde.org/stable/frameworks/5.83/portingAids/kdelibs4support-5.83.0.tar.xz
-    cmake-parameters:
-    - "-DCMAKE_INSTALL_PREFIX=/usr"
-    prime:
-    - "-usr/lib/*/libexec/kf5/fileshareset"
