@@ -144,6 +144,7 @@ parts:
     - libsm-dev
     - libnm-dev
     - libkf5doctools-dev
+    - libssl-dev
     - kded5
     source: https://download.kde.org/stable/frameworks/5.83/portingAids/kdelibs4support-5.83.0.tar.xz
     cmake-parameters:
