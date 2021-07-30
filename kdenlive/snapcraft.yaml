@@ -67,6 +67,7 @@ parts:
         source: http://download.kde.org/stable/release-service/21.04.3/src/kdenlive-21.04.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
     kdenlive-launch:
         source: kdenlive-launch/
         plugin: dump
