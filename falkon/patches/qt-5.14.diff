@@ -1,0 +1,18 @@
+commit bbde5c6955c43bc744ed2c4024598495de908f2a
+Author: Laurent Montel <montel@kde.org>
+Date:   Mon Dec 2 13:30:36 2019 +0100
+
+    Add missing include in last qt5.14
+
+Index: falkon-3.1.0/src/plugins/VerticalTabs/verticaltabsplugin.cpp
+===================================================================
+--- falkon-3.1.0.orig/src/plugins/VerticalTabs/verticaltabsplugin.cpp
++++ falkon-3.1.0/src/plugins/VerticalTabs/verticaltabsplugin.cpp
+@@ -31,6 +31,7 @@
+ #include "desktopfile.h"
+ 
+ #include <QSettings>
++#include <QFile>
+ 
+ VerticalTabsPlugin::VerticalTabsPlugin()
+     : QObject()

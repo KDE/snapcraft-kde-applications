@@ -1,0 +1,18 @@
+Index: calligra-3.2.1/libs/text/CMakeLists.txt
+===================================================================
+--- calligra-3.2.1.orig/libs/text/CMakeLists.txt
++++ calligra-3.2.1/libs/text/CMakeLists.txt
+@@ -151,13 +151,9 @@ if( SHOULD_BUILD_FEATURE_RDF )
+     target_link_libraries(kotext PRIVATE ${SOPRANO_LIBRARIES})
+ endif()
+ 
+-if( FONTCONFIG_FOUND )
+     target_link_libraries(kotext PRIVATE ${FONTCONFIG_LIBRARIES})
+-endif()
+ 
+-if( FREETYPE_FOUND )
+     target_link_libraries(kotext PRIVATE ${FREETYPE_LIBRARIES})
+-endif()
+ 
+ 
+ set_target_properties(kotext PROPERTIES

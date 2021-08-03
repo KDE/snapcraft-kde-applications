@@ -1,0 +1,18 @@
+--- libktorrent-21.04.1/CMakeLists.txt~	2021-05-11 08:31:23.000000000 +0100
++++ libktorrent-21.04.1/CMakeLists.txt	2021-06-09 17:03:45.401385290 +0100
+@@ -67,6 +67,7 @@
+     I18n
+     KIO
+     Solid
++    GuiAddons
+ )
+ 
+ find_package(Boost "${Boost_MIN_VERSION}" MODULE REQUIRED)
+--- libktorrent-21.04.1/examples/ktcli/CMakeLists.txt~	2021-05-07 19:12:53.000000000 +0100
++++ libktorrent-21.04.1/examples/ktcli/CMakeLists.txt	2021-06-09 17:03:04.848968960 +0100
+@@ -4,4 +4,4 @@
+ )
+ 
+ add_executable(ktcli ${ktcli_SRC})
+-target_link_libraries(ktcli KF5::Torrent)
++target_link_libraries(ktcli KF5::Torrent KF5::GuiAddons)

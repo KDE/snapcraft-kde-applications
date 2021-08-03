@@ -1,0 +1,40 @@
+--- ktorrent-21.04.1/CMakeLists.txt~	2021-05-11 08:31:17.000000000 +0100
++++ ktorrent-21.04.1/CMakeLists.txt	2021-06-09 17:19:57.434428199 +0100
+@@ -50,6 +50,7 @@
+     CoreAddons
+     Crash
+     DBusAddons
++    GuiAddons
+     I18n
+     IconThemes
+     KIO
+--- ktorrent-21.04.1/ktupnptest/CMakeLists.txt~	2021-05-07 19:41:03.000000000 +0100
++++ ktorrent-21.04.1/ktupnptest/CMakeLists.txt	2021-06-09 17:19:45.406322088 +0100
+@@ -9,6 +9,7 @@
+     KF5::Torrent
+     KF5::CoreAddons
+     KF5::I18n
++    KF5::GuiAddons
+ )
+ install(TARGETS ktupnptest ${INSTALL_TARGETS_DEFAULT_ARGS})
+ 
+--- ktorrent-21.04.1/ktorrent/CMakeLists.txt~	2021-05-07 19:41:03.000000000 +0100
++++ ktorrent-21.04.1/ktorrent/CMakeLists.txt	2021-06-09 17:25:26.809311960 +0100
+@@ -102,6 +102,7 @@
+     KF5::Crash
+     KF5::ConfigCore
+     KF5::ConfigGui
++    KF5::GuiAddons
+     KF5::DBusAddons
+     KF5::I18n
+     KF5::IconThemes
+--- ktorrent-21.04.1/ktmagnetdownloader/CMakeLists.txt~	2021-05-07 19:41:03.000000000 +0100
++++ ktorrent-21.04.1/ktmagnetdownloader/CMakeLists.txt	2021-06-09 17:31:38.501327295 +0100
+@@ -1,6 +1,6 @@
+ set(magnetdownloadtest_SRCS magnetdownloader.cpp magnettest.cpp)
+ add_executable(ktmagnetdownloader ${magnetdownloadtest_SRCS})
+-target_link_libraries(ktmagnetdownloader ktcore Qt5::Widgets Qt5::Network)
++target_link_libraries(ktmagnetdownloader ktcore Qt5::Widgets Qt5::Network KF5::GuiAddons)
+ ecm_mark_nongui_executable(ktmagnetdownloader)
+ install(TARGETS ktmagnetdownloader ${INSTALL_TARGETS_DEFAULT_ARGS})
+ 

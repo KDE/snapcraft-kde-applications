@@ -76,7 +76,13 @@ slots:
     name: org.kde.calligra
     bus: session
 parts:
+  patches:
+      source: patches
+      plugin: dump
+      prime:
+      - "-*"
   calligra:
+    after: patches
     plugin: cmake
     build-packages:
     - libboost-dev
@@ -147,5 +153,8 @@ parts:
     - usr/share/metainfo/org.kde.calligrastage.appdata.xml
     - usr/share/metainfo/org.kde.karbon.appdata.xml
     source: https://download.kde.org/stable/calligra/3.2.1/calligra-3.2.1.tar.xz
+    override-pull: |
+         snapcraftctl pull
+         patch -p1 < $SNAPCRAFT_STAGE/text.diff
     cmake-parameters:
     - "-DCMAKE_INSTALL_PREFIX=/usr"
