@@ -147,6 +147,11 @@ parts:
     - libwpg-0.3-3
     - libwps-0.4-4
     - libfontconfig1
+    - libcauchy0.0v5
+    - libkf5js5
+    - libkf5jsapi5
+    - libm2mml0.0v5
+    - libokular5core9
     parse-info:
     - usr/share/metainfo/org.kde.calligrawords.appdata.xml
     - usr/share/metainfo/org.kde.calligrasheets.appdata.xml
