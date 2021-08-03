@@ -47,6 +47,7 @@ parts:
     - libkf5purpose-dev
     - libkf5sysguard-dev
     stage-packages:
+    - konsole-kpart
     - libgrantlee-templates5
     - libgrantlee-textdocument5
     - libapr1
