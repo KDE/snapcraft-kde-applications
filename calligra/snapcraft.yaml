@@ -82,7 +82,7 @@ parts:
       prime:
       - "-*"
   calligra:
-    after: patches
+    after: [patches]
     plugin: cmake
     build-packages:
     - libboost-dev
