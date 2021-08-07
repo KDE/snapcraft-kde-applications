@@ -55,7 +55,6 @@ apps:
     common-id: org.kde.karbon.desktop
     command: usr/bin/karbon
     plugs:
-    - kde-frameworks-5-plug
     - home
     - network
     - network-bind

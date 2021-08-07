@@ -7,12 +7,14 @@ Index: calligra-3.2.1/libs/text/CMakeLists.txt
  endif()
  
 -if( FONTCONFIG_FOUND )
-     target_link_libraries(kotext PRIVATE ${FONTCONFIG_LIBRARIES})
+-    target_link_libraries(kotext PRIVATE ${FONTCONFIG_LIBRARIES})
 -endif()
++    target_link_libraries(kotext PRIVATE ${pkgcfg_lib_PKG_FONTCONFIG_fontconfig})
  
 -if( FREETYPE_FOUND )
-     target_link_libraries(kotext PRIVATE ${FREETYPE_LIBRARIES})
+-    target_link_libraries(kotext PRIVATE ${FREETYPE_LIBRARIES})
 -endif()
++    target_link_libraries(kotext PRIVATE ${FREETYPE_LIBRARY_RELEASE})
  
  
  set_target_properties(kotext PROPERTIES
