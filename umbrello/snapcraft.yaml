@@ -7,6 +7,8 @@ adopt-info: umbrello
 version: 21.08.0
 apps:
     umbrello:
+        extensions:
+        - kde-neon
         common-id: org.kde.umbrello.desktop
         command: umbrello5
         plugs:
