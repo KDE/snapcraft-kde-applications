@@ -11,7 +11,6 @@ apps:
         common-id: org.kde.okular.desktop
         command: usr/bin/okular
         plugs:
-        - kde-frameworks-5-plug
         - home
         - network
         - network-bind
@@ -23,12 +22,6 @@ slots:
         interface: dbus
         name: org.kde.okular
         bus: session
-plugs:
-    kde-frameworks-5-plug:
-        content: kde-frameworks-5-qt-5-15-core20-all
-        interface: content
-        default-provider: kde-frameworks-5-qt-5-15-core20
-        target: kf5
 package-repositories:
 -   type: apt
     components:
@@ -41,7 +34,7 @@ package-repositories:
 parts:
     poppler:
         plugin: cmake
-        source: https://poppler.freedesktop.org/poppler-21.04.0.tar.xz
+        source: https://poppler.freedesktop.org/poppler-21.08.0.tar.xz
         build-environment:
         -   CMAKE_BUILD_PARALLEL_LEVEL: '1'
         -   VERBOSE: '1'
@@ -121,8 +114,6 @@ parts:
         after:
         - poppler
         plugin: cmake
-        build-environment:
-        -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
         build-packages:
         - libchm-dev
         - libdjvulibre-dev
@@ -203,4 +194,4 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/x86_64-linux-gnu/qt5/plugins/"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"

@@ -7,30 +7,20 @@ base: core20
 adopt-info: peruse
 apps:
     peruse:
+        extensions:
+        - kde-neon
         common-id: org.kde.peruse.desktop
         command: kf5-launch peruse
         plugs:
-        - kde-frameworks-5-plug
         - home
-        - x11
-        - opengl
         - network
         - network-bind
         - audio-playback
-        - desktop
-        - desktop-legacy
-        - network-observe
 slots:
     session-dbus-interface:
         interface: dbus
         name: org.kde.peruse
         bus: session
-plugs:
-    kde-frameworks-5-qt-5-15-plug:
-        content: kde-frameworks-5-qt-5-15-core20-all
-        interface: content
-        default-provider: kde-frameworks-5-qt-5-15-core20
-        target: kf5
 package-repositories:
 -   type: apt
     components:
@@ -42,11 +32,8 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     peruse:
-        parse-info: [usr/share/appdata/org.kde.peruse.appdata.xml]
-        build-snaps:
-        - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
-        after:
-        - kde-frameworks-5-env
+        parse-info:
+        - usr/share/appdata/org.kde.peruse.appdata.xml
         plugin: cmake
         build-environment:
         - CMAKE_BUILD_PARALLEL_LEVEL: "4"
@@ -64,7 +51,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"
@@ -78,6 +65,3 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-    kde-frameworks-5-env:
-        plugin: dump
-        source: https://anongit.kde.org/snap-kf5-launcher.git

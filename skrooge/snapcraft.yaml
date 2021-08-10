@@ -12,11 +12,11 @@ apps:
         command: usr/bin/skrooge
         common-id: org.kde.skrooge
         plugs:
-        - kde-frameworks-5-plug
         - home
         - network
         - network-bind
         - audio-playback
+        - removeable-media
 slots:
     session-dbus-interface:
         interface: dbus
@@ -34,11 +34,8 @@ package-repositories:
 parts:
     skrooge:
         plugin: cmake
-        build-environment:
-        -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
         build-packages:
         - libgrantlee5-dev
-        - libkf5kdelibs4support-dev
         - libofx-dev
         - libqca-qt5-2-dev
         - libsqlcipher-dev
@@ -47,7 +44,6 @@ parts:
         stage-packages:
         - libgrantlee-templates5
         - libgrantlee-textdocument5
-        - libkf5kdelibs4support5
         - libofx7
         - libqca-qt5-2
         - libsqlcipher0
@@ -60,7 +56,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
         parse-info:
         - usr/share/metainfo/org.kde.skrooge.appdata.xml
         filesets:

@@ -6,25 +6,16 @@ base: core20
 adopt-info: ktouch
 apps:
     ktouch:
+        extensions:
+        - kde-neon
         common-id: org.kde.ktouch.desktop
-        command: kf5-launch ktouch
+        command: ktouch
         plugs:
-        - kde-frameworks-5-plug
         - home
-        - x11
-        - opengl
         - network
         - network-bind
         - audio-playback
-        - desktop
-        - desktop-legacy
         - removable-media
-plugs:
-    kde-frameworks-5-plug:
-        content: kde-frameworks-5-qt-5-15-core20-all
-        interface: content
-        default-provider: kde-frameworks-5-qt-5-15-core20
-        target: kf5
 package-repositories:
 -   type: apt
     components:
@@ -38,13 +29,7 @@ parts:
     ktouch:
         parse-info:
         - usr/share/metainfo/org.kde.ktouch.appdata.xml
-        build-snaps:
-        - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
-        after:
-        - kde-frameworks-5-env
         plugin: cmake
-        build-environment:
-        -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
         build-packages:
         - libxcb-xkb-dev
         - libxkbfile-dev
@@ -68,7 +53,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"
@@ -82,6 +67,3 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-    kde-frameworks-5-env:
-        plugin: dump
-        source: https://invent.kde.org/packaging/snap-kf5-launcher.git

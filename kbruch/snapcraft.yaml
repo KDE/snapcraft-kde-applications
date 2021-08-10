@@ -7,7 +7,7 @@ adopt-info: kbruch
 apps:
     kbruch:
         common-id: org.kde.kbruch.desktop
-        command: kbruch
+        command: usr/bin/kbruch
         extensions:
         - kde-neon
         plugs:

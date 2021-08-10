@@ -7,28 +7,20 @@ grade: stable
 base: core20
 apps:
     massif-visualizer:
-        command: kf5-launch massif-visualizer
+        extensions:
+        - kde-neon
+        command: massif-visualizer
         plugs:
-        - kde-frameworks-5-plug
         - home
-        - x11
-        - opengl
         - network
         - network-bind
         - audio-playback
-        - desktop
-        - desktop-legacy
+        - removeable-media
 slots:
     session-dbus-interface:
         interface: dbus
         name: org.kde.massif-visualizer
         bus: session
-plugs:
-    kde-frameworks-5-plug:
-        content: kde-frameworks-5-core18-all
-        interface: content
-        default-provider: kde-frameworks-5-core18
-        target: kf5
 package-repositories:
 -   type: apt
     components:
@@ -42,13 +34,7 @@ parts:
     massif-visualizer:
         parse-info:
         - usr/share/metainfo/org.kde.massif-visualizer.appdata.xml
-        build-snaps:
-        - kde-frameworks-5-core18-sdk/latest/edge
-        after:
-        - kde-frameworks-5-env
         plugin: cmake
-        build-environment:
-        - CMAKE_BUILD_PARALLEL_LEVEL: "4"
         build-packages:
         - libkchart-dev
         - libkgraphviewer-dev
@@ -64,7 +50,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"
@@ -78,6 +64,3 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-    kde-frameworks-5-env:
-        plugin: dump
-        source: https://invent.kde.org/packaging/snap-kf5-launcher.git

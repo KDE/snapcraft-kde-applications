@@ -7,6 +7,8 @@ confinement: strict
 
 apps:
   neochat:
+    extensions:
+    - kde-neon
     command: usr/bin/neochat
     common-id: org.kde.neochat
     plugs:
@@ -19,8 +21,6 @@ apps:
       QML2_IMPORT_PATH: $SNAP/usr/lib/x86_64-linux-gnu/qml
       QT_QPA_PLATFORMTHEME: flatpak
       QT_QPA_FLATPAK_PLATFORMTHEME: kde
-    extensions:
-    - kde-neon
 
 slots:
   session-dbus-interface:
