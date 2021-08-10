@@ -8,29 +8,18 @@ version: 21.08.0
 apps:
     umbrello:
         common-id: org.kde.umbrello.desktop
-        command: kf5-launch umbrello5
+        command: umbrello5
         plugs:
-        - kde-frameworks-5-plug
         - home
-        - x11
-        - opengl
         - network
         - network-bind
         - audio-playback
-        - desktop
-        - desktop-legacy
         - removable-media
 slots:
     session-dbus-interface:
         interface: dbus
         name: org.kde.umbrello
         bus: session
-plugs:
-    kde-frameworks-5-plug:
-        content: kde-frameworks-5-qt-5-15-core20-all
-        interface: content
-        default-provider: kde-frameworks-5-qt-5-15-core20
-        target: kf5
 package-repositories:
 -   type: apt
     components:
@@ -42,20 +31,12 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     umbrello:
-        build-snaps:
-        - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
-        after:
-        - kde-frameworks-5-env
         plugin: cmake
-        build-environment:
-        -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
         build-packages:
-        - libkf5kdelibs4support-dev
         - libxslt1-dev
         - libxml2-dev
         - libboost-dev
         stage-packages:
-        - libkf5kdelibs4support5
         - libboost1.71-dev
         - libxml2
         - libxslt1.1
@@ -83,6 +64,3 @@ parts:
         - "$exclusion"
         parse-info:
         - usr/share/metainfo/org.kde.umbrello.appdata.xml
-    kde-frameworks-5-env:
-        plugin: dump
-        source: https://invent.kde.org/packaging/snap-kf5-launcher.git
