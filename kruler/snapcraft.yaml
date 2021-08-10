@@ -7,17 +7,12 @@ adopt-info: kruler
 apps:
     kruler:
         common-id: org.kde.kruler.desktop
-        command: kf5-launch kruler
+        command: usr/bin/kruler
         plugs:
-        - kde-frameworks-5-plug
         - home
-        - x11
-        - opengl
         - network
         - network-bind
         - audio-playback
-        - desktop
-        - desktop-legacy
         - removable-media
 plugs:
     kde-frameworks-5-plug:
@@ -38,13 +33,7 @@ parts:
     kruler:
         parse-info:
         - usr/share/metainfo/org.kde.kruler.appdata.xml
-        build-snaps:
-        - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
-        after:
-        - kde-frameworks-5-env
         plugin: cmake
-        build-environment:
-        -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
         build-packages:
         - libkf5doctools-dev
         source: http://download.kde.org/stable/release-service/21.08.0/src/kruler-21.08.0.tar.xz
@@ -55,7 +44,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"
@@ -69,6 +58,3 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-    kde-frameworks-5-env:
-        plugin: dump
-        source: https://invent.kde.org/packaging/snap-kf5-launcher.git

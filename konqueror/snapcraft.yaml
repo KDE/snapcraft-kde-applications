@@ -9,34 +9,18 @@ apps:
         parse-info:
         - usr/share/metainfo/org.kde.konqueror.appdata.xml
         common-id: org.kde.konqueror.desktop
-        command: kf5-launch konqueror
+        command: usr/bin/konqueror
         plugs:
-        - kde-frameworks-5-plug
         - home
-        - x11
-        - opengl
         - network
         - network-bind
-        - unity7
-        - pulseaudio
-        - desktop
-        - desktop-legacy
+        - audio-playback
         - removable-media
-plugs:
-    kde-frameworks-5-plug:
-        content: kde-frameworks-5-all
-        interface: content
-        default-provider: kde-frameworks-5
-        target: kf5
 parts:
-    kexi:
-        after:
-        - kde-frameworks-5-dev
-        - kde-frameworks-5-env
+    konqueror:
         plugin: cmake
         build-packages:
         - kdoctools-dev
-        - libkf5kdelibs4support-dev
         - libtidy-dev
         - libx11-dev
         source: http://download.kde.org/stable/release-service/21.08.0/src/konqueror-21.08.0.tar.xz

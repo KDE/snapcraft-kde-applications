@@ -33,8 +33,6 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     kronometer:
-        build-environment:
-        - CMAKE_BUILD_PARALLEL_LEVEL: "4"
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
