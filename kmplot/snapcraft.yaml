@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core20
 adopt-info: kmplot
-version: 21.04.3
+version: 21.08.0
 apps:
     kmplot:
         common-id: org.kde.kmplot.desktop
@@ -53,7 +53,7 @@ parts:
         - libkf5doctools-dev
         build-environment:
         -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
-        source: http://download.kde.org/stable/release-service/21.04.3/src/kmplot-21.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/21.08.0/src/kmplot-21.08.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"

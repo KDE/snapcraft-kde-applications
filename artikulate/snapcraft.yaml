@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core20
 adopt-info: artikulate
-version: 21.04.3
+version: 21.08.0
 apps:
     artikulate:
         common-id: org.kde.artikulate.desktop
@@ -63,7 +63,7 @@ parts:
         - qml-module-org-kde-kirigami2
         - qml-module-org-kde-kquickcontrolsaddons
         - qml-module-qtqml-models2
-        source: http://download.kde.org/stable/release-service/21.04.3/src/artikulate-21.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/21.08.0/src/artikulate-21.08.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"

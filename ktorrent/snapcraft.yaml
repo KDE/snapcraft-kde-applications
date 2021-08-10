@@ -96,7 +96,7 @@ parts:
         - libgeoip1
         - geoip-bin
         - libtag1v5
-        source: http://download.kde.org/stable/release-service/21.04.3/src/ktorrent-21.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/21.08.0/src/ktorrent-21.08.0.tar.xz
         override-pull: |
             snapcraftctl pull
             patch -p1 < $SNAPCRAFT_STAGE/ktorrent-link.diff
@@ -122,4 +122,3 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 21.04.3

@@ -62,7 +62,7 @@ parts:
         after:
         - libkdegames
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/21.04.3/src/bovo-21.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/21.08.0/src/bovo-21.08.0.tar.xz
         build-packages:
         - libkf5doctools-dev
         cmake-parameters:
@@ -88,4 +88,3 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 21.04.3

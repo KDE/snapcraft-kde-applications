@@ -98,4 +98,3 @@ parts:
     - libcmark-dev
     parse-info:
     - usr/share/metainfo/org.kde.neochat.appdata.xml
-

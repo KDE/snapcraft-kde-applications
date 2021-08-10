@@ -72,7 +72,7 @@ parts:
         - libkf5doctools-dev
         stage-packages:
         - gnugo
-        source: http://download.kde.org/stable/release-service/21.04.3/src/kigo-21.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/21.08.0/src/kigo-21.08.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -94,4 +94,3 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 21.04.3

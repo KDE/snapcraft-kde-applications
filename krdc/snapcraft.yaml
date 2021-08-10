@@ -51,7 +51,7 @@ parts:
         stage-packages:
         - libvncclient1
         - freerdp2-x11
-        source: http://download.kde.org/stable/release-service/21.04.3/src/krdc-21.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/21.08.0/src/krdc-21.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -75,4 +75,3 @@ parts:
     kde-frameworks-5-env:
         plugin: dump
         source: https://invent.kde.org/packaging/snap-kf5-launcher.git
-version: 21.04.3

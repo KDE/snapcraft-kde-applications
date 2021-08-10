@@ -87,4 +87,3 @@ parts:
     kde-frameworks-5-env:
         plugin: dump
         source: https://invent.kde.org/packaging/snap-kf5-launcher.git
-version: 21.04.3
