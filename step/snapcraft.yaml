@@ -6,30 +6,21 @@ base: core20
 adopt-info: step
 apps:
     step:
+        extensions:
+        - kde-neon
         common-id: org.kde.step.desktop
-        command: kf5-launch step
+        command: step
         plugs:
-        - kde-frameworks-5-plug
         - home
-        - x11
-        - opengl
         - network
         - network-bind
         - audio-playback
-        - desktop
-        - desktop-legacy
         - removable-media
 slots:
     session-dbus-interface:
         interface: dbus
         name: org.kde.step
         bus: session
-plugs:
-    kde-frameworks-5-plug:
-        content: kde-frameworks-5-qt-5-15-core20-all
-        interface: content
-        default-provider: kde-frameworks-5-qt-5-15-core20
-        target: kf5
 package-repositories:
 -   type: apt
     components:
@@ -41,18 +32,11 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     step:
-        build-snaps:
-        - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
-        after:
-        - kde-frameworks-5-env
         plugin: cmake
-        build-environment:
-        -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
         build-packages:
         - libeigen3-dev
         - libglib2.0-dev
         - libgsl-dev
-        - libkf5kdelibs4support-dev
         - libkf5khtml-dev
         - libqalculate-dev
         - libkf5doctools-dev
@@ -60,7 +44,6 @@ parts:
         - libglib2.0-0
         - libgsl23
         - libgslcblas0
-        - libkf5kdelibs4support5
         - libkf5khtml5
         - libqalculate20
         source: http://download.kde.org/stable/release-service/21.08.0/src/step-21.08.0.tar.xz
@@ -71,7 +54,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"
@@ -87,6 +70,3 @@ parts:
         - "$exclusion"
         parse-info:
         - usr/share/metainfo/org.kde.step.appdata.xml
-    kde-frameworks-5-env:
-        plugin: dump
-        source: https://invent.kde.org/packaging/snap-kf5-launcher.git
