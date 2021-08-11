@@ -29,6 +29,7 @@ parts:
         - extra-cmake-modules
         - libkf5i18n-dev
         - libkf5textwidgets-dev
+        - gettext
         stage-packages:
         - libgit2-28
         - konsole-kpart
