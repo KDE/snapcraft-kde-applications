@@ -6,6 +6,8 @@ base: core20
 adopt-info: kmahjongg
 apps:
     kmahjongg:
+        extensions:
+        - kde-neon
         common-id: org.kde.kmahjongg.desktop
         command: usr/bin/kmahjongg
         plugs:
