@@ -37,8 +37,6 @@ layout:
         bind: "$SNAP/usr/share/alsa"
 parts:
     kollision:
-        after:
-        - libkdegames
         parse-info:
         - usr/share/metainfo/org.kde.kollision.appdata.xml
         plugin: cmake

@@ -6,30 +6,21 @@ base: core20
 adopt-info: cantor
 apps:
     cantor:
+        extensions:
+        - kde-neon
         common-id: org.kde.cantor.desktop
-        command: kf5-launch cantor
+        command: usr/bin/cantor
         plugs:
-        - kde-frameworks-5-plug
         - home
-        - x11
-        - opengl
         - network
         - network-bind
         - audio-playback
-        - desktop
-        - desktop-legacy
         - removable-media
 slots:
     session-dbus-interface:
         interface: dbus
         name: org.kde.cantor
         bus: session
-plugs:
-    kde-frameworks-5-plug:
-        content: kde-frameworks-5-qt-5-15-core20-all
-        interface: content
-        default-provider: kde-frameworks-5-qt-5-15-core20
-        target: kf5
 package-repositories:
 -   type: apt
     components:
@@ -41,13 +32,7 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     analitza:
-        build-snaps:
-        - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
-        after:
-        - kde-frameworks-5-env
         plugin: cmake
-        build-environment:
-        -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
         build-packages:
         - libncurses-dev
         - libreadline-dev
@@ -58,7 +43,7 @@ parts:
         - libreadline8
         - libgl1
         - libglx-dev
-        source: https://download.kde.org/stable/release-service/20.12.3/src/analitza-20.12.3.tar.xz
+        source: https://download.kde.org/stable/release-service/21.08.0/src/analitza-21.08.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -68,10 +53,7 @@ parts:
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
     cantor:
-        build-snaps:
-        - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
         after:
-        - kde-frameworks-5-env
         - analitza
         plugin: cmake
         build-packages:
@@ -88,8 +70,6 @@ parts:
         - libpoppler-dev
         - libpoppler-qt5-dev
         - libkf5doctools-dev
-        build-environment:
-        -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
         stage-packages:
         - libmarkdown2
         - libglib2.0-0
@@ -124,9 +104,6 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
         parse-info:
         - usr/share/metainfo/org.kde.cantor.appdata.xml
-    kde-frameworks-5-env:
-        plugin: dump
-        source: https://invent.kde.org/packaging/snap-kf5-launcher.git

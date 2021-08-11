@@ -32,8 +32,6 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     kjumpingcube:
-        after:
-        - libkdegames
         parse-info:
         - usr/share/metainfo/org.kde.kjumpingcube.appdata.xml
         plugin: cmake

@@ -42,8 +42,10 @@ parts:
         prime: [-*]
         stage: [qt-5.14.diff, qt-5.15.diff]
     falkon:
-        after: [patches]
-        parse-info: [usr/share/metainfo/org.kde.falkon.appdata.xml]
+        after:
+        - patches
+        parse-info:
+        - usr/share/metainfo/org.kde.falkon.appdata.xml
         source: http://download.kde.org/stable/falkon/3.1/falkon-3.1.0.tar.xz
         plugin: cmake
         build-packages:
@@ -63,7 +65,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"

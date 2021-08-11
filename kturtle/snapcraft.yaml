@@ -34,10 +34,6 @@ parts:
     kturtle:
         parse-info:
         - usr/share/metainfo/org.kde.kturtle.appdata.xml
-        build-snaps:
-        - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
-        after:
-        - kde-frameworks-5-env
         plugin: cmake
         build-packages:
         - libkf5doctools-dev

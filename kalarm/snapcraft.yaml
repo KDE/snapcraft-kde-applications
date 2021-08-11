@@ -6,13 +6,12 @@ base: core20
 adopt-info: kalarm
 apps:
     kalarm:
+        extensions:
+        - kde-neon
         common-id: org.kde.kalarm.desktop
-        command: kf5-launch kalarm
+        command: usr/bin/kalarm
         plugs:
-        - kde-frameworks-5-plug
         - home
-        - x11
-        - opengl
         - network
         - network-bind
         - audio-playback
@@ -22,12 +21,6 @@ slots:
         interface: dbus
         name: org.kde.kalarm
         bus: session
-plugs:
-    kde-frameworks-5-plug:
-        content: kde-frameworks-5-qt-5-15-core20-all
-        interface: content
-        default-provider: kde-frameworks-5-qt-5-15-core20
-        target: kf5
 package-repositories:
 -   type: apt
     components:
@@ -41,13 +34,7 @@ parts:
     kalarm:
         parse-info:
         - usr/share/metainfo/org.kde.kalarm.appdata.xml
-        build-snaps:
-        - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
-        after:
-        - kde-frameworks-5-env
         plugin: cmake
-        build-environment:
-        -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
         build-packages:
         - kross-dev
         - libassuan-dev
@@ -66,7 +53,6 @@ parts:
         - libkf5dnssd-dev
         - libkf5holidays-dev
         - libkf5identitymanagement-dev
-        - libkf5kdelibs4support-dev
         - libkf5kdepimdbusinterfaces-dev
         - libkf5khtml-dev
         - libkf5libkdepim-dev
@@ -102,7 +88,6 @@ parts:
         - libkf5dnssd
         - libkf5holidays
         - libkf5identitymanagement
-        - libkf5kdelibs4support
         - libkf5kdepimdbusinterfaces
         - libkf5khtml
         - libkf5libkdepim
@@ -126,23 +111,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/root/stage\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
-        filesets:
-            exclusion:
-            - "-usr/lib/*/cmake/*"
-            - "-usr/include/*"
-            - "-usr/share/ECM/*"
-            - "-usr/share/doc/*"
-            - "-usr/share/man/*"
-            - "-usr/share/icons/breeze-dark*"
-            - "-usr/bin/X11"
-            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
-            - "-usr/lib/aspell/*"
-        prime:
-        - "$exclusion"
-    kde-frameworks-5-env:
-        plugin: dump
-        source: https://anongit.kde.org/snap-kf5-launcher.git
+        - "-DCMAKE_FIND_ROOT_PATH=/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"

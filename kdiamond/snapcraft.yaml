@@ -32,8 +32,6 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     kdiamond:
-        after:
-        - libkdegames
         parse-info:
         - usr/share/metainfo/org.kde.kdiamond.appdata.xml
         build-packages:

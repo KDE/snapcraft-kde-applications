@@ -27,8 +27,6 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     kfourinline:
-        after:
-        - libkdegames
         parse-info:
         - usr/share/metainfo/org.kde.kfourinline.appdata.xml
         plugin: cmake

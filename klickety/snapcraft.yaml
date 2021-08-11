@@ -37,8 +37,6 @@ layout:
         bind: "$SNAP/usr/share/alsa"
 parts:
     klickety:
-        after:
-        - libkdegames
         parse-info:
         - usr/share/metainfo/org.kde.klickety.appdata.xml
         plugin: cmake

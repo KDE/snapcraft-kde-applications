@@ -32,8 +32,6 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     ksquares:
-        after:
-        - libkdegames
         parse-info:
         - usr/share/metainfo/org.kde.ksquares.appdata.xml
         plugin: cmake
