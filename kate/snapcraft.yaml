@@ -14,10 +14,7 @@ parts:
         parse-info:
         - usr/share/metainfo/org.kde.kate.appdata.xml
         plugin: cmake
-        build-snaps:
-        - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
         build-packages:
-        - extra-cmake-modules
         - libgit2-dev
         - libkf5doctools-dev
         stage-packages:
