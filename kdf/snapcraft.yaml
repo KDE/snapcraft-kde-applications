@@ -31,6 +31,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
+        - extra-cmake-modules
         stage-packages:
         - coreutils
         source: http://download.kde.org/stable/release-service/21.08.0/src/kdf-21.08.0.tar.xz
