@@ -26,20 +26,12 @@ parts:
         build-snaps:
         - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
         build-packages:
+        - extra-cmake-modules
         - libgit2-dev
         - libkf5doctools-dev
         stage-packages:
         - libgit2-28
         - konsole-kpart
-        - libkf5declarative5
-        - libkf5kiofilewidgets5
-        - libkf5plasma5
-        - libkf5syntaxhighlighting5
-        - libkf5texteditor5
-        - libkf5threadweaver5
-        - libqt5qmlmodels5
-        - libqt5quick5
-        - libqt5sql5
         - libeditorconfig0
         source: http://download.kde.org/stable/release-service/21.08.0/src/kate-21.08.0.tar.xz
         cmake-parameters:
