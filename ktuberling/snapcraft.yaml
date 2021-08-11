@@ -36,8 +36,6 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     ktuberling:
-        after:
-        - libkdegames
         parse-info:
         - usr/share/metainfo/org.kde.ktuberling.appdata.xml
         plugin: cmake
