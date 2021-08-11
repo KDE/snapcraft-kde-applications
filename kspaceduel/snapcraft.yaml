@@ -32,13 +32,9 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     kspaceduel:
-        after:
-        - libkdegames
         parse-info:
         - usr/share/metainfo/org.kde.kspaceduel.appdata.xml
         plugin: cmake
-        build-environment:
-        -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
         build-packages:
         - libkf5doctools-dev
         source: http://download.kde.org/stable/release-service/21.08.0/src/kspaceduel-21.08.0.tar.xz

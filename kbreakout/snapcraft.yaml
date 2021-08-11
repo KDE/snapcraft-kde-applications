@@ -32,8 +32,6 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     kbreakout:
-        after:
-        - libkdegames
         parse-info:
         - usr/share/metainfo/org.kde.kbreakout.appdata.xml
         plugin: cmake

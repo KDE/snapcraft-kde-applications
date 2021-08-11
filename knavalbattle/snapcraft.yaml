@@ -37,8 +37,6 @@ layout:
         bind: "$SNAP/usr/share/alsa"
 parts:
     knavalbattle:
-        after:
-        - libkdegames
         parse-info:
         - usr/share/metainfo/org.kde.knavalbattle.appdata.xml
         plugin: cmake

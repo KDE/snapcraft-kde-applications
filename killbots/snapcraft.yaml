@@ -32,8 +32,6 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     killbots:
-        after:
-        - libkdegames
         parse-info:
         - usr/share/metainfo/org.kde.killbots.appdata.xml
         plugin: cmake

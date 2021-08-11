@@ -32,8 +32,6 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     klines:
-        after:
-        - libkdegames
         parse-info:
         - usr/share/metainfo/org.kde.klines.appdata.xml
         plugin: cmake

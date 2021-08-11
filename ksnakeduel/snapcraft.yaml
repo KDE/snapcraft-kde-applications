@@ -32,8 +32,6 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     ksnakeduel:
-        after:
-        - libkdegames
         parse-info:
         - usr/share/metainfo/org.kde.ksnakeduel.appdata.xml
         plugin: cmake
