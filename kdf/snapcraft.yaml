@@ -6,6 +6,8 @@ base: core20
 adopt-info: kdf
 apps:
     kdf:
+        extensions:
+        - kde-neon
         common-id: org.kde.kdf
         command: usr/bin/kdf
         plugs:
@@ -15,6 +17,15 @@ apps:
         - audio-playback
         - removable-media
         - mount-observe
+package-repositories:
+-   type: apt
+    components:
+    - main
+    suites:
+    - focal
+    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
+    url: http://origin.archive.neon.kde.org/user
+    key-server: keyserver.ubuntu.com
 parts:
     kdf:
         parse-info:
