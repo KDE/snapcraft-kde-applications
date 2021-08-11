@@ -40,6 +40,7 @@ parts:
         - usr/share/metainfo/org.kde.ktuberling.appdata.xml
         plugin: cmake
         build-packages:
+	- libkf5doctools-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         stage-packages:
