@@ -31,6 +31,7 @@ parts:
         build-packages:
         - libvncserver-dev
         - libkf5doctools-dev
+        - extra-cmake-modules
         stage-packages:
         - libvncclient1
         - freerdp2-x11
