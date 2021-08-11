@@ -34,8 +34,6 @@ parts:
     katomic:
         parse-info:
         - usr/share/metainfo/org.kde.katomic.appdata.xml
-        after:
-        - libkdegames
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
