@@ -45,6 +45,7 @@ parts:
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         - libkf5doctools-dev
+        - extra-cmake-modules
         stage-packages:
         - libkf5kmahjongglib5
         - kdegames-mahjongg-data-kf5
