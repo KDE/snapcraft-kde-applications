@@ -31,6 +31,7 @@ parts:
         - usr/share/metainfo/org.kde.kalzium.appdata.xml
         plugin: cmake
         build-packages:
+        - libkf5doctools-dev
         - chemical-mime-data
         - libboost-python-dev
         - libeigen3-dev
