@@ -34,7 +34,7 @@ package-repositories:
 parts:
     poppler:
         plugin: cmake
-        source: https://poppler.freedesktop.org/poppler-21.08.0.tar.xz
+        source: https://poppler.freedesktop.org/poppler-21.04.0.tar.xz
         build-environment:
         -   CMAKE_BUILD_PARALLEL_LEVEL: '1'
         -   VERBOSE: '1'
