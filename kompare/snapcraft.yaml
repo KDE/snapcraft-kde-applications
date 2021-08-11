@@ -6,6 +6,8 @@ base: core20
 adopt-info: kompare
 apps:
     kompare:
+        extensions:
+        - kde-neon
         common-id: org.kde.kompare.desktop
         command: usr/bin/kompare
         plugs:

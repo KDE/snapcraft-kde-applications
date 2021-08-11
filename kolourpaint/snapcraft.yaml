@@ -6,6 +6,8 @@ base: core20
 adopt-info: kolourpaint
 apps:
     kolourpaint:
+        extensions:
+        - kde-neon
         common-id: org.kde.kolourpaint.desktop
         command: usr/bin/kolourpaint
         plugs:

@@ -10,7 +10,7 @@ apps:
         - kde-neon
         common-id: org.kde.kmines.desktop
         command: usr/bin/kmines
-        parts:
+        plugs:
         - home
         - network
         - network-bind

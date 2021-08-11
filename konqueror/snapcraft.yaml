@@ -6,6 +6,8 @@ grade: stable
 adopt-info: konqueror
 apps:
     konqueror:
+        extensions:
+        - kde-neon
         parse-info:
         - usr/share/metainfo/org.kde.konqueror.appdata.xml
         common-id: org.kde.konqueror.desktop
