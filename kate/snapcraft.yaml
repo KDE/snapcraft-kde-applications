@@ -26,6 +26,7 @@ parts:
         build-packages:
         - libgit2-dev
         - libkf5doctools-dev
+        - extra-cmake-modules
         stage-packages:
         - libgit2-28
         - konsole-kpart
