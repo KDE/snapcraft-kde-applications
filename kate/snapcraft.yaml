@@ -6,11 +6,18 @@ base: core20
 adopt-info: kate
 apps:
     kate:
-        extensions:
-        - kde-neon
         command: usr/bin/kate
         environment:
             QT_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins:$SNAPCRAFT_ARCH_TRIPLET/usr/lib/x86_64-linux-gnu"
+package-repositories:
+-   type: apt
+    components:
+    - main
+    suites:
+    - focal
+    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
+    url: http://origin.archive.neon.kde.org/user
+    key-server: keyserver.ubuntu.com
 parts:
     kate:
         parse-info:
