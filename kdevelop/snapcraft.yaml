@@ -6,8 +6,6 @@ base: core20
 adopt-info: kdevelop
 apps:
   kdevelop:
-    extensions:
-    - kde-neon
     command: usr/bin/kdevelop
     plugs:
     - home
