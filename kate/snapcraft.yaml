@@ -27,6 +27,8 @@ parts:
         - libgit2-dev
         - libkf5doctools-dev
         - extra-cmake-modules
+        - libkf5i18n-dev
+        - libkf5textwidgets-dev
         stage-packages:
         - libgit2-28
         - konsole-kpart
