@@ -36,6 +36,7 @@ parts:
     build-packages:
     - kross-dev
     - libhunspell-dev
+    - libkf5doctools-dev
     parse-info:
     - usr/share/metainfo/org.kde.lokalize.appdata.xml
     source: http://download.kde.org/stable/release-service/21.08.0/src/lokalize-21.08.0.tar.xz

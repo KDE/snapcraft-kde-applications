@@ -10,7 +10,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.umbrello.desktop
-        command: umbrello5
+        command: usr/bin/umbrello5
         plugs:
         - home
         - network
