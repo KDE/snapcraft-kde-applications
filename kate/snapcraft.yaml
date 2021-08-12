@@ -30,6 +30,7 @@ parts:
         - libkf5i18n-dev
         - libkf5textwidgets-dev
         - libkf5texteditor-dev
+        - libkf5syntaxhighlighting-dev
         - gettext
         stage-packages:
         - libgit2-28
