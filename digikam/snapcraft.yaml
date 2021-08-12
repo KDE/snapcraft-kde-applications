@@ -168,7 +168,7 @@ parts:
         - "-DENABLE_QWEBENGINE=ON"
         - "-DOpenCV_DIR=$SNAPCRAFT_STAGE/usr/share/OpenCV"
         - "-DENABLE_FACESENGINE_DNN=ON"
-        - "-DCMAKE_PREFIX_PATH="$SNAPCRAFT_STAGE/usr"
+        - "-DCMAKE_PREFIX_PATH=$SNAPCRAFT_STAGE/usr"
         - "-Wno-dev"
         parse-info:
         - usr/share/metainfo/org.kde.digikam.appdata.xml
