@@ -147,6 +147,7 @@ parts:
         - libtiff-dev
         - libxslt1-dev
         - libphonon4qt5-dev
+        - libphonon4qt5experimental-dev
         - libshp-dev
         - libwlocate-dev
         build-environment:
