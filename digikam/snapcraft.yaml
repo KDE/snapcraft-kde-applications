@@ -125,6 +125,8 @@ parts:
         - liblqr-1-0
         - libltdl7
         - libtbb2
+        - libwlocate0
+        - libshp2
         build-packages:
         - bison
         - ccache
@@ -144,6 +146,9 @@ parts:
         - libsqlite3-dev
         - libtiff-dev
         - libxslt1-dev
+        - libphonon4qt5-dev
+        - libshp-dev
+        - libwlocate-dev
         build-environment:
         -   PATH: "/usr/lib/ccache:$PATH"
         -   LD_LIBRARY_PATH: "$SNAPCRAFT_STAGE/usr/lib:$SNAPCRAFT_STAGE/usr/lib/$SNAPCRAFT_ARCH_TRIPLET"
