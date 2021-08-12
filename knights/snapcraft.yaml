@@ -44,6 +44,7 @@ parts:
         source: http://download.kde.org/stable/release-service/21.08.0/src/knights-21.08.0.tar.xz
         build-packages:
         - libkf5doctools-dev
+        - libqt5texttospeech5-dev
         stage-packages:
         - libasound2-data
         - libasound2-plugins
@@ -51,6 +52,7 @@ parts:
         - stockfish
         - sjeng
         - crafty
+        - libqt5texttospeech5
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
