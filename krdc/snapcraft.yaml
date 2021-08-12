@@ -6,6 +6,8 @@ base: core20
 adopt-info: krdc
 apps:
     krdc:
+        extensions:
+        - kde-neon
         common-id: org.kde.krdc.desktop
         command: usr/bin/krdc
         plugs:

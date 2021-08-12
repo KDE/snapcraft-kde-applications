@@ -6,6 +6,8 @@ base: core20
 adopt-info: kruler
 apps:
     kruler:
+        extensions:
+        - kde-neon
         common-id: org.kde.kruler.desktop
         command: usr/bin/kruler
         plugs:

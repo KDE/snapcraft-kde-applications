@@ -6,6 +6,8 @@ base: core20
 adopt-info: knights
 apps:
     knights:
+        extensions:
+        - kde-neon
         common-id: org.kde.knights.desktop
         command: usr/bin/knights
         plugs:

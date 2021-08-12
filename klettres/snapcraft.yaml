@@ -6,6 +6,8 @@ base: core20
 adopt-info: klettres
 apps:
     klettres:
+        extensions:
+        - kde-neon
         common-id: org.kde.klettres.desktop
         command: usr/bin/klettres
         plugs:
