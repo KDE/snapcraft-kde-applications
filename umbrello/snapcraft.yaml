@@ -38,6 +38,7 @@ parts:
         - libxslt1-dev
         - libxml2-dev
         - libboost-dev
+        - libkf5doctools-dev
         stage-packages:
         - libboost1.71-dev
         - libxml2
