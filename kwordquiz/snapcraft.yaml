@@ -9,7 +9,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.kwordquiz.desktop
-        command: kwordquiz
+        command: usr/bin/kwordquiz
         plugs:
         - home
         - network
