@@ -14,15 +14,6 @@ apps:
         - network-bind
         - audio-playback
         - removable-media
-package-repositories:
--   type: apt
-    components:
-    - main
-    suites:
-    - focal
-    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: http://origin.archive.neon.kde.org/user
-    key-server: keyserver.ubuntu.com
 parts:
     krdc:
         parse-info:
@@ -31,7 +22,6 @@ parts:
         build-packages:
         - libvncserver-dev
         - libkf5doctools-dev
-        - extra-cmake-modules
         stage-packages:
         - libvncclient1
         - freerdp2-x11
