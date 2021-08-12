@@ -10,7 +10,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.minuet.desktop
-        command: kf5-launch minuet
+        command: usr/bin/minuet
         plugs:
         - home
         - network

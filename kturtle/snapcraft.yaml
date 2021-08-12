@@ -9,7 +9,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.kturtle.desktop
-        command: kturtle
+        command: usr/bin/kturtle
         plugs:
         - home
         - network

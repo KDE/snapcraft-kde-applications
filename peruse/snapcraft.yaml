@@ -10,7 +10,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.peruse.desktop
-        command: kf5-launch peruse
+        command: usr/bin/peruse
         plugs:
         - home
         - network

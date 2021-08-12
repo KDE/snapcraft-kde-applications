@@ -9,7 +9,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.skanlite.desktop
-        command: skanlite
+        command: usr/bin/skanlite
         plugs:
         - home
         - network

@@ -9,7 +9,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.step.desktop
-        command: step
+        command: usr/bin/step
         plugs:
         - home
         - network

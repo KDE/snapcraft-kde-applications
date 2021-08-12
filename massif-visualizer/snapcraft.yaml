@@ -9,7 +9,7 @@ apps:
     massif-visualizer:
         extensions:
         - kde-neon
-        command: massif-visualizer
+        command: usr/bin/massif-visualizer
         plugs:
         - home
         - network

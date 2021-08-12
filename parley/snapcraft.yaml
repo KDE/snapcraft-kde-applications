@@ -9,7 +9,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.parley.desktop
-        command: parley
+        command: usr/bin/parley
         plugs:
         - home
         - network

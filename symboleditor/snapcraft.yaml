@@ -10,7 +10,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.SymbolEditor.desktop
-        command: kf5-launch SymbolEditor
+        command: usr/bin/SymbolEditor
         plugs:
         - home
         - network
