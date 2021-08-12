@@ -26,13 +26,13 @@ else
   ARCH="$SNAP_ARCH-linux-gnu"
 fi
 
-export MLT_REPOSITORY=$SNAP/usr/lib/$ARCH/mlt/
-export MLT_DATA=$SNAP/usr/share/mlt/
+export MLT_REPOSITORY=$SNAP/usr/lib/$ARCH/mlt-7/
+export MLT_DATA=$SNAP/usr/share/mlt-7/
 export MLT_ROOT_DIR=$SNAP/usr/
 export LADSPA_PATH=$SNAP/usr/lib/ladspa
 export FREI0R_PATH=$SNAP/usr/lib/frei0r-1
-export MLT_PROFILES_PATH=$SNAP/usr/share/mlt/profiles/
-export MLT_PRESETS_PATH=$SNAP/usr/share/mlt/presets/
+export MLT_PROFILES_PATH=$SNAP/usr/share/mlt-7/profiles/
+export MLT_PRESETS_PATH=$SNAP/usr/share/mlt-7/presets/
 export SDL_AUDIODRIVER=pulseaudio
 export XDG_CURRENT_DESKTOP=
 
