@@ -16,12 +16,6 @@ apps:
         - network-bind
         - audio-playback
         - removable-media
-plugs:
-    kde-frameworks-5-plug:
-        content: kde-frameworks-5-qt-5-15-core20-all
-        interface: content
-        default-provider: kde-frameworks-5-qt-5-15-core20
-        target: kf5
 package-repositories:
 -   type: apt
     components:

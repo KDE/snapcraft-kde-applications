@@ -24,11 +24,6 @@ slots:
         name: org.kde.ktorrent
         bus: session
 parts:
-    patches:
-        source: patches
-        plugin: dump
-        prime:
-        - "-*"
     qca:
         source: https://invent.kde.org/libraries/qca.git
         source-tag: v2.3.3
@@ -56,9 +51,6 @@ parts:
         - libgmp10
         - libgmpxx4ldbl
         source: https://download.kde.org/stable/release-service/21.08.0/src/libktorrent-21.08.0.tar.xz
-        override-pull: |
-            snapcraftctl pull
-            patch -p1 < $SNAPCRAFT_STAGE/libktorrentlink.diff
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -97,9 +89,6 @@ parts:
         - geoip-bin
         - libtag1v5
         source: http://download.kde.org/stable/release-service/21.08.0/src/ktorrent-21.08.0.tar.xz
-        override-pull: |
-            snapcraftctl pull
-            patch -p1 < $SNAPCRAFT_STAGE/ktorrent-link.diff
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
