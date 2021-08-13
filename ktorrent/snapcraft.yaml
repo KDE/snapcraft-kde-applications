@@ -40,7 +40,6 @@ parts:
     libktorrent:
         after:
         - qca
-        - patches
         plugin: cmake
         build-packages:
         - libboost-dev
