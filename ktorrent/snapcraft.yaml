@@ -27,7 +27,7 @@ parts:
     libktorrent:
         plugin: cmake
         build-packages:
-	- libqca-qt5-2-dev
+        - libqca-qt5-2-dev
         - libboost-dev
         - libgcrypt20-dev
         - libgmp-dev
