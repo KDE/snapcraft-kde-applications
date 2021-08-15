@@ -30,6 +30,7 @@ parts:
         - libkf5i18n-dev
         - libkf5textwidgets-dev
         - libkf5texteditor-dev
+        - libkf5coreaddons-dev
         - libkf5syntaxhighlighting-dev
         - libkf5crash-dev
         - gettext
