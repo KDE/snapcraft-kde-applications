@@ -24,24 +24,10 @@ slots:
         name: org.kde.ktorrent
         bus: session
 parts:
-    qca:
-        source: https://invent.kde.org/libraries/qca.git
-        source-tag: v2.3.3
-        source-depth: 0
-        plugin: cmake
-        build-packages:
-        - libsasl2-dev
-        - libssl-dev
-        - ca-certificates
-        cmake-parameters:
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DBUILD_TRANSLATIONS=NO"
     libktorrent:
-        after:
-        - qca
         plugin: cmake
         build-packages:
+	- libqca-qt5-2-dev
         - libboost-dev
         - libgcrypt20-dev
         - libgmp-dev
