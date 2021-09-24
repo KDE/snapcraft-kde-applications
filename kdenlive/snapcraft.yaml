@@ -57,6 +57,7 @@ parts:
         - libmlt-dev
         - libv4l-dev
         stage-packages:
+        - libpsm-infinipath1
         - libqt5multimedia5
         - libqt5concurrent5
         - libqt5quickwidgets5
