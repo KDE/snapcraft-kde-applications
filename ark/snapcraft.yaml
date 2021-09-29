@@ -16,7 +16,6 @@ apps:
         - network-bind
         - audio-playback
         - removable-media
-        - system-observe
 slots:
     session-dbus-interface:
         interface: dbus

@@ -20,6 +20,7 @@ apps:
         - audio-playback
         - audio-record
         - removable-media
+        - system-observe
 slots:
     session-dbus-interface:
         interface: dbus
