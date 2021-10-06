@@ -1,0 +1,102 @@
+---
+name: haruna
+confinement: strict
+grade: stable
+base: core20
+adopt-info: haruna
+apps:
+    haruna:
+        extensions:
+        - kde-neon
+        common-id: org.kde.haruna
+        command: usr/bin/haruna
+        plugs:
+        - home
+        - network
+        - network-bind
+        - audio-playback
+        - removable-media
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.kde.haruna
+        bus: session
+package-repositories:
+-   type: apt
+    components:
+    - main
+    suites:
+    - focal
+    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
+    url: http://origin.archive.neon.kde.org/user
+    key-server: keyserver.ubuntu.com
+parts:
+    haruna:
+        parse-info:
+        - usr/share/metainfo/org.kde.haruna.metainfo.xml
+        plugin: cmake
+        build-packages:
+        - libswscale-dev
+        - libmpv-dev
+        - libavutil-dev
+        - libavfilter-dev
+        - libavcodec-dev
+        - kirigami2-dev
+        - libkf5doctools-dev
+        stage-packages:
+        - youtube-dl
+        - libavdevice58
+        - libavfilter7
+        - libbs2b0
+        - libcdio-cdda2
+        - libcdio-paranoia2
+        - libcdio18
+        - libfftw3-double3
+        - libflite1
+        - libjansson4
+        - libldb2
+        - liblilv-0-0
+        - libmpv1
+        - libnorm1
+        - libpgm-5.2-0
+        - librubberband2
+        - libsdl2-2.0-0
+        - libserd-0-0
+        - libsmbclient
+        - libsodium23
+        - libsord-0-0
+        - libsratom-0-0
+        - libtalloc2
+        - libtevent0
+        - libuchardet0
+        - libvidstab1.1
+        - libwbclient0
+        - libxcursor1
+        - libxinerama1
+        - libzmq5
+        - samba-libs
+        source: https://download.kde.org/stable/haruna/haruna-0.7.2.tar.xz
+        cmake-parameters:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
+        stage-packages:
+        - libasound2-data
+        - libasound2-plugins
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+            - "-usr/bin/X11"
+            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+            - "-usr/lib/aspell/*"
+        prime:
+        - "$exclusion"

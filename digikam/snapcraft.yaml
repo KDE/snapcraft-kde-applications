@@ -53,6 +53,10 @@ parts:
         - docbook-xsl
         build-environment:
         -   PATH: "/usr/lib/ccache:$PATH"
+        stage-packages:
+        - libiw30
+        - libshp2
+        - libwlocate0
         cmake-parameters:
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -106,6 +110,12 @@ parts:
         - "-DBUILD_PLAYERS=OFF"
         - "-DBUILD_QT5OPENGL=ON"
         - "-DBUILD_QML=OFF"
+        stage:
+        - etc/
+        - usr/
+        - lib/
+        - -usr/lib/x86_64-linux-gnu/libtiff.so.5.5.0
+        - -usr/share/doc/libtiff5/changelog.Debian.gz
     digikam:
         after:
         - qtav
