@@ -84,9 +84,6 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
-        stage-packages:
-        - libasound2-data
-        - libasound2-plugins
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"
