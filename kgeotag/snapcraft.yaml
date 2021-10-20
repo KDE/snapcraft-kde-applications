@@ -4,6 +4,7 @@ confinement: strict
 grade: stable
 base: core20
 adopt-info: kgeotag
+version: 1.1.0
 apps:
     kgeotag:
         extensions:
