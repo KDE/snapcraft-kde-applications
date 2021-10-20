@@ -37,6 +37,7 @@ parts:
         stage-packages:
         - libmarblewidget-qt5-28
         - libkf5kexiv2-15.0.0
+        - libqt5webengine-data
         source: https://download.kde.org/stable/kgeotag/1.1.0/kgeotag-1.1.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
