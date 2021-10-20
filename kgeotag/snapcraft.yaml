@@ -16,11 +16,6 @@ apps:
         - network-bind
         - audio-playback
         - removable-media
-slots:
-    session-dbus-interface:
-        interface: dbus
-        name: org.kde.kgeotag
-        bus: session
 package-repositories:
 -   type: apt
     components:
