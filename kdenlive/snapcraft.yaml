@@ -68,7 +68,7 @@ parts:
         - libmagic1
         - libgpm2
         - kio-extras
-        source: http://download.kde.org/stable/release-service/21.08.2/src/kdenlive-21.08.2.tar.xz
+        source: http://download.kde.org/stable/release-service/21.08.3/src/kdenlive-21.08.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
