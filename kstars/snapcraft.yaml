@@ -40,7 +40,6 @@ package-repositories:
     key-id: 7DA5C2D272B4C6F8E7CEA9C6487CEC2B3F33A288
     url: http://ppa.launchpad.net/mutlaqja/ppa/ubuntu
     key-server: keyserver.ubuntu.com
-package-repositories:
 -   type: apt
     components:
     - main
