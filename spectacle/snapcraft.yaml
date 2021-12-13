@@ -43,7 +43,7 @@ parts:
         - libkimageannotator-dev
         - libkf5kipi-dev
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/21.08.3/src/spectacle-21.08.3.tar.xz
+        source: http://download.kde.org/stable/release-service/21.12.0/src/spectacle-21.12.0.tar.xz
         override-stage: |
             snapcraftctl stage
             rm $SNAPCRAFT_STAGE/usr/share/kglobalaccel/org.kde.spectacle.desktop
@@ -79,4 +79,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 21.08.3
+version: 21.12.0

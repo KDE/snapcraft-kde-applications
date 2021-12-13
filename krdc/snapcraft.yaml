@@ -27,7 +27,7 @@ parts:
         stage-packages:
         - libvncclient1
         - freerdp2-x11
-        source: http://download.kde.org/stable/release-service/21.08.0/src/krdc-21.08.0.tar.xz
+        source: http://download.kde.org/stable/release-service/21.12.0/src/krdc-21.12.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
