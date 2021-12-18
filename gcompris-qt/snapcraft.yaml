@@ -1,0 +1,75 @@
+---
+name: gcompris
+confinement: strict
+grade: stable
+base: core20
+adopt-info: gcompris
+apps:
+    gcompris:
+        extensions:
+        - kde-neon
+        common-id: org.kde.gcompris.desktop
+        command: usr/bin/gcompris-qt
+        plugs:
+            - kde-frameworks-5-plug
+            - home
+            - network
+            - network-bind
+            - audio-playback
+            - removable-media
+package-repositories:
+-   type: apt
+    components:
+    - main
+    suites:
+    - focal
+    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
+    url: http://origin.archive.neon.kde.org/user
+    key-server: keyserver.ubuntu.com
+parts:
+    gcompris:
+        parse-info:
+        - usr/share/metainfo/org.kde.gcompris.appdata.xml
+        plugin: cmake
+        build-environment:
+        - CMAKE_BUILD_PARALLEL_LEVEL: "4"
+        source: https://gcompris.net/download/qt/src/gcompris-qt-2.0.tar.xz
+        build-packages:
+        - build-essential
+        - qt5-default
+        - libkf5doctools-dev
+        - libssl-dev
+        - gettext
+        - qtdeclarative5-dev
+        - qtmultimedia5-dev
+        - qttools5-dev
+        - qttools5-dev-tools
+        - libqt5sensors5-dev
+        - libqt5xmlpatterns5-dev
+        - libqt5svg5-dev
+        - qml-module-qtgraphicaleffects
+        - qml-module-qtmultimedia
+        - qml-module-box2d
+        stage-packages:
+        - libqt5multimedia5-plugins
+        - qml-module-qtgraphicaleffects
+        - qml-module-qtmultimedia
+        - qml-module-qtquick-controls
+        - qml-module-qtquick-particles2
+        - qml-module-box2d
+        - gstreamer1.0-plugins-good
+        - gstreamer1.0-plugins-base
+        - libgstreamer1.0-0
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+            - "-usr/bin/X11"
+            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+            - "-usr/lib/aspell/*"
+        prime:
+        - "$exclusion"
