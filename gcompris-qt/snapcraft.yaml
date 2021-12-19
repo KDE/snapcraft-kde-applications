@@ -31,8 +31,6 @@ parts:
         parse-info:
         - usr/share/metainfo/org.kde.gcompris.appdata.xml
         plugin: cmake
-        build-environment:
-        - CMAKE_BUILD_PARALLEL_LEVEL: "4"
         source: https://gcompris.net/download/qt/src/gcompris-qt-2.0.tar.xz
         build-packages:
         - build-essential
@@ -60,6 +58,14 @@ parts:
         - gstreamer1.0-plugins-good
         - gstreamer1.0-plugins-base
         - libgstreamer1.0-0
+        cmake-parameters:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"
