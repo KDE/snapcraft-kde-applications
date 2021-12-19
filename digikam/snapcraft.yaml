@@ -122,7 +122,7 @@ parts:
         - marble
         - opencv
         - lensfun
-        source: http://download.kde.org/stable/digikam/7.4.0/digikam-7.4.0.tar.xz
+        source: https://download.kde.org/stable/digikam/7.4.0/digiKam-7.4.0.tar.xz
         source-checksum: sha256/95aea93be1cfd39bb52333b82b3e57bf68080c7d1319d754d167a20f6dbe4551
         plugin: cmake
         stage-packages:
