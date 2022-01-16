@@ -1,7 +1,7 @@
 ---
 name: digikam
 base: core20
-version: 7.4.0
+version: 7.5.0
 adopt-info: digikam
 grade: stable
 confinement: strict
@@ -114,15 +114,15 @@ parts:
         - etc/
         - usr/
         - lib/
-        - -usr/lib/x86_64-linux-gnu/libtiff.so.5.5.0
-        - -usr/share/doc/libtiff5/changelog.Debian.gz
+        - "-usr/lib/x86_64-linux-gnu/libtiff.so.5.5.0"
+        - "-usr/share/doc/libtiff5/changelog.Debian.gz"
     digikam:
         after:
         - qtav
         - marble
         - opencv
         - lensfun
-        source: https://download.kde.org/stable/digikam/7.4.0/digiKam-7.4.0.tar.xz
+        source: http://download.kde.org/stable/digikam/7.5.0/digiKam-7.5.0.tar.xz
         source-checksum: sha256/d08ab66da732bb449bc10106ec11dd9defa5b3562ded3741b041dbbaa715504a
         plugin: cmake
         stage-packages:
