@@ -123,7 +123,7 @@ parts:
         - opencv
         - lensfun
         source: http://download.kde.org/stable/digikam/7.5.0/digiKam-7.5.0.tar.xz
-        source-checksum: sha256/d08ab66da732bb449bc10106ec11dd9defa5b3562ded3741b041dbbaa715504a
+        source-checksum: sha256/cc143dcdba0ab138036d78cd80b29d5cfd32bceb2c3e74e46b363a661dfca780
         plugin: cmake
         stage-packages:
         - libexif12
