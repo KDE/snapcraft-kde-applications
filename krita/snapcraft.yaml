@@ -9,8 +9,6 @@ apps:
   krita:
     common-id: org.kde.krita
     command: usr/bin/krita
-    command-chain:
-      - snap/command-chain/add-qt-shortcuts
     extensions:
       - kde-neon
     plugs:
