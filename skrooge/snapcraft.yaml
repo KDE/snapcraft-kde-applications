@@ -1,6 +1,6 @@
 ---
 name: skrooge
-version: 2.26.1
+version: 2.27.0
 adopt-info: skrooge
 confinement: strict
 grade: devel
@@ -49,7 +49,7 @@ parts:
         - libsqlcipher0
         - freeglut3
         - libslang2
-        source: https://download.kde.org/stable/skrooge/skrooge-2.26.1.tar.xz
+        source: https://download.kde.org/stable/skrooge/skrooge-2.27.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
