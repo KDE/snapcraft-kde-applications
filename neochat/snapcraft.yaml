@@ -34,7 +34,7 @@ parts:
     source-tag: "v0.13.2"
     source-depth: 0
     plugin: cmake
-    source-packages:
+    build-packages:
     - libsecret-1-dev
     stage-packages:
     - libsecret-1-0
