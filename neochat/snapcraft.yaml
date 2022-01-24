@@ -31,7 +31,7 @@ slots:
 parts:
   qtkeychain:
     source: https://github.com/frankosterfeld/qtkeychain.git
-    source-tag: "v0.10.0"
+    source-tag: "v0.13.2"
     source-depth: 0
     plugin: cmake
     cmake-parameters:
@@ -40,7 +40,7 @@ parts:
     - -DBUILD_TRANSLATIONS=NO
   libmatrixclient:
     source: https://github.com/quotient-im/libQuotient.git
-    source-tag: "0.6.7"
+    source-tag: "0.6.11"
     source-depth: 0
     plugin: cmake
     cmake-parameters:
@@ -50,7 +50,7 @@ parts:
   # SDK snap is missing kirigami development assets.
   kirigami:
     source: https://invent.kde.org/frameworks/kirigami.git
-    source-tag: "v5.83.0"
+    source-tag: "v5.90.0"
     source-depth: 0
     plugin: cmake
     cmake-parameters:
@@ -63,7 +63,7 @@ parts:
     after:
     - kirigami
     source: https://invent.kde.org/frameworks/qqc2-desktop-style.git
-    source-tag: "v5.83.0"
+    source-tag: "v5.90.0"
     source-depth: 0
     plugin: cmake
     cmake-parameters:
@@ -72,8 +72,7 @@ parts:
     - -DBUILD_TESTING=OFF
     - -DCMAKE_PREFIX_PATH=$SNAPCRAFT_STAGE/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/cmake/KF5Kirigami2
   kquickimageeditor:
-    source: https://download.kde.org/stable/kquickimageeditor/0.1/kquickimageeditor-0.1.2.tar.xz
-    source-checksum: sha256/37d54981a1c7dbb48ca45a7df37b8871bf1751e4c0484eeaddc548804ee18a04
+    source: https://download.kde.org/stable/kquickimageeditor/kquickimageeditor-0.2.0.tar.xz
     plugin: cmake
     cmake-parameters:
     - -DCMAKE_INSTALL_PREFIX=/usr
@@ -87,7 +86,7 @@ parts:
     - libmatrixclient
     - qqc2desktopstyle
     - kquickimageeditor
-    source: https://download.kde.org/stable/neochat/1.2.0/neochat-1.2.0.tar.xz
+    source: http://download.kde.org/stable/plasma-mobile/21.12/neochat-21.12.tar.xz
     plugin: cmake
     cmake-parameters:
     - -DCMAKE_INSTALL_PREFIX=/usr
