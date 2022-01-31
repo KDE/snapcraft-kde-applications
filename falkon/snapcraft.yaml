@@ -3,6 +3,7 @@ name: falkon
 confinement: strict
 grade: stable
 base: core20
+version: 3.2.0
 adopt-info: falkon
 apps:
     falkon:
