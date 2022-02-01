@@ -41,7 +41,6 @@ parts:
         - libbz2-dev
         - libkf5khtml-dev
         - liblzma-dev
-        - libqjson-dev
         - libzip-dev
         - zlib1g-dev
         - libpulse-dev
