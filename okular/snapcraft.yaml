@@ -94,6 +94,7 @@ parts:
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_QT5=ON"
         - "-DENABLE_LIBOPENJPEG=unmaintained"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"
