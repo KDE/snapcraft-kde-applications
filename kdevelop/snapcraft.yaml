@@ -85,6 +85,24 @@ parts:
         - libksysguardformatter1
         - libprocesscore9
         - libprocessui9
+        - libbrotli1
+        - libeditorconfig0
+        - libglu1-mesa
+        - libgstreamer-plugins-base1.0-0
+        - libgstreamer1.0-0
+        - libhyphen0
+        - libkf5itemmodels5
+        - libkf5plasma5
+        - libkf5runner5
+        - libkf5syntaxhighlighting5
+        - libkf5texteditor5
+        - libkf5threadweaver5
+        - liborc-0.4-0
+        - libqt5sensors5
+        - libqt5sql5
+        - libqt5webkit5
+        - libwoff1
+        - freeglut3
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
         source: http://download.kde.org/stable/release-service/21.12.1/src/kdevelop-21.12.1.tar.xz
