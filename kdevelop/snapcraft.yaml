@@ -1,18 +1,15 @@
 ---
 name: kdevelop
 confinement: classic
+version: 21.12.1
 grade: stable
 base: core20
 adopt-info: kdevelop
 apps:
     kdevelop:
         command: usr/bin/kdevelop
-        plugs:
-        - home
-        - network
-        - network-bind
-        - audio-playback
-        - removable-media
+        environment:
+            QT_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins:$SNAPCRAFT_ARCH_TRIPLET/usr/lib/x86_64-linux-gnu"
 package-repositories:
 -   type: apt
     components:
@@ -31,19 +28,41 @@ parts:
     kdevelop:
         plugin: cmake
         build-packages:
+        - extra-cmake-modules
         - libboost-dev
         - libastyle-dev
-        - kdevelop-pg-qt
         - libkf5doctools-dev
         - libclang-11-dev
-        - libgrantlee5-dev
         - libkomparediff2-dev
         - libsvn-dev
-        - llvm-11-dev
-        - llvm-11
         - okteta-dev
         - libkf5purpose-dev
         - libkf5sysguard-dev
+        - kdevelop-pg-qt
+        - libgrantlee5-dev
+        - libkf5config-dev
+        - libkf5crash-dev
+        - libkf5declarative-dev
+        - libkf5i18n-dev
+        - libkf5iconthemes-dev
+        - libkf5itemmodels-dev
+        - libkf5itemviews-dev
+        - libkf5jobwidgets-dev
+        - libkf5kcmutils-dev
+        - libkf5kio-dev
+        - libkf5newstuff-dev
+        - libkf5notifyconfig-dev
+        - libkf5parts-dev
+        - libkf5plasma-dev
+        - libkf5runner-dev
+        - libkf5service-dev
+        - libkf5syntaxhighlighting-dev
+        - libkf5texteditor-dev
+        - libkf5threadweaver-dev
+        - libkf5windowsystem-dev
+        - libkf5xmlgui-dev
+        - libqt5webkit5-dev
+        - gettext
         stage-packages:
         - konsole-kpart
         - libgrantlee-templates5
@@ -82,4 +101,3 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
-version: 21.12.1
