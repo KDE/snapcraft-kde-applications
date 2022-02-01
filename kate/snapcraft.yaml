@@ -44,6 +44,7 @@ parts:
         - libkf5texteditor5
         - libqt5concurrent5
         - freeglut3
+        - hspell
         source: http://download.kde.org/stable/release-service/21.12.1/src/kate-21.12.1.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
