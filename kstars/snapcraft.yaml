@@ -51,24 +51,13 @@ parts:
         - libgsl-dev
         - libindi-dev
         - qt5keychain-dev
-        - wcslib-dev
-        - gsc
-        - libapogee3
-        - libatik
-        - libfishcamp
-        - libfli2
-        - libinovasdk
-        - libnncam
-        - libqhy
-        - libqsi7
-        - libaltaircam
-        - libsbig
-        - libstarshootg
-        - libtoupcam
         - libstellarsolver-dev
         - libkf5doctools-dev
         - libraw-dev
         - libqt5datavisualization5-dev
+        - libqt5websockets5-dev
+        - wcslib-dev
+        - xplanet
         stage-packages:
         - libstellarsolver
         - astrometry.net
@@ -84,19 +73,6 @@ parts:
         - libsecret-1-dev
         - libglvnd0
         - libgomp1
-        - gsc
-        - libapogee3
-        - libatik
-        - libfishcamp
-        - libfli2
-        - libinovasdk
-        - libnncam
-        - libqhy
-        - libqsi7
-        - libaltaircam
-        - libsbig
-        - libstarshootg
-        - libtoupcam
         - libqt5datavisualization5
         - libraw19
         parse-info:
