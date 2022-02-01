@@ -38,6 +38,12 @@ parts:
         - libgit2-28
         - konsole-kpart
         - libeditorconfig0
+        - libglu1-mesa
+        - libkf5kiofilewidgets5
+        - libkf5syntaxhighlighting5
+        - libkf5texteditor5
+        - libqt5concurrent5
+        - freeglut3
         source: http://download.kde.org/stable/release-service/21.12.1/src/kate-21.12.1.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
