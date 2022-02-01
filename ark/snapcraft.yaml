@@ -39,7 +39,6 @@ parts:
         - libkf5doctools-dev
         - libarchive-dev
         - libbz2-dev
-        - libkf5khtml-dev
         - liblzma-dev
         - libzip-dev
         - zlib1g-dev
