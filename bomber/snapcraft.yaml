@@ -37,7 +37,7 @@ layout:
 parts:
     bomber:
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/21.12.0/src/bomber-21.12.0.tar.xz
+        source: http://download.kde.org/stable/release-service/21.12.1/src/bomber-21.12.1.tar.xz
         build-packages:
         - libkf5doctools-dev
         stage-packages:

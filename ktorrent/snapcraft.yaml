@@ -35,7 +35,7 @@ parts:
         - libgcrypt20
         - libgmp10
         - libgmpxx4ldbl
-        source: https://download.kde.org/stable/release-service/21.12.0/src/libktorrent-21.12.0.tar.xz
+        source: https://download.kde.org/stable/release-service/21.12.1/src/libktorrent-21.12.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -73,7 +73,7 @@ parts:
         - libgeoip1
         - geoip-bin
         - libtag1v5
-        source: http://download.kde.org/stable/release-service/21.12.0/src/ktorrent-21.12.0.tar.xz
+        source: http://download.kde.org/stable/release-service/21.12.1/src/ktorrent-21.12.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
