@@ -71,3 +71,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
+version: 21.12.2
