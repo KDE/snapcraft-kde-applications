@@ -47,7 +47,7 @@ parts:
         - libkf5khtml5
         - libopenbabel6
         - libsm6
-        source: http://download.kde.org/stable/release-service/21.12.1/src/kalzium-21.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/21.12.2/src/kalzium-21.12.2.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -69,4 +69,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 21.12.1
+version: 21.12.2
