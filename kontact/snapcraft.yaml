@@ -104,7 +104,7 @@ parts:
         - korganizer
         - sasl2-bin
         - libsasl2-modules
-        source: http://download.kde.org/stable/release-service/21.12.1/src/kontact-21.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/21.12.2/src/kontact-21.12.2.tar.xz
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"
@@ -126,4 +126,4 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
-version: 21.12.1
+version: 21.12.2
