@@ -68,7 +68,7 @@ parts:
         - libmagic1
         - libgpm2
         - kio-extras
-        source: http://download.kde.org/stable/release-service/21.12.1/src/kdenlive-21.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/21.12.2/src/kdenlive-21.12.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
@@ -80,7 +80,7 @@ parts:
             cd "${SNAPCRAFT_PART_INSTALL}/usr/share/icons/hicolor/scalable/apps"
             gzip -d -c kdenlive.svgz > kdenlive.svg
     kdenlive-launch:
-        source: http://download.kde.org/stable/release-service/21.12.1/src/kdenlive-21.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/21.12.2/src/kdenlive-21.12.2.tar.xz
         plugin: dump
         prime:
         - kdenlive-launch
@@ -101,4 +101,4 @@ parts:
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-version: 21.12.1
+version: 21.12.2
