@@ -58,6 +58,7 @@ parts:
         - frei0r-plugins
         - librttr-core0.9.6
         - libkf5purpose-bin
+        - libpsm-infinipath1
         - melt
         - dvdauthor
         - dvgrab
