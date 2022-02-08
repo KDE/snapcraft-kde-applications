@@ -59,9 +59,7 @@ parts:
         - librttr-core0.9.6
         - libkf5purpose-bin
         - melt
-        - dvdauthor
         - dvgrab
-        - genisoimage
         - recordmydesktop
         - swh-plugins
         - libslang2
