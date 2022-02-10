@@ -137,11 +137,14 @@ parts:
         - libtbb2
         - libwlocate0
         - libshp2
+        - libkf5sane5
+        - libx265-179
         build-packages:
         - bison
         - ccache
         - doxygen
         - g++
+        - libkf5sane-dev
         - libboost-graph-dev
         - libegl1-mesa-dev
         - libeigen3-dev
@@ -160,6 +163,7 @@ parts:
         - libphonon4qt5experimental-dev
         - libshp-dev
         - libwlocate-dev
+        - libx265-dev
         build-environment:
         -   PATH: "/usr/lib/ccache:$PATH"
         -   LD_LIBRARY_PATH: "$SNAPCRAFT_STAGE/usr/lib:$SNAPCRAFT_STAGE/usr/lib/$SNAPCRAFT_ARCH_TRIPLET"
