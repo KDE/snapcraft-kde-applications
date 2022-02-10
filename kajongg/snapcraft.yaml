@@ -1,0 +1,78 @@
+---
+name: kajongg
+confinement: strict
+grade: stable
+base: core20
+adopt-info: kajongg
+apps:
+    kajongg:
+        extensions:
+        - kde-neon
+        common-id: org.kde.kajongg.desktop
+        command: usr/bin/kajongg
+        plugs:
+        - home
+        - network
+        - network-bind
+        - audio-playback
+        - removable-media
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.kde.kajongg
+        bus: session
+package-repositories:
+-   type: apt
+    components:
+    - main
+    suites:
+    - focal
+    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
+    url: http://origin.archive.neon.kde.org/user
+    key-server: keyserver.ubuntu.com
+parts:
+    kajongg:
+        parse-info:
+        - usr/share/metainfo/org.kde.kajongg.appdata.xml
+        plugin: cmake
+        build-packages:
+        - libkf5kmahjongglib-dev
+        - libkf5doctools-dev
+        - python3
+        - python3-twisted
+        stage-packages:
+        - libkf5kmahjongglib5
+        - kdegames-mahjongg-data-kf5
+        - python3
+        - python3-twisted
+        - python3-pyqt5.qtsvg
+        - python3-pyqt5
+        source: http://download.kde.org/stable/release-service/21.12.2/src/kajongg-21.12.2.tar.xz
+        cmake-parameters:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
+        override-build: |
+            snapcraftctl build
+            rm /root/parts/kajongg/install/usr/bin/kajongg
+            cp /root/parts/kajongg/install/usr/share/kajongg/kajongg.py /root/parts/kajongg/install/usr/bin/kajongg
+            rm /root/parts/kajongg/install/usr/bin/kajonggserver
+            cp /root/parts/kajongg/install/usr/share/kajongg/kajonggserver.py /root/parts/kajongg/install/usr/bin/kajonggserver
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+            - "-usr/bin/X11"
+            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+            - "-usr/lib/aspell/*"
+        prime:
+        - "$exclusion"
+version: 21.12.2
