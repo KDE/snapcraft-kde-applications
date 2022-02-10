@@ -16,6 +16,16 @@ apps:
         - network-bind
         - audio-playback
         - removable-media
+    cvsservice:
+        extensions:
+        - kde-neon
+        command: usr/bin/cvsservice5
+        plugs:
+        - home
+        - network
+        - network-bind
+        - audio-playback
+        - removable-media
 slots:
     session-dbus-interface:
         interface: dbus
