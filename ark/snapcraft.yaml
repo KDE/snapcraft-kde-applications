@@ -1,7 +1,7 @@
 ---
 name: ark
 confinement: strict
-grade: devel
+grade: stable
 base: core20
 adopt-info: ark
 apps:
