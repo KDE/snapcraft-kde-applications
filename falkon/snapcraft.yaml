@@ -18,15 +18,12 @@ apps:
         - audio-playback
         - browser-support
         - removable-media
+        - browser-support
+        - camera
+        - audio-record
 layout:
-    "/usr/share/marble":
-        symlink: "$SNAP/usr/share/marble"
     "/usr/share/qt5":
         symlink: "$SNAP/kf5/usr/share/qt5"
-    "/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib":
-        bind: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
-    "/usr/share/alsa":
-        bind: "$SNAP/usr/share/alsa"
 slots:
     session-dbus-interface:
         interface: dbus
