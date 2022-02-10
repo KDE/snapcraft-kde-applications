@@ -19,6 +19,7 @@ apps:
         - network-bind
         - audio-playback
         - removable-media
+        - audio-record
 package-repositories:
 -   type: apt
     components:
