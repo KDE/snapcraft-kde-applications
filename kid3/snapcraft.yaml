@@ -1,0 +1,70 @@
+---
+name: kid3
+confinement: strict
+grade: stable
+base: core20
+adopt-info: kid3
+apps:
+    kid3:
+        extensions:
+        - kde-neon
+        common-id: org.kde.kid3.desktop
+        command: usr/bin/kid3
+        plugs:
+        - home
+        - network
+        - network-bind
+        - audio-playback
+        - removable-media
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.kde.kid3
+        bus: session
+package-repositories:
+-   type: apt
+    components:
+    - main
+    suites:
+    - focal
+    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
+    url: http://origin.archive.neon.kde.org/user
+    key-server: keyserver.ubuntu.com
+parts:
+    kid3:
+        parse-info:
+        - usr/share/metainfo/org.kde.kid3.appdata.xml
+        plugin: cmake
+        build-packages:
+        - libid3-3.8.3-dev
+        - libflac++-dev
+        - libvorbis-dev
+        - libtag1-dev
+        - libchromaprint-dev
+        - libavformat-dev
+        - libavcodec-dev
+        - libreadline-dev
+        - xsltproc
+        - python3
+        source: https://qa.debian.org/watch/sf.php/kid3/kid3-3.9.1.tar.gz
+        cmake-parameters:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+            - "-usr/bin/X11"
+            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+            - "-usr/lib/aspell/*"
+        prime:
+        - "$exclusion"
