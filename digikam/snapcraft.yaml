@@ -129,6 +129,7 @@ parts:
         - libexif12
         - libgphoto2-6
         - libgphoto2-port12
+        - libimage-exiftool-perl
         - libjpeg8
         - libjpeg-turbo8
         - liblensfun1
