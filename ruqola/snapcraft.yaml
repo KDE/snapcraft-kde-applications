@@ -38,6 +38,8 @@ parts:
         build-packages:
         - kuserfeedback-dev
         - qt5keychain-dev
+        - libqt5networkauth5-dev
+        - libkf5doctools-dev
         source: http://download.kde.org/stable/ruqola/ruqola-1.6.3.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"

@@ -46,6 +46,7 @@ parts:
         - libreadline-dev
         - xsltproc
         - python3
+        - libkf5doctools-dev
         source: https://qa.debian.org/watch/sf.php/kid3/kid3-3.9.1.tar.gz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
