@@ -30,7 +30,7 @@ parts:
         parse-info:
         - usr/share/metainfo/org.kde.gcompris.appdata.xml
         plugin: cmake
-        source: https://gcompris.net/download/qt/src/gcompris-qt-2.1.tar.xz
+        source: https://gcompris.net/download/qt/src/gcompris-qt-2.2.tar.xz
         build-packages:
         - build-essential
         - qt5-default
