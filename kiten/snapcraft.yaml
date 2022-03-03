@@ -40,7 +40,7 @@ parts:
         stage-packages:
         - imagemagick
         - libkf5khtml5
-        source: http://download.kde.org/stable/release-service/21.12.2/src/kiten-21.12.2.tar.xz
+        source: http://download.kde.org/stable/release-service/21.12.3/src/kiten-21.12.3.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -62,4 +62,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 21.12.2
+version: 21.12.3
