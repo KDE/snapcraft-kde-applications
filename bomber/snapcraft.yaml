@@ -37,7 +37,7 @@ layout:
 parts:
     bomber:
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/21.12.2/src/bomber-21.12.2.tar.xz
+        source: http://download.kde.org/stable/release-service/21.12.3/src/bomber-21.12.3.tar.xz
         build-packages:
         - libkf5doctools-dev
         stage-packages:
@@ -67,4 +67,4 @@ parts:
         prime:
         - "$exclusion"
         - "-etc/alsa/conf.d/99-pulse.conf"
-version: 21.12.2
+version: 21.12.3
