@@ -35,25 +35,7 @@ parts:
         - libkf5doctools-dev
         stage-packages:
         - libkf5sane5
-        source: http://download.kde.org/stable/release-service/21.12.1/src/kolourpaint-21.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/21.12.2/src/kolourpaint-21.12.2.tar.xz
         cmake-parameters:
-        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DENABLE_TESTING=OFF"
-        - "-DBUILD_TESTING=OFF"
-        - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
-        filesets:
-            exclusion:
-            - "-usr/lib/*/cmake/*"
-            - "-usr/include/*"
-            - "-usr/share/ECM/*"
-            - "-usr/share/doc/*"
-            - "-usr/share/man/*"
-            - "-usr/share/icons/breeze-dark*"
-            - "-usr/bin/X11"
-            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
-            - "-usr/lib/aspell/*"
-        prime:
-        - "$exclusion"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-91-qt-5-15-3-core20-sdk/current"
