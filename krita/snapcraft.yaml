@@ -3,7 +3,6 @@ grade: stable
 adopt-info: krita
 base: core20
 confinement: strict
-compression: lzo
 
 apps:
   krita:
@@ -51,11 +50,6 @@ parts:
     plugin: cmake
     cmake-parameters:
       - "-DCMAKE_INSTALL_PREFIX=/usr"
-      - "-DCMAKE_BUILD_TYPE=Release"
-      - "-DENABLE_TESTING=OFF"
-      - "-DBUILD_TESTING=OFF"
-      - "-DHIDE_SAFE_ASSERTS=OFF"
-      - "-DKDE_SKIP_TEST_SETTINGS=ON"
     build-packages:
       - libboost-dev
       - libboost-system-dev
@@ -111,7 +105,7 @@ parts:
   qtctl:
     source: https://github.com/snapcrafters/qtctl.git
     plugin: cmake
-    build-snaps: [kde-frameworks-5-qt-5-15-3-core20-sdk]
+    build-snaps: [kde-frameworks-5-91-qt-5-15-3-core20-sdk]
 
   # This part removes all the files in this snap which already exist in
   # connected content and base snaps. Since these files will be available
@@ -126,9 +120,9 @@ parts:
     plugin: nil
     build-snaps:  # List all content-snaps and base snaps you're using here
       - core20
-      - kde-frameworks-5-qt-5-15-3-core20-sdk
+      - kde-frameworks-5-91-qt-5-15-3-core20-sdk
     override-prime: |
       set -eux
-      for snap in "core20" "kde-frameworks-5-qt-5-15-3-core20-sdk"; do  # List all content-snaps and base snaps you're using here
+      for snap in "core20" "kde-frameworks-5-91-qt-5-15-3-core20-sdk"; do  # List all content-snaps and base snaps you're using here
         cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" \;
       done
