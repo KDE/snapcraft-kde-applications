@@ -35,27 +35,10 @@ parts:
         - libgcrypt20
         - libgmp10
         - libgmpxx4ldbl
-        source: https://download.kde.org/stable/release-service/21.12.1/src/libktorrent-21.12.1.tar.xz
+        source: https://download.kde.org/stable/release-service/21.12.2/src/libktorrent-21.12.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DENABLE_TESTING=OFF"
-        - "-DBUILD_TESTING=OFF"
-        - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
-        filesets:
-            exclusion:
-            - "-usr/lib/*/cmake/*"
-            - "-usr/include/*"
-            - "-usr/share/ECM/*"
-            - "-usr/share/doc/*"
-            - "-usr/share/man/*"
-            - "-usr/share/icons/breeze-dark*"
-            - "-usr/bin/X11"
-            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
-            - "-usr/lib/aspell/*"
-        prime:
-        - "$exclusion"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-91-qt-5-15-3-core20-sdk/current"
     ktorrent:
         after:
         - libktorrent
@@ -73,26 +56,9 @@ parts:
         - libgeoip1
         - geoip-bin
         - libtag1v5
-        source: http://download.kde.org/stable/release-service/21.12.1/src/ktorrent-21.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/21.12.2/src/ktorrent-21.12.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DENABLE_TESTING=OFF"
-        - "-DBUILD_TESTING=OFF"
-        - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-91-qt-5-15-3-core20-sdk/current"
         parse-info:
         - usr/share/metainfo/org.kde.ktorrent.appdata.xml
-        filesets:
-            exclusion:
-            - "-usr/lib/*/cmake/*"
-            - "-usr/include/*"
-            - "-usr/share/ECM/*"
-            - "-usr/share/doc/*"
-            - "-usr/share/man/*"
-            - "-usr/share/icons/breeze-dark*"
-            - "-usr/bin/X11"
-            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
-            - "-usr/lib/aspell/*"
-        prime:
-        - "$exclusion"
