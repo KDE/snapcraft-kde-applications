@@ -40,7 +40,7 @@ parts:
         - qt5keychain-dev
         - libqt5networkauth5-dev
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/ruqola/ruqola-1.6.3.tar.xz
+        source: http://download.kde.org/stable/ruqola/ruqola-1.7.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -62,4 +62,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 1.6.3
+version: 1.7.0
