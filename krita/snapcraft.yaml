@@ -1,128 +1,111 @@
+---
 name: krita
 grade: stable
 adopt-info: krita
 base: core20
 confinement: strict
-
 apps:
-  krita:
-    common-id: org.kde.krita
-    command: usr/bin/krita
-    extensions:
-      - kde-neon
-    plugs:
-      - home
-      - network
-      - network-bind
-      - removable-media
-      - audio-playback
-
+    krita:
+        common-id: org.kde.krita
+        command: usr/bin/krita
+        extensions:
+        - kde-neon
+        plugs:
+        - home
+        - network
+        - network-bind
+        - removable-media
+        - audio-playback
 layout:
-  /usr/bin/ffmpeg:
-    bind-file: $SNAP/usr/bin/ffmpeg
-
+    "/usr/bin/ffmpeg":
+        bind-file: "$SNAP/usr/bin/ffmpeg"
 parts:
-  libheif:
-    plugin: autotools
-    source: https://github.com/strukturag/libheif.git
-    source-tag: v1.7.0
-    build-packages:
-      - libde265-dev
-      - pkg-config
-      - g++
-      - libx265-dev
-      - libjpeg8-dev
-      - libpng-dev
-    stage-packages:
-      - libde265-0
-      - libx265-179
-      - libjpeg8
-      - libpng16-16
-
-  krita:
-    after:
-      - libheif
-    source: https://download.kde.org/stable/krita/5.0.2/krita-5.0.2.tar.xz
-    # # Use these instead to build from the git source
-    # source: https://anongit.kde.org/krita.git
-    # source-type: git
-    # source-branch: master  
-    plugin: cmake
-    cmake-parameters:
-      - "-DCMAKE_INSTALL_PREFIX=/usr"
-    build-packages:
-      - libboost-dev
-      - libboost-system-dev
-      - libeigen3-dev
-      - libfftw3-dev
-      - libgif-dev
-      - libglew-dev
-      - libgsf-1-dev
-      - libgsl-dev
-      - libjpeg-dev  # This is part of the sdk, but the build crashes if not included..
-      - libopencolorio-dev
-      - libopenexr-dev
-      - libopenimageio-dev
-      - libopenjp2-7-dev
-      - libquazip5-dev
-      - libraw-dev
-      - libtiff-dev
-      - libvc-dev
-      - libx11-dev
-      - libxi-dev
-      - vc-dev
-      - libmypaint-dev
-    parse-info: [usr/share/metainfo/org.kde.krita.appdata.xml]
-    stage-packages:
-      - freeglut3 
-      - libboost-system1.71.0
-      - libfftw3-double3
-      - libgif7
-      - libgsl23
-      - libgslcblas0
-      - libilmbase24
-      - libopencolorio1v5
-      - libopenexr24
-      - libquazip5-1
-      - libraw19
-      - libtinyxml2.6.2v5
-      - libxi6
-      - libyaml-cpp0.6
-      - zlib1g
-      - libmypaint-1.5-1
-      # Required for rendering animations
-      - ffmpeg
-      - libglu1-mesa
-      - libslang2
-    prime:
-      - "-usr/share/fonts/*"
-      # libquazip5-1 pulls in Qt5 from bionic as a dependency. We don't
-      # want it in our snap, however, because we get a newer Qt5 from the
-      # kde-kf5 platform snap.
-      - "-usr/lib/x86_64-linux-gnu/libQt5*"
-      - "-usr/lib/x86_64-linux-gnu/libqt5*"
-
-  qtctl:
-    source: https://github.com/snapcrafters/qtctl.git
-    plugin: cmake
-    build-snaps: [kde-frameworks-5-91-qt-5-15-3-core20-sdk]
-
-  # This part removes all the files in this snap which already exist in
-  # connected content and base snaps. Since these files will be available
-  # at runtime from the content and base snaps, they do not need to be
-  # included in this snap itself.
-  #
-  # More info: https://snapcraft-utils-library.readthedocs.io/en/latest/lib/cleanup.html 
-  #
-  cleanup:
-    after:  # Make this part run last; list all your other parts here
-      - krita
-    plugin: nil
-    build-snaps:  # List all content-snaps and base snaps you're using here
-      - core20
-      - kde-frameworks-5-91-qt-5-15-3-core20-sdk
-    override-prime: |
-      set -eux
-      for snap in "core20" "kde-frameworks-5-91-qt-5-15-3-core20-sdk"; do  # List all content-snaps and base snaps you're using here
-        cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" \;
-      done
+    libheif:
+        plugin: autotools
+        source: https://github.com/strukturag/libheif.git
+        source-tag: v1.7.0
+        build-packages:
+        - libde265-dev
+        - pkg-config
+        - g++
+        - libx265-dev
+        - libjpeg8-dev
+        - libpng-dev
+        stage-packages:
+        - libde265-0
+        - libx265-179
+        - libjpeg8
+        - libpng16-16
+    krita:
+        after:
+        - libheif
+        source: http://download.kde.org/stable/krita/5.0.5/krita-5.0.5.tar.gz
+        plugin: cmake
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        build-packages:
+        - libboost-dev
+        - libboost-system-dev
+        - libeigen3-dev
+        - libfftw3-dev
+        - libgif-dev
+        - libglew-dev
+        - libgsf-1-dev
+        - libgsl-dev
+        - libjpeg-dev
+        - libopencolorio-dev
+        - libopenexr-dev
+        - libopenimageio-dev
+        - libopenjp2-7-dev
+        - libquazip5-dev
+        - libraw-dev
+        - libtiff-dev
+        - libvc-dev
+        - libx11-dev
+        - libxi-dev
+        - vc-dev
+        - libmypaint-dev
+        parse-info:
+        - usr/share/metainfo/org.kde.krita.appdata.xml
+        stage-packages:
+        - freeglut3
+        - libboost-system1.71.0
+        - libfftw3-double3
+        - libgif7
+        - libgsl23
+        - libgslcblas0
+        - libilmbase24
+        - libopencolorio1v5
+        - libopenexr24
+        - libquazip5-1
+        - libraw19
+        - libtinyxml2.6.2v5
+        - libxi6
+        - libyaml-cpp0.6
+        - zlib1g
+        - libmypaint-1.5-1
+        - ffmpeg
+        - libglu1-mesa
+        - libslang2
+        prime:
+        - "-usr/share/fonts/*"
+        - "-usr/lib/x86_64-linux-gnu/libQt5*"
+        - "-usr/lib/x86_64-linux-gnu/libqt5*"
+    qtctl:
+        source: https://github.com/snapcrafters/qtctl.git
+        plugin: cmake
+        build-snaps:
+        - kde-frameworks-5-91-qt-5-15-3-core20-sdk
+    cleanup:
+        after:
+        - krita
+        plugin: nil
+        build-snaps:
+        - core20
+        - kde-frameworks-5-91-qt-5-15-3-core20-sdk
+        override-prime: |
+            set -eux
+            for snap in "core20" "kde-frameworks-5-91-qt-5-15-3-core20-sdk"; do  # List all content-snaps and base snaps you're using here
+              cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" \;
+            done
+version: 5.0.5
