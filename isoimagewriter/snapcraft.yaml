@@ -1,0 +1,31 @@
+---
+name: isoimagewriter
+base: core20
+adopt-info: isoimagewriter
+grade: stable
+confinement: strict
+version: 0.9
+apps:
+    neochat:
+        extensions:
+        - kde-neon
+        command: usr/bin/isoimagewriter
+        common-id: org.kde.isoimagewriter
+        plugs:
+        - home
+        - audio-playback
+        - network
+        - raw-usb
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.kde.isoimagewriter
+        bus: session
+parts:
+    isoimagewriter:
+        source: https://download.kde.org/unstable/isoimagewriter/0.9/isoimagewriter-0.9.tar.xz
+        plugin: cmake
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        parse-info:
+        - usr/share/metainfo/org.kde.neochat.appdata.xml
