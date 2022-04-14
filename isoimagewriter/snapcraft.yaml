@@ -4,9 +4,9 @@ base: core20
 adopt-info: isoimagewriter
 grade: stable
 confinement: strict
-version: 0.9
+version: '0.9'
 apps:
-    neochat:
+    isoimagewriter:
         extensions:
         - kde-neon
         command: usr/bin/isoimagewriter
@@ -28,4 +28,4 @@ parts:
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         parse-info:
-        - usr/share/metainfo/org.kde.neochat.appdata.xml
+        - usr/share/metainfo/org.kde.isoimagewriter.appdata.xml
