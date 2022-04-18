@@ -56,9 +56,10 @@ parts:
         - libgeoip1
         - geoip-bin
         - libtag1v5
-        source: http://download.kde.org/stable/release-service/21.12.2/src/ktorrent-21.12.2.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.0/src/ktorrent-22.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-91-qt-5-15-3-core20-sdk/current"
         parse-info:
         - usr/share/metainfo/org.kde.ktorrent.appdata.xml
+version: 22.04.0
