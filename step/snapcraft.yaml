@@ -46,7 +46,7 @@ parts:
         - libgslcblas0
         - libkf5khtml5
         - libqalculate20
-        source: http://download.kde.org/stable/release-service/21.12.3/src/step-21.12.3.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.0/src/step-22.04.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -70,4 +70,4 @@ parts:
         - "$exclusion"
         parse-info:
         - usr/share/metainfo/org.kde.step.appdata.xml
-version: 21.12.3
+version: 22.04.0
