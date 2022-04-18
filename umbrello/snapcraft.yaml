@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core20
 adopt-info: umbrello
-version: 21.12.2
+version: 22.04.0
 apps:
     umbrello:
         extensions:
@@ -43,7 +43,7 @@ parts:
         - libboost1.71-dev
         - libxml2
         - libxslt1.1
-        source: http://download.kde.org/stable/release-service/21.12.2/src/umbrello-21.12.2.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.0/src/umbrello-22.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-91-qt-5-15-3-core20-sdk/current"
