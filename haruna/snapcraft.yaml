@@ -75,7 +75,7 @@ parts:
         - libxinerama1
         - libzmq5
         - samba-libs
-        source: https://download.kde.org/stable/haruna/haruna-0.7.2.tar.xz
+        source: https://download.kde.org/stable/haruna/haruna-0.8.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -97,3 +97,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
+version: 0.8.0
