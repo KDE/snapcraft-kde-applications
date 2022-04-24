@@ -111,7 +111,7 @@ parts:
         - kquickimageeditor
         - kiconthemes
         - extra-cmake-modules
-        source: http://download.kde.org/stable/plasma-mobile/22.02/neochat-22.02.tar.xz
+        source: http://download.kde.org/stable/plasma-mobile/22.04/neochat-22.04.tar.xz
         plugin: cmake
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -122,4 +122,4 @@ parts:
         - libcmark-dev
         parse-info:
         - usr/share/metainfo/org.kde.neochat.appdata.xml
-version: '22.02'
+version: '22.04'
