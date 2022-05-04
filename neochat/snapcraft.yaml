@@ -59,7 +59,7 @@ parts:
         - "-DBUILD_TESTING=OFF"
     kirigami:
         source: https://invent.kde.org/frameworks/kirigami.git
-        source-tag: v5.88.0
+        source-tag: v5.91.0
         source-depth: 0
         plugin: cmake
         cmake-parameters:
