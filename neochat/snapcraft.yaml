@@ -111,6 +111,7 @@ parts:
         - kquickimageeditor
         - kiconthemes
         - extra-cmake-modules
+        - qcoro-qt5-dev
         source: http://download.kde.org/stable/plasma-mobile/22.04/neochat-22.04.tar.xz
         plugin: cmake
         cmake-parameters:
