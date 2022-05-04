@@ -28,7 +28,7 @@ slots:
 parts:
     extra-cmake-modules:
         source: https://invent.kde.org/frameworks/extra-cmake-modules.git
-        source-tag: v5.88.0
+        source-tag: v5.91.0
         source-depth: 0
         plugin: cmake
         cmake-parameters:
@@ -70,7 +70,7 @@ parts:
         - "-*"
     kiconthemes:
         source: https://invent.kde.org/frameworks/kiconthemes.git
-        source-tag: v5.88.0
+        source-tag: v5.91.0
         source-depth: 0
         plugin: cmake
         cmake-parameters:
@@ -83,7 +83,7 @@ parts:
         - kirigami
         - kiconthemes
         source: https://invent.kde.org/frameworks/qqc2-desktop-style.git
-        source-tag: v5.88.0
+        source-tag: v5.91.0
         source-depth: 0
         plugin: cmake
         build-packages:
@@ -92,7 +92,7 @@ parts:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DBUILD_TESTING=OFF"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-91-qt-5-15-3-core20-sdk/current"
         - "-DCMAKE_PREFIX_PATH=$SNAPCRAFT_STAGE:/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/cmake/KF5Kirigami2:/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/cmake/KIconThemes"
     kquickimageeditor:
         source: https://download.kde.org/stable/kquickimageeditor/0.1/kquickimageeditor-0.1.3.tar.xz

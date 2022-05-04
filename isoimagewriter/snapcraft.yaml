@@ -23,9 +23,10 @@ slots:
         bus: session
 parts:
     isoimagewriter:
-        source: https://download.kde.org/unstable/isoimagewriter/0.9/isoimagewriter-0.9.tar.xz
+        source: https://invent.kde.org/utilities/isoimagewriter.git
         plugin: cmake
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DUSE_KAUTH=off"
         parse-info:
         - usr/share/metainfo/org.kde.isoimagewriter.appdata.xml
