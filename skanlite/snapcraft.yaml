@@ -53,7 +53,7 @@ parts:
         plugin: cmake
         build-packages:
         - libpng-dev
-        source: http://download.kde.org/stable/release-service/22.04.0/src/skanlite-22.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.1/src/skanlite-22.04.1.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -62,4 +62,4 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
-version: 22.04.0
+version: 22.04.1
