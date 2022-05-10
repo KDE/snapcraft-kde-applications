@@ -61,7 +61,7 @@ parts:
         stage-packages:
         - libncurses6
         - libreadline8
-        source: http://download.kde.org/stable/release-service/22.04.0/src/kalgebra-22.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.1/src/kalgebra-22.04.1.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -83,4 +83,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.04.0
+version: 22.04.1
