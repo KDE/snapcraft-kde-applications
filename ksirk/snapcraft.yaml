@@ -51,7 +51,7 @@ parts:
         - libqca-qt5-2
         - libasound2-data
         - libasound2-plugins
-        source: http://download.kde.org/stable/release-service/22.04.0/src/ksirk-22.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.1/src/ksirk-22.04.1.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -73,4 +73,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.04.0
+version: 22.04.1
