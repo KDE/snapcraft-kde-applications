@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core20
 adopt-info: artikulate
-version: 22.04.0
+version: 22.04.1
 apps:
     artikulate:
         extensions:
@@ -48,7 +48,7 @@ parts:
         - qml-module-org-kde-kirigami2
         - qml-module-org-kde-kquickcontrolsaddons
         - qml-module-qtqml-models2
-        source: http://download.kde.org/stable/release-service/22.04.0/src/artikulate-22.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.1/src/artikulate-22.04.1.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
