@@ -1,6 +1,6 @@
 ---
 name: minuet
-version: 22.04.0
+version: 22.04.1
 confinement: strict
 grade: stable
 base: core20
@@ -42,7 +42,7 @@ parts:
         - libdrumstick-file1
         - libdrumstick-rt1
         - libfluidsynth2
-        source: http://download.kde.org/stable/release-service/22.04.0/src/minuet-22.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.1/src/minuet-22.04.1.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
