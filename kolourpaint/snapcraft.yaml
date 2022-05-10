@@ -35,8 +35,8 @@ parts:
         - libkf5doctools-dev
         stage-packages:
         - libkf5sane5
-        source: http://download.kde.org/stable/release-service/22.04.0/src/kolourpaint-22.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.1/src/kolourpaint-22.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-91-qt-5-15-3-core20-sdk/current"
-version: 22.04.0
+version: 22.04.1
