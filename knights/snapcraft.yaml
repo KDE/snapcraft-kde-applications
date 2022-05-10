@@ -41,7 +41,7 @@ parts:
         parse-info:
         - usr/share/metainfo/org.kde.knights.appdata.xml
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/22.04.0/src/knights-22.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.1/src/knights-22.04.1.tar.xz
         build-packages:
         - libkf5doctools-dev
         - libqt5texttospeech5-dev
@@ -75,4 +75,4 @@ parts:
         prime:
         - "$exclusion"
         - "-etc/alsa/conf.d/99-pulse.conf"
-version: 22.04.0
+version: 22.04.1
