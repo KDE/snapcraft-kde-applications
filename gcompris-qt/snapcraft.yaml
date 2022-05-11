@@ -49,6 +49,7 @@ parts:
         - qml-module-box2d
         stage-packages:
         - libqt5multimedia5-plugins
+        - qt5-image-formats-plugins
         - qml-module-qtgraphicaleffects
         - qml-module-qtmultimedia
         - qml-module-qtquick-controls
