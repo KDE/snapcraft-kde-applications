@@ -1,6 +1,6 @@
 ---
 name: labplot
-version: 2.8.2
+version: 2.9.0
 confinement: strict
 grade: stable
 base: core20
@@ -128,7 +128,7 @@ parts:
         - libtiff5
         - libwebp6
         - libwind0-heimdal
-        source: https://download.kde.org/stable/labplot/2.8.2/labplot-2.8.2.tar.xz
+        source: https://download.kde.org/stable/labplot/2.9.0/labplot-2.9.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
