@@ -43,7 +43,7 @@ parts:
         - libkimageannotator-dev
         - libkf5kipi-dev
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/22.04.1/src/spectacle-22.04.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.2/src/spectacle-22.04.2.tar.xz
         override-stage: |
             snapcraftctl stage
             rm $SNAPCRAFT_STAGE/usr/share/kglobalaccel/org.kde.spectacle.desktop
@@ -79,4 +79,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.04.1
+version: 22.04.2
