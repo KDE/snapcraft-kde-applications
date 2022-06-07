@@ -1,7 +1,7 @@
 ---
 name: kdevelop
 confinement: classic
-version: 22.04.1
+version: 22.04.2
 grade: stable
 base: core20
 adopt-info: kdevelop
@@ -105,7 +105,7 @@ parts:
         - freeglut3
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
-        source: http://download.kde.org/stable/release-service/22.04.1/src/kdevelop-22.04.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.2/src/kdevelop-22.04.2.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
