@@ -45,8 +45,8 @@ parts:
         - "-etc/alsa/conf.d/99-pulse.conf"
         parse-info:
         - usr/share/metainfo/org.kde.kblocks.appdata.xml
-        source: http://download.kde.org/stable/release-service/22.04.1/src/kblocks-22.04.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.2/src/kblocks-22.04.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-qt-5-15-3-core20-sdk/current"
-version: 22.04.1
+version: 22.04.2
