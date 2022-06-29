@@ -39,7 +39,7 @@ parts:
     krita:
         after:
         - libheif
-        source: http://download.kde.org/stable/krita/5.0.6/krita-5.0.6.tar.gz
+        source: http://download.kde.org/stable/krita/5.0.8/krita-5.0.8.tar.gz
         plugin: cmake
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -108,4 +108,4 @@ parts:
             for snap in "core20" "kde-frameworks-5-91-qt-5-15-3-core20-sdk"; do  # List all content-snaps and base snaps you're using here
               cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" \;
             done
-version: 5.0.6
+version: 5.0.8
