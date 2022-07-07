@@ -37,7 +37,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/22.04.2/src/kmag-22.04.2.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.3/src/kmag-22.04.3.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -59,4 +59,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.04.2
+version: 22.04.3
