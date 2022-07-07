@@ -54,9 +54,9 @@ parts:
         - libcfitsio8
         - libkf5purpose5
         - libkf5purpose-bin
-        source: http://download.kde.org/stable/release-service/22.04.2/src/gwenview-22.04.2.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.3/src/gwenview-22.04.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-91-qt-5-15-3-core20-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/x86_64-linux-gnu/qt5/plugins/"
-version: 22.04.2
+version: 22.04.3
