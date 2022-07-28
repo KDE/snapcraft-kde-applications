@@ -1,0 +1,420 @@
+# This pipeline needs two secret variables:
+#
+# LAUNCHPAD_CREDENTIALS: 
+#   Type: File
+#   Source: Local snapcraft installation, @ ~/.local/share/snapcraft/provider/launchpad/credentials
+#   You need to execute snapcraft remote-build once one your computer and log in with
+#   the desired Launchpad user. Afterwards, copy the credentials.
+#   See https://snapcraft.io/docs/remote-build
+# SNAPCRAFT_STORE_CREDENTIALS:
+#   Type: Variable
+#   Source: https://snapcraft.io/docs/snapcraft-authentication
+
+# These are default values; you can overwrite them for each snap by specifying 
+# those variables in the job itself.
+# For example, you might want to build every snap on amd64, but some snaps also on arm64.
+variables:
+  # Restrict building for pushes to this branch
+  ON_BRANCH: Neon/release 
+  # Build architectures as a comma-separated list, e.g. amd64,arm64,armhf
+  BUILD_ON: amd64 
+  # Release to these channels after building. Provide as a comma-separated list, e.g. beta, edge
+  # For testing purposes, you can push to snap branches. Syntax: edge/${branch_name}, e.g. edge/icon-fix
+  RELEASE_TO: candidate
+
+# Use this template by extending it.
+#
+# By default, it builds if some file in its directory has changed.
+# The directory from which a snap is built is either given by the job's name, e.g. 'kteatime', 
+# or explicitly via the variable DIR.
+# If the directory name matches the job name, you don't need to specify DIR.
+#
+# You can overwrite all variables, as shown above, by adding a 'variables' dict to the job.
+# See the examples below for common use cases.
+.snap:
+  image: mfederle/snap-builder:latest
+  stage: build
+  rules:
+    - if: $DIR == null && $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $ON_BRANCH
+      changes:
+        - "$CI_JOB_NAME/**/*"
+    - if: $DIR != null && $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $ON_BRANCH
+      changes:
+        - "$DIR/**/*"
+  before_script: 
+    - mkdir -p  ~/.local/share/snapcraft/provider/launchpad
+    - mv "$LAUNCHPAD_CREDENTIALS" ~/.local/share/snapcraft/provider/launchpad/credentials
+    - git config --global user.email "ci@invent.kde.org"
+    - git config --global user.name "KDE Invent CI"
+    - snap_dir="${DIR:-"$CI_JOB_NAME"}"
+    - cd "$snap_dir"    
+  script:
+    - shopt -s nullglob
+    - snap_name="$(yq '.name' snapcraft.yaml)"
+    - snapcraft remote-build --launchpad-accept-public-upload --build-on="$BUILD_ON"
+    - for log in "$snap_name"_*.txt; do cat "$log"; done 
+    - architectures=("${BUILD_ON/,/ }")
+    - snaps=("$snap_name"*.snap)
+    - if [ ${#architectures[@]} != ${#snaps[@]} ]; then exit 1; fi
+    - for snap in *.snap; do snapcraft upload --release="$RELEASE_TO" "$snap"; done
+
+# Use this template to build snaps with new content/sdk-snaps before the extension
+# gets updated and shipped in a stable snapcraft release.
+.prepone-extension-update:
+  extends: .snap
+  script:
+    - snapcraft expand-extensions > snapcraft-expanded.yaml
+    - mv snapcraft-expanded.yaml snapcraft.yaml
+    - sed -i -e 's|kde-frameworks-.*-core20|kde-frameworks-5-96-qt-5-15-5-core20|g' snapcraft.yaml
+    - sed -i -e 's|$SNAPCRAFT_EXTENSIONS_DIR/desktop|desktop|' snapcraft.yaml
+    - cp -r /snap/snapcraft/current/share/snapcraft/extensions/desktop .
+    - !reference [.snap, script]
+
+# Examples
+
+.example-snap: # Build the snap in the directory '.example-snap'
+  extends: .snap # Use the .snap template
+  variables: # Overwrite some global defaults
+    BUILD_ON: arm64,armhf # Build on arm64 and armhf, but do not build on amd64
+    RELEASE_TO: edge # Release to edge
+
+.example-snap:amd64:
+  extends: .snap
+  variables:
+    BUILD_ON: amd64 # Only build on amd64
+    DIR: path/to/some-other-dir # Build from the directory 'path/to/some-other-dir'
+
+# The snaps
+
+akregator:
+  extends: .prepone-extension-update
+
+ark:
+  extends: .prepone-extension-update
+
+artikulate:
+  extends: .prepone-extension-update
+
+blinken:
+  extends: .prepone-extension-update
+
+bomber:
+  extends: .prepone-extension-update
+
+bovo:
+  extends: .prepone-extension-update
+
+calligra:
+  extends: .prepone-extension-update
+
+calligraplan:
+  extends: .prepone-extension-update
+
+cantor:
+  extends: .prepone-extension-update
+
+cervisia:
+  extends: .prepone-extension-update
+
+digikam:
+  extends: .prepone-extension-update
+
+dolphin:
+  extends: .prepone-extension-update
+
+dragon:
+  extends: .prepone-extension-update
+
+elisa:
+  extends: .prepone-extension-update
+
+falkon:
+  extends: .prepone-extension-update
+
+gcompris-qt:
+  extends: .prepone-extension-update
+
+gwenview:
+  extends: .prepone-extension-update
+
+haruna:
+  extends: .prepone-extension-update
+
+isoimagewriter:
+  extends: .prepone-extension-update
+
+kajongg:
+  extends: .prepone-extension-update
+
+kalarm:
+  extends: .prepone-extension-update
+
+kalgebra:
+  extends: .prepone-extension-update
+
+kalzium:
+  extends: .prepone-extension-update
+
+kanagram:
+  extends: .prepone-extension-update
+
+kapman:
+  extends: .prepone-extension-update
+
+kate:
+  extends: .prepone-extension-update
+
+katomic:
+  extends: .prepone-extension-update
+
+kblackbox:
+  extends: .prepone-extension-update
+
+kblocks:
+  extends: .prepone-extension-update
+
+kbounce:
+  extends: .prepone-extension-update
+
+kbreakout:
+  extends: .prepone-extension-update
+
+kbruch:
+  extends: .prepone-extension-update
+
+kcalc:
+  extends: .prepone-extension-update
+
+kcolorchooser:
+  extends: .prepone-extension-update
+
+kdenlive:
+  extends: .prepone-extension-update
+
+kdevelop:
+  extends: .prepone-extension-update
+
+kdf:
+  extends: .prepone-extension-update
+
+kdiamond:
+  extends: .prepone-extension-update
+
+kfourinline:
+  extends: .prepone-extension-update
+
+kgeography:
+  extends: .prepone-extension-update
+
+kgeotag:
+  extends: .prepone-extension-update
+
+kgoldrunner:
+  extends: .prepone-extension-update
+
+kgraphviewer:
+  extends: .prepone-extension-update
+
+kid3:
+  extends: .prepone-extension-update
+
+kig:
+  extends: .prepone-extension-update
+
+kigo:
+  extends: .prepone-extension-update
+
+killbots:
+  extends: .prepone-extension-update
+
+kiriki:
+  extends: .prepone-extension-update
+
+kiten:
+  extends: .prepone-extension-update
+
+kjumpingcube:
+  extends: .prepone-extension-update
+
+klettres:
+  extends: .prepone-extension-update
+
+klickety:
+  extends: .prepone-extension-update
+
+klines:
+  extends: .prepone-extension-update
+
+kmag:
+  extends: .prepone-extension-update
+
+kmahjongg:
+  extends: .prepone-extension-update
+
+kmines:
+  extends: .prepone-extension-update
+
+kmousetool:
+  extends: .prepone-extension-update
+
+kmplot:
+  extends: .prepone-extension-update
+
+knavalbattle:
+  extends: .prepone-extension-update
+
+knetwalk:
+  extends: .prepone-extension-update
+
+knights:
+  extends: .prepone-extension-update
+
+kollision:
+  extends: .prepone-extension-update
+
+kolourpaint:
+  extends: .prepone-extension-update
+
+kompare:
+  extends: .prepone-extension-update
+
+konqueror:
+  extends: .prepone-extension-update
+
+konquest:
+  extends: .prepone-extension-update
+
+kontact:
+  extends: .prepone-extension-update
+
+konversation:
+  extends: .prepone-extension-update
+
+kpat:
+  extends: .prepone-extension-update
+
+krdc:
+  extends: .prepone-extension-update
+
+kreversi:
+  extends: .prepone-extension-update
+
+krita:
+  extends: .prepone-extension-update
+
+kronometer:
+  extends: .prepone-extension-update
+
+kruler:
+  extends: .prepone-extension-update
+
+kshisen:
+  extends: .prepone-extension-update
+
+ksirk:
+  extends: .prepone-extension-update
+
+ksnakeduel:
+  extends: .prepone-extension-update
+
+kspaceduel:
+  extends: .prepone-extension-update
+
+ksquares:
+  extends: .prepone-extension-update
+
+kstars:
+  extends: .prepone-extension-update
+
+ksudoku:
+  extends: .prepone-extension-update
+
+kteatime:
+  extends: .prepone-extension-update
+
+ktimer:
+  extends: .prepone-extension-update
+
+ktorrent:
+  extends: .prepone-extension-update
+
+ktouch:
+  extends: .prepone-extension-update
+
+ktuberling:
+  extends: .prepone-extension-update
+
+kturtle:
+  extends: .prepone-extension-update
+
+kubrick:
+  extends: .prepone-extension-update
+
+kwordquiz:
+  extends: .prepone-extension-update
+
+labplot:
+  extends: .prepone-extension-update
+
+lokalize:
+  extends: .prepone-extension-update
+
+massif-visualizer:
+  extends: .prepone-extension-update
+
+minuet:
+  extends: .prepone-extension-update
+
+neochat:
+  extends: .prepone-extension-update
+
+neon_ci_build.rb:
+  extends: .prepone-extension-update
+
+okteta:
+  extends: .prepone-extension-update
+
+okular:
+  extends: .prepone-extension-update
+
+palapeli:
+  extends: .prepone-extension-update
+
+parley:
+  extends: .prepone-extension-update
+
+peruse:
+  extends: .prepone-extension-update
+
+picmi:
+  extends: .prepone-extension-update
+
+quassel:
+  extends: .prepone-extension-update
+
+rocs:
+  extends: .prepone-extension-update
+
+ruqola:
+  extends: .prepone-extension-update
+
+skanlite:
+  extends: .prepone-extension-update
+
+skrooge:
+  extends: .prepone-extension-update
+
+spectacle:
+  extends: .prepone-extension-update
+
+step:
+  extends: .prepone-extension-update
+
+subtitlecomposer:
+  extends: .prepone-extension-update
+
+symboleditor:
+  extends: .prepone-extension-update
+
+umbrello:
+  extends: .prepone-extension-update
