@@ -95,6 +95,12 @@ variables:
 
 # The snaps
 
+kde-frameworks-5-96-qt-5-15-5-core20:
+  extends: .prepone-extension-update
+
+kde-frameworks-5-96-qt-5-15-5-core20-sdk:
+  extends: .prepone-extension-update
+
 akregator:
   extends: .prepone-extension-update
 
