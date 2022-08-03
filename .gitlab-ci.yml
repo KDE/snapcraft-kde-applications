@@ -44,7 +44,9 @@ variables:
   before_script: 
     - mkdir -p  ~/.local/share/snapcraft/provider/launchpad
     - echo -e "[1]\n" > ~/.local/share/snapcraft/provider/launchpad/credentials
-    - echo -e "consumer_key = System-wide: KDE neon (piensa)\n" >> ~/.local/share/snapcraft/provider/launchpad/credentials
+    - echo -e "consumer_key = System-wide" >> ~/.local/share/snapcraft/provider/launchpad/credentials
+    - echo -e ":" >> ~/.local/share/snapcraft/provider/launchpad/credentials
+    - echo -e " KDE neon (piensa)\n" >> ~/.local/share/snapcraft/provider/launchpad/credentials
     - echo -e "consumer_secret = \n" >> ~/.local/share/snapcraft/provider/launchpad/credentials
     - echo -e "access_token = " >> ~/.local/share/snapcraft/provider/launchpad/credentials
     - echo -e $LAUNCHPAD_CREDENTIALS_ACCESS_TOKEN > ~/.local/share/snapcraft/provider/launchpad/credentials
