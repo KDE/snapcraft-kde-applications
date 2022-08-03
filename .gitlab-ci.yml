@@ -50,7 +50,7 @@ variables:
     - echo -en "consumer_secret = \n" >> ~/.local/share/snapcraft/provider/launchpad/credentials
     - echo -en "access_token = " >> ~/.local/share/snapcraft/provider/launchpad/credentials
     - echo -en $LAUNCHPAD_CREDENTIALS_ACCESS_TOKEN >> ~/.local/share/snapcraft/provider/launchpad/credentials
-    - echo "\naccess_secret = " >> ~/.local/share/snapcraft/provider/launchpad/credentials
+    - echo -en "\naccess_secret = " >> ~/.local/share/snapcraft/provider/launchpad/credentials
     - echo -en $LAUNCHPAD_CREDENTIALS_ACCESS_SECRET >> ~/.local/share/snapcraft/provider/launchpad/credentials
     - echo -en "\n" >> ~/.local/share/snapcraft/provider/launchpad/credentials
     - git config --global user.email "ci@invent.kde.org"
