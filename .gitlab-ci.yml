@@ -57,9 +57,6 @@ variables:
     - git config --global user.name "KDE Invent CI"
     - snap_dir="${DIR:-"$CI_JOB_NAME"}"
     - cd "$snap_dir"
-    - echo "XXX"
-    - cat ~/.local/share/snapcraft/provider/launchpad/credentials
-    - echo "XXX"
   script:
     - shopt -s nullglob
     - snap_name="$(yq '.name' snapcraft.yaml)"
