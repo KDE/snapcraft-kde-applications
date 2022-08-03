@@ -43,16 +43,16 @@ variables:
         - "$DIR/**/*"
   before_script: 
     - mkdir -p  ~/.local/share/snapcraft/provider/launchpad
-    - echo -e "[1]\n" > ~/.local/share/snapcraft/provider/launchpad/credentials
-    - echo -e "consumer_key = System-wide" >> ~/.local/share/snapcraft/provider/launchpad/credentials
-    - echo -e ":" >> ~/.local/share/snapcraft/provider/launchpad/credentials
-    - echo -e " KDE neon (piensa)\n" >> ~/.local/share/snapcraft/provider/launchpad/credentials
-    - echo -e "consumer_secret = \n" >> ~/.local/share/snapcraft/provider/launchpad/credentials
-    - echo -e "access_token = " >> ~/.local/share/snapcraft/provider/launchpad/credentials
-    - echo -e $LAUNCHPAD_CREDENTIALS_ACCESS_TOKEN >> ~/.local/share/snapcraft/provider/launchpad/credentials
+    - echo -en "[1]\n" > ~/.local/share/snapcraft/provider/launchpad/credentials
+    - echo -en "consumer_key = System-wide" >> ~/.local/share/snapcraft/provider/launchpad/credentials
+    - echo -en ":" >> ~/.local/share/snapcraft/provider/launchpad/credentials
+    - echo -en " KDE neon (piensa)\n" >> ~/.local/share/snapcraft/provider/launchpad/credentials
+    - echo -en "consumer_secret = \n" >> ~/.local/share/snapcraft/provider/launchpad/credentials
+    - echo -en "access_token = " >> ~/.local/share/snapcraft/provider/launchpad/credentials
+    - echo -en $LAUNCHPAD_CREDENTIALS_ACCESS_TOKEN >> ~/.local/share/snapcraft/provider/launchpad/credentials
     - echo "\naccess_secret = " >> ~/.local/share/snapcraft/provider/launchpad/credentials
-    - echo -e $LAUNCHPAD_CREDENTIALS_ACCESS_SECRET >> ~/.local/share/snapcraft/provider/launchpad/credentials
-    - echo -e "\n" >> ~/.local/share/snapcraft/provider/launchpad/credentials
+    - echo -en $LAUNCHPAD_CREDENTIALS_ACCESS_SECRET >> ~/.local/share/snapcraft/provider/launchpad/credentials
+    - echo -en "\n" >> ~/.local/share/snapcraft/provider/launchpad/credentials
     - git config --global user.email "ci@invent.kde.org"
     - git config --global user.name "KDE Invent CI"
     - snap_dir="${DIR:-"$CI_JOB_NAME"}"
