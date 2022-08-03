@@ -1,7 +1,7 @@
 name: kde-frameworks-5-96-qt-5-15-5-core20-sdk
 version: 5.96.0
 summary: KDE Frameworks 5
-description: Qt and KDE Framework library
+description: Qt and KDE Framework libraries
 confinement: strict
 grade: stable
 slots: {}
