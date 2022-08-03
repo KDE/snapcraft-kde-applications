@@ -43,7 +43,7 @@ variables:
         - "$DIR/**/*"
   before_script: 
     - mkdir -p  ~/.local/share/snapcraft/provider/launchpad
-    - echo "$LAUNCHPAD_CREDENTIALS" > ~/.local/share/snapcraft/provider/launchpad/credentials
+    - echo $LAUNCHPAD_CREDENTIALS > ~/.local/share/snapcraft/provider/launchpad/credentials
     - git config --global user.email "ci@invent.kde.org"
     - git config --global user.name "KDE Invent CI"
     - snap_dir="${DIR:-"$CI_JOB_NAME"}"
