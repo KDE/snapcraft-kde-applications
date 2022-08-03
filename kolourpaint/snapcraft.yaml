@@ -39,4 +39,3 @@ parts:
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
-version: 22.04.3
