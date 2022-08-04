@@ -17,7 +17,7 @@ variables:
   # Restrict building for pushes to this branch
   ON_BRANCH: Neon/release 
   # Build architectures as a comma-separated list, e.g. amd64,arm64,armhf
-  BUILD_ON: amd64 
+  BUILD_ON: amd64,arm64
   # Release to these channels after building. Provide as a comma-separated list, e.g. beta, edge
   # For testing purposes, you can push to snap branches. Syntax: edge/${branch_name}, e.g. edge/icon-fix
   RELEASE_TO: candidate
