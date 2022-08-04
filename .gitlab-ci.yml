@@ -32,7 +32,9 @@ variables:
 # You can overwrite all variables, as shown above, by adding a 'variables' dict to the job.
 # See the examples below for common use cases.
 .snap:
-  image: mfederle/snap-builder:latest
+  image: kdeorg/snap-builder:latest
+  tags:
+    - Linux
   stage: build
   rules:
     - if: $DIR == null && $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $ON_BRANCH
