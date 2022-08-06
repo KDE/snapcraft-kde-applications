@@ -34,7 +34,7 @@ variables:
 .snap:
   image: kdeorg/snap-builder:latest
   tags:
-    - Linux
+    - Snap
   stage: build
   rules:
     - if: $DIR == null && $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $ON_BRANCH
