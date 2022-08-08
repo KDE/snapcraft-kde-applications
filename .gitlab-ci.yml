@@ -65,7 +65,7 @@ variables:
     - snapcraft remote-build --launchpad-accept-public-upload --build-on="$BUILD_ON"
     - for log in "$snap_name"_*.txt; do cat "$log"; done 
     - architectures=("${BUILD_ON/,/ }")
-    - 'echo "Architectures (len: ${#architectures[@]}): "${architectures[@]}"'
+    - 'echo "Architectures (len: ${#architectures[@]}): ${architectures[@]}"'
     - snaps=(${snap_name}*.snap)
     - 'echo "Snaps (len: ${#snaps[@]}): ${snaps[@]}"'
     - if [ ${#architectures[@]} != ${#snaps[@]} ]; then echo "Number of produced snaps does not equal number of requested snaps" && exit 1; fi
