@@ -65,7 +65,7 @@ variables:
     - snapcraft remote-build --launchpad-accept-public-upload --build-on="$BUILD_ON"
     - for log in "$snap_name"_*.txt; do cat "$log"; done 
     - architectures=("${BUILD_ON/,/ }")
-    - snaps=("$snap_name"*.snap)
+    - snaps=$(ls $snap_name*.snap)
     - if [ ${#architectures[@]} != ${#snaps[@]} ]; then exit 1; fi
     - for snap in *.snap; do snapcraft upload --release="$RELEASE_TO" "$snap"; done
 
