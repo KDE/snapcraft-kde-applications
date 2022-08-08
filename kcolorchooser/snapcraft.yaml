@@ -8,7 +8,7 @@ apps:
     kcolorchooser:
         extensions:
         - kde-neon
-         common-id: org.kde.kcolorchooser.desktop
+        common-id: org.kde.kcolorchooser.desktop
         command: usr/bin/kcolorchooser
         plugs:
         - home
