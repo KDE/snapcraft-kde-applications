@@ -35,7 +35,7 @@ parts:
         parse-info:
         - usr/share/metainfo/org.kde.kcolorchooser.appdata.xml
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/22.04.1/src/kcolorchooser-22.04.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.04.3/src/kcolorchooser-22.04.3.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -45,15 +45,3 @@ parts:
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
         filesets:
-            exclusion:
-            - "-usr/lib/*/cmake/*"
-            - "-usr/include/*"
-            - "-usr/share/ECM/*"
-            - "-usr/share/doc/*"
-            - "-usr/share/man/*"
-            - "-usr/share/icons/breeze-dark*"
-            - "-usr/bin/X11"
-            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
-            - "-usr/lib/aspell/*"
-        prime:
-        - "$exclusion"
