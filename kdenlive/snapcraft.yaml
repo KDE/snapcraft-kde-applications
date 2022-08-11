@@ -48,7 +48,7 @@ parts:
         - libmlt-dev
         - libv4l-dev
         stage-packages:
-        - libpsm-infinipath1
+        - on amd64: [libpsm-infinipath1]
         - libqt5multimedia5
         - libqt5concurrent5
         - libqt5quickwidgets5
@@ -76,7 +76,9 @@ parts:
 
             cd "${SNAPCRAFT_PART_INSTALL}/usr/share/icons/hicolor/scalable/apps"
             gzip -d -c kdenlive.svgz > kdenlive.svg
-            ln -sf ../libpsm1/libpsm_infinipath.so.1.16  $SNAPCRAFT_PART_INSTALL/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libpsm_infinipath.so.1
+            if [ "$SNAPCRAFT_TARGET_ARCH" = amd64 ]; then
+                ln -sf ../libpsm1/libpsm_infinipath.so.1.16  $SNAPCRAFT_PART_INSTALL/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libpsm_infinipath.so.1
+            fi
     kdenlive-launch:
         source: kdenlive-launch/
         plugin: dump
