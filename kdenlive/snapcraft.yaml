@@ -4,7 +4,6 @@ confinement: strict
 grade: stable
 base: core20
 adopt-info: kdenlive
-compression: lzo
 apps:
     kdenlive:
         extensions:
@@ -68,8 +67,8 @@ parts:
         - kio-extras
         source: http://download.kde.org/stable/release-service/22.04.3/src/kdenlive-22.04.3.tar.xz
         cmake-parameters:
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
+        - '-DCMAKE_INSTALL_PREFIX=/usr'
+        - '-DCMAKE_FIND_ROOT_PATH=/usr\;$SNAPCRAFT_STAGE\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current'
         override-build: |
             snapcraftctl build
 
@@ -77,11 +76,10 @@ parts:
 
             cd "${SNAPCRAFT_PART_INSTALL}/usr/share/icons/hicolor/scalable/apps"
             gzip -d -c kdenlive.svgz > kdenlive.svg
+            ln -sf ../libpsm1/libpsm_infinipath.so.1.16  $SNAPCRAFT_PART_INSTALL/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libpsm_infinipath.so.1
     kdenlive-launch:
-        source: http://download.kde.org/stable/release-service/22.04.3/src/kdenlive-22.04.3.tar.xz
+        source: kdenlive-launch/
         plugin: dump
-        prime:
-        - kdenlive-launch
     cleanup:
         after:
         - kdenlive
@@ -99,5 +97,3 @@ parts:
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-            cp /usr/lib/libpsm1/libpsm_infinipath.so.1.16 /root/stage/usr/lib/x86_64-linux-gnu/libpsm_infinipath.so.1
-version: 22.04.3
