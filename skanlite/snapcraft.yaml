@@ -45,6 +45,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
     skanlite:
         parse-info:
         - usr/share/metainfo/org.kde.skanlite.appdata.xml
@@ -61,5 +62,5 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
 version: 22.04.3
