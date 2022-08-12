@@ -55,13 +55,13 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
         override-build: |
             snapcraftctl build
-            rm /root/parts/kajongg/install/usr/bin/kajongg
-            cp /root/parts/kajongg/install/usr/share/kajongg/kajongg.py /root/parts/kajongg/install/usr/bin/kajongg
-            rm /root/parts/kajongg/install/usr/bin/kajonggserver
-            cp /root/parts/kajongg/install/usr/share/kajongg/kajonggserver.py /root/parts/kajongg/install/usr/bin/kajonggserver
+            rm $SNAPCRAFT_PART_INSTALL/usr/bin/kajongg
+            cp $SNAPCRAFT_PART_INSTALL/usr/share/kajongg/kajongg.py $SNAPCRAFT_PART_INSTALL/usr/bin/kajongg
+            rm $SNAPCRAFT_PART_INSTALL/usr/bin/kajonggserver
+            cp $SNAPCRAFT_PART_INSTALL/usr/share/kajongg/kajonggserver.py $SNAPCRAFT_PART_INSTALL/usr/bin/kajonggserver
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"
@@ -71,8 +71,7 @@ parts:
             - "-usr/share/man/*"
             - "-usr/share/icons/breeze-dark*"
             - "-usr/bin/X11"
-            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+            - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.04.3
