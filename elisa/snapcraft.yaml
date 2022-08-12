@@ -1,5 +1,6 @@
 ---
 name: elisa
+base: core20
 confinement: strict
 grade: devel
 adopt-info: elisa
@@ -14,10 +15,6 @@ apps:
         - network
         - network-bind
         - audio-playback
-        environment:
-            GST_PLUGIN_PATH: "$SNAP/usr/lib/x86_64-linux-gnu/gstreamer-1.0"
-            GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/x86_64-linux-gnu/gstreamer-1.0"
-            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/x86_64-linux-gnu/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
 slots:
     session-dbus-interface:
         interface: dbus
@@ -44,9 +41,7 @@ parts:
         - gstreamer1.0-plugins-good
         - gstreamer1.0-plugins-base
         - gstreamer1.0-plugins-bad
-        source: kde:elisa
-        source-type: git
-        source-depth: 1
+        source: https://download.kde.org/stable/release-service/22.04.3/src/elisa-22.04.3.tar.xz
         plugin: cmake
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
@@ -55,7 +50,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/usr\\;/root/stage\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
         stage:
         - "-usr/lib/*/libharfbuzz.so*"
         filesets:
@@ -67,8 +62,7 @@ parts:
             - "-usr/share/man/*"
             - "-usr/share/icons/breeze-dark*"
             - "-usr/bin/X11"
-            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+            - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.04.3
