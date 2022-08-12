@@ -20,6 +20,16 @@ apps:
         - audio-record
         - removable-media
         - system-observe
+    pip:
+        command: bin/pip
+        plugs:
+        - network
+        - home
+environment:
+    PYTHONPYCACHEPREFIX: $SNAP_USER_COMMON/.pycache
+    PYTHONUSERBASE: $SNAP_USER_COMMON/.local
+    PIP_USER: 1
+    PYTHONPATH: $PYTHONUSERBASE/lib/python3.8/site-packages:$SNAP/lib/python3.8/site-packages:$SNAP/usr/lib/python3/dist-packages
 slots:
     session-dbus-interface:
         interface: dbus
@@ -35,6 +45,14 @@ package-repositories:
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
+    python-deps:
+        plugin: python
+        python-packages:
+        - vosk
+        - srt
+        - pip
+        stage:
+        - -pyvenv.cfg
     kdenlive:
         parse-info:
         - usr/share/metainfo/org.kde.kdenlive.appdata.xml
@@ -87,6 +105,7 @@ parts:
         after:
         - kdenlive
         - kdenlive-launch
+        - python-deps
         plugin: nil
         build-snaps:
         - kde-frameworks-5-96-qt-5-15-5-core20
