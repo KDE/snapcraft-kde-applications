@@ -41,6 +41,7 @@ parts:
         - libsqlcipher-dev
         - xsltproc
         - qtbase5-private-dev
+        - docbook-xml
         stage-packages:
         - libgrantlee-templates5
         - libgrantlee-textdocument5
@@ -56,7 +57,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
         parse-info:
         - usr/share/metainfo/org.kde.skrooge.appdata.xml
         filesets:
@@ -68,7 +69,7 @@ parts:
             - "-usr/share/man/*"
             - "-usr/share/icons/breeze-dark*"
             - "-usr/bin/X11"
-            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+            - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
