@@ -65,6 +65,7 @@ parts:
         - libmagic1
         - libgpm2
         - kio-extras
+        - mediainfo
         source: http://download.kde.org/stable/release-service/22.04.3/src/kdenlive-22.04.3.tar.xz
         cmake-parameters:
         - '-DCMAKE_INSTALL_PREFIX=/usr'
