@@ -58,6 +58,7 @@ parts:
         stage-packages:
         - mesa-utils-extra
         - freeglut3-dev
+        - libglib2.0-0
         - gstreamer1.0-x
         - gstreamer1.0-plugins-base
         - gstreamer1.0-pulseaudio
@@ -466,7 +467,6 @@ parts:
         - libpng-dev
         - libexiv2-dev
         - libjpeg-dev
-        - libglib2.0-0
         - gettext
         - libkf5coreaddons-dev
         - libkf5coreaddons-dev-bin
