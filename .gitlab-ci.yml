@@ -99,11 +99,24 @@ variables:
 
 # The snaps
 
-kde-frameworks-5-96-qt-5-15-5-core20:
-  extends: .prepone-extension-update
-
-kde-frameworks-5-96-qt-5-15-5-core20-sdk:
-  extends: .prepone-extension-update
+kde-frameworks:
+  extends: .snap
+  variables:
+    REPO: release
+    DISTRO: focal
+    KEY_ID: 444DABCF3667D0283F894EDDE6D4736255751E5D
+  script:
+    - apt update && apt -y install ruby software-properties-common dpkg-dev
+    - gem install insensitive_hash
+    - apt-key adv --keyserver keyserver.ubuntu.com --recv-key "${KEY_ID}"
+    - apt-add-repository -s "deb http://origin.archive.neon.kde.org/${REPO} ${DISTRO} main"
+    - ruby atomize-debs.rb
+    - echo "Runtime snapcraft.yaml" && cat runtime/snapcraft.yaml
+    - echo "SDK snapcraft.yaml" && cat sdk/snapcraft.yaml
+    - cd runtime
+    - !reference [.snap, script]
+    - cd ../sdk
+    - !reference [.snap, script]
 
 akregator:
   extends: .prepone-extension-update

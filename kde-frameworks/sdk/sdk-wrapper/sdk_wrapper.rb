@@ -31,10 +31,12 @@ ENV['KF5_SNAP_WRAPPING'] = '1'
 gnu_arch_map = {amd64: "x86_64", arm64: "aarch64"}
 gnu_arch = gnu_arch_map[ENV["SNAP_ARCH"].to_sym]
 
+root = Pathname.new(ENV["SNAPCRAFT_STAGE"]).parent.to_s
+
 # qmlcachegen for reasons beyond me is not actually an imported target but
 # set as a variable and then directly passed into execute_process.
-STATIC_EXES = %w[
-  /root/parts/kf5/install/usr/bin/qmlcachegen
+STATIC_EXES = [
+  "#{root}/parts/kf5/install/usr/bin/qmlcachegen"
 ].freeze
 
 # qmake has a hack applied by debian where they actually hijack the symlink
@@ -45,7 +47,7 @@ SHODDY_SYMLINK_MANGLER = {
 }
 
 configs = []
-Dir.chdir("/root/parts/#{ARGV[0]}/install/usr/lib/#{gnu_arch}-linux-gnu/cmake") do
+Dir.chdir("#{root}/parts/#{ARGV[0]}/install/usr/lib/#{gnu_arch}-linux-gnu/cmake") do
   Dir.glob('*/*Config.cmake').each do |config_file|
     config = config_file.split('/')[-1]
     configs << config.sub('Config.cmake', '')
@@ -185,7 +187,7 @@ end
 
 # Set suitable qtchooser configs (the pertinent XDG_ variable is set
 # by the wrapper),
-qtchooser_config_dir = '/root/parts/kf5/install/etc/xdg/qtchooser/'
+qtchooser_config_dir = "#{root}/parts/kf5/install/etc/xdg/qtchooser/"
 FileUtils.mkpath(qtchooser_config_dir)
 File.write("#{qtchooser_config_dir}/default.conf", <<-CONF)
 /snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current/usr/lib/qt5/bin
