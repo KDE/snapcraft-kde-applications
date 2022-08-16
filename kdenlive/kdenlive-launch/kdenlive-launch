@@ -20,10 +20,11 @@
 
 if [ "$SNAP_ARCH" == "amd64" ]; then
   ARCH='x86_64-linux-gnu'
-elif [ "$SNAP_ARCH" == "armhf" ]; then
-  ARCH="arm-linux-gnueabihf"
+elif [ "$SNAP_ARCH" == "arm64" ]; then
+  ARCH='aarch64-linux-gnu'
 else
-  ARCH="$SNAP_ARCH-linux-gnu"
+  echo "Unsupported architecture" >&2
+  exit 1
 fi
 
 export MLT_REPOSITORY=$SNAP/usr/lib/$ARCH/mlt-7/
