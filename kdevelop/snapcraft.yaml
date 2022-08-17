@@ -1,15 +1,21 @@
 ---
 name: kdevelop
 confinement: classic
-version: 22.04.3
 grade: stable
 base: core20
 adopt-info: kdevelop
+compression: lzo
 apps:
     kdevelop:
         command: usr/bin/kdevelop
+        common-id: org.kde.kdevelop.desktop
         environment:
-            QT_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins:$SNAPCRAFT_ARCH_TRIPLET/usr/lib/x86_64-linux-gnu"
+            QT_PLUGIN_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
+            QTWEBENGINEPROCESS_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess
+            XDG_DATA_DIRS: $XDG_DATA_DIRS:$SNAP/usr/share
+            XDG_CONFIG_DIRS: $XDG_CONFIG_DIRS:$SNAP/etc/xdg
+            __EGL_VENDOR_LIBRARY_DIRS: $SNAP/etc/glvnd/egl_vendor.d:$SNAP/usr/share/glvnd/egl_vendor.d
+            LIBGL_DRIVERS_PATH: $SNAP/usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
 package-repositories:
 -   type: apt
     components:
@@ -20,6 +26,20 @@ package-repositories:
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
+    mesa-patchelf:
+      plugin: nil
+      stage-packages:
+        - libgl1-mesa-dri
+      stage:
+        - -usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
+    mesa-no-patchelf:
+      plugin: nil
+      stage-packages:
+        - libgl1-mesa-dri
+      build-attributes:
+        - no-patchelf
+      stage:
+        - usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
     kdevelop:
         plugin: cmake
         build-packages:
@@ -87,7 +107,6 @@ parts:
         - libprocessui9
         - libbrotli1
         - libeditorconfig0
-        - libglu1-mesa
         - libgstreamer-plugins-base1.0-0
         - libgstreamer1.0-0
         - libhyphen0
@@ -113,4 +132,4 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE"
