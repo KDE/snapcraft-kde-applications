@@ -4,11 +4,18 @@ confinement: classic
 grade: stable
 base: core20
 adopt-info: kate
+compression: lzo
 apps:
     kate:
         command: usr/bin/kate
+        common-id: org.kde.kate.desktop
         environment:
-            QT_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins:$SNAPCRAFT_ARCH_TRIPLET/usr/lib/x86_64-linux-gnu"
+            QT_PLUGIN_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
+            QTWEBENGINEPROCESS_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess
+            XDG_DATA_DIRS: $XDG_DATA_DIRS:$SNAP/usr/share
+            XDG_CONFIG_DIRS: $XDG_CONFIG_DIRS:$SNAP/etc/xdg
+            __EGL_VENDOR_LIBRARY_DIRS: $SNAP/etc/glvnd/egl_vendor.d:$SNAP/usr/share/glvnd/egl_vendor.d
+            LIBGL_DRIVERS_PATH: $SNAP/usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
 package-repositories:
 -   type: apt
     components:
@@ -19,6 +26,22 @@ package-repositories:
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
+    mesa-patchelf:
+      plugin: nil
+      stage-packages:
+        - libgl1-mesa-dri
+        - freeglut3
+        - libglu1-mesa
+      stage:
+        - -usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
+    mesa-no-patchelf:
+      plugin: nil
+      stage-packages:
+        - libgl1-mesa-dri
+      build-attributes:
+        - no-patchelf
+      stage:
+        - usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
     kate:
         parse-info:
         - usr/share/metainfo/org.kde.kate.appdata.xml
@@ -38,12 +61,10 @@ parts:
         - libgit2-28
         - konsole-kpart
         - libeditorconfig0
-        - libglu1-mesa
         - libkf5kiofilewidgets5
         - libkf5syntaxhighlighting5
         - libkf5texteditor5
         - libqt5concurrent5
-        - freeglut3
         - hspell
         source: http://download.kde.org/stable/release-service/22.04.3/src/kate-22.04.3.tar.xz
         cmake-parameters:
@@ -53,7 +74,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE"
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"
@@ -63,8 +84,7 @@ parts:
             - "-usr/share/man/*"
             - "-usr/share/icons/breeze-dark*"
             - "-usr/bin/X11"
-            - "-usr/lib/gcc/x86_64-linux-gnu/6.0.0"
+            - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.04.3
