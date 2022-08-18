@@ -10,6 +10,7 @@ apps:
         command: usr/bin/kdevelop
         common-id: org.kde.kdevelop.desktop
         environment:
+            KDEV_CLANG_BUILTIN_DIR: "$SNAP/usr/lib/llvm-11/lib/clang/11.0.0/include"
             QTWEBENGINEPROCESS_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
             QML2_IMPORT_PATH: "$SNAP/lib/$SNAPCRAFT_ARCH_TRIPLET:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/qml"
             XDG_DATA_DIRS: "$XDG_DATA_DIRS:$SNAP/usr/share"
