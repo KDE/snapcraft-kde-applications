@@ -18,8 +18,8 @@ apps:
         - browser-support
         - removable-media
 layout:
-    /usr/share/qt5:
-        symlink: $SNAP/kf5/usr/share/qt5
+    "/usr/share/qt5":
+        symlink: "$SNAP/kf5/usr/share/qt5"
 package-repositories:
 -   type: apt
     components:
@@ -64,7 +64,7 @@ parts:
         stage-packages:
         - libncurses6
         - libreadline8
-        source: http://download.kde.org/stable/release-service/22.04.3/src/kalgebra-22.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.0/src/kalgebra-22.08.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -86,3 +86,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
+version: 22.08.0
