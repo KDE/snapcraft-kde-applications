@@ -96,7 +96,7 @@ parts:
         - "-var/lib/ghostscript"
         - "-usr/share/ghostscript/*/Resource/CMap"
         - "$exclusion"
-        source: http://download.kde.org/stable/release-service/22.04.3/src/cantor-22.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.0/src/cantor-22.08.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -107,4 +107,4 @@ parts:
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;/root/stage\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
         parse-info:
         - usr/share/metainfo/org.kde.cantor.appdata.xml
-version: 22.04.3
+version: 22.08.0
