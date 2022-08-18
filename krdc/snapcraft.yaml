@@ -27,7 +27,7 @@ parts:
         stage-packages:
         - libvncclient1
         - freerdp2-x11
-        source: http://download.kde.org/stable/release-service/22.04.3/src/krdc-22.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.0/src/krdc-22.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -48,4 +48,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.04.3
+version: 22.08.0
