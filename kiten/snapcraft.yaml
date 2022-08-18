@@ -42,7 +42,7 @@ parts:
         stage-packages:
         - imagemagick
         - libkf5khtml5
-        source: http://download.kde.org/stable/release-service/22.04.3/src/kiten-22.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.0/src/kiten-22.08.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -64,3 +64,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
+version: 22.08.0
