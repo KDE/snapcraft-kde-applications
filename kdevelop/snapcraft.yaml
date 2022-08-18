@@ -12,7 +12,6 @@ apps:
         environment:
             KDEV_CLANG_BUILTIN_DIR: "$SNAP/usr/lib/llvm-11/lib/clang/11.0.0/include"
             QTWEBENGINEPROCESS_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
-            QML2_IMPORT_PATH: "$SNAP/lib/$SNAPCRAFT_ARCH_TRIPLET:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/qml"
             XDG_DATA_DIRS: "$XDG_DATA_DIRS:$SNAP/usr/share"
             XDG_CONFIG_DIRS: "$XDG_CONFIG_DIRS:$SNAP/etc/xdg"
             __EGL_VENDOR_LIBRARY_DIRS: "$SNAP/etc/glvnd/egl_vendor.d:$SNAP/usr/share/glvnd/egl_vendor.d"
@@ -51,6 +50,7 @@ parts:
             Prefix = ../../
             LibraryExecutables = usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/libexec
             Plugins = usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins
+            Qml2Imports = usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/qml
             Translations = usr/share/qt5/translations
             Data = usr/share/qt5
             EOF
@@ -138,6 +138,7 @@ parts:
         - freeglut3
         - libqt5gui5
         - libqt5svg5
+        - qtwayland5
         - qt5-image-formats-plugins
         - qml-module-qtquick2
         - qml-module-qtquick-controls
@@ -145,6 +146,8 @@ parts:
         - qml-module-qtquick-window2
         - qml-module-qtquick-xmllistmodel
         - qml-module-qtwebkit
+        - qml-module-qtquick-controls2
+        - breeze
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
         source: http://download.kde.org/stable/release-service/22.08.0/src/kdevelop-22.08.0.tar.xz
@@ -156,4 +159,8 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE"
+        override-build: |
+            snapcraftctl build
+            sed -i "${SNAPCRAFT_PART_INSTALL}/usr/share/applications/org.kde.kdevelop.desktop" \
+                -e 's|Icon=kdevelop$|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/kdevelop.svg|'
 version: 22.08.0
