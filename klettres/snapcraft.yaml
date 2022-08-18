@@ -39,7 +39,7 @@ parts:
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/22.04.3/src/klettres-22.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.0/src/klettres-22.08.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -61,4 +61,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.04.3
+version: 22.08.0
