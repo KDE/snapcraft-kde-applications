@@ -26,10 +26,10 @@ apps:
         - network
         - home
 environment:
-    PYTHONPYCACHEPREFIX: $SNAP_USER_COMMON/.pycache
-    PYTHONUSERBASE: $SNAP_USER_COMMON/.local
+    PYTHONPYCACHEPREFIX: "$SNAP_USER_COMMON/.pycache"
+    PYTHONUSERBASE: "$SNAP_USER_COMMON/.local"
     PIP_USER: 1
-    PYTHONPATH: $PYTHONUSERBASE/lib/python3.8/site-packages:$SNAP/lib/python3.8/site-packages:$SNAP/usr/lib/python3/dist-packages
+    PYTHONPATH: "$PYTHONUSERBASE/lib/python3.8/site-packages:$SNAP/lib/python3.8/site-packages:$SNAP/usr/lib/python3/dist-packages"
 slots:
     session-dbus-interface:
         interface: dbus
@@ -52,7 +52,7 @@ parts:
         - srt
         - pip
         stage:
-        - -pyvenv.cfg
+        - "-pyvenv.cfg"
     kdenlive:
         parse-info:
         - usr/share/metainfo/org.kde.kdenlive.appdata.xml
@@ -66,7 +66,8 @@ parts:
         - libmlt-dev
         - libv4l-dev
         stage-packages:
-        - on amd64: [libpsm-infinipath1]
+        -   on amd64:
+            - libpsm-infinipath1
         - libqt5multimedia5
         - libqt5concurrent5
         - libqt5quickwidgets5
@@ -84,10 +85,10 @@ parts:
         - libgpm2
         - kio-extras
         - mediainfo
-        source: http://download.kde.org/stable/release-service/22.04.3/src/kdenlive-22.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.0/src/kdenlive-22.08.0.tar.xz
         cmake-parameters:
-        - '-DCMAKE_INSTALL_PREFIX=/usr'
-        - '-DCMAKE_FIND_ROOT_PATH=/usr\;$SNAPCRAFT_STAGE\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current'
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
         override-build: |
             snapcraftctl build
 
@@ -99,7 +100,7 @@ parts:
                 ln -sf ../libpsm1/libpsm_infinipath.so.1.16  $SNAPCRAFT_PART_INSTALL/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libpsm_infinipath.so.1
             fi
     kdenlive-launch:
-        source: kdenlive-launch/
+        source: http://download.kde.org/stable/release-service/22.08.0/src/kdenlive-22.08.0.tar.xz
         plugin: dump
     cleanup:
         after:
@@ -119,3 +120,4 @@ parts:
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
+version: 22.08.0
