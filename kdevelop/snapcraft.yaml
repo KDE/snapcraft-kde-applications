@@ -10,12 +10,12 @@ apps:
         command: usr/bin/kdevelop
         common-id: org.kde.kdevelop.desktop
         environment:
-            QTWEBENGINEPROCESS_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess
-            QML2_IMPORT_PATH: $SNAP/lib/$SNAPCRAFT_ARCH_TRIPLET:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/qml
-            XDG_DATA_DIRS: $XDG_DATA_DIRS:$SNAP/usr/share
-            XDG_CONFIG_DIRS: $XDG_CONFIG_DIRS:$SNAP/etc/xdg
-            __EGL_VENDOR_LIBRARY_DIRS: $SNAP/etc/glvnd/egl_vendor.d:$SNAP/usr/share/glvnd/egl_vendor.d
-            LIBGL_DRIVERS_PATH: $SNAP/usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
+            QTWEBENGINEPROCESS_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
+            QML2_IMPORT_PATH: "$SNAP/lib/$SNAPCRAFT_ARCH_TRIPLET:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/qml"
+            XDG_DATA_DIRS: "$XDG_DATA_DIRS:$SNAP/usr/share"
+            XDG_CONFIG_DIRS: "$XDG_CONFIG_DIRS:$SNAP/etc/xdg"
+            __EGL_VENDOR_LIBRARY_DIRS: "$SNAP/etc/glvnd/egl_vendor.d:$SNAP/usr/share/glvnd/egl_vendor.d"
+            LIBGL_DRIVERS_PATH: "$SNAP/usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri"
 package-repositories:
 -   type: apt
     components:
@@ -27,32 +27,32 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     mesa-patchelf:
-      plugin: nil
-      stage-packages:
+        plugin: nil
+        stage-packages:
         - libgl1-mesa-dri
         - libglu1-mesa
-      stage:
-        - -usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
+        stage:
+        - "-usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri"
     mesa-no-patchelf:
-      plugin: nil
-      stage-packages:
+        plugin: nil
+        stage-packages:
         - libgl1-mesa-dri
-      build-attributes:
+        build-attributes:
         - no-patchelf
-      stage:
+        stage:
         - usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
     qtconf:
-      plugin: nil
-      override-build: |
-        mkdir -p $SNAPCRAFT_PART_INSTALL/usr/bin
-        cat <<EOF > $SNAPCRAFT_PART_INSTALL/usr/bin/qt.conf
-        [Paths]
-        Prefix = ../../
-        LibraryExecutables = usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/libexec
-        Plugins = usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins
-        Translations = usr/share/qt5/translations
-        Data = usr/share/qt5
-        EOF
+        plugin: nil
+        override-build: |
+            mkdir -p $SNAPCRAFT_PART_INSTALL/usr/bin
+            cat <<EOF > $SNAPCRAFT_PART_INSTALL/usr/bin/qt.conf
+            [Paths]
+            Prefix = ../../
+            LibraryExecutables = usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/libexec
+            Plugins = usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins
+            Translations = usr/share/qt5/translations
+            Data = usr/share/qt5
+            EOF
     kdevelop:
         plugin: cmake
         build-packages:
@@ -146,7 +146,7 @@ parts:
         - qml-module-qtwebkit
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
-        source: http://download.kde.org/stable/release-service/22.04.3/src/kdevelop-22.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.0/src/kdevelop-22.08.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -155,3 +155,4 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE"
+version: 22.08.0
