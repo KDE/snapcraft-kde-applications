@@ -10,8 +10,8 @@ apps:
         command: usr/bin/kdevelop
         common-id: org.kde.kdevelop.desktop
         environment:
-            QT_PLUGIN_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET
             QTWEBENGINEPROCESS_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess
+            QML2_IMPORT_PATH: $SNAP/lib/$SNAPCRAFT_ARCH_TRIPLET:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/qml
             XDG_DATA_DIRS: $XDG_DATA_DIRS:$SNAP/usr/share
             XDG_CONFIG_DIRS: $XDG_CONFIG_DIRS:$SNAP/etc/xdg
             __EGL_VENDOR_LIBRARY_DIRS: $SNAP/etc/glvnd/egl_vendor.d:$SNAP/usr/share/glvnd/egl_vendor.d
@@ -30,6 +30,7 @@ parts:
       plugin: nil
       stage-packages:
         - libgl1-mesa-dri
+        - libglu1-mesa
       stage:
         - -usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
     mesa-no-patchelf:
@@ -40,6 +41,18 @@ parts:
         - no-patchelf
       stage:
         - usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
+    qtconf:
+      plugin: nil
+      override-build: |
+        mkdir -p $SNAPCRAFT_PART_INSTALL/usr/bin
+        cat <<EOF > $SNAPCRAFT_PART_INSTALL/usr/bin/qt.conf
+        [Paths]
+        Prefix = ../../
+        LibraryExecutables = usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/libexec
+        Plugins = usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins
+        Translations = usr/share/qt5/translations
+        Data = usr/share/qt5
+        EOF
     kdevelop:
         plugin: cmake
         build-packages:
@@ -122,6 +135,15 @@ parts:
         - libqt5webkit5
         - libwoff1
         - freeglut3
+        - libqt5gui5
+        - libqt5svg5
+        - qt5-image-formats-plugins
+        - qml-module-qtquick2
+        - qml-module-qtquick-controls
+        - qml-module-qtquick-layouts
+        - qml-module-qtquick-window2
+        - qml-module-qtquick-xmllistmodel
+        - qml-module-qtwebkit
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
         source: http://download.kde.org/stable/release-service/22.04.3/src/kdevelop-22.04.3.tar.xz
