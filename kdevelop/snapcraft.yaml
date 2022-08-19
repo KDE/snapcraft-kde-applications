@@ -16,6 +16,7 @@ apps:
             XDG_CONFIG_DIRS: "$XDG_CONFIG_DIRS:$SNAP/etc/xdg"
             __EGL_VENDOR_LIBRARY_DIRS: "$SNAP/etc/glvnd/egl_vendor.d:$SNAP/usr/share/glvnd/egl_vendor.d"
             LIBGL_DRIVERS_PATH: "$SNAP/usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri"
+            KDEV_UNSET_ENV: "LIBGL_DRIVERS_PATH"
 package-repositories:
 -   type: apt
     components:
@@ -54,7 +55,13 @@ parts:
             Translations = usr/share/qt5/translations
             Data = usr/share/qt5
             EOF
+    patches:
+        plugin: dump
+        source: patches/
+        prime:
+            - -*
     kdevelop:
+        after: [patches]
         plugin: cmake
         build-packages:
         - extra-cmake-modules
@@ -92,6 +99,7 @@ parts:
         - libkf5xmlgui-dev
         - libqt5webkit5-dev
         - gettext
+        - patch
         stage-packages:
         - konsole-kpart
         - libgrantlee-templates5
@@ -163,4 +171,7 @@ parts:
             snapcraftctl build
             sed -i "${SNAPCRAFT_PART_INSTALL}/usr/share/applications/org.kde.kdevelop.desktop" \
                 -e 's|Icon=kdevelop$|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/kdevelop.svg|'
+        override-pull: |
+            snapcraftctl pull
+            patch -p1 < $SNAPCRAFT_STAGE/kdevelop_unset_env.patch
 version: 22.08.0

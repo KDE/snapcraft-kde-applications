@@ -1,0 +1,39 @@
+diff --git a/kdevplatform/outputview/outputexecutejob.cpp b/kdevplatform/outputview/outputexecutejob.cpp
+index cd96fe62f3..005e4087e3 100644
+--- a/kdevplatform/outputview/outputexecutejob.cpp
++++ b/kdevplatform/outputview/outputexecutejob.cpp
+@@ -575,6 +575,15 @@ QProcessEnvironment OutputExecuteJobPrivate::effectiveEnvironment(const QUrl& wo
+         // also update the environment variable for the cwd, otherwise scripts can break easily
+         environment.insert(QStringLiteral("PWD"), workingDirectory.toLocalFile());
+     }
++
++    if (qEnvironmentVariableIsSet("KDEV_UNSET_ENV")) {
++        const auto unsetEnv = qEnvironmentVariable("KDEV_UNSET_ENV");
++        const auto unsetVars = unsetEnv.split(QLatin1Char(','),  Qt::SkipEmptyParts);
++        for (const auto& unsetVar : unsetVars) {
++            environment.remove(unsetVar);
++        }
++    }
++
+     return environment;
+ }
+ 
+diff --git a/plugins/konsole/kdevkonsoleview.cpp b/plugins/konsole/kdevkonsoleview.cpp
+index d9268c367b..145ed88272 100644
+--- a/plugins/konsole/kdevkonsoleview.cpp
++++ b/plugins/konsole/kdevkonsoleview.cpp
+@@ -76,6 +76,14 @@ public:
+                     dir = activeDocument->url().adjusted(QUrl::RemoveFilename).path(QUrl::FullyDecoded);
+             }
+             interface->showShellInDir( dir );
++            
++            if (qEnvironmentVariableIsSet("KDEV_UNSET_ENV")) {
++                const auto unsetEnv = qEnvironmentVariable("KDEV_UNSET_ENV");
++                const auto unsetVars = unsetEnv.split(QLatin1Char(','),  Qt::SkipEmptyParts);
++                for (const auto& unsetVar : unsetVars) {
++                    interface->sendInput(QLatin1String("unset ") + unsetVar + QLatin1String("\n"));
++                }
++            }
+ 
+             interface->sendInput(QLatin1String(" kdevelop! -s \"") + KDevelop::ICore::self()->activeSession()->id().toString() + QLatin1String("\"\n"));
+ 
