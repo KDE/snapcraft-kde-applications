@@ -1,5 +1,5 @@
 diff --git a/kdevplatform/outputview/outputexecutejob.cpp b/kdevplatform/outputview/outputexecutejob.cpp
-index cd96fe62f3..005e4087e3 100644
+index cd96fe62f3..8c5a5ed8ff 100644
 --- a/kdevplatform/outputview/outputexecutejob.cpp
 +++ b/kdevplatform/outputview/outputexecutejob.cpp
 @@ -575,6 +575,15 @@ QProcessEnvironment OutputExecuteJobPrivate::effectiveEnvironment(const QUrl& wo
@@ -18,8 +18,28 @@ index cd96fe62f3..005e4087e3 100644
      return environment;
  }
  
+diff --git a/plugins/debuggercommon/midebugger.cpp b/plugins/debuggercommon/midebugger.cpp
+index 63470ea844..33538d08e5 100644
+--- a/plugins/debuggercommon/midebugger.cpp
++++ b/plugins/debuggercommon/midebugger.cpp
+@@ -42,6 +42,15 @@ MIDebugger::MIDebugger(QObject* parent)
+     : QObject(parent)
+ {
+     m_process = new KProcess(this);
++    
++    if (qEnvironmentVariableIsSet("KDEV_UNSET_ENV")) {
++        const auto unsetEnv = qEnvironmentVariable("KDEV_UNSET_ENV");
++        const auto unsetVars = unsetEnv.split(QLatin1Char(','),  Qt::SkipEmptyParts);
++        for (const auto& unsetVar : unsetVars) {
++            m_process->unsetEnv(unsetVar);
++        }
++    }
++
+     m_process->setOutputChannelMode(KProcess::SeparateChannels);
+     connect(m_process, &KProcess::readyReadStandardOutput,
+             this, &MIDebugger::readyReadStandardOutput);
 diff --git a/plugins/konsole/kdevkonsoleview.cpp b/plugins/konsole/kdevkonsoleview.cpp
-index d9268c367b..145ed88272 100644
+index d9268c367b..9825bac35b 100644
 --- a/plugins/konsole/kdevkonsoleview.cpp
 +++ b/plugins/konsole/kdevkonsoleview.cpp
 @@ -76,6 +76,14 @@ public:
