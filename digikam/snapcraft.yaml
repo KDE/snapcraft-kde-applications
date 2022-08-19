@@ -114,7 +114,7 @@ parts:
         - etc/
         - usr/
         - lib/
-        - "-usr/lib/x86_64-linux-gnu/libtiff.so.5.5.0"
+        - "-usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libtiff.so.5.5.0"
         - "-usr/share/doc/libtiff5/changelog.Debian.gz"
     digikam:
         after:
