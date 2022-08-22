@@ -1,6 +1,6 @@
 ---
 name: okteta
-version: 0.26.6
+version: 0.26.9
 confinement: strict
 grade: stable
 base: core20
@@ -35,7 +35,7 @@ parts:
         parse-info:
         - usr/share/metainfo/org.kde.okteta.appdata.xml
         plugin: cmake
-        source: https://download.kde.org/stable/okteta/0.26.6/src/okteta-0.26.6.tar.xz
+        source: https://download.kde.org/stable/okteta/0.26.9/src/okteta-0.26.9.tar.xz
         build-packages:
         - libkf5doctools-dev
         - libqca-qt5-2-dev
