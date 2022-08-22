@@ -76,8 +76,9 @@ parts:
         - libraw19
         parse-info:
         - usr/share/metainfo/org.kde.kstars.appdata.xml
-        source: http://download.kde.org/stable/kstars/kstars-3.5.8.tar.xz
+        source: http://download.kde.org/stable/kstars/kstars-3.6.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
+version: 3.6.0
