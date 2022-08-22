@@ -47,6 +47,7 @@ parts:
         - usr/share/metainfo/org.kde.kblocks.appdata.xml
         source: http://download.kde.org/stable/release-service/22.08.0/src/kblocks-22.08.0.tar.xz
         cmake-parameters:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
