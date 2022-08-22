@@ -27,6 +27,7 @@ parts:
         plugin: cmake
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
         - "-DUSE_KAUTH=off"
         parse-info:
         - usr/share/metainfo/org.kde.isoimagewriter.appdata.xml
