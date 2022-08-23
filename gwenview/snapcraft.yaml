@@ -40,6 +40,7 @@ parts:
         - libjpeg-dev
         - libkf5kdcraw-dev
         - libkf5kipi-dev
+        - libkimageannotator-dev
         - liblcms2-dev
         - libcfitsio-dev
         - libphonon4qt5-dev
