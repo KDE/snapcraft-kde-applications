@@ -40,7 +40,7 @@ parts:
         - libkgraphviewer-dev
         stage-packages:
         - libkchart
-        - libkgraphviewer
+        - libkgraphviewer3
         - kgraphviewer
         - valgrind
         source: https://download.kde.org/stable/massif-visualizer/0.7.0/src/massif-visualizer-0.7.0.tar.xz
