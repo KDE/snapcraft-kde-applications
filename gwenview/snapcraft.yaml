@@ -15,7 +15,7 @@ apps:
         - network
         - network-bind
         - audio-playback
-        - removable-media
+        - udisks2
 slots:
     session-dbus-interface:
         interface: dbus
@@ -50,17 +50,22 @@ parts:
         - libkf5purpose-dev
         - libtiff-dev
         stage-packages:
+        - kio
+        - libkcolorpicker0
         - libkf5kdcraw5
         - libkf5kipi32.0.0
         - libkimageannotator0
         - libcfitsio8
         - libkf5purpose5
         - libkf5purpose-bin
+        - denef
         source: http://download.kde.org/stable/release-service/22.08.0/src/gwenview-22.08.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins/"
 version: 22.08.0
