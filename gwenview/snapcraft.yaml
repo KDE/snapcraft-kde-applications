@@ -52,6 +52,7 @@ parts:
         stage-packages:
         - libkf5kdcraw5
         - libkf5kipi32.0.0
+        - libkimageannotator0
         - libcfitsio8
         - libkf5purpose5
         - libkf5purpose-bin
