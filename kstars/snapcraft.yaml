@@ -82,4 +82,5 @@ parts:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
+        - "-DBUILD_TESTING=OFF"
 version: 3.6.0
