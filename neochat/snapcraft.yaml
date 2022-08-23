@@ -25,16 +25,16 @@ slots:
         interface: dbus
         name: org.kde.neochat
         bus: session
+package-repositories:
+-   type: apt
+    components:
+    - main
+    suites:
+    - focal
+    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
+    url: http://origin.archive.neon.kde.org/user
+    key-server: keyserver.ubuntu.com
 parts:
-    extra-cmake-modules:
-        source: https://invent.kde.org/frameworks/extra-cmake-modules.git
-        source-tag: v5.91.0
-        source-depth: 0
-        plugin: cmake
-        cmake-parameters:
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DBUILD_TESTING=OFF"
     qtkeychain:
         source: https://github.com/frankosterfeld/qtkeychain.git
         source-tag: v0.13.2
@@ -57,61 +57,10 @@ parts:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DBUILD_TESTING=OFF"
-    kirigami:
-        source: https://invent.kde.org/frameworks/kirigami.git
-        source-tag: v5.91.0
-        source-depth: 0
-        plugin: cmake
-        cmake-parameters:
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DBUILD_TESTING=OFF"
-        prime:
-        - "-*"
-    kiconthemes:
-        source: https://invent.kde.org/frameworks/kiconthemes.git
-        source-tag: v5.91.0
-        source-depth: 0
-        plugin: cmake
-        cmake-parameters:
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DBUILD_TESTING=OFF"
-    qqc2desktopstyle:
-        after:
-        - extra-cmake-modules
-        - kirigami
-        - kiconthemes
-        source: https://invent.kde.org/frameworks/qqc2-desktop-style.git
-        source-tag: v5.91.0
-        source-depth: 0
-        plugin: cmake
-        build-packages:
-        - qt5-qmake
-        cmake-parameters:
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DBUILD_TESTING=OFF"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
-        - "-DCMAKE_PREFIX_PATH=$SNAPCRAFT_STAGE:/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/cmake/KF5Kirigami2:/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/cmake/KIconThemes"
-    kquickimageeditor:
-        source: https://download.kde.org/stable/kquickimageeditor/0.1/kquickimageeditor-0.1.3.tar.xz
-        plugin: cmake
-        cmake-parameters:
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DBUILD_TESTING=OFF"
-        build-packages:
-        - libglu1-mesa-dev
     neochat:
         after:
         - qtkeychain
         - libmatrixclient
-        - qqc2desktopstyle
-        - kquickimageeditor
-        - kiconthemes
-        - extra-cmake-modules
-        - qcoro-qt5-dev
         source: http://download.kde.org/stable/plasma-mobile/22.06/neochat-22.06.tar.xz
         plugin: cmake
         cmake-parameters:
@@ -122,6 +71,8 @@ parts:
         - libcmark0.29.0
         build-packages:
         - libcmark-dev
+        - kquickimageeditor-dev
+        - libkf5qqc2desktopstyle-dev
         parse-info:
         - usr/share/metainfo/org.kde.neochat.appdata.xml
 version: '22.06'
