@@ -16,6 +16,10 @@ apps:
         - network-bind
         - removable-media
         - audio-playback
+        - network-manager
+        - udisks2
+        environment:
+            QML2_IMPORT_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qml"
 layout:
     "/usr/bin/ffmpeg":
         bind-file: "$SNAP/usr/bin/ffmpeg"
