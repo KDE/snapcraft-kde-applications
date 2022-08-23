@@ -15,8 +15,8 @@ apps:
         - home
         - network
         - network-bind
+        - network-manager
         - audio-playback
-        - removeable-media
 slots:
     session-dbus-interface:
         interface: dbus
@@ -42,6 +42,7 @@ parts:
         - xsltproc
         - qtbase5-private-dev
         - docbook-xml
+        - docbook-xsl
         stage-packages:
         - libgrantlee-templates5
         - libgrantlee-textdocument5
