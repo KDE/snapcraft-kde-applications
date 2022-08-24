@@ -18,11 +18,6 @@ apps:
         - audio-playback
         environment:
             QML2_IMPORT_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qml"
-slots:
-    session-dbus-interface:
-        interface: dbus
-        name: org.krita.krita
-        bus: session
 layout:
     "/usr/bin/ffmpeg":
         symlink: "$SNAP/usr/bin/ffmpeg"
