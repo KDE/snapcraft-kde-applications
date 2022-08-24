@@ -6,7 +6,7 @@ index 916cf4f8dd..06d5caed88 100644
      if (qgetenv("XDG_CURRENT_DESKTOP") == "KDE") {
          dontUseNative = false;
      }
-+    if (qEnvironmentVariable("SNAP").isEmpty()) {
++    if (!qEnvironmentVariable("SNAP").isEmpty()) {
 +        dontUseNative = true;
 +    }
  #endif
