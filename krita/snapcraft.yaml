@@ -16,13 +16,16 @@ apps:
         - network-bind
         - removable-media
         - audio-playback
-        - network-manager
-        - udisks2
         environment:
             QML2_IMPORT_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qml"
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.krita.krita
+        bus: session
 layout:
     "/usr/bin/ffmpeg":
-        bind-file: "$SNAP/usr/bin/ffmpeg"
+        symlink: "$SNAP/usr/bin/ffmpeg"
 parts:
     libheif:
         plugin: autotools
@@ -40,15 +43,21 @@ parts:
         - libx265-179
         - libjpeg8
         - libpng16-16
+    patches:
+        plugin: dump
+        source: patches/
+        prime:
+            - -*
     krita:
         after:
         - libheif
+        - patches
         source: https://download.kde.org/stable/krita/5.1.0/krita-5.1.0.tar.xz
         plugin: cmake
         cmake-parameters:
-        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DBUILD_TESTING=OFF"
         build-packages:
         - libboost-dev
         - libboost-system-dev
@@ -97,6 +106,9 @@ parts:
         - "-usr/share/fonts/*"
         - "-usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libQt5*"
         - "-usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libqt5*"
+        override-pull: |
+            snapcraftctl pull
+            patch -p1 < $SNAPCRAFT_STAGE/krita_dont_use_native_file_chooser.patch
     cleanup:
         after:
         - krita

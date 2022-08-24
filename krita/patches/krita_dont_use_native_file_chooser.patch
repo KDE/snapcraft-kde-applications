@@ -1,0 +1,14 @@
+diff --git a/libs/ui/dialogs/kis_dlg_preferences.cc b/libs/ui/dialogs/kis_dlg_preferences.cc
+index 916cf4f8dd..06d5caed88 100644
+--- a/libs/ui/dialogs/kis_dlg_preferences.cc
++++ b/libs/ui/dialogs/kis_dlg_preferences.cc
+@@ -376,6 +376,9 @@ GeneralTab::GeneralTab(QWidget *_parent, const char *_name)
+     if (qgetenv("XDG_CURRENT_DESKTOP") == "KDE") {
+         dontUseNative = false;
+     }
++    if (qEnvironmentVariable("SNAP").isEmpty()) {
++        dontUseNative = true;
++    }
+ #endif
+ #ifdef Q_OS_MACOS
+     dontUseNative = false;
