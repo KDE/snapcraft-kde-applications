@@ -10,8 +10,6 @@ apps:
         - kde-neon
         common-id: org.kde.kdenlive.desktop
         command: usr/bin/kdenlive
-        command-chain:
-        - kdenlive-launch
         plugs:
         - home
         - network
@@ -30,6 +28,13 @@ environment:
     PYTHONUSERBASE: "$SNAP_USER_COMMON/.local"
     PIP_USER: 1
     PYTHONPATH: "$PYTHONUSERBASE/lib/python3.8/site-packages:$SNAP/lib/python3.8/site-packages:$SNAP/usr/lib/python3/dist-packages"
+    MLT_REPOSITORY: $SNAP/usr/lib/$ARCH/mlt-7/
+    MLT_DATA: $SNAP/usr/share/mlt-7/
+    MLT_ROOT_DIR: $SNAP/usr/
+    LADSPA_PATH: $SNAP/usr/lib/ladspa
+    FREI0R_PATH: $SNAP/usr/lib/frei0r-1
+    MLT_PROFILES_PATH: $SNAP/usr/share/mlt-7/profiles/
+    MLT_PRESETS_PATH: $SNAP/usr/share/mlt-7/presets/
 slots:
     session-dbus-interface:
         interface: dbus
@@ -93,21 +98,15 @@ parts:
         - "-DBUILD_TESTING=OFF"
         override-build: |
             snapcraftctl build
-
             sed -i "${SNAPCRAFT_PART_INSTALL}/usr/share/applications/org.kde.kdenlive.desktop" -e 's|Icon=kdenlive$|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/kdenlive.svg|'
-
             cd "${SNAPCRAFT_PART_INSTALL}/usr/share/icons/hicolor/scalable/apps"
             gzip -d -c kdenlive.svgz > kdenlive.svg
             if [ "$SNAPCRAFT_TARGET_ARCH" = amd64 ]; then
                 ln -sf ../libpsm1/libpsm_infinipath.so.1.16  $SNAPCRAFT_PART_INSTALL/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libpsm_infinipath.so.1
             fi
-    kdenlive-launch:
-        source: http://download.kde.org/stable/release-service/22.08.0/src/kdenlive-22.08.0.tar.xz
-        plugin: dump
     cleanup:
         after:
         - kdenlive
-        - kdenlive-launch
         - python-deps
         plugin: nil
         build-snaps:
