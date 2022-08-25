@@ -58,6 +58,7 @@ parts:
         - libpoppler-dev
         - libpoppler-qt5-dev
         stage-packages:
+        - kio
         - libkuserfeedbackwidgets1
         - libgsl23
         - libfftw3-double3
