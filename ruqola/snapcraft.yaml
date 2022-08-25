@@ -43,7 +43,7 @@ parts:
         - libkf5prison-dev
         stage-packages:
         - libkf5prison5
-        source: http://download.kde.org/stable/ruqola/ruqola-1.7.0.tar.xz
+        source: http://download.kde.org/stable/ruqola/ruqola-1.7.4.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -65,3 +65,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
+version: 1.7.4
