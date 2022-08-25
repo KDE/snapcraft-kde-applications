@@ -8,62 +8,25 @@ adopt-info: labplot
 apps:
     labplot:
         common-id: org.kde.labplot2.desktop
-        command: kf5-launch labplot2
+        command: usr/bin/labplot2
+        extensions:
+        - kde-neon
         plugs:
-        - kde-frameworks-5-plug
         - home
-        - x11
-        - opengl
         - network
         - network-bind
+        - removable-media
         - audio-playback
-        - desktop
-        - desktop-legacy
 slots:
     session-dbus-interface:
         interface: dbus
         name: org.kde.labplot
         bus: session
-plugs:
-    kde-frameworks-5-plug:
-        content: kde-frameworks-5-qt-5-15-core20-all
-        interface: content
-        default-provider: kde-frameworks-5-qt-5-15-core20
-        target: kf5
-package-repositories:
--   type: apt
-    components:
-    - main
-    suites:
-    - focal
-    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: http://origin.archive.neon.kde.org/user
-    key-server: keyserver.ubuntu.com
 parts:
-    patches:
-        source: patch/
-        plugin: dump
-        prime:
-        - "-*"
-        stage:
-        - std-isnan.diff
     labplot:
         parse-info:
         - usr/share/metainfo/org.kde.labplot2.appdata.xml
-        build-snaps:
-        - kde-frameworks-5-qt-5-15-core20-sdk/latest/candidate
-        after:
-        - kde-frameworks-5-env
-        - patches
         plugin: cmake
-        build-environment:
-        -   CMAKE_BUILD_PARALLEL_LEVEL: '4'
-        -   VERBOSE: '1'
-        override-build: |-
-            cd $SNAPCRAFT_PART_SRC
-            patch -p1 < $SNAPCRAFT_STAGE/std-isnan.diff
-            cp src/org.kde.labplot2.desktop .
-            snapcraftctl build
         build-packages:
         - libkf5xmlgui-data
         - libkf5xmlgui5
@@ -137,6 +100,3 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-qt-5-15-core20-sdk/current"
-    kde-frameworks-5-env:
-        plugin: dump
-        source: https://invent.kde.org/packaging/snap-kf5-launcher.git
