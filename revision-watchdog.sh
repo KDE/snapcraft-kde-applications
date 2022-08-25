@@ -149,6 +149,10 @@ need_releasing=()
 echo "Checking snaps for possible candidate->stable promotions..."
 echo ""
 
+if [ ! -z "$1" ]; then
+  snaps_to_watch=("$1")
+fi
+
 for snap in "${snaps_to_watch[@]}"; do
   _split=(${snap/:/ })
   snap_name="${_split[0]}"
