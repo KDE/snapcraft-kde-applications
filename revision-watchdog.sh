@@ -64,6 +64,8 @@ echo ""
 echo "Candidates for testing & promotion to stable"
 echo "============================================"
 echo ""
+echo "Date: $(date +"%Y-%m-%dT%H:%M:%S%z")"
+echo ""
 
 if [ "${#need_releasing[@]}" == 0 ]; then
   echo "There is nothing to do. Relax."
