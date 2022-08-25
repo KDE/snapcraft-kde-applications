@@ -97,6 +97,20 @@ variables:
     BUILD_ON: amd64 # Only build on amd64
     DIR: path/to/some-other-dir # Build from the directory 'path/to/some-other-dir'
 
+# A job to display revisions not yet published to stable
+
+revision-watchdog:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+  script:
+    - apt update && apt -y install jq curl
+    - ./revision-watchdog.sh > revision-report.txt
+    - cat revision-report.txt
+  artifacts:
+    name: report
+    paths:
+      - revision-report.txt
+
 # The snaps
 
 kde-frameworks:
