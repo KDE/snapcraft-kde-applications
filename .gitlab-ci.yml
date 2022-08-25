@@ -100,6 +100,9 @@ variables:
 # A job to display revisions not yet published to stable
 
 revision-watchdog:
+  image: kdeorg/snap-builder:latest
+  tags:
+    - Snap
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule"
   script:
