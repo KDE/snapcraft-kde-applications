@@ -2,7 +2,7 @@
 
 snaps_to_watch=(
   "krita:amd64,arm64" 
-  "kalzium:amd64"
+  "kalzium:amd64,arm64"
   "kdenlive:amd64,arm64"
   "akregator:amd64,arm64"
   "kblocks:amd64,arm64"
