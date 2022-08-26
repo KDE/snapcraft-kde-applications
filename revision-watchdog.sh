@@ -205,9 +205,6 @@ separator="------------------------|--------|----------|-----------------------"
 
 echo      "Snap                    | Arch   | Revision | Version "
 
-bold=$(tput bold)
-normal=$(tput sgr0)
-
 prev_snap=""
 for release_candidate in "${need_releasing[@]}"; do
   release_candidate=($release_candidate)
@@ -218,7 +215,7 @@ for release_candidate in "${need_releasing[@]}"; do
   version_has_changed="${release_candidate[4]}"
 
   if [ "$version_has_changed" = "yes" ]; then
-    snap_version="${bold}$snap_version (NEW)${normal}"
+    snap_version="$snap_version (NEW)"
   fi
 
   if [ "$prev_snap" != "$snap_name" ]; then
