@@ -43,12 +43,16 @@ parts:
         - libkimageannotator-dev
         - libkf5kipi-dev
         - libkf5doctools-dev
+        - libkf5purpose-dev
+        - libkf5newstuff-dev
+        - libkf5screen-dev
         source: http://download.kde.org/stable/release-service/22.08.0/src/spectacle-22.08.0.tar.xz
         override-stage: |
             snapcraftctl stage
             rm $SNAPCRAFT_STAGE/usr/share/kglobalaccel/org.kde.spectacle.desktop
             ln -s ../applications/org.kde.spectacle.desktop $SNAPCRAFT_STAGE/usr/share/kglobalaccel/org.kde.spectacle.desktop
         stage-packages:
+        - kio
         - libxcb-image0
         - libxcb-cursor0
         - libxcb-util1
