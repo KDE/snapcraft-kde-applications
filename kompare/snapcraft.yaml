@@ -72,4 +72,3 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.08.0

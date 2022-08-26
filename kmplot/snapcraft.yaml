@@ -4,7 +4,6 @@ confinement: strict
 grade: stable
 base: core20
 adopt-info: kmplot
-version: 22.08.0
 apps:
     kmplot:
         extensions:
