@@ -64,7 +64,6 @@ parts:
         - libkcolorpicker0
         - libkf5purpose5
         cmake-parameters:
-        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_TESTING=OFF"

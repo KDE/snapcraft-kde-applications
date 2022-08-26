@@ -120,7 +120,6 @@ parts:
         - "$exclusion"
         - "-etc/xdg/autostart/org.kde.korgac.desktop"
         cmake-parameters:
-        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_TESTING=OFF"

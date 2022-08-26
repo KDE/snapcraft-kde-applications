@@ -64,7 +64,6 @@ parts:
         source: http://download.kde.org/stable/plasma-mobile/22.06/neochat-22.06.tar.xz
         plugin: cmake
         cmake-parameters:
-        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         stage-packages:

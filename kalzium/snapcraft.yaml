@@ -49,7 +49,6 @@ parts:
         - libsm6
         source: http://download.kde.org/stable/release-service/22.08.0/src/kalzium-22.08.0.tar.xz
         cmake-parameters:
-        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_TESTING=OFF"

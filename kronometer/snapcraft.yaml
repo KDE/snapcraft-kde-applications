@@ -38,7 +38,6 @@ parts:
         - libphonon4qt5-dev
         source: https://download.kde.org/stable/kronometer/2.2.3/src/kronometer-2.2.3.tar.xz
         cmake-parameters:
-        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_TESTING=OFF"

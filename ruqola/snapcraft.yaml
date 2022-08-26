@@ -45,7 +45,6 @@ parts:
         - libkf5prison5
         source: http://download.kde.org/stable/ruqola/ruqola-1.7.4.tar.xz
         cmake-parameters:
-        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=ON"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_TESTING=OFF"
