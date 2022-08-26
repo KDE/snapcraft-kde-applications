@@ -176,7 +176,11 @@ for snap in "${snaps_to_watch[@]}"; do
     echo "$snap_name:$arch: { candidate: $candidate_revision, stable: $stable_revision }"
     if [ "$stable_revision" != "$candidate_revision" ]; then
       candidate_version="$(get_channel_version "$snap_data" "$arch" candidate)"
+      stable_version="$(get_channel_version "$snap_data" "$arch" stable)"
       release_candidate="$snap_name $arch $candidate_revision $candidate_version"
+      if [ "$candidate_version" != "$stable_version" ]; then
+        release_candidate+=" yes"
+      fi
       need_releasing+=("$release_candidate")
     fi
   done
@@ -197,9 +201,12 @@ if [ "$number_of_unreleased_revisions" = 0 ]; then
   exit 0
 fi
 
-separator="------------------------|--------|----------|--------------"
+separator="------------------------|--------|----------|-----------------------"
 
-echo "Snap                    | Arch   | Revision | Version      "
+echo      "Snap                    | Arch   | Revision | Version "
+
+bold=$(tput bold)
+normal=$(tput sgr0)
 
 prev_snap=""
 for release_candidate in "${need_releasing[@]}"; do
@@ -208,9 +215,16 @@ for release_candidate in "${need_releasing[@]}"; do
   snap_arch="${release_candidate[1]}"
   snap_rev="${release_candidate[2]}"
   snap_version="${release_candidate[3]}"
+  version_has_changed="${release_candidate[4]}"
+
+  if [ "$version_has_changed" = "yes" ]; then
+    snap_version="${bold}$snap_version (NEW)${normal}"
+  fi
+
   if [ "$prev_snap" != "$snap_name" ]; then
     echo "$separator"
   fi
+
   printf "%-23s | %-6s | %-8s | %s \n" "$snap_name" "$snap_arch" "$snap_rev" "$snap_version"
   prev_snap="$snap_name"
 done
