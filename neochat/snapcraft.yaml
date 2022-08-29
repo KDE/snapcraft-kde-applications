@@ -78,6 +78,6 @@ parts:
         - qcoro-qt5-dev
         build-environment:
         - CC: "gcc-10"
-        - CXX: "gcc-10"
+        - CXX: "g++-11"
         parse-info:
         - usr/share/metainfo/org.kde.neochat.appdata.xml
