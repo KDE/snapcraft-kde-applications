@@ -70,6 +70,7 @@ parts:
         stage-packages:
         - libcmark0.29.0
         build-packages:
+        - kirigami2-dev
         - libcmark-dev
         - kquickimageeditor-dev
         - libkf5qqc2desktopstyle-dev
