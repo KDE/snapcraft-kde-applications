@@ -70,10 +70,15 @@ parts:
         stage-packages:
         - libcmark0.29.0
         build-packages:
+        - gcc-10
+        - g++-10
         - kirigami2-dev
         - libcmark-dev
         - kquickimageeditor-dev
         - libkf5qqc2desktopstyle-dev
         - qcoro-qt5-dev
+        build-environment:
+        - CC: "gcc-10"
+        - CXX: "gcc-10"
         parse-info:
         - usr/share/metainfo/org.kde.neochat.appdata.xml
