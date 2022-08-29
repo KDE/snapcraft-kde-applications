@@ -21,9 +21,9 @@ apps:
         - removable-media
 layout:
     "/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib":
-        bind: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
+        symlink: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
     "/usr/share/alsa":
-        bind: "$SNAP/usr/share/alsa"
+        symlink: "$SNAP/usr/share/alsa"
 slots:
     session-dbus-interface:
         interface: dbus
