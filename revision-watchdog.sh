@@ -1,5 +1,6 @@
 #!/bin/bash
 
+size_warning_threshold="100" # in MiB
 default_archs="amd64,arm64"
 
 snaps_to_watch=(
@@ -127,29 +128,32 @@ function get_snap_data {
   echo "$snap_data"
 }
 
-function get_channel_revision {
+function get_channel_property {
   local snap_data="$1"
   local arch="$2"
   local risk="$3"
-  local revision="$(echo "$snap_data" | 
+  local key="$4"
+  local value="$(echo "$snap_data" | 
     jq -r ".\"channel-map\"[] | \
-    select(.channel.risk==\"$risk\" and .channel.architecture==\"$arch\").revision")"
-  local revision=${revision:-<none>}
-  echo "$revision"
+    select(.channel.risk==\"$risk\" and .channel.architecture==\"$arch\").$key")"
+  local value=${value:-<none>}
+  echo "$value"
+}
+
+function get_channel_revision {
+  get_channel_property "$1" "$2" "$3" revision
 }
 
 function get_channel_version {
-  local snap_data="$1"
-  local arch="$2"
-  local risk="$3"
-  local version="$(echo "$snap_data" | 
-    jq -r ".\"channel-map\"[] | \
-    select(.channel.risk==\"$risk\" and .channel.architecture==\"$arch\").version")"
-  local version=${version:-<none>}
-  echo "$version"
+  get_channel_property "$1" "$2" "$3" version
+}
+
+function get_snap_size {
+  get_channel_property "$1" "$2" "$3" download.size
 }
 
 need_releasing=()
+size_warnings=()
 
 echo "Checking snaps for possible candidate->stable promotions..."
 echo ""
@@ -182,6 +186,15 @@ for snap in "${snaps_to_watch[@]}"; do
         release_candidate+=" yes"
       fi
       need_releasing+=("$release_candidate")
+    fi
+
+    snap_size_bytes="$(get_snap_size "$snap_data" "$arch" stable)"
+    if [ "$snap_size_bytes" != "<none>" ]; then
+      snap_size_mib=$((snap_size_bytes >> 20))
+      if [ "$snap_size_mb" -gt "$size_warning_threshold" ]; then
+        warning="$snap_name $arch $snap_size_mib"
+        size_warnings+=("$warning")
+      fi
     fi
   done
 done
@@ -223,5 +236,30 @@ for release_candidate in "${need_releasing[@]}"; do
   fi
 
   printf "%-23s | %-6s | %-8s | %s \n" "$snap_name" "$snap_arch" "$snap_rev" "$snap_version"
+  prev_snap="$snap_name"
+done
+
+echo ""
+echo "Size warnings (size > $size_warning_threshold MiB)"
+echo "============================================="
+echo ""
+echo "Date: $(date +"%Y-%m-%dT%H:%M:%S%z")"
+echo ""
+
+separator="------------------------|--------|----------"
+echo      "Snap                    | Arch   | Size "
+
+prev_snap=""
+for warning in "${size_warnings[@]}"; do
+  warning=($warning)
+  snap_name="${warning[0]}"
+  snap_arch="${warning[1]}"
+  snap_size_mb="${warning[2]}"
+
+  if [ "$prev_snap" != "$snap_name" ]; then
+    echo "$separator"
+  fi
+
+  printf "%-23s | %-6s | %s MiB \n" "$snap_name" "$snap_arch" "$snap_size_mb"
   prev_snap="$snap_name"
 done
