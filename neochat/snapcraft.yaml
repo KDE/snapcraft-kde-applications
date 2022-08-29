@@ -82,3 +82,19 @@ parts:
         - CXX: "g++-10"
         parse-info:
         - usr/share/metainfo/org.kde.neochat.appdata.xml
+    cleanup:
+        after:
+        - neochat
+        plugin: nil
+        build-snaps:
+        - kde-frameworks-5-96-qt-5-15-5-core20
+        override-prime: |
+            set -eux
+            for snap in "kde-frameworks-5-96-qt-5-15-5-core20"; do  # List all content-snaps you're using here
+                cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
+            done
+            for CRUFT in bug lintian man; do
+                rm -rf $SNAPCRAFT_PRIME/usr/share/$CRUFT
+            done
+            find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
+            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
