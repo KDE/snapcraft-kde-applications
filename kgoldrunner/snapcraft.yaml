@@ -32,11 +32,26 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 layout:
     "/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib":
-        bind: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
+        symlink: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
     "/usr/share/alsa":
-        bind: "$SNAP/usr/share/alsa"
+        symlink: "$SNAP/usr/share/alsa"
 parts:
+    knotifications:
+        source: https://invent.kde.org/frameworks/knotifications.git
+        source-tag: v5.96.0
+        source-depth: 0
+        build-packages:
+        - extra-cmake-modules
+        - libphonon4qt5-dev
+        - libphonon4qt5experimental-dev
+        plugin: cmake
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DBUILD_TESTING=OFF"
     kgoldrunner:
+        after:
+        - knotifications
         parse-info:
         - usr/share/metainfo/org.kde.kgoldrunner.appdata.xml
         plugin: cmake
@@ -46,6 +61,13 @@ parts:
         stage-packages:
         - libasound2-data
         - libasound2-plugins
+        - phonon4qt5
+        - gstreamer1.0-alsa
+        - gstreamer1.0-pulseaudio
+        - gstreamer1.0-plugins-good
+        - gstreamer1.0-plugins-bad
+        - gstreamer1.0-plugins-ugly
+        - phonon4qt5-backend-gstreamer
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
