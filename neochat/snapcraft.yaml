@@ -73,6 +73,6 @@ parts:
         - libcmark-dev
         - kquickimageeditor-dev
         - libkf5qqc2desktopstyle-dev
+        - qcoro-qt5-dev
         parse-info:
         - usr/share/metainfo/org.kde.neochat.appdata.xml
-
