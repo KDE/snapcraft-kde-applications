@@ -68,6 +68,7 @@ parts:
         - "-DCMAKE_BUILD_TYPE=Release"
         stage-packages:
         - libcmark0.29.0
+        - qml-module-org-kde-kquickimageeditor
         build-packages:
         - gcc-10
         - g++-10
