@@ -75,4 +75,4 @@ parts:
         - libkf5qqc2desktopstyle-dev
         parse-info:
         - usr/share/metainfo/org.kde.neochat.appdata.xml
-version: '22.06'
+
