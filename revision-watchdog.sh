@@ -191,7 +191,7 @@ for snap in "${snaps_to_watch[@]}"; do
     snap_size_bytes="$(get_snap_size "$snap_data" "$arch" stable)"
     if [ "$snap_size_bytes" != "<none>" ]; then
       snap_size_mib=$((snap_size_bytes >> 20))
-      if [ "$snap_size_mb" -gt "$size_warning_threshold" ]; then
+      if [ "$snap_size_mib" -gt "$size_warning_threshold" ]; then
         warning="$snap_name $arch $snap_size_mib"
         size_warnings+=("$warning")
       fi
@@ -254,12 +254,12 @@ for warning in "${size_warnings[@]}"; do
   warning=($warning)
   snap_name="${warning[0]}"
   snap_arch="${warning[1]}"
-  snap_size_mb="${warning[2]}"
+  snap_size_mib="${warning[2]}"
 
   if [ "$prev_snap" != "$snap_name" ]; then
     echo "$separator"
   fi
 
-  printf "%-23s | %-6s | %s MiB \n" "$snap_name" "$snap_arch" "$snap_size_mb"
+  printf "%-23s | %-6s | %s MiB \n" "$snap_name" "$snap_arch" "$snap_size_mib"
   prev_snap="$snap_name"
 done
