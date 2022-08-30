@@ -63,7 +63,14 @@ variables:
     - shopt -s nullglob
     - snap_name="$(yq '.name' snapcraft.yaml)"
     - snapcraft remote-build --launchpad-accept-public-upload --build-on="$BUILD_ON"
-    - for log in "$snap_name"_*.txt; do cat "$log"; done 
+    - | 
+      for log in "$snap_name"_*.txt; do 
+        echo ""
+        echo "$log"
+        echo "============================"
+        cat "$log"
+        echo ""
+      done 
     - architectures=(${BUILD_ON//,/ })
     - 'echo "Architectures (len: ${#architectures[@]}): ${architectures[@]}"'
     - snaps=(${snap_name}*.snap)
@@ -107,10 +114,9 @@ revision-watchdog:
     - if: $CI_PIPELINE_SOURCE == "schedule"
   script:
     - apt update && apt -y install jq curl
-    - ./revision-watchdog.sh > revision-report.txt
+    - ./revision-watchdog.sh 2>&1 | tee revision-report.txt
     - report="$(cat revision-report.txt)"
     - echo "<html><head><title>Revision Watchdog Report</title></head><body><pre><code>${report}</code></pre></body></html>" > revision-report.html
-    - cat revision-report.txt
   artifacts:
     name: report
     paths:
