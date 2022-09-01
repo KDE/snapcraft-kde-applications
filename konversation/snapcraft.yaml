@@ -10,12 +10,19 @@ apps:
         - kde-neon
         common-id: org.kde.konversation.desktop
         command: usr/bin/konversation
+        environment:
+            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0/"
         plugs:
         - home
         - network
         - network-bind
         - audio-playback
         - removable-media
+layout:
+    "/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib":
+        symlink: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
+    "/usr/share/alsa":
+        symlink: "$SNAP/usr/share/alsa"
 slots:
     session-dbus-interface:
         interface: dbus
@@ -31,7 +38,22 @@ package-repositories:
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
+    knotifications:
+        source: https://invent.kde.org/frameworks/knotifications.git
+        source-tag: v5.96.0
+        source-depth: 0
+        build-packages:
+        - extra-cmake-modules
+        - libphonon4qt5-dev
+        - libphonon4qt5experimental-dev
+        plugin: cmake
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DBUILD_TESTING=OFF"
     konversation:
+        after:
+        - knotifications
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
@@ -40,6 +62,14 @@ parts:
         - libqca-qt5-2-dev
         stage-packages:
         - libqca-qt5-2
+        - phonon4qt5
+        - gstreamer1.0-alsa
+        - gstreamer1.0-pulseaudio
+        - gstreamer1.0-plugins-good
+        - gstreamer1.0-plugins-bad
+        - gstreamer1.0-plugins-ugly
+        - phonon4qt5-backend-gstreamer
+        - oxygen-sounds
         source: http://download.kde.org/stable/release-service/22.08.0/src/konversation-22.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -55,12 +85,26 @@ parts:
             - "-usr/lib/*/cmake/*"
             - "-usr/include/*"
             - "-usr/share/ECM/*"
-            - "-usr/share/doc/*"
             - "-usr/share/man/*"
             - "-usr/share/icons/breeze-dark*"
             - "-usr/bin/X11"
             - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
             - "-usr/lib/aspell/*"
+            - "-usr/share/lintain"
         prime:
         - "$exclusion"
+    cleanup:
+        after:
+        - knotifications
+        - konversation
+        plugin: nil
+        build-snaps:
+        - kde-frameworks-5-96-qt-5-15-5-core20
+        override-prime: |
+            set -eux
+            for snap in "kde-frameworks-5-96-qt-5-15-5-core20"; do  # List all content-snaps you're using here
+                cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
+            done
+            find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
+            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
 version: 22.08.0
