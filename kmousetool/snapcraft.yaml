@@ -123,7 +123,7 @@ parts:
     cleanup:
         after:
         - knotifications
-        - ksirk
+        - kmousetool
         plugin: nil
         build-snaps:
         - kde-frameworks-5-96-qt-5-15-5-core20
