@@ -36,7 +36,7 @@ parts:
         - extra-cmake-modules
         stage-packages:
         - coreutils
-        source: http://download.kde.org/stable/release-service/22.08.0/src/kdf-22.08.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.1/src/kdf-22.08.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -58,4 +58,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.08.0
+version: 22.08.1
