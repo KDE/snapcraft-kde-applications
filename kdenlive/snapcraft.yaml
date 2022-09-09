@@ -28,13 +28,13 @@ environment:
     PYTHONUSERBASE: "$SNAP_USER_COMMON/.local"
     PIP_USER: 1
     PYTHONPATH: "$PYTHONUSERBASE/lib/python3.8/site-packages:$SNAP/lib/python3.8/site-packages:$SNAP/usr/lib/python3/dist-packages"
-    MLT_REPOSITORY: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/mlt-7/
-    MLT_DATA: $SNAP/usr/share/mlt-7/
-    MLT_ROOT_DIR: $SNAP/usr/
-    LADSPA_PATH: $SNAP/usr/lib/ladspa
-    FREI0R_PATH: $SNAP/usr/lib/frei0r-1
-    MLT_PROFILES_PATH: $SNAP/usr/share/mlt-7/profiles/
-    MLT_PRESETS_PATH: $SNAP/usr/share/mlt-7/presets/
+    MLT_REPOSITORY: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/mlt-7/"
+    MLT_DATA: "$SNAP/usr/share/mlt-7/"
+    MLT_ROOT_DIR: "$SNAP/usr/"
+    LADSPA_PATH: "$SNAP/usr/lib/ladspa"
+    FREI0R_PATH: "$SNAP/usr/lib/frei0r-1"
+    MLT_PROFILES_PATH: "$SNAP/usr/share/mlt-7/profiles/"
+    MLT_PRESETS_PATH: "$SNAP/usr/share/mlt-7/presets/"
 slots:
     session-dbus-interface:
         interface: dbus
@@ -90,7 +90,7 @@ parts:
         - libgpm2
         - kio-extras
         - mediainfo
-        source: http://download.kde.org/stable/release-service/22.08.0/src/kdenlive-22.08.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.1/src/kdenlive-22.08.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -121,4 +121,4 @@ parts:
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-version: 22.08.0
+version: 22.08.1
