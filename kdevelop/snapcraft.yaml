@@ -16,7 +16,7 @@ apps:
             XDG_CONFIG_DIRS: "$XDG_CONFIG_DIRS:$SNAP/etc/xdg"
             __EGL_VENDOR_LIBRARY_DIRS: "$SNAP/etc/glvnd/egl_vendor.d:$SNAP/usr/share/glvnd/egl_vendor.d"
             LIBGL_DRIVERS_PATH: "$SNAP/usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri"
-            KDEV_UNSET_ENV: "LIBGL_DRIVERS_PATH"
+            KDEV_UNSET_ENV: LIBGL_DRIVERS_PATH
 package-repositories:
 -   type: apt
     components:
@@ -59,9 +59,10 @@ parts:
         plugin: dump
         source: patches/
         prime:
-            - -*
+        - "-*"
     kdevelop:
-        after: [patches]
+        after:
+        - patches
         plugin: cmake
         build-packages:
         - extra-cmake-modules
@@ -158,7 +159,7 @@ parts:
         - breeze
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
-        source: http://download.kde.org/stable/release-service/22.08.0/src/kdevelop-22.08.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.1/src/kdevelop-22.08.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -173,4 +174,4 @@ parts:
         override-pull: |
             snapcraftctl pull
             patch -p1 < $SNAPCRAFT_STAGE/kdevelop_unset_env.patch
-version: 22.08.0
+version: 22.08.1
