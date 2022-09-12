@@ -8,16 +8,15 @@ apps:
     ktorrent:
         extensions:
         - kde-neon
+        common-id: org.kde.ktorrent.desktop
         command: usr/bin/ktorrent
         plugs:
-        - kde-frameworks-5-plug
         - home
         - network
         - network-bind
         - audio-playback
         - network-observe
         - browser-support
-        common-id: org.kde.ktorrent.desktop
 slots:
     session-dbus-interface:
         interface: dbus
@@ -39,10 +38,15 @@ parts:
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DBUILD_TESTING=OFF"
+        - "-DENABLE_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
     ktorrent:
         after:
         - libktorrent
+        parse-info:
+        - usr/share/metainfo/org.kde.ktorrent.appdata.xml
         plugin: cmake
         build-packages:
         - kross-dev
@@ -60,7 +64,36 @@ parts:
         source: http://download.kde.org/stable/release-service/22.08.1/src/ktorrent-22.08.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DBUILD_TESTING=OFF"
+        - "-DENABLE_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
-        parse-info:
-        - usr/share/metainfo/org.kde.ktorrent.appdata.xml
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+            - "-usr/bin/X11"
+            - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
+            - "-usr/lib/aspell/*"
+            - "-usr/share/lintain"
+        prime:
+        - "$exclusion"
+    cleanup:
+        after:
+        - ktorrent
+        plugin: nil
+        build-snaps:
+        - kde-frameworks-5-96-qt-5-15-5-core20
+        override-prime: |
+            set -eux
+            for snap in "kde-frameworks-5-96-qt-5-15-5-core20"; do  # List all content-snaps you're using here
+                cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
+            done
+            find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
+            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
 version: 22.08.1
