@@ -43,5 +43,35 @@ parts:
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DBUILD_TESTING=OFF"
+        - "-DENABLE_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+            - "-usr/bin/X11"
+            - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
+            - "-usr/lib/aspell/*"
+            - "-usr/share/lintain"
+        prime:
+        - "$exclusion"
+    cleanup:
+        after:
+        - lokalize
+        plugin: nil
+        build-snaps:
+        - kde-frameworks-5-96-qt-5-15-5-core20
+        override-prime: |
+            set -eux
+            for snap in "kde-frameworks-5-96-qt-5-15-5-core20"; do  # List all content-snaps you're using here
+                cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
+            done
+            find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
+            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
 version: 22.08.0
