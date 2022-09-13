@@ -58,6 +58,7 @@ parts:
         - libcfitsio8
         - libkf5purpose5
         - libkf5purpose-bin
+        - libkf5service5
         - denef
         source: http://download.kde.org/stable/release-service/22.08.1/src/gwenview-22.08.1.tar.xz
         cmake-parameters:
