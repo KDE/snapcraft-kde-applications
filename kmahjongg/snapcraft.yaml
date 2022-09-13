@@ -65,7 +65,7 @@ parts:
         - "$exclusion"
     cleanup:
         after:
-        - umbrello
+        - kmahjongg
         plugin: nil
         build-snaps:
         - kde-frameworks-5-96-qt-5-15-5-core20
