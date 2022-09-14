@@ -87,6 +87,7 @@ parts:
         - swh-plugins
         - libslang2
         - libmagic1
+        - libmlt++7
         - libgpm2
         - kio-extras
         - mediainfo
