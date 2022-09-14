@@ -67,7 +67,7 @@ parts:
             - "-usr/lib/aspell/*"
             - "-usr/share/lintain"
             inclusion:
-            - "usr/lib/*/libKF5Notifications.so.*"
+            - usr/lib/*/libKF5Notifications.so.*
         prime:
         - "$exclusion"
         - "$inclusion"
@@ -96,7 +96,7 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
-        source: http://download.kde.org/stable/release-service/22.08.0/src/ksirk-22.08.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.1/src/ksirk-22.08.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -117,7 +117,7 @@ parts:
             - "-usr/lib/aspell/*"
             - "-usr/share/lintain"
             inclusion:
-            - "usr/lib/*/libKF5Notifications.so.*"
+            - usr/lib/*/libKF5Notifications.so.*
         prime:
         - "$exclusion"
         - "$inclusion"
@@ -135,4 +135,4 @@ parts:
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-version: 22.08.0
+version: 22.08.1
