@@ -97,7 +97,7 @@ parts:
         - "$exclusion"
     cleanup:
         after:
-        = knotifications
+        - knotifications
         - kdiamond
         plugin: nil
         build-snaps:
