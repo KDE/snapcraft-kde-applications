@@ -50,7 +50,7 @@ parts:
         - kdegames-card-data-kf5
         - libasound2-data
         - libasound2-plugins
-        source: http://download.kde.org/stable/release-service/22.08.0/src/kpat-22.08.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.1/src/kpat-22.08.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -72,4 +72,4 @@ parts:
         prime:
         - "$exclusion"
         - "-etc/alsa/conf.d/99-pulse.conf"
-version: 22.08.0
+version: 22.08.1
