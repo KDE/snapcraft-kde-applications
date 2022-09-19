@@ -16,6 +16,20 @@ apps:
         - network-bind
         - audio-playback
         - removable-media
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.kde.krdc
+        bus: session
+package-repositories:
+-   type: apt
+    components:
+    - main
+    suites:
+    - focal
+    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
+    url: http://origin.archive.neon.kde.org/user
+    key-server: keyserver.ubuntu.com
 parts:
     krdc:
         parse-info:
@@ -24,6 +38,7 @@ parts:
         build-packages:
         - libvncserver-dev
         - libkf5doctools-dev
+        - libssh2-1-dev
         stage-packages:
         - libvncclient1
         - freerdp2-x11
@@ -46,6 +61,19 @@ parts:
             - "-usr/bin/X11"
             - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
             - "-usr/lib/aspell/*"
+            - "-usr/share/lintain"
         prime:
         - "$exclusion"
+    cleanup:
+        after:
+        - krdc
+        plugin: nil
+        build-snaps:
+        - kde-frameworks-5-96-qt-5-15-5-core20
+        override-prime: |
+            set -eux
+            for snap in "kde-frameworks-5-96-qt-5-15-5-core20"; do  # List all content-snaps you're using here
+                cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
+            done
+            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
 version: 22.08.1
