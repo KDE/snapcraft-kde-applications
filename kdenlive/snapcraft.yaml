@@ -58,7 +58,32 @@ parts:
         - pip
         stage:
         - "-pyvenv.cfg"
+    glaxnimate:
+        plugin: cmake
+        source: https://gitlab.com/mattbas/glaxnimate.git
+        source-tag: v0.5.1
+        build-packages:
+        - qtbase5-dev
+        - qttools5-dev
+        - libqt5svg5-dev
+        - qt5-image-formats-plugins
+        - libpython3-dev
+        - zlib1g-dev
+        - libpotrace-dev
+        - libarchive-dev
+        - libavformat-dev
+        - libswscale-dev
+        - libavcodec-dev
+        - libavutil-dev
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
+        - "-DBUILD_TESTING=OFF"
     kdenlive:
+        after:
+        - python-deps
+        - glaxnimate
         parse-info:
         - usr/share/metainfo/org.kde.kdenlive.appdata.xml
         plugin: cmake
