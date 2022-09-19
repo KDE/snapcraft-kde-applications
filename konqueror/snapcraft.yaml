@@ -61,7 +61,7 @@ parts:
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
         source: http://download.kde.org/stable/release-service/22.08.1/src/konqueror-22.08.1.tar.xz
-        configflags:
+        cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_TESTING=OFF"
