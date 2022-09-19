@@ -61,7 +61,7 @@ parts:
     glaxnimate:
         plugin: cmake
         source: https://gitlab.com/mattbas/glaxnimate.git
-        source-tag: v0.5.1
+        source-tag: 0.5.1
         build-packages:
         - qtbase5-dev
         - qttools5-dev
@@ -134,6 +134,7 @@ parts:
         after:
         - kdenlive
         - python-deps
+        - glaxnimate
         plugin: nil
         build-snaps:
         - kde-frameworks-5-96-qt-5-15-5-core20
