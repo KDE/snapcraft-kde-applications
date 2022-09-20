@@ -69,7 +69,7 @@ parts:
             - "-usr/lib/aspell/*"
             - "-usr/share/lintain"
             inclusion:
-            - usr/lib/*/libKF5Notifications.so.*
+            - "usr/lib/*/libKF5Notifications.so.*"
         prime:
         - "$exclusion"
         - "$inclusion"
@@ -121,11 +121,10 @@ parts:
             - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
             - "-usr/lib/aspell/*"
             - "-usr/share/lintain"
-            inclusion:
-            - usr/lib/*/libKF5Notifications.so.*
+            - "-usr/lib/*/libKF5Notifications.so.*"
+            - "-usr/share/locale/eu/LC_MESSAGES/knotifications5_qt.qm"
         prime:
         - "$exclusion"
-        - "$inclusion"
     cleanup:
         after:
         - knotifications
