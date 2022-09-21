@@ -85,7 +85,7 @@ variables:
   script:
     - snapcraft expand-extensions > snapcraft-expanded.yaml
     - mv snapcraft-expanded.yaml snapcraft.yaml
-    - sed -i -e 's|kde-frameworks-.*-core20|kde-frameworks-5-98-qt-5-15-5-core20|g' snapcraft.yaml
+    - sed -i -e 's|kde-frameworks-.*-core20|kde-frameworks-5-98-qt-5-15-6-core20|g' snapcraft.yaml
     - sed -i -e 's|$SNAPCRAFT_EXTENSIONS_DIR/desktop|desktop|' snapcraft.yaml
     - cp -r /snap/snapcraft/current/share/snapcraft/extensions/desktop .
     - !reference [.snap, script]
