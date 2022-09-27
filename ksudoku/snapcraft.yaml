@@ -53,7 +53,7 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DENABLE_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-98-qt-5-15-6-core20-sdk/current"
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"
@@ -97,7 +97,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-98-qt-5-15-6-core20-sdk/current"
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"
@@ -118,10 +118,10 @@ parts:
         - ksudoku
         plugin: nil
         build-snaps:
-        - kde-frameworks-5-96-qt-5-15-5-core20
+        - kde-frameworks-5-98-qt-5-15-6-core20
         override-prime: |
             set -eux
-            for snap in "kde-frameworks-5-96-qt-5-15-5-core20"; do  # List all content-snaps you're using here
+            for snap in "kde-frameworks-5-98-qt-5-15-6-core20"; do  # List all content-snaps you're using here
                 cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
