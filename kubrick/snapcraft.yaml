@@ -61,7 +61,7 @@ parts:
         - "$exclusion"
     cleanup:
         after:
-        - umbrello
+        - kubrick
         plugin: nil
         build-snaps:
         - kde-frameworks-5-98-qt-5-15-6-core20
