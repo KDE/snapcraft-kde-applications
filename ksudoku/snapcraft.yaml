@@ -11,7 +11,9 @@ apps:
         common-id: org.kde.ksudoku.desktop
         command: usr/bin/ksudoku
         environment:
-            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0/"
+            GST_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
+            GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
+            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
         plugs:
         - home
         - network
@@ -90,7 +92,7 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
-        source: http://download.kde.org/stable/release-service/22.08.0/src/ksudoku-22.08.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.1/src/ksudoku-22.08.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -126,4 +128,4 @@ parts:
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-version: 22.08.0
+version: 22.08.1
