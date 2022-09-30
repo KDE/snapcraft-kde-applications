@@ -27,6 +27,11 @@ layout:
         symlink: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
     "/usr/share/alsa":
         symlink: "$SNAP/usr/share/alsa"
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.kde.artikulate
+        bus: session
 package-repositories:
 -   type: apt
     components:
@@ -100,5 +105,3 @@ parts:
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-        prime:
-        - "$exclusion"
