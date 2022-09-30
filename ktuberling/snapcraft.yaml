@@ -20,6 +20,11 @@ apps:
         - network-bind
         - audio-playback
         - removable-media
+layout:
+    "/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib":
+        symlink: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
+    "/usr/share/alsa":
+        symlink: "$SNAP/usr/share/alsa"
 slots:
     session-dbus-interface:
         interface: dbus
@@ -44,8 +49,15 @@ parts:
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         stage-packages:
+        - phonon4qt5
         - libgstreamer1.0-0
+        - gstreamer1.0-alsa
+        - gstreamer1.0-pulseaudio
         - gstreamer1.0-plugins-good
+        - gstreamer1.0-plugins-bad
+        - gstreamer1.0-plugins-ugly
+        - phonon4qt5-backend-gstreamer
+        - oxygen-sounds
         source: http://download.kde.org/stable/release-service/22.08.1/src/ktuberling-22.08.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
