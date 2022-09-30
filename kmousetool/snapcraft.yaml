@@ -11,7 +11,9 @@ apps:
         common-id: org.kde.kmousetool
         command: usr/bin/kmousetool
         environment:
-            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0/"
+            GST_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
+            GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
+            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
         plugs:
         - home
         - network
@@ -40,7 +42,7 @@ package-repositories:
 parts:
     knotifications:
         source: https://invent.kde.org/frameworks/knotifications.git
-        source-tag: v5.96.0
+        source-tag: v5.98.0
         source-depth: 0
         build-packages:
         - extra-cmake-modules
