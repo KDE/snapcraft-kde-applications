@@ -12,7 +12,9 @@ apps:
         common-id: org.kde.artikulate.desktop
         command: usr/bin/artikulate
         environment:
-            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0/"
+            GST_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
+            GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
+            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
         plugs:
         - home
         - network
@@ -20,6 +22,11 @@ apps:
         - audio-playback
         - removable-media
         - audio-record
+layout:
+    "/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib":
+        symlink: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
+    "/usr/share/alsa":
+        symlink: "$SNAP/usr/share/alsa"
 package-repositories:
 -   type: apt
     components:
@@ -39,6 +46,15 @@ parts:
         - libqt5gstreamer-dev
         - kirigami2-dev
         stage-packages:
+        - phonon4qt5
+        - libgstreamer1.0-0
+        - gstreamer1.0-alsa
+        - gstreamer1.0-pulseaudio
+        - gstreamer1.0-plugins-good
+        - gstreamer1.0-plugins-bad
+        - gstreamer1.0-plugins-ugly
+        - phonon4qt5-backend-gstreamer
+        - oxygen-sounds
         - libqt5gstreamer-1.0-0
         - libqt5gstreamerquick-1.0-0
         - libqt5gstreamerui-1.0-0
@@ -55,7 +71,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-98-qt-5-15-6-core20-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins/"
         filesets:
             exclusion:
@@ -68,5 +84,21 @@ parts:
             - "-usr/bin/X11"
             - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
             - "-usr/lib/aspell/*"
+          - "-usr/share/lintain"
+        prime:
+        - "$exclusion"
+    cleanup:
+        after:
+        - artikulate
+        plugin: nil
+        build-snaps:
+        - kde-frameworks-5-98-qt-5-15-6-core20
+        override-prime: |
+            set -eux
+            for snap in "kde-frameworks-5-98-qt-5-15-6-core20"; do  # List all content-snaps you're using here
+                cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
+            done
+            find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
+            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
         prime:
         - "$exclusion"
