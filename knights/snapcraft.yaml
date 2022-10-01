@@ -42,7 +42,7 @@ package-repositories:
 parts:
     knotifications:
         source: https://invent.kde.org/frameworks/knotifications.git
-        source-tag: v5.96.0
+        source-tag: v5.98.0
         source-depth: 0
         build-packages:
         - extra-cmake-modules
@@ -52,7 +52,10 @@ parts:
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-98-qt-5-15-6-core20-sdk/current"
     knights:
         after:
         - knotifications
