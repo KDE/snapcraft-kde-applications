@@ -63,9 +63,6 @@ parts:
         source: https://gitlab.com/mattbas/glaxnimate.git
         source-tag: 0.5.1
         build-packages:
-        - qtbase5-dev
-        - qttools5-dev
-        - libqt5svg5-dev
         - qt5-image-formats-plugins
         - libpython3-dev
         - zlib1g-dev
@@ -88,7 +85,6 @@ parts:
         - usr/share/metainfo/org.kde.kdenlive.appdata.xml
         plugin: cmake
         build-packages:
-        - libqt5networkauth5-dev
         - libkf5doctools-dev
         - libkf5purpose-dev
         - libmlt++-dev
@@ -98,10 +94,6 @@ parts:
         stage-packages:
         -   on amd64:
             - libpsm-infinipath1
-        - libqt5multimedia5
-        - libqt5concurrent5
-        - libqt5quickwidgets5
-        - libqt5networkauth5
         - ffmpeg
         - frei0r-plugins
         - librttr-core0.9.6
