@@ -34,8 +34,6 @@ package-repositories:
 layout:
     "/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib":
         symlink: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
-    "/etc/asound.conf":
-        bind-file: "$SNAP/etc/asound.conf"
     "/usr/share/alsa":
         symlink: "$SNAP/usr/share/alsa"
 parts:
@@ -44,6 +42,7 @@ parts:
         - usr/share/metainfo/org.kde.dragonplayer.appdata.xml
         plugin: cmake
         build-packages:
+        - libasound2-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         - libkf5doctools-dev
@@ -60,8 +59,17 @@ parts:
             mkdir -p "$SNAPCRAFT_PART_INSTALL/usr/share/alsa"
             cp "$SNAPCRAFT_PART_INSTALL/etc/asound.conf" "$SNAPCRAFT_PART_INSTALL/usr/share/alsa/asound.conf"
         stage-packages:
+        - libasound2
         - libasound2-data
         - libasound2-plugins
+        - phonon4qt5
+        - gstreamer1.0-alsa
+        - gstreamer1.0-pulseaudio
+        - gstreamer1.0-plugins-good
+        - gstreamer1.0-plugins-bad
+        - gstreamer1.0-plugins-ugly
+        - phonon4qt5-backend-gstreamer
+        - oxygen-sounds
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"
