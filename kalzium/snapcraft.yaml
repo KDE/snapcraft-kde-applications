@@ -40,6 +40,7 @@ parts:
         - libkf5khtml-dev
         - libopenbabel-dev
         - libsm-dev
+        - libavogadro-dev
         stage-packages:
         - chemical-mime-data
         - ocaml-nox-4.08.1
@@ -47,6 +48,8 @@ parts:
         - libkf5khtml5
         - libopenbabel6
         - libsm6
+        - avogadro
+        - avogadro-utils
         source: http://download.kde.org/stable/release-service/22.08.1/src/kalzium-22.08.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
