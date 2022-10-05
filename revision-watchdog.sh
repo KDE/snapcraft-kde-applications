@@ -67,7 +67,7 @@ snaps_to_watch=(
   "falkon"
   "kgraphviewer"
   "picmi"
-  "gcompris-qt"
+  "gcompris"
   "kid3"
   "kronometer"
   "quassel"
