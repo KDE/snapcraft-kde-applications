@@ -8,7 +8,7 @@ apps:
     kmousetool:
         extensions:
         - kde-neon
-        common-id: org.kde.kmousetool
+        common-id: org.kde.kmousetool.desktop
         command: usr/bin/kmousetool
         environment:
             GST_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
