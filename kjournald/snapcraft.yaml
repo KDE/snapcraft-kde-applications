@@ -38,7 +38,7 @@ parts:
         build-packages:
         - libsystemd-dev
         source: https://invent.kde.org/libraries/kjournald.git
-        source-tag: 0.0.3
+        source-tag: v0.0.3
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
