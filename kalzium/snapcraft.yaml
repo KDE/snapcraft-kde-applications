@@ -26,7 +26,18 @@ package-repositories:
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
+    openbabel:
+        plugin: cmake
+        source: https://github.com/openbabel/openbabel/releases/download/openbabel-3-1-1/openbabel-3.1.1-source.tar.bz2
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-98-qt-5-15-6-core20-sdk/current"
     kalzium:
+        after: openbabel
         parse-info:
         - usr/share/metainfo/org.kde.kalzium.appdata.xml
         plugin: cmake
@@ -38,7 +49,6 @@ parts:
         - libfacile-ocaml-dev
         - libglew-dev
         - libkf5khtml-dev
-        - libopenbabel-dev
         - libsm-dev
         - libavogadro-dev
         stage-packages:
@@ -46,7 +56,6 @@ parts:
         - ocaml-nox-4.08.1
         - libglew-dev
         - libkf5khtml5
-        - libopenbabel6
         - libsm6
         - avogadro
         - avogadro-utils
