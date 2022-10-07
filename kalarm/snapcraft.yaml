@@ -65,7 +65,7 @@ parts:
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
         - kross
-        - libassuan
+        - libassuan0
         - libboost-graph
         - pkg-config
         - xsltproc
