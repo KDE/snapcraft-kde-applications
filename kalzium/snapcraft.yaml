@@ -60,6 +60,7 @@ parts:
         - libsm6
         - avogadro
         - avogadro-utils
+        = kio
         source: http://download.kde.org/stable/release-service/22.08.2/src/kalzium-22.08.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
