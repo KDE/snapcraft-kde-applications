@@ -70,7 +70,7 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
-        source: http://download.kde.org/stable/release-service/22.08.1/src/kblackbox-22.08.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.2/src/kblackbox-22.08.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -91,4 +91,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.08.1
+version: 22.08.2

@@ -45,7 +45,7 @@ parts:
         stage-packages:
         - libasound2-data
         - libasound2-plugins
-        source: http://download.kde.org/stable/release-service/22.08.1/src/knavalbattle-22.08.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.2/src/knavalbattle-22.08.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -67,4 +67,4 @@ parts:
         prime:
         - "$exclusion"
         - "-etc/alsa/conf.d/99-pulse.conf"
-version: 22.08.1
+version: 22.08.2

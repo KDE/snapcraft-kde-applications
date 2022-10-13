@@ -60,7 +60,7 @@ parts:
         - libsm6
         - avogadro
         - avogadro-utils
-        source: http://download.kde.org/stable/release-service/22.08.1/src/kalzium-22.08.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.2/src/kalzium-22.08.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -81,4 +81,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.08.1
+version: 22.08.2

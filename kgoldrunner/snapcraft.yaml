@@ -57,7 +57,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/22.08.1/src/kgoldrunner-22.08.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.2/src/kgoldrunner-22.08.2.tar.xz
         stage-packages:
         - libasound2-data
         - libasound2-plugins
@@ -89,4 +89,4 @@ parts:
         prime:
         - "$exclusion"
         - "-etc/alsa/conf.d/99-pulse.conf"
-version: 22.08.1
+version: 22.08.2
