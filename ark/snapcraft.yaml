@@ -43,6 +43,19 @@ parts:
         - libzip-dev
         - zlib1g-dev
         - libpulse-dev
+        - libzstd-dev
+        - libunrar-dev
+        - libunarr-dev
+        stage-packages:
+        - lrzip
+        - lzop
+        - zstd
+        - unrar-free
+        - rar-free
+        - p7zip
+        - unzip
+        - zip
+        - unar
         source: http://download.kde.org/stable/release-service/22.08.2/src/ark-22.08.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
