@@ -38,6 +38,7 @@ parts:
         plugin: cmake
         build-packages:
         - libsystemd-dev
+        - pkg-config
         source: https://invent.kde.org/libraries/kjournald.git
         source-tag: v0.0.3
         source-depth: 0
