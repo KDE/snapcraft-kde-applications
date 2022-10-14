@@ -59,7 +59,8 @@ parts:
         prime:
         - "$exclusion"
     libksane:
-        after: - ksanecore
+        after:
+        - ksanecore
         plugin: cmake
         build-packages:
         - libsane-dev
