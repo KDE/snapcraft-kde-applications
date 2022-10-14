@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core20
 adopt-info: rocs
-version: 22.08.0
+version: 22.08.2
 apps:
     rocs:
         extensions:
@@ -44,7 +44,7 @@ parts:
         stage-packages:
         - libgrantlee-templates5
         - libgrantlee-textdocument5
-        source: http://download.kde.org/stable/release-service/22.08.0/src/rocs-22.08.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.2/src/rocs-22.08.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
