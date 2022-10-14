@@ -1,6 +1,7 @@
 ---
 name: akregator
 version: 22.08.2
+base: core20
 adopt-info: akregator
 confinement: strict
 grade: stable
