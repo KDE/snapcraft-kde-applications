@@ -34,7 +34,7 @@ package-repositories:
 parts:
     kjournald:
         parse-info:
-        - org.kde.kjournaldbrowser.appdata.xml
+        - usr/share/metainfo/org.kde.kjournaldbrowser.appdata.xml
         plugin: cmake
         build-packages:
         - libsystemd-dev
