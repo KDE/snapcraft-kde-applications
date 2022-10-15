@@ -51,6 +51,8 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
+        stage-packages:
+        - kinit
         source: http://download.kde.org/stable/release-service/22.08.2/src/cervisia-22.08.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
