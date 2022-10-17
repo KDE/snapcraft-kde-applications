@@ -19,7 +19,7 @@ apps:
 slots:
     session-dbus-interface:
         interface: dbus
-        name: org.kde.spectacle
+        name: org.kde.Spectacle
         bus: session
 package-repositories:
 -   type: apt
@@ -61,6 +61,7 @@ parts:
         - libkcolorpicker0
         - libkf5purpose5
         - libkf5service5
+        - libkf5globalaccel5
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
