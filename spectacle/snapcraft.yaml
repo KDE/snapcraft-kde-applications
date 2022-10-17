@@ -62,6 +62,7 @@ parts:
         - libkf5purpose5
         - libkf5service5
         - libkf5globalaccel5
+        - kded5
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
