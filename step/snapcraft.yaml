@@ -40,7 +40,7 @@ package-repositories:
 parts:
     knotifications:
         source: https://invent.kde.org/frameworks/knotifications.git
-        source-tag: v5.96.0
+        source-tag: v5.98.0
         source-depth: 0
         build-packages:
         - extra-cmake-modules
@@ -67,7 +67,7 @@ parts:
             - "-usr/lib/aspell/*"
             - "-usr/share/lintain"
             inclusion:
-            - usr/lib/*/libKF5Notifications.so.*
+            - "usr/lib/*/libKF5Notifications.so.5"
         prime:
         - "$exclusion"
         - "$inclusion"
@@ -120,11 +120,9 @@ parts:
             - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
             - "-usr/lib/aspell/*"
             - "-usr/share/lintain"
-            inclusion:
-            - usr/lib/*/libKF5Notifications.so.*
+            - "-usr/lib/*/libKF5Notifications.so.5"
         prime:
         - "$exclusion"
-        - "$inclusion"
     cleanup:
         after:
         - knotifications
@@ -140,5 +138,5 @@ parts:
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
         parse-info:
-        - usr/share/metainfo/org.kde.step.appdata.xml
+        - "usr/share/metainfo/org.kde.step.appdata.xml"
 version: 22.08.2
