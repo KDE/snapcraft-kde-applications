@@ -16,7 +16,7 @@ apps:
         - network-bind
         - audio-playback
         - removable-media
-    cvsservice:
+    cvsservice5:
         extensions:
         - kde-neon
         command: usr/bin/cvsservice5
