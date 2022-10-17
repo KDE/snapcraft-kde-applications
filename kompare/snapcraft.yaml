@@ -69,7 +69,7 @@ parts:
             - "-usr/lib/aspell/*"
             - "-usr/share/lintain"
             inclusion:
-            - usr/lib/*/libKF5Notifications.so.*
+            - usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libKF5Notifications.so.*
         prime:
         - "$exclusion"
         - "$inclusion"
