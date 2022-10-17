@@ -48,6 +48,8 @@ parts:
         - libxcb-util-dev
         - libxcb1-dev
         - libssl-dev
+        stage-packages:
+        - frameworkintegration
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
