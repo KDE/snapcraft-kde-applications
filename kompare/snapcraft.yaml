@@ -42,10 +42,9 @@ package-repositories:
 parts:
     knotifications:
         source: https://invent.kde.org/frameworks/knotifications.git
-        source-tag: v5.96.0
+        source-tag: v5.98.0
         source-depth: 0
         build-packages:
-        - extra-cmake-modules
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         plugin: cmake
