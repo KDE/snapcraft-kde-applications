@@ -67,11 +67,12 @@ parts:
             - "-usr/lib/aspell/*"
             - "-usr/share/lintain"
             inclusion:
-            - "usr/lib/*/libKF5Notifications.so.5"
+            - "usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libKF5Notifications.so.5*"
+        stage:
+        - $inclusion
         prime:
-        - "$exclusion"
-        - "$inclusion"
-    step:
+        - $exclusion
+       step:
         after:
         - knotifications
         plugin: cmake
@@ -122,8 +123,10 @@ parts:
             - "-usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libKF5Notifications.so.5"
             - "-usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libKF5Notifications.so.5.98.0"
             - "-usr/share/locale/eu/LC_MESSAGES/knotifications5_qt.qm"
+        stage:
+        - $exclusion
         prime:
-        - "$exclusion"
+        - $exclusion
     cleanup:
         after:
         - knotifications
