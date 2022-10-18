@@ -51,6 +51,8 @@ parts:
         - libkf5purpose-dev
         - python3
         - libshiboken2-dev
+        - shiboken2
+        - libpyside2-dev
         stage-packages:
         - libkf5purpose-bin
         - libkf5purpose5
