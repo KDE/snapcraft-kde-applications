@@ -49,13 +49,11 @@ parts:
         - libxcb1-dev
         - libssl-dev
         - libkf5purpose-dev
-        - libpyside2-py3-5.14
         - python3
         - libshiboken2-dev
         stage-packages:
         - libkf5purpose-bin
         - libkf5purpose5
-        - python3-pyside2
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
