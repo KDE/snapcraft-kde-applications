@@ -73,4 +73,3 @@ parts:
             for snap in "kde-frameworks-5-98-qt-5-15-6-core20"; do  # List all content-snaps you're using here
                 cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
             done
-            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
