@@ -49,7 +49,7 @@ parts:
         - libxcb1-dev
         - libssl-dev
         - libkf5purpose-dev
-        - python3-pyside2
+        - libpyside2-py3-5.14
         - python3
         - libshiboken2-dev
         stage-packages:
