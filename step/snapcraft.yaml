@@ -113,14 +113,15 @@ parts:
             - "-usr/lib/*/cmake/*"
             - "-usr/include/*"
             - "-usr/share/ECM/*"
-            - "-usr/share/doc/*"
             - "-usr/share/man/*"
             - "-usr/share/icons/breeze-dark*"
             - "-usr/bin/X11"
             - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
             - "-usr/lib/aspell/*"
             - "-usr/share/lintain"
-            - "-usr/lib/*/libKF5Notifications.so.5"
+            - "-usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libKF5Notifications.so.5"
+            - "-usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libKF5Notifications.so.5.98.0"
+            - "-usr/share/locale/eu/LC_MESSAGES/knotifications5_qt.qm"
         prime:
         - "$exclusion"
     cleanup:
