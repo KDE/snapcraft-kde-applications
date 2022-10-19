@@ -11,6 +11,8 @@ apps:
         - kde-neon
         common-id: org.kde.falkon.desktop
         command: usr/bin/falkon
+        environment:
+            QT_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins"
         plugs:
         - home
         - network
