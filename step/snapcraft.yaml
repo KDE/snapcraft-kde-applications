@@ -11,7 +11,9 @@ apps:
         common-id: org.kde.step.desktop
         command: usr/bin/step
         environment:
-            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0/"
+            GST_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
+            GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
+            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
         plugs:
         - home
         - network
@@ -38,43 +40,7 @@ package-repositories:
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
-    knotifications:
-        source: https://invent.kde.org/frameworks/knotifications.git
-        source-tag: v5.98.0
-        source-depth: 0
-        build-packages:
-        - extra-cmake-modules
-        - libphonon4qt5-dev
-        - libphonon4qt5experimental-dev
-        plugin: cmake
-        cmake-parameters:
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DBUILD_TESTING=OFF"
-        - "-DENABLE_TESTING=OFF"
-        - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-98-qt-5-15-6-core20-sdk/current"
-        filesets:
-            exclusion:
-            - "-usr/lib/*/cmake/*"
-            - "-usr/include/*"
-            - "-usr/share/ECM/*"
-            - "-usr/share/doc/*"
-            - "-usr/share/man/*"
-            - "-usr/share/icons/breeze-dark*"
-            - "-usr/bin/X11"
-            - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
-            - "-usr/lib/aspell/*"
-            - "-usr/share/lintain"
-            inclusion:
-            - "usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libKF5Notifications.so.5*"
-        stage:
-        - $inclusion
-        prime:
-        - $exclusion
-       step:
-        after:
-        - knotifications
+    step:
         plugin: cmake
         build-packages:
         - libeigen3-dev
@@ -120,16 +86,10 @@ parts:
             - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
             - "-usr/lib/aspell/*"
             - "-usr/share/lintain"
-            - "-usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libKF5Notifications.so.5"
-            - "-usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libKF5Notifications.so.5.98.0"
-            - "-usr/share/locale/eu/LC_MESSAGES/knotifications5_qt.qm"
-        stage:
-        - $exclusion
         prime:
         - $exclusion
     cleanup:
         after:
-        - knotifications
         - step
         plugin: nil
         build-snaps:
