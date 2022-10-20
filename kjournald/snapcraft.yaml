@@ -21,7 +21,7 @@ apps:
 slots:
     session-dbus-interface:
         interface: dbus
-        name: org.kde.kjournaldbrowser.desktop
+        name: org.kde.kjournaldbrowser
         bus: session
 package-repositories:
 -   type: apt
