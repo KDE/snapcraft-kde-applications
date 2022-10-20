@@ -36,6 +36,8 @@ parts:
         source-tag: v5.98.0
         source-depth: 0
         plugin: cmake
+        build-packages:
+        - flex
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
