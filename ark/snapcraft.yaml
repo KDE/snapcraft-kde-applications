@@ -51,7 +51,6 @@ parts:
         - lzop
         - zstd
         - unrar
-        - rar
         - p7zip
         - unzip
         - zip
