@@ -50,8 +50,8 @@ parts:
         - lrzip
         - lzop
         - zstd
-        - unrar-free
-        - rar-free
+        - unrar
+        - rar
         - p7zip
         - unzip
         - zip
