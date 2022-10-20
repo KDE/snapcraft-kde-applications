@@ -38,7 +38,7 @@ layout:
 parts:
     knotifications:
         source: https://invent.kde.org/frameworks/knotifications.git
-        source-tag: v5.96.0
+        source-tag: v5.98.0
         source-depth: 0
         build-packages:
         - extra-cmake-modules
@@ -89,4 +89,18 @@ parts:
         prime:
         - "$exclusion"
         - "-etc/alsa/conf.d/99-pulse.conf"
+    cleanup:
+        after:
+        - knotifications
+        - kgoldrunner
+        plugin: nil
+        build-snaps:
+        - kde-frameworks-5-98-qt-5-15-6-core20
+        override-prime: |
+            set -eux
+            for snap in "kde-frameworks-5-98-qt-5-15-6-core20"; do  # List all content-snaps you're using here
+                cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
+            done
+            find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
+            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
 version: 22.08.2
