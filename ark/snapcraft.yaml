@@ -31,7 +31,22 @@ package-repositories:
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
+    kservice:
+        source: https://invent.kde.org/frameworks/kservice.git
+        source-tag: v5.98.0
+        source-depth: 0
+        plugin: cmake
+        cmake-parameters:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-98-qt-5-15-6-core20-sdk/current"
     ark:
+        after:
+        - kservice
         parse-info:
         - usr/share/metainfo/org.kde.ark.appdata.xml
         plugin: cmake
@@ -76,4 +91,18 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
+    cleanup:
+        after:
+        - kservice
+        - ark
+        plugin: nil
+        build-snaps:
+        - kde-frameworks-5-98-qt-5-15-6-core20
+        override-prime: |
+            set -eux
+            for snap in "kde-frameworks-5-98-qt-5-15-6-core20"; do  # List all content-snaps you're using here
+                cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
+            done
+            find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
+            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
 version: 22.08.2
