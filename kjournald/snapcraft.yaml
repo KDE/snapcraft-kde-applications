@@ -6,7 +6,7 @@ version: 0.0.3
 base: core20
 adopt-info: kjournald
 apps:
-    kjournaldbrowser:
+    kjournald:
         extensions:
         - kde-neon
         common-id: org.kde.kjournaldbrowser.desktop
