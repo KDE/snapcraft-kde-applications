@@ -17,6 +17,7 @@ apps:
         - network-bind
         - audio-playback
         - removable-media
+        - udisks2
 slots:
     session-dbus-interface:
         interface: dbus
