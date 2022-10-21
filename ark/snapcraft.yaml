@@ -38,6 +38,7 @@ parts:
         plugin: cmake
         build-packages:
         - flex
+        - bison
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
