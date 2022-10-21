@@ -36,7 +36,7 @@ parts:
         build-packages:
         - libkf5doctools-dev
         - libphonon4qt5-dev
-        source: https://download.kde.org/stable/kronometer/2.2.3/src/kronometer-2.2.3.tar.xz
+        source: https://download.kde.org/stable/kronometer/2.3.0/src/kronometer-2.3.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -59,3 +59,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
+version: 2.3.0
