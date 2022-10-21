@@ -64,6 +64,7 @@ parts:
         source-tag: 0.5.1
         build-packages:
         - qt5-image-formats-plugins
+        - qttools5-dev
         - libpython3-dev
         - zlib1g-dev
         - libpotrace-dev

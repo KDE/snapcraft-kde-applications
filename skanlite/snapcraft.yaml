@@ -100,6 +100,7 @@ parts:
         - libpng-dev
         source: http://download.kde.org/stable/release-service/22.08.2/src/skanlite-22.08.2.tar.xz
         cmake-parameters:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_TESTING=OFF"
