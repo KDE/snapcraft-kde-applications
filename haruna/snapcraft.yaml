@@ -43,6 +43,7 @@ parts:
         - libavcodec-dev
         - kirigami2-dev
         - libkf5doctools-dev
+        - samba-dev
         stage-packages:
         - youtube-dl
         - libavdevice58
