@@ -10,14 +10,14 @@ apps:
         - kde-neon
         common-id: org.kde.haruna
         command: usr/bin/haruna
-        environment:
-            LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/"
         plugs:
         - home
         - network
         - network-bind
         - audio-playback
         - removable-media
+environment:
+    LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/"
 slots:
     session-dbus-interface:
         interface: dbus
