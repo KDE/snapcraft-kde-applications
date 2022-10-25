@@ -98,6 +98,7 @@ parts:
         plugin: cmake
         build-packages:
         - libpng-dev
+        - libkf5doctools-dev
         source: http://download.kde.org/stable/release-service/22.08.2/src/skanlite-22.08.2.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
