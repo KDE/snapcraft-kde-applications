@@ -73,6 +73,7 @@ parts:
         - libswscale-dev
         - libavcodec-dev
         - libavutil-dev
+        - libqt5networkauth5-dev
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
