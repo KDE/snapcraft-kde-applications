@@ -110,6 +110,7 @@ parts:
         - libgpm2
         - kio-extras
         - mediainfo
+        - libqt5networkauth5
         source: http://download.kde.org/stable/release-service/22.08.2/src/kdenlive-22.08.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
