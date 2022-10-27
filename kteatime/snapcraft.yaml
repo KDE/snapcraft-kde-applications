@@ -8,7 +8,7 @@ apps:
     kteatime:
         extensions:
         - kde-neon
-         common-id: org.kde.kteatime.desktop
+        common-id: org.kde.kteatime.desktop
         command: usr/bin/kteatime
         plugs:
         - home
