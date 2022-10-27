@@ -10,12 +10,19 @@ apps:
         - kde-neon
         common-id: org.kde.lokalize.desktop
         command: usr/bin/lokalize
+        environment:
+            DICPATH: $SNAP/usr/share/hunspell
         plugs:
         - home
         - network
         - network-bind
         - audio-playback
         - removable-media
+        - hunspell-dictionaries-plug:
+            content: hunspell-dictionaries
+            interface: content
+            target: $SNAP/usr/share/hunspell
+            default-provider: hunspell-dictionaries:hunspell-dictionaries
 slots:
     session-dbus-interface:
         interface: dbus
