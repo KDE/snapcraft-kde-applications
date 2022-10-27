@@ -18,7 +18,8 @@ apps:
         - network-bind
         - audio-playback
         - removable-media
-        - hunspell-dictionaries-plug:
+plugs:
+    hunspell-dictionaries-plug:
             content: hunspell-dictionaries
             interface: content
             target: $SNAP/usr/share/hunspell
