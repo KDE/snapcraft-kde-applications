@@ -80,7 +80,8 @@ parts:
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-98-qt-5-15-6-core20-sdk/current"
         - "-DBUILD_TESTING=OFF"
     mlt:
-        after: glaxnimate
+        after:
+        - glaxnimate
         plugin: cmake
         source: https://github.com/mltframework/mlt/releases/download/v7.8.0/mlt-7.8.0.tar.gz
         build-packages:
