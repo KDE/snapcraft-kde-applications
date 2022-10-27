@@ -37,6 +37,13 @@ parts:
         - kross-dev
         - libhunspell-dev
         - libkf5doctools-dev
+        - gettext
+        stage-packages:
+        - libqt5sql5-sqlite
+        - gettext
+        - sonnet-plugins
+        - translate-toolkit
+        - poxml
         parse-info:
         - usr/share/metainfo/org.kde.lokalize.appdata.xml
         source: http://download.kde.org/stable/release-service/22.08.2/src/lokalize-22.08.2.tar.xz
