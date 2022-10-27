@@ -79,19 +79,38 @@ parts:
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-98-qt-5-15-6-core20-sdk/current"
         - "-DBUILD_TESTING=OFF"
+    mlt:
+        after: glaxnimate
+        plugin: cmake
+        source: source: https://github.com/mltframework/mlt/releases/download/v7.8.0/mlt-7.8.0.tar.gz
+        build-packages:
+        - libxml2-dev
+        - libavformat-dev
+        - libmovit-dev
+        - libvorbis-dev
+        - libjack-dev
+        - libsox-dev
+        - libsdl1.2-dev
+        - libsamplerate0-dev
+        - libgtk2.0-dev
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DMOD_GLAXNIMATE=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-98-qt-5-15-6-core20-sdk/current"
+        - "-DBUILD_TESTING=OFF"
     kdenlive:
         after:
         - python-deps
         - glaxnimate
+        - mlt
         parse-info:
         - usr/share/metainfo/org.kde.kdenlive.appdata.xml
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
         - libkf5purpose-dev
-        - libmlt++-dev
         - librttr-dev
-        - libmlt-dev
         - libv4l-dev
         stage-packages:
         -   on amd64:
@@ -106,7 +125,6 @@ parts:
         - swh-plugins
         - libslang2
         - libmagic1
-        - libmlt++7
         - libgpm2
         - kio-extras
         - mediainfo
@@ -131,6 +149,7 @@ parts:
         - kdenlive
         - python-deps
         - glaxnimate
+        - mlt
         plugin: nil
         build-snaps:
         - kde-frameworks-5-98-qt-5-15-6-core20
