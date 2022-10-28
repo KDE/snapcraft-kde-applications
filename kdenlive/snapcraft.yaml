@@ -120,7 +120,6 @@ parts:
         - frei0r-plugins
         - librttr-core0.9.6
         - libkf5purpose-bin
-        - melt
         - dvgrab
         - recordmydesktop
         - swh-plugins
