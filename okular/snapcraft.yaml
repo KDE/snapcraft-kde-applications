@@ -138,6 +138,7 @@ parts:
         - libkf5purpose-dev
         - kirigami2-dev
         - libmarkdown2-dev
+        - libkf5doctools-dev
         stage-packages:
         - cups-bsd
         - ghostscript
