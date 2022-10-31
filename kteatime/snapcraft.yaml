@@ -15,7 +15,7 @@ apps:
         - network
         - network-bind
         - audio-playback
-        - removable-media
+        - unity7
 package-repositories:
 -   type: apt
     components:
