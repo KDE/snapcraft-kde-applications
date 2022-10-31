@@ -10,12 +10,21 @@ apps:
         - kde-neon
         common-id: org.kde.kteatime.desktop
         command: usr/bin/kteatime
+        environment:
+            GST_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
+            GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
+            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
         plugs:
         - home
         - network
         - network-bind
         - audio-playback
         - unity7
+layout:
+    "/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib":
+        symlink: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
+    "/usr/share/alsa":
+        symlink: "$SNAP/usr/share/alsa"
 package-repositories:
 -   type: apt
     components:
@@ -26,6 +35,36 @@ package-repositories:
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
+    knotifications:
+        source: https://invent.kde.org/frameworks/knotifications.git
+        source-tag: v5.98.0
+        source-depth: 0
+        build-packages:
+        - extra-cmake-modules
+        - libphonon4qt5-dev
+        - libphonon4qt5experimental-dev
+        plugin: cmake
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-98-qt-5-15-6-core20-sdk/current"
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+            - "-usr/bin/X11"
+            - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
+            - "-usr/lib/aspell/*"
+            - "-usr/share/lintain"
+        prime:
+        - "$exclusion"
     kteatime:
         parse-info:
         - usr/share/metainfo/org.kde.kteatime.appdata.xml
@@ -33,6 +72,14 @@ parts:
         build-packages:
         - libkf5doctools-dev
         stage-packages:
+        - phonon4qt5
+        - libgstreamer1.0-0
+        - gstreamer1.0-alsa
+        - gstreamer1.0-pulseaudio
+        - gstreamer1.0-plugins-good
+        - gstreamer1.0-plugins-bad
+        - gstreamer1.0-plugins-ugly
+        - phonon4qt5-backend-gstreamer
         - oxygen-sounds
         source: http://download.kde.org/stable/release-service/22.08.2/src/kteatime-22.08.2.tar.xz
         cmake-parameters:
@@ -55,17 +102,17 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-    cleanup:
-        after:
-        - kteatime
-        plugin: nil
-        build-snaps:
-        - kde-frameworks-5-98-qt-5-15-6-core20
-        override-prime: |
-            set -eux
-            for snap in "kde-frameworks-5-98-qt-5-15-6-core20"; do  # List all content-snaps you're using here
-                cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
-            done
-            find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
-            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
+    # cleanup:
+    #     after:
+    #     - kteatime
+    #     plugin: nil
+    #     build-snaps:
+    #     - kde-frameworks-5-98-qt-5-15-6-core20
+    #     override-prime: |
+    #         set -eux
+    #         for snap in "kde-frameworks-5-98-qt-5-15-6-core20"; do  # List all content-snaps you're using here
+    #             cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
+    #         done
+    #         find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
+    #         find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
 version: 22.08.2
