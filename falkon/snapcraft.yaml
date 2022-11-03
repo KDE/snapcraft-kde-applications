@@ -3,7 +3,7 @@ name: falkon
 confinement: strict
 grade: stable
 base: core20
-version: 22.08.2
+version: 22.08.3
 adopt-info: falkon
 apps:
     falkon:
@@ -43,7 +43,7 @@ parts:
     falkon:
         parse-info:
         - usr/share/metainfo/org.kde.falkon.appdata.xml
-        source: http://download.kde.org/stable/release-service/22.08.2/src/falkon-22.08.2.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.3/src/falkon-22.08.3.tar.xz
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
