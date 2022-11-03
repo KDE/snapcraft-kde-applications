@@ -1,6 +1,6 @@
 ---
 name: akregator
-version: 22.08.2
+version: 22.08.3
 base: core20
 adopt-info: akregator
 confinement: strict
@@ -156,7 +156,7 @@ parts:
         - xsltproc
         - zlib1g-dev
         - libpulse0
-        source: http://download.kde.org/stable/release-service/22.08.2/src/akregator-22.08.2.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.3/src/akregator-22.08.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
