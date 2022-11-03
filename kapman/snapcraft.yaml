@@ -47,7 +47,7 @@ parts:
         stage-packages:
         - libasound2-data
         - libasound2-plugins
-        source: http://download.kde.org/stable/release-service/22.08.2/src/kapman-22.08.2.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.3/src/kapman-22.08.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -69,4 +69,4 @@ parts:
         prime:
         - "$exclusion"
         - "-etc/alsa/conf.d/99-pulse.conf"
-version: 22.08.2
+version: 22.08.3
