@@ -37,7 +37,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/22.08.2/src/ksquares-22.08.2.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.3/src/ksquares-22.08.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -58,4 +58,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.08.2
+version: 22.08.3
