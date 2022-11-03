@@ -27,18 +27,6 @@ apps:
 slots:
     session-dbus-interface:
         interface: dbus
-        name: org.kde.cervisia5.cvsjob
-        bus: session
-    session-dbus-interface:
-        interface: dbus
-        name: org.kde.cervisia5.cvsservice
-        bus: session
-    session-dbus-interface:
-        interface: dbus
-        name: org.kde.cervisia5.cvsloginjob
-        bus: session
-    session-dbus-interface:
-        interface: dbus
         name: org.kde.cervisia5.repository
         bus: session
 package-repositories:
@@ -61,7 +49,7 @@ parts:
         - kinit
         - libkf5service5
         - kded5
-        source: http://download.kde.org/stable/release-service/22.08.2/src/cervisia-22.08.2.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.3/src/cervisia-22.08.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -97,4 +85,4 @@ parts:
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-version: 22.08.2
+version: 22.08.3
