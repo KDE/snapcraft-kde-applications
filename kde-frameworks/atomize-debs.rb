@@ -1,3 +1,5 @@
+# No change update for kde-frameworks-5-99-qt-5-15-7-core20
+
 require 'fileutils'
 require 'json'
 require 'tmpdir'
