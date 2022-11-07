@@ -40,6 +40,7 @@ parts:
         - libgmp-dev
         - docbook-xml
         - docbook-xsl
+        - libkf5doctools-dev
         stage-packages:
         - libmpfr6
         - libgmp10
