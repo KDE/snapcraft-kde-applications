@@ -1,9 +1,9 @@
 ---
 name: skrooge
-version: 2.27.0
+version: 2.28.0
 adopt-info: skrooge
 confinement: strict
-grade: devel
+grade: stable
 base: core20
 apps:
     skrooge:
@@ -11,6 +11,7 @@ apps:
         - kde-neon
         command: usr/bin/skrooge
         common-id: org.kde.skrooge
+        desktop: org.kde.skrooge.desktop
         plugs:
         - home
         - network
@@ -52,7 +53,7 @@ parts:
         - libsqlcipher0
         - freeglut3
         - libslang2
-        source: https://download.kde.org/stable/skrooge/skrooge-2.27.0.tar.xz
+        source: https://download.kde.org/stable/skrooge/skrooge-2.28.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
