@@ -479,3 +479,6 @@ umbrello:
 
 kjournald:
   extends: .prepone-extension-update
+
+ghostwriter:
+  extends: .prepone-extension-update
