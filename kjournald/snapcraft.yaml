@@ -15,9 +15,7 @@ apps:
         - home
         - network
         - network-bind
-        - audio-playback
-        - removable-media
-        - udisks2
+        - log-observe
 slots:
     session-dbus-interface:
         interface: dbus
