@@ -51,6 +51,9 @@ parts:
         - libqt5gstreamer-dev
         - kirigami2-dev
         stage-packages:
+        - libasound2
+        - libasound2-data
+        - libasound2-plugins
         - phonon4qt5
         - libgstreamer1.0-0
         - gstreamer1.0-alsa
@@ -65,6 +68,7 @@ parts:
         - libqt5gstreamerui-1.0-0
         - libqt5gstreamerutils-1.0-0
         - libslang2
+        - libkf5kirigami2-5
         - qml-module-qtquick-shapes
         - qml-module-org-kde-kirigami2
         - qml-module-org-kde-kquickcontrolsaddons
