@@ -1,0 +1,73 @@
+---
+name: ghostwriter
+confinement: strict
+grade: stable
+base: core20
+adopt-info: ghostwriter
+version: 2.2.0
+apps:
+    ghostwriter:
+        extensions:
+        - kde-neon
+        common-id: org.kde.ghostwriter.desktop
+        command: usr/bin/ghostwriter
+        plugs:
+        - home
+        - network
+        - network-bind
+        - removable-media
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.kde.ghostwriter
+        bus: session
+package-repositories:
+-   type: apt
+    components:
+    - main
+    suites:
+    - focal
+    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
+    url: http://origin.archive.neon.kde.org/user
+    key-server: keyserver.ubuntu.com
+parts:
+    ghostwriter:
+        plugin: cmake
+        build-packages:
+        - libkf5doctools-dev
+        source: https://invent.kde.org/office/ghostwriter.git
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-99-qt-5-15-7-core20-sdk/current"
+        parse-info:
+        - usr/share/metainfo/org.kde.ghostwriter.appdata.xml
+        filesets:
+            exclusion:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+            - "-usr/bin/X11"
+            - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
+            - "-usr/lib/aspell/*"
+        prime:
+        - "$exclusion"
+    cleanup:
+        after:
+        - ghostwriter
+        plugin: nil
+        build-snaps:
+        - kde-frameworks-5-99-qt-5-15-7-core20
+        override-prime: |
+            set -eux
+            for snap in "kde-frameworks-5-99-qt-5-15-7-core20"; do  # List all content-snaps you're using here
+                cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
+            done
+            find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
+            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
