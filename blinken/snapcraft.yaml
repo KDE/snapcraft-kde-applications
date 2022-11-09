@@ -13,6 +13,11 @@ apps:
         command: usr/bin/blinken
         plugs:
         - audio-playback
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.kde.blinken
+        bus: session
 package-repositories:
 -   type: apt
     components:
