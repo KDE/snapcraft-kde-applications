@@ -6,7 +6,7 @@ version: 0.0.3
 base: core20
 adopt-info: kjournald
 apps:
-    kjournald:
+    kjournaldbrowser:
         extensions:
         - kde-neon
         common-id: org.kde.kjournaldbrowser.desktop
@@ -16,11 +16,6 @@ apps:
         - network
         - network-bind
         - log-observe
-slots:
-    session-dbus-interface:
-        interface: dbus
-        name: org.kde.kjournaldbrowser
-        bus: session
 package-repositories:
 -   type: apt
     components:
@@ -38,6 +33,8 @@ parts:
         build-packages:
         - libsystemd-dev
         - pkg-config
+        stage-packages:
+        - oxygen-icon-theme
         source: https://invent.kde.org/libraries/kjournald.git
         source-tag: v0.0.3
         source-depth: 0
