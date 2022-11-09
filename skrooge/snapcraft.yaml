@@ -43,6 +43,7 @@ parts:
         - qtbase5-private-dev
         - docbook-xml
         - docbook-xsl
+        - libkf5doctools-dev
         stage-packages:
         - libgrantlee-templates5
         - libgrantlee-textdocument5
