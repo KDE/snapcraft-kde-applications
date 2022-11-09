@@ -4,6 +4,7 @@ confinement: strict
 grade: stable
 base: core20
 adopt-info: blinken
+version: 22.08.3
 apps:
     blinken:
         extensions:
@@ -11,16 +12,7 @@ apps:
         common-id: org.kde.blinken.desktop
         command: usr/bin/blinken
         plugs:
-        - home
-        - network
-        - network-bind
         - audio-playback
-        - removable-media
-slots:
-    session-dbus-interface:
-        interface: dbus
-        name: org.kde.blinken
-        bus: session
 package-repositories:
 -   type: apt
     components:
@@ -73,4 +65,3 @@ parts:
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-version: 22.08.3
