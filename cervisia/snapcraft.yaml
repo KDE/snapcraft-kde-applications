@@ -6,6 +6,7 @@ base: core20
 adopt-info: cervisia
 apps:
     cervisia:
+        after: cvsservice5
         extensions:
         - kde-neon
         desktop: org.kde.cervisia.desktop
@@ -17,10 +18,12 @@ apps:
         - audio-playback
         - removable-media
     cvsservice5:
+        before: cervisia
         extensions:
         - kde-neon
         desktop: org.kde.cvsservice5.desktop
         command: usr/bin/cvsservice5
+        daemon: simple
         plugs:
         - network
         - network-bind
