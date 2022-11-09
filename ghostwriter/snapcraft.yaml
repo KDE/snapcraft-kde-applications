@@ -36,6 +36,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
+        - libhunspell-dev
         source: https://invent.kde.org/office/ghostwriter.git
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
