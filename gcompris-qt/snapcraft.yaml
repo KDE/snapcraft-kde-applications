@@ -54,7 +54,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-99-qt-5-15-7-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-100-qt-5-15-7-core20-sd/current"
         filesets:
             exclusion:
             - "-usr/lib/*/cmake/*"

@@ -73,7 +73,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-99-qt-5-15-7-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-100-qt-5-15-7-core20-sd/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins/"
         filesets:
             exclusion:
