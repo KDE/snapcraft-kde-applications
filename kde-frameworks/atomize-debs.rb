@@ -331,7 +331,7 @@ class SnapcraftConfig
 end
 
 config = SnapcraftConfig.new
-config.name = 'kde-frameworks-5-100-qt-5-15-7-core20'
+config.name = 'kde-frameworks-5-99-qt-5-15-7-core20'
 config.version = 'unknown'
 config.summary = 'KDE Frameworks 5'
 config.description = 'KDE Frameworks are addons and useful extensions to Qt'
@@ -341,10 +341,10 @@ config.base = 'core20'
 config.compression = 'lzo'
 
 slot = SnapcraftConfig::Slot.new
-slot.content = 'kde-frameworks-5-100-qt-5-15-7-core20-all'
+slot.content = 'kde-frameworks-5-99-qt-5-15-7-core20-all'
 slot.interface = 'content'
 slot.read = %w[.]
-config.slots['kde-frameworks-5-100-qt-5-15-7-core20-slot'] = slot
+config.slots['kde-frameworks-5-99-qt-5-15-7-core20-slot'] = slot
 
 package_repo = SnapcraftConfig::PackageRepository.new
 package_repo.type = 'apt'
