@@ -9,6 +9,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.ksnakeduel.desktop
+        desktop: usr/share/applications/org.kde.ksnakeduel.desktop
         command: usr/bin/ksnakeduel
         plugs:
         - home
