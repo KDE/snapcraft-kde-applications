@@ -9,6 +9,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.kdenlive.desktop
+        desktop: usr/share/applications/org.kde.kdenlive.desktop
         command: usr/bin/kdenlive
         plugs:
         - home
