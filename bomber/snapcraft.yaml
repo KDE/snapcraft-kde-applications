@@ -8,6 +8,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.bomber.desktop
+        desktop: usr/share/applications/org.kde.bomber.desktop
         command: usr/bin/bomber
         plugs:
         - home
