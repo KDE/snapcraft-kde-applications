@@ -167,6 +167,7 @@ parts:
         -   PATH: "/usr/lib/ccache:$PATH"
         -   LD_LIBRARY_PATH: "$SNAPCRAFT_STAGE/usr/lib:$SNAPCRAFT_STAGE/usr/lib/$SNAPCRAFT_ARCH_TRIPLET"
         cmake-parameters:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
         - "-DBUILD_TESTING=OFF"
