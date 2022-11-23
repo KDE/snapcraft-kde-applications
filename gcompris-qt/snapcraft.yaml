@@ -10,6 +10,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.gcompris.desktop
+        desktop: usr/share/applications/org.kde.gcompris.desktop
         command: usr/bin/gcompris-qt
         plugs:
             - home
