@@ -11,6 +11,7 @@ apps:
             DK_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/plugins/digikam"
         command: usr/bin/digikam
         common-id: org.kde.digikam.desktop
+        desktop: usr/share/applications/org.kde.digikam.desktop
         extensions:
         - kde-neon
         plugs:
@@ -29,9 +30,9 @@ layout:
     "/usr/share/qt5":
         symlink: "$SNAP/kf5/usr/share/qt5"
     "/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib":
-        bind: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
+        symlink: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
     "/usr/share/alsa":
-        bind: "$SNAP/usr/share/alsa"
+        symlink: "$SNAP/usr/share/alsa"
 parts:
     opencv:
         source: https://github.com/opencv/opencv/archive/3.4.9.zip
@@ -188,6 +189,7 @@ parts:
         - "-DENABLE_FACESENGINE_DNN=ON"
         - "-DCMAKE_PREFIX_PATH=$SNAPCRAFT_STAGE/usr"
         - "-Wno-dev"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-99-qt-5-15-7-core20-sdk/current"
         parse-info:
         - usr/share/metainfo/org.kde.digikam.appdata.xml
         override-build: |
