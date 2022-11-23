@@ -58,6 +58,7 @@ parts:
             - "-usr/bin/X11"
             - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
             - "-usr/lib/aspell/*"
+            - "-usr/share/lintian"
         prime:
         - "$exclusion"
     cleanup:
