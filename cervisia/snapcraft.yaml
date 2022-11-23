@@ -9,7 +9,7 @@ apps:
         after: cvsservice5
         extensions:
         - kde-neon
-        desktop: org.kde.cervisia.desktop
+        desktop: usr/share/applications/org.kde.cervisia.desktop
         command: usr/bin/cervisia
         plugs:
         - home
@@ -21,7 +21,7 @@ apps:
         before: cervisia
         extensions:
         - kde-neon
-        desktop: org.kde.cvsservice5.desktop
+        desktop: usr/share/applications/org.kde.cvsservice5.desktop
         command: usr/bin/cvsservice5
         daemon: simple
         plugs:
