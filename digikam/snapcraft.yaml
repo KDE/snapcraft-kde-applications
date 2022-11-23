@@ -59,6 +59,7 @@ parts:
         - libshp2
         - libwlocate0
         cmake-parameters:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DWITH_KF5=TRUE"
