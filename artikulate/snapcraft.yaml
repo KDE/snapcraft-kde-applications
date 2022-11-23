@@ -11,6 +11,7 @@ apps:
         - kde-neon
         common-id: org.kde.artikulate.desktop
         command: usr/bin/artikulate
+        desktop: usr/share/applications/org.kde.artikulate.desktop
         environment:
             GST_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
             GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
