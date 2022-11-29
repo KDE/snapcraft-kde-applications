@@ -177,9 +177,9 @@ kde-frameworks:core22:
     - echo "Runtime snapcraft.yaml" && cat runtime/snapcraft.yaml
     - echo "SDK snapcraft.yaml" && cat sdk/snapcraft.yaml
     - cd runtime
-    - !reference [.snap:core22, script]
+    - !reference [.snap, script]
     - cd ../sdk
-    - !reference [.snap:core22, script]
+    - !reference [.snap, script]
 
 akregator:
   extends: .prepone-extension-update
