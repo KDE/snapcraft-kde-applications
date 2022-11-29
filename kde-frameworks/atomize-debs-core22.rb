@@ -576,7 +576,7 @@ puts File.write('stage-dev.json', JSON.generate(runs + devs))
 
 ### sdk snap
 
-config.name = 'kde-frameworks-5-100-qt-5-15-7-core22-sdk'
+config.name = 'kde-frameworks-5-100-qt-5-15-7-core22-sd'
 # We mustn't define the slots in the SDK, it'd confuse snapd on what to
 # autoconnect when both snaps are installed.
 config.slots.clear
