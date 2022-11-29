@@ -35,7 +35,7 @@ variables:
 #
 # You can overwrite all variables, as shown above, by adding a 'variables' dict to the job.
 # See the examples below for common use cases.
-.snap
+.snap:
   image: kdeorg/snap-builder:latest
   tags:
     - Snap
@@ -90,7 +90,7 @@ variables:
 
 # Use this template to build snaps with new content/sdk-snaps before the extension
 # gets updated and shipped in a stable snapcraft release.
-.prepone-extension-update
+.prepone-extension-update:
   extends: .snap
   script:
     - snapcraft expand-extensions > snapcraft-expanded.yaml
@@ -177,9 +177,9 @@ kde-frameworks:core22:
     - echo "Runtime snapcraft.yaml" && cat runtime/snapcraft.yaml
     - echo "SDK snapcraft.yaml" && cat sdk/snapcraft.yaml
     - cd runtime
-    - !reference [.snap:core22, script]
+    - !reference [.snap, script]
     - cd ../sdk
-    - !reference [.snap:core22, script]
+    - !reference [.snap, script]
 
 akregator:
   extends: .prepone-extension-update
