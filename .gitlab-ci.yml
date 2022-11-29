@@ -162,7 +162,7 @@ kde-frameworks:
     - cd ../sdk
     - !reference [.snap, script]
 
-kde-frameworks:core22:
+kde-frameworks-core22:
   extends: .snap:core22
   variables:
     REPO: release
