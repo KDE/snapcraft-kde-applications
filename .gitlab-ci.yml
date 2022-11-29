@@ -21,6 +21,10 @@ variables:
   # Release to these channels after building. Provide as a comma-separated list, e.g. beta, edge
   # For testing purposes, you can push to snap branches. Syntax: edge/${branch_name}, e.g. edge/icon-fix
   RELEASE_TO: candidate
+  #Which core base to build on
+  CORE: core20
+  #KF5 and QT5 version
+  VERSION: 5-99-qt-5-15-7
 
 # Use this template by extending it.
 #
@@ -31,7 +35,7 @@ variables:
 #
 # You can overwrite all variables, as shown above, by adding a 'variables' dict to the job.
 # See the examples below for common use cases.
-.snap:
+.snap
   image: kdeorg/snap-builder:latest
   tags:
     - Snap
@@ -78,17 +82,31 @@ variables:
     - if [ ${#architectures[@]} != ${#snaps[@]} ]; then echo "Number of produced snaps does not equal number of requested snaps" && exit 1; fi
     - for snap in *.snap; do snapcraft upload --release="$RELEASE_TO" "$snap"; done
 
+.snap:core22:
+  extends: .snap
+  variables:
+    ON_BRANCH: Neon/unstable
+    RELEASE_TO: beta
+
 # Use this template to build snaps with new content/sdk-snaps before the extension
 # gets updated and shipped in a stable snapcraft release.
-.prepone-extension-update:
+.prepone-extension-update
   extends: .snap
   script:
     - snapcraft expand-extensions > snapcraft-expanded.yaml
     - mv snapcraft-expanded.yaml snapcraft.yaml
-    - sed -i -e 's|kde-frameworks-.*-core20|kde-frameworks-5-99-qt-5-15-7-core20|g' snapcraft.yaml
+    - sed -i -e 's|kde-frameworks-.*-$CORE|kde-frameworks-$VERSION-$CORE|g' snapcraft.yaml
     - sed -i -e 's|$SNAPCRAFT_EXTENSIONS_DIR/desktop|desktop|' snapcraft.yaml
     - cp -r /snap/snapcraft/current/share/snapcraft/extensions/desktop .
     - !reference [.snap, script]
+
+.prepone-extension-update:core22:
+  extends: .prepone-extension-update
+  variables:
+    BRANCH: Neon/unstable
+    CORE: core22
+    VERSION: 5-100-qt-5-15-7
+    RELEASE_TO: beta
 
 # Examples
 
@@ -143,6 +161,25 @@ kde-frameworks:
     - !reference [.snap, script]
     - cd ../sdk
     - !reference [.snap, script]
+
+kde-frameworks:core22:
+  extends: .snap:core22
+  variables:
+    REPO: release
+    DISTRO: jammy
+    KEY_ID: 444DABCF3667D0283F894EDDE6D4736255751E5D
+  script:
+    - apt update && apt -y install ruby software-properties-common dpkg-dev
+    - gem install insensitive_hash
+    - apt-key adv --keyserver keyserver.ubuntu.com --recv-key "${KEY_ID}"
+    - apt-add-repository -s "deb http://origin.archive.neon.kde.org/${REPO} ${DISTRO} main"
+    - ruby atomize-debs-core22.rb
+    - echo "Runtime snapcraft.yaml" && cat runtime/snapcraft.yaml
+    - echo "SDK snapcraft.yaml" && cat sdk/snapcraft.yaml
+    - cd runtime
+    - !reference [.snap:core22, script]
+    - cd ../sdk
+    - !reference [.snap:core22, script]
 
 akregator:
   extends: .prepone-extension-update
