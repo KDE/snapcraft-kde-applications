@@ -82,12 +82,6 @@ variables:
     - if [ ${#architectures[@]} != ${#snaps[@]} ]; then echo "Number of produced snaps does not equal number of requested snaps" && exit 1; fi
     - for snap in *.snap; do snapcraft upload --release="$RELEASE_TO" "$snap"; done
 
-.snap:core22:
-  extends: .snap
-  variables:
-    ON_BRANCH: Neon/unstable
-    RELEASE_TO: beta
-
 # Use this template to build snaps with new content/sdk-snaps before the extension
 # gets updated and shipped in a stable snapcraft release.
 .prepone-extension-update:
@@ -163,11 +157,14 @@ kde-frameworks:
     - !reference [.snap, script]
 
 kde-frameworks-core22:
-  extends: .snap:core22
+  extends: .snap
   variables:
     REPO: release
     DISTRO: jammy
     KEY_ID: 444DABCF3667D0283F894EDDE6D4736255751E5D
+    ON_BRANCH: Neon/unstable
+    RELEASE_TO: beta
+    CORE: core22
   script:
     - apt update && apt -y install ruby software-properties-common dpkg-dev
     - gem install insensitive_hash
