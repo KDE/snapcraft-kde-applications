@@ -90,7 +90,7 @@ variables:
 
 # Use this template to build snaps with new content/sdk-snaps before the extension
 # gets updated and shipped in a stable snapcraft release.
-.prepone-extension-update
+.prepone-extension-update:
   extends: .snap
   script:
     - snapcraft expand-extensions > snapcraft-expanded.yaml
