@@ -69,7 +69,7 @@ parts:
         after:
         - qtkeychain
         - libmatrixclient
-        source: http://download.kde.org/stable/plasma-mobile/22.06/neochat-22.06.tar.xz
+        source: http://download.kde.org/stable/plasma-mobile/22.11/neochat-22.11.tar.xz
         plugin: cmake
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
@@ -92,8 +92,8 @@ parts:
         - libkf5qqc2desktopstyle-dev
         - qcoro-qt5-dev
         build-environment:
-        - CC: "gcc-10"
-        - CXX: "g++-10"
+        -   CC: gcc-10
+        -   CXX: g++-10
         parse-info:
         - usr/share/metainfo/org.kde.neochat.appdata.xml
     cleanup:
@@ -112,3 +112,4 @@ parts:
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
+version: '22.11'
