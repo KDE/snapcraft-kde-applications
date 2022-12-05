@@ -1,7 +1,7 @@
 ---
 name: digikam
 base: core20
-version: 7.8.0
+version: 7.9.0
 adopt-info: digikam
 grade: stable
 confinement: strict
@@ -124,7 +124,7 @@ parts:
         - marble
         - opencv
         - lensfun
-        source: http://download.kde.org/stable/digikam/7.8.0/digiKam-7.8.0.tar.xz
+        source: http://download.kde.org/stable/digikam/7.9.0/digiKam-7.9.0.tar.xz
         plugin: cmake
         stage-packages:
         - libexif12
