@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:jammy
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
   apt-get update && \
@@ -11,6 +11,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
   curl -L $(curl -H 'X-Ubuntu-Series: 16' 'https://api.snapcraft.io/api/v1/snaps/details/core20' | jq '.download_url' -r) --output core20.snap && \
   mkdir -p /snap/core20 && unsquashfs -d /snap/core20/current core20.snap && rm core20.snap && \
   curl -L $(curl -H 'X-Ubuntu-Series: 16' 'https://api.snapcraft.io/api/v1/snaps/details/snapcraft' | jq '.download_url' -r) --output snapcraft.snap && \
+  mkdir -p /snap/core22 && unsquashfs -d /snap/core22/current core22.snap && rm core22.snap && \
+  curl -L $(curl -H 'X-Ubuntu-Series: 22' 'https://api.snapcraft.io/api/v1/snaps/details/snapcraft' | jq '.download_url' -r) --output snapcraft.snap && \
   mkdir -p /snap/snapcraft && unsquashfs -d /snap/snapcraft/current snapcraft.snap && rm snapcraft.snap && \
   apt remove --yes --purge curl jq squashfs-tools && \
   apt-get autoclean --yes && \
