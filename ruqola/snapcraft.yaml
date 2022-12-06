@@ -9,6 +9,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.ruqola.desktop
+        desktop: usr/share/applications/org.kde.ruqola.desktop
         command: usr/bin/ruqola
         plugs:
         - home

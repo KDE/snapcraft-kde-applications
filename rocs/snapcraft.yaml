@@ -10,6 +10,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.rocs.desktop
+        desktop: usr/share/applications/org.kde.rocs.desktop
         command: usr/bin/rocs
         plugs:
         - home
