@@ -10,6 +10,7 @@ apps:
         - kde-neon
         command: usr/bin/neochat
         common-id: org.kde.neochat
+        desktop: usr/share/applications/org.kde.neochat.desktop
         plugs:
         - home
         - audio-playback

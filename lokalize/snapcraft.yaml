@@ -9,6 +9,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.lokalize.desktop
+        desktop: usr/share/applications/org.kde.lokalize.desktop
         command: usr/bin/lokalize
         environment:
             DICPATH: "$SNAP/usr/share/hunspell"

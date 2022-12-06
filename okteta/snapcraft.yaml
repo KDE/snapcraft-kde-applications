@@ -10,6 +10,7 @@ apps:
         extensions:
         - kde-neon
         common-id: org.kde.okteta.desktop
+        desktop: usr/share/applications/org.kde.okteta.desktop
         command: usr/bin/okteta
         plugs:
         - home
