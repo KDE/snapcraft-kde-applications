@@ -2,7 +2,7 @@
 name: kjournald
 confinement: strict
 grade: stable
-version: 0.0.3
+version: 0.1.0
 base: core20
 adopt-info: kjournald
 apps:
