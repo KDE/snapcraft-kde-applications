@@ -44,7 +44,7 @@ parts:
         stage-packages:
         - libmpfr6
         - libgmp10
-        source: http://download.kde.org/stable/release-service/22.08.3/src/kcalc-22.08.3.tar.xz
+        source: http://download.kde.org/stable/release-service/22.12.0/src/kcalc-22.12.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -66,4 +66,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.08.3
+version: 22.12.0
