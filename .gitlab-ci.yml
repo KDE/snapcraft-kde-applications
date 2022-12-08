@@ -159,7 +159,7 @@ kde-frameworks:
 kde-frameworks-core22:
   extends: .snap
   variables:
-    REPO: release
+    REPO: unstable
     DISTRO: jammy
     KEY_ID: 444DABCF3667D0283F894EDDE6D4736255751E5D
     ON_BRANCH: Neon/unstable
