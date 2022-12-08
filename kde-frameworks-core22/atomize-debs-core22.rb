@@ -555,7 +555,6 @@ integration.build_packages = %w(
                plasma-wayland-protocols
 )
 integration.cmake_parameters = %w(
-  -DKDE_INSTALL_USE_QT_SYS_PATHS=ON
   -DCMAKE_INSTALL_PREFIX=/usr
   -DCMAKE_BUILD_TYPE=Release
   -DENABLE_TESTING=OFF
