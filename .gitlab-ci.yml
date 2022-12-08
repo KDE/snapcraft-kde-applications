@@ -170,7 +170,8 @@ kde-frameworks-core22:
     - gem install insensitive_hash
     - apt-key adv --keyserver keyserver.ubuntu.com --recv-key "${KEY_ID}"
     - echo "deb http://archive.neon.kde.org/unstable jammy main
-            deb-src http://archive.neon.kde.org/unstable jammy main" > /etc/apt/sources.list.d/neon.list && apt update
+            deb-src http://archive.neon.kde.org/unstable jammy main" > /etc/apt/sources.list.d/neon.list && apt
+            update
     - ruby atomize-debs-core22.rb
     - echo "Runtime snapcraft.yaml" && cat runtime/snapcraft.yaml
     - echo "SDK snapcraft.yaml" && cat sdk/snapcraft.yaml
