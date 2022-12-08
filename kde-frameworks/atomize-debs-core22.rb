@@ -337,7 +337,7 @@ config.summary = 'KDE Frameworks 5'
 config.description = 'KDE Frameworks are addons and useful extensions to Qt'
 config.confinement = 'strict'
 config.grade = 'stable'
-config.base = 'core20'
+config.base = 'core22'
 config.compression = 'lzo'
 
 slot = SnapcraftConfig::Slot.new
@@ -351,7 +351,7 @@ package_repo.type = 'apt'
 package_repo.components = %w[main]
 package_repo.suites = %w[jammy]
 package_repo.key_id = '444DABCF3667D0283F894EDDE6D4736255751E5D'
-package_repo.url = 'http://origin.archive.neon.kde.org/user'
+package_repo.url = 'http://origin.archive.neon.kde.org/unstable'
 package_repo.key_server = 'keyserver.ubuntu.com'
 config.package_repositories.push(package_repo)
 
