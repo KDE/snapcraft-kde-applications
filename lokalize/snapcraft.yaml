@@ -20,7 +20,7 @@ apps:
         - audio-playback
         - removable-media
 plugs:
-    hunspell-dictionaries-plug:
+    hunspell-dictionaries:
         content: hunspell-dictionaries
         interface: content
         target: "$SNAP/usr/share/hunspell"
