@@ -177,8 +177,6 @@ class SnapcraftConfig
     attr_accessor :build_packages
     # Array<String>
     attr_accessor :stage_packages
-    # Hash
-    attr_accessor :filesets
     # Array<String>
     attr_accessor :prime
     # Array<String>
@@ -207,57 +205,6 @@ class SnapcraftConfig
       @build_attributes = ['enable-patchelf']
       @build_packages = []
       @stage_packages = []
-      @filesets = {
-        'exclusion' => %w(
-          -usr/lib/*/cmake/*
-          -usr/lib/*/qt5/bin/moc
-          -usr/lib/*/qt5/bin/qmake
-          -usr/lib/*/qt5/bin/rcc
-          -usr/lib/*/qt5/bin/*cpp*
-          -usr/lib/qt5/bin/assistant
-          -usr/lib/qt5/bin/designer
-          -usr/lib/qt5/bin/lconvert
-          -usr/lib/qt5/bin/linguist
-          -usr/lib/qt5/bin/lupdate
-          -usr/lib/qt5/bin/lrelease
-          -usr/lib/qt5/bin/moc
-          -usr/lib/qt5/bin/pixeltool
-          -usr/lib/qt5/bin/qcollectiongenerator
-          -usr/lib/qt5/bin/qdbuscpp2xml
-          -usr/lib/qt5/bin/qdbusxml2cpp
-          -usr/lib/qt5/bin/qdoc
-          -usr/lib/qt5/bin/qhelpconverter
-          -usr/lib/qt5/bin/qlalr
-          -usr/lib/qt5/bin/qmake
-          -usr/lib/qt5/bin/rcc
-          -usr/lib/qt5/bin/syncqt.pl
-          -usr/lib/vlc/plugins/gui/libqt4_plugin.so
-          -usr/include/*
-          -usr/share/ECM/*
-          -usr/share/xml/docbook/*
-          -usr/share/doc/*
-          -usr/share/locale/*/LC_MESSAGES/vlc.mo
-          -usr/share/man/*
-          -usr/share/icons/breeze/*.rcc
-          -usr/share/icons/breeze-dark/*.rcc
-          -usr/share/wallpapers/*
-          -usr/share/fonts/*
-          -usr/share/pkgconfig
-          -usr/lib/*/pkgconfig
-          -usr/share/QtCurve
-          -usr/share/kde4
-          -usr/share/bug
-          -usr/share/debhelper
-          -usr/share/lintian
-          -usr/share/menu
-          -usr/bin/*vlc
-          -usr/bin/dh_*
-          -usr/lib/*/*.a
-          -usr/lib/*/*.pri
-          -usr/share/kf5/kdoctools/*
-          -usr/bin/make
-        )
-      }
       @stage = %w[
         -usr/share/doc/*
         -usr/share/man/*
@@ -265,7 +212,55 @@ class SnapcraftConfig
         -usr/share/wallpapers/*
         -usr/share/fonts/*
       ]
-      @prime = %w($exclusion)
+      @prime = %w[
+        -usr/lib/*/cmake/*
+        -usr/lib/*/qt5/bin/moc
+        -usr/lib/*/qt5/bin/qmake
+        -usr/lib/*/qt5/bin/rcc
+        -usr/lib/*/qt5/bin/*cpp*
+        -usr/lib/qt5/bin/assistant
+        -usr/lib/qt5/bin/designer
+        -usr/lib/qt5/bin/lconvert
+        -usr/lib/qt5/bin/linguist
+        -usr/lib/qt5/bin/lupdate
+        -usr/lib/qt5/bin/lrelease
+        -usr/lib/qt5/bin/moc
+        -usr/lib/qt5/bin/pixeltool
+        -usr/lib/qt5/bin/qcollectiongenerator
+        -usr/lib/qt5/bin/qdbuscpp2xml
+        -usr/lib/qt5/bin/qdbusxml2cpp
+        -usr/lib/qt5/bin/qdoc
+        -usr/lib/qt5/bin/qhelpconverter
+        -usr/lib/qt5/bin/qlalr
+        -usr/lib/qt5/bin/qmake
+        -usr/lib/qt5/bin/rcc
+        -usr/lib/qt5/bin/syncqt.pl
+        -usr/lib/vlc/plugins/gui/libqt4_plugin.so
+        -usr/include/*
+        -usr/share/ECM/*
+        -usr/share/xml/docbook/*
+        -usr/share/doc/*
+        -usr/share/locale/*/LC_MESSAGES/vlc.mo
+        -usr/share/man/*
+        -usr/share/icons/breeze/*.rcc
+        -usr/share/icons/breeze-dark/*.rcc
+        -usr/share/wallpapers/*
+        -usr/share/fonts/*
+        -usr/share/pkgconfig
+        -usr/lib/*/pkgconfig
+        -usr/share/QtCurve
+        -usr/share/kde4
+        -usr/share/bug
+        -usr/share/debhelper
+        -usr/share/lintian
+        -usr/share/menu
+        -usr/bin/*vlc
+        -usr/bin/dh_*
+        -usr/lib/*/*.a
+        -usr/lib/*/*.pri
+        -usr/share/kf5/kdoctools/*
+        -usr/bin/make
+      ]
       # @organize = {
       #   'etc/*' => 'slash/etc/',
       #   'usr/*' => 'slash/usr/'
@@ -485,7 +480,6 @@ mesapart = SnapcraftConfig::Part.new
 mesapart.stage_packages = ['libgl1-mesa-dri', 'libglx-mesa0']
 mesapart.stage = nil
 mesapart.build_attributes = ['no-patchelf']
-mesapart.filesets = nil
 mesapart.prime = %w[
         -lib/udev
         -usr/doc
