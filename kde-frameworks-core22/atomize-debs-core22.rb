@@ -332,7 +332,7 @@ end
 
 config = SnapcraftConfig.new
 config.name = 'kde-frameworks-5-100-qt-5-15-7-core22'
-config.version = '5-100'
+config.version = 'unknown'
 config.summary = 'KDE Frameworks 5'
 config.description = 'KDE Frameworks are addons and useful extensions to Qt'
 config.confinement = 'strict'
@@ -447,10 +447,10 @@ parts.each_cons(2) do |first_name, second_name|
   runs += source.runtime_binaries
   if source.upstream_name == 'extra-cmake-modules' && config.version
     kf5_version = source.upstream_version
-    config.version = 5.100
+    config.version = source.upstream_version
   end
   if source.upstream_name == 'qtbase-opensource-src'
-    qt5_version = 5.15.7
+    qt5_version = source.upstream_version
   end
 end
 
