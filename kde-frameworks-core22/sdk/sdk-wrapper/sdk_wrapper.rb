@@ -7,10 +7,6 @@
 # modify it under the terms of the GNU General Public License as
 # published by the Free Software Foundation; either version 3 of
 # the License or any later version accepted by the membership of
-# KDE e.V. (or its successor approved by the membership of KDE
-# e.V.), which shall act as a proxy defined in Section 14 of
-# version 3 of the license.
-#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -110,7 +106,8 @@ EOF
         puts "Warning: cmake fail config... #{config}"
     end
 
-    exes = File.read("#{tmpdir}/import.txt").strip.split(';')
+    exes = File.read("#{tmpdir}/import.txt").strip
+    exes = exes.split(';')
     exes += STATIC_EXES
     exes.each do |exe|
       warn "exe... #{exe}"
@@ -156,7 +153,7 @@ EOF
 # otherwise we'd break cmake running during the build as the environment
 # for the wrap is not actually valid yet.
 if [ -z "$KF5_SNAP_WRAPPING" ]; then
-  SNAP=/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current
+  SNAP=/snap/kde-frameworks-5-101-qt-5-15-7-core22-sd/current
   ARCH=#{gnu_arch}-linux-gnu
 
   # Used by e.g. meinproc to locate XML assets at build-time
@@ -190,8 +187,8 @@ end
 qtchooser_config_dir = "#{root}/parts/kf5/install/etc/xdg/qtchooser/"
 FileUtils.mkpath(qtchooser_config_dir)
 File.write("#{qtchooser_config_dir}/default.conf", <<-CONF)
-/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current/usr/lib/qt5/bin
-/snap/kde-frameworks-5-96-qt-5-15-5-core20-sdk/current/usr/lib/#{gnu_arch}-linux-gnu
+/snap/kde-frameworks-5-101-qt-5-15-7-core22-sd/current/usr/lib/qt5/bin
+/snap/kde-frameworks-5-101-qt-5-15-7-core22-sd/current/usr/lib/#{gnu_arch}-linux-gnu
 CONF
 FileUtils.ln_s('default.conf', "#{qtchooser_config_dir}/qt5.conf", force: true)
 FileUtils.ln_s('default.conf', "#{qtchooser_config_dir}/5.conf", force: true)
