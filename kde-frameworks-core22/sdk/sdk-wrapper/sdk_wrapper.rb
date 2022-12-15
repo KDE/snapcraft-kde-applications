@@ -102,7 +102,7 @@ EOF
 
     cmd = TTY::Command.new
     # FIXME: probably best to ignore errors, or log them somewhere but continue all the same
-    if cmd.run!('cmake', '.', "-DCMAKE_FIND_ROOT_PATH=#{Dir.pwd}", chdir: tmpdir).failure?
+    if cmd.run!('cmake', ['.', "-DCMAKE_FIND_ROOT_PATH=#{Dir.pwd}"], chdir: tmpdir).failure?
         puts "Warning: cmake fail config... #{config}"
     end
 
