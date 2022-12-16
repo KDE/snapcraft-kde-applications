@@ -23,7 +23,7 @@ require 'fileutils'
 require 'pathname'
 require 'tmpdir'
 
-require 'tty/command'
+require 'tty-command'
 
 ENV['KF5_SNAP_WRAPPING'] = '1'
 

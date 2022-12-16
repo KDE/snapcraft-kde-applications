@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 if [ -n "$http_proxy" ]; then
-  gem install --http-proxy="$http_proxy" tty
+  gem install --http-proxy="$http_proxy" tty-command
 else
-  gem install tty
+  gem install tty-command
 fi
