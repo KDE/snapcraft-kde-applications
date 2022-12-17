@@ -94,12 +94,12 @@ variables:
     - cp -r /snap/snapcraft/current/share/snapcraft/extensions/desktop .
     - !reference [.snap, script]
 
-.prepone-extension-update:core22:
+.prepone-extension-update-core22:
   extends: .prepone-extension-update
   variables:
     BRANCH: Neon/unstable
     CORE: core22
-    VERSION: 5-100-qt-5-15-7
+    VERSION: 5-101-qt-5-15-7
     RELEASE_TO: beta
 
 # Examples
@@ -189,6 +189,9 @@ artikulate:
 
 blinken:
   extends: .prepone-extension-update
+
+blinken-core22:
+  extends: .prepone-extension-update-core22
 
 bomber:
   extends: .prepone-extension-update
