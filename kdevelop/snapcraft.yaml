@@ -159,7 +159,7 @@ parts:
         - breeze
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
-        source: http://download.kde.org/stable/release-service/22.12.0/src/kdevelop-22.12.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.12.1/src/kdevelop-22.12.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -174,4 +174,4 @@ parts:
         override-pull: |
             snapcraftctl pull
             patch -p1 < $SNAPCRAFT_STAGE/kdevelop_unset_env.patch
-version: 22.12.0
+version: 22.12.1
