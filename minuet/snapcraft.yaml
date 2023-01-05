@@ -1,6 +1,6 @@
 ---
 name: minuet
-version: 22.12.0
+version: 22.12.1
 confinement: strict
 grade: stable
 base: core20
@@ -67,7 +67,7 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
-        source: http://download.kde.org/stable/release-service/22.12.0/src/minuet-22.12.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.12.1/src/minuet-22.12.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
