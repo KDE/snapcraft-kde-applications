@@ -176,7 +176,7 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-        source: http://download.kde.org/stable/release-service/22.12.0/src/okular-22.12.0.tar.xz
+        source: http://download.kde.org/stable/release-service/22.12.1/src/okular-22.12.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -198,4 +198,4 @@ parts:
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-version: 22.12.0
+version: 22.12.1
