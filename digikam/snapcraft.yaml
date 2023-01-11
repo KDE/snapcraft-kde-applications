@@ -130,6 +130,7 @@ parts:
         - libexif12
         - libgphoto2-6
         - libgphoto2-port12
+        - libheif1
         - libimage-exiftool-perl
         - libjpeg8
         - libjpeg-turbo8
@@ -151,6 +152,7 @@ parts:
         - libexpat1-dev
         - libfl-dev
         - libglib2.0-dev
+        - libheif-dev
         - libjpeg-dev
         - liblensfun-dev
         - libmagickcore-dev
