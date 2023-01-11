@@ -9,6 +9,7 @@ apps:
     digikam:
         environment:
             DK_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/plugins/digikam"
+            PERL5LIB: "$SNAP/usr/share/perl5"
         command: usr/bin/digikam
         common-id: org.kde.digikam.desktop
         desktop: usr/share/applications/org.kde.digikam.desktop
