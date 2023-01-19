@@ -99,7 +99,7 @@ variables:
   variables:
     BRANCH: Neon/unstable
     CORE: core22
-    VERSION: 5-101-qt-5-15-8
+    VERSION: 5-102szacdddx-qt-5-15-8
     RELEASE_TO: beta
 
 # Examples
