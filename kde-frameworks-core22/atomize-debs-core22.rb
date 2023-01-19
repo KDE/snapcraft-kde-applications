@@ -326,7 +326,7 @@ class SnapcraftConfig
 end
 
 config = SnapcraftConfig.new
-config.name = 'kde-frameworks-5-101-qt-5-15-7-core22'
+config.name = 'kde-frameworks-5-102-qt-5-15-8-core22'
 config.version = 'unknown'
 config.summary = 'KDE Frameworks 5'
 config.description = 'KDE Frameworks are addons and useful extensions to Qt'
@@ -336,10 +336,10 @@ config.base = 'core22'
 config.compression = 'lzo'
 
 slot = SnapcraftConfig::Slot.new
-slot.content = 'kde-frameworks-5-101-qt-5-15-7-core22-all'
+slot.content = 'kde-frameworks-5-102-qt-5-15-8-core22-all'
 slot.interface = 'content'
 slot.read = %w[.]
-config.slots['kde-frameworks-5-101-qt-5-15-7-core22-slot'] = slot
+config.slots['kde-frameworks-5-102-qt-5-15-8-core22-slot'] = slot
 
 package_repo = SnapcraftConfig::PackageRepository.new
 package_repo.type = 'apt'
@@ -569,7 +569,7 @@ puts File.write('stage-dev.json', JSON.generate(runs + devs))
 
 ### sdk snap
 
-config.name = 'kde-frameworks-5-101-qt-5-15-7-core22-sd'
+config.name = 'kde-frameworks-5-102-qt-5-15-8-core22-sd'
 # We mustn't define the slots in the SDK, it'd confuse snapd on what to
 # autoconnect when both snaps are installed.
 config.slots.clear
