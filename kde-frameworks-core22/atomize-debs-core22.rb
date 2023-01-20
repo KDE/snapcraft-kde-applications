@@ -558,7 +558,7 @@ integration.cmake_parameters = %w(
 integration.stage_packages = %w(libxcursor1)
 integration.plugin = 'cmake'
 integration.source = 'https://invent.kde.org/plasma/plasma-integration.git'
-integration.source_branch = 'Plasma/5.25'
+integration.source_branch = 'v5.26.5'
 config.parts['plasma-integration'] = integration
 
 FileUtils.mkpath('runtime')
