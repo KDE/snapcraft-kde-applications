@@ -66,6 +66,7 @@ variables:
   script:
     - shopt -s nullglob
     - snap_name="$(yq '.name' snapcraft.yaml)"
+    - snapcraft export-login and update SNAPCRAFT_STORE_CREDENTIALS
     - snapcraft remote-build --launchpad-accept-public-upload --build-on="$BUILD_ON"
     - | 
       for log in "$snap_name"_*.txt; do 
@@ -80,7 +81,6 @@ variables:
     - snaps=(${snap_name}*.snap)
     - 'echo "Snaps (len: ${#snaps[@]}): ${snaps[@]}"'
     - if [ ${#architectures[@]} != ${#snaps[@]} ]; then echo "Number of produced snaps does not equal number of requested snaps" && exit 1; fi
-    - export-login and update SNAPCRAFT_STORE_CREDENTIALS
     - for snap in *.snap; do snapcraft upload --release="$RELEASE_TO" "$snap"; done
 
 # Use this template to build snaps with new content/sdk-snaps before the extension
