@@ -173,6 +173,7 @@ kde-frameworks-core22:
     - echo "deb http://archive.neon.kde.org/unstable jammy main
             deb-src http://archive.neon.kde.org/unstable jammy main" > /etc/apt/sources.list.d/neon.list && apt update
     - ruby atomize-debs-core22.rb
+    - echo 'Foo'
     - echo "Runtime snapcraft.yaml" && cat runtime/snapcraft.yaml
     - echo "SDK snapcraft.yaml" && cat sdk/snapcraft.yaml
     - cd runtime
