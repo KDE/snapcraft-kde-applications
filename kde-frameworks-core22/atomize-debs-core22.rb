@@ -1,4 +1,4 @@
-# New frameworks content pack on core22.
+# New frameworks content pack on core22. KF5 102 QT 5.15.8
 
 require 'fileutils'
 require 'json'
