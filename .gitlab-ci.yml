@@ -66,7 +66,6 @@ variables:
   script:
     - shopt -s nullglob
     - snap_name="$(yq '.name' snapcraft.yaml)"
-    - snapcraft export-login
     - snapcraft remote-build --launchpad-accept-public-upload --build-on="$BUILD_ON"
     - | 
       for log in "$snap_name"_*.txt; do 
