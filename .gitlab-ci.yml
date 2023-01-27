@@ -15,7 +15,7 @@
 # For example, you might want to build every snap on amd64, but some snaps also on arm64.
 variables:
   # Restrict building for pushes to this branch
-  ON_BRANCH: Neon/release 
+  ON_BRANCH: Neon/stable-core20
   # Build architectures as a comma-separated list, e.g. amd64,arm64,armhf
   BUILD_ON: amd64,arm64
   # Release to these channels after building. Provide as a comma-separated list, e.g. beta, edge
