@@ -32,7 +32,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/22.12.1/src/kruler-22.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.3/src/kruler-22.08.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -53,4 +53,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.12.1
+version: 22.08.3

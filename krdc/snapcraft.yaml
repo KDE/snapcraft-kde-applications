@@ -42,7 +42,7 @@ parts:
         stage-packages:
         - libvncclient1
         - freerdp2-x11
-        source: http://download.kde.org/stable/release-service/22.12.1/src/krdc-22.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.3/src/krdc-22.08.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -76,4 +76,4 @@ parts:
                 cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
             done
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-version: 22.12.1
+version: 22.08.3

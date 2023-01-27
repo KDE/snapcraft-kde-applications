@@ -40,7 +40,7 @@ parts:
         - libkf5doctools-dev
         stage-packages:
         - libboost-python1.71-dev
-        source: http://download.kde.org/stable/release-service/22.12.1/src/kig-22.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.08.3/src/kig-22.08.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -62,4 +62,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.12.1
+version: 22.08.3
