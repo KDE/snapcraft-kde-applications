@@ -147,8 +147,7 @@ kde-frameworks:
     - apt update && apt -y install ruby software-properties-common dpkg-dev
     - gem install insensitive_hash
     - apt-key adv --keyserver keyserver.ubuntu.com --recv-key "${KEY_ID}"
-    - echo "deb http://archive.neon.kde.org/release focal main
-            deb-src http://archive.neon.kde.org/release focal main" > /etc/apt/sources.list.d/neon.list && apt update
+    - echo "deb http://archive.neon.kde.org/release focal main" > /etc/apt/sources.list.d/neon.list && echo "deb-src http://archive.neon.kde.org/release focal main" >> /etc/apt/sources.list.d/neon.list && apt update
     - ruby atomize-debs.rb
     - echo "Runtime snapcraft.yaml" && cat runtime/snapcraft.yaml
     - echo "SDK snapcraft.yaml" && cat sdk/snapcraft.yaml
