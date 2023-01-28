@@ -204,3 +204,4 @@ parts:
 
             cd "${SNAPCRAFT_PART_INSTALL}/usr/share/icons/hicolor/scalable/apps"
             gzip -d -c digikam.svgz > digikam.svg
+# Security rebuild 1
