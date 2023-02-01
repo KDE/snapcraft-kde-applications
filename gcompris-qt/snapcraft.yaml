@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core20
 adopt-info: gcompris
-version: 2.4
+version: '3.1'
 apps:
     gcompris:
         extensions:
@@ -32,7 +32,7 @@ parts:
         parse-info:
         - usr/share/metainfo/org.kde.gcompris.appdata.xml
         plugin: cmake
-        source: https://gcompris.net/download/qt/src/gcompris-qt-2.4.tar.xz
+        source: https://gcompris.net/download/qt/src/gcompris-qt-3.1.tar.xz
         build-packages:
         - build-essential
         - libkf5doctools-dev
@@ -46,6 +46,7 @@ parts:
         - qml-module-qtquick-controls
         - qml-module-qtquick-particles2
         - qml-module-box2d
+        - qml-module-charts
         - gstreamer1.0-plugins-good
         - gstreamer1.0-plugins-base
         - libgstreamer1.0-0
