@@ -101,7 +101,7 @@ parts:
         - libkf5doctools-dev
         build-environment:
         -   LDFLAGS: "-L$SNAPCRAFT_STAGE/usr/lib/$SNAPCRAFT_ARCH_TRIPLET"
-        source: http://download.kde.org/stable/release-service/22.12.1/src/skanlite-22.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.12.2/src/skanlite-22.12.2.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -138,4 +138,4 @@ parts:
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-version: 22.12.1
+version: 22.12.2
