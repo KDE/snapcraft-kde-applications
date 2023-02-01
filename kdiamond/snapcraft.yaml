@@ -90,7 +90,7 @@ parts:
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/22.12.1/src/kdiamond-22.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.12.2/src/kdiamond-22.12.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -112,4 +112,4 @@ parts:
             - "-usr/share/lintain"
         prime:
         - "$exclusion"
-version: 22.12.1
+version: 22.12.2
