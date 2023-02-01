@@ -34,7 +34,7 @@ package-repositories:
 parts:
     bovo:
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/22.12.1/src/bovo-22.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.12.2/src/bovo-22.12.2.tar.xz
         build-packages:
         - libkf5doctools-dev
         cmake-parameters:
@@ -59,4 +59,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.12.1
+version: 22.12.2
