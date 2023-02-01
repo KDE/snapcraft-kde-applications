@@ -77,7 +77,7 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
-        source: http://download.kde.org/stable/release-service/22.12.1/src/kteatime-22.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.12.2/src/kteatime-22.12.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -98,4 +98,4 @@ parts:
             - "-usr/lib/aspell/*"
         prime:
         - "$exclusion"
-version: 22.12.1
+version: 22.12.2
