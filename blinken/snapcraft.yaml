@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core20
 adopt-info: blinken
-version: 22.12.1
+version: 22.12.2
 apps:
     blinken:
         extensions:
@@ -35,7 +35,7 @@ parts:
         - libkf5doctools-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
-        source: http://download.kde.org/stable/release-service/22.12.1/src/blinken-22.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.12.2/src/blinken-22.12.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
