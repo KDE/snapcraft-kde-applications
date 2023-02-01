@@ -44,7 +44,7 @@ parts:
         - libkimageannotator-dev
         - libkf5kipi-dev
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/22.12.1/src/spectacle-22.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.12.2/src/spectacle-22.12.2.tar.xz
         override-stage: |
             snapcraftctl stage
             rm $SNAPCRAFT_STAGE/usr/share/kglobalaccel/org.kde.spectacle.desktop
@@ -98,4 +98,4 @@ parts:
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-version: 22.12.1
+version: 22.12.2
