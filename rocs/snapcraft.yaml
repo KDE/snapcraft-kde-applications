@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core20
 adopt-info: rocs
-version: 22.12.1
+version: 22.12.2
 apps:
     rocs:
         extensions:
@@ -47,7 +47,7 @@ parts:
         - libgrantlee-textdocument5
         - breeze
         - breeze-gtk-theme
-        source: http://download.kde.org/stable/release-service/22.12.1/src/rocs-22.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.12.2/src/rocs-22.12.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
