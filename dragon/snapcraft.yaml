@@ -51,7 +51,7 @@ parts:
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/22.12.1/src/dragon-22.12.1.tar.xz
+        source: http://download.kde.org/stable/release-service/22.12.2/src/dragon-22.12.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -97,4 +97,4 @@ parts:
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-version: 22.12.1
+version: 22.12.2
