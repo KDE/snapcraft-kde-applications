@@ -535,6 +535,7 @@ integration.build_packages = %w(
                kwayland-dev
                libkf5config-dev
                libkf5configwidgets-dev
+               libkf5doctools-dev
                libkf5i18n-dev
                libkf5iconthemes-dev
                libkf5notifications-dev
