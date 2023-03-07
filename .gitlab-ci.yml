@@ -66,7 +66,6 @@ variables:
   script:
     - shopt -s nullglob
     - snap_name="$(yq '.name' snapcraft.yaml)"
-    - snap install --candidate snapcraft
     - snapcraft remote-build --launchpad-accept-public-upload --build-on="$BUILD_ON"
     - | 
       for log in "$snap_name"_*.txt; do 
@@ -88,6 +87,7 @@ variables:
 .prepone-extension-update:
   extends: .snap
   script:
+    - snap install --candidate snapcraft
     - snapcraft expand-extensions > snapcraft-expanded.yaml
     - mv snapcraft-expanded.yaml snapcraft.yaml
     - sed -i -e 's|kde-frameworks-.*-$CORE|kde-frameworks-$VERSION-$CORE|g' snapcraft.yaml
