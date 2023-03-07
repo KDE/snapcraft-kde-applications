@@ -99,7 +99,7 @@ variables:
   variables:
     BRANCH: Neon/unstable
     CORE: core22
-    VERSION: 5-102-qt-5-15-8
+    VERSION: 5-103-qt-5-15-8
     RELEASE_TO: beta
 
 # Examples
@@ -137,40 +137,41 @@ revision-watchdog:
 
 # The snaps
 
-kde-frameworks:
-  extends: .snap
-  variables:
-    REPO: release
-    DISTRO: focal
-    KEY_ID: 444DABCF3667D0283F894EDDE6D4736255751E5D
-  script:
-    - apt update && apt -y install ruby software-properties-common dpkg-dev
-    - gem install insensitive_hash
-    - apt-key adv --keyserver keyserver.ubuntu.com --recv-key "${KEY_ID}"
-    - echo "deb http://archive.neon.kde.org/release focal main" > /etc/apt/sources.list.d/neon.list && echo "deb-src http://archive.neon.kde.org/release focal main" >> /etc/apt/sources.list.d/neon.list && apt update
-    - ruby atomize-debs.rb
-    - echo "Runtime snapcraft.yaml" && cat runtime/snapcraft.yaml
-    - echo "SDK snapcraft.yaml" && cat sdk/snapcraft.yaml
-    - cd runtime
-    - !reference [.snap, script]
-    - cd ../sdk
-    - !reference [.snap, script]
+# kde-frameworks:
+#   extends: .snap
+#   variables:
+#     REPO: release
+#     DISTRO: focal
+#     KEY_ID: 444DABCF3667D0283F894EDDE6D4736255751E5D
+#   script:
+#     - apt update && apt -y install ruby software-properties-common dpkg-dev
+#     - gem install insensitive_hash
+#     - apt-key adv --keyserver keyserver.ubuntu.com --recv-key "${KEY_ID}"
+#     - echo "deb http://archive.neon.kde.org/release focal main" > /etc/apt/sources.list.d/neon.list && echo "deb-src http://archive.neon.kde.org/release focal main" >> /etc/apt/sources.list.d/neon.list && apt update
+#     - ruby atomize-debs.rb
+#     - echo "Runtime snapcraft.yaml" && cat runtime/snapcraft.yaml
+#     - echo "SDK snapcraft.yaml" && cat sdk/snapcraft.yaml
+#     - cd runtime
+#     - !reference [.snap, script]
+#     - cd ../sdk
+#     - !reference [.snap, script]
 
 kde-frameworks-core22:
   extends: .snap
   variables:
-    REPO: unstable
+    REPO: release
     DISTRO: jammy
     KEY_ID: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    ON_BRANCH: Neon/unstable
+    ON_BRANCH: Neon/release
     RELEASE_TO: beta
     CORE: core22
   script:
     - apt update && apt -y install ruby software-properties-common dpkg-dev
     - gem install insensitive_hash
     - apt-key adv --keyserver keyserver.ubuntu.com --recv-key "${KEY_ID}"
-    - echo "deb http://archive.neon.kde.org/unstable jammy main
-            deb-src http://archive.neon.kde.org/unstable jammy main" > /etc/apt/sources.list.d/neon.list && apt update
+    - echo "deb http://archive.neon.kde.org/release jammy main" > /etc/apt/sources.list.d/neon.list &&
+      echo "deb-src http://archive.neon.kde.org/release jammy main" > /etc/apt/sources.list.d/neon.list &&
+      apt update
     - ruby atomize-debs-core22.rb
     - echo 'Foo'
     - echo "Runtime snapcraft.yaml" && cat runtime/snapcraft.yaml

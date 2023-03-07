@@ -326,7 +326,7 @@ class SnapcraftConfig
 end
 
 config = SnapcraftConfig.new
-config.name = 'kde-frameworks-5-102-qt-5-15-8-core22'
+config.name = 'kf5-5-103-qt-5-15-8-core22'
 config.version = 'unknown'
 config.summary = 'KDE Frameworks 5'
 config.description = 'KDE Frameworks are addons and useful extensions to Qt'
@@ -336,17 +336,17 @@ config.base = 'core22'
 config.compression = 'lzo'
 
 slot = SnapcraftConfig::Slot.new
-slot.content = 'kde-frameworks-5-102-qt-5-15-8-core22-all'
+slot.content = 'kf5-5-103-qt-5-15-8-core22-all'
 slot.interface = 'content'
 slot.read = %w[.]
-config.slots['kde-frameworks-5-102-qt-5-15-8-core22-slot'] = slot
+config.slots['kf5-5-103-qt-5-15-8-core22-slot'] = slot
 
 package_repo = SnapcraftConfig::PackageRepository.new
 package_repo.type = 'apt'
 package_repo.components = %w[main]
 package_repo.suites = %w[jammy]
 package_repo.key_id = '444DABCF3667D0283F894EDDE6D4736255751E5D'
-package_repo.url = 'http://origin.archive.neon.kde.org/unstable'
+package_repo.url = 'http://origin.archive.neon.kde.org/release'
 package_repo.key_server = 'keyserver.ubuntu.com'
 config.package_repositories.push(package_repo)
 
@@ -442,7 +442,7 @@ parts.each_cons(2) do |first_name, second_name|
   runs += source.runtime_binaries
   if source.upstream_name == 'extra-cmake-modules' && config.version
     kf5_version = source.upstream_version
-    config.version = '5.101'
+    config.version = '5.103'
   end
   if source.upstream_name == 'qtbase-opensource-src'
     qt5_version = source.upstream_version
@@ -451,7 +451,7 @@ end
 
 # Construct a new interface name with up to date versions.
 # This is the only way we can version a content snap.
-kf5_version = 'kde-frameworks-' + kf5_version.split('.')[0..2].join('-')
+kf5_version = 'kf5-' + kf5_version.split('.')[0..2].join('-')
 qt5_version = 'qt-' + qt5_version.split('.')[0..1].join('-')
 platform_version = 'core22'
 
@@ -569,7 +569,7 @@ puts File.write('stage-dev.json', JSON.generate(runs + devs))
 
 ### sdk snap
 
-config.name = 'kde-frameworks-5-102-qt-5-15-8-core22-sd'
+config.name = 'kf5-5-103-qt-5-15-8-core22-sdk'
 # We mustn't define the slots in the SDK, it'd confuse snapd on what to
 # autoconnect when both snaps are installed.
 config.slots.clear
