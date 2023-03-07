@@ -530,6 +530,7 @@ integration = SnapcraftConfig::Part.new
 integration.after = %w(kf5-dev)
 integration.build_packages = %w(
                extra-cmake-modules
+               gettext
                kio-dev
                kwayland-dev
                libkf5config-dev
