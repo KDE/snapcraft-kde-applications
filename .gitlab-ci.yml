@@ -47,7 +47,7 @@ variables:
     - if: $DIR != null && $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == $ON_BRANCH
       changes:
         - "$DIR/**/*"
-  before_script: 
+  before_script:
     - mkdir -p  ~/.local/share/snapcraft/provider/launchpad
     - echo -en "[1]\n" > ~/.local/share/snapcraft/provider/launchpad/credentials
     - echo -en "consumer_key = System-wide" >> ~/.local/share/snapcraft/provider/launchpad/credentials
@@ -67,14 +67,14 @@ variables:
     - shopt -s nullglob
     - snap_name="$(yq '.name' snapcraft.yaml)"
     - snapcraft remote-build --launchpad-accept-public-upload --build-on="$BUILD_ON"
-    - | 
-      for log in "$snap_name"_*.txt; do 
+    - |
+      for log in "$snap_name"_*.txt; do
         echo ""
         echo "$log"
         echo "============================"
         cat "$log"
         echo ""
-      done 
+      done
     - architectures=(${BUILD_ON//,/ })
     - 'echo "Architectures (len: ${#architectures[@]}): ${architectures[@]}"'
     - snaps=(${snap_name}*.snap)
@@ -87,7 +87,8 @@ variables:
 .prepone-extension-update:
   extends: .snap
   script:
-    - snap install --candidate snapcraft
+    - curl -L $(curl -s -H "Snap-Device-Series: 16" http://api.snapcraft.io/v2/snaps/info/snapcraft | jq '."channel-map" | map(select(.channel.architecture == "amd64" and .channel.name == "edge")) | .[0].download.url' -r) --output snapcraft.snap
+    - snap install --dangerous --classic snapcraft.snap
     - snapcraft expand-extensions > snapcraft-expanded.yaml
     - mv snapcraft-expanded.yaml snapcraft.yaml
     - sed -i -e 's|kde-frameworks-.*-$CORE|kde-frameworks-$VERSION-$CORE|g' snapcraft.yaml
