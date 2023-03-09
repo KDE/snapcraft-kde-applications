@@ -66,7 +66,7 @@ variables:
   script:
     - apt update && apt -y install jq curl
     - |
-        'curl -L $(curl -s -H "Snap-Device-Series: 16" http://api.snapcraft.io/v2/snaps/info/snapcraft | jq '."channel-map" | map(select(.channel.architecture == "amd64" and .channel.name == "edge")) | .[0].download.url' -r) --output snapcraft.snap'
+        curl -L $(curl -s -H "Snap-Device-Series: 16" http://api.snapcraft.io/v2/snaps/info/snapcraft | jq '."channel-map" | map(select(.channel.architecture == "amd64" and .channel.name == "edge")) | .[0].download.url' -r) --output snapcraft.snap
     - snap install --dangerous --classic snapcraft.snap
     - snapcraft expand-extensions > snapcraft-expanded.yaml
     - shopt -s nullglob
