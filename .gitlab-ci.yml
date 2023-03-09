@@ -87,14 +87,7 @@ variables:
 .prepone-extension-update:
   extends: .snap
   script:
-    - curl -L \
-      -H "Accept: application/vnd.github+json" \
-      -H "Authorization: Bearer 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" \
-      -H "X-GitHub-Api-Version: 2022-11-28" \
-      https://api.github.com/repos/snapcore/snapcraft/actions/artifacts/590050719/zip \
-      --output snap.zip
-    - unzip snap.zip
-    - snap install --dangerous --classic snapcraft_7.3.post3+git8b5a91a3_amd64.snap
+    - snap install --candidate snapcraft
     - snapcraft expand-extensions > snapcraft-expanded.yaml
     - mv snapcraft-expanded.yaml snapcraft.yaml
     - sed -i -e 's|kde-frameworks-.*-$CORE|kde-frameworks-$VERSION-$CORE|g' snapcraft.yaml
