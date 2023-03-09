@@ -369,7 +369,7 @@ end
 parts = %w(extra-cmake-modules kcoreaddons) + # kdesupport/polkit-qt-1
         %w(kauth kconfig kwidgetsaddons kcompletion
            kwindowsystem kcrash karchive ki18n kfilemetadata
-           kjobwidgets kpty kunitconversion kcodecs) + # kdesupport/phonon/phonon
+           kjobwidgets kpty kunitconversion kcodecs phonon) + # kdesupport/phonon/phonon
         %w(knotifications kpackage kguiaddons kconfigwidgets kitemviews
            kiconthemes attica kdbusaddons kservice kglobalaccel sonnet
            ktextwidgets breeze-icons kxmlgui kbookmarks solid kwallet kio
@@ -445,7 +445,7 @@ parts.each_cons(2) do |first_name, second_name|
     config.version = '5.103'
   end
   if source.upstream_name == 'qtbase-opensource-src'
-    qt5_version = source.upstream_version
+    qt5_version = '5.15.8'
   end
 end
 
