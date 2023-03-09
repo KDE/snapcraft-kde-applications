@@ -451,7 +451,7 @@ end
 
 # Construct a new interface name with up to date versions.
 # This is the only way we can version a content snap.
-kf5_version = 'kf5-' + kf5_version.split('.')[0..2].join('-')
+kf5_version = 'kf5-' + kf5_version.split('.')[0..1].join('-')
 qt5_version = 'qt-' + qt5_version.split('.')[0..1].join('-')
 platform_version = 'core22'
 
