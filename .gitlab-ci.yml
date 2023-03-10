@@ -78,7 +78,7 @@ variables:
     - export PATH="/snap/bin:$PATH"
     - export SNAP="/snap/snapcraft/current"
     - export SNAP_NAME="snapcraft"
-    - export export PYTHONPATH="/snap/snapcraft/current/lib/python3.8/site-packages:/snap/snapcraft/current/usr/lib/python3.8:/snap/snapcraft/current/lib/python3.8:/snap/snapcraft/current/usr/lib/python3.8/site-packages:/snap/snapcraft/current/usr/lib/python3.8/lib-dynload"
+    - export PYTHONPATH="/snap/snapcraft/current/lib/python3.8/site-packages:/snap/snapcraft/current/usr/lib/python3.8:/snap/snapcraft/current/lib/python3.8:/snap/snapcraft/current/usr/lib/python3.8/site-packages:/snap/snapcraft/current/usr/lib/python3.8/lib-dynload"
     - snapcraft expand-extensions > snapcraft-expanded.yaml
     - shopt -s nullglob
     - snap_name="$(yq '.name' snapcraft.yaml)"
