@@ -66,9 +66,9 @@ variables:
     - chmod +x /snap/bin/snapcraft
     - chown --changes --recursive $USER:$USER /snap/snapcraft
     - export SNAP_NAME="snapcraft"
-    - export PATH="$PATH:/snap/bin:$SNAP/bin:$SNAP/usr/bin"
     - echo $PATH
-#    - export PYTHONPATH="/snap/snapcraft/current/lib/python3.8/site-packages:/snap/snapcraft/current/usr/lib/python3.8:/snap/snapcraft/current/lib/python3.8:/snap/snapcraft/current/usr/lib/python3.8/site-packages:/snap/snapcraft/current/usr/lib/python3.8/lib-dynload"
+    - snapcraft --version
+    - $SNAP/bin/snapcraft --version
     - mkdir -p  ~/.local/share/snapcraft/provider/launchpad
     - echo -en "[1]\n" > ~/.local/share/snapcraft/provider/launchpad/credentials
     - echo -en "consumer_key = System-wide" >> ~/.local/share/snapcraft/provider/launchpad/credentials
