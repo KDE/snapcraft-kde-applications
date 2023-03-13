@@ -64,12 +64,12 @@ variables:
     - snap_dir="${DIR:-"$CI_JOB_NAME"}"
     - cd "$snap_dir"
   script:
+    - rm -rfv /snap/snapcraft
     - apt update && apt -y install jq curl squashfs-tools
     - |
-        curl -L $(curl -s -H "Snap-Device-Series: 16" http://api.snapcraft.io/v2/snaps/info/snapcraft | jq '."channel-map" | map(select(.channel.name == "edge")) | .[0].download.url' -r) --output snapcraft.snap
+        curl -L $(curl -s -H "Snap-Device-Series: 16" http://api.snapcraft.io/v2/snaps/info/snapcraft | jq '."channel-map" | map(select(.channel.name == "stable")) | .[0].download.url' -r) --output snapcraft.snap
 #    - |
 #        curl -L $(curl -H 'X-Ubuntu-Series: 16' 'https://api.snapcraft.io/api/v1/snaps/details/snapcraft' | jq '.download_url' -r) --output snapcraft.snap
-    - rm -rfv /snap/snapcraft
     - mkdir -p /snap/snapcraft && unsquashfs -d /snap/snapcraft/current snapcraft.snap && rm snapcraft.snap
     - ls -la /snap/snapcraft/current/bin/
     - ls -la /snap/snapcraft/current/usr/bin/
