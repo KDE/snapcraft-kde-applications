@@ -85,7 +85,6 @@ variables:
     - export PATH="/snap/bin:$SNAP/bin:$SNAP/usr/bin:$PATH"
     - echo $PATH
     - export PYTHONPATH="/snap/snapcraft/current/lib/python3.8/site-packages:/snap/snapcraft/current/usr/lib/python3.8:/snap/snapcraft/current/lib/python3.8:/snap/snapcraft/current/usr/lib/python3.8/site-packages:/snap/snapcraft/current/usr/lib/python3.8/lib-dynload"
-    - snapcraft expand-extensions > snapcraft-expanded.yaml
     - shopt -s nullglob
     - snap_name="$(yq '.name' snapcraft.yaml)"
     - snapcraft remote-build --launchpad-accept-public-upload --build-on="$BUILD_ON"
@@ -109,6 +108,7 @@ variables:
 .prepone-extension-update:
   extends: .snap
   script:
+    - snapcraft expand-extensions > snapcraft-expanded.yaml
     - mv snapcraft-expanded.yaml snapcraft.yaml
     - sed -i -e 's|kde-frameworks-.*-$CORE|kde-frameworks-$VERSION-$CORE|g' snapcraft.yaml
     - sed -i -e 's|$SNAPCRAFT_EXTENSIONS_DIR/desktop|desktop|' snapcraft.yaml
