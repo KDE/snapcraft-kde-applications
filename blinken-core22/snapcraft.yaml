@@ -43,9 +43,9 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-103-qt-5-15-8-core22-sd/current"
-        parse-info:
-        - usr/share/metainfo/org.kde.blinken.appdata.xml
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kf5-5-103-qt-5-15-8-core22-sdk/current"
+        # parse-info:
+        # - usr/share/metainfo/org.kde.blinken.appdata.xml
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
@@ -61,11 +61,11 @@ parts:
         - blinken
         plugin: nil
         build-snaps:
-        - kde-frameworks-5-103-qt-5-15-8-core22
+        - kf5-5-104-qt-5-15-8-core22
         override-prime: |
             set -eux
-            for snap in "kde-frameworks-5-103-qt-5-15-8-core22"; do  # List all content-snaps you're using here
-                cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
-            done
+            # for snap in "kf5-5-103-qt-5-15-8-core22"; do  # List all content-snaps you're using here
+            #     cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
+            # done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
