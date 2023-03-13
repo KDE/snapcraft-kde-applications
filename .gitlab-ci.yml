@@ -178,7 +178,7 @@ revision-watchdog:
 #     - !reference [.snap, script]
 
 kde-frameworks-core22:
-  extends: .snap
+  extends: .prepone-extension-update-core22
   variables:
     REPO: release
     DISTRO: jammy
