@@ -64,27 +64,6 @@ variables:
     - snap_dir="${DIR:-"$CI_JOB_NAME"}"
     - cd "$snap_dir"
   script:
-    - rm -rfv /snap/snapcraft
-    - apt update && apt -y install jq curl squashfs-tools
-    - |
-        curl -L $(curl -s -H "Snap-Device-Series: 16" http://api.snapcraft.io/v2/snaps/info/snapcraft | jq '."channel-map" | map(select(.channel.name == "stable")) | .[0].download.url' -r) --output snapcraft.snap
-#    - |
-#        curl -L $(curl -H 'X-Ubuntu-Series: 16' 'https://api.snapcraft.io/api/v1/snaps/details/snapcraft' | jq '.download_url' -r) --output snapcraft.snap
-    - mkdir -p /snap/snapcraft && unsquashfs -d /snap/snapcraft/current snapcraft.snap && rm snapcraft.snap
-    - ls -la /snap/snapcraft/current/bin/
-    - ls -la /snap/snapcraft/current/usr/bin/
-    - mkdir -p /snap/bin
-    - echo "#!/bin/sh" > /snap/bin/snapcraft
-    - export SNAP="/snap/snapcraft/current"
-    - snap_version="$(awk '/^version:/{print $2}' /snap/snapcraft/current/meta/snap.yaml)" && echo "export SNAP_VERSION=\"$snap_version\"" >> /snap/bin/snapcraft
-    - echo echo 'exec "$SNAP/usr/bin/python3" "$SNAP/bin/snapcraft" "$@"' >> /snap/bin/snapcraft
-    - cat /snap/bin/snapcraft
-    - chmod +x /snap/bin/snapcraft
-    - chown --changes --recursive $USER:$USER /snap/snapcraft
-    - export SNAP_NAME="snapcraft"
-    - export PATH="/snap/bin:$SNAP/bin:$SNAP/usr/bin:$PATH"
-    - echo $PATH
-    - export PYTHONPATH="/snap/snapcraft/current/lib/python3.8/site-packages:/snap/snapcraft/current/usr/lib/python3.8:/snap/snapcraft/current/lib/python3.8:/snap/snapcraft/current/usr/lib/python3.8/site-packages:/snap/snapcraft/current/usr/lib/python3.8/lib-dynload"
     - shopt -s nullglob
     - snap_name="$(yq '.name' snapcraft.yaml)"
     - snapcraft remote-build --launchpad-accept-public-upload --build-on="$BUILD_ON"
@@ -108,9 +87,30 @@ variables:
 .prepone-extension-update:
   extends: .snap
   script:
+    - rm -rfv /snap/snapcraft
+    - apt update && apt -y install jq curl squashfs-tools
+    - |
+        curl -L $(curl -s -H "Snap-Device-Series: 16" http://api.snapcraft.io/v2/snaps/info/snapcraft | jq '."channel-map" | map(select(.channel.name == "stable")) | .[0].download.url' -r) --output snapcraft.snap
+#    - |
+#        curl -L $(curl -H 'X-Ubuntu-Series: 16' 'https://api.snapcraft.io/api/v1/snaps/details/snapcraft' | jq '.download_url' -r) --output snapcraft.snap
+    - mkdir -p /snap/snapcraft && unsquashfs -d /snap/snapcraft/current snapcraft.snap && rm snapcraft.snap
+    - ls -la /snap/snapcraft/current/bin/
+    - ls -la /snap/snapcraft/current/usr/bin/
+    - mkdir -p /snap/bin
+    - echo "#!/bin/sh" > /snap/bin/snapcraft
+    - export SNAP="/snap/snapcraft/current"
+    - snap_version="$(awk '/^version:/{print $2}' /snap/snapcraft/current/meta/snap.yaml)" && echo "export SNAP_VERSION=\"$snap_version\"" >> /snap/bin/snapcraft
+    - echo echo 'exec "$SNAP/usr/bin/python3" "$SNAP/bin/snapcraft" "$@"' >> /snap/bin/snapcraft
+    - cat /snap/bin/snapcraft
+    - chmod +x /snap/bin/snapcraft
+    - chown --changes --recursive $USER:$USER /snap/snapcraft
+    - export SNAP_NAME="snapcraft"
+    - export PATH="/snap/bin:$SNAP/bin:$SNAP/usr/bin:$PATH"
+    - echo $PATH
+    - export PYTHONPATH="/snap/snapcraft/current/lib/python3.8/site-packages:/snap/snapcraft/current/usr/lib/python3.8:/snap/snapcraft/current/lib/python3.8:/snap/snapcraft/current/usr/lib/python3.8/site-packages:/snap/snapcraft/current/usr/lib/python3.8/lib-dynload"
     - snapcraft expand-extensions > snapcraft-expanded.yaml
     - mv snapcraft-expanded.yaml snapcraft.yaml
-    - sed -i -e 's|kde-frameworks-.*-$CORE|kde-frameworks-$VERSION-$CORE|g' snapcraft.yaml
+    - sed -i -e 's|kde-frameworks-.*-$CORE|kf5-$VERSION-$CORE|g' snapcraft.yaml
     - sed -i -e 's|$SNAPCRAFT_EXTENSIONS_DIR/desktop|desktop|' snapcraft.yaml
     - cp -r /snap/snapcraft/current/share/snapcraft/extensions/desktop .
     - !reference [.snap, script]
@@ -120,7 +120,7 @@ variables:
   variables:
     BRANCH: Neon/unstable
     CORE: core22
-    VERSION: 5-103-qt-5-15-8
+    VERSION: 5-104-qt-5-15-8
     RELEASE_TO: beta
 
 # Examples
