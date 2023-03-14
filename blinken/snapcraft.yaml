@@ -6,6 +6,7 @@ confinement: strict
 grade: stable
 base: core22
 build-base: core22
+version: 22.12.3
 apps:
     blinken:
         common-id: org.kde.blinken.org
@@ -23,10 +24,9 @@ package-repositories:
         url: http://origin.archive.neon.kde.org/user
         key-server: keyserver.ubuntu.com
 parts:
-    blinken-src:
-        plugin: dump
+    blinken:
+        plugin: cmake
         source: http://download.kde.org/stable/release-service/22.12.3/src/blinken-22.12.3.tar.xz
-        parse-info: org.kde.blinken.appdata.xml
 # ---
 # name: blinken
 # confinement: strict
