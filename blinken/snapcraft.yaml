@@ -11,6 +11,8 @@ apps:
     blinken:
         common-id: org.kde.blinken.org
         command: blinken
+        extensions:
+            - kde-neon
         plugs:
             - audio-playback
             - unity7
