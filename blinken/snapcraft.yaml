@@ -51,6 +51,18 @@ parts:
             - "-DBUILD_TESTING=OFF"
             - "-DKDE_SKIP_TEST_SETTINGS=ON"
             - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        parse-info:
+            - usr/share/metainfo/org.kde.blinken.appdata.xml
+        prime:
+            - "-usr/lib/*/cmake/*"
+            - "-usr/include/*"
+            - "-usr/share/ECM/*"
+            - "-usr/share/doc/*"
+            - "-usr/share/man/*"
+            - "-usr/share/icons/breeze-dark*"
+            - "-usr/bin/X11"
+            - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
+            - "-usr/lib/aspell/*"
 # ---
 # name: blinken
 # confinement: strict
