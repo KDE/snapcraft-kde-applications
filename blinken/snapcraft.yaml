@@ -40,6 +40,13 @@ parts:
             - PKG_CONFIG_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/pkgconfig
             - ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal
             - SNAPCRAFT_CMAKE_ARGS: '-DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DENABLE_TESTING=OFF -DBUILD_TESTING=OFF -DKDE_SKIP_TEST_SETTINGS=ON'
+        cmake-parameters:
+         - "-DCMAKE_INSTALL_PREFIX=/usr"
+         - "-DCMAKE_BUILD_TYPE=Release"
+         - "-DENABLE_TESTING=OFF"
+         - "-DBUILD_TESTING=OFF"
+         - "-DKDE_SKIP_TEST_SETTINGS=ON"
+         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
 # ---
 # name: blinken
 # confinement: strict
