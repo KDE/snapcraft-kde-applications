@@ -33,9 +33,12 @@ parts:
     blinken:
         plugin: cmake
         build-packages:
+        - cmake
         - libkf5doctools-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
+        build-snaps:
+        - kf5-5-104-qt-5-15-8-core22-sdk
         source: http://download.kde.org/stable/release-service/22.12.3/src/blinken-22.12.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -43,9 +46,9 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kf5-5-103-qt-5-15-8-core22-sdk/current"
-        # parse-info:
-        # - usr/share/metainfo/org.kde.blinken.appdata.xml
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        parse-info:
+        - usr/share/metainfo/org.kde.blinken.appdata.xml
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
@@ -54,7 +57,7 @@ parts:
         - "-usr/share/man/*"
         - "-usr/share/icons/breeze-dark*"
         - "-usr/bin/X11"
-        - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
+        - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
     cleanup:
         after:
@@ -64,8 +67,8 @@ parts:
         - kf5-5-104-qt-5-15-8-core22
         override-prime: |
             set -eux
-            # for snap in "kf5-5-103-qt-5-15-8-core22"; do  # List all content-snaps you're using here
-            #     cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
+            # for snap in "kf5-5-104-qt-5-15-8-core22"; do  # List all content-snaps you're using here
+            #     cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$CRAFT_PRIME/{}" "$CRAFT_PRIME/usr/{}" \;
             # done
-            find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
-            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
+            find $CRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
+            find $CRAFT_PRIME/usr/share -type d -empty -delete
