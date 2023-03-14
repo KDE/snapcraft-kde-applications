@@ -6,7 +6,6 @@ confinement: strict
 grade: stable
 base: core22
 build-base: core22
-version: 22.12.3
 apps:
     blinken:
         common-id: org.kde.blinken.desktop
@@ -27,6 +26,8 @@ package-repositories:
         key-server: keyserver.ubuntu.com
 parts:
     blinken:
+        parse-info:
+            - usr/share/metainfo/org.kde.blinken.appdata.xml
         plugin: cmake
         build-packages:
             - cmake
@@ -51,6 +52,8 @@ parts:
             - "-DBUILD_TESTING=OFF"
             - "-DKDE_SKIP_TEST_SETTINGS=ON"
             - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        stage-snaps:
+            - kf5-5-104-qt-5-15-8-core22
         prime:
             - "-usr/lib/*/cmake/*"
             - "-usr/include/*"
