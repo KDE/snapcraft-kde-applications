@@ -123,13 +123,14 @@ variables:
     - mv snapcraft-expanded.yaml snapcraft.yaml
     - sed -i -e 's|kde-frameworks-.*-$CORE|kf5-$VERSION-$CORE|g' snapcraft.yaml
     - sed -i -e 's|$SNAPCRAFT_EXTENSIONS_DIR/desktop|desktop|' snapcraft.yaml
+    - cat snapcraft.yaml
     - cp -r /snap/snapcraft/current/share/snapcraft/extensions/desktop .
     - !reference [.snap, script]
 
 .prepone-extension-update-core22:
   extends: .prepone-extension-update
   variables:
-    BRANCH: Neon/unstable
+    BRANCH: Neon/release
     CORE: core22
     VERSION: 5-104-qt-5-15-8
     RELEASE_TO: beta
