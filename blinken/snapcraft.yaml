@@ -5,13 +5,13 @@ adopt-info: blinken
 confinement: strict
 grade: stable
 base: core22
-build-base: core22
+version: 22.12.3
 apps:
     blinken:
         common-id: org.kde.blinken.desktop
         command: blinken
-        # extensions:
-        #     - kde-neon
+        extensions:
+            - kde-neon
         plugs:
             - audio-playback
             - unity7
@@ -26,8 +26,7 @@ package-repositories:
         key-server: keyserver.ubuntu.com
 parts:
     blinken:
-        parse-info:
-            - usr/share/metainfo/org.kde.blinken.appdata.xml
+        source: http://download.kde.org/stable/release-service/22.12.3/src/blinken-22.12.3.tar.xz
         plugin: cmake
         build-packages:
             - cmake
@@ -36,14 +35,6 @@ parts:
             - libphonon4qt5experimental-dev
         build-snaps:
             - kf5-5-104-qt-5-15-8-core22-sdk
-        source: http://download.kde.org/stable/release-service/22.12.3/src/blinken-22.12.3.tar.xz
-        build-environment:
-            - PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/bin{$PATH}:+:{$PATH}
-            - XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share:/usr/share
-            - LD_LIBRARY_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio
-            - PKG_CONFIG_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/pkgconfig
-            - ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal
-            - SNAPCRAFT_CMAKE_ARGS: '-DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DENABLE_TESTING=OFF -DBUILD_TESTING=OFF -DKDE_SKIP_TEST_SETTINGS=ON'
         cmake-parameters:
             - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
             - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -54,6 +45,8 @@ parts:
             - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
         stage-snaps:
             - kf5-5-104-qt-5-15-8-core22
+        #parse-info:
+        #    - usr/share/metainfo/org.kde.blinken.appdata.xml
         prime:
             - "-usr/lib/*/cmake/*"
             - "-usr/include/*"
@@ -62,7 +55,7 @@ parts:
             - "-usr/share/man/*"
             - "-usr/share/icons/breeze-dark*"
             - "-usr/bin/X11"
-            - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
+            - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
             - "-usr/lib/aspell/*"
 # ---
 # name: blinken
