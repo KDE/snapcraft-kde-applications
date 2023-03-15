@@ -119,13 +119,13 @@ variables:
 .prepone-extension-update:
   extends: .snap
   script:
-    - snapcraft expand-extensions > snapcraft-expanded.yaml
-    - mv snapcraft-expanded.yaml snapcraft.yaml
+#    - snapcraft expand-extensions > snapcraft-expanded.yaml
+#    - mv snapcraft-expanded.yaml snapcraft.yaml
     - sed -i -e 's|kde-frameworks-5-102-qt-5-15-8-core22-sd|kf5-5-104-qt-5-15-8-core22-sdk|g' snapcraft.yaml
     - sed -i -e 's|kde-frameworks-5-102-qt-5-15-8-core22|kf5-5-104-qt-5-15-8-core22|g' snapcraft.yaml
     - sed -i -e 's|$SNAPCRAFT_EXTENSIONS_DIR/desktop|desktop|' snapcraft.yaml
-    - sed -i -e 's|#parse-info:|parse-info:|g' snapcraft.yaml
-    - sed -i -e 's|#    - usr/share/metainfo/org.kde.blinken.appdata.xml|    - usr/share/metainfo/org.kde.blinken.appdata.xml|g' snapcraft.yaml
+#    - sed -i -e 's|#parse-info:|parse-info:|g' snapcraft.yaml
+#    - sed -i -e 's|#    - usr/share/metainfo/org.kde.blinken.appdata.xml|    - usr/share/metainfo/org.kde.blinken.appdata.xml|g' snapcraft.yaml
     - cat snapcraft.yaml
     - cp -r /snap/snapcraft/current/share/snapcraft/extensions/desktop .
     - !reference [.snap, script]
