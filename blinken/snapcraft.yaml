@@ -9,7 +9,7 @@ version: 22.12.3
 apps:
     blinken:
         common-id: org.kde.blinken.desktop
-        command: blinken
+        command: usr/bin/blinken
         # extensions:
         # - kde-neon
         plugs:
