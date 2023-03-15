@@ -33,8 +33,6 @@ parts:
         - libkf5doctools-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
-        build-snaps:
-        - kf5-5-104-qt-5-15-8-core22-sdk
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -43,10 +41,8 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
-        stage-snaps:
-        - kf5-5-104-qt-5-15-8-core22
-        parse-info:
-            - usr/share/metainfo/org.kde.blinken.appdata.xml
+        # parse-info:
+        #     - usr/share/metainfo/org.kde.blinken.appdata.xml
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
