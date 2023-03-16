@@ -129,7 +129,6 @@ parts:
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libsoup-2.4.so.1.11.2
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libsquashfuse_ll.so.0.0.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libssl3.so
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-aarch64.so.8.0.1
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-coredump.so.0.0.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-ptrace.so.0.0.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libwoff2enc.so.1.0.2
