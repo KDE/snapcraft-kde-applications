@@ -96,7 +96,6 @@ parts:
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libEGL_mesa.so.0.0.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libGLESv1_CM.so.1.2.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libGLX_mesa.so.0.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libIexMath-2_5.so.25.0.6
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libIlmImfUtil-2_5.so.25.0.6
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5ActivitiesStats.so.5.104.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5ConfigQml.so.5.104.0
