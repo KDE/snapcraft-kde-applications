@@ -210,4 +210,4 @@ slots:
         interface: dbus
         name: org.kde.dragonplayer
         bus: session
-icon: assets/logo.png
+icon: $CRAFT_PROJECT_DIR/assets/logo.png
