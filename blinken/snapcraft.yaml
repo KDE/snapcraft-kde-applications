@@ -82,8 +82,8 @@ parts:
         - kf5-5-104-qt-5-15-8-core22-sdk
         override-prime: |
             set -eux
-            find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
-            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
+            find $CRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
+            find $CRAFT_PRIME/usr/share -type d -empty -delete
             # Unused libraries found by linter
             rm lib/$CRAFT_ARCH_TRIPLET/libulockmgr.so.1.0.1
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libEGL_mesa.so.0.0.0
@@ -166,70 +166,3 @@ hooks:
 layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
-# ---
-# name: blinken
-# confinement: strict
-# grade: stable
-# base: core22
-# adopt-info: blinken
-# version: 22.12.3
-# apps:
-#     blinken:
-#         extensions:
-#         - kde-neon
-#         common-id: org.kde.blinken.desktop
-#         desktop: usr/share/applications/org.kde.blinken.desktop
-#         command: usr/bin/blinken
-#         plugs:
-#         - audio-playback
-# slots:
-#     session-dbus-interface:
-#         interface: dbus
-#         name: org.kde.blinken
-#         bus: session
-# package-repositories:
-# -   type: apt
-#     components:
-#     - main
-#     suites:
-#     - focal
-#     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-#     url: http://origin.archive.neon.kde.org/user
-#     key-server: keyserver.ubuntu.com
-# parts:
-#     blinken:
-#         plugin: cmake
-#         build-packages:
-#         - libkf5doctools-dev
-#         - libphonon4qt5-dev
-#         - libphonon4qt5experimental-dev
-#         source: http://download.kde.org/stable/release-service/22.12.3/src/blinken-22.12.3.tar.xz
-#         cmake-parameters:
-#         - "-DCMAKE_INSTALL_PREFIX=/usr"
-#         - "-DCMAKE_BUILD_TYPE=Release"
-#         - "-DENABLE_TESTING=OFF"
-#         - "-DBUILD_TESTING=OFF"
-#         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-#         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
-#         parse-info:
-#         - usr/share/metainfo/org.kde.blinken.appdata.xml
-#         prime:
-#         - "-usr/lib/*/cmake/*"
-#         - "-usr/include/*"
-#         - "-usr/share/ECM/*"
-#         - "-usr/share/doc/*"
-#         - "-usr/share/man/*"
-#         - "-usr/share/icons/breeze-dark*"
-#         - "-usr/bin/X11"
-#         - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
-#         - "-usr/lib/aspell/*"
-#     cleanup:
-#         after:
-#         - blinken
-#         plugin: nil
-#         build-snaps:
-#         - kf5-5-104-qt-5-15-8-core22-sdk
-#         override-prime: |
-#             set -eux
-#             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
-#             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
