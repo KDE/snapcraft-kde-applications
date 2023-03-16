@@ -8,7 +8,7 @@ base: core22
 version: 22.12.3
 apps:
     dragon:
-        common-id: org.kde.dragon.desktop
+        common-id: org.kde.dragonplayer.desktop
         command: usr/bin/dragon
         # extensions:
         # - kde-neon
@@ -57,6 +57,7 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
+        - kio
         build-snaps:
         - kf5-5-104-qt-5-15-8-core22-sdk
         stage-snaps:
@@ -209,3 +210,4 @@ slots:
         interface: dbus
         name: org.kde.dragonplayer
         bus: session
+icon: $SNAP/usr/share/icons/hicolor/32x32/apps/dragonplayer.png
