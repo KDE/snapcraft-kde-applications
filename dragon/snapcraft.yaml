@@ -105,8 +105,8 @@ parts:
         - kf5-5-104-qt-5-15-8-core22-sdk
         override-prime: |
             set -eux
-            find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
-            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
+            find $CRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
+            find $CRAFT_PRIME/usr/share -type d -empty -delete
             # Unused libraries found by linter
             rm lib/$CRAFT_ARCH_TRIPLET/libulockmgr.so.1.0.1
             rm usr/lib/libhardsid-builder.so.0.0.1
@@ -202,7 +202,7 @@ layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
     /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib:
-        symlink: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib
+        symlink: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/alsa-lib
     /usr/share/alsa:
         symlink: $SNAP/usr/share/alsa
 slots:
@@ -210,4 +210,4 @@ slots:
         interface: dbus
         name: org.kde.dragonplayer
         bus: session
-icon: $SNAP/usr/share/icons/hicolor/32x32/apps/dragonplayer.png
+icon: logo.png
