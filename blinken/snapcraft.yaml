@@ -1,7 +1,7 @@
 # Build 3
 ---
 name: blinken
-adopt-info: kde-blinken
+adopt-info: blinken
 confinement: strict
 grade: stable
 base: core22
@@ -25,9 +25,9 @@ package-repositories:
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
-    kde-blinken:
-        # after:
-        # - kde-neon/sdk
+    blinken:
+        after:
+        - kde-neon
         source: http://download.kde.org/stable/release-service/22.12.3/src/blinken-22.12.3.tar.xz
         plugin: cmake
         build-packages:
@@ -66,14 +66,14 @@ parts:
         -   PKG_CONFIG_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
         -   ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         -   SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
-    # kde-neon/sdk:
-    #     source: /snap/snapcraft/current/share/snapcraft/extensions/desktop/kde-neon
-    #     source-type: local
-    #     plugin: make
-    #     make-parameters:
-    #     - PLATFORM_PLUG=kf5-5-104-qt-5-15-8-core22
-    #     build-snaps:
-    #     - kf5-5-104-qt-5-15-8-core22-sdk
+    kde-neon:
+        source: /snap/snapcraft/current/share/snapcraft/extensions/desktop/kde-neon
+        source-type: local
+        plugin: make
+        make-parameters:
+        - PLATFORM_PLUG=kf5-5-104-qt-5-15-8-core22
+        build-snaps:
+        - kf5-5-104-qt-5-15-8-core22-sdk
 assumes:
 - snapd2.43
 compression: lzo
