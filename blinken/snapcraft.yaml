@@ -35,6 +35,8 @@ parts:
         - libkf5doctools-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
+        stage-packages:
+        - qtwayland5
         build-snaps:
         - kf5-5-104-qt-5-15-8-core22-sdk
         stage-snaps:
