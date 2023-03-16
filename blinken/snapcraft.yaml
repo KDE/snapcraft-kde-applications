@@ -111,7 +111,6 @@ parts:
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libcaca++.so.0.99.19
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libclang-14.so.14.0.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libdconf.so.1.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libdrm_freedreno.so.1.0.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libdrm_tegra.so.0.0.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libfaad_drm.so.2.0.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libgamin-1.so.0.1.10
