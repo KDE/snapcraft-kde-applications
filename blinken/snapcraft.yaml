@@ -1,15 +1,15 @@
 # Build 3
 ---
-name: blinken
-adopt-info: blinken
+name: parley
+adopt-info: parley
 confinement: strict
 grade: stable
 base: core22
 version: 22.12.3
 apps:
-    blinken:
-        common-id: org.kde.blinken.desktop
-        command: usr/bin/blinken
+    parley:
+        common-id: org.kde.parley.desktop
+        command: usr/bin/parley
         # extensions:
         # - kde-neon
         plugs:
@@ -25,10 +25,10 @@ package-repositories:
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
-    blinken:
+    parley:
         after:
         - kde-neon
-        source: http://download.kde.org/stable/release-service/22.12.3/src/blinken-22.12.3.tar.xz
+        source: http://download.kde.org/stable/release-service/22.12.3/src/parley-22.12.3.tar.xz
         plugin: cmake
         build-packages:
         - cmake
@@ -48,7 +48,7 @@ parts:
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
         parse-info:
-            - usr/share/metainfo/org.kde.blinken.appdata.xml
+            - usr/share/metainfo/org.kde.parley.appdata.xml
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
@@ -76,7 +76,7 @@ parts:
         - kf5-5-104-qt-5-15-8-core22-sdk
     cleanup:
         after:
-        - blinken
+        - parley
         plugin: nil
         build-snaps:
         - kf5-5-104-qt-5-15-8-core22-sdk
@@ -84,7 +84,7 @@ parts:
             set -eux
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-            # Unused libraries found by linter
+            # # Unused libraries found by linter
             rm lib/$CRAFT_ARCH_TRIPLET/libulockmgr.so.1.0.1
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libEGL_mesa.so.0.0.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libGLESv1_CM.so.1.2.0
@@ -170,25 +170,25 @@ layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
 # ---
-# name: blinken
+# name: parley
 # confinement: strict
 # grade: stable
 # base: core22
-# adopt-info: blinken
+# adopt-info: parley
 # version: 22.12.3
 # apps:
-#     blinken:
+#     parley:
 #         extensions:
 #         - kde-neon
-#         common-id: org.kde.blinken.desktop
-#         desktop: usr/share/applications/org.kde.blinken.desktop
-#         command: usr/bin/blinken
+#         common-id: org.kde.parley.desktop
+#         desktop: usr/share/applications/org.kde.parley.desktop
+#         command: usr/bin/parley
 #         plugs:
 #         - audio-playback
 # slots:
 #     session-dbus-interface:
 #         interface: dbus
-#         name: org.kde.blinken
+#         name: org.kde.parley
 #         bus: session
 # package-repositories:
 # -   type: apt
@@ -200,13 +200,13 @@ layout:
 #     url: http://origin.archive.neon.kde.org/user
 #     key-server: keyserver.ubuntu.com
 # parts:
-#     blinken:
+#     parley:
 #         plugin: cmake
 #         build-packages:
 #         - libkf5doctools-dev
 #         - libphonon4qt5-dev
 #         - libphonon4qt5experimental-dev
-#         source: http://download.kde.org/stable/release-service/22.12.3/src/blinken-22.12.3.tar.xz
+#         source: http://download.kde.org/stable/release-service/22.12.3/src/parley-22.12.3.tar.xz
 #         cmake-parameters:
 #         - "-DCMAKE_INSTALL_PREFIX=/usr"
 #         - "-DCMAKE_BUILD_TYPE=Release"
@@ -215,7 +215,7 @@ layout:
 #         - "-DKDE_SKIP_TEST_SETTINGS=ON"
 #         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
 #         parse-info:
-#         - usr/share/metainfo/org.kde.blinken.appdata.xml
+#         - usr/share/metainfo/org.kde.parley.appdata.xml
 #         prime:
 #         - "-usr/lib/*/cmake/*"
 #         - "-usr/include/*"
@@ -228,7 +228,7 @@ layout:
 #         - "-usr/lib/aspell/*"
 #     cleanup:
 #         after:
-#         - blinken
+#         - parley
 #         plugin: nil
 #         build-snaps:
 #         - kf5-5-104-qt-5-15-8-core22-sdk
