@@ -167,7 +167,6 @@ parts:
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libssl3.so
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-coredump.so.0.0.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-ptrace.so.0.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-x86_64.so.8.0.1
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libwoff2enc.so.1.0.2
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libzvbi-chains.so.0.0.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/preloadable_libintl.so
@@ -190,8 +189,8 @@ plugs:
         interface: content
         default-provider: kf5-5-104-qt-5-15-8-core22:kf5-5-104-qt-5-15-8-core22
         target: $SNAP/kf5
-environment:
-    SNAP_DESKTOP_RUNTIME: $SNAP/kf5
+    environment:
+        SNAP_DESKTOP_RUNTIME: $SNAP/kf5
 hooks:
     configure:
         plugs:
@@ -210,4 +209,3 @@ slots:
         interface: dbus
         name: org.kde.dragonplayer
         bus: session
-icon: $CRAFT_PROJECT_DIR/assets/logo.png
