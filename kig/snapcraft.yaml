@@ -35,7 +35,7 @@ parts:
         - libboost-python-dev
         - libkf5doctools-dev
         stage-packages:
-        - libboost-python1.71-dev
+        - libboost-python1.74.0
         build-snaps:
         - kf5-5-104-qt-5-15-8-core22-sdk
         stage-snaps:
