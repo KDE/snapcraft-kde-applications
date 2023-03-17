@@ -91,55 +91,55 @@ parts:
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
             # Unused libraries found by linter
-            rm lib/$CRAFT_ARCH_TRIPLET/libulockmgr.so.1.0.1
-            rm usr/lib/libhardsid-builder.so.0.0.1
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libEGL_mesa.so.0.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libGLESv1_CM.so.1.2.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libGLX_mesa.so.0.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5ActivitiesStats.so.5.104.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5ConfigQml.so.5.104.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5KDEGamesPrivate.so.7.5.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5KrossUi.so.5.104.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5NotifyConfig.so.5.104.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5Plotting.so.5.104.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5UnitConversion.so.5.104.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5WaylandServer.so.5.104.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5WebKit.so.5.104.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5XmlRpcClient.so.5.104.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libQt5Concurrent.so.5.15.8
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libQt5DesignerComponents.so.5.15.8
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libQt5Help.so.5.15.8
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libQt5PdfWidgets.so.5.15.11
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libQt5ScriptTools.so.5.15.8
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libQt5SerialPort.so.5.15.8
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libQt5WebEngineWidgets.so.5.15.11
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libXt.so.6.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libcaca++.so.0.99.19
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libclang-14.so.14.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libdconf.so.1.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libfaad_drm.so.2.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libgamin-1.so.0.1.10
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libgstcheck-1.0.so.0.2003.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libgstcontroller-1.0.so.0.2003.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libgstplayer-1.0.so.0.2003.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libgsttranscoder-1.0.so.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libgthread-2.0.so.0.7200.4
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libicuio.so.70.1
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libicutest.so.70.1
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libjacknet.so.0.1.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libjackserver.so.0.1.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/liblua5.2-c++.so.0.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libmpeg2convert.so.0.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/liborc-test-0.4.so.0.32.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libpolkit-qt5-agent-1.so.1.114.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libpolkit-qt5-gui-1.so.1.114.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libsquashfuse_ll.so.0.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libssl3.so
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-coredump.so.0.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-ptrace.so.0.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libwoff2enc.so.1.0.2
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libzvbi-chains.so.0.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/preloadable_libintl.so
+            # rm lib/$CRAFT_ARCH_TRIPLET/libulockmgr.so.1.0.1
+            # rm usr/lib/libhardsid-builder.so.0.0.1
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libEGL_mesa.so.0.0.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libGLESv1_CM.so.1.2.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libGLX_mesa.so.0.0.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5ActivitiesStats.so.5.104.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5ConfigQml.so.5.104.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5KDEGamesPrivate.so.7.5.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5KrossUi.so.5.104.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5NotifyConfig.so.5.104.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5Plotting.so.5.104.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5UnitConversion.so.5.104.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5WaylandServer.so.5.104.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5WebKit.so.5.104.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5XmlRpcClient.so.5.104.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libQt5Concurrent.so.5.15.8
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libQt5DesignerComponents.so.5.15.8
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libQt5Help.so.5.15.8
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libQt5PdfWidgets.so.5.15.11
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libQt5ScriptTools.so.5.15.8
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libQt5SerialPort.so.5.15.8
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libQt5WebEngineWidgets.so.5.15.11
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libXt.so.6.0.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libcaca++.so.0.99.19
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libclang-14.so.14.0.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libdconf.so.1.0.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libfaad_drm.so.2.0.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libgamin-1.so.0.1.10
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libgstcheck-1.0.so.0.2003.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libgstcontroller-1.0.so.0.2003.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libgstplayer-1.0.so.0.2003.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libgsttranscoder-1.0.so.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libgthread-2.0.so.0.7200.4
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libicuio.so.70.1
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libicutest.so.70.1
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libjacknet.so.0.1.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libjackserver.so.0.1.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/liblua5.2-c++.so.0.0.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libmpeg2convert.so.0.0.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/liborc-test-0.4.so.0.32.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libpolkit-qt5-agent-1.so.1.114.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libpolkit-qt5-gui-1.so.1.114.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libsquashfuse_ll.so.0.0.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libssl3.so
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-coredump.so.0.0.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-ptrace.so.0.0.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libwoff2enc.so.1.0.2
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/libzvbi-chains.so.0.0.0
+            # rm usr/lib/$CRAFT_ARCH_TRIPLET/preloadable_libintl.so
 assumes:
 - snapd2.43
 compression: lzo
