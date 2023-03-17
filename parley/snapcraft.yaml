@@ -118,7 +118,6 @@ parts:
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libclang-14.so.14.0.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libdconf.so.1.0.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libfaad_drm.so.2.0.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libflite_cmu_indic_lex.so.2.2
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libflite_cmu_time_awb.so.2.2
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libflite_cmu_us_awb.so.2.2
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libflite_cmu_us_kal16.so.2.2
