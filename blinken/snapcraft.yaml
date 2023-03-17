@@ -98,7 +98,6 @@ parts:
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5NotifyConfig.so.5.104.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5Plotting.so.5.104.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5UnitConversion.so.5.104.0
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5WaylandServer.so.5.104.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5WebKit.so.5.104.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libKF5XmlRpcClient.so.5.104.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libQt5Concurrent.so.5.15.8
