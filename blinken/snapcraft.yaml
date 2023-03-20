@@ -18,36 +18,6 @@ apps:
         - unity7
         command-chain:
         - snap/command-chain/desktop-launch
-assumes:
-- snapd2.43
-compression: lzo
-plugs:
-    desktop:
-        mount-host-font-cache: false
-    icon-themes:
-        interface: content
-        target: $SNAP/data-dir/icons
-        default-provider: gtk-common-themes
-    sound-themes:
-        interface: content
-        target: $SNAP/data-dir/sounds
-        default-provider: gtk-common-themes
-    kf5-5-104-qt-5-15-8-core22:
-        content: kf5-5-104-qt-5-15-8-core22-all
-        interface: content
-        default-provider: kf5-5-104-qt-5-15-8-core22:kf5-5-104-qt-5-15-8-core22
-        target: $SNAP/kf5
-environment:
-    SNAP_DESKTOP_RUNTIME: $SNAP/kf5
-hooks:
-    configure:
-        plugs:
-        - desktop
-        command-chain:
-        - snap/command-chain/hooks-configure-desktop
-layout:
-    /usr/share/X11:
-        symlink: $SNAP/kf5/usr/share/X11
 package-repositories:
 -   type: apt
     components:
@@ -174,3 +144,33 @@ parts:
             # rm usr/lib/$CRAFT_ARCH_TRIPLET/libzvbi-chains.so.0.0.0
             # rm usr/lib/$CRAFT_ARCH_TRIPLET/preloadable_libintl.so
             # rm usr/lib/libhardsid-builder.so.0.0.1
+assumes:
+- snapd2.43
+compression: lzo
+plugs:
+    desktop:
+        mount-host-font-cache: false
+    icon-themes:
+        interface: content
+        target: $SNAP/data-dir/icons
+        default-provider: gtk-common-themes
+    sound-themes:
+        interface: content
+        target: $SNAP/data-dir/sounds
+        default-provider: gtk-common-themes
+    kf5-5-104-qt-5-15-8-core22:
+        content: kf5-5-104-qt-5-15-8-core22-all
+        interface: content
+        default-provider: kf5-5-104-qt-5-15-8-core22:kf5-5-104-qt-5-15-8-core22
+        target: $SNAP/kf5
+environment:
+    SNAP_DESKTOP_RUNTIME: $SNAP/kf5
+hooks:
+    configure:
+        plugs:
+        - desktop
+        command-chain:
+        - snap/command-chain/hooks-configure-desktop
+layout:
+    /usr/share/X11:
+        symlink: $SNAP/kf5/usr/share/X11
