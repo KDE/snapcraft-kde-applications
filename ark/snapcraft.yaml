@@ -68,12 +68,26 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     kde-neon:
-        source: /snap/snapcraft/8931/share/snapcraft/extensions/desktop/kde-neon
+        source: /snap/snapcraft/current/share/snapcraft/extensions/desktop/kde-neon
+        source-type: local
         plugin: make
         make-parameters:
         - PLATFORM_PLUG=kf5-5-104-qt-5-15-8-core22
         build-snaps:
         - kf5-5-104-qt-5-15-8-core22-sdk
+        build-environment:
+        - &id001
+            PATH: /snap/kde-frameworks-5-102-qt-5-15-8-core22-sd/current/usr/bin${PATH:+:$PATH}
+        - &id002
+            XDG_DATA_DIRS: $SNAPCRAFT_STAGE/usr/share:/snap/kde-frameworks-5-102-qt-5-15-8-core22-sd/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+        - &id003
+            LD_LIBRARY_PATH: /snap/kde-frameworks-5-102-qt-5-15-8-core22-sd/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kde-frameworks-5-102-qt-5-15-8-core22-sd/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kde-frameworks-5-102-qt-5-15-8-core22-sd/current/usr/lib:/snap/kde-frameworks-5-102-qt-5-15-8-core22-sd/current/usr/lib/vala-current:/snap/kde-frameworks-5-102-qt-5-15-8-core22-sd/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+        - &id004
+            PKG_CONFIG_PATH: /snap/kde-frameworks-5-102-qt-5-15-8-core22-sd/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kde-frameworks-5-102-qt-5-15-8-core22-sd/current/usr/lib/pkgconfig:/snap/kde-frameworks-5-102-qt-5-15-8-core22-sd/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
+        - &id005
+            ACLOCAL_PATH: /snap/kde-frameworks-5-102-qt-5-15-8-core22-sd/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
+        - &id006
+            SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kde-frameworks-5-102-qt-5-15-8-core22-sd/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
     ark:
         after:
         - kde-neon
@@ -119,13 +133,13 @@ parts:
         - -usr/bin/X11
         - -usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0
         - -usr/lib/aspell/*
-        build-environment:
-        -   PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/bin${PATH:+:$PATH}
-        -   XDG_DATA_DIRS: $SNAPCRAFT_STAGE/usr/share:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
-        -   LD_LIBRARY_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
-        -   PKG_CONFIG_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
-        -   ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
-        -   SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
+        build-environment: &id007
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        - *id005
+        - *id006
     # cleanup:
     #     after:
     #     - kservice
