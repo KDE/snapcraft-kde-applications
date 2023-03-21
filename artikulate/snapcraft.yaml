@@ -2,32 +2,65 @@
 name: artikulate
 confinement: strict
 grade: stable
-base: core20
+base: core22
 adopt-info: artikulate
-version: 22.12.2
+version: 22.12.3
 apps:
     artikulate:
-        extensions:
-        - kde-neon
+        # extensions:
+        # - kde-neon
         common-id: org.kde.artikulate.desktop
         command: usr/bin/artikulate
         desktop: usr/share/applications/org.kde.artikulate.desktop
-        environment:
-            GST_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
-            GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
-            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
         plugs:
-        - home
+        - desktop
+        - desktop-legacy
+        - opengl
+        - wayland
+        - x11
+        - audio-playback
+        - unity7
         - network
         - network-bind
-        - audio-playback
-        - removable-media
-        - audio-record
+        command-chain:
+        - snap/command-chain/desktop-launch
+assumes:
+- snapd2.43
+compression: lzo
+plugs:
+    desktop:
+        mount-host-font-cache: false
+    icon-themes:
+        interface: content
+        target: $SNAP/data-dir/icons
+        default-provider: gtk-common-themes
+    sound-themes:
+        interface: content
+        target: $SNAP/data-dir/sounds
+        default-provider: gtk-common-themes
+    kf5-5-104-qt-5-15-8-core22:
+        content: kf5-5-104-qt-5-15-8-core22-all
+        interface: content
+        default-provider: kf5-5-104-qt-5-15-8-core22:kf5-5-104-qt-5-15-8-core22
+        target: $SNAP/kf5
+environment:
+    SNAP_DESKTOP_RUNTIME: $SNAP/kf5
+    GST_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
+    GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
+    GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
+hooks:
+    configure:
+        plugs:
+        - desktop
+        command-chain:
+        - snap/command-chain/hooks-configure-desktop
 layout:
     "/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib":
         symlink: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
     "/usr/share/alsa":
         symlink: "$SNAP/usr/share/alsa"
+    /usr/share/X11:
+        symlink: $SNAP/kf5/usr/share/X11
 slots:
     session-dbus-interface:
         interface: dbus
@@ -38,16 +71,40 @@ package-repositories:
     components:
     - main
     suites:
-    - focal
+    - jammy
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
+    kde-neon:
+        source: /snap/snapcraft/current/share/snapcraft/extensions/desktop/kde-neon
+        source-type: local
+        plugin: make
+        make-parameters:
+        - PLATFORM_PLUG=kf5-5-104-qt-5-15-8-core22
+        build-snaps:
+        - kf5-5-104-qt-5-15-8-core22-sdk
+        build-environment:
+        - &id001
+            PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/bin${PATH:+:$PATH}
+        - &id002
+            XDG_DATA_DIRS: $SNAPCRAFT_STAGE/usr/share:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+        - &id003
+            LD_LIBRARY_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+        - &id004
+            PKG_CONFIG_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
+        - &id005
+            ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
+        - &id006
+            SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
     artikulate:
+        after:
+        - kde-neon
         parse-info:
         - usr/share/metainfo/org.kde.artikulate.appdata.xml
         plugin: cmake
         build-packages:
+        - cmake
         - libkf5doctools-dev
         - libqt5gstreamer-dev
         - kirigami2-dev
@@ -74,39 +131,42 @@ parts:
         - qml-module-org-kde-kirigami2
         - qml-module-org-kde-kquickcontrolsaddons
         - qml-module-qtqml-models2
-        source: http://download.kde.org/stable/release-service/22.12.2/src/artikulate-22.12.2.tar.xz
+        source: http://download.kde.org/stable/release-service/22.12.3/src/artikulate-22.12.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
-        - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-99-qt-5-15-7-core20-sdk/current"
-        - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins/"
-        filesets:
-            exclusion:
-            - "-usr/lib/*/cmake/*"
-            - "-usr/include/*"
-            - "-usr/share/ECM/*"
-            - "-usr/share/doc/*"
-            - "-usr/share/man/*"
-            - "-usr/share/icons/breeze-dark*"
-            - "-usr/bin/X11"
-            - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
-            - "-usr/lib/aspell/*"
-            - "-usr/share/lintain"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
         prime:
-        - "$exclusion"
-    cleanup:
-        after:
-        - artikulate
-        plugin: nil
-        build-snaps:
-        - kde-frameworks-5-99-qt-5-15-7-core20
-        override-prime: |
-            set -eux
-            for snap in "kde-frameworks-5-99-qt-5-15-7-core20"; do  # List all content-snaps you're using here
-                cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
-            done
-            find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
-            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
+        - "-usr/lib/*/cmake/*"
+        - "-usr/include/*"
+        - "-usr/share/ECM/*"
+        - "-usr/share/doc/*"
+        - "-usr/share/man/*"
+        - "-usr/share/icons/breeze-dark*"
+        - "-usr/bin/X11"
+        - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
+        - "-usr/lib/aspell/*"
+        - "-usr/share/lintain"
+        build-environment: &id007
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        - *id005
+        - *id006
+    # cleanup:
+    #     after:
+    #     - artikulate
+    #     plugin: nil
+    #     build-snaps:
+    #     - kde-frameworks-5-99-qt-5-15-7-core20
+    #     override-prime: |
+    #         set -eux
+    #         for snap in "kde-frameworks-5-99-qt-5-15-7-core20"; do  # List all content-snaps you're using here
+    #             cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
+    #         done
+    #         find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
+    #         find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
