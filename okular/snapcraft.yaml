@@ -161,16 +161,6 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
-        prime:
-        - "-usr/lib/*/cmake/*"
-        - "-usr/include/*"
-        - "-usr/share/ECM/*"
-        - "-usr/share/doc/*"
-        - "-usr/share/man/*"
-        - "-usr/share/icons/breeze-dark*"
-        - "-usr/bin/X11"
-        - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
-        - "-usr/lib/aspell/*"
     okular:
         parse-info:
         - usr/share/metainfo/org.kde.okular.appdata.xml
@@ -228,16 +218,6 @@ parts:
         - qml-module-qtquick-controls2
         - libglu1-mesa
         - libmarkdown2
-        prime:
-        - "-usr/lib/*/cmake/*"
-        - "-usr/include/*"
-        - "-usr/share/ECM/*"
-        - "-usr/share/doc/*"
-        - "-usr/share/man/*"
-        - "-usr/share/icons/breeze-dark*"
-        - "-usr/bin/X11"
-        - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
-        - "-usr/lib/aspell/*"
         source: http://download.kde.org/stable/release-service/22.12.3/src/okular-22.12.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -254,7 +234,7 @@ parts:
         - "-usr/share/man/*"
         - "-usr/share/icons/breeze-dark*"
         - "-usr/bin/X11"
-        - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
+        - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/lintain"
         build-environment: *id007
