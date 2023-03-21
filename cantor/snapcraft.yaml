@@ -90,7 +90,8 @@ parts:
         - &id006
             SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
     analitza:
-        after: kde-neon
+        after:
+        - kde-neon
         plugin: cmake
         build-packages:
         - cmake
