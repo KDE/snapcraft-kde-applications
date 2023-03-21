@@ -158,7 +158,7 @@ parts:
         - libboost-system1.74.0
         - libfftw3-double3
         - libgif7
-        - libgsl23
+        - libgsl27
         - libgslcblas0
         - libilmbase25
         - libopencolorio1v5
