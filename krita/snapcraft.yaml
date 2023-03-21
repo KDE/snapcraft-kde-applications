@@ -122,6 +122,7 @@ parts:
         source: http://download.kde.org/stable/krita/5.1.5/krita-5.1.5.tar.gz
         plugin: cmake
         cmake-parameters:
+        - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
         - -DCMAKE_BUILD_TYPE=Release
         - -DENABLE_TESTING=OFF
@@ -152,6 +153,7 @@ parts:
         - vc-dev
         - libmypaint-dev
         - libwebp-dev
+        - python3-dev
         parse-info:
         - usr/share/metainfo/org.kde.krita.appdata.xml
         stage-packages:
