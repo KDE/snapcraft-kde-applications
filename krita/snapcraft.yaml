@@ -9,8 +9,8 @@ apps:
     krita:
         common-id: org.kde.krita
         command: usr/bin/krita
-        extensions:
-        - kde-neon
+        # extensions:
+        # - kde-neon
         plugs:
         - desktop
         - desktop-legacy
