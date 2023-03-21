@@ -154,7 +154,7 @@ parts:
         - libglib2.0-0
         - liblapack3
         - libluajit-5.1-2
-        - libqalculate20
+        - libqalculate22
         - libspectre1
         - python3
         - r-base-core
