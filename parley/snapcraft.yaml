@@ -17,6 +17,8 @@ apps:
         - x11
         - audio-playback
         - unity7
+        - network
+        - network-bind
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
