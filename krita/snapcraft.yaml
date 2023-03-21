@@ -162,7 +162,7 @@ parts:
         - libgslcblas0
         - libilmbase24
         - libopencolorio1v5
-        - libopenexr24
+        - libopenexr25
         - libquazip5-1
         - libraw19
         - libtinyxml2.6.2v5
