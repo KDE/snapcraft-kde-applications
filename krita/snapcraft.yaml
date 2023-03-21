@@ -106,7 +106,7 @@ parts:
         - libpng-dev
         stage-packages:
         - libde265-0
-        - libx265-179
+        - libx265-199
         - libjpeg8
         - libpng16-16
     patches:
