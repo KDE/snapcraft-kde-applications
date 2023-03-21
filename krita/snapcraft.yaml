@@ -151,8 +151,8 @@ parts:
         - vc-dev
         - libmypaint-dev
         - libwebp-dev
-        # parse-info:
-        # - usr/share/metainfo/org.kde.krita.appdata.xml
+        parse-info:
+        - usr/share/metainfo/org.kde.krita.appdata.xml
         stage-packages:
         - freeglut3
         - libboost-system1.71.0
