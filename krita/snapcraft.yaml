@@ -116,6 +116,7 @@ parts:
         - "-*"
     krita:
         after:
+        - kde-neon
         - libheif
         - patches
         source: http://download.kde.org/stable/krita/5.1.5/krita-5.1.5.tar.gz
@@ -186,7 +187,7 @@ parts:
         - -usr/lib/aspell/*
         override-pull: |
             snapcraftctl pull
-            patch -p1 < $CRAFT_STAGE/krita_dont_use_native_file_chooser.patch
+            patch -p1 < $CRAFT_STAGE/patches/krita_dont_use_native_file_chooser.patch
         build-environment: &id007
         - *id001
         - *id002
