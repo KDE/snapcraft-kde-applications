@@ -109,11 +109,11 @@ parts:
         - libx265-199
         - libjpeg8
         - libpng16-16
-    patches:
-        plugin: dump
-        source: patches/
-        prime:
-        - "-*"
+    # patches:
+    #     plugin: dump
+    #     source: patches/
+    #     prime:
+    #     - "-*"
     krita:
         after:
         - kde-neon
@@ -185,9 +185,9 @@ parts:
         - -usr/bin/X11
         - -usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0
         - -usr/lib/aspell/*
-        override-pull: |
-            snapcraftctl pull
-            patch -p1 < $CRAFT_STAGE/patches/krita_dont_use_native_file_chooser.patch
+        # override-pull: |
+        #     craftctl default
+        #     patch -p1 < $CRAFT_STAGE/patches/krita_dont_use_native_file_chooser.patch
         build-environment: &id007
         - *id001
         - *id002
