@@ -160,7 +160,7 @@ parts:
         - libgif7
         - libgsl23
         - libgslcblas0
-        - libilmbase24
+        - libilmbase25
         - libopencolorio1v5
         - libopenexr25
         - libquazip5-1
