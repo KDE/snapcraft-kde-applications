@@ -155,7 +155,7 @@ parts:
         - usr/share/metainfo/org.kde.krita.appdata.xml
         stage-packages:
         - freeglut3
-        - libboost-system1.71.0
+        - libboost-system1.74.0
         - libfftw3-double3
         - libgif7
         - libgsl23
