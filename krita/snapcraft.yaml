@@ -164,7 +164,7 @@ parts:
         - libopencolorio1v5
         - libopenexr25
         - libquazip5-1
-        - libraw19
+        - libraw20
         - libtinyxml2.6.2v5
         - libxi6
         - libyaml-cpp0.6
