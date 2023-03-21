@@ -146,7 +146,6 @@ parts:
         - pkg-config
         - python3-dev
         - r-base-core
-        - libjulia-dev
         - libpoppler-dev
         - libpoppler-qt5-dev
         - libkf5doctools-dev
@@ -159,7 +158,6 @@ parts:
         - libspectre1
         - python3
         - r-base-core
-        - libjulia1
         - libpython3.8
         source: http://download.kde.org/stable/release-service/22.12.3/src/cantor-22.12.3.tar.xz
         cmake-parameters:
