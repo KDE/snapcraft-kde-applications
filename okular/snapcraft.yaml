@@ -228,7 +228,7 @@ parts:
         - qml-module-qtquick-controls2
         - libglu1-mesa
         - libmarkdown2
-          prime:
+        prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
         - "-usr/share/ECM/*"
