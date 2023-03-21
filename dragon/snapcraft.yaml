@@ -123,7 +123,7 @@ parts:
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
         - kio
-        - share-mime-info
+        - shared-mime-info
         build-snaps:
         - kf5-5-104-qt-5-15-8-core22-sdk
         stage-snaps:
