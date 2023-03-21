@@ -191,13 +191,7 @@ parts:
         - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/lintain"
-        build-environment: &id007
-        - *id001
-        - *id002
-        - *id003
-        - *id004
-        - *id005
-        - *id006
+        build-environment: *id007
         parse-info:
         - usr/share/metainfo/org.kde.cantor.appdata.xml
     # cleanup:
