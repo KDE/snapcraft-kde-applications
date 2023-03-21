@@ -69,6 +69,7 @@ package-repositories:
     key-server: keyserver.ubuntu.com
 parts:
     analitza:
+        after: kde-neon
         plugin: cmake
         build-packages:
         - cmake
@@ -109,6 +110,7 @@ parts:
         - *id006
     cantor:
         after:
+        - kde-neon
         - analitza
         plugin: cmake
         build-packages:
