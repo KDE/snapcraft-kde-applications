@@ -185,7 +185,7 @@ parts:
         - -usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0
         - -usr/lib/aspell/*
         override-pull: |
-            snapcraftctl pull
+            craftctl pull
             patch -p1 < $CRAFT_STAGE/krita_dont_use_native_file_chooser.patch
         build-environment: &id007
         - *id001
