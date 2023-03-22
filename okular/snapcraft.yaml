@@ -11,6 +11,7 @@ apps:
         common-id: org.kde.okular.desktop
         command: usr/bin/okular
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
@@ -20,6 +21,9 @@ apps:
         - unity7
         - network
         - network-bind
+        - audio-playback
+        - cups-control
+        - removable-media
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -220,6 +224,7 @@ parts:
         - qml-module-qtquick-controls2
         - libglu1-mesa
         - libmarkdown2
+        - kio
         source: http://download.kde.org/stable/release-service/22.12.3/src/okular-22.12.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
