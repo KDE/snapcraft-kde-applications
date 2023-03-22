@@ -138,7 +138,6 @@ parts:
         - docbook-xml
         - docbook-xsl
         build-environment:
-        build-environment:
         - *id001
         - *id002
         - *id003
@@ -207,7 +206,6 @@ parts:
         - libavresample4
         - libavutil56
         - libswscale5
-        build-environment:
         build-environment:
         - *id001
         - *id002
@@ -280,7 +278,6 @@ parts:
         - libshp-dev
         - libwlocate-dev
         - libx265-dev
-        build-environment:
         build-environment:
         - *id001
         - *id002
