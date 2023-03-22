@@ -154,6 +154,7 @@ parts:
         - libxcb1
         - libxdmcp6
         - libmd4c0
+        - libopenjpip7
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
