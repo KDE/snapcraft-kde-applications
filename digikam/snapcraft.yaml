@@ -196,8 +196,7 @@ parts:
         - libavresample4
         - libavutil56
         - libswscale5
-        build-environment:
-        - *id007
+        build-environment: *id007
         -   PATH: "/usr/lib/ccache:$PATH"
         cmake-parameters:
         - "-DCMAKE_BUILD_TYPE=Release"
