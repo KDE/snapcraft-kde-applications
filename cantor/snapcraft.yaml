@@ -44,6 +44,7 @@ plugs:
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
+    PATH_TO_CANTOR_PLUGINS: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/cantor/backends
 hooks:
     configure:
         plugs:
