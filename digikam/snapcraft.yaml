@@ -138,8 +138,14 @@ parts:
         - docbook-xml
         - docbook-xsl
         build-environment:
-        - *id007
-        - PATH: /usr/lib/ccache:$PATH
+        build-environment:
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        - *id005
+        - *id006
+        -   PATH: /usr/lib/ccache:$PATH
         stage-packages:
         - libiw30
         - libshp2
@@ -202,8 +208,14 @@ parts:
         - libavutil56
         - libswscale5
         build-environment:
-        - *id007
-        -   PATH: "/usr/lib/ccache:$PATH"
+        build-environment:
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        - *id005
+        - *id006
+        -   PATH: /usr/lib/ccache:$PATH
         cmake-parameters:
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -269,8 +281,14 @@ parts:
         - libwlocate-dev
         - libx265-dev
         build-environment:
-        - *id007
-        -   PATH: "/usr/lib/ccache:$PATH"
+        build-environment:
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        - *id005
+        - *id006
+        -   PATH: /usr/lib/ccache:$PATH
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
