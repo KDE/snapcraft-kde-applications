@@ -130,7 +130,7 @@ parts:
         - libheimbase1-heimdal
         - libheimntlm0-heimdal
         - libhx509-5-heimdal
-        - libicu66
+        - libicu70
         - libjbig0
         - libjpeg-turbo8
         - libkrb5-26-heimdal
