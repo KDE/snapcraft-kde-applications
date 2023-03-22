@@ -158,7 +158,7 @@ parts:
         - libspectre1
         - python3
         - r-base-core
-        - libpython3.8
+        - libpython3.10
         source: http://download.kde.org/stable/release-service/22.12.3/src/cantor-22.12.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
