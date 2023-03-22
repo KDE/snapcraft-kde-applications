@@ -137,7 +137,8 @@ parts:
         - cmake
         - docbook-xml
         - docbook-xsl
-        build-environment: *id007
+        build-environment:
+        - *id007
         - PATH: /usr/lib/ccache:$PATH
         stage-packages:
         - libiw30
@@ -174,6 +175,7 @@ parts:
         - "-DBUILD_DOC=OFF"
         - "-DINSTALL_PYTHON_MODULE=OFF"
         - "-DINSTALL_HELPER_SCRIPTS=OFF"
+        build-environment: *id007
     qtav:
         after:
         - kde-neon
@@ -199,7 +201,8 @@ parts:
         - libavresample4
         - libavutil56
         - libswscale5
-        build-environment: *id007
+        build-environment:
+        - *id007
         -   PATH: "/usr/lib/ccache:$PATH"
         cmake-parameters:
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -265,7 +268,8 @@ parts:
         - libshp-dev
         - libwlocate-dev
         - libx265-dev
-        build-environment: *id007
+        build-environment:
+        - *id007
         -   PATH: "/usr/lib/ccache:$PATH"
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
@@ -291,7 +295,7 @@ parts:
         - "-DENABLE_FACESENGINE_DNN=ON"
         - "-DCMAKE_PREFIX_PATH=$SNAPCRAFT_STAGE/usr"
         - "-Wno-dev"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-99-qt-5-15-7-core20-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
         parse-info:
         - usr/share/metainfo/org.kde.digikam.appdata.xml
         override-build: |
