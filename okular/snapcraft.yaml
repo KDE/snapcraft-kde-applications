@@ -147,7 +147,7 @@ parts:
         - libsasl2-2
         - libssh-4
         - libtiff5
-        - libwebp6
+        - libwebp7
         - libwind0-heimdal
         - libx11-6
         - libxau6
