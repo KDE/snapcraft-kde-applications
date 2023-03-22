@@ -17,7 +17,6 @@ apps:
         - opengl
         - wayland
         - x11
-        - audio-playback
         - unity7
         - network
         - network-bind
