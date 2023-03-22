@@ -45,8 +45,8 @@ plugs:
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     PATH_TO_CANTOR_PLUGINS: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/cantor/backends
-    QTWEBENGINEPROCESS_PATH: $SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec
-    QT_LIBRARY_DATA: $SNAP/kf5/usr/share/qt5
+    QTWEBENGINEPROCESS_PATH: /snap/kf5-5-104-qt-5-15-8-core22/current/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec
+    QT_LIBRARY_DATA: /snap/kf5-5-104-qt-5-15-8-core22/current/usr/share/qt5
 hooks:
     configure:
         plugs:
