@@ -195,6 +195,7 @@ parts:
         - kirigami2-dev
         - libmarkdown2-dev
         - libkf5doctools-dev
+        - qtbase5-private-dev
         stage-packages:
         - cups-bsd
         - ghostscript
