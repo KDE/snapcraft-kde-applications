@@ -27,7 +27,6 @@ apps:
         - snap/command-chain/desktop-launch
 assumes:
 - snapd2.43
-compression: lzo
 plugs:
     desktop:
         mount-host-font-cache: false
