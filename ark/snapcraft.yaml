@@ -20,7 +20,7 @@ apps:
         - network-bind
         - audio-playback
         - removable-media
-         command-chain:
+        command-chain:
         - snap/command-chain/desktop-launch
 assumes:
 - snapd2.43
