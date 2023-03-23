@@ -161,6 +161,7 @@ parts:
         - "-DBUILD_MARBLE_APPS=OFF"
         - "-DBUILD_WITH_DBUS=ON"
         - "-DBUILD_TESTING=OFF"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
         - "-Wno-dev"
     lensfun:
         after:
@@ -180,6 +181,7 @@ parts:
         - "-DBUILD_DOC=OFF"
         - "-DINSTALL_PYTHON_MODULE=OFF"
         - "-DINSTALL_HELPER_SCRIPTS=OFF"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
         build-environment: *id007
     qtav:
         after:
@@ -222,6 +224,7 @@ parts:
         - "-DBUILD_PLAYERS=OFF"
         - "-DBUILD_QT5OPENGL=ON"
         - "-DBUILD_QML=OFF"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
         stage:
         - etc/
         - usr/
