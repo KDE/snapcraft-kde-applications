@@ -113,8 +113,9 @@ parts:
         - kde-neon
         plugin: python
         source: .
-        python-packages:
+        build-packages:
         - python-dev
+        python-packages:
         - vosk
         - srt
         - pip
