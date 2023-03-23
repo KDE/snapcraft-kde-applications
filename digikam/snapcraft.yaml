@@ -237,23 +237,8 @@ parts:
         - lensfun
         source: http://download.kde.org/stable/digikam/7.10.0/digiKam-7.10.0.tar.xz
         plugin: cmake
-        stage-packages:
-        - cmake
-        - libexif12
-        - libgphoto2-6
-        - libgphoto2-port12
-        - libheif1
-        - libimage-exiftool-perl
-        - libjpeg8
-        - libjpeg-turbo8
-        - liblensfun1
-        - liblqr-1-0
-        - libltdl7
-        - libtbb2
-        - libwlocate0
-        - libshp2
-        - libx265-179
         build-packages:
+        - cmake
         - bison
         - ccache
         - doxygen
@@ -278,6 +263,21 @@ parts:
         - libshp-dev
         - libwlocate-dev
         - libx265-dev
+        stage-packages:
+        - libexif12
+        - libgphoto2-6
+        - libgphoto2-port12
+        - libheif1
+        - libimage-exiftool-perl
+        - libjpeg8
+        - libjpeg-turbo8
+        - liblensfun1
+        - liblqr-1-0
+        - libltdl7
+        - libtbb2
+        - libwlocate0
+        - libshp2
+        - libx265-199
         build-environment:
         - *id001
         - *id002
