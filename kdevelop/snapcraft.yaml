@@ -194,12 +194,12 @@ parts:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
         source: http://download.kde.org/stable/release-service/22.12.3/src/kdevelop-22.12.3.tar.xz
         cmake-parameters:
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DENABLE_TESTING=OFF"
-        - "-DBUILD_TESTING=OFF"
-        - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\;$CRAFT_STAGE\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        - -DCMAKE_INSTALL_PREFIX=/usr
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DENABLE_TESTING=OFF
+        - -DBUILD_TESTING=OFF
+        - -DKDE_SKIP_TEST_SETTINGS=ON
+        - -DCMAKE_FIND_ROOT_PATH=/usr\;$CRAFT_STAGE\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current
         build-environment: &id007
         - *id001
         - *id002
