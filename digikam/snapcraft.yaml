@@ -108,8 +108,8 @@ parts:
     opencv:
         after:
         - kde-neon
-        source: https://github.com/opencv/opencv/archive/3.4.9.zip
-        source-subdir: opencv-3.4.9
+        source: https://github.com/opencv/opencv/archive/4.7.0.zip
+        source-subdir: opencv-4.7.0
         plugin: cmake
         build-packages:
         - cmake
