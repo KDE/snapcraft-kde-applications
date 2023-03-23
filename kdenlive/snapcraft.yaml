@@ -114,7 +114,7 @@ parts:
         plugin: python
         source: .
         python-packages:
-        - python
+        - python-dev
         - vosk
         - srt
         - pip
