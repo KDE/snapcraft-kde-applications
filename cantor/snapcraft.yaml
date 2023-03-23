@@ -47,7 +47,7 @@ plugs:
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     PATH_TO_CANTOR_PLUGINS: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/cantor/backends
-    QTWEBENGINEPROCESS_PATH: /snap/kf5-5-104-qt-5-15-8-core22/current/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec
+    QTWEBENGINEPROCESS_PATH: /snap/kf5-5-104-qt-5-15-8-core22/current/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec:/snap/kf5-5-104-qt-5-15-8-core22/current/usr/share/qt5/resources
     QT_LIBRARY_DATA: /snap/kf5-5-104-qt-5-15-8-core22/current/usr/share/qt5/resources
 hooks:
     configure:
@@ -58,6 +58,8 @@ hooks:
 layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
+    $HOME/.QtWebEngineProcess:
+        symlink: /snap/kf5-5-104-qt-5-15-8-core22/current/usr/share/qt5/resources
 slots:
     session-dbus-interface:
         interface: dbus
