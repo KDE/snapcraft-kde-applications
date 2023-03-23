@@ -122,8 +122,7 @@ parts:
     patches:
         plugin: dump
         source: patches/
-        prime:
-        - "-*"
+        stage: patches/*
     kdevelop:
         after:
         - kde-neon
