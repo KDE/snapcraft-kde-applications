@@ -113,6 +113,8 @@ parts:
         - unzip
         - zip
         - unar
+        - lsof
+        - kio
         source: http://download.kde.org/stable/release-service/22.12.3/src/ark-22.12.3.tar.xz
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
