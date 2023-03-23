@@ -195,7 +195,7 @@ parts:
         - libavdevice-dev
         - libavfilter-dev
         - libavformat-dev
-        - libavresample-dev
+        - libswresample-dev
         - libavutil-dev
         - libpulse-dev
         stage-packages:
@@ -203,7 +203,7 @@ parts:
         - libavdevice58
         - libavfilter7
         - libavformat58
-        - libavresample4
+        - libswresample3
         - libavutil56
         - libswscale5
         build-environment:
