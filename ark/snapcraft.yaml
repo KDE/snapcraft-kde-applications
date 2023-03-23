@@ -20,7 +20,7 @@ apps:
         - network-bind
         - audio-playback
         - removable-media
-        - pesonal-files
+        - personal-files
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
