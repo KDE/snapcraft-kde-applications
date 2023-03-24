@@ -216,10 +216,8 @@ parts:
         - -usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0
         - -usr/lib/aspell/*
         override-build: |
-            snapcraftctl build
+            craftctl default
             sed -i "${SNAPCRAFT_PART_INSTALL}/usr/share/applications/org.kde.kdevelop.desktop" \
                 -e 's|Icon=kdevelop$|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/kdevelop.svg|'
-        override-pull: |
-            craftctl default
             patch -p1 < $CRAFT_STAGE/kdevelop_unset_env.patch
 version: 22.12.3
