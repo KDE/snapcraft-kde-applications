@@ -96,7 +96,7 @@ parts:
     libheif:
         plugin: autotools
         source: https://github.com/strukturag/libheif.git
-        source-tag: v1.7.0
+        source-tag: v1.11.0
         build-packages:
         - libde265-dev
         - pkg-config
@@ -129,6 +129,7 @@ parts:
         - -DBUILD_TESTING=OFF
         - -DKDE_SKIP_TEST_SETTINGS=ON
         - -DCMAKE_FIND_ROOT_PATH=/usr\;$CRAFT_STAGE\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current
+        - -DBUILD_KRITA_QT_DESIGNER_PLUGINS=ON
         build-packages:
         - cmake
         - libboost-dev
@@ -154,6 +155,12 @@ parts:
         - libmypaint-dev
         - libwebp-dev
         - python3-dev
+        - libswscale-dev
+        - libkseexpr-dev
+        - libjpeg62-turbo-dev
+        - pyqt5-dev
+        - libxsimd-dev
+        - libpoppler-qt5-dev
         parse-info:
         - usr/share/metainfo/org.kde.krita.appdata.xml
         stage-packages:
