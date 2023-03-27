@@ -188,7 +188,6 @@ parts:
         - kde-neon
         - opencv
         - marble
-        - lensfun
         source: https://github.com/wang-bin/QtAV.git
         plugin: cmake
         build-packages:
