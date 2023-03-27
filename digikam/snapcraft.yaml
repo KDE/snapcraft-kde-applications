@@ -46,11 +46,11 @@ plugs:
     kf5-5-104-qt-5-15-8-core22:
         content: kf5-5-104-qt-5-15-8-core22-all
         interface: content
-        default-provider: kf5-5-104-qt-5-15-8-core22:kf5-5-104-qt-5-15-8-core22
+        default-provider: kf5-5-104-qt-5-15-8-core22
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
-    DK_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/plugins/digikam"
+    DK_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/plugins/digikam"
     PERL5LIB: "$SNAP/usr/share/perl5"
 hooks:
     configure:
@@ -64,7 +64,7 @@ layout:
     /usr/share/qt5:
         symlink: $SNAP/kf5/usr/share/qt5
     /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib:
-        symlink: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib
+        symlink: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/alsa-lib
     /usr/share/alsa:
         symlink: $SNAP/usr/share/alsa
     /usr/share/X11:
@@ -130,7 +130,7 @@ parts:
         - kde-neon
         - opencv
         source: https://invent.kde.org/education/marble.git
-        source-tag: v20.04.0
+        source-tag: v22.12.3
         source-type: git
         plugin: cmake
         build-packages:
