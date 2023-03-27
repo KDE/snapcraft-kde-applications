@@ -163,26 +163,26 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
         - "-Wno-dev"
-    lensfun:
-        after:
-        - kde-neon
-        - opencv
-        - marble
-        source: https://github.com/lensfun/lensfun.git
-        plugin: cmake
-        build-packages:
-        - cmake
-        cmake-parameters:
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DBUILD_STATIC=OFF"
-        - "-DBUILD_WITH_MSVC_STATIC_RUNTIME=OFF"
-        - "-DBUILD_TESTS=OFF"
-        - "-DBUILD_LENSTOOL=OFF"
-        - "-DBUILD_DOC=OFF"
-        - "-DINSTALL_PYTHON_MODULE=OFF"
-        - "-DINSTALL_HELPER_SCRIPTS=OFF"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
-        build-environment: *id007
+    # lensfun:
+    #     after:
+    #     - kde-neon
+    #     - opencv
+    #     - marble
+    #     source: https://github.com/lensfun/lensfun.git
+    #     plugin: cmake
+    #     build-packages:
+    #     - cmake
+    #     cmake-parameters:
+    #     - "-DCMAKE_BUILD_TYPE=Release"
+    #     - "-DBUILD_STATIC=OFF"
+    #     - "-DBUILD_WITH_MSVC_STATIC_RUNTIME=OFF"
+    #     - "-DBUILD_TESTS=OFF"
+    #     - "-DBUILD_LENSTOOL=OFF"
+    #     - "-DBUILD_DOC=OFF"
+    #     - "-DINSTALL_PYTHON_MODULE=OFF"
+    #     - "-DINSTALL_HELPER_SCRIPTS=OFF"
+    #     - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+    #     build-environment: *id007
     qtav:
         after:
         - kde-neon
@@ -237,7 +237,6 @@ parts:
         - qtav
         - marble
         - opencv
-        - lensfun
         source: http://download.kde.org/stable/digikam/7.10.0/digiKam-7.10.0.tar.xz
         plugin: cmake
         build-packages:
