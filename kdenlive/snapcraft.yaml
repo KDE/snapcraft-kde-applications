@@ -159,11 +159,10 @@ parts:
         - python-deps
         - glaxnimate
         plugin: cmake
-        source: https://github.com/mltframework/mlt/releases/download/v7.8.0/mlt-7.8.0.tar.gz
+        source: https://github.com/mltframework/mlt/releases/download/v7.14.0/mlt-7.14.0.tar.gz
         build-packages:
         - cmake
         - libxml2-dev
-        - libavformat-dev
         - libmovit-dev
         - libvorbis-dev
         - libjack-dev
@@ -172,7 +171,19 @@ parts:
         - libsamplerate0-dev
         - libgtk2.0-dev
         - frei0r-plugins-dev
+        - libpng-dev
+        - swig
+        - libvpx-dev
+        - libx264-dev
+        - libswscale-dev
+        - libswresample-dev
+        - libavformat-dev
+        - libpostproc-dev
+        - libavutil-dev
         - libavfilter-dev
+        - libavdevice-dev
+        - libavcodec-dev
+        - libmp3lame-dev
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
