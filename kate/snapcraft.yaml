@@ -6,8 +6,8 @@ base: core22
 adopt-info: kate
 apps:
     kate:
-        extensions:
-        - kde-neon
+        # extensions:
+        # - kde-neon
         command: usr/bin/kate
         common-id: org.kde.kate.desktop
         plugs:
@@ -124,16 +124,17 @@ parts:
         - mesa-patchelf
         - mesa-no-patchelf
         - qtconf
-        # parse-info:
-        # - usr/share/metainfo/org.kde.kate.appdata.xml
+        parse-info:
+        - usr/share/metainfo/org.kde.kate.appdata.xml
         plugin: cmake
         build-packages:
         - cmake
         - libgit2-dev
         - libkf5doctools-dev
         - gettext
+        - libeditorconfig-dev
         stage-packages:
-        - libgit2-28
+        - libgit2-1.1
         - konsole-kpart
         - libeditorconfig0
         - hspell
