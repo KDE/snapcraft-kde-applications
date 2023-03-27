@@ -227,7 +227,6 @@ parts:
         stage:
         - etc/
         - usr/
-        - lib/
         - "-usr/lib/$CRAFT_ARCH_TRIPLET/libtiff.so.5.5.0"
         - "-usr/share/doc/libtiff5/changelog.Debian.gz"
     digikam:
