@@ -186,8 +186,8 @@ parts:
     qtav:
         after:
         - kde-neon
-        - opencv
-        - marble
+        # - opencv
+        # - marble
         source: https://github.com/wang-bin/QtAV.git
         plugin: cmake
         build-packages:
