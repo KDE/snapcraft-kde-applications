@@ -169,7 +169,6 @@ parts:
         - libsox-dev
         - libsdl1.2-dev
         - libsamplerate0-dev
-        - libgtk2.0-dev
         - frei0r-plugins-dev
         - libpng-dev
         - swig
@@ -184,6 +183,7 @@ parts:
         - libavdevice-dev
         - libavcodec-dev
         - libmp3lame-dev
+        - gir1.2-gdkpixbuf-2.0
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
