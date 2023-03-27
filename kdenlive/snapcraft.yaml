@@ -127,11 +127,9 @@ parts:
         - python-deps
         plugin: cmake
         source: https://gitlab.com/mattbas/glaxnimate.git
-        source-tag: 0.5.1
+        source-tag: 0.5.3
         build-packages:
         - cmake
-        - qt5-image-formats-plugins
-        - qttools5-dev
         - libpython3-dev
         - zlib1g-dev
         - libpotrace-dev
@@ -140,7 +138,6 @@ parts:
         - libswscale-dev
         - libavcodec-dev
         - libavutil-dev
-        - libqt5networkauth5-dev
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -183,12 +180,11 @@ parts:
         - libavdevice-dev
         - libavcodec-dev
         - libmp3lame-dev
-        - gir1.2-gdkpixbuf-2.0
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DMOD_GLAXNIMATE=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        # - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
         - "-DBUILD_TESTING=OFF"
         build-environment: *id007
     kdenlive:
