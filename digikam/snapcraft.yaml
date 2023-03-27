@@ -269,6 +269,7 @@ parts:
         - libxslt1-dev
         - libxml2-dev
         - pkg-config
+        - libglib2.0-dev
         stage-packages:
         - libexif12
         - libgphoto2-6
