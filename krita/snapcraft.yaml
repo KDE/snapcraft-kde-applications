@@ -156,7 +156,7 @@ parts:
         - libwebp-dev
         - python3-dev
         - libswscale-dev
-        - libjpeg62-turbo-dev
+        - libjpeg-turbo8-dev
         - pyqt5-dev
         - libxsimd-dev
         - libpoppler-qt5-dev
@@ -183,6 +183,7 @@ parts:
         - libglu1-mesa
         - libslang2
         - webp
+        - libjpeg-turbo8
         prime:
         - -usr/lib/*/cmake/*
         - -usr/include/*
