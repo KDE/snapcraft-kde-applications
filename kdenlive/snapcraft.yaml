@@ -127,7 +127,7 @@ parts:
         - python-deps
         plugin: cmake
         source: https://gitlab.com/mattbas/glaxnimate.git
-        source-tag: 0.5.3
+        source-tag: 0.5.2
         build-packages:
         - cmake
         - libpython3-dev
