@@ -93,22 +93,22 @@ parts:
             ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         - &id006
             SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
-    libheif:
-        plugin: autotools
-        source: https://github.com/strukturag/libheif.git
-        source-tag: v1.11.0
-        build-packages:
-        - libde265-dev
-        - pkg-config
-        - g++
-        - libx265-dev
-        - libjpeg8-dev
-        - libpng-dev
-        stage-packages:
-        - libde265-0
-        - libx265-199
-        - libjpeg8
-        - libpng16-16
+    # libheif:
+    #     plugin: autotools
+    #     source: https://github.com/strukturag/libheif.git
+    #     source-tag: v1.11.0
+    #     build-packages:
+    #     - libde265-dev
+    #     - pkg-config
+    #     - g++
+    #     - libx265-dev
+    #     - libjpeg8-dev
+    #     - libpng-dev
+    #     stage-packages:
+    #     - libde265-0
+    #     - libx265-199
+    #     - libjpeg8
+    #     - libpng16-16
     # patches:
     #     plugin: dump
     #     source: patches/
@@ -117,7 +117,6 @@ parts:
     krita:
         after:
         - kde-neon
-        - libheif
         - patches
         source: http://download.kde.org/stable/krita/5.1.5/krita-5.1.5.tar.gz
         plugin: cmake
@@ -160,6 +159,7 @@ parts:
         - pyqt5-dev
         - libxsimd-dev
         - libpoppler-qt5-dev
+        - libheif-dev
         parse-info:
         - usr/share/metainfo/org.kde.krita.appdata.xml
         stage-packages:
