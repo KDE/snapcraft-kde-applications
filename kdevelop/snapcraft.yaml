@@ -188,6 +188,8 @@ parts:
         - qml-module-qtwebkit
         - qml-module-qtquick-controls2
         - breeze
+        - git
+        - bzr
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
         source: http://download.kde.org/stable/release-service/22.12.3/src/kdevelop-22.12.3.tar.xz
