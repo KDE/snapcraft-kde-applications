@@ -1,6 +1,6 @@
 ---
 name: kdevelop
-confinement: classic
+confinement: strict
 grade: stable
 base: core22
 adopt-info: kdevelop
@@ -49,7 +49,7 @@ environment:
     XDG_DATA_DIRS: "$XDG_DATA_DIRS:$SNAP/usr/share"
     XDG_CONFIG_DIRS: "$XDG_CONFIG_DIRS:$SNAP/etc/xdg"
     __EGL_VENDOR_LIBRARY_DIRS: "$SNAP/etc/glvnd/egl_vendor.d:$SNAP/usr/share/glvnd/egl_vendor.d"
-    LIBGL_DRIVERS_PATH: "$SNAP/usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri"
+    LIBGL_DRIVERS_PATH: "$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/dri"
     KDEV_UNSET_ENV: LIBGL_DRIVERS_PATH
 hooks:
     configure:
@@ -82,7 +82,7 @@ parts:
         - &id001
             PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/bin${PATH:+:$PATH}
         - &id002
-            XDG_DATA_DIRS: $SNAPCRAFT_STAGE/usr/share:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
         - &id003
             LD_LIBRARY_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
         - &id004
@@ -105,17 +105,17 @@ parts:
         build-attributes:
         - no-patchelf
         stage:
-        - usr/lib/${SNAPCRAFT_ARCH_TRIPLET}/dri
+        - usr/lib/${CRAFT_ARCH_TRIPLET}/dri
     qtconf:
         plugin: nil
         override-build: |
-            mkdir -p $SNAPCRAFT_PART_INSTALL/usr/bin
-            cat <<EOF > $SNAPCRAFT_PART_INSTALL/usr/bin/qt.conf
+            mkdir -p $CRAFT_PART_INSTALL/usr/bin
+            cat <<EOF > $CRAFT_PART_INSTALL/usr/bin/qt.conf
             [Paths]
             Prefix = ../../
-            LibraryExecutables = usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/libexec
-            Plugins = usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/plugins
-            Qml2Imports = usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qt5/qml
+            LibraryExecutables = usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec
+            Plugins = usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins
+            Qml2Imports = usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
             Translations = usr/share/qt5/translations
             Data = usr/share/qt5
             EOF
@@ -217,7 +217,7 @@ parts:
         - -usr/lib/aspell/*
         override-build: |
             craftctl default
-            sed -i "${SNAPCRAFT_PART_INSTALL}/usr/share/applications/org.kde.kdevelop.desktop" \
+            sed -i "${CRAFT_PART_INSTALL}/usr/share/applications/org.kde.kdevelop.desktop" \
                 -e 's|Icon=kdevelop$|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/kdevelop.svg|'
             # patch -p1 < $CRAFT_STAGE/kdevelop_unset_env.patch
 version: 22.12.3
