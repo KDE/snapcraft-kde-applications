@@ -205,6 +205,7 @@ parts:
         - libkf5doctools-dev
         - librttr-dev
         - libv4l-dev
+        - liblqr-1-0-dev
         stage-packages:
         - on amd64:
             - libpsm-infinipath1

@@ -258,7 +258,6 @@ parts:
         - libjpeg-dev
         - liblcms2-dev
         - liblensfun-dev
-        - liblqr-1-0-dev
         - libmagick++-dev
         - libmarble-dev
         - libopencv-dev
@@ -268,7 +267,6 @@ parts:
         - libx265-dev
         - libxslt1-dev
         - libxml2-dev
-        - pkg-config
         - libglib2.0-dev
         stage-packages:
         - libexif12
