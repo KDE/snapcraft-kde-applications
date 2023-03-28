@@ -141,7 +141,7 @@ parts:
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
-        # - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
         - "-DBUILD_TESTING=OFF"
         build-environment: &id007
         - *id001
@@ -183,7 +183,7 @@ parts:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DMOD_GLAXNIMATE=ON"
-        # - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
         - "-DBUILD_TESTING=OFF"
         build-environment:
         - *id001
@@ -203,7 +203,6 @@ parts:
         build-packages:
         - cmake
         - libkf5doctools-dev
-        - libkf5purpose-dev
         - librttr-dev
         - libv4l-dev
         stage-packages:
@@ -221,7 +220,6 @@ parts:
         - libgpm2
         - kio-extras
         - mediainfo
-        - libqt5networkauth5
         source: http://download.kde.org/stable/release-service/22.12.3/src/kdenlive-22.12.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
