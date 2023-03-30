@@ -109,6 +109,7 @@ parts:
         - libasound2-data
         - libasound2-plugins
         cmake-parameters:
+        - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
         - -DCMAKE_BUILD_TYPE=Release
         - -DENABLE_TESTING=OFF
