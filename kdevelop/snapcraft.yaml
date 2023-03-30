@@ -123,9 +123,10 @@ parts:
             EOF
     patches:
         plugin: dump
-        source: patches/
-        stage:
-        - patches/*
+        source: .
+        source-type: local
+        prime:
+        - ".*"
     kdevelop:
         after:
         - kde-neon
@@ -190,8 +191,13 @@ parts:
         - qml-module-qtwebkit
         - qml-module-qtquick-controls2
         - breeze
-        - git
+        - git-all
         - bzr
+        - libgit2-1.1
+        - kapptemplate
+        - cmake
+        - build-essential
+        - subversion
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
         source: http://download.kde.org/stable/release-service/22.12.3/src/kdevelop-22.12.3.tar.xz
@@ -219,9 +225,11 @@ parts:
         - -usr/bin/X11
         - -usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0
         - -usr/lib/aspell/*
+        override-pull: |
+            craftctl default
+            patch -p1 < ../../patches/src/patches/kdevelop_unset_env.patch
         override-build: |
             craftctl default
             sed -i "${CRAFT_PART_INSTALL}/usr/share/applications/org.kde.kdevelop.desktop" \
                 -e 's|Icon=kdevelop$|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/kdevelop.svg|'
-            # patch -p1 < $CRAFT_STAGE/kdevelop_unset_env.patch
 version: 22.12.3
