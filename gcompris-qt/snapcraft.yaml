@@ -105,6 +105,7 @@ parts:
         - libssl-dev
         - gettext
         - libqt5charts5-dev
+        - qml-module-box2d
         stage-packages:
         - libqt5multimedia5-plugins
         - qt5-image-formats-plugins
