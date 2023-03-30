@@ -51,7 +51,7 @@ environment:
     __EGL_VENDOR_LIBRARY_DIRS: "$SNAP/etc/glvnd/egl_vendor.d:$SNAP/usr/share/glvnd/egl_vendor.d"
     LIBGL_DRIVERS_PATH: "$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/dri"
     KDEV_UNSET_ENV: LIBGL_DRIVERS_PATH
-    QML2_IMPORT_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qml
+    QML2_IMPORT_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
     PATH: $PATH:$SNAP/usr/bin
 hooks:
     configure:
@@ -198,6 +198,7 @@ parts:
         - cmake
         - build-essential
         - subversion
+        - openssh-client
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
         source: http://download.kde.org/stable/release-service/22.12.3/src/kdevelop-22.12.3.tar.xz
