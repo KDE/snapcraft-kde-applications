@@ -1,0 +1,39 @@
+From eff06e9268cb6b05d0f8f5681bf6a6727bb3e7ae Mon Sep 17 00:00:00 2001
+From: "L. E. Segovia" <amy@amyspark.me>
+Date: Sun, 26 Feb 2023 14:16:28 -0300
+Subject: [PATCH] AnimRender: fix FFmpeg path initialization when there's no
+ preferences set
+
+Part-of: <https://invent.kde.org/graphics/krita/-/merge_requests/1761>
+---
+ libs/ui/animation/KisDlgAnimationRenderer.cpp | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+diff --git a/libs/ui/animation/KisDlgAnimationRenderer.cpp b/libs/ui/animation/KisDlgAnimationRenderer.cpp
+index 3a33b02b5c..7721da682b 100644
+--- a/libs/ui/animation/KisDlgAnimationRenderer.cpp
++++ b/libs/ui/animation/KisDlgAnimationRenderer.cpp
+@@ -219,8 +219,18 @@ void KisDlgAnimationRenderer::initializeRenderSettings(const KisDocument &doc, c
+ 
+     // Initialize FFmpeg location... (!)
+     KisConfig cfg(false);
+-    QString cfgFFmpegPath = cfg.ffmpegLocation();
+-    QString likelyFFmpegPath = cfgFFmpegPath.isEmpty() ? lastUsedOptions.ffmpegPath : cfgFFmpegPath;
++    const QString cfgFFmpegPath = cfg.ffmpegLocation();
++    const QString likelyFFmpegPath = [&]() {
++        if (!cfgFFmpegPath.isEmpty()) {
++            return cfgFFmpegPath;
++        }
++
++        if (!lastUsedOptions.ffmpegPath.isEmpty()) {
++            return lastUsedOptions.ffmpegPath;
++        }
++
++        return QStandardPaths::findExecutable("ffmpeg");
++    }();
+ 
+     m_page->ffmpegLocation->setFileName(likelyFFmpegPath);
+     m_page->ffmpegLocation->setStartDir(QFileInfo(m_doc->localFilePath()).path());
+-- 
+GitLab
+
