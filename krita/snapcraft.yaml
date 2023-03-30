@@ -45,7 +45,8 @@ plugs:
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
-    QML2_IMPORT_PATH: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qml
+    QML2_IMPORT_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qml
+    PATH: $SNAP/usr/bin:$PATH
 hooks:
     configure:
         plugs:
@@ -57,11 +58,6 @@ layout:
         symlink: $SNAP/usr/bin/ffmpeg
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
-# slots:
-#     session-dbus-interface:
-#         interface: dbus
-#         name: org.kde.krita
-#         bus: session
 package-repositories:
 -   type: apt
     components:
@@ -84,36 +80,24 @@ parts:
         - &id001
             PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/bin${PATH:+:$PATH}
         - &id002
-            XDG_DATA_DIRS: $SNAPCRAFT_STAGE/usr/share:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
         - &id003
-            LD_LIBRARY_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+            LD_LIBRARY_PATH: $CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
         - &id004
             PKG_CONFIG_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
         - &id005
             ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         - &id006
             SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
-    # libheif:
-    #     plugin: autotools
-    #     source: https://github.com/strukturag/libheif.git
-    #     source-tag: v1.11.0
-    #     build-packages:
-    #     - libde265-dev
-    #     - pkg-config
-    #     - g++
-    #     - libx265-dev
-    #     - libjpeg8-dev
-    #     - libpng-dev
-    #     stage-packages:
-    #     - libde265-0
-    #     - libx265-199
-    #     - libjpeg8
-    #     - libpng16-16
-    # patches:
-    #     plugin: dump
-    #     source: patches/
-    #     prime:
-    #     - "-*"
+    patches:
+        after:
+        - kde-neon
+        source: .
+        source-type: local
+        plugin: dump
+        stage:
+        - patches/krita_dont_use_native_file_chooser.patch
+        - patches/ffmpegpath.patch
     krita:
         after:
         - kde-neon
@@ -184,6 +168,8 @@ parts:
         - libslang2
         - webp
         - libjpeg-turbo8
+        - libde265-0
+        - libheif1
         prime:
         - -usr/lib/*/cmake/*
         - -usr/include/*
@@ -194,9 +180,10 @@ parts:
         - -usr/bin/X11
         - -usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0
         - -usr/lib/aspell/*
-        # override-pull: |
-        #     craftctl default
-        #     patch -p1 < $CRAFT_STAGE/patches/krita_dont_use_native_file_chooser.patch
+        override-pull: |
+            craftctl default
+            patch -p1 < ../../patches/src/patches/krita_dont_use_native_file_chooser.patch
+            patch -p1 < ../../patches/src/patches/ffmpegpath.patch
         build-environment: &id007
         - *id001
         - *id002
