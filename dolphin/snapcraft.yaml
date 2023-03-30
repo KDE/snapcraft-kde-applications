@@ -116,7 +116,7 @@ parts:
         - -DENABLE_TESTING=OFF
         - -DBUILD_TESTING=OFF
         - -DKDE_SKIP_TEST_SETTINGS=ON
-        - -DCMAKE_FIND_ROOT_PATH="$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current\\;/usr"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
         parse-info:
         - usr/share/metainfo/org.kde.dolphin.appdata.xml
         prime:
@@ -130,6 +130,13 @@ parts:
         - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/kglobalaccel/org.kde.dolphin.desktop"
+        build-environment: &id007
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        - *id005
+        - *id006
     # cleanup:
     #     after:
     #     - dolphin
