@@ -558,3 +558,6 @@ kjournald:
 
 ghostwriter:
   extends: .prepone-extension-update
+
+kphotoalbum:
+  extends: .prepone-extension-update
