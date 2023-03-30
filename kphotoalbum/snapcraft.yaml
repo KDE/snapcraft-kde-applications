@@ -101,7 +101,7 @@ parts:
         - libkf5doctools-dev
         - libkf5purpose-dev
         - libkf5kdcraw-dev
-        - marble-dev
+        - libmarble-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         stage-packages:
