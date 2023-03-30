@@ -104,6 +104,7 @@ parts:
         - libmarble-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
+        - libjpeg-dev
         stage-packages:
         - libkf5purpose5
         - libkf5kdcraw5
