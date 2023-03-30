@@ -1,5 +1,6 @@
 ---
 name: bomber
+confinement: strict
 grade: stable
 base: core22
 adopt-info: bomber
