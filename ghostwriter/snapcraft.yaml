@@ -101,6 +101,7 @@ parts:
         stage-packages:
         - pandoc
         - cmark
+        - libtext-multimarkdown-perl
         source: https://invent.kde.org/office/ghostwriter.git
         source-tag: v23.03.80
         cmake-parameters:
