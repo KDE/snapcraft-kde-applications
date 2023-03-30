@@ -7,8 +7,8 @@ adopt-info: gcompris
 version: 3.2
 apps:
     gcompris:
-        extensions:
-        - kde-neon
+        # extensions:
+        # - kde-neon
         common-id: org.kde.gcompris.desktop
         desktop: usr/share/applications/org.kde.gcompris.desktop
         command: usr/bin/gcompris-qt
