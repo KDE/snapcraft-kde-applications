@@ -98,6 +98,9 @@ parts:
         - cmake
         - libkf5doctools-dev
         - libhunspell-dev
+        stage-packages:
+        - pandoc
+        - cmark
         source: https://invent.kde.org/office/ghostwriter.git
         source-tag: v23.03.80
         cmake-parameters:
