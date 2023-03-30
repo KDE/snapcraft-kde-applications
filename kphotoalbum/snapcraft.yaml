@@ -99,6 +99,30 @@ parts:
         build-packages:
         - cmake
         - libkf5doctools-dev
+        - libkf5purpose-dev
+        - libkf5kdcraw-dev
+        - marble-dev
+        - libphonon4qt5-dev
+        - libphonon4qt5experimental-dev
+        stage-packages:
+        - libkf5purpose5
+        - libkf5kdcraw5
+        - libasound2
+        - libasound2-data
+        - libasound2-plugins
+        - phonon4qt5
+        - libgstreamer1.0-0
+        - gstreamer1.0-alsa
+        - gstreamer1.0-pulseaudio
+        - gstreamer1.0-plugins-good
+        - gstreamer1.0-plugins-bad
+        - gstreamer1.0-plugins-ugly
+        - phonon4qt5-backend-gstreamer
+        - oxygen-sounds
+        - libqt5gstreamer-1.0-0
+        - libqt5gstreamerquick-1.0-0
+        - libqt5gstreamerui-1.0-0
+        - libqt5gstreamerutils-1.0-0
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
