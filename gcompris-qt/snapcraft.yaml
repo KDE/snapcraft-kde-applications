@@ -92,9 +92,32 @@ parts:
             ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         - &id006
             SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
+    qml-box2d:
+        after:
+        - kde-neon
+        source: https://github.com/qml-box2d/qml-box2d.git
+        plugin: cmake
+        build-packages:
+        - cmake
+        cmake-parameters:
+        - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
+        - -DCMAKE_INSTALL_PREFIX=/usr
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DENABLE_TESTING=OFF
+        - -DBUILD_TESTING=OFF
+        - -DKDE_SKIP_TEST_SETTINGS=ON
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        build-environment: &id007
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        - *id005
+        - *id006
     gcompris:
         after:
         - kde-neon
+        - qml-box2d
         parse-info:
         - usr/share/metainfo/org.kde.gcompris.appdata.xml
         plugin: cmake
@@ -105,7 +128,6 @@ parts:
         - libssl-dev
         - gettext
         - libqt5charts5-dev
-        - qml-module-box2d
         stage-packages:
         - libqt5multimedia5-plugins
         - qt5-image-formats-plugins
@@ -113,7 +135,6 @@ parts:
         - qml-module-qtmultimedia
         - qml-module-qtquick-controls
         - qml-module-qtquick-particles2
-        - qml-module-box2d
         - libasound2
         - libasound2-data
         - libasound2-plugins
@@ -150,13 +171,7 @@ parts:
         - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/lintain"
-        build-environment: &id007
-        - *id001
-        - *id002
-        - *id003
-        - *id004
-        - *id005
-        - *id006
+        build-environment: *id007
     # cleanup:
     #     after:
     #     - gcompris-qt
