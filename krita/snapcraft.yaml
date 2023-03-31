@@ -183,7 +183,7 @@ parts:
         override-pull: |
             craftctl default
             patch -p1 < ../../patches/src/patches/krita_dont_use_native_file_chooser.patch
-            patch -p1 < ../../patches/src/patches/ffmpegpath.patch
+        #    patch -p1 < ../../patches/src/patches/ffmpegpath.patch
         build-environment: &id007
         - *id001
         - *id002
