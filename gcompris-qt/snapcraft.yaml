@@ -172,6 +172,7 @@ parts:
         - "-usr/lib/aspell/*"
         - "-usr/share/lintain"
         build-environment: *id007
+        - QML2_IMPORT_PATH: $CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
     # cleanup:
     #     after:
     #     - gcompris-qt
