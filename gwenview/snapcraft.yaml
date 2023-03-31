@@ -133,6 +133,7 @@ parts:
         - libkf5purpose-bin
         - libkf5service5
         - denef
+        - qml-module-org-kde-purpose
         source: http://download.kde.org/stable/release-service/22.12.3/src/gwenview-22.12.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
