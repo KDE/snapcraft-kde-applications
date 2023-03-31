@@ -12,6 +12,7 @@ apps:
         common-id: org.kde.dolphin.desktop
         command: usr/bin/dolphin
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
@@ -109,6 +110,8 @@ parts:
         - libkf5baloowidgets5
         - libkuserfeedbackcore1
         - libkuserfeedbackwidgets1
+        - kio
+        - kio-extras
         source: http://download.kde.org/stable/release-service/22.12.3/src/dolphin-22.12.3.tar.xz
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
