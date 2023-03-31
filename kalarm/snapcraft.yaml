@@ -124,7 +124,7 @@ parts:
         - oxygen-sounds
         - kross
         - libassuan0
-        - libboost-graph1.71.0
+        - libboost-graph1.74.0
         - pkg-config
         - xsltproc
         - zlib1g
