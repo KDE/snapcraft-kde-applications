@@ -59,7 +59,7 @@ layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
 environment:
-    QT_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins"
+    QT_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/kf5"
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
 slots:
     session-dbus-interface:
