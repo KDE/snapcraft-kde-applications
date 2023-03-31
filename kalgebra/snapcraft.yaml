@@ -7,8 +7,8 @@ adopt-info: kalgebra
 version: 22.12.3
 apps:
     kalgebra:
-        extensions:
-        - kde-neon
+        # extensions:
+        # - kde-neon
         common-id: org.kde.kalgebra.desktop
         command: usr/bin/kalgebra
         plugs:
