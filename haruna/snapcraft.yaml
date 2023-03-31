@@ -53,7 +53,7 @@ environment:
     XDG_DATA_DIRS: $SNAP/current/usr/share:/snap/kf5-5-104-qt-5-15-8-core22/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
     QT_PLUGIN_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins
     QML2_IMPORT_PATH: $CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
-    LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/"
+    LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/blas
 hooks:
     configure:
         plugs:
