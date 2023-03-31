@@ -7,8 +7,8 @@ adopt-info: elisa
 version: 22.12.3
 apps:
     elisa:
-        extensions:
-        - kde-neon
+        # extensions:
+        # - kde-neon
         common-id: org.kde.elisa.desktop
         desktop: usr/share/applications/org.kde.elisa.desktop
         command: usr/bin/elisa
