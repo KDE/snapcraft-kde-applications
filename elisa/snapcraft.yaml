@@ -97,6 +97,7 @@ parts:
         - usr/share/metainfo/org.kde.elisa.appdata.xml
         build-packages:
         - cmake
+        - kirigami2-dev
         stage-packages:
         - gstreamer1.0-libav
         - gstreamer1.0-plugins-ugly
