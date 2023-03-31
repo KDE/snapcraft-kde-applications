@@ -168,6 +168,7 @@ parts:
         - libxinerama1
         - libzmq5
         - samba-libs
+        - libblas3
         source: https://download.kde.org/stable/haruna/haruna-0.10.3.tar.xz
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
