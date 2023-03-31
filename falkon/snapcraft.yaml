@@ -12,6 +12,7 @@ apps:
         common-id: org.kde.falkon.desktop
         desktop: usr/share/applications/org.kde.falkon.desktop
         command: usr/bin/falkon
+        plugs:
         - desktop
         - desktop-legacy
         - opengl
