@@ -151,7 +151,7 @@ parts:
         - liblilv-0-0
         - libmpv1
         - libnorm1
-        - libpgm-5.2-0
+        - libpgm-5.3-0
         - librubberband2
         - libsdl2-2.0-0
         - libserd-0-0
