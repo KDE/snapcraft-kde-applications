@@ -98,6 +98,7 @@ parts:
         build-packages:
         - cmake
         - kirigami2-dev
+        - libkf5doctools-dev
         stage-packages:
         - gstreamer1.0-libav
         - gstreamer1.0-plugins-ugly
