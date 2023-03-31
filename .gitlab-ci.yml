@@ -262,6 +262,9 @@ dragon:
 elisa:
   extends: .prepone-extension-update
 
+filelight:
+  extends: .prepone-extension-update
+
 falkon:
   extends: .prepone-extension-update
 
