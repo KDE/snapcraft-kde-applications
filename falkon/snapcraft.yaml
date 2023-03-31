@@ -115,12 +115,12 @@ parts:
         - libkf5purpose-bin
         - libkf5purpose5
         cmake-parameters:
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DENABLE_TESTING=OFF"
-        - "-DBUILD_TESTING=OFF"
-        - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$SNAPCRAFT_STAGE\\;/snap/kde-frameworks-5-99-qt-5-15-7-core20-sdk/current"
+        - -DCMAKE_INSTALL_PREFIX=/usr
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DENABLE_TESTING=OFF
+        - -DBUILD_TESTING=OFF
+        - -DKDE_SKIP_TEST_SETTINGS=ON
+        - -DCMAKE_FIND_ROOT_PATH=/usr\;$CRAFT_STAGE\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
