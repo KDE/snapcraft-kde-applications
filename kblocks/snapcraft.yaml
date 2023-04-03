@@ -2,24 +2,64 @@
 name: kblocks
 confinement: strict
 grade: stable
-base: core20
+base: core22
 adopt-info: kblocks
+version: 22.12.3
 apps:
     kblocks:
-        extensions:
-        - kde-neon
+        # extensions:
+        # - kde-neon
         common-id: org.kde.kblocks.desktop
         command: usr/bin/kblocks
-        environment:
-            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0/"
         plugs:
+        - desktop
+        - desktop-legacy
+        - opengl
+        - wayland
+        - x11
         - audio-playback
+        - unity7
         - network
+        - network-bind
+        command-chain:
+        - snap/command-chain/desktop-launch
+assumes:
+- snapd2.43
+compression: lzo
+plugs:
+    desktop:
+        mount-host-font-cache: false
+    icon-themes:
+        interface: content
+        target: $SNAP/data-dir/icons
+        default-provider: gtk-common-themes
+    sound-themes:
+        interface: content
+        target: $SNAP/data-dir/sounds
+        default-provider: gtk-common-themes
+    kf5-5-104-qt-5-15-8-core22:
+        content: kf5-5-104-qt-5-15-8-core22-all
+        interface: content
+        default-provider: kf5-5-104-qt-5-15-8-core22
+        target: $SNAP/kf5
+environment:
+    SNAP_DESKTOP_RUNTIME: $SNAP/kf5
+    GST_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
+    GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
+    GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
+hooks:
+    configure:
+        plugs:
+        - desktop
+        command-chain:
+        - snap/command-chain/hooks-configure-desktop
 layout:
-    "/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib":
-        symlink: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
+    "/usr/lib/$CRAFT_ARCH_TRIPLET/alsa-lib":
+        symlink: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/alsa-lib"
     "/usr/share/alsa":
         symlink: "$SNAP/usr/share/alsa"
+    /usr/share/X11:
+        symlink: $SNAP/kf5/usr/share/X11
 slots:
     session-dbus-interface:
         interface: dbus
@@ -30,32 +70,43 @@ package-repositories:
     components:
     - main
     suites:
-    - focal
+    - jammy
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
-    knotifications:
-        source: https://invent.kde.org/frameworks/knotifications.git
-        source-tag: v5.96.0
-        source-depth: 0
-        build-packages:
-        - extra-cmake-modules
-        - libphonon4qt5-dev
-        - libphonon4qt5experimental-dev
-        plugin: cmake
-        cmake-parameters:
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DBUILD_TESTING=OFF"
+    kde-neon:
+        source: /snap/snapcraft/current/share/snapcraft/extensions/desktop/kde-neon
+        source-type: local
+        plugin: make
+        make-parameters:
+        - PLATFORM_PLUG=kf5-5-104-qt-5-15-8-core22
+        build-snaps:
+        - kf5-5-104-qt-5-15-8-core22-sdk
+        build-environment:
+        - &id001
+            PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/bin${PATH:+:$PATH}
+        - &id002
+            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+        - &id003
+            LD_LIBRARY_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+        - &id004
+            PKG_CONFIG_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
+        - &id005
+            ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
+        - &id006
+            SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
     kblocks:
         after:
-        - knotifications
+        - kde-neon
         parse-info:
         - usr/share/metainfo/org.kde.kblocks.appdata.xml
         plugin: cmake
         build-packages:
+        - cmake
         - libkf5doctools-dev
+        - libphonon4qt5-dev
+        - libphonon4qt5experimental-dev
         stage-packages:
         - libasound2-data
         - libasound2-plugins
@@ -104,4 +155,4 @@ parts:
             done
             find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-version: 22.12.2
+
