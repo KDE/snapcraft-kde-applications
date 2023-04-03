@@ -5,7 +5,7 @@ base: core22
 adopt-info: isoimagewriter
 grade: stable
 confinement: strict
-version: '0.9'
+version: 0.9.1
 apps:
     isoimagewriter:
         # extensions:
@@ -24,6 +24,7 @@ apps:
         - unity7
         - network
         - network-bind
+        - udisks2
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -95,7 +96,7 @@ parts:
     isoimagewriter:
         after:
         - kde-neon
-        source: https://invent.kde.org/utilities/isoimagewriter.git
+        source: https://download.kde.org/unstable/isoimagewriter/0.9.1/isoimagewriter-0.9.1.tar.xz
         plugin: cmake
         build-packages:
         - cmake
