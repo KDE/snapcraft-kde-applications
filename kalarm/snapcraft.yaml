@@ -109,6 +109,7 @@ parts:
         - libboost-graph-dev
         - libkf5calendarcore-dev
         - libkf5contacts-dev
+        - libkf5holidays-dev
         - pkg-config
         - xsltproc
         - zlib1g-dev
