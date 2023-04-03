@@ -110,6 +110,8 @@ parts:
         - libkf5calendarcore-dev
         - libkf5contacts-dev
         - libkf5holidays-dev
+        - libphonon4qt5-dev
+        - libphonon4qt5experimental-dev
         - pkg-config
         - xsltproc
         - zlib1g-dev
