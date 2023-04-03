@@ -96,9 +96,10 @@ parts:
         plugin: cmake
         build-packages:
         - cmake
+        - libkf5qqc2desktopstyle-dev
         source: http://download.kde.org/stable/release-service/22.12.3/src/filelight-22.12.3.tar.xz
         cmake-parameters:
-        - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_TESTING=OFF"
