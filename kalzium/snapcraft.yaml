@@ -90,6 +90,8 @@ parts:
         - &id006
             SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
     openbabel:
+        after:
+        - kde-neon
         plugin: cmake
         build-packages:
         - cmake
@@ -103,6 +105,7 @@ parts:
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
     kalzium:
         after:
+        - kde-neon
         - openbabel
         parse-info:
         - usr/share/metainfo/org.kde.kalzium.appdata.xml
@@ -119,7 +122,7 @@ parts:
         - libavogadro-dev
         stage-packages:
         - chemical-mime-data
-        - ocaml-nox-4.08.1
+        - ocaml-nox
         - libglew-dev
         - libkf5khtml5
         - libsm6
