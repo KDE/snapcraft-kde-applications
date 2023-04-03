@@ -157,6 +157,7 @@ parts:
         - *id004
         - *id005
         - *id006
+        - QT_HOST_BINS=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/bin
     # cleanup:
     #     after:
     #     - kalarm
