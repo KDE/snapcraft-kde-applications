@@ -52,6 +52,7 @@ hooks:
         - snap/command-chain/hooks-configure-desktop
 layout:
     /usr/share/X11:
+        symlink: $SNAP/kf5/usr/share/X11
 slots:
     session-dbus-interface:
         interface: dbus
@@ -144,4 +145,3 @@ parts:
     #         done
     #         find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
     #         find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-
