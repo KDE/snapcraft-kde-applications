@@ -101,9 +101,14 @@ parts:
         - docbook-xml
         - docbook-xsl
         - libkf5doctools-dev
+        - libkf5globalaccel-dev
         stage-packages:
         - libmpfr6
         - libgmp10
+        - libkf5globalaccel5
+        - libkf5globalaccel-data
+        - libkf5globalaccel-bin
+        - breeze-icons
         source: http://download.kde.org/stable/release-service/22.12.3/src/kcalc-22.12.3.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
