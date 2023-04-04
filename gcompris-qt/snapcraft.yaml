@@ -99,6 +99,10 @@ parts:
         plugin: cmake
         build-packages:
         - cmake
+        stage-packages:
+        - qml-module-qtcharts
+        - qml-module-qt-labs-calendar
+        - webp
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
