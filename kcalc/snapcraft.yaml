@@ -119,7 +119,7 @@ parts:
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
-        - -DKDE_INSTALL_FULL_APPDIR=$SNAP/usr/share/applications
+        - "-DKDE_INSTALL_FULL_APPDIR=$SNAP/usr/share/applications"
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
