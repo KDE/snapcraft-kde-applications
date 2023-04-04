@@ -11,7 +11,7 @@ apps:
         # - kde-neon
         common-id: org.kde.kbreakout.desktop
         command: usr/bin/kbreakout
-       plugs:
+        plugs:
         - desktop
         - desktop-legacy
         - opengl
