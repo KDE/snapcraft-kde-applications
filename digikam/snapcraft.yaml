@@ -122,6 +122,7 @@ parts:
         - libavutil-dev
         - libpulse-dev
         - libgl-dev
+        - libglvnd-dev
         stage-packages:
         - libavcodec58
         - libavdevice58
