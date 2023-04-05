@@ -130,7 +130,6 @@ parts:
             find $CRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
             find $CRAFT_PRIME/usr/share -type d -empty -delete
             # Unused libraries found by linter
-            rm lib/$CRAFT_ARCH_TRIPLET/libulockmgr.so.1.0.1
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libEGL_mesa.so.0.0.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libGLESv1_CM.so.1.2.0
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libGLX_mesa.so.0.0.0
