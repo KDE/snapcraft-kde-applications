@@ -89,9 +89,18 @@ parts:
             ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         - &id006
             SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
+    patches:
+        after:
+        - kde-neon
+        source: .
+        source-type: local
+        plugin: dump
+        stage:
+        - patches/dontusefullpathinsymlink.patch
     kcalc:
         after:
         - kde-neon
+        - patches
         parse-info:
         - usr/share/metainfo/org.kde.kcalc.appdata.xml
         plugin: cmake
@@ -131,6 +140,9 @@ parts:
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/lintain"
+        override-pull: |
+            craftctl default
+            patch -p1 < ../../patches/src/patches/dontusefullpathinsymlink.patch
         build-environment: &id007
         - *id001
         - *id002
