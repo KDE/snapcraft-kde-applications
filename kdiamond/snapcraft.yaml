@@ -11,7 +11,8 @@ apps:
         # - kde-neon
         common-id: org.kde.kdiamond.desktop
         command: usr/bin/kdiamond
-         - desktop
+        plugs:
+        - desktop
         - desktop-legacy
         - opengl
         - wayland
