@@ -41,7 +41,7 @@ plugs:
     kf5-5-104-qt-5-15-8-core22:
         content: kf5-5-104-qt-5-15-8-core22-all
         interface: content
-        default-provider: kf5-5-104-qt-5-15-8-core22:kf5-5-104-qt-5-15-8-core22
+        default-provider: kf5-5-104-qt-5-15-8-core22
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
