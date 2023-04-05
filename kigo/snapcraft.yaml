@@ -128,16 +128,16 @@ parts:
         - *id004
         - *id005
         - *id006
-    cleanup:
-        after:
-        - kde-neon
-        - kig
-        plugin: nil
-        build-snaps:
-        - kf5-5-104-qt-5-15-8-core22-sdk
-        override-prime: |
-            set -eux
-            find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
-            find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-            # Unused libraries found by linter
+    # cleanup:
+    #     after:
+    #     - kde-neon
+    #     - kig
+    #     plugin: nil
+    #     build-snaps:
+    #     - kf5-5-104-qt-5-15-8-core22-sdk
+    #     override-prime: |
+    #         set -eux
+    #         find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
+    #         find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
+    #         # Unused libraries found by linter
 
