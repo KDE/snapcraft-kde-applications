@@ -74,11 +74,6 @@ package-repositories:
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
-layout:
-    "/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib":
-        symlink: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
-    "/usr/share/alsa":
-        symlink: "$SNAP/usr/share/alsa"
 parts:
     kde-neon:
         source: /snap/snapcraft/current/share/snapcraft/extensions/desktop/kde-neon
