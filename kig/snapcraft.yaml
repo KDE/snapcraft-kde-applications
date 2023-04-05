@@ -98,10 +98,6 @@ parts:
         - libkf5doctools-dev
         stage-packages:
         - libboost-python1.74.0
-        build-snaps:
-        - kf5-5-104-qt-5-15-8-core22-sdk
-        stage-snaps:
-        - kf5-5-104-qt-5-15-8-core22
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
