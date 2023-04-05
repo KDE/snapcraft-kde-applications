@@ -100,6 +100,9 @@ parts:
         plugin: cmake
         build-packages:
         - cmake
+        - libgpgme-dev
+        stage-packages:
+        - libqgpgme15
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
