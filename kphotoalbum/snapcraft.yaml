@@ -14,6 +14,7 @@ apps:
         desktop: usr/share/applications/org.kde.kphotoalbum.desktop
         command: usr/bin/kphotoalbum
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
@@ -46,6 +47,9 @@ plugs:
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
+    QTWEBENGINEPROCESS_PATH: "$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
+    XDG_DATA_DIRS: "$XDG_DATA_DIRS:$SNAP/usr/share"
+    XDG_CONFIG_DIRS: "$XDG_CONFIG_DIRS:$SNAP/etc/xdg"
 hooks:
     configure:
         plugs:
@@ -127,6 +131,7 @@ parts:
         - libmarblewidget-qt5-28
         - kio
         - ffmpeg
+        - exiv
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
