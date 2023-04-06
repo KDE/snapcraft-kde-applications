@@ -7,8 +7,8 @@ adopt-info: killbots
 version: 22.12.3
 apps:
     killbots:
-        extensions:
-        - kde-neon
+        # extensions:
+        # - kde-neon
         common-id: org.kde.killbots
         command: usr/bin/killbots
         plugs:
