@@ -46,6 +46,7 @@ plugs:
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
+    QML2_IMPORT_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qml
 hooks:
     configure:
         plugs:
