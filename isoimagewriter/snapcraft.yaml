@@ -101,6 +101,7 @@ parts:
         build-packages:
         - cmake
         - libgpgmepp-dev
+        - libgpg-error-dev
         stage-packages:
         - libgpgmepp6
         cmake-parameters:
