@@ -105,6 +105,7 @@ parts:
         - libgpg-error-dev
         stage-packages:
         - libgpgmepp6
+        - libqgpgme7
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
