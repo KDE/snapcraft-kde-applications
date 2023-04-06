@@ -125,6 +125,8 @@ parts:
         - libqt5gstreamerui-1.0-0
         - libqt5gstreamerutils-1.0-0
         - libmarblewidget-qt5-28
+        - kio
+        - ffmpeg
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
