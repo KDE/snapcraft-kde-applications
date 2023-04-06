@@ -23,6 +23,7 @@ apps:
         - network-bind
         - audio-playback
         - removable-media
+        - unity7
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
