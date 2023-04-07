@@ -134,7 +134,7 @@ parts:
     cleanup:
         after:
         - kde-neon
-        - klettres
+        - krdc
         plugin: nil
         build-snaps:
         - kf5-5-104-qt-5-15-8-core22-sdk
