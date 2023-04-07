@@ -415,6 +415,9 @@ kollision:
 kolourpaint:
   extends: .prepone-extension-update
 
+kommit:
+  extends: .prepone-extension-update
+
 kompare:
   extends: .prepone-extension-update
 
