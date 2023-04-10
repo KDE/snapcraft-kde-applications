@@ -104,6 +104,7 @@ parts:
         - libgpgmepp-dev
         - libgpg-error-dev
         stage-packages:
+        - libgpgme11
         - libgpgmepp6
         - libqgpgme7
         cmake-parameters:
