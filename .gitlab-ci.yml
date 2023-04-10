@@ -397,6 +397,9 @@ kgraphviewer:
 khangman:
   extends: .prepone-extension-update
 
+khelpcenter:
+  extends: .prepone-extension-update
+
 kid3:
   extends: .prepone-extension-update
 
