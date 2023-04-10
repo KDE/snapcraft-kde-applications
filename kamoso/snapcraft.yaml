@@ -99,6 +99,9 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
+        - libkf5purpose-dev
+        stage-packages:
+        - libkf5purpose-bin
         source: http://download.kde.org/stable/release-service/22.12.3/src/kamoso-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
