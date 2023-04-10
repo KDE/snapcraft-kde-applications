@@ -106,6 +106,7 @@ parts:
         - libkf5doctools-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
+        - libtag1-dev
         stage-packages:
         - phonon4qt5
         - libgstreamer1.0-0
