@@ -48,6 +48,7 @@ plugs:
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
+    SNAP_SAVE_DATA: $SNAP_USER_DATA
 hooks:
     configure:
         plugs:
