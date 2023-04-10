@@ -105,6 +105,7 @@ parts:
         - libkf5purpose-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
+        - kirigami2-dev
         stage-packages:
         - libkf5purpose-bin
         - phonon4qt5
