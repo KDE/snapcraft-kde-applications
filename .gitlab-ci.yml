@@ -352,6 +352,9 @@ kcharselect:
 kcolorchooser:
   extends: .prepone-extension-update
 
+kdebugsettings:
+  extends: .prepone-extension-update
+
 kdeconnect:
   extends: .prepone-extension-update
 
