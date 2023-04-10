@@ -292,6 +292,9 @@ juk:
 k3b:
   extends: .prepone-extension-update
 
+kaddressbook:
+  extends: .prepone-extension-update
+
 kamoso:
   extends: .prepone-extension-update
 
