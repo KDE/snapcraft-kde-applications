@@ -394,6 +394,9 @@ kid3:
 kfind:
   extends: .prepone-extension-update
 
+kfloppy:
+  extends: .prepone-extension-update
+
 kig:
   extends: .prepone-extension-update
 
