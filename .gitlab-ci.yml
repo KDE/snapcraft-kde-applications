@@ -295,6 +295,9 @@ k3b:
 kaddressbook:
   extends: .prepone-extension-update
 
+kalendar:
+  extends: .prepone-extension-update
+
 kamoso:
   extends: .prepone-extension-update
 
