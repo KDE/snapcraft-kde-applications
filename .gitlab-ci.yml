@@ -334,6 +334,9 @@ kbreakout:
 kbruch:
   extends: .prepone-extension-update
 
+kcachegrind:
+  extends: .prepone-extension-update
+
 kcalc:
   extends: .prepone-extension-update
 
