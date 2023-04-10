@@ -101,6 +101,7 @@ parts:
         - usr/share/metainfo/org.kde.kamoso.appdata.xml
         plugin: cmake
         build-packages:
+        - libgstreamer1.0-dev
         - libkf5doctools-dev
         - libkf5purpose-dev
         - libphonon4qt5-dev
@@ -133,6 +134,7 @@ parts:
         - *id004
         - *id005
         - *id006
+        - QT_HOST_BINS: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/bin
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
