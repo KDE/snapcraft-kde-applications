@@ -430,6 +430,9 @@ kiten:
 kjumpingcube:
   extends: .prepone-extension-update
 
+kleopatra:
+  extends: .prepone-extension-update
+
 klettres:
   extends: .prepone-extension-update
 
