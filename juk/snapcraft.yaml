@@ -1,16 +1,16 @@
 ---
-name: klines
+name: juk
 confinement: strict
 grade: stable
 base: core22
-adopt-info: klines
+adopt-info: juk
 version: 22.12.3
 apps:
-    klines:
+    juk:
         # extensions:
         # - kde-neon
-        common-id: org.kde.klines
-        command: usr/bin/klines
+        common-id: org.kde.juk
+        command: usr/bin/juk
         plugs:
         - desktop
         - desktop-legacy
@@ -63,7 +63,7 @@ layout:
 slots:
     session-dbus-interface:
         interface: dbus
-        name: org.kde.klines
+        name: org.kde.juk
         bus: session
 package-repositories:
 -   type: apt
@@ -96,15 +96,15 @@ parts:
             ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         - &id006
             CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
-    klines:
+    juk:
         after:
         - kde-neon
         parse-info:
-        - usr/share/metainfo/org.kde.klines.appdata.xml
+        - usr/share/metainfo/org.kde.juk.appdata.xml
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/22.12.3/src/klines-22.12.3.tar.xz
+        source: http://download.kde.org/stable/release-service/22.12.3/src/juk-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
