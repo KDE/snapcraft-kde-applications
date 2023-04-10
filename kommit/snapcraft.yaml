@@ -95,7 +95,7 @@ parts:
         after:
         - kde-neon
         parse-info:
-        - usr/share/metainfo/org.kde.komit.appdata.xml
+        - usr/share/metainfo/org.kde.kommit.appdata.xml
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
