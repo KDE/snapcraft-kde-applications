@@ -346,6 +346,9 @@ kcharselect:
 kcolorchooser:
   extends: .prepone-extension-update
 
+kdeconnect:
+  extends: .prepone-extension-update
+
 kdenlive:
   extends: .prepone-extension-update
 
