@@ -388,6 +388,9 @@ kgraphviewer:
 kid3:
   extends: .prepone-extension-update
 
+kfind:
+  extends: .prepone-extension-update
+
 kig:
   extends: .prepone-extension-update
 
