@@ -316,6 +316,9 @@ kate:
 katomic:
   extends: .prepone-extension-update
 
+kbackup:
+  extends: .prepone-extension-update
+
 kblackbox:
   extends: .prepone-extension-update
 
