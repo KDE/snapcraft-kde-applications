@@ -550,6 +550,9 @@ palapeli:
 parley:
   extends: .prepone-extension-update
 
+partitionmanager:
+  extends: .prepone-extension-update
+
 peruse:
   extends: .prepone-extension-update
 
