@@ -403,6 +403,9 @@ khelpcenter:
 kid3:
   extends: .prepone-extension-update
 
+kimagemapeditor:
+  extends: .prepone-extension-update
+
 kfind:
   extends: .prepone-extension-update
 
