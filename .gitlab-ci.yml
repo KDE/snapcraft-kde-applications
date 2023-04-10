@@ -394,6 +394,9 @@ kgoldrunner:
 kgraphviewer:
   extends: .prepone-extension-update
 
+khangman:
+  extends: .prepone-extension-update
+
 kid3:
   extends: .prepone-extension-update
 
