@@ -382,6 +382,9 @@ kgeography:
 kgeotag:
   extends: .prepone-extension-update
 
+kget:
+  extends: .prepone-extension-update
+
 kgoldrunner:
   extends: .prepone-extension-update
 
