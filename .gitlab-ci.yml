@@ -385,6 +385,9 @@ kgeotag:
 kget:
   extends: .prepone-extension-update
 
+kgpg:
+  extends: .prepone-extension-update
+
 kgoldrunner:
   extends: .prepone-extension-update
 
