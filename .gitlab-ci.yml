@@ -283,6 +283,9 @@ haruna:
 isoimagewriter:
   extends: .prepone-extension-update
 
+juk:
+  extends: .prepone-extension-update
+
 kajongg:
   extends: .prepone-extension-update
 
