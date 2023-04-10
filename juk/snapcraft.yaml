@@ -104,6 +104,17 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
+        - libphonon4qt5-dev
+        - libphonon4qt5experimental-dev
+        stage-packages:
+        - phonon4qt5
+        - libgstreamer1.0-0
+        - gstreamer1.0-alsa
+        - gstreamer1.0-pulseaudio
+        - gstreamer1.0-plugins-good
+        - gstreamer1.0-plugins-bad
+        - gstreamer1.0-plugins-ugly
+        - phonon4qt5-backend-gstreamer
         source: http://download.kde.org/stable/release-service/22.12.3/src/juk-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
