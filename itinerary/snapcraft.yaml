@@ -100,10 +100,12 @@ parts:
         - libkf5calendarcore-dev
         - libkf5contacts-dev
         - libkf5doctools-dev
+        - libkpimpkpass-dev
         - libtag1-dev
         stage-packages:
         - libkf5contacts5
         - libkf5calendarcore5
+        - libkpimpkpass5
         source: http://download.kde.org/stable/release-service/22.12.3/src/itinerary-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
