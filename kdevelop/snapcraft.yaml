@@ -7,41 +7,12 @@ adopt-info: kdevelop
 compression: lzo
 apps:
     kdevelop:
-        # extensions:
-        # - kde-neon
         command: usr/bin/kdevelop
         common-id: org.kde.kdevelop.desktop
-        plugs:
-        - desktop
-        - desktop-legacy
-        - opengl
-        - wayland
-        - x11
-        - home
-        - network
-        - network-bind
-        - audio-playback
-        - removable-media
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
 - snapd2.43
-plugs:
-    desktop:
-        mount-host-font-cache: false
-    icon-themes:
-        interface: content
-        target: $SNAP/data-dir/icons
-        default-provider: gtk-common-themes
-    sound-themes:
-        interface: content
-        target: $SNAP/data-dir/sounds
-        default-provider: gtk-common-themes
-    kf5-5-104-qt-5-15-8-core22:
-        content: kf5-5-104-qt-5-15-8-core22-all
-        interface: content
-        default-provider: kf5-5-104-qt-5-15-8-core22
-        target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     KDEV_CLANG_BUILTIN_DIR: "$SNAP/usr/lib/llvm-11/lib/clang/11.0.0/include"
@@ -72,27 +43,6 @@ package-repositories:
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
-    kde-neon:
-        source: /snap/snapcraft/current/share/snapcraft/extensions/desktop/kde-neon
-        source-type: local
-        plugin: make
-        make-parameters:
-        - PLATFORM_PLUG=kf5-5-104-qt-5-15-8-core22
-        build-snaps:
-        - kf5-5-104-qt-5-15-8-core22-sdk
-        build-environment:
-        - &id001
-            PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/bin${PATH:+:$PATH}
-        - &id002
-            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
-        - &id003
-            LD_LIBRARY_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
-        - &id004
-            PKG_CONFIG_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
-        - &id005
-            ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
-        - &id006
-            SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
     mesa-patchelf:
         plugin: nil
         stage-packages:
@@ -129,23 +79,46 @@ parts:
         - ".*"
     kdevelop:
         after:
-        - kde-neon
         - mesa-patchelf
         - mesa-no-patchelf
         - qtconf
         - patches
         plugin: cmake
         build-packages:
+        - extra-cmake-modules
         - cmake
         - libboost-dev
         - libastyle-dev
         - libkf5doctools-dev
-        - libclang-11-dev
         - libkomparediff2-dev
         - libsvn-dev
         - okteta-dev
+        - libkf5purpose-dev
+        - libkf5sysguard-dev
         - kdevelop-pg-qt
         - libgrantlee5-dev
+        - libkf5config-dev
+        - libkf5crash-dev
+        - libkf5declarative-dev
+        - libkf5i18n-dev
+        - libkf5iconthemes-dev
+        - libkf5itemmodels-dev
+        - libkf5itemviews-dev
+        - libkf5jobwidgets-dev
+        - libkf5kcmutils-dev
+        - libkf5kio-dev
+        - libkf5newstuff-dev
+        - libkf5notifyconfig-dev
+        - libkf5parts-dev
+        - libkf5plasma-dev
+        - libkf5runner-dev
+        - libkf5service-dev
+        - libkf5syntaxhighlighting-dev
+        - libkf5texteditor-dev
+        - libkf5threadweaver-dev
+        - libkf5windowsystem-dev
+        - libkf5xmlgui-dev
+        - libqt5webkit5-dev
         - gettext
         - patch
         stage-packages:
@@ -199,6 +172,28 @@ parts:
         - build-essential
         - subversion
         - openssh-client
+        - libkf5config5
+        - libkf5crash5
+        - libkf5declarative5
+        - libkf5i18n5
+        - libkf5iconthemes5
+        - libkf5itemmodels5
+        - libkf5itemviews5
+        - libkf5jobwidgets5
+        - libkf5kcmutils5
+        - libkf5kio5
+        - libkf5newstuff5
+        - libkf5notifyconfig5
+        - libkf5parts5
+        - libkf5plasma5
+        - libkf5runner5
+        - libkf5service5
+        - libkf5syntaxhighlighting5
+        - libkf5texteditor5
+        - libkf5threadweaver5
+        - libkf5windowsystem5
+        - libkf5xmlgui5
+        - libqt5webkit5
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
         source: http://download.kde.org/stable/release-service/22.12.3/src/kdevelop-22.12.3.tar.xz
@@ -208,14 +203,6 @@ parts:
         - -DENABLE_TESTING=OFF
         - -DBUILD_TESTING=OFF
         - -DKDE_SKIP_TEST_SETTINGS=ON
-        - -DCMAKE_FIND_ROOT_PATH=/usr\;$CRAFT_STAGE\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current
-        build-environment: &id007
-        - *id001
-        - *id002
-        - *id003
-        - *id004
-        - *id005
-        - *id006
         prime:
         - -usr/lib/*/cmake/*
         - -usr/include/*
