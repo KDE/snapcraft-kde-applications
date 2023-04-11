@@ -424,6 +424,9 @@ killbots:
 kiriki:
   extends: .prepone-extension-update
 
+kirigami-gallery:
+  extends: .prepone-extension-update
+
 kiten:
   extends: .prepone-extension-update
 
