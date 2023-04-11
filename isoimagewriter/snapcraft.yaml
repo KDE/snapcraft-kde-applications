@@ -25,6 +25,7 @@ apps:
         - network
         - network-bind
         - udisks2
+        - gpg-public-keys
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
