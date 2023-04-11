@@ -98,6 +98,7 @@ parts:
         build-packages:
         - libkf5doctools-dev
         - libgrantlee5-dev
+        - libxapian-dev
         source: http://download.kde.org/stable/release-service/22.12.3/src/khelpcenter-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
