@@ -96,6 +96,8 @@ parts:
         build-packages:
         - libkf5doctools-dev
         - libgpgmepp-dev
+        - libboost1.81-dev
+        - libkf5pimtextedit-dev
         stage-packages:
         - libgpgmepp6
         source: http://download.kde.org/stable/release-service/22.12.3/src/libkleo-22.12.3.tar.xz
