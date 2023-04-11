@@ -111,6 +111,7 @@ parts:
         - libkf5calendarutils-dev
         - libkf5contacts-dev
         - libkf5holidays-dev
+        - libkf5identitymanagement-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         - pkg-config
