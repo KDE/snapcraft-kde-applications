@@ -112,6 +112,7 @@ parts:
         - libkf5contacts-dev
         - libkf5holidays-dev
         - libkf5identitymanagement-dev
+        - libkf5mime-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         - pkg-config

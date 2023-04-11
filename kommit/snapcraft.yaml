@@ -104,6 +104,7 @@ parts:
         - libkf5doctools-dev
         stage-packages:
         - kio
+        - git-all
         source: https://invent.kde.org/sdk/kommit/-/archive/master/kommit-master.tar.gz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
