@@ -97,6 +97,9 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
+        - libkeduvocdocument-dev
+        stage-packages:
+        - libkeduvocdocument5
         source: http://download.kde.org/stable/release-service/22.12.3/src/khangman-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
