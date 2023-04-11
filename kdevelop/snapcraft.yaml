@@ -1,6 +1,6 @@
 ---
 name: kdevelop
-confinement: strict
+confinement: classic
 grade: stable
 base: core22
 adopt-info: kdevelop
