@@ -98,9 +98,11 @@ parts:
         build-packages:
         - libkf5doctools-dev
         - kirigami2-dev
+        - qml-module-qtgraphicaleffects
         stage-packages:
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
+        - qml-module-qtgraphicaleffects
         source: http://download.kde.org/stable/release-service/22.12.3/src/kirigami-gallery-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
