@@ -107,6 +107,7 @@ parts:
         - libassuan-dev
         - libboost-dev
         - libboost-graph-dev
+        - libkf5akonadi-dev
         - libkf5calendarcore-dev
         - libkf5calendarutils-dev
         - libkf5contacts-dev
