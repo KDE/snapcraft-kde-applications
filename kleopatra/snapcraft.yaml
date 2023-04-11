@@ -96,7 +96,7 @@ parts:
         build-packages:
         - libkf5doctools-dev
         - libgpgmepp-dev
-        - libboost1.81-dev
+        - libboost-dev
         - libkf5pimtextedit-dev
         stage-packages:
         - libgpgmepp6
