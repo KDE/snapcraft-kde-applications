@@ -108,6 +108,7 @@ parts:
         - libboost-dev
         - libboost-graph-dev
         - libkf5calendarcore-dev
+        - libkf5calendarutils-dev
         - libkf5contacts-dev
         - libkf5holidays-dev
         - libphonon4qt5-dev
