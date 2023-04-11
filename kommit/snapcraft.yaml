@@ -24,6 +24,8 @@ apps:
         - wayland
         - x11
         - unity7
+        - ssh-keys
+        - personal-files
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
