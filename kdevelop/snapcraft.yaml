@@ -181,7 +181,7 @@ parts:
         - libkf5itemviews5
         - libkf5jobwidgets5
         - libkf5kcmutils5
-        - libkf5kio5
+        - kio
         - libkf5newstuff5
         - libkf5notifyconfig5
         - libkf5parts5
