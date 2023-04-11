@@ -45,9 +45,6 @@ plugs:
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
-    GST_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
-    GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
-    GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
 hooks:
     configure:
         plugs:
@@ -55,10 +52,6 @@ hooks:
         command-chain:
         - snap/command-chain/hooks-configure-desktop
 layout:
-    "/usr/lib/$CRAFT_ARCH_TRIPLET/alsa-lib":
-        symlink: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/alsa-lib"
-    "/usr/share/alsa":
-        symlink: "$SNAP/usr/share/alsa"
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
 slots:
@@ -104,19 +97,13 @@ parts:
         - usr/share/metainfo/org.kde.itinerary.appdata.xml
         plugin: cmake
         build-packages:
+        - libkf5calendarcore-dev
+        - libkf5contacts-dev
         - libkf5doctools-dev
-        - libphonon4qt5-dev
-        - libphonon4qt5experimental-dev
         - libtag1-dev
         stage-packages:
-        - phonon4qt5
-        - libgstreamer1.0-0
-        - gstreamer1.0-alsa
-        - gstreamer1.0-pulseaudio
-        - gstreamer1.0-plugins-good
-        - gstreamer1.0-plugins-bad
-        - gstreamer1.0-plugins-ugly
-        - phonon4qt5-backend-gstreamer
+        - libkf5contacts5
+        - libkf5calendarcore5
         source: http://download.kde.org/stable/release-service/22.12.3/src/itinerary-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
