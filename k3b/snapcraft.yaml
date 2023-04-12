@@ -22,6 +22,9 @@ apps:
         - unity7
         - network
         - network-bind
+        - optical-disk
+        - system-backup
+        - mount-observe
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -98,6 +101,8 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
+        - libsamplerate0-dev
+        - libkf5cddb-dev
         source: http://download.kde.org/stable/release-service/22.12.3/src/k3b-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
