@@ -102,6 +102,8 @@ parts:
     kamera:
         after:
         - kde-neon
+        parse-info:
+        - usr/share/metainfo/org.kde.kamera.metainfo.xml
         plugin: cmake
         source: http://download.kde.org/stable/release-service/22.12.3/src/kamera-22.12.3.tar.xz
         build-packages:
@@ -126,8 +128,6 @@ parts:
         - *id004
         - *id005
         - *id006
-        parse-info:
-        - usr/share/metainfo/org.kde.kamera.appdata.xml
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
