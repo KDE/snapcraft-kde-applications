@@ -134,6 +134,7 @@ parts:
         - libqca-qt5-2-dev
         - libgpgmepp-dev
         - libgmp-dev
+        - libgcrypt20-dev
         source: http://download.kde.org/stable/release-service/22.12.3/src/kget-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
