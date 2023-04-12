@@ -109,6 +109,7 @@ parts:
         - libgpgme11
         - libgpgmepp6
         - libqgpgme7
+        - gpg
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
