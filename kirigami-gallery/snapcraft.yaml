@@ -120,6 +120,7 @@ parts:
         - *id005
         - *id006
         - QT_HOST_BINS: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/bin
+        - PATH: $PATH:$QT_HOST_BINS
         - QML2_IMPORT_PATH: $CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
         prime:
         - "-usr/lib/*/cmake/*"
