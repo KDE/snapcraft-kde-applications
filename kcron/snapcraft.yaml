@@ -117,7 +117,7 @@ parts:
         - *id005
         - *id006
         parse-info:
-        - usr/share/metainfo/org.kde.kcron.appdata.xml
+        - usr/share/metainfo/org.kde.kcron.metainfo.xml
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
