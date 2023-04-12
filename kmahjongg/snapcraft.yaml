@@ -131,10 +131,8 @@ parts:
         - usr/share/metainfo/org.kde.kmahjongg.appdata.xml
         plugin: cmake
         build-packages:
-        - libkf5kmahjongglib-dev
         - libkf5doctools-dev
         stage-packages:
-        - libkf5kmahjongglib5
         - kdegames-mahjongg-data-kf5
         source: http://download.kde.org/stable/release-service/22.12.3/src/kmahjongg-22.12.3.tar.xz
         cmake-parameters:
