@@ -7,12 +7,16 @@ base: core22
 adopt-info: kcron
 version: 22.12.3
 apps:
+    cron:
+        command: cron
+        daemon: simple
+        plugs: [network, network-bind]
     kcron:
         # extensions:
         # - kde-neon
-        common-id: org.kde.kcron.desktop
-        desktop: usr/share/applications/org.kde.kcron.desktop
-        command: usr/bin/kcron
+        common-id: org.kde.kcron
+        desktop: usr/share/kservices5/kcm_cron.desktop
+        command: kcm_cron
         plugs:
         - desktop
         - desktop-legacy
@@ -23,6 +27,7 @@ apps:
         - unity7
         - network
         - network-bind
+        - polkit
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -102,6 +107,7 @@ parts:
         stage-packages:
         - libasound2-data
         - libasound2-plugins
+        - cron
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
