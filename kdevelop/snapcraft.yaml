@@ -9,8 +9,6 @@ apps:
     kdevelop:
         command: usr/bin/kdevelop
         common-id: org.kde.kdevelop.desktop
-        command-chain:
-        - snap/command-chain/desktop-launch
 assumes:
 - snapd2.43
 environment:
@@ -24,12 +22,6 @@ environment:
     KDEV_UNSET_ENV: LIBGL_DRIVERS_PATH
     QML2_IMPORT_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
     PATH: $PATH:$SNAP/usr/bin
-hooks:
-    configure:
-        plugs:
-        - desktop
-        command-chain:
-        - snap/command-chain/hooks-configure-desktop
 layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
@@ -172,7 +164,7 @@ parts:
         - build-essential
         - subversion
         - openssh-client
-        - libkf5config5
+        - libkf5configcore5
         - libkf5crash5
         - libkf5declarative5
         - libkf5i18n5
