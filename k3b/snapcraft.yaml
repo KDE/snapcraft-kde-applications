@@ -22,7 +22,7 @@ apps:
         - unity7
         - network
         - network-bind
-        - optical-disk
+        - optical-drive
         - system-backup
         - mount-observe
         command-chain:
