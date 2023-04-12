@@ -22,6 +22,7 @@ apps:
         - unity7
         - network
         - network-bind
+        - camera
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -105,6 +106,7 @@ parts:
         build-packages:
         - cmake
         - libkf5doctools-dev
+        - libgphoto2-dev
         stage-packages:
         - libasound2-data
         - libasound2-plugins
