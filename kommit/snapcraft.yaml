@@ -47,6 +47,11 @@ plugs:
         interface: content
         default-provider: kf5-5-104-qt-5-15-8-core22
         target: $SNAP/kf5
+    gitconfig:
+        interface: personal-files
+        read:
+            - $HOME/.gitconfig
+            - $HOME/.config/git/config
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
 hooks:
