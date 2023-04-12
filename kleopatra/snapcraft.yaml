@@ -98,6 +98,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
+        - libgpgme-dev
         - libgpgmepp-dev
         - libboost-dev
         - libkf5pimtextedit-dev
