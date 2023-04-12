@@ -108,6 +108,7 @@ parts:
         - libboost-dev
         - libboost-graph-dev
         - libkf5akonadi-dev
+        - libkf5akonadicontact-dev
         - libkf5calendarcore-dev
         - libkf5calendarutils-dev
         - libkf5contacts-dev
@@ -123,7 +124,16 @@ parts:
         - libasound2
         - libasound2-data
         - libasound2-plugins
+        - libkf5akonadi5
+        - libkf5akonadicontact5
+        - libkf5calendarcore5
+        - libkf5calendarutils5
+        - libkf5contacts5
+        - libkf5holidays5
+        - libkf5identitymanagement5
+        - libkf5mime5
         - phonon4qt5
+        - libphonon4qt5experimental
         - gstreamer1.0-alsa
         - gstreamer1.0-pulseaudio
         - gstreamer1.0-plugins-good
