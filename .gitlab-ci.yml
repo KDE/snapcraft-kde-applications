@@ -373,6 +373,9 @@ kdf:
 kdiamond:
   extends: .prepone-extension-update
 
+kfind:
+  extends: .prepone-extension-update
+
 kfourinline:
   extends: .prepone-extension-update
 
