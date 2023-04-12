@@ -101,7 +101,6 @@ parts:
         - libgpgme-dev
         - libgpgmepp-dev
         - libboost-dev
-        - libkf5mime-dev
         - libkf5pimtextedit-dev
         - libgpg-error-dev
         stage-packages:
@@ -142,6 +141,7 @@ parts:
         build-packages:
         - libkf5doctools-dev
         - libgpgmepp-dev
+        - libkf5mime-dev
         stage-packages:
         - libgpgmepp6
         source: http://download.kde.org/stable/release-service/22.12.3/src/kleopatra-22.12.3.tar.xz
