@@ -298,6 +298,9 @@ kaddressbook:
 kalendar:
   extends: .prepone-extension-update
 
+kamera:
+  extends: .prepone-extension-update
+
 kamoso:
   extends: .prepone-extension-update
 
