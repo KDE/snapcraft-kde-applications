@@ -108,6 +108,7 @@ parts:
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         - kirigami2-dev
+        - qml-module-qtgraphicaleffects
         stage-packages:
         - libkf5purpose-bin
         - phonon4qt5
@@ -119,16 +120,16 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
+        - qml-module-qtgraphicaleffects
         source: http://download.kde.org/stable/release-service/22.12.3/src/kamoso-22.12.3.tar.xz
         cmake-parameters:
-        - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
+        #- -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current
-        - -DQT_HOST_BINS=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/bin
         build-environment: &id007
         - *id001
         - *id002
@@ -136,6 +137,7 @@ parts:
         - *id004
         - *id005
         - *id006
+        - QT_HOST_BINS: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/bin
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
