@@ -24,6 +24,9 @@ apps:
         - network
         - network-bind
         - mount-observe
+        - mount-control
+        - removable-media
+        - network-observe
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -92,24 +95,80 @@ parts:
             ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         - &id006
             CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
-    dolphin:
+    baloo-widgets:
         after:
         - kde-neon
         plugin: cmake
         build-packages:
         - cmake
-        - libkf5baloowidgets-dev
+        source: http://download.kde.org/stable/release-service/22.12.3/src/baloo-widgets-22.12.3.tar.xz
+        cmake-parameters:
+        - -DCMAKE_INSTALL_PREFIX=/usr
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DENABLE_TESTING=OFF
+        - -DBUILD_TESTING=OFF
+        - -DKDE_SKIP_TEST_SETTINGS=ON
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        prime:
+        - "-usr/lib/*/cmake/*"
+        - "-usr/include/*"
+        - "-usr/share/ECM/*"
+        - "-usr/share/doc/*"
+        - "-usr/share/man/*"
+        - "-usr/share/icons/breeze-dark*"
+        - "-usr/bin/X11"
+        - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
+        - "-usr/lib/aspell/*"
+        build-environment: &id007
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        - *id005
+        - *id006
+    dolphin-plugins:
+        after:
+        - kde-neon
+        - baloo-widgets
+        plugin: cmake
+        build-packages:
+        - cmake
+        source: http://download.kde.org/stable/release-service/22.12.3/src/dolphin-plugins-22.12.3.tar.xz
+        cmake-parameters:
+        - -DCMAKE_INSTALL_PREFIX=/usr
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DENABLE_TESTING=OFF
+        - -DBUILD_TESTING=OFF
+        - -DKDE_SKIP_TEST_SETTINGS=ON
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        prime:
+        - "-usr/lib/*/cmake/*"
+        - "-usr/include/*"
+        - "-usr/share/ECM/*"
+        - "-usr/share/doc/*"
+        - "-usr/share/man/*"
+        - "-usr/share/icons/breeze-dark*"
+        - "-usr/bin/X11"
+        - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
+        - "-usr/lib/aspell/*"
+        build-environment: *id007
+    dolphin:
+        after:
+        - kde-neon
+        - baloo-widgets
+        - dolphin-plugins
+        plugin: cmake
+        build-packages:
+        - cmake
         - libphonon4qt5experimental-dev
         - pkg-config
         - kuserfeedback-dev
         - libphonon4qt5-dev
         - libkf5doctools-dev
         stage-packages:
-        - dolphin-plugins
         - libglu1-mesa
         - freeglut3
         - libphonon4qt5experimental4
-        - libkf5baloowidgets5
         - libkuserfeedbackcore1
         - libkuserfeedbackwidgets1
         - kio
@@ -135,13 +194,7 @@ parts:
         - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/kglobalaccel/org.kde.dolphin.desktop"
-        build-environment: &id007
-        - *id001
-        - *id002
-        - *id003
-        - *id004
-        - *id005
-        - *id006
+        build-environment: *id007
     # cleanup:
     #     after:
     #     - dolphin
