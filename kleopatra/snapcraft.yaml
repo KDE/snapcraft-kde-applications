@@ -101,6 +101,7 @@ parts:
         - libgpgme-dev
         - libgpgmepp-dev
         - libboost-dev
+        - libkf5mime-dev
         - libkf5pimtextedit-dev
         - libgpg-error-dev
         stage-packages:
