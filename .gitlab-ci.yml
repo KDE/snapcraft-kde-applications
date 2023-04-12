@@ -358,6 +358,9 @@ kcharselect:
 kcolorchooser:
   extends: .prepone-extension-update
 
+kcron:
+  extends: .prepone-extension-update
+
 kdebugsettings:
   extends: .prepone-extension-update
 
