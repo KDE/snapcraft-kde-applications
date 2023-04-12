@@ -99,13 +99,13 @@ parts:
         - libkf5doctools-dev
         source: http://download.kde.org/stable/release-service/22.12.3/src/kcachegrind-22.12.3.tar.xz
         cmake-parameters:
-        - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DENABLE_TESTING=OFF"
-        - "-DBUILD_TESTING=OFF"
-        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - -DCMAKE_INSTALL_PREFIX=/usr
+        - -DCMAKE_BUILD_TYPE=Release
+        - -DENABLE_TESTING=OFF
+        - -DBUILD_TESTING=OFF
+        - -DKDE_SKIP_TEST_SETTINGS=ON
         - -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current
+        - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         build-environment: &id007
         - *id001
         - *id002
