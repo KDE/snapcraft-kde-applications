@@ -12,6 +12,7 @@ apps:
         common-id: org.kde.kleopatra.desktop
         command: usr/bin/kleopatra
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
@@ -21,6 +22,8 @@ apps:
         - unity7
         - network
         - network-bind
+        - gpg-keys
+        - ssh-keys
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -98,6 +101,7 @@ parts:
         - libgpgmepp-dev
         - libboost-dev
         - libkf5pimtextedit-dev
+        - libgpg-error-dev
         stage-packages:
         - libgpgmepp6
         source: http://download.kde.org/stable/release-service/22.12.3/src/libkleo-22.12.3.tar.xz
