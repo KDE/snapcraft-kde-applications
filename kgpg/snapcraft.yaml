@@ -89,14 +89,44 @@ parts:
             ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         - &id006
             CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
+    akonadi-contacts:
+        after:
+        - kde-neon
+        plugin: cmake
+        build-packages:
+        - cmake
+        source: http://download.kde.org/stable/release-service/22.12.3/src/akonadi-contacts-22.12.3.tar.xz
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current
+        build-environment: *id007
+        prime:
+        - "-usr/lib/*/cmake/*"
+        - "-usr/include/*"
+        - "-usr/share/ECM/*"
+        - "-usr/share/doc/*"
+        - "-usr/share/man/*"
+        - "-usr/share/icons/breeze-dark*"
+        - "-usr/bin/X11"
+        - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
+        - "-usr/lib/aspell/*"
+        - "-etc/alsa/conf.d/99-pulse.conf"
     kgpg:
         after:
         - kde-neon
+        - akonadi-contacts
         parse-info:
         - usr/share/metainfo/org.kde.kgpg.appdata.xml
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
+        - libkf5contacts-dev
+        stage-packages:
+        - libkf5contacts5
         source: http://download.kde.org/stable/release-service/22.12.3/src/kgpg-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
