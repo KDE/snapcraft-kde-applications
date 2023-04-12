@@ -133,7 +133,7 @@ parts:
         - libkf5identitymanagement5
         - libkf5mime5
         - phonon4qt5
-        - libphonon4qt5experimental
+        - libphonon4qt5experimental4
         - gstreamer1.0-alsa
         - gstreamer1.0-pulseaudio
         - gstreamer1.0-plugins-good
