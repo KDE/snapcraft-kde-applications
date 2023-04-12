@@ -20,10 +20,9 @@ apps:
         - x11
         - audio-playback
         - unity7
-        - mount-observe
         - network
         - network-bind
-        - udisks2
+        - system-backup
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
