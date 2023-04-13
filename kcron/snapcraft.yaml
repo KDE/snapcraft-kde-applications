@@ -16,7 +16,7 @@ apps:
         # - kde-neon
         common-id: org.kde.kcron
         desktop: usr/share/kservices5/kcm_cron.desktop
-        command: kcm_cron
+        command: usr/bin/kcm_cron kcm_cron
         plugs:
         - desktop
         - desktop-legacy
@@ -105,9 +105,11 @@ parts:
         - cmake
         - libkf5doctools-dev
         stage-packages:
+        - kde-cli-tools
         - libasound2-data
         - libasound2-plugins
         - cron
+        - oxygen-icon-theme
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
