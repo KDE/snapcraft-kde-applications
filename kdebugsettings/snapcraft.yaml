@@ -44,6 +44,12 @@ plugs:
         interface: content
         default-provider: kf5-5-104-qt-5-15-8-core22
         target: $SNAP/kf5
+    qtlogging:
+        interface: personal-files
+        write:
+            - $HOME/.config/QtProject/qtlogging.ini
+        read:
+            - $HOME/.config/QtProject/qtlogging.ini
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
 hooks:
