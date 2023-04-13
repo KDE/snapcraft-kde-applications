@@ -99,7 +99,7 @@ parts:
         build-packages:
         - libkf5doctools-dev
         - libkf5khtml-dev
-        - libkf5js-dev
+        - libkf5kjs-dev
         - libgrantlee5-dev
         - libgif-dev
         - libxapian-dev
