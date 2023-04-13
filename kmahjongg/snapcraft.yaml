@@ -92,7 +92,6 @@ parts:
     kmahjongg:
         after:
         - kde-neon
-        - libkmahjongg
         parse-info:
         - usr/share/metainfo/org.kde.kmahjongg.appdata.xml
         plugin: cmake
