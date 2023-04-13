@@ -100,7 +100,7 @@ parts:
         - libkf5doctools-dev
         - libkf5calendarcore-dev
         - libkf5contacts-dev
-        - kirigmai2-dev
+        - kirigami2-dev
         stage-packages:
         - libkf5calendarcore5
         - libkf5contacts5
