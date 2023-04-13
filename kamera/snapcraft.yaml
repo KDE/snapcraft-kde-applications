@@ -12,7 +12,7 @@ apps:
         # - kde-neon
         common-id: kamera.desktop
         desktop: usr/share/applications/kamera.desktop
-        command: usr/bin/kamera
+        command: usr/bin/kcmshell5 kamera
         plugs:
         - desktop
         - desktop-legacy
@@ -113,6 +113,7 @@ parts:
         stage-packages:
         - libasound2-data
         - libasound2-plugins
+        - kde-cli-tools
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
