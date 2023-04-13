@@ -108,7 +108,7 @@ parts:
         - kde-cli-tools
         - libasound2-data
         - libasound2-plugins
-        - systemd-cron
+        - cron
         - oxygen-icon-theme
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
