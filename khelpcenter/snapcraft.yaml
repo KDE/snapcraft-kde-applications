@@ -98,9 +98,18 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
+        - libkf5khtml-dev
+        - libkf5js-dev
         - libgrantlee5-dev
+        - libgif-dev
         - libxapian-dev
         - libicu-dev
+        stage-oackages:
+        - libkf5khtml5
+        - libgrantlee-templates5
+        - libgif7
+        - libkf5js5
+        - libxapian30
         source: http://download.kde.org/stable/release-service/22.12.3/src/khelpcenter-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
