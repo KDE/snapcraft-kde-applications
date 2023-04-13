@@ -16,7 +16,7 @@ apps:
         # - kde-neon
         common-id: org.kde.kcron
         desktop: usr/share/kservices5/kcm_cron.desktop
-        command: usr/bin/kcm_cron kcm_cron
+        command: usr/bin/kcmshell5 kcm_cron
         plugs:
         - desktop
         - desktop-legacy
