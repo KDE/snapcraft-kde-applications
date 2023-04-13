@@ -10,8 +10,6 @@ apps:
     cron:
         command: sbin/cron
         daemon: simple
-        before:
-        - kcron
         plugs: [network, network-bind]
     kcron:
         # extensions:
@@ -19,6 +17,8 @@ apps:
         common-id: org.kde.kcron
         desktop: usr/share/kservices5/kcm_cron.desktop
         command: usr/bin/kcmshell5 kcm_cron
+        after:
+        - cron
         plugs:
         - desktop
         - desktop-legacy
