@@ -101,10 +101,12 @@ parts:
         - libkf5calendarcore-dev
         - libkf5contacts-dev
         - kirigami2-dev
+        - libkf5qqc2desktopstyle-dev
         stage-packages:
         - libkf5calendarcore5
         - libkf5contacts5
         - libkf5kirigami2-5
+        - qml-module-org-kde-qqc2desktopstyle
         source: http://download.kde.org/stable/release-service/22.12.3/src/kalendar-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
