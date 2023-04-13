@@ -12,6 +12,7 @@ apps:
         common-id: org.kde.juk
         command: usr/bin/juk
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
