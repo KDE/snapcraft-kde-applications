@@ -104,7 +104,7 @@ parts:
         - libgif-dev
         - libxapian-dev
         - libicu-dev
-        stage-oackages:
+        stage-packages:
         - libkf5khtml5
         - libgrantlee-templates5
         - libgif7
