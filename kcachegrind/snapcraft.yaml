@@ -12,6 +12,7 @@ apps:
         common-id: org.kde.kcachegrind.desktop
         command: usr/bin/kcachegrind
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
