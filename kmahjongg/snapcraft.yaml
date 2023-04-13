@@ -106,7 +106,7 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current
-        - -DKF5KMahjongglib_DIR=$CRAFT_STAGE/usr/include/KF5/KMahjongg/
+        - -DKF5KMahjongglib_DIR=$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/cmake/KF5KMahjongglib/
         build-environment: &id007
         - *id001
         - *id002
