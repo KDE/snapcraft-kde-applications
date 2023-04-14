@@ -7,8 +7,8 @@ adopt-info: knights
 version: 22.12.3
 apps:
     knights:
-        extensions:
-        - kde-neon
+        # extensions:
+        # - kde-neon
         common-id: org.kde.knights.desktop
         command: usr/bin/knights
         plugs:
