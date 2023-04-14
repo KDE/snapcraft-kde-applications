@@ -94,6 +94,7 @@ parts:
         - libkf5qqc2desktopstyle-dev
         stage-packages:
         - qml-module-org-kde-qqc2desktopstyle
+        - qml-module-org-kde-kirigami-addons-labs-components
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
