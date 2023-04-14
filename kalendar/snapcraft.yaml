@@ -22,6 +22,7 @@ apps:
         - unity7
         - network
         - network-bind
+        - gpg-public-keys
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -102,11 +103,17 @@ parts:
         - libkf5contacts-dev
         - kirigami2-dev
         - libkf5qqc2desktopstyle-dev
+        - libgpgme-dev
+        - libgpgmepp-dev
+        - libgpg-error-dev
         stage-packages:
         - libkf5calendarcore5
         - libkf5contacts5
         - libkf5kirigami2-5
         - qml-module-org-kde-qqc2desktopstyle
+        - libgpgme11
+        - libgpgmepp6
+        - libqgpgme7
         source: http://download.kde.org/stable/release-service/22.12.3/src/kalendar-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
