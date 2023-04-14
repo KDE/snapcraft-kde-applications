@@ -110,6 +110,7 @@ parts:
         - libgif7
         - libkf5js5
         - libxapian30
+        - kio
         source: http://download.kde.org/stable/release-service/22.12.3/src/khelpcenter-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
