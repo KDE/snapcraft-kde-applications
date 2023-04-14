@@ -97,6 +97,7 @@ parts:
         - libxt-dev
         - libxtst-dev
         - libkf5doctools-dev
+        - libphonon4qt5-dev
         stage-packages:
         - libxt6
         - libxtst6
