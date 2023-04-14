@@ -8,7 +8,7 @@ adopt-info: kcron
 version: 22.12.3
 apps:
     cron:
-        command: sbin/cron
+        command: usr/sbin/cron
         daemon: simple
         plugs: [network, network-bind]
     kcron:
