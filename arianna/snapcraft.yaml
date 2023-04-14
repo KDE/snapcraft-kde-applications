@@ -91,7 +91,7 @@ parts:
         - libkf5doctools-dev
         - kirigami-addons-dev
         - libkf5qqc2desktopstyle-dev
-        stage-package:
+        stage-packages:
         - qml-module-org-kde-qqc2desktopstyle
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
