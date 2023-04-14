@@ -89,6 +89,7 @@ parts:
         build-packages:
         - cmake
         - libkf5doctools-dev
+        - kirigami-addons-dev
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
