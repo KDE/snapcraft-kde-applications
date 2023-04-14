@@ -17,6 +17,8 @@ apps:
         - audio-playback
         - unity7
         - browser-support
+        - network
+        - network-bind
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
