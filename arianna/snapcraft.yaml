@@ -89,6 +89,7 @@ parts:
         build-packages:
         - cmake
         - libkf5doctools-dev
+        - kirigami2-dev
         - kirigami-addons-dev
         - libkf5qqc2desktopstyle-dev
         stage-packages:
