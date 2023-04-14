@@ -97,7 +97,9 @@ parts:
         - libxt-dev
         - libxtst-dev
         - libkf5doctools-dev
+        - libqt5texttospeech5-dev
         stage-packages:
+        - libqt5texttospeech5
         - libxt6
         - libxtst6
         - libasound2-data
