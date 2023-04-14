@@ -487,6 +487,9 @@ knights:
 knotes:
   extends: .prepone-extension-update
 
+kolf:
+  extends: .prepone-extension-update
+
 kollision:
   extends: .prepone-extension-update
 
