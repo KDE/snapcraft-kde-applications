@@ -220,6 +220,9 @@ kde-frameworks-core22:
 akregator:
   extends: .prepone-extension-update
 
+arianna:
+  extends: .prepone-extension-update
+
 ark:
   extends: .prepone-extension-update
 
