@@ -6,7 +6,7 @@ base: core22
 adopt-info: kollision
 version: 22.12.3
 apps:
-    # kollision:
+    kollision:
     #     extensions:
     #     - kde-neon
         common-id: org.kde.kollision.desktop
