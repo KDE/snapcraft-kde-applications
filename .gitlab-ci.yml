@@ -484,6 +484,9 @@ knetwalk:
 knights:
   extends: .prepone-extension-update
 
+knotes:
+  extends: .prepone-extension-update
+
 kollision:
   extends: .prepone-extension-update
 
