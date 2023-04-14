@@ -95,6 +95,7 @@ parts:
         stage-packages:
         - qml-module-org-kde-qqc2desktopstyle
         - qml-module-org-kde-kirigami-addons-labs-components
+        - qml-module-org-kde-quickcharts
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
