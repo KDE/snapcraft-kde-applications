@@ -7,8 +7,8 @@ adopt-info: kolf
 version: 22.12.3
 apps:
     kolf:
-        extensions:
-        - kde-neon
+        # extensions:
+        # - kde-neon
         common-id: org.kde.kolf.desktop
         command: usr/bin/kolf
         plugs:
