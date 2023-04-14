@@ -133,8 +133,15 @@ parts:
         build-packages:
         - libkf5doctools-dev
         - libkf5contacts-dev
+        - libgpgme-dev
+        - libgpgmepp-dev
+        - libgpg-error-dev
         stage-packages:
         - libkf5contacts5
+        - libgpgme11
+        - libgpgmepp6
+        - libqgpgme7
+        - gpg
         source: http://download.kde.org/stable/release-service/22.12.3/src/kgpg-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
