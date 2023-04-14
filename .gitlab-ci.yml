@@ -469,6 +469,9 @@ kmines:
 kmousetool:
   extends: .prepone-extension-update
 
+kmouth:
+  extends: .prepone-extension-update
+
 kmplot:
   extends: .prepone-extension-update
 
