@@ -502,6 +502,9 @@ kommit:
 kompare:
   extends: .prepone-extension-update
 
+konsole:
+  extends: .prepone-extension-update
+
 konqueror:
   extends: .prepone-extension-update
 
