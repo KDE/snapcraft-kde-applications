@@ -1,7 +1,7 @@
 ---
 name: digikam
 base: core22
-version: 7.10.0
+version: 8.0.0
 adopt-info: digikam
 grade: stable
 confinement: strict
@@ -105,54 +105,54 @@ parts:
             ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         - &id006
             SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
-    qtav:
-        after:
-        - kde-neon
-        # - opencv
-        # - marble
-        source: https://github.com/wang-bin/QtAV.git
-        plugin: cmake
-        build-packages:
-        - cmake
-        - libavcodec-dev
-        - libavdevice-dev
-        - libavfilter-dev
-        - libavformat-dev
-        - libswresample-dev
-        - libavutil-dev
-        - libpulse-dev
-        - libgl-dev
-        - libglvnd-dev
-        stage-packages:
-        - libavcodec58
-        - libavdevice58
-        - libavfilter7
-        - libavformat58
-        - libswresample3
-        - libavutil56
-        - libswscale5
-        build-environment:
-        - *id001
-        - *id002
-        - *id003
-        - *id004
-        - *id005
-        - *id006
-        -   PATH: /usr/lib/ccache:$PATH
-        cmake-parameters:
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DBUILD_TESTS=OFF"
-        - "-DBUILD_EXAMPLES=OFF"
-        - "-DBUILD_PLAYERS=OFF"
-        - "-DBUILD_QT5OPENGL=ON"
-        - "-DBUILD_QML=OFF"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
-        stage:
-        - etc/
-        - usr/
-        - "-usr/lib/$CRAFT_ARCH_TRIPLET/libtiff.so.5.5.0"
-        - "-usr/share/doc/libtiff5/changelog.Debian.gz"
+    # qtav:
+    #     after:
+    #     - kde-neon
+    #     # - opencv
+    #     # - marble
+    #     source: https://github.com/wang-bin/QtAV.git
+    #     plugin: cmake
+    #     build-packages:
+    #     - cmake
+    #     - libavcodec-dev
+    #     - libavdevice-dev
+    #     - libavfilter-dev
+    #     - libavformat-dev
+    #     - libswresample-dev
+    #     - libavutil-dev
+    #     - libpulse-dev
+    #     - libgl-dev
+    #     - libglvnd-dev
+    #     stage-packages:
+    #     - libavcodec58
+    #     - libavdevice58
+    #     - libavfilter7
+    #     - libavformat58
+    #     - libswresample3
+    #     - libavutil56
+    #     - libswscale5
+    #     build-environment:
+    #     - *id001
+    #     - *id002
+    #     - *id003
+    #     - *id004
+    #     - *id005
+    #     - *id006
+    #     -   PATH: /usr/lib/ccache:$PATH
+    #     cmake-parameters:
+    #     - "-DCMAKE_BUILD_TYPE=Release"
+    #     - "-DCMAKE_INSTALL_PREFIX=/usr"
+    #     - "-DBUILD_TESTS=OFF"
+    #     - "-DBUILD_EXAMPLES=OFF"
+    #     - "-DBUILD_PLAYERS=OFF"
+    #     - "-DBUILD_QT5OPENGL=ON"
+    #     - "-DBUILD_QML=OFF"
+    #     - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+    #     stage:
+    #     - etc/
+    #     - usr/
+    #     - "-usr/lib/$CRAFT_ARCH_TRIPLET/libtiff.so.5.5.0"
+    #     - "-usr/share/doc/libtiff5/changelog.Debian.gz"
     # opencv:
     #     after:
     #     - kde-neon
@@ -176,7 +176,6 @@ parts:
     marble:
         after:
         - kde-neon
-        - qtav
         source: https://invent.kde.org/education/marble.git
         source-tag: v22.12.3
         source-type: git
@@ -240,10 +239,9 @@ parts:
     digikam:
         after:
         - kde-neon
-        - qtav
         - marble
         # - opencv
-        source: http://download.kde.org/stable/digikam/7.10.0/digiKam-7.10.0.tar.xz
+        source: http://download.kde.org/stable/digikam/8.0.0/digiKam-8.0.0.tar.xz
         plugin: cmake
         build-packages:
         - appstream
@@ -276,6 +274,7 @@ parts:
         - libxml2-dev
         - libglib2.0-dev
         - liblqr-1-0-dev
+        - libqtav-dev
         stage-packages:
         - libexif12
         - libgphoto2-6
@@ -291,6 +290,7 @@ parts:
         - libwlocate0
         - libshp2
         - libx265-199
+        - libqtav1
         build-environment: *id007
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
