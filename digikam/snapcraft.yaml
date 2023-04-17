@@ -275,6 +275,7 @@ parts:
         - libglib2.0-dev
         - liblqr-1-0-dev
         - libqtav-dev
+        - libqt5networkauth5-dev
         stage-packages:
         - libexif12
         - libgphoto2-6
@@ -291,6 +292,7 @@ parts:
         - libshp2
         - libx265-199
         - libqtav1
+        - libqt5networkauth5
         build-environment: *id007
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
