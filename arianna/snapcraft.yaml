@@ -83,9 +83,23 @@ parts:
             ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         - &id006
             SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
+    qtconf:
+        plugin: nil
+        override-build: |
+            mkdir -p $CRAFT_PART_INSTALL/usr/bin
+            cat <<EOF > $CRAFT_PART_INSTALL/usr/bin/qt.conf
+            [Paths]
+            Prefix = ../../
+            LibraryExecutables = usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec
+            Plugins = usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins
+            Qml2Imports = usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
+            Translations = usr/share/qt5/translations
+            Data = usr/share/qt5
+            EOF
     arianna:
         after:
         - kde-neon
+        - qtconf
         parse-info:
         - usr/share/metainfo/org.kde.arianna.appdata.xml
         source: http://download.kde.org/stable/arianna/arianna-1.0.0.tar.xz
