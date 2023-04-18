@@ -13,7 +13,7 @@ assumes:
 - snapd2.43
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
-    KDEV_CLANG_BUILTIN_DIR: "$SNAP/usr/lib/llvm-11/lib/clang/11.0.0/include"
+    KDEV_CLANG_BUILTIN_DIR: "$SNAP/usr/lib/llvm-14/lib/clang/14.0.0/include"
     QTWEBENGINEPROCESS_PATH: "$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
     XDG_DATA_DIRS: "$XDG_DATA_DIRS:$SNAP/usr/share"
     XDG_CONFIG_DIRS: "$XDG_CONFIG_DIRS:$SNAP/etc/xdg"
@@ -120,8 +120,8 @@ parts:
         - libapr1
         - libaprutil1
         - libastyle3
-        - libclang1-11
-        - libclang-11-dev
+        - libclang1-14
+        - libclang-14-dev
         - libkasten4controllers0
         - libkasten4core0
         - libkasten4gui0
@@ -186,6 +186,7 @@ parts:
         - libkf5windowsystem5
         - libkf5xmlgui5
         - libqt5webkit5
+        - clang-14
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
         source: http://download.kde.org/stable/release-service/22.12.3/src/kdevelop-22.12.3.tar.xz
