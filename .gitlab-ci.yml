@@ -463,6 +463,9 @@ kmag:
 kmahjongg:
   extends: .prepone-extension-update
 
+kmail:
+  extends: .prepone-extension-update
+
 kmines:
   extends: .prepone-extension-update
 
