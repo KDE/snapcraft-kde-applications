@@ -91,6 +91,9 @@ parts:
         - libkf5doctools-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
+        - kirigami2-dev
+        stage-packages:
+        - libkf5kirigami2-5
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
