@@ -526,6 +526,9 @@ konversation:
 kopete:
   extends: .prepone-extension-update
 
+korganizer:
+  extends: .prepone-extension-update
+
 kpat:
   extends: .prepone-extension-update
 
