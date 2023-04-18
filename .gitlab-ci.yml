@@ -538,6 +538,9 @@ krdc:
 kreversi:
   extends: .prepone-extension-update
 
+krfb:
+  extends: .prepone-extension-update
+
 krita:
   extends: .prepone-extension-update
 
