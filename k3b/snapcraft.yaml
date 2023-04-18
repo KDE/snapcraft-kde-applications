@@ -103,6 +103,9 @@ parts:
         - libkf5doctools-dev
         - libsamplerate0-dev
         - libkf5cddb-dev
+        stage-packages:
+        - libkf5cddb5
+        - libsamplerate0
         source: http://download.kde.org/stable/release-service/22.12.3/src/k3b-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
