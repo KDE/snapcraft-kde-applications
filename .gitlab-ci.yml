@@ -523,6 +523,9 @@ kontrast:
 konversation:
   extends: .prepone-extension-update
 
+kopete:
+  extends: .prepone-extension-update
+
 kpat:
   extends: .prepone-extension-update
 
