@@ -37,6 +37,9 @@ parts:
         build-packages:
         - cmake
         - extra-cmake-modules
+        - qtbase5-dev
+        stage-packages:
+        - libqt5core5a
         source: http://download.kde.org/stable/release-service/22.12.3/src/konsole-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
