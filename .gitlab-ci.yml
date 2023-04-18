@@ -517,6 +517,9 @@ konquest:
 kontact:
   extends: .prepone-extension-update
 
+kontrast:
+  extends: .prepone-extension-update
+
 konversation:
   extends: .prepone-extension-update
 
