@@ -70,7 +70,7 @@ parts:
         - libkf5dbusaddons5
         - libkf5i18n5
         - libkf5iconthemes5
-        - libkf5kio5
+        - libkf5kiocore5
         - kio
         - libkf5newstuffcore5
         - libkf5notifications5
