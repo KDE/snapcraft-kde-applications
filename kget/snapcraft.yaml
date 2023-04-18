@@ -96,6 +96,7 @@ parts:
         build-packages:
         - libkf5doctools-dev
         - libboost-dev
+        - libgpgme-dev
         source: http://download.kde.org/stable/release-service/22.12.3/src/libktorrent-22.12.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
