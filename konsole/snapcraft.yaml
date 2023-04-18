@@ -39,6 +39,7 @@ parts:
         - extra-cmake-modules
         source: http://download.kde.org/stable/release-service/22.12.3/src/konsole-22.12.3.tar.xz
         cmake-parameters:
+        - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_TESTING=OFF"
