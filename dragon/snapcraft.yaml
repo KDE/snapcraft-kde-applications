@@ -42,7 +42,7 @@ plugs:
     kf5-5-104-qt-5-15-8-core22:
         content: kf5-5-104-qt-5-15-8-core22-all
         interface: content
-        default-provider: kf5-5-104-qt-5-15-8-core22:kf5-5-104-qt-5-15-8-core22
+        default-provider: kf5-5-104-qt-5-15-8-core22
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
@@ -124,10 +124,6 @@ parts:
         - oxygen-sounds
         - kio
         - shared-mime-info
-        build-snaps:
-        - kf5-5-104-qt-5-15-8-core22-sdk
-        stage-snaps:
-        - kf5-5-104-qt-5-15-8-core22
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
