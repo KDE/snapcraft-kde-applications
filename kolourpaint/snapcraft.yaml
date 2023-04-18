@@ -5,6 +5,7 @@ grade: stable
 base: core22
 adopt-info: kolourpaint
 version: 22.12.3
+icon: snap/gui/icon.png
 apps:
     kolourpaint:
         # extensions:
