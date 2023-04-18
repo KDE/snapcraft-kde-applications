@@ -565,6 +565,9 @@ kspaceduel:
 ksquares:
   extends: .prepone-extension-update
 
+ksystemlog:
+  extends: .prepone-extension-update
+
 kstars:
   extends: .prepone-extension-update
 
