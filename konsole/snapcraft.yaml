@@ -36,6 +36,7 @@ parts:
         plugin: cmake
         build-packages:
         - cmake
+        - extra-cmke-modules
         source: http://download.kde.org/stable/release-service/22.12.3/src/konsole-22.12.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
