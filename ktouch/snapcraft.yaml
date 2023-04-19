@@ -11,6 +11,7 @@ apps:
         # - kde-neon
         common-id: org.kde.ktouch.desktop
         command: usr/bin/ktouch
+        plugs:
         - desktop
         - desktop-legacy
         - opengl
