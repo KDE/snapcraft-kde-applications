@@ -144,6 +144,6 @@ parts:
         override-prime:  |
             set -eux
             find $CRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
-            find $CRAFT_PRIME/usr/share -type d -empty -delete
+            find $CRAFT_PRIME/usr/share -type d -empty -delete | /bin/true
             # # Unused libraries found by linter
 
