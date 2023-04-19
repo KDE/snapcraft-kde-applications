@@ -97,7 +97,7 @@ parts:
             SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
     ksnakeduel:
         after:
-        kde-neon
+        - kde-neon
         parse-info:
         - usr/share/metainfo/org.kde.ksnakeduel.appdata.xml
         plugin: cmake
