@@ -158,6 +158,7 @@ parts:
         - kross
         - libgeoip1
         - geoip-bin
+        - geoip-database
         - libtag1v5
         - kio
         source: http://download.kde.org/stable/release-service/22.12.2/src/ktorrent-22.12.2.tar.xz
