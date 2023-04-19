@@ -1,4 +1,4 @@
-qa# This pipeline needs two secret variables:
+# This pipeline needs two secret variables:
 #
 # LAUNCHPAD_CREDENTIALS: 
 #   Type: File
