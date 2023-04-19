@@ -95,6 +95,8 @@ parts:
         - &id006
             SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
     kronometer:
+        parse-info:
+        - usr/share/metainfo/org.kde.kronometer.appdata.xml
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
