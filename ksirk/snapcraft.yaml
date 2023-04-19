@@ -115,6 +115,7 @@ parts:
         - libasound2-data
         - libasound2-plugins
         - libkf5kdegames7
+        - libkf5kdegamesprivate7
         - phonon4qt5
         - gstreamer1.0-alsa
         - gstreamer1.0-pulseaudio
