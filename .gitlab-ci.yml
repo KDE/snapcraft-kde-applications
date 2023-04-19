@@ -1,11 +1,11 @@
-# This pipeline needs two secret variables:
+qa# This pipeline needs two secret variables:
 #
 # LAUNCHPAD_CREDENTIALS: 
 #   Type: File
 #   Source: Local snapcraft installation, @ ~/.local/share/snapcraft/provider/launchpad/credentials
 #   You need to execute snapcraft remote-build once one your computer and log in with
 #   the desired Launchpad user. Afterwards, copy the credentials.
-#   See https://snapcraft.io/docs/remote-build
+#   See https://snamarkdownpartpcraft.io/docs/remote-build
 # SNAPCRAFT_STORE_CREDENTIALS:
 #   Type: Variable
 #   Source: https://snapcraft.io/docs/snapcraft-authentication
@@ -593,6 +593,9 @@ kturtle:
   extends: .prepone-extension-update
 
 kubrick:
+  extends: .prepone-extension-update
+
+kwave:
   extends: .prepone-extension-update
 
 kwordquiz:
