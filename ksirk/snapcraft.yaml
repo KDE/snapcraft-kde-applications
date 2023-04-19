@@ -19,6 +19,8 @@ apps:
         - x11
         - audio-playback
         - unity7
+        - network
+        - network-bind
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -106,11 +108,13 @@ parts:
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         - libkf5doctools-dev
+        - libkf5kdegames-dev
         stage-packages:
         - zlib1g
         - libqca-qt5-2
         - libasound2-data
         - libasound2-plugins
+        - libkf5kdegames7
         - phonon4qt5
         - gstreamer1.0-alsa
         - gstreamer1.0-pulseaudio
