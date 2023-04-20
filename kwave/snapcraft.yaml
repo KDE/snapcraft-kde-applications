@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kwave
-version: 22.12.3
+version: 23.04.0
 apps:
     kwave:
         # extensions:
@@ -104,7 +104,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/22.12.3/src/kwave-22.12.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.0/src/kwave-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
