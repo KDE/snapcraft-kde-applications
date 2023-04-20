@@ -673,6 +673,9 @@ step:
 subtitlecomposer:
   extends: .prepone-extension-update
 
+sweeper:
+  extends: .prepone-extension-update
+
 symboleditor:
   extends: .prepone-extension-update
 
