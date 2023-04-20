@@ -110,8 +110,12 @@ parts:
         - libqt5networkauth5-dev
         - libkf5doctools-dev
         - libkf5prison-dev
+        - libkf5purpose-dev
         stage-packages:
         - libkf5prison5
+        - libkf5purpose5
+        - qml-module-org-kde-purpose
+        - libkf5purpose-bin
         source: http://download.kde.org/stable/ruqola/ruqola-1.9.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
