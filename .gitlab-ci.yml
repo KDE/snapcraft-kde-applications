@@ -607,6 +607,9 @@ labplot:
 lokalize:
   extends: .prepone-extension-update
 
+lskat:
+  extends: .prepone-extension-update
+
 massif-visualizer:
   extends: .prepone-extension-update
 
