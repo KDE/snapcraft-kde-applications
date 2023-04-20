@@ -5,11 +5,11 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: lokalize
-version: 22.12.3
+version: 23.04.0
 apps:
     lokalize:
-        extensions:
-        - kde-neon
+        # extensions:
+        # - kde-neon
         common-id: org.kde.lokalize.desktop
         desktop: usr/share/applications/org.kde.lokalize.desktop
         command: usr/bin/lokalize
@@ -74,7 +74,7 @@ package-repositories:
     suites:
     - jammy
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: http://origin.archive.neon.kde.org/user
+    url: https://origin.archive.neon.kde.org/tmp/user-snaps
     key-server: keyserver.ubuntu.com
 parts:
     kde-neon:
@@ -115,7 +115,7 @@ parts:
         - sonnet-plugins
         - translate-toolkit
         - poxml
-        source: http://download.kde.org/stable/release-service/22.12.3/src/lokalize-22.12.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.0/src/lokalize-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -147,8 +147,6 @@ parts:
         - kde-neon
         - lokalize
         plugin: nil
-        build-snaps:
-        - kf5-5-104-qt-5-15-8-core22-sdk
         override-prime:  |
             set -eux
             # find $CRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
