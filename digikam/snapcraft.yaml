@@ -165,6 +165,49 @@ parts:
         - libqtav1
         - libqt5networkauth5
         - libmarblewidget-qt5-28
+        - libxerces-c3.2
+        - liburiparser1
+        - libsz2
+        - libsuperlu5
+        - libspatialite7
+        - librttopo1
+        - libqhull-r8.0
+        - libprotobuf32
+        - libproj22
+        - libpoppler118
+        - libopencv-ml405
+        - libopencv-imgproc405
+        - libopencv-imgcodecs405
+        - libopencv-dnn405
+        - libopencv-core405
+        - libodbcinst2
+        - libnetcdf19
+        - libkmlengine1
+        - libkmldom
+        - libkmlbase1
+        - libhdf5-103
+        - libhdf5-hl-100
+        - libgif7
+        - libgeotiff5
+        - libgeos-c1v5
+        - libgeos3.11.1
+        - libgeotiff5
+        - libgdcm3.0
+        - libfyba0
+        - libfreexl1
+        - libfftw3-single3
+        - libcharls2
+        - libcfitsio9
+        - libblosc1
+        - libarpack2
+        - libaec0
+        - libmagickwand-6.q16-6
+        - libmagickcore-6.q16-6
+        - libmagick++-6.q16-8
+        - libimath-2-5-25
+        - libogdi4.1
+        - libgdal30
+        - libarmadillo10
         build-environment: &id007
         - *id001
         - *id002
