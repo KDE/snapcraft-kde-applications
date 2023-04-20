@@ -72,7 +72,7 @@ package-repositories:
     suites:
     - jammy
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: http://origin.archive.neon.kde.org/user
+    url: https://origin.archive.neon.kde.org/tmp/user-snaps
     key-server: keyserver.ubuntu.com
 parts:
     kde-neon:
@@ -104,6 +104,9 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
+        - libaudiofile-dev
+        stage-packages:
+        - libaudiofile1
         source: http://download.kde.org/stable/release-service/23.04.0/src/kwave-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
