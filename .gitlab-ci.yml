@@ -685,6 +685,9 @@ umbrello:
 yakuake:
   extends: .prepone-extension-update
 
+zanshin:
+  extends: .prepone-extension-update
+
 kjournald:
   extends: .prepone-extension-update
 
