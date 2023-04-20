@@ -173,49 +173,49 @@ parts:
     #     - *id006
     #     prime:
     #     - "-include"
-    marble:
-        after:
-        - kde-neon
-        source: https://invent.kde.org/education/marble.git
-        source-tag: v22.12.3
-        source-type: git
-        plugin: cmake
-        build-packages:
-        - cmake
-        - docbook-xml
-        - docbook-xsl
-        build-environment: &id007
-        - *id001
-        - *id002
-        - *id003
-        - *id004
-        - *id005
-        - *id006
-        -   PATH: /usr/lib/ccache:$PATH
-        stage-packages:
-        - libiw30
-        - libshp2
-        - libwlocate0
-        cmake-parameters:
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DENABLE_TESTING=OFF"
-        - "-DBUILD_TESTING=OFF"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
-        - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
-        # - "-DKDE_INSTALL_USE_QT_SYS_PATHS=TRUE"
-        # - "-DCMAKE_BUILD_TYPE=Release"
-        # - "-DCMAKE_INSTALL_PREFIX=/usr"
-        # - "-DWITH_KF5=TRUE"
-        # - "-DWITH_DESIGNER_PLUGIN=OFF"
-        # - "-DBUILD_MARBLE_TESTS=OFF"
-        # - "-DBUILD_MARBLE_TOOLS=OFF"
-        # - "-DBUILD_MARBLE_EXAMPLES=OFF"
-        # - "-DBUILD_MARBLE_APPS=OFF"
-        # - "-DBUILD_WITH_DBUS=ON"
-        # - "-DBUILD_TESTING=OFF"
-        # - "-DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
-        # - "-Wno-dev"
+    # marble:
+    #     after:
+    #     - kde-neon
+    #     source: https://invent.kde.org/education/marble.git
+    #     source-tag: v22.12.3
+    #     source-type: git
+    #     plugin: cmake
+    #     build-packages:
+    #     - cmake
+    #     - docbook-xml
+    #     - docbook-xsl
+    #     build-environment: &id007
+    #     - *id001
+    #     - *id002
+    #     - *id003
+    #     - *id004
+    #     - *id005
+    #     - *id006
+    #     -   PATH: /usr/lib/ccache:$PATH
+    #     stage-packages:
+    #     - libiw30
+    #     - libshp2
+    #     - libwlocate0
+    #     cmake-parameters:
+    #     - "-DCMAKE_INSTALL_PREFIX=/usr"
+    #     - "-DCMAKE_BUILD_TYPE=Release"
+    #     - "-DENABLE_TESTING=OFF"
+    #     - "-DBUILD_TESTING=OFF"
+    #     - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+    #     - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
+    #     # - "-DKDE_INSTALL_USE_QT_SYS_PATHS=TRUE"
+    #     # - "-DCMAKE_BUILD_TYPE=Release"
+    #     # - "-DCMAKE_INSTALL_PREFIX=/usr"
+    #     # - "-DWITH_KF5=TRUE"
+    #     # - "-DWITH_DESIGNER_PLUGIN=OFF"
+    #     # - "-DBUILD_MARBLE_TESTS=OFF"
+    #     # - "-DBUILD_MARBLE_TOOLS=OFF"
+    #     # - "-DBUILD_MARBLE_EXAMPLES=OFF"
+    #     # - "-DBUILD_MARBLE_APPS=OFF"
+    #     # - "-DBUILD_WITH_DBUS=ON"
+    #     # - "-DBUILD_TESTING=OFF"
+    #     # - "-DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+    #     # - "-Wno-dev"
     # lensfun:
     #     after:
     #     - kde-neon
@@ -239,7 +239,7 @@ parts:
     digikam:
         after:
         - kde-neon
-        - marble
+        # - marble
         # - opencv
         source: http://download.kde.org/stable/digikam/8.0.0/digiKam-8.0.0.tar.xz
         plugin: cmake
@@ -276,6 +276,7 @@ parts:
         - liblqr-1-0-dev
         - libqtav-dev
         - libqt5networkauth5-dev
+        - libmarble-dev
         stage-packages:
         - libexif12
         - libgphoto2-6
@@ -293,7 +294,14 @@ parts:
         - libx265-199
         - libqtav1
         - libqt5networkauth5
-        build-environment: *id007
+        - libmarblewidget-qt5-28
+        build-environment: &id007
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        - *id005
+        - *id006
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -316,7 +324,8 @@ parts:
         - "-DENABLE_QWEBENGINE=ON"
         - "-DOpenCV_DIR=$CRAFT_STAGE/usr/share/OpenCV"
         - "-DENABLE_FACESENGINE_DNN=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"'
+        - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
         - "-Wno-dev"
         parse-info:
         - usr/share/metainfo/org.kde.digikam.appdata.xml
