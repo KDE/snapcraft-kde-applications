@@ -53,10 +53,6 @@ hooks:
 layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
-    "/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib":
-        bind: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib"
-    "/usr/share/alsa":
-        bind: "$SNAP/usr/share/alsa"
 slots:
     session-dbus-interface:
         interface: dbus

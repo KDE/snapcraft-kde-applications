@@ -1,6 +1,6 @@
 ---
 name: neochat
-base: core20
+base: core22
 adopt-info: neochat
 grade: stable
 confinement: strict
