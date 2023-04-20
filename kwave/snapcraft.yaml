@@ -106,7 +106,9 @@ parts:
         - libkf5doctools-dev
         - libaudiofile-dev
         - libsamplerate0-dev
+        - libasound2-dev
         stage-packages:
+        - libasound2
         - libaudiofile1
         - libsamplerate0
         source: http://download.kde.org/stable/release-service/23.04.0/src/kwave-23.04.0.tar.xz
