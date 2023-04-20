@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kolourpaint
-version: 22.12.3
+version: 23.04.0
 icon: $CRAFT_PROJECT_DIR/snap/gui/logo.png
 apps:
     kolourpaint:
@@ -108,7 +108,7 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
-        source: http://download.kde.org/stable/release-service/22.12.3/src/kolourpaint-22.12.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.0/src/kolourpaint-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -135,6 +135,13 @@ parts:
         - *id004
         - *id005
         - *id006
+        override-build: |
+            craftctl default
+
+            sed -i "${CRAFT_PART_INSTALL}/usr/share/applications/org.kde.kolourpaint.desktop" -e 's|Icon=kolourpaint$|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/kolourpaint.svg|'
+
+            cd "${CRAFT_PART_INSTALL}/usr/share/icons/hicolor/scalable/apps"
+            gzip -d -c kolourpaint.svgz > kolourpaint.svg
     cleanup:
         after:
         - kde-neon
