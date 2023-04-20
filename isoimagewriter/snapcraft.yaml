@@ -5,7 +5,7 @@ base: core22
 adopt-info: isoimagewriter
 grade: stable
 confinement: strict
-version: 0.9.2
+version: 1.0.0
 apps:
     isoimagewriter:
         # extensions:
@@ -99,7 +99,7 @@ parts:
     isoimagewriter:
         after:
         - kde-neon
-        source: https://download.kde.org/unstable/isoimagewriter/0.9.2/isoimagewriter-0.9.2.tar.xz
+        source: https://download.kde.org/unstable/isoimagewriter/1.0.0/isoimagewriter-1.0.0.tar.xz
         plugin: cmake
         build-packages:
         - cmake
