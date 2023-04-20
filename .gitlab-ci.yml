@@ -682,6 +682,9 @@ symboleditor:
 umbrello:
   extends: .prepone-extension-update
 
+yakuake:
+  extends: .prepone-extension-update
+
 kjournald:
   extends: .prepone-extension-update
 
