@@ -610,6 +610,9 @@ lokalize:
 lskat:
   extends: .prepone-extension-update
 
+marble:
+  extends: .prepone-extension-update
+
 massif-visualizer:
   extends: .prepone-extension-update
 
