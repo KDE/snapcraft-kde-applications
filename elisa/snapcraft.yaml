@@ -5,7 +5,7 @@ base: core22
 confinement: strict
 grade: stable
 adopt-info: elisa
-version: 22.12.3
+version: 23.04.0
 apps:
     elisa:
         # extensions:
@@ -69,7 +69,7 @@ package-repositories:
     suites:
     - jammy
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: http://origin.archive.neon.kde.org/user
+    url: https://origin.archive.neon.kde.org/tmp/user-snaps
     key-server: keyserver.ubuntu.com
 parts:
     kde-neon:
@@ -108,7 +108,7 @@ parts:
         - gstreamer1.0-plugins-good
         - gstreamer1.0-plugins-base
         - gstreamer1.0-plugins-bad
-        source: http://download.kde.org/stable/release-service/22.12.3/src/elisa-22.12.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.0/src/elisa-23.04.0.tar.xz
         plugin: cmake
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
