@@ -658,6 +658,9 @@ ruqola:
 skanlite:
   extends: .prepone-extension-update
 
+skanpage:
+  extends: .prepone-extension-update
+
 skrooge:
   extends: .prepone-extension-update
 
