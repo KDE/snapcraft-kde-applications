@@ -40,15 +40,15 @@ plugs:
         interface: content
         target: $SNAP/data-dir/sounds
         default-provider: gtk-common-themes
-    kf5-5-104-qt-5-15-8-core22:
-        content: kf5-5-104-qt-5-15-8-core22-all
+    kf5-5-105-qt-5-15-9-core22:
+        content: kf5-5-105-qt-5-15-9-core22-all
         interface: content
-        default-provider: kf5-5-104-qt-5-15-8-core22
+        default-provider: kf5-5-105-qt-5-15-9-core22
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     QML2_IMPORT_PATH: "$QML2_IMPORT_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qml:/$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$SNAP/usr/lib/x86_64-linux-gnu/qt5/qml/org/kde/kirigami.2"
-    LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/elisa/:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/blas:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/liblapack"
+    LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/elisa/:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/blas:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/lapack"
     GST_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
@@ -77,7 +77,7 @@ package-repositories:
     suites:
     - jammy
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: https://origin.archive.neon.kde.org/tmp/user-snaps
+    url: https://archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
     kde-neon:
@@ -85,22 +85,22 @@ parts:
         source-type: local
         plugin: make
         make-parameters:
-        - PLATFORM_PLUG=kf5-5-104-qt-5-15-8-core22
+        - PLATFORM_PLUG=kf5-5-105-qt-5-15-9-core22
         build-snaps:
-        - kf5-5-104-qt-5-15-8-core22-sdk
+        - kf5-5-105-qt-5-15-9-core22-sdk
         build-environment:
         - &id001
-            PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/bin${PATH:+:$PATH}
+            PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin${PATH:+:$PATH}
         - &id002
-            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
         - &id003
-            LD_LIBRARY_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+            LD_LIBRARY_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
         - &id004
-            PKG_CONFIG_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
+            PKG_CONFIG_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
         - &id005
-            ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
+            ACLOCAL_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         - &id006
-            CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
+            CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-105-qt-5-15-9-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
     elisa:
         after:
         - kde-neon
@@ -127,7 +127,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         stage:
         - "-usr/lib/*/libharfbuzz.so*"
         prime:
@@ -200,54 +200,72 @@ parts:
         plugin: nil
         override-prime: |
             set -eux
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libEGL_mesa.so.0.0.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libFLAC.so.8.3.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libGLX_mesa.so.0.0.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libGLdispatch.so.0.0.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libIexMath-2_5.so.25.0.6'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libIlmImfUtil-2_5.so.25.0.6'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libX11.so.6.4.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libXau.so.6.0.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libXdmcp.so.6.0.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libXext.so.6.4.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libXi.so.6.1.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libasyncns.so.0.3.1'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libcaca++.so.0.99.19'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libdconf.so.1.0.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libfaad_drm.so.2.0.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libflite_cmu_grapheme_lang.so.2.2'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libflite_cmu_grapheme_lex.so.2.2'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libflite_cmu_indic_lex.so.2.2'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libflite_cmu_time_awb.so.2.2'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libfontconfig.so.1.12.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libgraphite2.so.3.2.1'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libgstcheck-1.0.so.0.2003.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libgstcontroller-1.0.so.0.2003.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libgstinsertbin-1.0.so.0.2003.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libgstplayer-1.0.so.0.2003.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libgsttranscoder-1.0.so.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libicui18n.so.70.1'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libicuio.so.70.1'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libicutest.so.70.1'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libicuuc.so.70.1'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libjacknet.so.0.1.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libjackserver.so.0.1.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libmpeg2convert.so.0.0.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libogg.so.0.8.5'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libopus.so.0.8.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/liborc-test-0.4.so.0.32.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libpulse.so.0.24.1'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libEGL_mesa.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libFLAC.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libGLX_mesa.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libGLdispatch.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libIexMath-2_5.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libIlmImfUtil-2_5.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libX11.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libXau.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libXdmcp.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libXext.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libXi.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libasyncns.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libcaca++.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libdconf.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libfaad_drm.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libflite_cmu_grapheme_lang.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libflite_cmu_grapheme_lex.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libflite_cmu_indic_lex.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libflite_cmu_time_awb.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libfontconfig.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libgraphite2.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libgstcheck-1.0.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libgstcontroller-1.0.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libgstinsertbin-1.0.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libgstplayer-1.0.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libgsttranscoder-1.0.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libicui18n.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libicuio.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libicutest.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libicuuc.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libjacknet.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libjackserver.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libmpeg2convert.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libogg.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libopus.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/liborc-test-0.4.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libpulse.so.*'
             rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libsmime3.so'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libsndfile.so.1.0.31'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libsphinxad.so.3.0.0'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libsndfile.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libsphinxad.so.*'
             rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libssl3.so'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-coredump.so.0.0.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-ptrace.so.0.0.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libvorbis.so.0.4.9'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libvorbisenc.so.2.0.12'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libwayland-client.so.0.21.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libwayland-cursor.so.0.21.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libxcb.so.1.1.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libxkbcommon.so.0.0.0'
-            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libzvbi-chains.so.0.0.0'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-coredump.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-ptrace.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libvorbis.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libvorbisenc.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libwayland-client.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libwayland-cursor.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libxcb.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libxkbcommon.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libzvbi-chains.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libKF5Completion.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libKF5JobWidgets.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libKF5Solid.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libQt5Xml.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libflite_cmu_indic_lang.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libgamin-1.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libgstplay-1.0.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libicutu.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libimobiledevice-1.0.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libperl.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libplist-2.0.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libpolkit-qt5-agent-1.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libpolkit-qt5-gui-1.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-aarch64.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libusbmuxd-2.0.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libxcb-dri2.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libxcb-glx.so.*'
+            rm 'usr/lib/$CRAFT_ARCH_TRIPLET/libxcb-present.so.*'
 
