@@ -111,6 +111,7 @@ parts:
         - kio
         - git-all
         - openssh-client
+        - ksshaskpass
         source: https://invent.kde.org/sdk/kommit/-/archive/master/kommit-master.tar.gz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
