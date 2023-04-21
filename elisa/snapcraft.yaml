@@ -237,10 +237,8 @@ parts:
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libopus.so.*
             rm usr/lib/$CRAFT_ARCH_TRIPLET/liborc-test-0.4.so.*
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libpulse.so.*
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libsmime3.so'
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libsndfile.so.*
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libsphinxad.so.*
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libssl3.so'
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-coredump.so.*
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-ptrace.so.*
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libvorbis.so.*
