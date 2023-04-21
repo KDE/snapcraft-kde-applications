@@ -26,8 +26,6 @@ apps:
         command-chain:
         - snap/command-chain/desktop-launch
     cvsservice5:
-        before:
-        - cervisia
         desktop: usr/share/kservices5/org.kde.cvsservice5.desktop
         command: usr/bin/cvsservice5
         daemon: simple
