@@ -134,15 +134,48 @@ parts:
         - "-usr/libexec"
         - "-usr/lib/*/cmake"
         - "-usr/include"
-        - "-usr/share/ECM/*"
+        - "-usr/share/ECM"
         - "-usr/share/pkgconfig"
         - "-usr/share/doc"
         - "-usr/share/doc-base"
-        - "-usr/share/man/*"
+        - "-usr/share/man"
         - "-usr/share/qlogging-categories5"
         - "-usr/share/icons/breeze-dark*"
         - "-usr/bin/X11"
         - "-usr/bin/fc*"
+        - -usr/bin/corelist
+        - -usr/bin/perlbug
+        - -usr/bin/prove
+        - -usr/bin/cpan
+        - -usr/bin/perldoc
+        - -usr/bin/ptar
+        - -usr/bin/cpan5.*
+        - -usr/bin/perlivp
+        - -usr/bin/ptardiff
+        - -usr/bin/perlthanks
+        - -usr/bin/ptargrep
+        - -usr/bin/enc2xs
+        - -usr/bin/piconv
+        - -usr/bin/session-migration
+        - -usr/bin/encguess
+        - -usr/bin/pl2pm
+        - -usr/bin/shasum
+        - -usr/bin/h2ph
+        - -usr/bin/pod2html
+        - -usr/bin/splain
+        - -usr/bin/h2xs
+        - -usr/bin/pod2man
+        - -usr/bin/streamzip
+        - -usr/bin/instmodsh
+        - -usr/bin/pod2text
+        - -usr/bin/json_pp
+        - -usr/bin/pod2usage
+        - -usr/bin/xsubpp
+        - -usr/bin/libnetcfg
+        - -usr/bin/podchecker
+        - -usr/bin/zipdetails
+        - -usr/bin/perl5.*
+        - -usr/bin/preparetips5
         - "-usr/lib/X11"
         - "-usr/lib/sasl2"
         - "-usr/lib/systemd"
