@@ -100,6 +100,8 @@ parts:
     bomber:
         after:
         - kde-neon
+        parse-info:
+        - usr/share/metainfo/org.kde.bomber.appdata.xml
         plugin: cmake
         source: http://download.kde.org/stable/release-service/23.04.0/src/bomber-23.04.0.tar.xz
         build-packages:
