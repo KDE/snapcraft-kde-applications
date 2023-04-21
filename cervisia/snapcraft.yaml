@@ -23,17 +23,17 @@ apps:
         - removable-media
         - network
         - network-bind
+        command-chain:
+        - snap/command-chain/desktop-launch
     cvsservice5:
         before:
         - cervisia
-        desktop: usr/share/applications/org.kde.cvsservice5.desktop
+        desktop: usr/share/kservices5/org.kde.cvsservice5.desktop
         command: usr/bin/cvsservice5
         daemon: simple
         plugs:
         - network
         - network-bind
-        command-chain:
-        - snap/command-chain/desktop-launch
 assumes:
 - snapd2.43
 compression: lzo
@@ -67,7 +67,7 @@ layout:
 slots:
     session-dbus-interface:
         interface: dbus
-        name: org.kde.cervisia5.repository
+        name: org.kde.cervisia5
         bus: session
 package-repositories:
 -   type: apt
