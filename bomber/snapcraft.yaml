@@ -145,3 +145,17 @@ parts:
         override-prime:  |
             set -eux
             # # Unused libraries found by linter
+            rm usr/lib/$CRAFT_ARCH_TRIPLET/libFLAC.so.*
+            rm usr/lib/$CRAFT_ARCH_TRIPLET/libX11.so.*
+            rm usr/lib/$CRAFT_ARCH_TRIPLET/libXau.so.*
+            rm usr/lib/$CRAFT_ARCH_TRIPLET/libXdmcp.so.*
+            rm usr/lib/$CRAFT_ARCH_TRIPLET/libasound.so.*
+            rm usr/lib/$CRAFT_ARCH_TRIPLET/libjacknet.so.*
+            rm usr/lib/$CRAFT_ARCH_TRIPLET/libjackserver.so.*
+            rm usr/lib/$CRAFT_ARCH_TRIPLET/libogg.so.*
+            rm usr/lib/$CRAFT_ARCH_TRIPLET/libopus.so.*
+            rm usr/lib/$CRAFT_ARCH_TRIPLET/libpulse-simple.so.*
+            rm usr/lib/$CRAFT_ARCH_TRIPLET/libsndfile.so.*
+            rm usr/lib/$CRAFT_ARCH_TRIPLET/libvorbis.so.*
+            rm usr/lib/$CRAFT_ARCH_TRIPLET/libvorbisenc.so.*
+            rm usr/lib/$CRAFT_ARCH_TRIPLET/libxcb.so.*
