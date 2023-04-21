@@ -116,6 +116,8 @@ parts:
         - gstreamer1.0-plugins-good
         - gstreamer1.0-plugins-base
         - gstreamer1.0-plugins-bad
+        - libkf5kirigami2-5
+        - qml-module-org-kde-kirigami2
         source: http://download.kde.org/stable/release-service/23.04.0/src/elisa-23.04.0.tar.xz
         plugin: cmake
         cmake-parameters:
