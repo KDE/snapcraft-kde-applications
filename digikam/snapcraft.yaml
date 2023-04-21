@@ -64,7 +64,7 @@ layout:
         symlink: $SNAP/usr/share/marble
     /usr/share/qt5:
         symlink: $SNAP/kf5/usr/share/qt5
-    /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/alsa-lib:
+    /usr/lib/$CRAFT_ARCH_TRIPLET/alsa-lib:
         symlink: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/alsa-lib
     /usr/share/alsa:
         symlink: $SNAP/usr/share/alsa
