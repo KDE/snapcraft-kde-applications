@@ -191,7 +191,6 @@ parts:
         - libgeotiff5
         - libgeos-c1v5
         - libgeos3.11.1
-        - libgeotiff5
         - libgdcm3.0
         - libfyba0
         - libfreexl1
