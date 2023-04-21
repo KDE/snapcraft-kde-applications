@@ -175,11 +175,11 @@ parts:
         - libprotobuf32
         - libproj22
         - libpoppler118
-        - libopencv-ml405
-        - libopencv-imgproc405
-        - libopencv-imgcodecs405
-        - libopencv-dnn405
-        - libopencv-core405
+        - libopencv-ml4.5d
+        - libopencv-imgproc4.5d
+        - libopencv-imgcodecs4.5d
+        - libopencv-dnn4.5d
+        - libopencv-core4.5d
         - libodbcinst2
         - libnetcdf19
         - libkmlengine1
