@@ -60,7 +60,7 @@ layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
     /usr/share/qt5:
-        bind: $SNAP/usr/share/qt5
+        bind: $SNAP/kf5/usr/share/qt5
 slots:
     session-dbus-interface:
         interface: dbus
