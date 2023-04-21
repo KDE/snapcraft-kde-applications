@@ -172,7 +172,7 @@ parts:
         - libspatialite7
         - librttopo1
         - libqhull-r8.0
-        - libprotobuf32
+        - libprotobuf23
         - libproj22
         - libpoppler118
         - libopencv-ml4.5d
