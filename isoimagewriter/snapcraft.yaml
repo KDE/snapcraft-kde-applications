@@ -99,7 +99,7 @@ parts:
     isoimagewriter:
         after:
         - kde-neon
-        source: https://download.kde.org/unstable/isoimagewriter/1.0.0/isoimagewriter-1.0.0.tar.xz
+        source: https://download.kde.org/stable/isoimagewriter/1.0.0/isoimagewriter-1.0.0.tar.xz
         plugin: cmake
         build-packages:
         - cmake
