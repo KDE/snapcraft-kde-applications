@@ -110,6 +110,7 @@ parts:
         stage-packages:
         - kio
         - git-all
+        - openssh-client
         source: https://invent.kde.org/sdk/kommit/-/archive/master/kommit-master.tar.gz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
