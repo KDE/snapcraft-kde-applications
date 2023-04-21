@@ -183,7 +183,7 @@ parts:
         - libodbcinst2
         - libnetcdf19
         - libkmlengine1
-        - libkmldom
+        - libkmldom1
         - libkmlbase1
         - libhdf5-103
         - libhdf5-hl-100
