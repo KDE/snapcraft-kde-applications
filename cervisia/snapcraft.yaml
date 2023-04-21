@@ -24,7 +24,8 @@ apps:
         - network
         - network-bind
     cvsservice5:
-        before: cervisia
+        before:
+        - cervisia
         extensions:
         - kde-neon
         desktop: usr/share/applications/org.kde.cvsservice5.desktop
