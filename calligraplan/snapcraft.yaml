@@ -115,7 +115,7 @@ parts:
         - libkf5contacts5
         - libkgantt2
         - libqca-qt5-2
-        source: https://invent.kde.org/office/calligraplan
+        source: https://invent.kde.org/office/calligraplan.git
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
