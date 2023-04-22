@@ -53,7 +53,7 @@ layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
     /usr/share/qt5:
-        bind: $SNAP/kf5/usr/share/qt5
+        bind: $SNAP/usr/share/qt5
 package-repositories:
 -   type: apt
     components:
@@ -112,10 +112,13 @@ parts:
         - kirigami2-dev
         - kirigami-addons-dev
         - libkf5qqc2desktopstyle-dev
+        - qtwebengine5-dev
         stage-packages:
         - qml-module-org-kde-qqc2desktopstyle
         - qml-module-org-kde-kirigami-addons-labs-components
         - qml-module-org-kde-quickcharts
+        - libqt5webengine5
+        - libqt5webenginecore5
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
