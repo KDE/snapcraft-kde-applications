@@ -128,6 +128,7 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
+        - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
         stage:
         - "-usr/lib/*/libharfbuzz.so*"
         prime:
@@ -182,6 +183,10 @@ parts:
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/lintian"
+        - -usr/share/apport
+        - -usr/share/GConf
+        - -usr/share/glib-2.0
+        - -usr/share/perl
         build-environment: &id007
         - *id001
         - *id002
