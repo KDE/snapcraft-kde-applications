@@ -261,7 +261,6 @@ parts:
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libplist-2.0.so.*
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libpolkit-qt5-agent-1.so.*
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libpolkit-qt5-gui-1.so.*
-            rm usr/lib/$CRAFT_ARCH_TRIPLET/libunwind-aarch64.so.*
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libusbmuxd-2.0.so.*
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libxcb-dri2.so.*
             rm usr/lib/$CRAFT_ARCH_TRIPLET/libxcb-glx.so.*
