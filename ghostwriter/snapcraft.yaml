@@ -108,6 +108,10 @@ parts:
         - qtwebengine5-dev
         - pkg-config
         stage-packages:
+        - libqt5webengine5
+        - libqt5webenginecore5
+        - libqt5webenginewidgets5
+        - libqt5webengine-data
         - pandoc
         - cmark
         - libtext-multimarkdown-perl
