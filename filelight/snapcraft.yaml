@@ -99,8 +99,10 @@ parts:
         - cmake
         - libkf5qqc2desktopstyle-dev
         - qml-module-org-kde-kirigami2
+        - qml-module-org-kde-kcoreaddons
         stage-packages:
         - qml-module-org-kde-kirigami2
+        - qml-module-org-kde-kcoreaddons
         source: http://download.kde.org/stable/release-service/23.04.0/src/filelight-23.04.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
