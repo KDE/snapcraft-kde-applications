@@ -121,6 +121,7 @@ parts:
         - libkf5doctools-dev
         - libkf5purpose-dev
         - libtiff-dev
+        - wayland-protocols
         stage-packages:
         - kio
         - libkcolorpicker0
