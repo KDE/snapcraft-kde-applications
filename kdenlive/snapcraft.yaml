@@ -187,12 +187,7 @@ parts:
         - "-DMOD_GLAXNIMATE=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         - "-DBUILD_TESTING=OFF"
-        build-environment:
-        - *id001
-        - *id002
-        - *id003
-        - *id004
-        - *id005
+        build-environment: *id007
     kdenlive:
         after:
         - kde-neon
@@ -205,6 +200,7 @@ parts:
         build-packages:
         - cmake
         - libkf5doctools-dev
+        - libkf5purpose-dev
         - librttr-dev
         - libv4l-dev
         stage-packages:
