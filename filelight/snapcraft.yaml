@@ -131,6 +131,7 @@ parts:
         - *id006
         - QT_HOST_BINS: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin
         - QML2_IMPORT_PATH: $CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
+        - PATH: $PATH:$QT_HOST_BINS
     # cleanup:
     #     after:
     #     - kalarm
