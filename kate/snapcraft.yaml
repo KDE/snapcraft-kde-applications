@@ -4,6 +4,7 @@ confinement: classic
 grade: stable
 base: core22
 adopt-info: kate
+version: 23.04.0
 apps:
     kate:
         # extensions:
@@ -91,7 +92,7 @@ parts:
         - libkf5syntaxhighlighting5
         - libkf5texteditor5
         - libqt5concurrent5
-        source: http://download.kde.org/stable/release-service/22.12.3/src/kate-22.12.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.0/src/kate-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -108,4 +109,4 @@ parts:
         - "-usr/bin/X11"
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
-version: 22.12.3
+
