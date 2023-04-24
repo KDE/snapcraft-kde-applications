@@ -204,7 +204,7 @@ parts:
         - libv4l-dev
         - libmlt++-dev
         - libmlt-dev
-        - libqt5networkauth5-dev,
+        - libqt5networkauth5-dev
         stage-packages:
         - on amd64:
             - libpsm-infinipath1
@@ -233,8 +233,9 @@ parts:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DMOD_GLAXNIMATE=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         - "-DBUILD_TESTING=OFF"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
+        - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
         build-environment: &id007
         - *id001
         - *id002
