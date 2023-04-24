@@ -180,6 +180,7 @@ parts:
         - libavdevice-dev
         - libavcodec-dev
         - libmp3lame-dev
+        - libgdk-pixbuf2.0-dev
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
