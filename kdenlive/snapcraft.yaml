@@ -122,78 +122,77 @@ parts:
         - pip
         stage:
         - "-pyvenv.cfg"
-    glaxnimate:
-        after:
-        - kde-neon
-        - python-deps
-        plugin: cmake
-        source: https://gitlab.com/mattbas/glaxnimate.git
-        source-tag: 0.5.2
-        build-packages:
-        - cmake
-        - libpython3-dev
-        - zlib1g-dev
-        - libpotrace-dev
-        - libarchive-dev
-        - libavformat-dev
-        - libswscale-dev
-        - libavcodec-dev
-        - libavutil-dev
-        cmake-parameters:
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
-        - "-DBUILD_TESTING=OFF"
-        build-environment: &id007
-        - *id001
-        - *id002
-        - *id003
-        - *id004
-        - *id005
-    mlt:
-        after:
-        - kde-neon
-        - python-deps
-        - glaxnimate
-        plugin: cmake
-        source: https://github.com/mltframework/mlt/releases/download/v7.14.0/mlt-7.14.0.tar.gz
-        build-packages:
-        - cmake
-        - libxml2-dev
-        - libmovit-dev
-        - libvorbis-dev
-        - libjack-dev
-        - libsox-dev
-        - libsdl1.2-dev
-        - libsamplerate0-dev
-        - frei0r-plugins-dev
-        - libpng-dev
-        - swig
-        - libvpx-dev
-        - libx264-dev
-        - libswscale-dev
-        - libswresample-dev
-        - libavformat-dev
-        - libpostproc-dev
-        - libavutil-dev
-        - libavfilter-dev
-        - libavdevice-dev
-        - libavcodec-dev
-        - libmp3lame-dev
-        - libgdk-pixbuf2.0-dev
-        cmake-parameters:
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DMOD_GLAXNIMATE=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
-        - "-DBUILD_TESTING=OFF"
-        build-environment: *id007
+    # glaxnimate:
+    #     after:
+    #     - kde-neon
+    #     - python-deps
+    #     plugin: cmake
+    #     source: https://gitlab.com/mattbas/glaxnimate.git
+    #     source-tag: 0.5.1
+    #     build-packages:
+    #     - cmake
+    #     - libpython3-dev
+    #     - zlib1g-dev
+    #     - libpotrace-dev
+    #     - libarchive-dev
+    #     - libavformat-dev
+    #     - libswscale-dev
+    #     - libavcodec-dev
+    #     - libavutil-dev
+    #     - qt5-image-formats-plugins
+    #     cmake-parameters:
+    #     - "-DCMAKE_INSTALL_PREFIX=/usr"
+    #     - "-DCMAKE_BUILD_TYPE=Release"
+    #     - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
+    #     - "-DBUILD_TESTING=OFF"
+    #     build-environment: &id007
+    #     - *id001
+    #     - *id002
+    #     - *id003
+    #     - *id004
+    #     - *id005
+    # mlt:
+    #     after:
+    #     - kde-neon
+    #     - python-deps
+    #     - glaxnimate
+    #     plugin: cmake
+    #     source: https://github.com/mltframework/mlt/releases/download/v7.14.0/mlt-7.14.0.tar.gz
+    #     build-packages:
+    #     - cmake
+    #     - libxml2-dev
+    #     - libmovit-dev
+    #     - libvorbis-dev
+    #     - libjack-dev
+    #     - libsox-dev
+    #     - libsdl1.2-dev
+    #     - libsamplerate0-dev
+    #     - frei0r-plugins-dev
+    #     - libpng-dev
+    #     - swig
+    #     - libvpx-dev
+    #     - libx264-dev
+    #     - libswscale-dev
+    #     - libswresample-dev
+    #     - libavformat-dev
+    #     - libpostproc-dev
+    #     - libavutil-dev
+    #     - libavfilter-dev
+    #     - libavdevice-dev
+    #     - libavcodec-dev
+    #     - libmp3lame-dev
+    #     - libgdk-pixbuf2.0-dev
+    #     cmake-parameters:
+    #     - "-DCMAKE_INSTALL_PREFIX=/usr"
+    #     - "-DCMAKE_BUILD_TYPE=Release"
+    #     - "-DMOD_GLAXNIMATE=ON"
+    #     - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
+    #     - "-DBUILD_TESTING=OFF"
+        # build-environment: *id007
     kdenlive:
         after:
         - kde-neon
         - python-deps
-        - glaxnimate
-        - mlt
         parse-info:
         - usr/share/metainfo/org.kde.kdenlive.appdata.xml
         plugin: cmake
@@ -203,6 +202,8 @@ parts:
         - libkf5purpose-dev
         - librttr-dev
         - libv4l-dev
+        - libmlt++-dev (>= 0.9.8),
+        - libmlt-dev (>= 0.9.8),
         stage-packages:
         - on amd64:
             - libpsm-infinipath1
@@ -218,6 +219,13 @@ parts:
         - libgpm2
         - kio-extras
         - mediainfo
+        - kded5
+        - kinit
+        - kio
+        - melt
+        - qml-module-qtquick-controls
+        - qml-module-qtquick-shapes
+        - qml-module-qtquick2
         source: http://download.kde.org/stable/release-service/23.04.0/src/kdenlive-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -225,7 +233,13 @@ parts:
         - "-DMOD_GLAXNIMATE=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         - "-DBUILD_TESTING=OFF"
-        build-environment: *id007
+        build-environment: &id007
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        - *id005
+        - *id006
         override-build: |
             snapcraftctl build
             sed -i "${CRAFT_PART_INSTALL}/usr/share/applications/org.kde.kdenlive.desktop" -e 's|Icon=kdenlive$|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/kdenlive.svg|'
