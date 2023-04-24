@@ -123,6 +123,7 @@ parts:
         - libtiff-dev
         - wayland-protocols
         - libwayland-dev
+        - qtbase5-private-dev
         stage-packages:
         - kio
         - libkcolorpicker0
