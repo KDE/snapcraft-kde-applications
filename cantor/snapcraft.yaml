@@ -112,6 +112,11 @@ parts:
         - libreadline8
         - libgl1
         - libglx-dev
+        - lua-any
+        - maxima
+        - octave
+        - sagemath
+        - scilab
         source: https://download.kde.org/stable/release-service/23.04.0/src/analitza-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
