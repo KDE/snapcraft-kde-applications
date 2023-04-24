@@ -122,6 +122,7 @@ parts:
         - libkf5purpose-dev
         - libtiff-dev
         - wayland-protocols
+        - libwayland-dev
         stage-packages:
         - kio
         - libkcolorpicker0
@@ -134,6 +135,7 @@ parts:
         - libkf5service5
         - denef
         - qml-module-org-kde-purpose
+        - libwayland-client0
         source: http://download.kde.org/stable/release-service/23.04.0/src/gwenview-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
