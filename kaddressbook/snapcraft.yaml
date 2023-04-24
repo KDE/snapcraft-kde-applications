@@ -98,12 +98,13 @@ parts:
         - cmake
         source: http://download.kde.org/stable/release-service/23.04.0/src/kpimtextedit-23.04.0.tar.xz
         cmake-parameters:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-105-qt-5-15-9-core22-sdk/current
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         build-environment: &id007
         - *id001
         - *id002
@@ -129,12 +130,13 @@ parts:
         plugin: cmake
         source: http://download.kde.org/stable/release-service/23.04.0/src/libkdepim-23.04.0.tar.xz
         cmake-parameters:
+        - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-105-qt-5-15-9-core22-sdk/current
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         build-environment: *id007
         prime:
         - "-usr/lib/*/cmake/*"
@@ -165,7 +167,8 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-105-qt-5-15-9-core22-sdk/current
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
+        - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
         build-environment: *id007
         prime:
         - "-usr/lib/*/cmake/*"
