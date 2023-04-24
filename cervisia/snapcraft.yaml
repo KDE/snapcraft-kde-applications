@@ -31,6 +31,11 @@ apps:
         plugs:
         - network
         - network-bind
+        slots:
+        - dbus-cvsjob
+        - dbus-cvsloginjob
+        - dbus-cvsservice
+        - dbus-repository
 assumes:
 - snapd2.43
 compression: lzo
@@ -62,9 +67,21 @@ layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
 slots:
-    session-dbus-interface:
+    dbus-cvsjob:
         interface: dbus
-        name: org.kde.cervisia5
+        name: org.kde.cervisia5.cvsjob
+        bus: session
+    dbus-cvsloginjob:
+        interface: dbus
+        name: org.kde.cervisia5.cvsloginjob
+        bus: session
+    dbus-cvsservice:
+        interface: dbus
+        name: org.kde.cervisia5.cvsservice
+        bus: session
+    dbus-repository:
+        interface: dbus
+        name: org.kde.cervisia5.repository
         bus: session
 package-repositories:
 -   type: apt
@@ -139,7 +156,7 @@ parts:
     cleanup:
         after:
         - kde-neon
-        - calligraplan
+        - cervisia
         plugin: nil
         build-snaps:
         - kf5-5-105-qt-5-15-9-core22-sdk
