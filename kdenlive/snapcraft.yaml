@@ -204,6 +204,7 @@ parts:
         - libv4l-dev
         - libmlt++-dev
         - libmlt-dev
+        - libqt5networkauth5-dev,
         stage-packages:
         - on amd64:
             - libpsm-infinipath1
@@ -226,6 +227,7 @@ parts:
         - qml-module-qtquick-controls
         - qml-module-qtquick-shapes
         - qml-module-qtquick2
+        - libqt5networkauth5
         source: http://download.kde.org/stable/release-service/23.04.0/src/kdenlive-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
