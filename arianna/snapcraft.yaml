@@ -3,7 +3,7 @@ adopt-info: arianna
 confinement: strict
 grade: stable
 base: core22
-version: 1.0.0
+version: 1.0.1
 apps:
     arianna:
         common-id: org.kde.arianna.desktop
@@ -43,6 +43,7 @@ plugs:
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     QTWEBENGINEPROCESS_PATH: "$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
+    QT_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/kf5"
 hooks:
     configure:
         plugs:
@@ -104,7 +105,7 @@ parts:
         - qtconf
         parse-info:
         - usr/share/metainfo/org.kde.arianna.appdata.xml
-        source: http://download.kde.org/stable/arianna/arianna-1.0.0.tar.xz
+        source: http://download.kde.org/stable/arianna/arianna-1.0.1.tar.xz
         plugin: cmake
         build-packages:
         - cmake
