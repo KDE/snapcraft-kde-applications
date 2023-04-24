@@ -202,8 +202,8 @@ parts:
         - libkf5purpose-dev
         - librttr-dev
         - libv4l-dev
-        - libmlt++-dev (>= 0.9.8),
-        - libmlt-dev (>= 0.9.8),
+        - libmlt++-dev
+        - libmlt-dev
         stage-packages:
         - on amd64:
             - libpsm-infinipath1
