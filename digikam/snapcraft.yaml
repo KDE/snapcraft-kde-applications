@@ -207,6 +207,7 @@ parts:
         - libogdi4.1
         - libgdal30
         - libarmadillo10
+        - libblas3
         build-environment: &id007
         - *id001
         - *id002
