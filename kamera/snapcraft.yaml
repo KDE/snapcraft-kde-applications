@@ -10,8 +10,8 @@ apps:
     kamera:
         # extensions:
         # - kde-neon
-        common-id: kamera.desktop
-        desktop: usr/share/applications/kamera.desktop
+        common-id: kcm_kamera.desktop
+        desktop: usr/share/applications/kcm_kamera.desktop
         command: usr/bin/kcmshell5 kamera
         plugs:
         - desktop
