@@ -4,6 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kdenlive
+version: 23.04.0
 apps:
     kdenlive:
         # extensions:
@@ -45,10 +46,10 @@ plugs:
         interface: content
         target: $SNAP/data-dir/sounds
         default-provider: gtk-common-themes
-    kf5-5-104-qt-5-15-8-core22:
-        content: kf5-5-104-qt-5-15-8-core22-all
+    kf5-5-105-qt-5-15-9-core22:
+        content: kf5-5-105-qt-5-15-9-core22-all
         interface: content
-        default-provider: kf5-5-104-qt-5-15-8-core22
+        default-provider: kf5-5-105-qt-5-15-9-core22
         target: $SNAP/kf5
 hooks:
     configure:
@@ -63,7 +64,7 @@ environment:
     PYTHONPYCACHEPREFIX: "$SNAP_USER_COMMON/.pycache"
     PYTHONUSERBASE: $SNAP_USER_COMMON/.local
     PIP_USER: 1
-    PYTHONPATH: "$PYTHONUSERBASE/lib/python3.8/site-packages:$SNAP/lib/python3.8/site-packages:$SNAP/usr/lib/python3/dist-packages"
+    PYTHONPATH: "$PYTHONUSERBASE/lib/python3.10/site-packages:$SNAP/lib/python3.10/site-packages:$SNAP/usr/lib/python3/dist-packages"
     MLT_REPOSITORY: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/mlt-7/"
     MLT_DATA: "$SNAP/usr/share/mlt-7/"
     MLT_ROOT_DIR: "$SNAP/usr/"
@@ -92,22 +93,22 @@ parts:
         source-type: local
         plugin: make
         make-parameters:
-        - PLATFORM_PLUG=kf5-5-104-qt-5-15-8-core22
+        - PLATFORM_PLUG=kf5-5-105-qt-5-15-9-core22
         build-snaps:
-        - kf5-5-104-qt-5-15-8-core22-sdk
+        - kf5-5-105-qt-5-15-9-core22-sdk
         build-environment:
         - &id001
-            PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/bin${PATH:+:$PATH}
+            PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin${PATH:+:$PATH}
         - &id002
-            XDG_DATA_DIRS: $SNAPCRAFT_STAGE/usr/share:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+            XDG_DATA_DIRS: $SNAPCRAFT_STAGE/usr/share:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
         - &id003
-            LD_LIBRARY_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+            LD_LIBRARY_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
         - &id004
-            PKG_CONFIG_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
+            PKG_CONFIG_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
         - &id005
-            ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
+            ACLOCAL_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         - &id006
-            SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
+            SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-105-qt-5-15-9-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
     python-deps:
         after:
         - kde-neon
@@ -141,7 +142,7 @@ parts:
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         - "-DBUILD_TESTING=OFF"
         build-environment: &id007
         - *id001
@@ -183,7 +184,7 @@ parts:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DMOD_GLAXNIMATE=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         - "-DBUILD_TESTING=OFF"
         build-environment:
         - *id001
@@ -220,12 +221,12 @@ parts:
         - libgpm2
         - kio-extras
         - mediainfo
-        source: http://download.kde.org/stable/release-service/22.12.3/src/kdenlive-22.12.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.0/src/kdenlive-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DMOD_GLAXNIMATE=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         - "-DBUILD_TESTING=OFF"
         build-environment: *id007
         override-build: |
@@ -265,4 +266,4 @@ parts:
     #         done
     #         find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
     #         find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-version: 22.12.3
+
