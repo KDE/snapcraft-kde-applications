@@ -205,6 +205,8 @@ parts:
         - libmlt++-dev
         - libmlt-dev
         - libqt5networkauth5-dev
+        - libavfilter-dev
+        - libavformat-dev
         stage-packages:
         - on amd64:
             - libpsm-infinipath1
@@ -228,6 +230,10 @@ parts:
         - qml-module-qtquick-shapes
         - qml-module-qtquick2
         - libqt5networkauth5
+        - libavfilter-extra
+        - libavfilter8
+        - libavformat59
+        - libavformat-extra
         source: http://download.kde.org/stable/release-service/23.04.0/src/kdenlive-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
