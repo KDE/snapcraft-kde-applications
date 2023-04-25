@@ -136,7 +136,7 @@ parts:
         - libserf-1-1
         - libsvn1
         - libutf8proc2
-        - llvm-11-dev
+        - llvm-14-dev
         - libksysguardformatter1
         - libprocesscore9
         - libprocessui9
