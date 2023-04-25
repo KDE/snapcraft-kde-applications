@@ -113,7 +113,7 @@ parts:
         - qml-module-qtquick-controls
         - qml-module-qtquick-dialogs
         - qml-module-qtquick-layouts
-        - qml-module-qtquick-window
+        - qml-module-qtquick-window2
         stage-packages:
         - libkf5purpose-bin
         - libkf5purpose5
@@ -130,7 +130,7 @@ parts:
         - qml-module-qtquick-controls
         - qml-module-qtquick-dialogs
         - qml-module-qtquick-layouts
-        - qml-module-qtquick-window
+        - qml-module-qtquick-window2
         source: http://download.kde.org/stable/release-service/23.04.0/src/kamoso-23.04.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
