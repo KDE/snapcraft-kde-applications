@@ -188,6 +188,7 @@ parts:
         - libkf5xmlgui5
         - libqt5webkit5
         - clang-14
+        - libpulse0
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
         source: http://download.kde.org/stable/release-service/23.04.0/src/kdevelop-23.04.0.tar.xz
