@@ -12,6 +12,7 @@ apps:
         common-id: org.kde.kgpg.desktop
         command: usr/bin/kgpg
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
@@ -96,6 +97,7 @@ parts:
         plugin: cmake
         build-packages:
         - cmake
+        - libkf5prison-dev
         source: http://download.kde.org/stable/release-service/23.04.0/src/akonadi-contacts-23.04.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
