@@ -49,7 +49,7 @@ environment:
     GST_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
-    QML2_IMPORT_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
+    QML2_IMPORT_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml"
 hooks:
     configure:
         plugs:
@@ -110,8 +110,13 @@ parts:
         - libphonon4qt5experimental-dev
         - kirigami2-dev
         - qml-module-qtgraphicaleffects
+        - qml-module-qtquick-controls
+        - qml-module-qtquick-dialogs
+        - qml-module-qtquick-layouts
+        - qml-module-qtquick-window
         stage-packages:
         - libkf5purpose-bin
+        - libkf5purpose5
         - phonon4qt5
         - libgstreamer1.0-0
         - gstreamer1.0-alsa
@@ -122,6 +127,10 @@ parts:
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
         - qml-module-qtgraphicaleffects
+        - qml-module-qtquick-controls
+        - qml-module-qtquick-dialogs
+        - qml-module-qtquick-layouts
+        - qml-module-qtquick-window
         source: http://download.kde.org/stable/release-service/23.04.0/src/kamoso-23.04.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
@@ -139,7 +148,7 @@ parts:
         - *id004
         - *id005
         - *id006
-        - QML2_IMPORT_PATH: $CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
+        - QML2_IMPORT_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml"
         - QT_HOST_BINS: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin
         prime:
         - "-usr/lib/*/cmake/*"
