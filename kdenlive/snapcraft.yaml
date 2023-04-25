@@ -233,7 +233,7 @@ parts:
         - libqt5networkauth5
         - libavfilter-extra
         - libavfilter8
-        - libavformat59
+        - libavformat58
         - libavformat-extra
         source: http://download.kde.org/stable/release-service/23.04.0/src/kdenlive-23.04.0.tar.xz
         cmake-parameters:
