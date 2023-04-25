@@ -83,6 +83,7 @@ parts:
         - libkf5coreaddons-dev
         - libkf5syntaxhighlighting-dev
         - libkf5crash-dev
+        - libkf5newstuff-dev
         stage-packages:
         - libgit2-1.1
         - konsole-kpart
@@ -92,6 +93,9 @@ parts:
         - libkf5syntaxhighlighting5
         - libkf5texteditor5
         - libqt5concurrent5
+        - libkf5newstuffcore5
+        - libkf5newstuffwidgets5
+        - qml-module-org-kde-newstuff
         source: http://download.kde.org/stable/release-service/23.04.0/src/kate-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
