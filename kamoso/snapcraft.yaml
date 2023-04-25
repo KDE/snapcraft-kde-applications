@@ -114,6 +114,7 @@ parts:
         - qml-module-qtquick-dialogs
         - qml-module-qtquick-layouts
         - qml-module-qtquick-window2
+        - pkg-config
         stage-packages:
         - libkf5purpose-bin
         - libkf5purpose5
