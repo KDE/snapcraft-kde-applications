@@ -73,6 +73,7 @@ environment:
     MLT_PROFILES_PATH: "$SNAP/usr/share/mlt-7/profiles/"
     MLT_PRESETS_PATH: "$SNAP/usr/share/mlt-7/presets/"
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
+    LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/usr/lib:/$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/blas:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/lapack"
 slots:
     session-dbus-interface:
         interface: dbus
