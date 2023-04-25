@@ -100,6 +100,9 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
+        - libarchive-dev
+        stage-packages:
+        - libarchive13
         source: http://download.kde.org/stable/release-service/23.04.0/src/kbackup-23.04.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
