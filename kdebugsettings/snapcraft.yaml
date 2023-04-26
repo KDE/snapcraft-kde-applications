@@ -44,7 +44,7 @@ plugs:
         interface: content
         default-provider: kf5-5-105-qt-5-15-9-core22
         target: $SNAP/kf5
-    qtlogging:
+    dot-config-qtproject-qtlogging-ini:
         interface: personal-files
         write:
             - $HOME/.config/QtProject/qtlogging.ini
