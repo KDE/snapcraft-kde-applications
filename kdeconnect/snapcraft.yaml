@@ -109,6 +109,7 @@ parts:
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         - libtag1-dev
+        - libqca-qt5-2-dev
         stage-packages:
         - phonon4qt5
         - libgstreamer1.0-0
@@ -118,6 +119,7 @@ parts:
         - gstreamer1.0-plugins-bad
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
+        - libqca-qt5-2
         source: https://download.kde.org/stable/release-service/23.04.0/src/kdeconnect-kde-23.04.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
