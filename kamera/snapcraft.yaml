@@ -12,7 +12,7 @@ apps:
         # - kde-neon
         common-id: kcm_kamera.desktop
         desktop: usr/share/applications/kcm_kamera.desktop
-        command: usr/bin/kcmshell5 kamera
+        command: usr/bin/kcmshell5 kcm_kamera
         plugs:
         - desktop
         - desktop-legacy
