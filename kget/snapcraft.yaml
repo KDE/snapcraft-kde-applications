@@ -44,6 +44,7 @@ plugs:
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
+    QT_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/kf5"
 hooks:
     configure:
         plugs:
@@ -138,6 +139,13 @@ parts:
         - libgpgmepp-dev
         - libgmp-dev
         - libgcrypt20-dev
+        - libmms-dev
+        stage-packages:
+        - libgcrypt20
+        - libmms0
+        - libgmp10
+        - libgpgmepp6
+        - libqca-qt5-2
         source: http://download.kde.org/stable/release-service/23.04.0/src/kget-23.04.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
@@ -146,7 +154,8 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-105-qt-5-15-9-core22-sdk/current
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
+        - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
         build-environment: *id007
         prime:
         - "-usr/lib/*/cmake/*"
