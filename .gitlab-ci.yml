@@ -36,7 +36,7 @@ variables:
 # You can overwrite all variables, as shown above, by adding a 'variables' dict to the job.
 # See the examples below for common use cases.
 .snap:
-  image: kdeorg/snap-builder:latest
+  image: invent-registry.kde.org/sysadmin/ci-images/snap-builder:latest
   tags:
     - Snap
   stage: build
