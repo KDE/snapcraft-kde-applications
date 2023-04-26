@@ -23,6 +23,7 @@ environment:
     KDEV_UNSET_ENV: LIBGL_DRIVERS_PATH
     QML2_IMPORT_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
     PATH: $PATH:$SNAP/usr/bin
+    LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/usr/lib:/$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio"
 layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
