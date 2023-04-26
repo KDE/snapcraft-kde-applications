@@ -140,3 +140,10 @@ parts:
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-etc/alsa/conf.d/99-pulse.conf"
+    # cleanup:
+    #     after:
+    #     - kamera
+    #     plugin: nil
+    #     override-prime: |
+    #         set -eux
+    #         #Unused libraries found by linter
