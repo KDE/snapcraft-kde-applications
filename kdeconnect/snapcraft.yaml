@@ -118,7 +118,7 @@ parts:
         - gstreamer1.0-plugins-bad
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kdeconnect-23.04.0.tar.xz
+        source: https://download.kde.org/stable/release-service/23.04.0/src/kdeconnect-kde-23.04.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
