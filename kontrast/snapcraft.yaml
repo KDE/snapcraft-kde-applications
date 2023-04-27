@@ -9,6 +9,7 @@ apps:
         common-id: org.kde.kontrast.desktop
         command: usr/bin/kontrast
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
