@@ -97,14 +97,14 @@ parts:
         - libkf5doctools-dev
         - libxcb-render0-dev
         - libxcb-shape0-dev
-        - libxcb-fixes0-dev
+        - libxcb-xfixes0-dev
         - libxcb-shm0-dev
         - libxcb-damage0-dev
         - libxcb-image0-dev
         stage-packages:
         - libxcb-render0
         - libxcb-shape0
-        - libxcb-fixes0
+        - libxcb-xfixes0
         - libxcb-shm0-dev
         - libxcb-damage0-dev
         - libxcb-image0-dev
