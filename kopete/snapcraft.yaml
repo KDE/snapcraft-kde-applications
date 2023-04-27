@@ -93,10 +93,12 @@ parts:
         - cmake
         - libkf5doctools-dev
         - libkf5contacts-dev
+        - libkf5identitymanagement-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         stage-packages:
         - libkf5contacts5
+        - libkf5identitymanagement5
         - phonon4qt5
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
