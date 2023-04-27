@@ -89,6 +89,7 @@ parts:
         - libqt5multimedia5
         - libicu70
         - gettext
+        - breeze-icon-theme
         source: http://download.kde.org/stable/release-service/23.04.0/src/konsole-23.04.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
