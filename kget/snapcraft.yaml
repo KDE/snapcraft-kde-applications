@@ -146,6 +146,7 @@ parts:
         - libgmp10
         - libgpgmepp6
         - libqca-qt5-2
+        - ca-certificates
         source: http://download.kde.org/stable/release-service/23.04.0/src/kget-23.04.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
