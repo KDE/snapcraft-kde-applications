@@ -4,7 +4,7 @@ adopt-info: ktorrent
 confinement: strict
 grade: stable
 base: core22
-version: 22.12.3
+version: 23.04.0
 apps:
     ktorrent:
         # extensions:
@@ -85,20 +85,20 @@ parts:
         make-parameters:
         - PLATFORM_PLUG=kf5-5-104-qt-5-15-8-core22
         build-snaps:
-        - kf5-5-104-qt-5-15-8-core22-sdk
+        - kf5-5-105-qt-5-15-9-core22-sdk
         build-environment:
         - &id001
-            PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/bin${PATH:+:$PATH}
+            PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin${PATH:+:$PATH}
         - &id002
-            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
         - &id003
-            LD_LIBRARY_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+            LD_LIBRARY_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
         - &id004
-            PKG_CONFIG_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
+            PKG_CONFIG_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
         - &id005
-            ACLOCAL_PATH: /snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
+            ACLOCAL_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         - &id006
-            SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-104-qt-5-15-8-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
+            SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-105-qt-5-15-9-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
     libktorrent:
         after:
         - kde-neon
@@ -112,14 +112,14 @@ parts:
         - libgcrypt20
         - libgmp10
         - libgmpxx4ldbl
-        source: https://download.kde.org/stable/release-service/22.12.3/src/libktorrent-22.12.3.tar.xz
+        source: https://download.kde.org/stable/release-service/23.04.0/src/libktorrent-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DBUILD_TESTING=OFF"
         - "-DENABLE_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
         prime:
         - "-usr/lib/*/cmake/*"
@@ -168,7 +168,7 @@ parts:
         - "-DBUILD_TESTING=OFF"
         - "-DENABLE_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-104-qt-5-15-8-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
         prime:
         - "-usr/lib/*/cmake/*"
@@ -188,7 +188,7 @@ parts:
         - ktorrent
         plugin: nil
         build-snaps:
-        - kf5-5-104-qt-5-15-8-core22-sdk
+        - kf5-5-105-qt-5-15-9-core22-sdk
         override-prime:  |
             set -eux
             # find $CRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
