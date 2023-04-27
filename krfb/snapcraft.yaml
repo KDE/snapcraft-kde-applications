@@ -95,6 +95,19 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
+        - libxcb-render0-dev
+        - libxcb-shape0-dev
+        - libxcb-fixes0-dev
+        - libxcb-shm0-dev
+        - libxcb-damage0-dev
+        - libxcb-image0-dev
+        stage-packages:
+        - libxcb-render0
+        - libxcb-shape0
+        - libxcb-fixes0
+        - libxcb-shm0-dev
+        - libxcb-damage0-dev
+        - libxcb-image0-dev
         source: http://download.kde.org/stable/release-service/23.04.0/src/krfb-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
