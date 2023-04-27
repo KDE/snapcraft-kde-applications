@@ -117,7 +117,7 @@ parts:
         plugin: cmake
         build-packages:
         - cmake
-        source: https://invent.kde.org/libraries/ktextaddons
+        source: https://invent.kde.org/libraries/ktextaddons.git
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
