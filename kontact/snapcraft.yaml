@@ -117,6 +117,8 @@ parts:
         plugin: cmake
         build-packages:
         - cmake
+        - qtkeychain-qt5-dev
+        - libqt5texttospeech5-dev
         source: https://invent.kde.org/libraries/ktextaddons.git
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -205,6 +207,8 @@ parts:
         - korganizer
         - sasl2-bin
         - libsasl2-modules
+        - libqt5keychain1
+        - libqt5texttospeech5
         source: http://download.kde.org/stable/release-service/23.04.0/src/kontact-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
