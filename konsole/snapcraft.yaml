@@ -42,6 +42,7 @@ parts:
         - libkf5config-dev
         - libkf5coreaddons-dev
         - libkf5crash-dev
+        - libkf5doctools-dev
         - libkf5globalaccel-dev
         - libkf5guiaddons-dev
         - libkf5dbusaddons-dev
