@@ -51,6 +51,7 @@ environment:
     GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
     QTWEBENGINEPROCESS_PATH: "$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
     QT_LIBRARY_DATA: $SNAP/kf5/usr/share/qt5/resources
+    XDG_DATA_DIRS: $XDG_DATA_DIRS:$SNAP/usr/share
 hooks:
     configure:
         plugs:
