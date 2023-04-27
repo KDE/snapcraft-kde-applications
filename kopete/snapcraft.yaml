@@ -9,6 +9,7 @@ apps:
         common-id: org.kde.kopete.desktop
         command: usr/bin/kopete
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
@@ -91,8 +92,12 @@ parts:
         build-packages:
         - cmake
         - libkf5doctools-dev
+        - libkf5contacts-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
+        stage-packages:
+        - libkf5contacts5
+        - phonon4qt5
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
