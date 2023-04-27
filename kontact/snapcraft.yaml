@@ -129,7 +129,6 @@ parts:
         - libkf5eventviews-dev
         - libkf5grantleetheme-dev
         - libkf5kdelibs4support-dev
-        - libkf5kdepimdbusinterfaces-dev
         - libkf5khtml-dev
         - libkf5kontactinterface-dev
         - libkf5libkdepim-dev
