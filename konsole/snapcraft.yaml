@@ -58,6 +58,7 @@ parts:
         - libkf5widgetsaddons-dev
         - libkf5windowsystem-dev
         - libkf5xmlgui-dev
+        - qtmultimedia5-dev
         stage-packages:
         - libqt5core5a
         - libkf5bookmarks5
@@ -82,6 +83,7 @@ parts:
         - libkf5widgetsaddons5
         - libkf5windowsystem5
         - libkf5xmlgui5
+        - libqt5multimedia5
         source: http://download.kde.org/stable/release-service/23.04.0/src/konsole-23.04.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
