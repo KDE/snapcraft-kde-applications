@@ -89,6 +89,8 @@ parts:
         plugin: cmake
         build-packages:
         - cmake
+        - qtkeychain-qt5-dev
+        - libqt5texttospeech5-dev
         source: https://invent.kde.org/libraries/ktextaddons.git
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
