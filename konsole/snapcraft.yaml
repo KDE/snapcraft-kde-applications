@@ -59,6 +59,7 @@ parts:
         - libkf5windowsystem-dev
         - libkf5xmlgui-dev
         - qtmultimedia5-dev
+        - gettext
         stage-packages:
         - libqt5core5a
         - libkf5bookmarks5
