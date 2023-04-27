@@ -85,7 +85,6 @@ parts:
     ktextaddons:
         after:
         - kde-neon
-        - psmisc
         plugin: cmake
         build-packages:
         - cmake
