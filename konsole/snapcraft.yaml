@@ -38,6 +38,7 @@ parts:
         - cmake
         - extra-cmake-modules
         - qtbase5-dev
+        - libicu-dev
         - libkf5bookmarks-dev
         - libkf5config-dev
         - libkf5coreaddons-dev
@@ -86,6 +87,8 @@ parts:
         - libkf5windowsystem5
         - libkf5xmlgui5
         - libqt5multimedia5
+        - libicu70
+        - gettext
         source: http://download.kde.org/stable/release-service/23.04.0/src/konsole-23.04.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
