@@ -117,7 +117,7 @@ parts:
         - libxcb-image0-dev
         - libkpipewire5
         - libvncserver1
-        - piprwire-audio
+        - pipewire-audio
         - libepoxy0
         - libgbm1
         - plasma-wayland-protocols
