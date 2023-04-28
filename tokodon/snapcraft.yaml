@@ -49,6 +49,7 @@ environment:
     GST_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
+    QML2_IMPORT_PATH: "$QML2_IMPORT_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qml:/$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml/org/kde/kirigami.2"
 hooks:
     configure:
         plugs:
@@ -108,6 +109,10 @@ parts:
         - libkf5doctools-dev
         - kirigami-addons-dev
         - libkf5qqc2desktopstyle-dev
+        - qml-module-org-kde-kitemmodels
+        - qml-module-org-kde-sonnet
+        - qtkeychain-qt5-dev
+        - kirigami2-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -127,6 +132,11 @@ parts:
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
         - qml-module-org-kde-qqc2desktopstyle
+        - qml-module-org-kde-kitemmodels
+        - qml-module-org-kde-sonnet
+        - libqt5keychain1
+        - libkf5kirigami2-5
+        - qml-module-org-kde-kirigami2
         source: http://download.kde.org/stable/release-service/23.04.0/src/tokodon-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -154,6 +164,8 @@ parts:
         - *id004
         - *id005
         - *id006
+        - QML2_IMPORT_PATH: $CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
+
     cleanup:
         after:
         - kde-neon
