@@ -104,6 +104,10 @@ parts:
         - libxcb-image0-dev
         - libkpipewire-dev
         - libvncserver-dev
+        - libpipewire-0.3-dev
+        - libepoxy-dev
+        - libgbm-dev
+        - plasma-wayland-protocols
         stage-packages:
         - libxcb-render0
         - libxcb-shape0
@@ -113,6 +117,10 @@ parts:
         - libxcb-image0-dev
         - libkpipewire5
         - libvncserver1
+        - piprwire-audio
+        - libepoxy0
+        - libgbm1
+        - plasma-wayland-protocols
         source: http://download.kde.org/stable/release-service/23.04.0/src/krfb-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
