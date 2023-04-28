@@ -126,6 +126,7 @@ parts:
         build-packages:
         - qtmultimedia5-dev
         - libolm-dev
+        - libssl-dev
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
