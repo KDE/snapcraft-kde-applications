@@ -65,7 +65,7 @@ package-repositories:
     suites:
     - jammy
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: https://origin.archive.neon.kde.org/tmp/user-snaps
+    url: https://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
     kde-neon:
@@ -101,7 +101,7 @@ parts:
         - libboost-dev
         - libkf5doctools-dev
         stage-packages:
-        - libboost1.71-dev
+        - libboost1.74-dev
         - libxml2
         - libxslt1.1
         source: http://download.kde.org/stable/release-service/23.04.0/src/umbrello-23.04.0.tar.xz
