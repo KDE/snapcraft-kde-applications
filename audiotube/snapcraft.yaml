@@ -111,6 +111,7 @@ parts:
         - ytmusicapi
         - kirigami-addons-dev
         - yt-dlp
+        - python3-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -134,6 +135,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
         - yt-dlp
+        - futuresql
         source: http://download.kde.org/stable/release-service/23.04.0/src/audiotube-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
