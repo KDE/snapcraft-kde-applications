@@ -24,7 +24,7 @@ variables:
   #Which core base to build on
   CORE: core22
   #KF5 and QT5 version
-  VERSION: 5-104-qt-5-15-8
+  VERSION: 5-105-qt-5-15-9
 
 # Use this template by extending it.
 #
@@ -231,9 +231,6 @@ artikulate:
 
 blinken:
   extends: .prepone-extension-update
-
-blinken-core22:
-  extends: .prepone-extension-update-core22
 
 bomber:
   extends: .prepone-extension-update
@@ -677,6 +674,9 @@ sweeper:
   extends: .prepone-extension-update
 
 symboleditor:
+  extends: .prepone-extension-update
+
+tokodon:
   extends: .prepone-extension-update
 
 umbrello:
