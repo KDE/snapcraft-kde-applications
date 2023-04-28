@@ -153,6 +153,7 @@ parts:
         - libkf5qqc2desktopstyle-dev
         - qcoro-qt5-dev
         - kirigami-addons-dev
+        - reuse
         stage-packages:
         - libcmark0.30.2
         - qml-module-org-kde-kquickimageeditor
@@ -165,6 +166,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-treeview
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
+        - reuse
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
