@@ -237,3 +237,4 @@ parts:
         - *id005
         - *id006
         - LDFLAGS: "-L$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET"
+        - CFLAGS: "-I$CRAFT_STAGE/usr/include/KF5"
