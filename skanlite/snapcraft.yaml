@@ -46,6 +46,7 @@ plugs:
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
+    LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET"
 hooks:
     configure:
         plugs:
@@ -177,6 +178,7 @@ parts:
         - *id005
         - *id006
         - LDFLAGS: "-L$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET"
+        - LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/:$CRAFT_STAGE/usr/lib/"
         source: http://download.kde.org/stable/release-service/23.04.0/src/skanlite-23.04.0.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
