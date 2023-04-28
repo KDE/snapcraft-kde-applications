@@ -107,6 +107,7 @@ parts:
         build-packages:
         - libkf5doctools-dev
         - kirigami-addons-dev
+        - libkf5qqc2desktopstyle-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -125,6 +126,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-labs-mobileform
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
+        - qml-module-org-kde-qqc2desktopstyle
         source: http://download.kde.org/stable/release-service/23.04.0/src/tokodon-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
