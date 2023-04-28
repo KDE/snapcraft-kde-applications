@@ -115,7 +115,7 @@ parts:
         - libkf5doctools-dev
         stage-packages:
         - libglib2.0-0
-        - libgsl23
+        - libgsl27
         - libgslcblas0
         - libkf5khtml5
         - libqalculate20
