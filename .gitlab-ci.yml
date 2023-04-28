@@ -229,6 +229,9 @@ ark:
 artikulate:
   extends: .prepone-extension-update
 
+audiotube:
+  extends: .prepone-extension-update
+
 blinken:
   extends: .prepone-extension-update
 
