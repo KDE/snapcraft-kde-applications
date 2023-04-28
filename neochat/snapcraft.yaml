@@ -120,6 +120,8 @@ parts:
         source-tag: 0.7.1
         source-depth: 0
         plugin: cmake
+        build-packages:
+        - qtmultimedia5-dev
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
