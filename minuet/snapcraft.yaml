@@ -110,9 +110,9 @@ parts:
         - libkf5doctools-dev
         stage-packages:
         - libasound2
-        - libdrumstick-alsa1
-        - libdrumstick-file1
-        - libdrumstick-rt1
+        - libdrumstick-alsa2
+        - libdrumstick-file2
+        - libdrumstick-rt2
         - libfluidsynth2
         - libasound2-data
         - libasound2-plugins
