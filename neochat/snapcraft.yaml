@@ -152,10 +152,17 @@ parts:
         - kquickimageeditor-dev
         - libkf5qqc2desktopstyle-dev
         - qcoro-qt5-dev
+        - kirigami-addons-dev
         stage-packages:
         - libcmark0.30.2
         - qml-module-org-kde-kquickimageeditor
         - qml-module-org-kde-qqc2desktopstyle
+        - kirigami-addons-data
+        - qml-module-org-kde-kirigami-addons-datetime
+        - qml-module-org-kde-kirigami-addons-labs-components
+        - qml-module-org-kde-kirigami-addons-labs-mobileform
+        - qml-module-org-kde-kirigami-addons-sounds
+        - qml-module-org-kde-kirigami-addons-treeview
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
