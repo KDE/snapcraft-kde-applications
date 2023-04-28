@@ -18,6 +18,7 @@ compression: lzo
 environment:
     XDG_DATA_DIRS: "$XDG_DATA_DIRS:$SNAP/usr/share"
     XDG_CONFIG_DIRS: "$XDG_CONFIG_DIRS:$SNAP/etc/xdg"
+    LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/elisa/:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio"
 layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
