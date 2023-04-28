@@ -107,6 +107,7 @@ parts:
         build-packages:
         - libkf5doctools-dev
         - kirigami2-dev
+        - libkf5syndication-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -121,6 +122,7 @@ parts:
         - oxygen-sounds
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
+        - libkf5syndication5
         source: http://download.kde.org/stable/release-service/23.04.0/src/kasts-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
