@@ -177,6 +177,9 @@ parts:
         - libkf5purpose5
         - libkf5purpose-bin
         - qml-module-org-kde-purpose
+        - libsane-hpaio
+        - libsane1
+        - sane-airscan
         build-environment:
         - *id001
         - *id002
