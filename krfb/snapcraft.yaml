@@ -108,6 +108,7 @@ parts:
         - libepoxy-dev
         - libgbm-dev
         - plasma-wayland-protocols
+        - libwayland-dev
         stage-packages:
         - libxcb-render0
         - libxcb-shape0
@@ -122,6 +123,7 @@ parts:
         - libepoxy0
         - libgbm1
         - plasma-wayland-protocols
+        - libwayland-client0
         source: http://download.kde.org/stable/release-service/23.04.0/src/krfb-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
