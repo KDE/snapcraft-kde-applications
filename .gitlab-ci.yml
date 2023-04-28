@@ -325,6 +325,9 @@ kanagram:
 kapman:
   extends: .prepone-extension-update
 
+kasts:
+  extends: .prepone-extension-update
+
 kate:
   extends: .prepone-extension-update
 
