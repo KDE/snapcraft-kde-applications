@@ -12,6 +12,7 @@ apps:
         common-id: org.kde.krfb
         command: usr/bin/krfb
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
@@ -102,6 +103,7 @@ parts:
         - libxcb-damage0-dev
         - libxcb-image0-dev
         - libkpipewire-dev
+        - libvncserver-dev
         stage-packages:
         - libxcb-render0
         - libxcb-shape0
@@ -110,6 +112,7 @@ parts:
         - libxcb-damage0-dev
         - libxcb-image0-dev
         - libkpipewire5
+        - libvncserver1
         source: http://download.kde.org/stable/release-service/23.04.0/src/krfb-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
