@@ -108,6 +108,7 @@ parts:
         - libkf5doctools-dev
         - kirigami2-dev
         - pybind11-dev
+        - ytmusicapi
         stage-packages:
         - libasound2
         - libasound2-data
@@ -123,6 +124,7 @@ parts:
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
         - python3-pybind11
+        - ytmusicapi
         source: http://download.kde.org/stable/release-service/23.04.0/src/audiotube-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
