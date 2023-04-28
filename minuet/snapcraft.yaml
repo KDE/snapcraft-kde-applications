@@ -113,7 +113,7 @@ parts:
         - libdrumstick-alsa2
         - libdrumstick-file2
         - libdrumstick-rt2
-        - libfluidsynth2
+        - libfluidsynth3
         - libasound2-data
         - libasound2-plugins
         - phonon4qt5
