@@ -118,8 +118,8 @@ parts:
         - libgsl27
         - libgslcblas0
         - libkf5khtml5
-        - libqalculate20
-        - libqalculate20-data
+        - libqalculate22
+        - libqalculate-data
         - kio
         - libasound2-data
         - libasound2-plugins
