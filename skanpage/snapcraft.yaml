@@ -169,6 +169,14 @@ parts:
         build-packages:
         - libpng-dev
         - libkf5doctools-dev
+        - kirigami2-dev
+        - libkf5purpose-dev
+        stage-packages:
+        - libkf5kirigami2-5
+        - qml-module-org-kde-kirigami2
+        - libkf5purpose5
+        - libkf5purpose-bin
+        - qml-module-org-kde-purpose
         build-environment:
         - *id001
         - *id002
