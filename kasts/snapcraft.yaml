@@ -108,6 +108,7 @@ parts:
         - libkf5doctools-dev
         - kirigami2-dev
         - libkf5syndication-dev
+        - kirigami-addons-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -123,6 +124,12 @@ parts:
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
         - libkf5syndication5
+        - kirigami-addons-data
+        - qml-module-org-kde-kirigami-addons-datetime
+        - qml-module-org-kde-kirigami-addons-labs-components
+        - qml-module-org-kde-kirigami-addons-labs-mobileform
+        - qml-module-org-kde-kirigami-addons-sounds
+        - qml-module-org-kde-kirigami-addons-treeview
         source: http://download.kde.org/stable/release-service/23.04.0/src/kasts-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
