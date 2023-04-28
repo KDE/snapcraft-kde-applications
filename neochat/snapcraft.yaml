@@ -125,6 +125,7 @@ parts:
         plugin: cmake
         build-packages:
         - qtmultimedia5-dev
+        - libolm-dev
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
