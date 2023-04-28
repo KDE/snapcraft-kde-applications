@@ -109,12 +109,15 @@ parts:
         - libasound2-dev
         - libpulse-dev
         - libflac-dev
+        - libflac++-dev
         stage-packages:
         - libasound2
         - libaudiofile1
         - libsamplerate0
         - libpulse0
         - libflac8
+        - libflac++10
+        - flac
         source: http://download.kde.org/stable/release-service/23.04.0/src/kwave-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
