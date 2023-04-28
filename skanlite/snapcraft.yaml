@@ -170,6 +170,7 @@ parts:
         - libpng-dev
         - libkf5doctools-dev
         build-environment:
+        - *id007
         -   LDFLAGS: "-L$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET"
         source: http://download.kde.org/stable/release-service/23.04.0/src/skanlite-23.04.0.tar.xz
         cmake-parameters:
@@ -192,13 +193,6 @@ parts:
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/lintain"
-        build-environment: &id007
-        - *id001
-        - *id002
-        - *id003
-        - *id004
-        - *id005
-        - *id006
     cleanup:
         after:
         - kde-neon
