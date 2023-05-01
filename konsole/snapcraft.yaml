@@ -64,6 +64,8 @@ parts:
         - libkf5xmlgui-dev
         - qtmultimedia5-dev
         - gettext
+        - freeglut3-dev
+        - libglu1-mesa-dev
         stage-packages:
         - libqt5core5a
         - libkf5bookmarks5
@@ -78,8 +80,10 @@ parts:
         - libkf5iconthemes5
         - libkf5kiocore5
         - kio
+        - libkf5newstuff5
         - libkf5newstuffcore5
         - libkf5notifications5
+        - libkf5newstuffwidgets5
         - libkf5notifyconfig5
         - libkf5parts5
         - libkf5pty5
@@ -89,9 +93,13 @@ parts:
         - libkf5windowsystem5
         - libkf5xmlgui5
         - libqt5multimedia5
+        - libqt5quick5
+        - libqt5qmlmodels5
         - libicu70
         - gettext
         - breeze-icon-theme
+        - freeglut3
+        - libglu1-mesa
         source: http://download.kde.org/stable/release-service/23.04.0/src/konsole-23.04.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
