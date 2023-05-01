@@ -26,6 +26,7 @@ apps:
         - removable-media
         - camera
         - audio-record
+        - cups
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
