@@ -103,6 +103,7 @@ parts:
         - usr/share/metainfo/org.kde.kwave.appdata.xml
         plugin: cmake
         build-packages:
+        - cmake
         - libkf5doctools-dev
         - libaudiofile-dev
         - libsamplerate0-dev
@@ -113,6 +114,7 @@ parts:
         - libid3-3.8.3-dev
         - libmad0-dev
         - libopus-dev
+        - libvorbis-dev
         stage-packages:
         - libasound2
         - libaudiofile1
@@ -124,6 +126,7 @@ parts:
         - libid3-tools
         - libmad0
         - libopus0
+        - libvorbis0a
         source: http://download.kde.org/stable/release-service/23.04.0/src/kwave-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
