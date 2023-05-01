@@ -114,6 +114,7 @@ parts:
         - libkf5networkmanagerqt-dev
         - pkg-config
         - libgstreamer1.0-dev
+        - libvlc-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -139,6 +140,7 @@ parts:
         - libqt5keychain1
         - libkf5networkmanagerqt6
         - libgstreamer1.0-0
+        - libvlc5
         source: http://download.kde.org/stable/release-service/23.04.0/src/kasts-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
