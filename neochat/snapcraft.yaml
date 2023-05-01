@@ -98,6 +98,8 @@ parts:
         - &id006
             SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-105-qt-5-15-9-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
     qtkeychain:
+        after:
+        - kde-neon
         source: https://github.com/frankosterfeld/qtkeychain.git
         source-tag: v0.13.2
         source-depth: 0
@@ -145,6 +147,7 @@ parts:
         source: http://download.kde.org/stable/release-service/23.04.0/src/neochat-23.04.0.tar.xz
         plugin: cmake
         build-packages:
+        - cmark
         - gcc-10
         - g++-10
         - kirigami2-dev
