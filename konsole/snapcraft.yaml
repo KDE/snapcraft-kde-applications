@@ -108,6 +108,8 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        build-attributes:
+        - enable-patchelf
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
