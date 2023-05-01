@@ -115,6 +115,7 @@ parts:
         - libmad0-dev
         - libopus-dev
         - libvorbis-dev
+        - libfftw3-dev
         stage-packages:
         - libasound2
         - libaudiofile1
@@ -127,6 +128,7 @@ parts:
         - libmad0
         - libopus0
         - libvorbis0a
+        - libfftw3-bin
         source: http://download.kde.org/stable/release-service/23.04.0/src/kwave-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
