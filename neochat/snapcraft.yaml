@@ -157,6 +157,7 @@ parts:
         - qcoro-qt5-dev
         - kirigami-addons-dev
         - reuse
+        - libkf5doctools-dev
         stage-packages:
         - libcmark0.30.2
         - qml-module-org-kde-kquickimageeditor
