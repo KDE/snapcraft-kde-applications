@@ -57,7 +57,7 @@ layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
     /usr/share/qt5:
-        bind: $SNAP/usr/share/qt5
+        bind: $SNAP/kf5/usr/share/qt5
 slots:
     session-dbus-interface:
         interface: dbus
@@ -129,6 +129,7 @@ parts:
         - *id004
         - *id005
         - *id006
+        - PKG_CONFIG_LIBDIR: $CRAFT_STAGE/usr/lib:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET
     cleanup:
         after:
         - kde-neon
