@@ -168,6 +168,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
         - libsqlite3-dev
+        - libolm-dev
         stage-packages:
         - libcmark0.30.2
         - qml-module-org-kde-kquickimageeditor
@@ -182,6 +183,7 @@ parts:
         - qml-module-org-kde-kirigami2
         - reuse
         - libsqlite3-0
+        - libolm3
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
