@@ -122,7 +122,7 @@ parts:
         - kde-neon
         - qtkeychain
         source: https://github.com/quotient-im/libQuotient.git
-        source-tag: 0.7.1
+        source-tag: 0.7.2
         source-depth: 0
         plugin: cmake
         build-packages:
@@ -213,7 +213,7 @@ parts:
     cleanup:
         after:
         - kde-neon
-        - skanlite
+        - neochat
         plugin: nil
         build-snaps:
         - kf5-5-105-qt-5-15-9-core22-sdk
