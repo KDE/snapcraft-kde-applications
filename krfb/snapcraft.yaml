@@ -1,3 +1,4 @@
+# Trigger rebuild
 ---
 name: krfb
 confinement: strict
