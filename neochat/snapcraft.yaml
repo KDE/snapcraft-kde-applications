@@ -14,7 +14,7 @@ apps:
         desktop: usr/share/applications/org.kde.neochat.desktop
         plugs:
         - home
-        - removeable-media
+        - removable-media
         - desktop
         - desktop-legacy
         - opengl
