@@ -159,6 +159,15 @@ parts:
         - reuse
         - libkf5doctools-dev
         - qtbase5-private-dev
+        - qml-module-org-kde-kquickimageeditor
+        - qml-module-org-kde-qqc2desktopstyle
+        - kirigami-addons-data
+        - qml-module-org-kde-kirigami-addons-datetime
+        - qml-module-org-kde-kirigami-addons-labs-components
+        - qml-module-org-kde-kirigami-addons-labs-mobileform
+        - qml-module-org-kde-kirigami-addons-sounds
+        - qml-module-org-kde-kirigami-addons-treeview
+        - libsqlite3-dev
         stage-packages:
         - libcmark0.30.2
         - qml-module-org-kde-kquickimageeditor
@@ -172,6 +181,7 @@ parts:
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
         - reuse
+        - libsqlite3-0
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -200,8 +210,6 @@ parts:
         - *id004
         - *id005
         - *id006
-        - CC: gcc-10
-        - CXX: g++-10
     cleanup:
         after:
         - kde-neon
