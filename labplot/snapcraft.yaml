@@ -123,7 +123,7 @@ parts:
         - libbrotli1
         - libcantorlibs28
         - libcerf1
-        - libcfitsio8
+        - libcfitsio9
         - libcurl3-gnutls
         - libgs9
         - libgssapi3-heimdal
