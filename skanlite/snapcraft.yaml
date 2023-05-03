@@ -7,9 +7,9 @@ adopt-info: skanlite
 version: 23.04.0
 apps:
     avahi-daemon:
-    command: usr/sbin/avahi-daemon
-    daemon: simple
-    plugs:
+        command: usr/sbin/avahi-daemon
+        daemon: simple
+        plugs:
         - network
         - network-bind
     skanlite:
