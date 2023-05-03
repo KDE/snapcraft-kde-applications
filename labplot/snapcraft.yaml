@@ -131,7 +131,7 @@ parts:
         - libheimbase1-heimdal
         - libheimntlm0-heimdal
         - libhx509-5-heimdal
-        - libidn11
+        - libidn12
         - libijs-0.35
         - libjbig0
         - libjbig2dec0
