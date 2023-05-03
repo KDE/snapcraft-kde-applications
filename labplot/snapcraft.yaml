@@ -138,7 +138,7 @@ parts:
         - libkrb5-26-heimdal
         - liblcms2-2
         - libldap-2.5-0
-        - libnetcdf15
+        - libnetcdf19
         - libnghttp2-14
         - libnspr4
         - libnss3
