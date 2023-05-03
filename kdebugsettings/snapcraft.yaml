@@ -48,8 +48,6 @@ plugs:
         interface: personal-files
         write:
             - $HOME/.config/QtProject/qtlogging.ini
-        read:
-            - $HOME/.config/QtProject/qtlogging.ini
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
 hooks:
