@@ -6,6 +6,12 @@ base: core22
 adopt-info: skanlite
 version: 23.04.0
 apps:
+    avahi-daemon:
+    command: usr/sbin/avahi-daemon
+    daemon: simple
+    plugs:
+        - network
+        - network-bind
     skanlite:
         # extensions:
         # - kde-neon
@@ -175,6 +181,7 @@ parts:
         - libsane-hpaio
         - libsane1
         - sane-airscan
+        - avahi-daemon
         build-environment:
         - *id001
         - *id002
