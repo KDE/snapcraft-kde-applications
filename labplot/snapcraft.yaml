@@ -113,7 +113,7 @@ parts:
         stage-packages:
         - kio
         - libkuserfeedbackwidgets1
-        - libgsl23
+        - libgsl27
         - libfftw3-double3
         - bison
         - libhdf5-103
