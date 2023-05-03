@@ -101,7 +101,7 @@ parts:
     libnm:
         after:
         - kde-neon
-        plugin: make
+        plugin: autotools
         source: https://gitlab.freedesktop.org/NetworkManager/NetworkManager.git
         source-branch: '1.40.16'
         build-environment: &id007
