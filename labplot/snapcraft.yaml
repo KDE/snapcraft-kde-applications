@@ -137,7 +137,7 @@ parts:
         - libjbig2dec0
         - libkrb5-26-heimdal
         - liblcms2-2
-        - libldap-2.4-2
+        - libldap-2.5-0
         - libnetcdf15
         - libnghttp2-14
         - libnspr4
