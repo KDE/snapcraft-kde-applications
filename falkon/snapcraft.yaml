@@ -48,6 +48,11 @@ plugs:
         interface: content
         default-provider: kf5-5-105-qt-5-15-9-core22
         target: $SNAP/kf5
+    falkon-install-cups:
+        interface: content
+        content: falkon
+        default-provider: cups
+        target: $SNAP_DATA/falkon
 hooks:
     configure:
         plugs:
@@ -116,6 +121,7 @@ parts:
         stage-packages:
         - libkf5purpose-bin
         - libkf5purpose5
+        - cups-client
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
         - -DCMAKE_BUILD_TYPE=Release
