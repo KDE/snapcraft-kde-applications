@@ -1,3 +1,4 @@
+# Trigger rebuild
 ---
 name: kwave
 confinement: strict
