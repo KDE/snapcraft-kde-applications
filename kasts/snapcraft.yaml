@@ -104,6 +104,7 @@ parts:
         plugin: autotools
         build-packages:
         - gtk-doc-tools
+        - libnss3-dev
         source: https://gitlab.freedesktop.org/NetworkManager/NetworkManager.git
         source-branch: '1.40.16'
         build-environment: &id007
