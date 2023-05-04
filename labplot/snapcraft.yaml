@@ -98,6 +98,7 @@ parts:
         plugin: cmake
         build-packages:
         - libcantorlibs-dev
+        - libkf5doctools-dev
         - libhdf5-dev
         - libgsl-dev
         - libfftw3-dev
