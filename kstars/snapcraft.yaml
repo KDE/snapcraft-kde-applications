@@ -127,7 +127,7 @@ parts:
         - xplanet
         - libcfitsio8
         - libnova-0.16-0
-        - libgsl23
+        - libgsl27
         - libindialignmentdriver1
         - libindidriver1
         - libpgsbox7
