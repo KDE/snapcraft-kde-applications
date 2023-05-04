@@ -107,6 +107,7 @@ parts:
         - libkf5kipi-dev
         - libkf5doctools-dev
         - kirigami2-dev
+        - libwayland-dev
         stage-packages:
         - kio
         - libxcb-image0
@@ -124,6 +125,7 @@ parts:
         - kded5
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
+        - libwayland-client0
         source: http://download.kde.org/stable/release-service/23.04.0/src/spectacle-23.04.0.tar.xz
         # override-stage: |
         #     craftctl default
