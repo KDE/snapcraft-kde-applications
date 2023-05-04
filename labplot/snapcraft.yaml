@@ -154,7 +154,7 @@ parts:
         - libwebp7
         - libwind0-heimdal
         - liblz4-1
-        source: https://download.kde.org/stable/labplot/2.10.0/labplot-2.10.0.tar.xz
+        source: https://download.kde.org/stable/labplot/labplot-2.10.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
