@@ -10,7 +10,7 @@ apps:
     tokodon:
         # extensions:
         # - kde-neon
-        common-id: org.kde.tokodon.desktop
+        common-id: org.kde.tokodon
         desktop: usr/share/applications/org.kde.tokodon.desktop
         command: usr/bin/tokodon
         plugs:
