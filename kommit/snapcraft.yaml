@@ -5,7 +5,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kommit
-version: 23.3.25
+version: 1.0.2
 apps:
     kommit:
         # extensions:
@@ -112,7 +112,7 @@ parts:
         - git-all
         - openssh-client
         - ksshaskpass
-        source: https://invent.kde.org/sdk/kommit/-/archive/master/kommit-master.tar.gz
+        source: https://download.kde.org/stable/stable/kommit/kommit-1.0.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
