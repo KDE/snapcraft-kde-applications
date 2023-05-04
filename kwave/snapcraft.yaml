@@ -13,6 +13,7 @@ apps:
         common-id: org.kde.kwave.desktop
         command: usr/bin/kwave
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
