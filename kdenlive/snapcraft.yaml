@@ -235,6 +235,7 @@ parts:
         - libavfilter7
         - libavformat58
         - libavformat-extra
+        - libcudart11.0
         source: http://download.kde.org/stable/release-service/23.04.0/src/kdenlive-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
