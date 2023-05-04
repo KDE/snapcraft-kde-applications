@@ -105,14 +105,14 @@ parts:
         - usr/share/metainfo/org.kde.kasts.appdata.xml
         plugin: cmake
         build-packages:
-        - kirigami2-dev,
-        - kirigami-addons-dev,
-        - libkf5syndication-dev,
-        - libqt5svg5-dev,
-        - libtag1-dev,
-        - qtkeychain-qt5-dev,
-        - qtdeclarative5-dev,
-        - qtmultimedia5-dev,
+        - kirigami2-dev
+        - kirigami-addons-dev
+        - libkf5syndication-dev
+        - libqt5svg5-dev
+        - libtag1-dev
+        - qtkeychain-qt5-dev
+        - qtdeclarative5-dev
+        - qtmultimedia5-dev
         - qtquickcontrols2-5-dev
         stage-packages:
         - libasound2
