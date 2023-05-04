@@ -139,7 +139,7 @@ parts:
         - libqt5datavisualization5
         - libraw19
         source: https://download.kde.org/stable/kstars/kstars-3.6.4.tar.xz
-         cmake-parameters:
+        cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_TESTING=OFF"
