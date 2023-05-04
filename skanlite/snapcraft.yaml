@@ -30,6 +30,7 @@ apps:
         - network
         - network-bind
         - avahi-observe
+        - hardware-observe
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
