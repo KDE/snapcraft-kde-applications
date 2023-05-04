@@ -110,7 +110,7 @@ parts:
         - libkf5syndication-dev,
         - libqt5svg5-dev,
         - libtag1-dev,
-        - qt5keychain-dev,
+        - qtkeychain-qt5-dev,
         - qtdeclarative5-dev,
         - qtmultimedia5-dev,
         - qtquickcontrols2-5-dev
