@@ -90,9 +90,16 @@ parts:
             ACLOCAL_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         - &id006
             SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-105-qt-5-15-9-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
+    patches:
+        plugin: dump
+        source: .
+        source-type: local
+        prime:
+        - ".*"
     labplot:
         after:
         - kde-neon
+        - patches
         parse-info:
         - usr/share/metainfo/org.kde.labplot2.appdata.xml
         plugin: cmake
@@ -182,6 +189,9 @@ parts:
         - *id004
         - *id005
         - *id006
+        override-pull: |
+            craftctl default
+            patch -p1 < ../../patches/src/patches/isnan_test_fix.patch
     cleanup:
         after:
         - kde-neon
