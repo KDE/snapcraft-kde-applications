@@ -68,7 +68,7 @@ package-repositories:
     suites:
     - jammy
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: https://origin.archive.neon.kde.org/tmp/user-snaps
+    url: https://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
     kde-neon:
@@ -106,11 +106,7 @@ parts:
         - libkimageannotator-dev
         - libkf5kipi-dev
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.0/src/spectacle-23.04.0.tar.xz
-        override-stage: |
-            craftctl default
-            rm $SNAPCRAFT_STAGE/usr/share/kglobalaccel/org.kde.spectacle.desktop
-            ln -s ../applications/org.kde.spectacle.desktop $CRAFT_STAGE/usr/share/kglobalaccel/org.kde.spectacle.desktop
+        - kirigami2-dev
         stage-packages:
         - kio
         - libxcb-image0
@@ -126,6 +122,13 @@ parts:
         - libkf5service5
         - libkf5globalaccel5
         - kded5
+        - libkf5kirigami2-5
+        - qml-module-org-kde-kirigami2
+        source: http://download.kde.org/stable/release-service/23.04.0/src/spectacle-23.04.0.tar.xz
+        # override-stage: |
+        #     craftctl default
+        #     rm $SNAPCRAFT_STAGE/usr/share/kglobalaccel/org.kde.spectacle.desktop
+        #     ln -s ../applications/org.kde.spectacle.desktop $CRAFT_STAGE/usr/share/kglobalaccel/org.kde.spectacle.desktop
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
