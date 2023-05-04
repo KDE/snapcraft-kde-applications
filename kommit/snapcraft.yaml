@@ -11,7 +11,7 @@ apps:
         # extensions:
         # - kde-neon
         common-id: org.kde.kommit.desktop
-        command: usr/bin/kommit
+        command: snap_connect_advise usr/bin/kommit
         plugs:
         - home
         - network
@@ -112,6 +112,7 @@ parts:
         - git-all
         - openssh-client
         - ksshaskpass
+        - kdialog
         source: https://download.kde.org/stable/stable/kommit/kommit-1.0.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
