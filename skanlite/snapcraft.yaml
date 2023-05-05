@@ -188,7 +188,7 @@ parts:
     hp-setup:
         after:
         - kde-neon
-        plugin: dump
+        plugin: nil
         stage-packages:
         - hplip
         - hpijs-ppds
