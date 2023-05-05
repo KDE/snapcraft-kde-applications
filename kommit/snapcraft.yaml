@@ -11,7 +11,7 @@ apps:
         # extensions:
         # - kde-neon
         common-id: org.kde.kommit.desktop
-        command: snap_connect_advise usr/bin/kommit
+        command: bin/snap_connect_advise usr/bin/kommit
         plugs:
         - home
         - network
