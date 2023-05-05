@@ -6,12 +6,29 @@ base: core22
 adopt-info: skanlite
 version: 23.04.0
 apps:
+    saned:
+        command: /usr/sbin/saned
+        daemon: simple
+        plugs:
+        - network
+        - network-bind
+        - hardware-observe
+        - raw-usb
     avahi-daemon:
         command: usr/sbin/avahi-daemon
         daemon: simple
         plugs:
         - network
         - network-bind
+        - hardware-observe
+    hp-setup:
+        command: usr/bin/hp-setup
+        plugs:
+        - network
+        - network-bind
+        - avahi-observe
+        - hardware-observe
+        - raw-usb
     skanlite:
         # extensions:
         # - kde-neon
@@ -31,6 +48,7 @@ apps:
         - network-bind
         - avahi-observe
         - hardware-observe
+        - raw-usb
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -167,6 +185,12 @@ parts:
         - "-usr/lib/aspell/*"
         - "-usr/share/lintain"
         build-environment: *id007
+    hp-setup:
+        after:
+        - kde-neon
+        stage-packages:
+        - hplip
+        - hpijs-ppds
     skanlite:
         parse-info:
         - usr/share/metainfo/org.kde.skanlite.appdata.xml
@@ -183,6 +207,9 @@ parts:
         - libsane1
         - sane-airscan
         - avahi-daemon
+        - sane
+        - sane-utils
+        - libsane-extras
         build-environment:
         - *id001
         - *id002
