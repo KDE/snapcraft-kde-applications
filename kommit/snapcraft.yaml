@@ -103,7 +103,7 @@ parts:
         source: snap/local/launchers
         plugin: dump
         organize:
-        '*': bin/
+            '*': bin/
     kommit:
         after:
         - kde-neon
