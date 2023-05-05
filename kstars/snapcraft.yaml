@@ -125,7 +125,7 @@ parts:
         - libstellarsolver
         - astrometry.net
         - xplanet
-        - libcfitsio8
+        - libcfitsio9
         - libnova-0.16-0
         - libgsl27
         - libindialignmentdriver1
