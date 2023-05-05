@@ -137,7 +137,7 @@ parts:
         - libglvnd0
         - libgomp1
         - libqt5datavisualization5
-        - libraw19
+        - libraw20
         source: https://download.kde.org/stable/kstars/kstars-3.6.4.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
