@@ -99,9 +99,15 @@ parts:
             ACLOCAL_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         - &id006
             SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-105-qt-5-15-9-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
+    launchers:
+        source: snap/local/launchers
+        plugin: dump
+        organize:
+        '*': bin/
     kommit:
         after:
         - kde-neon
+        - launchers
         parse-info:
         - usr/share/metainfo/org.kde.kommit.appdata.xml
         plugin: cmake
