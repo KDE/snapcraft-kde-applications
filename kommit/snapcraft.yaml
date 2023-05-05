@@ -119,7 +119,7 @@ parts:
         - openssh-client
         - ksshaskpass
         - kdialog
-        source: https://download.kde.org/stable/stable/kommit/kommit-1.0.2.tar.xz
+        source: https://download.kde.org/stable/kommit/kommit-1.0.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
