@@ -210,7 +210,6 @@ parts:
         - avahi-daemon
         - sane
         - sane-utils
-        - libsane-extras
         build-environment:
         - *id001
         - *id002
