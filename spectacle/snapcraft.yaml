@@ -134,6 +134,7 @@ parts:
         - plasma-wayland-protocols
         - libkpipewire5
         - libpipewire-0.3-0
+        - libkpipewirerecord5
         source: http://download.kde.org/stable/release-service/23.04.0/src/spectacle-23.04.0.tar.xz
         override-stage: |
             craftctl default
