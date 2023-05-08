@@ -128,8 +128,8 @@ parts:
         - libcfitsio9
         - libnova-0.16-0
         - libgsl27
-        - libindialignmentdriver1
-        - libindidriver1
+        - libindialignmentdriver2
+        - libindidriver2
         - libpgsbox7
         - libwcs7
         - libqt5keychain1
