@@ -49,6 +49,7 @@ apps:
         - avahi-observe
         - hardware-observe
         - raw-usb
+        - cups
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -192,6 +193,7 @@ parts:
         stage-packages:
         - hplip
         - hpijs-ppds
+        - python3-cups
     skanlite:
         parse-info:
         - usr/share/metainfo/org.kde.skanlite.appdata.xml
