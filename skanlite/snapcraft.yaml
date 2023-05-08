@@ -15,7 +15,7 @@ apps:
         - hardware-observe
         - raw-usb
     avahi-daemon:
-        command: usr/sbin/avahi-daemon
+        command: usr/sbin/avahi-daemon -D
         daemon: simple
         plugs:
         - network
@@ -193,6 +193,7 @@ parts:
         stage-packages:
         - hplip
         - hpijs-ppds
+        - python3
         - python3-cups
     skanlite:
         parse-info:
