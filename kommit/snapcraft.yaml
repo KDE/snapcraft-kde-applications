@@ -119,6 +119,7 @@ parts:
         - openssh-client
         - ksshaskpass
         - kdialog
+        - pinentry-qt
         source: https://download.kde.org/stable/kommit/kommit-1.0.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
