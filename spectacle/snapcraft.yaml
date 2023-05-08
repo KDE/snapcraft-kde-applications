@@ -111,6 +111,7 @@ parts:
         - plasma-wayland-protocols
         - libkpipewire-dev
         - libkf5purpose-dev
+        - wayland-scanner++
         stage-packages:
         - kio
         - libxcb-image0
