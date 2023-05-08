@@ -135,10 +135,10 @@ parts:
         - libkpipewire5
         - libpipewire-0.3-0
         source: http://download.kde.org/stable/release-service/23.04.0/src/spectacle-23.04.0.tar.xz
-        # override-stage: |
-        #     craftctl default
-        #     rm $SNAPCRAFT_STAGE/usr/share/kglobalaccel/org.kde.spectacle.desktop
-        #     ln -s ../applications/org.kde.spectacle.desktop $CRAFT_STAGE/usr/share/kglobalaccel/org.kde.spectacle.desktop
+        override-stage: |
+            craftctl default
+            rm $SNAPCRAFT_STAGE/usr/share/kglobalaccel/org.kde.spectacle.desktop
+            ln -s ../applications/org.kde.spectacle.desktop $CRAFT_STAGE/usr/share/kglobalaccel/org.kde.spectacle.desktop
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
