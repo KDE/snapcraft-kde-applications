@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: ghostwriter
-version: 23.04.1
+version: 23.04.0
 apps:
     ghostwriter:
         # extensions:
@@ -116,7 +116,7 @@ parts:
         - cmark
         - libtext-multimarkdown-perl
         source: https://invent.kde.org/office/ghostwriter.git
-        source-tag: v23.04.1
+        source-tag: v23.04.0
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
