@@ -622,6 +622,9 @@ kuiviewer:
 kwave:
   extends: .prepone-extension-update
 
+kweather:
+  extends: .prepone-extension-update
+
 kwordquiz:
   extends: .prepone-extension-update
 
