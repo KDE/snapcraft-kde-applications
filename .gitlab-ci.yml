@@ -370,6 +370,9 @@ kcalc:
 kcharselect:
   extends: .prepone-extension-update
 
+kclock:
+  extends: .prepone-extension-update
+
 kcolorchooser:
   extends: .prepone-extension-update
 
