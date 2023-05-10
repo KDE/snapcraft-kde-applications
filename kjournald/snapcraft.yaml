@@ -93,6 +93,7 @@ parts:
         build-packages:
         - libsystemd-dev
         - pkg-config
+        - reuse
         stage-packages:
         - oxygen-icon-theme
         source: http://download.kde.org/stable/release-service/23.04.0/src/kweather-23.04.0.tar.xz
