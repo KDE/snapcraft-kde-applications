@@ -553,6 +553,9 @@ krdc:
 kreversi:
   extends: .prepone-extension-update
 
+krecorder:
+  extends: .prepone-extension-update
+
 krfb:
   extends: .prepone-extension-update
 
