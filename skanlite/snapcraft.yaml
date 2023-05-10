@@ -50,7 +50,6 @@ apps:
         - hardware-observe
         - raw-usb
         - cups-control
-        - cups
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
