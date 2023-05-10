@@ -23,6 +23,7 @@ apps:
         - unity7
         - network
         - network-bind
+        - browser-support
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -46,7 +47,7 @@ plugs:
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
-    QTWEBENGINEPROCESS_PATH: "$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
+    QTWEBENGINEPROCESS_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
     QT_LIBRARY_DATA: $SNAP/usr/share/qt5/resources
 hooks:
     configure:
