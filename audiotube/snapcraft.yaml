@@ -138,6 +138,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-treeview
         - yt-dlp
         - libfuturesql
+        - libpython3.10
         source: http://download.kde.org/stable/release-service/23.04.0/src/audiotube-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
