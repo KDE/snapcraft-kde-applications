@@ -135,7 +135,7 @@ variables:
   variables:
     BRANCH: Neon/release
     CORE: core22
-    VERSION: 5-104-qt-5-15-8
+    VERSION: 5-105-qt-5-15-9
     RELEASE_TO: beta
 
 # Examples
@@ -199,7 +199,7 @@ kde-frameworks-core22:
     DISTRO: jammy
     KEY_ID: 444DABCF3667D0283F894EDDE6D4736255751E5D
     ON_BRANCH: Neon/release
-    RELEASE_TO: beta
+    RELEASE_TO: candidate
     CORE: core22
   script:
     - apt update && apt -y install ruby software-properties-common dpkg-dev
@@ -218,6 +218,9 @@ kde-frameworks-core22:
     - !reference [.snap, script]
 
 akregator:
+  extends: .prepone-extension-update
+
+alligator:
   extends: .prepone-extension-update
 
 arianna:
