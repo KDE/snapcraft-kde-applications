@@ -247,6 +247,9 @@ bomber:
 bovo:
   extends: .prepone-extension-update
 
+calindori:
+  extends: .prepone-extension-update
+
 calligra:
   extends: .prepone-extension-update
 
