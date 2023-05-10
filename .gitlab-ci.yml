@@ -670,6 +670,9 @@ peruse:
 picmi:
   extends: .prepone-extension-update
 
+qmlkonsole:
+  extends: .prepone-extension-update
+
 quassel:
   extends: .prepone-extension-update
 
