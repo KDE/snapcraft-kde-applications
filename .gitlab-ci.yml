@@ -709,6 +709,9 @@ sweeper:
 symboleditor:
   extends: .prepone-extension-update
 
+telly-skout:
+  extends: .prepone-extension-update
+
 tokodon:
   extends: .prepone-extension-update
 
