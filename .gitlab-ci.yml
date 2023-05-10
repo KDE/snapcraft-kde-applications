@@ -613,6 +613,9 @@ kturtle:
 kubrick:
   extends: .prepone-extension-update
 
+kuiviewer:
+  extends: .prepone-extension-update
+
 kwave:
   extends: .prepone-extension-update
 
