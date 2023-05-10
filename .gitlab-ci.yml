@@ -601,6 +601,9 @@ ktorrent:
 ktouch:
   extends: .prepone-extension-update
 
+ktrip:
+  extends: .prepone-extension-update
+
 ktuberling:
   extends: .prepone-extension-update
 
