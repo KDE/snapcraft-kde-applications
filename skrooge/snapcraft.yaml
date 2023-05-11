@@ -13,7 +13,6 @@ apps:
         common-id: org.kde.skrooge
         desktop: org.kde.skrooge.desktop
         plugs:
-        - home
         - network-manager
         - audio-playback
         - home
