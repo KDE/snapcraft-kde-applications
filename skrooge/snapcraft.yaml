@@ -107,17 +107,16 @@ parts:
         plugin: cmake
         build-packages:
         - libgrantlee5-dev
+        - libkf5kdelibs4support-dev
         - libofx-dev
         - libqca-qt5-2-dev
         - libsqlcipher-dev
         - xsltproc
         - qtbase5-private-dev
-        - docbook-xml
-        - docbook-xsl
-        - libkf5doctools-dev
         stage-packages:
         - libgrantlee-templates5
         - libgrantlee-textdocument5
+        - libkf5kdelibs4support5
         - libofx7
         - libqca-qt5-2
         - libsqlcipher0
