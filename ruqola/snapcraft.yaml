@@ -114,6 +114,7 @@ parts:
         - libkf5purpose-dev
         - libkf5networkmanagerqt-dev
         - libqt5texttospeech5-dev
+        - libnm-dev
         stage-packages:
         - libkf5prison5
         - libkf5purpose5
