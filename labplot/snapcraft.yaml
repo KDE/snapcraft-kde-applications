@@ -99,10 +99,69 @@ parts:
         source-type: local
         prime:
         - ".*"
+    qt5mqtt:
+        plugin: cmake
+        source: https://github.com/qt/qtmqtt.git
+        source-tag: v6.5.0
+        build-packages:
+        - cmake
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
+        - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
+        prime:
+        - "-usr/lib/*/cmake/*"
+        - "-usr/include/*"
+        - "-usr/share/ECM/*"
+        - "-usr/share/doc/*"
+        - "-usr/share/man/*"
+        - "-usr/share/icons/breeze-dark*"
+        - "-usr/bin/X11"
+        - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
+        - "-usr/lib/aspell/*"
+        - "-usr/share/lintain"
+        build-environment: &id007
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        - *id005
+        - *id006
+    qxlsx:
+        plugin: cmake
+        source: https://github.com/QtExcel/QXlsx.git
+        source-tag: v1.4.6
+        build-packages:
+        - cmake
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
+        - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
+        prime:
+        - "-usr/lib/*/cmake/*"
+        - "-usr/include/*"
+        - "-usr/share/ECM/*"
+        - "-usr/share/doc/*"
+        - "-usr/share/man/*"
+        - "-usr/share/icons/breeze-dark*"
+        - "-usr/bin/X11"
+        - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
+        - "-usr/lib/aspell/*"
+        - "-usr/share/lintain"
+        build-environment: *id007
     labplot:
         after:
         - kde-neon
         - patches
+        - qt5mqtt
         parse-info:
         - usr/share/metainfo/org.kde.labplot2.appdata.xml
         plugin: cmake
@@ -117,10 +176,15 @@ parts:
         - libnetcdf-dev
         - libcfitsio-dev
         - libcerf-dev
-        - liblz-dev
+        - liblz4-dev
         - gettext
         - libpoppler-dev
         - libpoppler-qt5-dev
+        - liborigin2-dev
+        - libreadstat-dev
+        - libmatio-dev
+        - discount
+        - libfast-float-dev
         stage-packages:
         - kio
         - libkuserfeedbackwidgets1
@@ -165,6 +229,10 @@ parts:
         - libwebp7
         - libwind0-heimdal
         - liblz4-1
+        - liborigin2-1v5
+        - libreadstat1
+        - libmatio11
+        - discount
         source: https://download.kde.org/stable/labplot/labplot-2.10.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -185,20 +253,14 @@ parts:
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/lintain"
-        build-environment: &id007
-        - *id001
-        - *id002
-        - *id003
-        - *id004
-        - *id005
-        - *id006
+        build-environment: *id007
         override-pull: |
             craftctl default
             patch -p1 < ../../patches/src/patches/isnan_test_fix.patch
     cleanup:
         after:
         - kde-neon
-        - kid3
+        - labplot
         plugin: nil
         override-prime:  |
             set -eux
