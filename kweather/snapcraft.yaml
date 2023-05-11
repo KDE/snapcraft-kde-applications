@@ -13,7 +13,6 @@ apps:
         desktop: usr/share/applications/org.kde.kweather.desktop
         command: usr/bin/kweather
         plugs:
-        - home
         - desktop
         - desktop-legacy
         - opengl
@@ -106,8 +105,6 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        - kirigami2-dev
-        - kirigami-addons-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -120,14 +117,6 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
-        - libkf5kirigami2-5
-        - qml-module-org-kde-kirigami2
-        - kirigami-addons-data
-        - qml-module-org-kde-kirigami-addons-datetime
-        - qml-module-org-kde-kirigami-addons-labs-components
-        - qml-module-org-kde-kirigami-addons-labs-mobileform
-        - qml-module-org-kde-kirigami-addons-sounds
-        - qml-module-org-kde-kirigami-addons-treeview
         source: http://download.kde.org/stable/release-service/23.04.0/src/kweather-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
