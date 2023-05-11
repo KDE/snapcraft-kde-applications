@@ -115,6 +115,7 @@ parts:
         - yt-dlp
         - python3-dev
         - libfuturesql-dev
+        - libkf5purpose-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -137,9 +138,12 @@ parts:
         - qml-module-org-kde-kirigami-addons-labs-mobileform
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
+        - qml-module-org-kde-purpose
         - yt-dlp
         - libfuturesql
         - libpython3.10
+        - libkf5purpose5
+        - libkf5purpose-bin
         source: http://download.kde.org/stable/release-service/23.04.0/src/audiotube-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
