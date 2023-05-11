@@ -55,6 +55,7 @@ environment:
     PYTHONUSERBASE: $SNAP_USER_COMMON/.local
     PIP_USER: 1
     PYTHONPATH: "$PYTHONUSERBASE/lib/python3.10/site-packages:$SNAP/lib/python3.10/site-packages:$SNAP/usr/lib/python3/dist-packages"
+    QT_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/kf5:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml/org/kde/kirigami.2"
 hooks:
     configure:
         plugs:
