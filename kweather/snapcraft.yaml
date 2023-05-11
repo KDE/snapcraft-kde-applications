@@ -48,6 +48,7 @@ environment:
     GST_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
+    QML2_IMPORT_PATH: "$QML2_IMPORT_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qml:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml/org/kde/kirigami.2:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml"
 hooks:
     configure:
         plugs:
@@ -144,6 +145,13 @@ parts:
         - libqt5charts5-dev
         - kirigami2-dev
         - kirigami-addons-dev
+        - qml-module-org-kde-kirigami2
+        - kirigami-addons-data
+        - qml-module-org-kde-kirigami-addons-datetime
+        - qml-module-org-kde-kirigami-addons-labs-components
+        - qml-module-org-kde-kirigami-addons-labs-mobileform
+        - qml-module-org-kde-kirigami-addons-sounds
+        - qml-module-org-kde-kirigami-addons-treeview
         stage-packages:
         - libasound2
         - libasound2-data
@@ -185,7 +193,14 @@ parts:
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/lintain"
-        build-environment: *id007
+        build-environment:
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        - *id005
+        - *id006
+        - QML2_IMPORT_PATH: "$QML2_IMPORT_PATH:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qml:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml/org/kde/kirigami.2:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml"
     cleanup:
         after:
         - kde-neon
