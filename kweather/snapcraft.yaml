@@ -200,7 +200,7 @@ parts:
         - *id004
         - *id005
         - *id006
-        - QML2_IMPORT_PATH: "$QML2_IMPORT_PATH:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qml:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml/org/kde/kirigami.2:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml"
+        - QML2_IMPORT_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qml:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml/org/kde/kirigami.2:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml"
     cleanup:
         after:
         - kde-neon
