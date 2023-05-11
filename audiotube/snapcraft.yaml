@@ -51,6 +51,10 @@ environment:
     GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
     QML2_IMPORT_PATH: "$QML2_IMPORT_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qml:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml/org/kde/kirigami.2:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml"
+    PYTHONPYCACHEPREFIX: "$SNAP_USER_COMMON/.pycache"
+    PYTHONUSERBASE: $SNAP_USER_COMMON/.local
+    PIP_USER: 1
+    PYTHONPATH: "$PYTHONUSERBASE/lib/python3.10/site-packages:$SNAP/lib/python3.10/site-packages:$SNAP/usr/lib/python3/dist-packages"
 hooks:
     configure:
         plugs:
