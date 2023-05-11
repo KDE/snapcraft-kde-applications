@@ -101,7 +101,7 @@ parts:
         - libqt5charts5
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kweather-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.0/src/kjournald-23.04.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
