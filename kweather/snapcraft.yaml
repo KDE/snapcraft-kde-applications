@@ -62,6 +62,8 @@ layout:
         bind: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/alsa-lib"
     "/usr/share/alsa":
         bind: "$SNAP/usr/share/alsa"
+    /usr/lib/qt5/bin:
+        symlink: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/qt5/bin
 slots:
     session-dbus-interface:
         interface: dbus
