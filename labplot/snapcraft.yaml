@@ -184,7 +184,7 @@ parts:
         - libreadstat-dev
         - libmatio-dev
         - discount
-        - libfast-float-dev
+        - libfast5-dev
         stage-packages:
         - kio
         - libkuserfeedbackwidgets1
