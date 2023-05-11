@@ -147,6 +147,8 @@ parts:
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
         - qml-module-org-kde-purpose
+        - qml-module-org-kde-qqc2desktopstyle
+        - qml-module-qtquick-controls2
         - yt-dlp
         - libfuturesql
         - libpython3.10
