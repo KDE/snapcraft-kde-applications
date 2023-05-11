@@ -143,6 +143,7 @@ parts:
         - reuse
         - libqt5charts5-dev
         - kirigami2-dev
+        - kirigami-addons-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -158,6 +159,12 @@ parts:
         - libqt5charts5
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
+        - kirigami-addons-data
+        - qml-module-org-kde-kirigami-addons-datetime
+        - qml-module-org-kde-kirigami-addons-labs-components
+        - qml-module-org-kde-kirigami-addons-labs-mobileform
+        - qml-module-org-kde-kirigami-addons-sounds
+        - qml-module-org-kde-kirigami-addons-treeview
         source: http://download.kde.org/stable/release-service/23.04.0/src/kweather-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
