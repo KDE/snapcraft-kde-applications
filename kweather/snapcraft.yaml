@@ -138,6 +138,9 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
+        - reuse
+        - libqt5charts5-dev
+        - kirigami2-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -150,6 +153,9 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
+        - libqt5charts5
+        - libkf5kirigami2-5
+        - qml-module-org-kde-kirigami2
         source: http://download.kde.org/stable/release-service/23.04.0/src/kweather-23.04.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
