@@ -105,9 +105,17 @@ parts:
             ACLOCAL_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
         - &id006
             SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-105-qt-5-15-9-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
+    python-deps:
+        after:
+        - kde-neon
+        plugin: python
+        python-packages:
+        - ytmusicapi
+        - yt-dlp
     audiotube:
         after:
         - kde-neon
+        - python-deps
         parse-info:
         - usr/share/metainfo/org.kde.audiotube.appdata.xml
         plugin: cmake
@@ -115,9 +123,7 @@ parts:
         - libkf5doctools-dev
         - kirigami2-dev
         - pybind11-dev
-        - ytmusicapi
         - kirigami-addons-dev
-        - yt-dlp
         - python3-dev
         - libfuturesql-dev
         - libkf5purpose-dev
@@ -139,7 +145,6 @@ parts:
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
         - python3-pybind11
-        - ytmusicapi
         - kirigami-addons-data
         - qml-module-org-kde-kirigami-addons-datetime
         - qml-module-org-kde-kirigami-addons-labs-components
@@ -149,7 +154,6 @@ parts:
         - qml-module-org-kde-purpose
         - qml-module-org-kde-qqc2desktopstyle
         - qml-module-qtquick-controls2
-        - yt-dlp
         - libfuturesql
         - libpython3.10
         - libkf5purpose5
