@@ -109,6 +109,9 @@ parts:
         after:
         - kde-neon
         plugin: python
+        source: .
+        build-packages:
+        - python3-dev
         python-packages:
         - ytmusicapi
         - yt-dlp
