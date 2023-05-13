@@ -100,11 +100,11 @@ parts:
         prime:
         - ".*"
     qt5mqtt:
-        plugin: cmake
+        plugin: qmake
         source: https://github.com/qt/qtmqtt.git
         source-tag: v15.2.0
         build-packages:
-        - qmake
+        - qt5-qmake
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
