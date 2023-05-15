@@ -159,8 +159,10 @@ parts:
         - qml-module-qtquick-controls2
         - libfuturesql
         - python3
+        - lib
         - libkf5purpose5
         - libkf5purpose-bin
+        - libpython3.10
         source: http://download.kde.org/stable/release-service/23.04.1/src/audiotube-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
