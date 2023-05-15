@@ -115,6 +115,7 @@ parts:
         python-packages:
         - ytmusicapi
         - yt-dlp
+        - pybind11
     audiotube:
         after:
         - kde-neon
@@ -125,7 +126,6 @@ parts:
         build-packages:
         - libkf5doctools-dev
         - kirigami2-dev
-        - pybind11-dev
         - kirigami-addons-dev
         - python3-dev
         - libfuturesql-dev
@@ -147,7 +147,6 @@ parts:
         - oxygen-sounds
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
-        - python3-pybind11
         - kirigami-addons-data
         - qml-module-org-kde-kirigami-addons-datetime
         - qml-module-org-kde-kirigami-addons-labs-components
@@ -158,7 +157,7 @@ parts:
         - qml-module-org-kde-qqc2desktopstyle
         - qml-module-qtquick-controls2
         - libfuturesql
-        - libpython3.10
+        - python3
         - libkf5purpose5
         - libkf5purpose-bin
         source: http://download.kde.org/stable/release-service/23.04.1/src/audiotube-23.04.1.tar.xz
