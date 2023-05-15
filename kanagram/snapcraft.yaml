@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kanagram
-version: 23.04.0
+version: 23.04.1
 apps:
     kanagram:
         # extensions:
@@ -112,7 +112,7 @@ parts:
         - gstreamer1.0-plugins-good
         - gstreamer1.0-plugins-base
         - gstreamer1.0-x
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kanagram-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/kanagram-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"

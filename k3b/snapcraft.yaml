@@ -5,7 +5,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: k3b
-version: 23.04.0
+version: 23.04.1
 apps:
     k3b:
         # extensions:
@@ -110,7 +110,7 @@ parts:
         - libsamplerate0
         - libmad0
         - kio
-        source: http://download.kde.org/stable/release-service/23.04.0/src/k3b-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/k3b-23.04.1.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
