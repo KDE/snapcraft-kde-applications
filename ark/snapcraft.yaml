@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: ark
-version: 23.04.0
+version: 23.04.1
 apps:
     ark:
         common-id: org.kde.ark.desktop
@@ -118,7 +118,7 @@ parts:
         - lsof
         - kio
         - libunarr1
-        source: http://download.kde.org/stable/release-service/23.04.0/src/ark-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/ark-23.04.1.tar.xz
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
         - -DCMAKE_BUILD_TYPE=Release
