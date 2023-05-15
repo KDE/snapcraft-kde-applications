@@ -155,6 +155,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-labs-mobileform
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
+        - qtdeclarative5-dev
         stage-packages:
         - libasound2
         - libasound2-data
