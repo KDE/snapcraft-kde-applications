@@ -187,6 +187,7 @@ parts:
         - *id004
         - *id005
         - *id006
+        - PYTHONPATH: "$CRAFT_STAGE/lib/python3.10/site-packages:$CRAFT_STAGE/usr/lib/python3/dist-packages"
     cleanup:
         after:
         - kde-neon
