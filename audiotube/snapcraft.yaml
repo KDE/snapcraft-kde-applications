@@ -133,7 +133,7 @@ parts:
         - libqt5svg5-dev
         - qtquickcontrols2-5-dev
         - qtdeclarative5-dev
-        - pypind11-dev
+        - pybind11-dev
         stage-packages:
         - libasound2
         - libasound2-data
