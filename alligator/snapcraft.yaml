@@ -108,6 +108,7 @@ parts:
         - libkf5doctools-dev
         - kirigami2-dev
         - kirigami-addons-dev
+        - libkf5syndication-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -128,6 +129,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-labs-mobileform
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
+        - libkf5syndication5
         source: http://download.kde.org/stable/release-service/23.04.1/src/alligator-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
