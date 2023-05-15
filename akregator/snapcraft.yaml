@@ -257,7 +257,6 @@ parts:
         - libkf5akonadi-dev
         stage-packages:
         - libgpgmepp6
-        - libkf5akonadi5
         source: http://download.kde.org/stable/release-service/23.04.1/src/messagelib-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
