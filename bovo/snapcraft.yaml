@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: bovo
-version: 23.04.0
+version: 23.04.1
 apps:
     bovo:
         # extensions:
@@ -96,7 +96,7 @@ parts:
         parse-info:
         - usr/share/metainfo/org.kde.bovo.appdata.xml
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/23.04.0/src/bovo-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/bovo-23.04.1.tar.xz
         build-packages:
         - cmake
         - libkf5doctools-dev

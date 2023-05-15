@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: bomber
-version: 23.04.0
+version: 23.04.1
 apps:
     bomber:
         # extensions:
@@ -103,7 +103,7 @@ parts:
         parse-info:
         - usr/share/metainfo/org.kde.bomber.appdata.xml
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/23.04.0/src/bomber-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/bomber-23.04.1.tar.xz
         build-packages:
         - cmake
         - libkf5doctools-dev

@@ -3,7 +3,7 @@ adopt-info: blinken
 confinement: strict
 grade: stable
 base: core22
-version: 23.04.0
+version: 23.04.1
 apps:
     blinken:
         common-id: org.kde.blinken.desktop
@@ -84,7 +84,7 @@ parts:
         - kde-neon
         parse-info:
         - usr/share/metainfo/org.kde.blinken.appdata.xml
-        source: http://download.kde.org/stable/release-service/23.04.0/src/blinken-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/blinken-23.04.1.tar.xz
         plugin: cmake
         build-packages:
         - cmake
