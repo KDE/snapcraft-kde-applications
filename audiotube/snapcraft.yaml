@@ -159,7 +159,6 @@ parts:
         - qml-module-qtquick-controls2
         - libfuturesql
         - python3
-        - lib
         - libkf5purpose5
         - libkf5purpose-bin
         - libpython3.10
