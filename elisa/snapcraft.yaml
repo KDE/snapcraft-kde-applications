@@ -5,7 +5,7 @@ base: core22
 confinement: strict
 grade: stable
 adopt-info: elisa
-version: 23.04.0
+version: 23.04.1
 icon: $CRAFT_PROJECT_DIR/snap/gui/logo.png
 apps:
     elisa:
@@ -119,7 +119,7 @@ parts:
         - gstreamer1.0-plugins-bad
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
-        source: http://download.kde.org/stable/release-service/23.04.0/src/elisa-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/elisa-23.04.1.tar.xz
         plugin: cmake
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE

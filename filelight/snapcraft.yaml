@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: filelight
-version: 23.04.0
+version: 23.04.1
 apps:
     filelight:
         extensions:
@@ -46,7 +46,7 @@ plugs:
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
-    QML2_IMPORT_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
+    QML2_IMPORT_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
 hooks:
     configure:
         plugs:
@@ -103,7 +103,7 @@ parts:
         stage-packages:
         - qml-module-org-kde-kirigami2
         - qml-module-org-kde-kcoreaddons
-        source: http://download.kde.org/stable/release-service/23.04.0/src/filelight-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/filelight-23.04.1.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"

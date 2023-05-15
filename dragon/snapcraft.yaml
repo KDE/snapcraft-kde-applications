@@ -4,7 +4,7 @@ adopt-info: dragon
 confinement: strict
 grade: stable
 base: core22
-version: 23.04.0
+version: 23.04.1
 apps:
     dragon:
         common-id: org.kde.dragonplayer.desktop
@@ -102,7 +102,7 @@ parts:
     dragon:
         after:
         - kde-neon
-        source: http://download.kde.org/stable/release-service/23.04.0/src/dragon-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/dragon-23.04.1.tar.xz
         plugin: cmake
         build-packages:
         - cmake
