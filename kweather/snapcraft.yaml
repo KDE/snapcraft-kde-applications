@@ -114,6 +114,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_PREFIX_PATH=$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
         prime:
@@ -182,6 +183,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_PREFIX_PATH=$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
         - "-DCMAKE_PROGRAM_PATH=/usr/bin\\;$CRAFT_STAGE/usr/bin\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin\\; \
