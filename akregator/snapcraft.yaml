@@ -211,6 +211,36 @@ parts:
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-etc/alsa/conf.d/99-pulse.conf"
+    akonadi:
+        after:
+        - kde-neon
+        - grantleetheme
+        - kontactinterface
+        - libkdepim
+        - kmime
+        plugin: cmake
+        build-packages:
+        - cmake
+        source: http://download.kde.org/stable/release-service/23.04.1/src/akonadi-23.04.1.tar.xz
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
+        build-environment: *id007
+        prime:
+        - "-usr/lib/*/cmake/*"
+        - "-usr/include/*"
+        - "-usr/share/ECM/*"
+        - "-usr/share/doc/*"
+        - "-usr/share/man/*"
+        - "-usr/share/icons/breeze-dark*"
+        - "-usr/bin/X11"
+        - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
+        - "-usr/lib/aspell/*"
+        - "-etc/alsa/conf.d/99-pulse.conf"
     messagelib:
         after:
         - kde-neon
@@ -218,6 +248,7 @@ parts:
         - kontactinterface
         - libkdepim
         - kmime
+        - akonadi
         plugin: cmake
         build-packages:
         - cmake
@@ -251,6 +282,7 @@ parts:
         - kontactinterface
         - libkdepim
         - messagelib
+        - akonadi
         parse-info:
         - usr/share/metainfo/org.kde.akregator.appdata.xml
         plugin: cmake
