@@ -125,7 +125,6 @@ parts:
         - libasound2
         - libasound2-data
         - libasound2-plugins
-        - libkf5akonadi5
         - libkf5akonadicontact5
         - libkf5calendarcore5
         - libkf5calendarutils5
