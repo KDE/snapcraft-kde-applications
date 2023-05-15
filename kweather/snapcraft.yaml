@@ -1,6 +1,6 @@
 ---
 name: kweather
-version: 23.04.0
+version: 23.04.1
 confinement: strict
 grade: stable
 base: core22
@@ -175,7 +175,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-labs-mobileform
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kweather-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/kweather-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -207,6 +207,7 @@ parts:
         - QML2_IMPORT_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qml:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml/org/kde/kirigami.2:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml"
         - QT_HOST_BINS: "/usr/bin\\;$CRAFT_STAGE/usr/bin\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin\\; \
         /snap/kf5-5-105-qt-5-15-9-core22/current/usr/lib/qt5/bin"
+        - QT_PLUGIN_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/kf5"
     cleanup:
         after:
         - kde-neon
