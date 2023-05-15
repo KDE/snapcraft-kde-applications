@@ -195,10 +195,10 @@ parts:
         - "-usr/bin/X11"
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
-        - -usr/lib/jvm/java-11-openjdk-*/lib/security/blacklisted.certs
-        - -usr/lib/jvm/java-11-openjdk-*/lib/security/cacerts
-        - -usr/share/perl5/XML/SAX/ParserDetails.ini
-        - -usr/share/texmf/ls-R
+        - "-etc/java-11-openjdk/security/blacklisted.certs"
+        - "-etc/ssl/certs/java/cacerts"
+        - -etc/perl/XML/SAX/ParserDetails.ini
+        - -var/lib/texmf/ls-R-TEXMFMAIN
     cleanup:
         after:
         - kde-neon
