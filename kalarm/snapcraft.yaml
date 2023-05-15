@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kalarm
-version: 23.04.0
+version: 23.04.1
 apps:
     kalarm:
         # extensions:
@@ -47,6 +47,7 @@ environment:
     GST_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
+    QML2_IMPORT_PATH: $CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
 hooks:
     configure:
         plugs:
@@ -147,7 +148,7 @@ parts:
         - pkg-config
         - xsltproc
         - zlib1g
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kalarm-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/kalarm-23.04.1.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -176,6 +177,7 @@ parts:
         - *id005
         - *id006
         - QT_HOST_BINS: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin
+        - QML2_IMPORT_PATH: $CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
     # cleanup:
     #     after:
     #     - kalarm

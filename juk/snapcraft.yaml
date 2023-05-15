@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: juk
-version: 23.04.0
+version: 23.04.1
 apps:
     juk:
         # extensions:
@@ -117,7 +117,7 @@ parts:
         - gstreamer1.0-plugins-bad
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
-        source: http://download.kde.org/stable/release-service/23.04.0/src/juk-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/juk-23.04.1.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"

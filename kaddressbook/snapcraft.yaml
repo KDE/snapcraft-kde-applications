@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kaddressbook
-version: 23.04.0
+version: 23.04.1
 apps:
     kaddressbook:
         # extensions:
@@ -96,7 +96,7 @@ parts:
         plugin: cmake
         build-packages:
         - cmake
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kpimtextedit-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/kpimtextedit-23.04.1.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -128,7 +128,7 @@ parts:
         - kde-neon
         - kpimtextedit
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/23.04.0/src/libkdepim-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/libkdepim-23.04.1.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -159,7 +159,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kaddressbook-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/kaddressbook-23.04.1.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
