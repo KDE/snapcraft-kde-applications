@@ -151,6 +151,8 @@ parts:
         - *id006
         - QML2_IMPORT_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml"
         - QT_HOST_BINS: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin
+        - PKG_CONFIG_PATH: $PKG_CONFIG_PATH:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:$CRAFT_STAGE/usr/lib/pkgconfig:$CRAFT_STAGE/usr/share/pkgconfig
+        - PKG_CONFIG_LIBDIR: $CRAFT_STAGE/usr/lib:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
