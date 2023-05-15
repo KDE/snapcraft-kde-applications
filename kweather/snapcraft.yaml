@@ -156,6 +156,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
         - qtdeclarative5-dev
+        - qml-module-org-kde-kholidays
         stage-packages:
         - libasound2
         - libasound2-data
@@ -177,6 +178,8 @@ parts:
         - qml-module-org-kde-kirigami-addons-labs-mobileform
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
+        - libkf5holidays5
+        - qml-module-org-kde-kholidays
         source: http://download.kde.org/stable/release-service/23.04.1/src/kweather-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -211,6 +214,10 @@ parts:
         - QT_HOST_BINS: "/usr/bin\\;$CRAFT_STAGE/usr/bin\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin\\; \
         /snap/kf5-5-105-qt-5-15-9-core22/current/usr/lib/qt5/bin"
         - QT_PLUGIN_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/kf5"
+        override-build: |
+            craftctl default
+
+            sed -i "${CRAFT_PART_INSTALL}/usr/share/applications/org.kde.kweather.desktop" -e 's|Icon=org.kde.kweather$|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/org.kde.kweather.svg|'
     cleanup:
         after:
         - kde-neon
