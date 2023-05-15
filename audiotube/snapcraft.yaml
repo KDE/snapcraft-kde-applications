@@ -162,6 +162,7 @@ parts:
         - libkf5purpose5
         - libkf5purpose-bin
         - libpython3.10
+        - qt5-image-formats-plugins
         source: http://download.kde.org/stable/release-service/23.04.1/src/audiotube-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
