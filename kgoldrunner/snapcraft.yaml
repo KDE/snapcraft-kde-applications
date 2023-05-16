@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kgoldrunner
-version: 23.04.0
+version: 23.04.1
 apps:
     kgoldrunner:
         # extensions:
@@ -104,7 +104,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kgoldrunner-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/kgoldrunner-23.04.1.tar.xz
         stage-packages:
         - libasound2-data
         - libasound2-plugins

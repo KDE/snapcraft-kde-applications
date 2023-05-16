@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kgpg
-version: 23.04.0
+version: 23.04.1
 apps:
     kgpg:
         # extensions:
@@ -98,7 +98,7 @@ parts:
         build-packages:
         - cmake
         - libkf5prison-dev
-        source: http://download.kde.org/stable/release-service/23.04.0/src/akonadi-contacts-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/akonadi-contacts-23.04.1.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -144,7 +144,7 @@ parts:
         - libgpgmepp6
         - libqgpgme7
         - gpg
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kgpg-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/kgpg-23.04.1.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
