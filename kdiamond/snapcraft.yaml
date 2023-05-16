@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kdiamond
-version: 23.04.0
+version: 23.04.1
 apps:
     kdiamond:
         # extensions:
@@ -155,7 +155,7 @@ parts:
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kdiamond-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/kdiamond-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
