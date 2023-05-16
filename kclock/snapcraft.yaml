@@ -165,6 +165,10 @@ parts:
         - *id004
         - *id005
         - *id006
+        override-build: |
+            craftctl default
+
+            sed -i "${CRAFT_PART_INSTALL}/usr/share/applications/org.kde.kclock.desktop" -e 's|Icon=org.kde.kclock$|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/org.kde.kclock.svg|'
     cleanup:
         after:
         - kde-neon
