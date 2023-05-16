@@ -113,7 +113,6 @@ parts:
         build-packages:
         - python3-dev
         python-packages:
-        - ytmusicapi
         - yt-dlp
         - pybind11
     phantomjs:
@@ -150,6 +149,15 @@ parts:
         - *id004
         - *id005
         - *id006
+    ytmusicapi:
+        after:
+        - kde-neon
+        - python-deps
+        plugin: python
+        source: https://github.com/sigma67/ytmusicapi.git
+        source-tag: 0.25.0
+        build-packages:
+        - python3-dev
     audiotube:
         after:
         - kde-neon
