@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kigo
-version: 23.04.0
+version: 23.04.1
 apps:
     kigo:
         # extensions:
@@ -101,7 +101,7 @@ parts:
         - libkf5doctools-dev
         stage-packages:
         - gnugo
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kigo-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/kigo-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
