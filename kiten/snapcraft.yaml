@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kiten
-version: 23.04.0
+version: 23.04.1
 apps:
     kiten:
         # extensions:
@@ -105,7 +105,7 @@ parts:
         - imagemagick
         - kio
         - libkf5khtml5
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kiten-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/kiten-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
