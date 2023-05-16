@@ -162,6 +162,7 @@ parts:
         after:
         - kde-neon
         - python-deps
+        - ytmusicapi
         parse-info:
         - usr/share/metainfo/org.kde.audiotube.appdata.xml
         plugin: cmake
