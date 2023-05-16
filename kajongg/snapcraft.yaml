@@ -142,7 +142,7 @@ parts:
         - *id004
         - *id005
         - *id006
-         override-build: |
+        override-build: |
             craftctl default
             rm $CRAFT_PART_INSTALL/usr/bin/kajongg
             cp $CRAFT_PART_INSTALL/usr/share/kajongg/kajongg.py $CRAFT_PART_INSTALL/usr/bin/kajongg
