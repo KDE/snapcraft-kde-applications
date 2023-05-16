@@ -49,6 +49,7 @@ environment:
     GST_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
+    QML2_IMPORT_PATH: "$QML2_IMPORT_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qml:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml/org/kde/kirigami.2:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml"
 hooks:
     configure:
         plugs:
@@ -62,6 +63,8 @@ layout:
         bind: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/alsa-lib"
     "/usr/share/alsa":
         bind: "$SNAP/usr/share/alsa"
+    /usr/lib/qt5/bin:
+        symlink: $SNAP/kf5/usr/lib/qt5/bin
 slots:
     session-dbus-interface:
         interface: dbus
@@ -108,6 +111,7 @@ parts:
         - libkf5doctools-dev
         - kirigami2-dev
         - kirigami-addons-dev
+        - qtdeclarative5-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -137,6 +141,11 @@ parts:
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
+        - "-DCMAKE_PREFIX_PATH=$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
+        - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
+        - "-DCMAKE_PROGRAM_PATH=/usr/bin\\;$CRAFT_STAGE/usr/bin\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin\\; \
+        /snap/kf5-5-105-qt-5-15-9-core22/current/usr/lib/qt5/bin"
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
