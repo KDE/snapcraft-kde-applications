@@ -4,7 +4,7 @@ confinement: classic
 grade: stable
 base: core22
 adopt-info: kate
-version: 23.04.0
+version: 23.04.1
 apps:
     kate:
         # extensions:
@@ -98,7 +98,7 @@ parts:
         - libkf5newstuffwidgets5
         - qml-module-org-kde-newstuff
         - libqt5x11extras5
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kate-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/kate-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
