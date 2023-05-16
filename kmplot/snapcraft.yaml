@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kmplot
-version: 23.04.0
+version: 23.04.1
 apps:
     kmplot:
         # extensions:
@@ -96,7 +96,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kmplot-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/kmplot-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"

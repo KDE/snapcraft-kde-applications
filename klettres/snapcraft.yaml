@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: klettres
-version: 23.04.0
+version: 23.04.1
 apps:
     klettres:
         # extensions:
@@ -99,7 +99,7 @@ parts:
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.0/src/klettres-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/klettres-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
