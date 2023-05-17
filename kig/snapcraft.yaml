@@ -98,6 +98,7 @@ parts:
         - libkf5doctools-dev
         stage-packages:
         - libboost-python1.74.0
+        - libpython3.10
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
