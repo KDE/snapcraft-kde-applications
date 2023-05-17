@@ -5,7 +5,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kwave
-version: 23.04.0
+version: 23.04.1
 apps:
     kwave:
         # extensions:
@@ -131,7 +131,7 @@ parts:
         - libopus0
         - libvorbis0a
         - libfftw3-bin
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kwave-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/kwave-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
