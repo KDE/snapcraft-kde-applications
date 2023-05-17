@@ -5,7 +5,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: ksystemlog
-version: 23.04.0
+version: 23.04.1
 apps:
     ksystemlog:
         # extensions:
@@ -97,7 +97,9 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.0/src/ksystemlog-23.04.0.tar.xz
+        stage-packages:
+        - gamin
+        source: http://download.kde.org/stable/release-service/23.04.1/src/ksystemlog-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
