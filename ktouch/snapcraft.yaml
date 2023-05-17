@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: ktouch
-version: 23.04.0
+version: 23.04.1
 apps:
     ktouch:
         # extensions:
@@ -112,7 +112,7 @@ parts:
         - qml-module-qtquick-controls2
         - qml-module-qtquick-layouts
         - qml-module-qtquick2
-        source: http://download.kde.org/stable/release-service/23.04.0/src/ktouch-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/ktouch-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"

@@ -4,7 +4,7 @@ adopt-info: ktorrent
 confinement: strict
 grade: stable
 base: core22
-version: 23.04.0
+version: 23.04.1
 apps:
     ktorrent:
         # extensions:
@@ -112,7 +112,7 @@ parts:
         - libgcrypt20
         - libgmp10
         - libgmpxx4ldbl
-        source: https://download.kde.org/stable/release-service/23.04.0/src/libktorrent-23.04.0.tar.xz
+        source: https://download.kde.org/stable/release-service/23.04.1/src/libktorrent-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
