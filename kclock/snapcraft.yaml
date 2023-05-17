@@ -7,6 +7,12 @@ grade: stable
 base: core22
 adopt-info: kclock
 apps:
+    kclockd:
+        command: usr/bin/kclockd
+        daemon: simple
+        plugs:
+        - network
+        - network-bind
     kclock:
         # extensions:
         # - kde-neon
