@@ -180,6 +180,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-treeview
         - libkf5holidays5
         - qml-module-org-kde-kholidays
+        - qml-module-qtcharts
         source: http://download.kde.org/stable/release-service/23.04.1/src/kweather-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
