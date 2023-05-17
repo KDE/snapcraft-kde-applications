@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: knights
-version: 23.04.0
+version: 23.04.1
 apps:
     knights:
         # extensions:
@@ -103,7 +103,7 @@ parts:
         parse-info:
         - usr/share/metainfo/org.kde.knights.appdata.xml
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/23.04.0/src/knights-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/knights-23.04.1.tar.xz
         build-packages:
         - libkf5doctools-dev
         - libqt5texttospeech5-dev

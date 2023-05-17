@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: knavalbattle
-version: 23.04.0
+version: 23.04.1
 apps:
     knavalbattle:
         # extensions:
@@ -103,7 +103,7 @@ parts:
         stage-packages:
         - libasound2-data
         - libasound2-plugins
-        source: http://download.kde.org/stable/release-service/23.04.0/src/knavalbattle-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/knavalbattle-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
