@@ -3,7 +3,7 @@ adopt-info: kopete
 confinement: strict
 grade: stable
 base: core22
-version: 23.04.0
+version: 23.04.1
 apps:
     kopete:
         common-id: org.kde.kopete.desktop
@@ -123,7 +123,7 @@ parts:
         - ktextaddons
         parse-info:
         - usr/share/metainfo/org.kde.kopete.appdata.xml
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kopete-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/kopete-23.04.1.tar.xz
         plugin: cmake
         build-packages:
         - cmake

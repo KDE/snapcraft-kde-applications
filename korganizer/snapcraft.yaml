@@ -1,6 +1,6 @@
 ---
 name: korganizer
-version: 23.04.0
+version: 23.04.1
 base: core22
 adopt-info: korganizer
 confinement: strict
@@ -102,7 +102,7 @@ parts:
         plugin: cmake
         build-packages:
         - libgrantlee5-dev
-        source: http://download.kde.org/stable/release-service/23.04.0/src/grantleetheme-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/grantleetheme-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -133,7 +133,7 @@ parts:
         - kde-neon
         - grantleetheme
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/23.04.0/src/kontactinterface-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/kontactinterface-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -159,7 +159,7 @@ parts:
         - grantleetheme
         - kontactinterface
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/23.04.0/src/libkdepim-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/libkdepim-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -199,7 +199,7 @@ parts:
         - xsltproc
         - zlib1g-dev
         - libpulse0
-        source: http://download.kde.org/stable/release-service/23.04.0/src/korganizer-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/korganizer-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"

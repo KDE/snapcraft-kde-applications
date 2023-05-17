@@ -5,7 +5,7 @@ confinement: classic
 grade: stable
 base: core22
 adopt-info: konsole
-version: 23.04.0
+version: 23.04.1
 apps:
     konsole:
         # extensions:
@@ -27,6 +27,22 @@ package-repositories:
     url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
+    mesa-patchelf:
+        plugin: nil
+        stage-packages:
+        - libgl1-mesa-dri
+        - freeglut3
+        - libglu1-mesa
+        stage:
+        - "-usr/lib/${CRAFT_ARCH_TRIPLET}/dri"
+    mesa-no-patchelf:
+        plugin: nil
+        stage-packages:
+        - libgl1-mesa-dri
+        build-attributes:
+        - no-patchelf
+        stage:
+        - usr/lib/${CRAFT_ARCH_TRIPLET}/dri
     konsole:
         parse-info:
         - usr/share/metainfo/org.kde.konsole.appdata.xml
@@ -96,7 +112,8 @@ parts:
         - freeglut3
         - libglu1-mesa
         - bash
-        source: http://download.kde.org/stable/release-service/23.04.0/src/konsole-23.04.0.tar.xz
+        - breeze
+        source: http://download.kde.org/stable/release-service/23.04.1/src/konsole-23.04.1.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
