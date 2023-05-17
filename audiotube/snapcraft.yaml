@@ -115,7 +115,7 @@ parts:
         python-packages:
         - yt-dlp
         - pybind11
-        prime:
+        stage:
         - -bin/activate
         - -bin/activate.csh
         - -bin/activate.fish
