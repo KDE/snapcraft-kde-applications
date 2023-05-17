@@ -108,6 +108,7 @@ parts:
         - libkf5doctools-dev
         - kirigami2-dev
         - kirigami-addons-dev
+        - kdeclarative5-dev
         stage-packages:
         - libasound2
         - libasound2-data
