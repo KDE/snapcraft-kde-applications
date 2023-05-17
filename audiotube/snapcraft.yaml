@@ -1120,6 +1120,7 @@ parts:
         - -lib/python3.10/site-packages/setuptools/version.py
         - -lib/python3.10/site-packages/setuptools/wheel.py
         - -lib/python3.10/site-packages/setuptools/windows_support.py
+        - -pyvenv.cfg
     phantomjs:
         after:
         - kde-neon
