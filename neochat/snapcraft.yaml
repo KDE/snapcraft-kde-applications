@@ -4,7 +4,7 @@ base: core22
 adopt-info: neochat
 grade: stable
 confinement: strict
-version: 23.04.0
+version: 23.04.1
 apps:
     neochat:
         # extensions:
@@ -144,7 +144,7 @@ parts:
         - libmatrixclient
         parse-info:
         - usr/share/metainfo/org.kde.neochat.appdata.xml
-        source: http://download.kde.org/stable/release-service/23.04.0/src/neochat-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/neochat-23.04.1.tar.xz
         plugin: cmake
         build-packages:
         - cmark

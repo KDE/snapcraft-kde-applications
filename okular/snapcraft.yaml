@@ -224,7 +224,7 @@ parts:
         - libglu1-mesa
         - libmarkdown2
         - kio
-        source: http://download.kde.org/stable/release-service/23.04.0/src/okular-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/okular-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -257,4 +257,4 @@ parts:
     #         done
     #         find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
     #         find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-version: 23.04.0
+version: 23.04.1

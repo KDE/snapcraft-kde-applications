@@ -4,7 +4,7 @@ adopt-info: parley
 confinement: strict
 grade: stable
 base: core22
-version: 23.04.0
+version: 23.04.1
 apps:
     parley:
         common-id: org.kde.parley.desktop
@@ -85,7 +85,7 @@ parts:
     parley:
         after:
         - kde-neon
-        source: http://download.kde.org/stable/release-service/23.04.0/src/parley-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/parley-23.04.1.tar.xz
         plugin: cmake
         build-packages:
         - cmake
