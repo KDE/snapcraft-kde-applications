@@ -140,6 +140,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
         - libkf5notifications5
+        - libpulse0
         source: http://download.kde.org/stable/release-service/23.04.1/src/kclock-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
