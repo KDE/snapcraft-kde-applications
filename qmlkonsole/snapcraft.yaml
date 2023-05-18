@@ -1,6 +1,6 @@
 ---
 name: qmlkonsole
-version: 23.04.0
+version: 23.04.1
 confinement: strict
 grade: stable
 base: core22
@@ -128,7 +128,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-labs-mobileform
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
-        source: http://download.kde.org/stable/release-service/23.04.0/src/qmlkonsole-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/qmlkonsole-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"

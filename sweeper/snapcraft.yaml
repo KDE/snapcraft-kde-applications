@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: sweeper
-version: 23.04.0
+version: 23.04.1
 apps:
     sweeper:
         # extensions:
@@ -99,7 +99,7 @@ parts:
         - libkf5doctools-dev
         stage-packages:
         - oxygen-sounds
-        source: http://download.kde.org/stable/release-service/23.04.0/src/sweeper-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/sweeper-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"

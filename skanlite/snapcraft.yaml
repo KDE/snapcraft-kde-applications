@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: skanlite
-version: 23.04.0
+version: 23.04.1
 apps:
     saned:
         command: usr/sbin/saned
@@ -130,7 +130,7 @@ parts:
         - libsane-dev
         stage-packages:
         - libsane
-        source: http://download.kde.org/stable/release-service/23.04.0/src/ksanecore-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/ksanecore-23.04.1.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -167,7 +167,7 @@ parts:
         - libsane-dev
         stage-packages:
         - libsane
-        source: http://download.kde.org/stable/release-service/23.04.0/src/libksane-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/libksane-23.04.1.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -225,7 +225,7 @@ parts:
         - *id006
         - LDFLAGS: "-L$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET"
         - LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/:$CRAFT_STAGE/usr/lib/"
-        source: http://download.kde.org/stable/release-service/23.04.0/src/skanlite-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/skanlite-23.04.1.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"

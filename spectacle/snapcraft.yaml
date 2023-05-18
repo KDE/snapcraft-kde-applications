@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: spectacle
-version: 23.04.0
+version: 23.04.1
 apps:
     spectacle:
         # extensions:
@@ -135,7 +135,7 @@ parts:
         - libkpipewire5
         - libpipewire-0.3-0
         - libkpipewirerecord5
-        source: http://download.kde.org/stable/release-service/23.04.0/src/spectacle-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/spectacle-23.04.1.tar.xz
         override-stage: |
             craftctl default
             rm $SNAPCRAFT_STAGE/usr/share/kglobalaccel/org.kde.spectacle.desktop
