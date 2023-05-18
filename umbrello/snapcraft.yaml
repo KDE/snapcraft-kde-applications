@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: umbrello
-version: 23.04.0
+version: 23.04.1
 apps:
     umbrello:
         # extensions:
@@ -104,7 +104,7 @@ parts:
         - libboost1.74-dev
         - libxml2
         - libxslt1.1
-        source: http://download.kde.org/stable/release-service/23.04.0/src/umbrello-23.04.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.1/src/umbrello-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
