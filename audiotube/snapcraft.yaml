@@ -1165,7 +1165,7 @@ parts:
         build-packages:
         - python3-dev
         override-build: |
-            python3 ytmusicapi/setup.py
+            cd ytmusicapi && python3 setup.py
             craftctl default
     audiotube:
         after:
