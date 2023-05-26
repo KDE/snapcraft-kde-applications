@@ -1,4 +1,4 @@
-# Trigger rebuild 1
+# Trigger rebuild 2
 ---
 name: kdevelop
 confinement: classic
@@ -10,7 +10,10 @@ compression: lzo
 apps:
     kdevelop:
         command: usr/bin/kdevelop
+        desktop: usr/share/applications/org.kde.kdevelop.desktop
         common-id: org.kde.kdevelop.desktop
+        command-chain:
+        - snap/command-chain/desktop-launch
 assumes:
 - snapd2.43
 environment:
@@ -22,12 +25,18 @@ environment:
     __EGL_VENDOR_LIBRARY_DIRS: "$SNAP/etc/glvnd/egl_vendor.d:$SNAP/usr/share/glvnd/egl_vendor.d"
     LIBGL_DRIVERS_PATH: "$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/dri"
     KDEV_UNSET_ENV: LIBGL_DRIVERS_PATH
-    QML2_IMPORT_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
+    QML2_IMPORT_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml"
     PATH: $PATH:$SNAP/usr/bin
     LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/usr/lib:/$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio"
 layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
+hooks:
+    configure:
+        plugs:
+        - desktop
+        command-chain:
+        - snap/command-chain/hooks-configure-desktop
 package-repositories:
 -   type: apt
     components:
