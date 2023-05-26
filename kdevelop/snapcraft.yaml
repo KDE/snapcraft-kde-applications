@@ -12,8 +12,6 @@ apps:
         command: usr/bin/kdevelop
         desktop: usr/share/applications/org.kde.kdevelop.desktop
         common-id: org.kde.kdevelop.desktop
-        command-chain:
-        - snap/command-chain/desktop-launch
 assumes:
 - snapd2.43
 environment:
@@ -31,12 +29,6 @@ environment:
 layout:
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
-hooks:
-    configure:
-        plugs:
-        - desktop
-        command-chain:
-        - snap/command-chain/hooks-configure-desktop
 package-repositories:
 -   type: apt
     components:
