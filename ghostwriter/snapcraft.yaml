@@ -5,6 +5,7 @@ grade: stable
 base: core22
 adopt-info: ghostwriter
 version: 23.04.1
+icon: $CRAFT_PROJECT_DIR/snap/gui/logo.png
 apps:
     ghostwriter:
         # extensions:
