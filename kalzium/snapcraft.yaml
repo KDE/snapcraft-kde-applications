@@ -1,3 +1,4 @@
+# Trigger rebuild 1
 ---
 name: kalzium
 confinement: strict
@@ -12,6 +13,7 @@ apps:
         common-id: org.kde.kalzium.desktop
         command: usr/bin/kalzium
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
