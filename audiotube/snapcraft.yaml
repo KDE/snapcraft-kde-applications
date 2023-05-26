@@ -115,6 +115,7 @@ parts:
         python-packages:
         - yt-dlp
         - pybind11
+        - ytmusicapi == 0.25.0
         stage:
         - -bin/activate
         - -bin/activate.csh
@@ -1155,23 +1156,10 @@ parts:
         - *id004
         - *id005
         - *id006
-    ytmusicapi:
-        after:
-        - kde-neon
-        - python-deps
-        plugin: python
-        source: https://github.com/sigma67/ytmusicapi.git
-        source-tag: 0.25.0
-        build-packages:
-        - python3-dev
-        override-build: |
-            cd ytmusicapi && python3 setup.py
-            craftctl default
     audiotube:
         after:
         - kde-neon
         - python-deps
-        - ytmusicapi
         parse-info:
         - usr/share/metainfo/org.kde.audiotube.appdata.xml
         plugin: cmake
