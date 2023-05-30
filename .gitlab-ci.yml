@@ -235,6 +235,9 @@ arianna:
 ark:
   extends: .prepone-extension-update
 
+arkade:
+  extends: .prepone-extension-update
+
 artikulate:
   extends: .prepone-extension-update
 
