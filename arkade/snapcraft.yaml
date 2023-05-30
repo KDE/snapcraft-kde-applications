@@ -2,7 +2,7 @@ name: arkade
 confinement: strict
 grade: stable
 base: core22
-version: 1.0
+version: '1.0'
 adopt-info: arkade
 apps:
     arkade:
