@@ -1,4 +1,4 @@
-kate sn name: arkade
+name: arkade
 confinement: strict
 grade: stable
 base: core22
