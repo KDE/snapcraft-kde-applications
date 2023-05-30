@@ -238,6 +238,9 @@ ark:
 artikulate:
   extends: .prepone-extension-update
 
+atlantik:
+  extends: .prepone-extension-update
+
 audiotube:
   extends: .prepone-extension-update
 
