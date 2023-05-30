@@ -1,9 +1,10 @@
 name: amor
-adopt-info: amor
 confinement: strict
 grade: stable
 base: core22
 version: 2.4.0
+summary: A fun app that bounces on top of the current window.
+description: Amusing Misuse of Resources animation that sits on top of the current window.
 apps:
     amor:
         common-id: org.kde.amor.desktop
@@ -52,6 +53,11 @@ layout:
         symlink: $SNAP/kf5/usr/share/X11
     /usr/share/qt5:
         bind: $SNAP/usr/share/qt5
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.kde.amor
+        bus: session
 package-repositories:
 -   type: apt
     components:
@@ -86,8 +92,6 @@ parts:
     amor:
         after:
         - kde-neon
-        parse-info:
-        - usr/share/metainfo/org.kde.amor.appdata.xml
         source: https://invent.kde.org/games/amor.git
         plugin: cmake
         build-packages:
