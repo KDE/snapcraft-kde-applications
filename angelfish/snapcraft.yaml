@@ -109,6 +109,7 @@ parts:
         - kirigami2-dev
         - kirigami-addons-dev
         - libkf5qqc2desktopstyle-dev
+        - libkf5purpose-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -130,6 +131,9 @@ parts:
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
         - qml-module-org-kde-qqc2desktopstyle
+        - libkf5purpose5
+        - libkf5purpose-bin
+        - qml-module-org-kde-purpose
         source: http://download.kde.org/stable/release-service/23.04.1/src/angelfish-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
