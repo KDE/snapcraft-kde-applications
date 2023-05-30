@@ -223,6 +223,9 @@ akregator:
 alligator:
   extends: .prepone-extension-update
 
+amor:
+  extends: .prepone-extension-update
+
 angelfish:
   extends: .prepone-extension-update
 
