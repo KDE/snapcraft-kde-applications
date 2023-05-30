@@ -299,6 +299,13 @@ parts:
         - xsltproc
         - zlib1g-dev
         - libpulse0
+        - libkf5akonadi-dev
+        - libkf5akonadi-dev-bin
+        stage-packages:
+        - libkf5akonadicore5
+        - libkf5akonadiagentbase5
+        - libkf5akonadiwidgets5
+        - libkf5akonadixml5
         source: http://download.kde.org/stable/release-service/23.04.1/src/akregator-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
