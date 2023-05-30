@@ -108,16 +108,6 @@ parts:
         - libreadline-dev
         - libgl-dev
         - libeigen3-dev
-        stage-packages:
-        - libncurses6
-        - libreadline8
-        - libgl1
-        - libglx-dev
-        - lua-any
-        - maxima
-        - octave
-        - sagemath
-        - scilab
         source: https://download.kde.org/stable/release-service/23.04.1/src/analitza-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -173,6 +163,15 @@ parts:
         - python3
         - r-base-core
         - libpython3.10
+        - libncurses6
+        - libreadline8
+        - libgl1
+        - libglx-dev
+        - lua-any
+        - maxima
+        - octave
+        - sagemath
+        - scilab
         source: http://download.kde.org/stable/release-service/23.04.1/src/cantor-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
