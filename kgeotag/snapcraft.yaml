@@ -61,11 +61,6 @@ layout:
         bind: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/alsa-lib"
     "/usr/share/alsa":
         bind: "$SNAP/usr/share/alsa"
-slots:
-    session-dbus-interface:
-        interface: dbus
-        name: org.kde.alligator
-        bus: session
 package-repositories:
 -   type: apt
     components:
