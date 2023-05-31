@@ -104,6 +104,7 @@ parts:
         build-packages:
         - libkf5kexiv2-dev
         - libmarble-dev
+        - libkf5doctools-dev
         stage-packages:
         - libmarblewidget-qt5-28
         - libkf5kexiv2-15.0.0
