@@ -98,6 +98,10 @@ parts:
         build-packages:
         - cmake
         - libkf5doctools-dev
+        - kirigami2-dev
+        stage-packages:
+        - qml-module-org-kde-kirigami2
+        - libkf5kirigami2-5
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
