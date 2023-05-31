@@ -5,6 +5,7 @@ base: core22
 version: 2.4.0
 summary: A fun app that bounces on top of the current window.
 description: Amusing Misuse of Resources animation that sits on top of the current window.
+icon: $CRAFT_PROJECT_DIR/snap/gui/logo.png
 apps:
     amor:
         common-id: org.kde.amor.desktop
