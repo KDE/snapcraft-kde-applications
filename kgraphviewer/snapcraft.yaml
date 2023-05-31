@@ -21,7 +21,6 @@ apps:
         - opengl
         - wayland
         - x11
-        - audio-playback
         - unity7
         command-chain:
         - snap/command-chain/desktop-launch
