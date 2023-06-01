@@ -5,7 +5,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kstars
-version: 3.6.4
+version: 3.6.5
 apps:
     kstars:
         # extensions:
@@ -139,7 +139,7 @@ parts:
         - libgomp1
         - libqt5datavisualization5
         - libraw20
-        source: https://download.kde.org/stable/kstars/kstars-3.6.4.tar.xz
+        source: https://download.kde.org/stable/kstars/kstars-3.6.5.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
