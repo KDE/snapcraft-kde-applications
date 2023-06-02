@@ -24,6 +24,7 @@ apps:
         - unity7
         - network
         - network-bind
+        - browser-support
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -1174,6 +1175,7 @@ parts:
         - qtquickcontrols2-5-dev
         - qtdeclarative5-dev
         - pybind11-dev
+        - libpulse-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -1203,6 +1205,7 @@ parts:
         - libkf5purpose-bin
         - libpython3.10
         - qt5-image-formats-plugins
+        - pulseaudio
         source: http://download.kde.org/stable/release-service/23.04.1/src/audiotube-23.04.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
