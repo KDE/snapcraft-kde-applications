@@ -22,6 +22,7 @@ apps:
         - unity7
         - network
         - network-bind
+        - browser-support
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -46,7 +47,9 @@ plugs:
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     QTWEBENGINEPROCESS_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
-    QT_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/kf5:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/plugins/designer"
+    QT_PLUGIN_PATH: "$QT_PLUGIN_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/marble"
+    MARBLE_PLUGIN_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/marble/plugins
+    MARBLE_DATA_PATH: $SNAP/usr/share/marble/data
 hooks:
     configure:
         plugs:
@@ -86,17 +89,18 @@ parts:
             PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin${PATH:+:$PATH}
         - &id002
             XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
-        - &id003
-            LD_LIBRARY_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
-        - &id004
-            PKG_CONFIG_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
-        - &id005
-            ACLOCAL_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
-        - &id006
-            SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-105-qt-5-15-9-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
+    patches:
+        after:
+        - kde-neon
+        source: .
+        source-type: local
+        plugin: dump
+        stage:
+        - patches/marble-libs-install-snapcraft.patch
     marble:
         after:
         - kde-neon
+        - patches
         parse-info:
         - usr/share/metainfo/org.kde.marble.appdata.xml
         plugin: cmake
@@ -115,6 +119,8 @@ parts:
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
+        - "-DMARBLE_PLUGIN_INSTALL_PATH=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
+        - "-DMARBLE_DATA_INSTALL_PATH=/usr/share/marble/data"
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
@@ -126,15 +132,12 @@ parts:
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/lintain"
-        build-environment: &id007
+        override-pull: |
+            craftctl default
+            patch -p1 < ../../patches/src/patches/marble-libs-install-snapcraft.patch
+        build-environment: &id003
         - *id001
         - *id002
-        - *id003
-        - *id004
-        - *id005
-        - *id006
-        - PKG_CONFIG_PATH: $PKG_CONFIG_PATH:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:$CRAFT_STAGE/usr/lib/pkgconfig:$CRAFT_STAGE/usr/share/pkgconfig
-        - PKG_CONFIG_LIBDIR: $CRAFT_STAGE/usr/lib:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET
     cleanup:
         after:
         - kde-neon
