@@ -214,7 +214,8 @@ kde-frameworks-core22:
     - echo "SDK snapcraft.yaml" && cat sdk/snapcraft.yaml
     - cd runtime
     - !reference [.snap, script]
-    - cd ../sdk
+    - cd ../sdk/sdk-wrapper && sh sdk_wrapper.sh
+    - cd ../
     - !reference [.snap, script]
 
 akregator:
