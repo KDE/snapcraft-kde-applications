@@ -558,6 +558,7 @@ integration.cmake_parameters = %w(
   -DENABLE_TESTING=OFF
   -DBUILD_TESTING=OFF
   -DKDE_SKIP_TEST_SETTINGS=ON
+  -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
 )
 integration.stage_packages = %w(libxcursor1)
 integration.plugin = 'cmake'
@@ -587,16 +588,17 @@ config.parts['sdk-wrapper'] = sdk_wrapper
 config.parts['kf5'].prime = ['-usr/lib/*/qt5/bin/qmake']
 # wrap the exectuable cmake targets to have a suitable LD_LIBRARY_PATH
 config.parts['kf5'].build_packages = ['ruby']
-config.parts['kf5'].override_build = "pwd; $CRAFT_STAGE/sdk_wrapper.sh\n$CRAFT_STAGE/sdk_wrapper.rb kf5\nsnapcraftctl build"
+config.parts['kf5'].override_build = "pwd; $CRAFT_STAGE/sdk_wrapper.sh\n$CRAFT_STAGE/sdk_wrapper.rb kf5\ncraftctl default"
 config.parts['kf5'].after = ['sdk-wrapper']
 
 config.parts['kf5-dev'].prime = nil
 # wrap the exectuable cmake targets to have a suitable LD_LIBRARY_PATH
-config.parts['kf5-dev'].override_build = "pwd; $CRAFT_STAGE/sdk_wrapper.rb kf5-dev\nsnapcraftctl build"
+config.parts['kf5-dev'].override_build = "pwd; $CRAFT_STAGE/sdk_wrapper.rb kf5-dev\ncraftctl default"
 
 config.parts['plasma-integration'].prime = nil
 # wrap the exectuable cmake targets to have a suitable LD_LIBRARY_PATH
-#config.parts['plasma-integration'].override_build = "pwd; /sdk_wrapper.rb plasma-integration\nsnapcraftctl build"
+config.parts['plasma-integration'].override_build = "pwd; $CRAFT_STAGE/sdk_wrapper.rb plasma-integration\ncraftctl default"
+config.parts['plasma-integration'].after = ['sdk-wrapper']
 
 FileUtils.mkpath('sdk')
 puts File.write('sdk/snapcraft.yaml', YAML.dump(config, indentation: 4))
