@@ -24,7 +24,7 @@ variables:
   #Which core base to build on
   CORE: core22
   #KF5 and QT5 version
-  VERSION: 5-105-qt-5-15-9
+  VERSION: 5-106-qt-5-15-9
 
 # Use this template by extending it.
 #
@@ -135,8 +135,8 @@ variables:
   variables:
     BRANCH: Neon/release
     CORE: core22
-    VERSION: 5-105-qt-5-15-9
-    RELEASE_TO: beta
+    VERSION: 5-106-qt-5-15-9
+    RELEASE_TO: candidate
 
 # Examples
 
@@ -214,8 +214,7 @@ kde-frameworks-core22:
     - echo "SDK snapcraft.yaml" && cat sdk/snapcraft.yaml
     - cd runtime
     - !reference [.snap, script]
-    - cd ../sdk/sdk-wrapper && sh sdk_wrapper.sh
-    - cd ../
+    - cd ../sdk
     - !reference [.snap, script]
 
 akregator:
