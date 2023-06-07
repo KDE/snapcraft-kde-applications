@@ -1,4 +1,4 @@
-# New frameworks content pack on core22. Build 3
+# New frameworks content pack on core22. Build 4
 
 require 'fileutils'
 require 'json'
