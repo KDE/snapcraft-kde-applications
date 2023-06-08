@@ -187,8 +187,8 @@ end
 qtchooser_config_dir = "#{root}/parts/kf5/install/usr/lib/#{gnu_arch}-linux-gnu/qt-default/qtchooser"
 FileUtils.mkpath(qtchooser_config_dir)
 File.write("#{qtchooser_config_dir}/default.conf", <<-CONF)
-/snap/kf5-5-106-qt-5-15-9-core22-sdk/current/usr/lib/qt5/bin
-/snap/kf5-5-106-qt-5-15-9-core22-sdk/current/usr/lib/#{gnu_arch}-linux-gnu
+/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/qt5/bin
+/snap/kf5-5-104-qt-5-15-8-core22-sdk/current/usr/lib/#{gnu_arch}-linux-gnu
 CONF
 FileUtils.ln_s('default.conf', "#{qtchooser_config_dir}/qt5.conf", force: true)
 FileUtils.ln_s('default.conf', "#{qtchooser_config_dir}/5.conf", force: true)
