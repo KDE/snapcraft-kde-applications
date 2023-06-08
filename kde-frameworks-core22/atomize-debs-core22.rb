@@ -326,7 +326,7 @@ class SnapcraftConfig
 end
 
 config = SnapcraftConfig.new
-config.name = 'kf5-5-106-qt-5-15-9-core22'
+config.name = 'kf5-5-105-qt-5-15-9-core22'
 config.version = 'unknown'
 config.summary = 'KDE Frameworks 5'
 config.description = 'KDE Frameworks are addons and useful extensions to Qt'
@@ -336,10 +336,10 @@ config.base = 'core22'
 config.compression = 'lzo'
 
 slot = SnapcraftConfig::Slot.new
-slot.content = 'kf5-5-106-qt-5-15-9-core22-all'
+slot.content = 'kf5-5-105-qt-5-15-9-core22-all'
 slot.interface = 'content'
 slot.read = %w[.]
-config.slots['kf5-5-106-qt-5-15-9-core22-slot'] = slot
+config.slots['kf5-5-105-qt-5-15-9-core22-slot'] = slot
 
 package_repo = SnapcraftConfig::PackageRepository.new
 package_repo.type = 'apt'
@@ -442,7 +442,7 @@ parts.each_cons(2) do |first_name, second_name|
   runs += source.runtime_binaries
   if source.upstream_name == 'extra-cmake-modules' && config.version
     kf5_version = source.upstream_version
-    config.version = '5.106'
+    config.version = '5.105'
   end
   if source.upstream_name == 'qtbase-opensource-src'
     qt5_version = '5.15.9'
@@ -453,7 +453,7 @@ end
 # This is the only way we can version a content snap.
 #kf5_version = 'kf5-' + kf5_version.split('.')[0..1].join('-')
 #qt5_version = 'qt-' + qt5_version.split('.')[0..0].join('-')
-kf5_version = 'kf5-5-106'
+kf5_version = 'kf5-5-105'
 qt5_version = 'qt-5-15-9'
 platform_version = 'core22'
 
@@ -573,7 +573,7 @@ puts File.write('stage-dev.json', JSON.generate(runs + devs))
 
 ### sdk snap
 
-config.name = 'kf5-5-106-qt-5-15-9-core22-sdk'
+config.name = 'kf5-5-105-qt-5-15-9-core22-sdk'
 # We mustn't define the slots in the SDK, it'd confuse snapd on what to
 # autoconnect when both snaps are installed.
 config.slots.clear
@@ -587,12 +587,12 @@ config.parts['sdk-wrapper'] = sdk_wrapper
 config.parts['kf5'].prime = ['-usr/lib/*/qt5/bin/qmake']
 # wrap the exectuable cmake targets to have a suitable LD_LIBRARY_PATH
 config.parts['kf5'].build_packages = ['ruby']
-config.parts['kf5'].override_build = "pwd; $CRAFT_STAGE/sdk_wrapper.sh\n$CRAFT_STAGE/sdk_wrapper.rb kf5\nsnapcraftctl build"
+config.parts['kf5'].override_build = "pwd; $SNAPCRAFT_STAGE/sdk_wrapper.sh\n$SNAPCRAFT_STAGE/sdk_wrapper.rb kf5\nsnapcraftctl build"
 config.parts['kf5'].after = ['sdk-wrapper']
 
 config.parts['kf5-dev'].prime = nil
 # wrap the exectuable cmake targets to have a suitable LD_LIBRARY_PATH
-config.parts['kf5-dev'].override_build = "pwd; $CRAFT_STAGE/sdk_wrapper.rb kf5-dev\nsnapcraftctl build"
+config.parts['kf5-dev'].override_build = "pwd; $SNAPCRAFT_STAGE/sdk_wrapper.rb kf5-dev\nsnapcraftctl build"
 
 config.parts['plasma-integration'].prime = nil
 # wrap the exectuable cmake targets to have a suitable LD_LIBRARY_PATH
