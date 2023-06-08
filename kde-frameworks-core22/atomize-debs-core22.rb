@@ -531,6 +531,7 @@ config.parts['kf5-dev'] = dev
 integration = SnapcraftConfig::Part.new
 integration.after = %w(kf5-dev)
 integration.build_packages = %w(
+               cmake
                extra-cmake-modules
                gettext
                kio-dev
