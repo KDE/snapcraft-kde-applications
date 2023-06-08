@@ -597,7 +597,7 @@ config.parts['kf5-dev'].override_build = "pwd; $CRAFT_STAGE/sdk_wrapper.rb kf5-d
 
 config.parts['plasma-integration'].prime = nil
 # wrap the exectuable cmake targets to have a suitable LD_LIBRARY_PATH
-config.parts['plasma-integration'].override_build = "pwd; $CRAFT_STAGE/sdk_wrapper.rb plasma-integration\ncraftctl default"
+config.parts['plasma-integration'].override_build = "pwd; /sdk_wrapper.rb plasma-integration\ncraftctl default"
 
 
 FileUtils.mkpath('sdk')
