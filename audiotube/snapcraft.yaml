@@ -1220,6 +1220,8 @@ parts:
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/lintain"
+        - "-run/pulseaudio-enable-autospawn"
+        - "-etc/pulse/client.conf.d/01-enable-autospawn.conf"
         build-environment:
         - *id001
         - *id002
