@@ -124,6 +124,7 @@ parts:
         after:
         - kde-neon
         - baloo-widgets
+        - dolphin
         plugin: cmake
         build-packages:
         - cmake
@@ -150,7 +151,6 @@ parts:
         after:
         - kde-neon
         - baloo-widgets
-        - dolphin-plugins
         plugin: cmake
         build-packages:
         - cmake
