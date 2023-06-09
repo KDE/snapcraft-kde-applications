@@ -89,7 +89,7 @@ parts:
         - kde-neon
         parse-info:
         - usr/share/metainfo/org.kde.choqok.appdata.xml
-        source: https://invent.kde.org/games/choqok.git
+        source: https://invent.kde.org/network/choqok.git
         plugin: cmake
         build-packages:
         - cmake
