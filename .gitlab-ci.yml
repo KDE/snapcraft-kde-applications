@@ -274,6 +274,9 @@ cantor:
 cervisia:
   extends: .prepone-extension-update
 
+choqok:
+  extends: .prepone-extension-update
+
 digikam:
   extends: .prepone-extension-update
 
@@ -689,6 +692,9 @@ picmi:
   extends: .prepone-extension-update
 
 qmlkonsole:
+  extends: .prepone-extension-update
+
+qrca:
   extends: .prepone-extension-update
 
 quassel:
