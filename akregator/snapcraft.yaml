@@ -215,6 +215,15 @@ parts:
         plugin: cmake
         build-packages:
         - cmake
+        - libaccounts-qt5-dev
+        - libsqlite3-dev
+        - libkaccounts-dev
+        stage-packages:
+        - libaccounts-qt5-1
+        - libsqlite3-0
+        - sqlite3
+        - libkaccounts2
+        - kaccounts-providers
         source: http://download.kde.org/stable/release-service/23.04.2/src/akonadi-23.04.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
