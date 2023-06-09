@@ -211,7 +211,7 @@ parts:
         plugin: cmake
         build-packages:
         - cmake
-        source: https://github.com/tukaani-project/xz/releases/download/v5.4.3/xz-5.4.3.tar.xz
+        source: https://github.com/tukaani-project/xz/releases/download/v5.2.10/xz-5.2.10.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
