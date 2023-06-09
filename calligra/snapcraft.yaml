@@ -79,7 +79,6 @@ apps:
         common-id: org.kde.karbon.desktop
         command: usr/bin/karbon
         plugs:
-        plugs:
         - home
         - desktop
         - desktop-legacy
