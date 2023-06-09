@@ -103,7 +103,7 @@ parts:
         - libkgantt-dev
         - libqca-qt5-2-dev
         stage-packages:
-        - libkchart5
+        - libkchart2
         - libkf5holidays5
         - libkf5calendarcore5
         - libkf5activities5
