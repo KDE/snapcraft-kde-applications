@@ -1,6 +1,6 @@
 ---
 name: calligra
-version: 3.2.1
+version: 3.3.89
 confinement: strict
 grade: stable
 base: core22
