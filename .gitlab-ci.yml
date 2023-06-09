@@ -24,7 +24,7 @@ variables:
   #Which core base to build on
   CORE: core22
   #KF5 and QT5 version
-  VERSION: 5-105-qt-5-15-9
+  VERSION: 5-106-qt-5-15-9
 
 # Use this template by extending it.
 #
@@ -245,6 +245,9 @@ atlantik:
   extends: .prepone-extension-update
 
 audiotube:
+  extends: .prepone-extension-update
+
+basket:
   extends: .prepone-extension-update
 
 blinken:
