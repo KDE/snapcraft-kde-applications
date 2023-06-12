@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: gwenview
-version: 23.04.1
+version: 23.04.2
 apps:
     gwenview:
         # extensions:
@@ -39,17 +39,17 @@ plugs:
         interface: content
         target: $SNAP/data-dir/sounds
         default-provider: gtk-common-themes
-    kf5-5-105-qt-5-15-9-core22:
-        content: kf5-5-105-qt-5-15-9-core22-all
+    kf5-5-106-qt-5-15-9-core22:
+        content: kf5-5-106-qt-5-15-9-core22-all
         interface: content
-        default-provider: kf5-5-105-qt-5-15-9-core22:kf5-5-105-qt-5-15-9-core22
+        default-provider: kf5-5-106-qt-5-15-9-core22:kf5-5-106-qt-5-15-9-core22
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     GST_PLUGIN_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0
     GST_PLUGIN_SYSTEM_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0
     GST_PLUGIN_SCANNER: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner
-    XDG_DATA_DIRS: $SNAP/current/usr/share:/snap/kf5-5-105-qt-5-15-9-core22/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+    XDG_DATA_DIRS: $SNAP/current/usr/share:/snap/kf5-5-106-qt-5-15-9-core22/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
     QT_PLUGIN_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins
     QML2_IMPORT_PATH: $CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
 hooks:
@@ -85,22 +85,18 @@ parts:
         source-type: local
         plugin: make
         make-parameters:
-        - PLATFORM_PLUG=kf5-5-105-qt-5-15-9-core22
+        - PLATFORM_PLUG=kf5-5-106-qt-5-15-9-core22
         build-snaps:
-        - kf5-5-105-qt-5-15-9-core22-sdk
+        - kf5-5-106-qt-5-15-9-core22-sdk
         build-environment:
         - &id001
-            PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin${PATH:+:$PATH}
+            PATH: /snap/kf5-5-106-qt-5-15-9-core22-sdk/current/usr/bin${PATH:+:$PATH}
         - &id002
-            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-106-qt-5-15-9-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
         - &id003
-            LD_LIBRARY_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+            XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/snap/kf5-5-106-qt-5-15-9-core22-sdk/current/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
         - &id004
-            PKG_CONFIG_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
-        - &id005
-            ACLOCAL_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
-        - &id006
-            SNAPCRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-105-qt-5-15-9-core22-sdk/current${SNAPCRAFT_CMAKE_ARGS:+:$SNAPCRAFT_CMAKE_ARGS}
+            CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-106-qt-5-15-9-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
     gwenview:
         after:
         - kde-neon
@@ -137,13 +133,13 @@ parts:
         - denef
         - qml-module-org-kde-purpose
         - libwayland-client0
-        source: http://download.kde.org/stable/release-service/23.04.1/src/gwenview-23.04.1.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.2/src/gwenview-23.04.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-106-qt-5-15-9-core22-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
         prime:
         - "-usr/lib/*/cmake/*"
@@ -156,24 +152,16 @@ parts:
         - "-usr/lib/gcc/$SNAPCRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/lintain"
-        build-environment: &id007
+        build-environment: &id005
         - *id001
         - *id002
         - *id003
         - *id004
-        - *id005
-        - *id006
-    # cleanup:
-    #     after:
-    #     - gwenview
-    #     plugin: nil
-    #     build-snaps:
-    #     - kde-frameworks-5-99-qt-5-15-7-core20
-    #     override-prime: |
-    #         set -eux
-    #         for snap in "kde-frameworks-5-99-qt-5-15-7-core20"; do  # List all content-snaps you're using here
-    #             cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
-    #         done
-    #         find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
-    #         find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
+    cleanup:
+        after:
+        - gwenview
+        plugin: nil
+        override-prime: |
+            set -eux
+            #unused libs found by linters
 
