@@ -220,7 +220,7 @@ parts:
         - libetonyek-0.1-1
         - libgsl23
         - libgslcblas0
-        - libilmbase24
+        - libilmbase25
         - libkchart2
         - liblangtag1
         - libodfgen-0.1-1
