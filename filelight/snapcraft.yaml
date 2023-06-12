@@ -7,8 +7,8 @@ adopt-info: filelight
 version: 23.04.2
 apps:
     filelight:
-        extensions:
-        - kde-neon
+        # extensions:
+        # - kde-neon
         common-id: org.kde.filelight.desktop
         command: usr/bin/filelight
         plugs:
