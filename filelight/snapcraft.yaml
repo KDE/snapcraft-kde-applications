@@ -93,6 +93,7 @@ parts:
         plugin: cmake
         build-packages:
         - cmake
+        - libkf5doctools-dev
         - libkf5qqc2desktopstyle-dev
         - qml-module-org-kde-kirigami2
         - qml-module-org-kde-kcoreaddons
