@@ -9,6 +9,7 @@ apps:
         common-id: org.kde.basket.desktop
         command: usr/bin/basket
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
