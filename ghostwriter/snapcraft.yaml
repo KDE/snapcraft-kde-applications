@@ -41,7 +41,7 @@ plugs:
         interface: content
         target: $SNAP/data-dir/sounds
         default-provider: gtk-common-themes
-    kf5-5-105-qt-5-15-9-core22:
+    kf5-5-106-qt-5-15-9-core22:
         content: kf5-5-106-qt-5-15-9-core22-all
         interface: content
         default-provider: kf5-5-106-qt-5-15-9-core22
