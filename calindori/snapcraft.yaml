@@ -5,7 +5,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: calindori
-logo: $CRAFT_PROJECT_DIR/snap/gui/logo.png
+icon: $CRAFT_PROJECT_DIR/snap/gui/logo.png
 apps:
     calindori:
         # extensions:
