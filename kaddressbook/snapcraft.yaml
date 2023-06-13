@@ -143,11 +143,52 @@ parts:
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-etc/alsa/conf.d/99-pulse.conf"
+    akonadi:
+        after:
+        - kde-neon
+        plugin: cmake
+        build-packages:
+        - cmake
+        - libaccounts-qt5-dev
+        - libsqlite3-dev
+        - libkaccounts-dev
+        - xz-utils
+        stage-packages:
+        - libaccounts-qt5-1
+        - libsqlite3-0
+        - sqlite3
+        - libkaccounts2
+        - kaccounts-providers
+        - qml-module-org-kde-kaccounts
+        - kaccounts-integration
+        - xz-utils
+        source: http://download.kde.org/stable/release-service/23.04.2/src/akonadi-23.04.2.tar.xz
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_PREFIX_PATH=$CRAFT_STAGE\\;/snap/kf5-5-106-qt-5-15-9-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=$CRAFT_STAGE\\;/snap/kf5-5-106-qt-5-15-9-core22-sdk/current"
+        build-environment: *id005
+        prime:
+        - "-usr/lib/*/cmake/*"
+        - "-usr/include/*"
+        - "-usr/share/ECM/*"
+        - "-usr/share/doc/*"
+        - "-usr/share/man/*"
+        - "-usr/share/icons/breeze-dark*"
+        - "-usr/bin/X11"
+        - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
+        - "-usr/lib/aspell/*"
+        - "-etc/alsa/conf.d/99-pulse.conf"
     kaddressbook:
         after:
         - kde-neon
         - kpimtextedit
         - libkdepim
+        - akonadi
         parse-info:
         - usr/share/metainfo/org.kde.kaddressbook.appdata.xml
         plugin: cmake
