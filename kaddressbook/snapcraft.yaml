@@ -153,6 +153,8 @@ parts:
         - libsqlite3-dev
         - libkaccounts-dev
         - xz-utils
+        - xsltproc
+        - liblzma-dev
         stage-packages:
         - libaccounts-qt5-1
         - libsqlite3-0
