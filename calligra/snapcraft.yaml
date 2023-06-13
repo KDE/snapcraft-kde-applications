@@ -218,7 +218,7 @@ parts:
         stage-packages:
         - libqca-qt5-2
         - libetonyek-0.1-1
-        - libgsl23
+        - libgsl27
         - libgslcblas0
         - libilmbase25
         - libkchart2
