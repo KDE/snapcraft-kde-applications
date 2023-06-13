@@ -131,6 +131,8 @@ parts:
         - kinit
         - libkf5service5
         - kded5
+        - kio
+        - kio-extras
         source: http://download.kde.org/stable/release-service/23.04.2/src/cervisia-23.04.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
