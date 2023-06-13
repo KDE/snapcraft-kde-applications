@@ -161,10 +161,13 @@ parts:
         - &id004
             CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-106-qt-5-15-9-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
     patches:
-        source: patches
+        after:
+        - kde-neon
+        source: .
+        source-type: local
         plugin: dump
-        prime:
-        - "-*"
+        stage:
+        - patches/text.diff
     calligra:
         after:
         - patches
@@ -244,8 +247,8 @@ parts:
         - usr/share/metainfo/org.kde.karbon.appdata.xml
         source: https://download.kde.org/stable/calligra/3.2.1/calligra-3.2.1.tar.xz
         override-pull: |
-            snapcraftctl pull
-            patch -p1 < $SNAPCRAFT_STAGE/text.diff
+            craftctl default
+            patch -p1 < ../../patches/src/patches/text.diff
         build-environment:
         - *id001
         - *id002
