@@ -128,7 +128,7 @@ parts:
         - *id004
     cleanup:
         after:
-        - kalarm
+        - filelight
         plugin: nil
         override-prime: |
             set -eux
