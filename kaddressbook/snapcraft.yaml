@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kaddressbook
-version: 23.04.1
+version: 23.04.2
 apps:
     kaddressbook:
         # extensions:
@@ -38,10 +38,10 @@ plugs:
         interface: content
         target: $SNAP/data-dir/sounds
         default-provider: gtk-common-themes
-    kf5-5-105-qt-5-15-9-core22:
-        content: kf5-5-105-qt-5-15-9-core22-all
+    kf5-5-106-qt-5-15-9-core22:
+        content: kf5-5-106-qt-5-15-9-core22-all
         interface: content
-        default-provider: kf5-5-105-qt-5-15-9-core22
+        default-provider: kf5-5-106-qt-5-15-9-core22
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
@@ -74,29 +74,25 @@ parts:
         source-type: local
         plugin: make
         make-parameters:
-        - PLATFORM_PLUG=kf5-5-105-qt-5-15-9-core22
+        - PLATFORM_PLUG=kf5-5-106-qt-5-15-9-core22
         build-snaps:
-        - kf5-5-105-qt-5-15-9-core22-sdk
+        - kf5-5-106-qt-5-15-9-core22-sdk
         build-environment:
         - &id001
-            PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/bin${PATH:+:$PATH}
+            PATH: /snap/kf5-5-106-qt-5-15-9-core22-sdk/current/usr/bin${PATH:+:$PATH}
         - &id002
-            XDG_DATA_DIRS: $SNAPCRAFT_STAGE/usr/share:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-106-qt-5-15-9-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
         - &id003
-            LD_LIBRARY_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/vala-current:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+            XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/snap/kf5-5-106-qt-5-15-9-core22-sdk/current/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
         - &id004
-            PKG_CONFIG_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET/pkgconfig:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/lib/pkgconfig:/snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}
-        - &id005
-            ACLOCAL_PATH: /snap/kf5-5-105-qt-5-15-9-core22-sdk/current/usr/share/aclocal${ACLOCAL_PATH:+:$ACLOCAL_PATH}
-        - &id006
-            CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-105-qt-5-15-9-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
+            CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-106-qt-5-15-9-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
     kpimtextedit:
         after:
         - kde-neon
         plugin: cmake
         build-packages:
         - cmake
-        source: http://download.kde.org/stable/release-service/23.04.1/src/kpimtextedit-23.04.1.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.2/src/kpimtextedit-23.04.2.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -104,14 +100,12 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
-        build-environment: &id007
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-106-qt-5-15-9-core22-sdk/current"
+        build-environment: &id005
         - *id001
         - *id002
         - *id003
         - *id004
-        - *id005
-        - *id006
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
@@ -128,7 +122,7 @@ parts:
         - kde-neon
         - kpimtextedit
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/23.04.1/src/libkdepim-23.04.1.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.2/src/libkdepim-23.04.2.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -136,8 +130,8 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
-        build-environment: *id007
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-106-qt-5-15-9-core22-sdk/current"
+        build-environment: *id005
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
@@ -159,7 +153,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.1/src/kaddressbook-23.04.1.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.2/src/kaddressbook-23.04.2.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -167,9 +161,9 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-105-qt-5-15-9-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-106-qt-5-15-9-core22-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
-        build-environment: *id007
+        build-environment: *id005
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
