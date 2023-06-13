@@ -99,9 +99,10 @@ parts:
         - libkf5contacts-dev
         - kirigami2-dev
         stage-packages:
-        - kirigami2-5
+        - libkf5kirigami2-5
         - libkf5contacts5
         - libkf5prison5
+        - qml-module-org-kde-kirigami2
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
