@@ -23,6 +23,7 @@ apps:
         - unity7
         - network
         - network-bind
+        - camera
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -110,6 +111,7 @@ parts:
         - qml-module-qtquick-dialogs
         - qml-module-qtquick-layouts
         - qml-module-qtquick-window2
+        - qml-module-org-kde-purpose
         - pkg-config
         stage-packages:
         - libkf5purpose-bin
@@ -128,6 +130,7 @@ parts:
         - qml-module-qtquick-dialogs
         - qml-module-qtquick-layouts
         - qml-module-qtquick-window2
+        - qml-module-org-kde-purpose
         source: http://download.kde.org/stable/release-service/23.04.2/src/kamoso-23.04.2.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
