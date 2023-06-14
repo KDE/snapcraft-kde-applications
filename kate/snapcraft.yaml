@@ -106,6 +106,7 @@ parts:
         - libqt5webengine5
         - libqt5webengine-data
         - libffi8
+        - libssl3
         source: http://download.kde.org/stable/release-service/23.04.2/src/kate-23.04.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
