@@ -23,7 +23,6 @@ apps:
         - unity7
         - network
         - network-bind
-        - camera
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
