@@ -114,8 +114,8 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        # build-attributes:
-        # - enable-patchelf
+        build-attributes:
+        - enable-patchelf
         build-environment:
         - XDG_CONFIG_DIRS: "$CRAFT_STAGE/etc/xdg"
         prime:
