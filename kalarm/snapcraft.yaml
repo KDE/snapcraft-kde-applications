@@ -114,6 +114,7 @@ parts:
         - libkf5mime-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
+        - libkf5pimtextedit-dev
         - pkg-config
         - xsltproc
         - zlib1g-dev
@@ -143,6 +144,9 @@ parts:
         - pkg-config
         - xsltproc
         - zlib1g
+        - libkf5pimtextedit5
+        - libkf5pimtextedit-plugins
+        - libkf5pimtextedit-data
         source: http://download.kde.org/stable/release-service/23.04.2/src/kalarm-23.04.2.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
