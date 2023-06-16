@@ -94,6 +94,8 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
+        stage-packages:
+        - valgrind
         source: http://download.kde.org/stable/release-service/23.04.2/src/kcachegrind-23.04.2.tar.xz
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
@@ -101,7 +103,7 @@ parts:
         - -DENABLE_TESTING=OFF
         - -DBUILD_TESTING=OFF
         - -DKDE_SKIP_TEST_SETTINGS=ON
-        - -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-106-qt-5-15-9-core22-sdk/current
+        - -DCMAKE_FIND_ROOT_PATH=$CRAFT_STAGE:/snap/kf5-5-106-qt-5-15-9-core22-sdk/current
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         build-environment: &id005
         - *id001
