@@ -508,6 +508,9 @@ kmouth:
 kmplot:
   extends: .prepone-extension-update
 
+kmymoney:
+  extends: .prepone-extension-update
+
 knavalbattle:
   extends: .prepone-extension-update
 
