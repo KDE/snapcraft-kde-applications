@@ -97,6 +97,7 @@ parts:
         - libkf5doctools-dev
         - libboost-dev
         - libgpgme-dev
+        - libgpgmepp-dev
         stage-packages:
         - libqgpgme7
         source: http://download.kde.org/stable/release-service/23.04.2/src/libktorrent-23.04.2.tar.xz
