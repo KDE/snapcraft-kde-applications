@@ -5,7 +5,7 @@ confinement: classic
 grade: stable
 base: core22
 adopt-info: kdevelop
-version: 23.04.1
+version: 23.04.2
 compression: lzo
 apps:
     kdevelop:
@@ -36,7 +36,7 @@ package-repositories:
     suites:
     - jammy
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: http://origin.archive.neon.kde.org/user
+    url: http://archive.neon.kde.org/tmp/user-snap2
     key-server: keyserver.ubuntu.com
 parts:
     mesa-patchelf:
@@ -194,7 +194,7 @@ parts:
         - libpulse0
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
-        source: http://download.kde.org/stable/release-service/23.04.1/src/kdevelop-23.04.1.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.2/src/kdevelop-23.04.2.tar.xz
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
         - -DCMAKE_BUILD_TYPE=Release
