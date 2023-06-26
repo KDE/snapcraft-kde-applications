@@ -94,7 +94,7 @@ parts:
         build-packages:
         - cmake
         - libkf5prison-dev
-        source: http://download.kde.org/stable/release-service/23.04.2/src/akonadi-contacts-23.04.2.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.2/src/kmime-23.04.2.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -108,6 +108,35 @@ parts:
         - *id002
         - *id003
         - *id004
+        prime:
+        - "-usr/lib/*/cmake/*"
+        - "-usr/include/*"
+        - "-usr/share/ECM/*"
+        - "-usr/share/doc/*"
+        - "-usr/share/man/*"
+        - "-usr/share/icons/breeze-dark*"
+        - "-usr/bin/X11"
+        - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
+        - "-usr/lib/aspell/*"
+        - "-etc/alsa/conf.d/99-pulse.conf"
+    akonadi-contacts:
+        after:
+        - kde-neon
+        - kmime
+        plugin: cmake
+        build-packages:
+        - cmake
+        - libkf5prison-dev
+        source: http://download.kde.org/stable/release-service/23.04.2/src/akonadi-contacts-23.04.2.tar.xz
+        cmake-parameters:
+        - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - -DCMAKE_FIND_ROOT_PATH=$CRAFT_STAGE:/snap/kf5-5-106-qt-5-15-9-core22-sdk/current
+        build-environment: *id005
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
