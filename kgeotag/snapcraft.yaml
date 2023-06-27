@@ -23,6 +23,7 @@ apps:
         - unity7
         - network
         - network-bind
+        - browser-support
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -49,6 +50,7 @@ environment:
     GST_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
+    QTWEBENGINEPROCESS_PATH: "$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
 hooks:
     configure:
         plugs:
@@ -62,6 +64,8 @@ layout:
         bind: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/alsa-lib"
     "/usr/share/alsa":
         bind: "$SNAP/usr/share/alsa"
+    /usr/share/qt5:
+        bind: $SNAP/kf5/usr/share/qt5
 package-repositories:
 -   type: apt
     components:
@@ -100,7 +104,6 @@ parts:
         stage-packages:
         - libmarblewidget-qt5-28
         - libkf5kexiv2-15.0.0
-        - libqt5webengine-data
         source: https://download.kde.org/stable/kgeotag/1.4.0/kgeotag-1.4.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
