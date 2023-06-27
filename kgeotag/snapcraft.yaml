@@ -51,6 +51,7 @@ environment:
     GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
     QTWEBENGINEPROCESS_PATH: "$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
+    MARBLE_SHARED_LIBRARY_PREFIX: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/marble/plugins"
 hooks:
     configure:
         plugs:
@@ -104,6 +105,7 @@ parts:
         stage-packages:
         - libmarblewidget-qt5-28
         - libkf5kexiv2-15.0.0
+        - marble-plugins
         source: https://download.kde.org/stable/kgeotag/1.4.0/kgeotag-1.4.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
