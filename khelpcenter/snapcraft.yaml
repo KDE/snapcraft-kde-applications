@@ -7,12 +7,13 @@ base: core22
 adopt-info: khelpcenter
 version: 23.04.2
 apps:
-    khelpcenter:
+    khelpcenter:marble-plugins
         # extensions:
         # - kde-neon
         common-id: org.kde.khelpcenter.desktop
         command: usr/bin/khelpcenter
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
@@ -100,6 +101,7 @@ parts:
         - libgif-dev
         - libxapian-dev
         - libicu-dev
+        - libxml2-dev
         stage-packages:
         - libkf5khtml5
         - libgrantlee-templates5
