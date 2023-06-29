@@ -89,7 +89,7 @@ parts:
         after:
         - kde-neon
         parse-info:
-        - usr/share/metainfo/org.kde.kirigami-gallery.appdata.xml
+        - usr/share/metainfo/org.kde.kirigami2.gallery.appdata.xml
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
