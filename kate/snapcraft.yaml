@@ -95,8 +95,14 @@ parts:
         - hspell
         - libkf5kiofilewidgets5
         - libkf5syntaxhighlighting5
+        - libkf5syntaxhighlighting-tools
+        - qml-module-org-kde-syntaxhighlighting
         - libkf5texteditor5
+        - libkf5textwidgets5
+        - libkf5coreaddons5
+        - qml-module-org-kde-kcoreaddons
         - libqt5concurrent5
+        - libkf5crash5
         - libkf5newstuffcore5
         - libkf5newstuffwidgets5
         - qml-module-org-kde-newstuff
@@ -107,6 +113,8 @@ parts:
         - libqt5webengine-data
         - libffi8
         - libssl3
+        - kio
+        - kio-extras
         source: http://download.kde.org/stable/release-service/23.04.2/src/kate-23.04.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
