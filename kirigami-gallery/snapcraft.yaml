@@ -9,8 +9,8 @@ apps:
     kirigami-gallery:
         # extensions:
         # - kde-neon
-        common-id: org.kde.kirigami-gallery.desktop
-        command: usr/bin/kirigami-gallery
+        common-id: org.kde.kirigami2.gallery
+        command: usr/bin/kirigami2gallery
         plugs:
         - desktop
         - desktop-legacy
