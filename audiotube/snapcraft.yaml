@@ -82,7 +82,7 @@ package-repositories:
     suites:
     - jammy
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: https://origin.archive.neon.kde.org/user
+    url: http://archive.neon.kde.org/tmp/user-snap2
     key-server: keyserver.ubuntu.com
 parts:
     kde-neon:
@@ -1170,11 +1170,14 @@ parts:
         - qtdeclarative5-dev
         - pybind11-dev
         - libpulse-dev
+        - libphonon4qt5-dev
+        - libphonon4qt5experimental-dev
         stage-packages:
         - libasound2
         - libasound2-data
         - libasound2-plugins
-        - phonon4qt5
+        - libphonon4qt5-4
+        - libphonon4qt5experimental
         - gstreamer1.0-alsa
         - gstreamer1.0-pulseaudio
         - gstreamer1.0-plugins-good
