@@ -3,7 +3,7 @@ name: kirigami-gallery
 confinement: strict
 grade: stable
 base: core22
-adopt-info: kirigami2-gallery
+adopt-info: kirigami-gallery
 version: 23.04.2
 apps:
     kirigami-gallery:
