@@ -55,8 +55,8 @@ parts:
     qtconf:
         plugin: nil
         override-build: |
-            mkdir -p $CRAFT_PART_INSTALL/etc/xdg
-            cat <<EOF > $CRAFT_PART_INSTALL/etx/xdg/qt.conf
+            mkdir -p $CRAFT_PART_INSTALL/usr/bin/xdg
+            cat <<EOF > $CRAFT_PART_INSTALL/usr/bin/qt.conf
             [Paths]
             Prefix = ../../
             LibraryExecutables = usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec
