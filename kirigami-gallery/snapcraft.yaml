@@ -4,6 +4,8 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kirigami-gallery
+description: 'View examples of Kirigami components'
+summary: 'Shows examples of Kirigami components and allows you to play with them'
 version: 23.04.2
 apps:
     kirigami-gallery:
