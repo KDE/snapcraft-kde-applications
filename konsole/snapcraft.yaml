@@ -5,7 +5,7 @@ confinement: classic
 grade: stable
 base: core22
 adopt-info: konsole
-version: 23.04.1
+version: 23.04.2
 apps:
     konsole:
         # extensions:
@@ -16,7 +16,16 @@ assumes:
 - snapd2.43
 compression: lzo
 environment:
-    LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/usr/lib:$SNAP/lib:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio"
+    QTWEBENGINEPROCESS_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
+    XDG_DATA_DIRS: "$XDG_DATA_DIRS:$SNAP/usr/share"
+    XDG_CONFIG_DIRS: "$XDG_CONFIG_DIRS:$SNAP/etc/xdg"
+    __EGL_VENDOR_LIBRARY_DIRS: "$SNAP/etc/glvnd/egl_vendor.d:$SNAP/usr/share/glvnd/egl_vendor.d"
+    LIBGL_DRIVERS_PATH: "$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/dri"
+layout:
+    /usr/share/X11:
+        symlink: $SNAP/usr/share/X11
+    /usr/share/qt5:
+        bind: $SNAP/usr/share/qt5
 package-repositories:
 -   type: apt
     components:
@@ -24,7 +33,7 @@ package-repositories:
     suites:
     - jammy
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: http://origin.archive.neon.kde.org/user
+    url: http://archive.neon.kde.org/tmp/user-snap2
     key-server: keyserver.ubuntu.com
 parts:
     mesa-patchelf:
@@ -43,7 +52,22 @@ parts:
         - no-patchelf
         stage:
         - usr/lib/${CRAFT_ARCH_TRIPLET}/dri
+    qtconf:
+        plugin: nil
+        override-build: |
+            mkdir -p $CRAFT_PART_INSTALL/etc/xdg
+            cat <<EOF > $CRAFT_PART_INSTALL/etx/xdg/qt.conf
+            [Paths]
+            Prefix = ../../
+            LibraryExecutables = usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec
+            Plugins = usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins
+            Qml2Imports = usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
+            Translations = usr/share/qt5/translations
+            Data = usr/share/qt5
+            EOF
     konsole:
+        after:
+        - qtconf
         parse-info:
         - usr/share/metainfo/org.kde.konsole.appdata.xml
         plugin: cmake
@@ -91,6 +115,7 @@ parts:
         - libkf5iconthemes5
         - libkf5kiocore5
         - kio
+        - kio-extras
         - libkf5newstuff5
         - libkf5newstuffcore5
         - libkf5notifications5
@@ -113,7 +138,7 @@ parts:
         - libglu1-mesa
         - bash
         - breeze
-        source: http://download.kde.org/stable/release-service/23.04.1/src/konsole-23.04.1.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.2/src/konsole-23.04.2.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -121,6 +146,9 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        build-environment:
+        - XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+        - XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
         build-attributes:
         - enable-patchelf
         prime:
