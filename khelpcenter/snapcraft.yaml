@@ -111,6 +111,7 @@ parts:
         - libxapian30
         - kio
         - xapian-tools
+        - shared-mime-info
         source: http://download.kde.org/stable/release-service/23.04.2/src/khelpcenter-23.04.2.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
@@ -135,6 +136,9 @@ parts:
         - "-usr/bin/X11"
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
+        override-build: |
+            snapcraftctl build
+            update-mime-database $SNAPCRAFT_PART_INSTALL/usr/share/mime/
     cleanup:
         after:
         - khelpcenter
