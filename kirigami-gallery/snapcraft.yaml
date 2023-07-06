@@ -6,6 +6,7 @@ base: core22
 adopt-info: kirigami-gallery
 description: 'View examples of Kirigami components'
 summary: 'Shows examples of Kirigami components and allows you to play with them'
+icon: $CRAFT_PROJECT_DIR/snap/gui/logo.png
 version: 23.04.2
 apps:
     kirigami-gallery:
@@ -126,6 +127,13 @@ parts:
         - "-usr/bin/X11"
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
+        override-build: |
+            craftctl default
+
+            sed -i "${CRAFT_PART_INSTALL}/usr/share/applications/org.kde.kirigami2.gallery.desktop" -e 's|Icon=preferences-desktop-theme$|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/kirigami.svg|'
+
+            cd "${CRAFT_PART_INSTALL}/usr/share/icons/hicolor/scalable/apps"
+            gzip -d -c kirigami.svgz > kolourpaint.svg
     cleanup:
         after:
         - kirigami-gallery
