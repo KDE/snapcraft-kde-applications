@@ -102,6 +102,7 @@ parts:
         - libgvc6
         - libltdl7
         - libpathplan4
+        - graphviz
         source: https://invent.kde.org/graphics/kgraphviewer.git
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
