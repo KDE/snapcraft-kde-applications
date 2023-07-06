@@ -138,12 +138,14 @@ parts:
         - libgmp-dev
         - libgcrypt20-dev
         - libmms-dev
+        - libqgpgme15
         stage-packages:
         - libgcrypt20
         - libmms0
         - libgmp10
         - libgpgmepp6
         - libqca-qt5-2
+        - libqgpgme15
         - ca-certificates
         source: http://download.kde.org/stable/release-service/23.04.2/src/kget-23.04.2.tar.xz
         cmake-parameters:
