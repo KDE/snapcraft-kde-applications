@@ -120,13 +120,11 @@ parts:
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/lintain"
-        build-environment: &id007
+        build-environment: &id005
         - *id001
         - *id002
         - *id003
         - *id004
-        - *id005
-        - *id006
     cleanup:
         after:
         - kde-neon
