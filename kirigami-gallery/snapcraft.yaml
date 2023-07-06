@@ -129,7 +129,8 @@ parts:
         - "-usr/lib/aspell/*"
         override-build: |
             craftctl default
-
+            mkdir -p ${CRAFT_PART_INSTALL}/usr/share/icons/hicolor/scalable/apps
+            cp $CRAFT_PROJECT_DIR/kirigami.svgz ${CRAFT_PART_INSTALL}/usr/share/icons/hicolor/scalable/apps/
             sed -i "${CRAFT_PART_INSTALL}/usr/share/applications/org.kde.kirigami2.gallery.desktop" -e 's|Icon=preferences-desktop-theme$|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/kirigami.svg|'
 
             cd "${CRAFT_PART_INSTALL}/usr/share/icons/hicolor/scalable/apps"
