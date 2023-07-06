@@ -23,6 +23,7 @@ apps:
         - unity7
         - network
         - network-bind
+        - system-journal
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -44,6 +45,10 @@ plugs:
         interface: content
         default-provider: kf5-5-106-qt-5-15-9-core22
         target: $SNAP/kf5
+    system-journal:
+        interface: system-files
+        read:
+        - /var/log/journal/
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     QML2_IMPORT_PATH: "$QML2_IMPORT_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qml:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml/org/kde/kirigami.2:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml"
