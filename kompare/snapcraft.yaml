@@ -118,7 +118,7 @@ parts:
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
         override-build: |
-            snapcraftctl build
+            craftctl default
             update-mime-database $SNAPCRAFT_PART_INSTALL/usr/share/mime/
         source: http://download.kde.org/stable/release-service/23.04.2/src/kompare-23.04.2.tar.xz
         cmake-parameters:
