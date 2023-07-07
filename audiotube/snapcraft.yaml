@@ -111,7 +111,6 @@ parts:
         - python3-dev
         python-packages:
         - yt-dlp
-        - pybind11
         - ytmusicapi == 0.25.0
         stage:
         - -bin/activate
@@ -1151,10 +1150,48 @@ parts:
         - *id002
         - *id003
         - *id004
+    pybind:
+        after:
+        - kde-neon
+        - python-deps
+        plugin: cmake
+        source: https://github.com/pybind/pybind11.git
+        source-tag: "v2.10.3"
+        build-packages:
+        - cmake
+        - python3-dev
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - -DPYBIND11_FINDPYTHON=ON
+        - -DPYBIND11_TEST=OFF
+        prime:
+        - "-usr/lib/*/cmake/*"
+        - "-usr/include/*"
+        - "-usr/share/ECM/*"
+        - "-usr/share/doc/*"
+        - "-usr/share/man/*"
+        - "-usr/share/icons/breeze-dark*"
+        - "-usr/bin/X11"
+        - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
+        - "-usr/lib/aspell/*"
+        - "-usr/share/lintain"
+        - "-run/pulseaudio-enable-autospawn"
+        - "-etc/pulse/client.conf.d/01-enable-autospawn.conf"
+        build-environment:
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        - PYTHONPATH: "$CRAFT_STAGE/lib/python3.10/site-packages:$CRAFT_STAGE/usr/lib/python3/dist-packages"
     audiotube:
         after:
         - kde-neon
         - python-deps
+        - pybind
         parse-info:
         - usr/share/metainfo/org.kde.audiotube.appdata.xml
         plugin: cmake
@@ -1172,6 +1209,7 @@ parts:
         - libpulse-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
+        - qcoro-qt5-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -1203,6 +1241,13 @@ parts:
         - libpython3.10
         - qt5-image-formats-plugins
         - pulseaudio
+        - ffmpeg
+        - libqcoro5core0
+        - libqcoro5dbus0
+        - libqcoro5network0
+        - libqcoro5qml0
+        - libqcoro5quick0
+        - libqcoro5websockets0
         source: http://download.kde.org/stable/release-service/23.04.2/src/audiotube-23.04.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
