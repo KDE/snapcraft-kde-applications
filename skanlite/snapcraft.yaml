@@ -14,6 +14,7 @@ apps:
         - network-bind
         - hardware-observe
         - raw-usb
+        - system-files
     avahi-daemon:
         command: usr/sbin/avahi-daemon -D
         daemon: simple
@@ -21,6 +22,7 @@ apps:
         - network
         - network-bind
         - hardware-observe
+        - system-files
     hp-setup:
         command: usr/bin/hp-setup
         plugs:
@@ -29,12 +31,14 @@ apps:
         - avahi-observe
         - hardware-observe
         - raw-usb
+        - system-files
     skanlite:
         # extensions:
         # - kde-neon
         common-id: org.kde.skanlite.desktop
         command: usr/bin/skanlite
         plugs:
+        - system-files
         - home
         - removable-media
         - desktop
