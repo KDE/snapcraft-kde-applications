@@ -99,30 +99,6 @@ parts:
         source-type: local
         prime:
         - ".*"
-    qt5mqtt:
-        plugin: qmake
-        source: https://github.com/qt/qtmqtt.git
-        source-tag: v15.2.0
-        build-packages:
-        - qt5-qmake
-        prime:
-        - "-usr/lib/*/cmake/*"
-        - "-usr/include/*"
-        - "-usr/share/ECM/*"
-        - "-usr/share/doc/*"
-        - "-usr/share/man/*"
-        - "-usr/share/icons/breeze-dark*"
-        - "-usr/bin/X11"
-        - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
-        - "-usr/lib/aspell/*"
-        - "-usr/share/lintain"
-        build-environment: &id007
-        - *id001
-        - *id002
-        - *id003
-        - *id004
-        - *id005
-        - *id006
     qxlsx:
         plugin: cmake
         source: https://github.com/QtExcel/QXlsx.git
@@ -153,11 +129,11 @@ parts:
         after:
         - kde-neon
         - patches
-        - qt5mqtt
         parse-info:
         - usr/share/metainfo/org.kde.labplot2.appdata.xml
         plugin: cmake
         build-packages:
+        - libqt5mqtt-dev
         - libcantorlibs-dev
         - libkf5doctools-dev
         - libhdf5-dev
