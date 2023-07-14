@@ -5,7 +5,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kphotoalbum
-version: 5.10.0
+version: 5.11.0
 icon: $CRAFT_PROJECT_DIR/snap/gui/logo.png
 apps:
     kphotoalbum:
@@ -96,7 +96,7 @@ parts:
         after:
         - kde-neon
         plugin: cmake
-        source: https://download.kde.org/stable/kphotoalbum/5.10.0/kphotoalbum-5.10.0.tar.xz
+        source: https://download.kde.org/stable/kphotoalbum/5.11.0/kphotoalbum-5.11.0.tar.xz
         build-packages:
         - cmake
         - libkf5doctools-dev
