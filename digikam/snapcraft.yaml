@@ -2,7 +2,7 @@
 ---
 name: digikam
 base: core22
-version: 8.0.0
+version: 8.1.0
 adopt-info: digikam
 grade: stable
 confinement: strict
@@ -108,7 +108,7 @@ parts:
         - kde-neon
         parse-info:
         - usr/share/metainfo/org.kde.digikam.appdata.xml
-        source: http://download.kde.org/stable/digikam/8.0.0/digiKam-8.0.0.tar.xz
+        source: http://download.kde.org/stable/digikam/8.1.0/digiKam-8.1.0.tar.xz
         plugin: cmake
         build-packages:
         - appstream
