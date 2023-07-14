@@ -1,6 +1,6 @@
 ---
 name: labplot
-version: 2.10.0
+version: 2.10.1
 confinement: strict
 grade: stable
 base: core22
@@ -225,7 +225,7 @@ parts:
         - libreadstat1
         - libmatio11
         - discount
-        source: https://download.kde.org/stable/labplot/labplot-2.10.0.tar.xz
+        source: https://download.kde.org/stable/labplot/labplot-2.10.1.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
