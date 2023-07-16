@@ -24,7 +24,7 @@ variables:
   #Which core base to build on
   CORE: core22
   #KF5 and QT5 version
-  VERSION: 5-106-qt-5-15-9
+  VERSION: 5-108-qt-5-15-10
 
 # Use this template by extending it.
 #
@@ -317,6 +317,9 @@ juk:
   extends: .prepone-extension-update
 
 k3b:
+  extends: .prepone-extension-update
+
+kxstitch:
   extends: .prepone-extension-update
 
 kaddressbook:
