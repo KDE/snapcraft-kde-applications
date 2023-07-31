@@ -9,8 +9,8 @@ apps:
     zanshin:
         # extensions:
         # - kde-neon
-        common-id: org.kde.zanshin.desktop
-        command: usr/bin/zanshin5
+        common-id: Zanshin
+        command: usr/bin/zanshin
         plugs:
         - home
         - desktop
