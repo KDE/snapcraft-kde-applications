@@ -97,7 +97,7 @@ parts:
         - libboost-dev
         - libkf5doctools-dev
         stage-packages:
-        - libboost1.71-dev
+        - libboost-dev
         - libxml2
         - libxslt1.1
         source: http://download.kde.org/stable/release-service/23.04.3/src/zanshin-23.04.3.tar.xz
