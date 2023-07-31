@@ -96,10 +96,16 @@ parts:
         - libxml2-dev
         - libboost-dev
         - libkf5doctools-dev
+        - libkf5akonadi-dev
+        - libkf5akonadicalendar-dev
+        - libkf5kontactinterface-dev
         stage-packages:
         - libboost-dev
         - libxml2
         - libxslt1.1
+        - akonadi-server
+        - libkf5akonadicalendar5abi2
+        - libkf5kontactinterface5
         source: http://download.kde.org/stable/release-service/23.04.3/src/zanshin-23.04.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
