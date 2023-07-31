@@ -104,7 +104,7 @@ parts:
         - libxml2
         - libxslt1.1
         - akonadi-server
-        - libkf5akonadicalendar5abi2
+        - libkf5akonadicalendar5
         - libkf5kontactinterface5
         source: http://download.kde.org/stable/release-service/23.04.3/src/zanshin-23.04.3.tar.xz
         cmake-parameters:
