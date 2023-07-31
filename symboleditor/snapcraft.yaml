@@ -100,7 +100,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: https://invent.kde.org/graphics/symboleditor
+        source: https://invent.kde.org/graphics/symboleditor.git
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
