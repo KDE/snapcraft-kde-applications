@@ -89,7 +89,7 @@ parts:
         after:
         - kde-neon
         parse-info:
-        - usr/share/metainfo/org.kde.zanshin.appdata.xml
+        - usr/share/metainfo/org.kde.zanshin.metainfo.xml
         plugin: cmake
         build-packages:
         - libxslt1-dev
