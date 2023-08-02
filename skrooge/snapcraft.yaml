@@ -11,7 +11,6 @@ apps:
         # - kde-neon
         command: usr/bin/skrooge
         common-id: org.kde.skrooge
-        desktop: org.kde.skrooge.desktop
         plugs:
         - network-manager
         - audio-playback
