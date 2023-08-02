@@ -107,6 +107,7 @@ parts:
         - libswresample-dev
         - libswscale-dev
         - qtbase5-private-dev
+        - libqt5opengl5-desktop-dev
         stage-packages:
         - libgfortran5
         - libpocketsphinx3
