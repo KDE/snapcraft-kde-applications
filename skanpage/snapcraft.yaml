@@ -127,6 +127,7 @@ parts:
         - libusb-1.0-0-dev
         - libxml2-dev
         - python3-minimal
+        - autoconf-archive
       stage-packages:
         - libexif12
         - libgphoto2-6
