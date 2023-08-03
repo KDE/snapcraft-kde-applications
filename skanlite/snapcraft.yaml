@@ -158,6 +158,7 @@ parts:
         - libjpeg-turbo8-dev
         - libpng-dev
         - libxml2-dev
+        - libgnutls28-dev
     ksanecore:
         after:
         - kde-neon
