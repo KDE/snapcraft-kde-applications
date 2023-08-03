@@ -116,6 +116,8 @@ parts:
         - qml-module-org-kde-purpose
         - libkf5purpose-bin
         - libqt5texttospeech5
+        - libkuserfeedbackcore1
+        - libkuserfeedbackwidgets1
         source: http://download.kde.org/stable/ruqola/ruqola-1.9.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
