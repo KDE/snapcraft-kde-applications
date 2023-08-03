@@ -98,11 +98,14 @@ parts:
         - libkf5prison-dev
         - libkf5contacts-dev
         - kirigami2-dev
+        - libkf5purpose-dev
         stage-packages:
         - libkf5kirigami2-5
         - libkf5contacts5
         - libkf5prison5
         - qml-module-org-kde-kirigami2
+        - libkf5purpose5
+        = qml-module-org-kde-purpose
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
