@@ -198,10 +198,6 @@ parts:
         - kde-neon
         - ksanecore
         plugin: cmake
-        build-packages:
-        - libsane-dev
-        stage-packages:
-        - libsane
         source: http://download.kde.org/stable/release-service/23.04.3/src/libksane-23.04.3.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
@@ -243,8 +239,6 @@ parts:
         - libkf5doctools-dev
         stage-packages:
         - avahi-daemon
-        - sane
-        - sane-utils
         build-environment:
         - *id001
         - *id002
