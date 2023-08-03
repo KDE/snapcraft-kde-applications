@@ -86,9 +86,27 @@ parts:
             XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/snap/kf5-5-108-qt-5-15-10-core22-sdk/current/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
         - &id004
             CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-108-qt-5-15-10-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
+    mesa-patchelf:
+        plugin: nil
+        stage-packages:
+        - libgl1-mesa-dri
+        - freeglut3
+        - libglu1-mesa
+        stage:
+        - "-usr/lib/${CRAFT_ARCH_TRIPLET}/dri"
+    mesa-no-patchelf:
+        plugin: nil
+        stage-packages:
+        - libgl1-mesa-dri
+        build-attributes:
+        - no-patchelf
+        stage:
+        - usr/lib/${CRAFT_ARCH_TRIPLET}/dri
     subtitlecomposer:
         after:
         - kde-neon
+        - mesa-patchelf
+        - mesa-no-patchelf
         parse-info:
         - usr/share/metainfo/org.kde.subtitlecomposer.appdata.xml
         plugin: cmake
