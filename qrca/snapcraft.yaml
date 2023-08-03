@@ -1,4 +1,4 @@
-#trigger rebuild
+#trigger rebuild 1
 name: qrca
 confinement: strict
 grade: stable
