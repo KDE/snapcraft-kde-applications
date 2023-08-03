@@ -105,7 +105,7 @@ parts:
         - libkf5prison5
         - qml-module-org-kde-kirigami2
         - libkf5purpose5
-        = qml-module-org-kde-purpose
+        - qml-module-org-kde-purpose
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
