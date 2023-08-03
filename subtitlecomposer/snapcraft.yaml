@@ -126,6 +126,8 @@ parts:
         - libswscale-dev
         - qtbase5-private-dev
         - libqt5opengl5-desktop-dev
+        - libegl1-mesa-dev
+        - libglu1-mesa-dev
         stage-packages:
         - libgfortran5
         - libpocketsphinx3
