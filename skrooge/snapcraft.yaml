@@ -23,6 +23,7 @@ apps:
         - unity7
         - network
         - network-bind
+        - browser-support
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -120,6 +121,7 @@ parts:
         - libsqlcipher0
         - freeglut3
         - libslang2
+        - libkf5grantleetheme-plugins
         source: https://download.kde.org/stable/skrooge/skrooge-2.30.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
