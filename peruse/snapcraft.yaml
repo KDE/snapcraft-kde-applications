@@ -4,7 +4,7 @@ version: '1.80'
 confinement: strict
 grade: stable
 base: core22
-adopt-info: peruse
+adopt-info: perusecreator
 apps:
     peruse:
         # extensions:
@@ -97,7 +97,7 @@ parts:
         after:
         - kde-neon
         parse-info:
-        - usr/share/appdata/org.kde.peruse.appdata.xml
+        - usr/share/metainfo/org.kde.peruse.appdata.xml
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
