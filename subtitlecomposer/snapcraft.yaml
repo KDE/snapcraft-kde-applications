@@ -128,6 +128,7 @@ parts:
         - libqt5opengl5-desktop-dev
         - libegl1-mesa-dev
         - libglu1-mesa-dev
+        - libgles2-mesa-dev
         stage-packages:
         - libgfortran5
         - libpocketsphinx3
