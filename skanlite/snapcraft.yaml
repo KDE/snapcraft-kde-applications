@@ -182,7 +182,7 @@ parts:
         - *id004
         - LDFLAGS: "-L$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET"
         - CFLAGS: "-I$CRAFT_STAGE/usr/include/KF5"
-        - LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/"
+        - LD_LIBRARY_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/"
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
@@ -227,7 +227,7 @@ parts:
         - *id004
         - LDFLAGS: "-L$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET"
         - CFLAGS: "-I$CRAFT_STAGE/usr/include/KF5"
-        - LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/"
+        - LD_LIBRARY_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/"
     skanlite:
         parse-info:
         - usr/share/metainfo/org.kde.skanlite.appdata.xml
@@ -248,7 +248,7 @@ parts:
         - *id004
         - LDFLAGS: "-L$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET"
         - CFLAGS: "-I$CRAFT_STAGE/usr/include/KF5"
-        - LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/"
+        - LD_LIBRARY_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/"
         source: http://download.kde.org/stable/release-service/23.04.3/src/skanlite-23.04.3.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
