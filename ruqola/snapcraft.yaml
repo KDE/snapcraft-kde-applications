@@ -118,6 +118,8 @@ parts:
         - libqt5texttospeech5
         - libkuserfeedbackcore1
         - libkuserfeedbackwidgets1
+        - libqt5keychain1
+        - libqt5networkauth5
         source: http://download.kde.org/stable/ruqola/ruqola-1.9.2.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
