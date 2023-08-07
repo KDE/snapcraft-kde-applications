@@ -4,7 +4,7 @@ version: '1.80'
 confinement: strict
 grade: stable
 base: core22
-adopt-info: perusecreator
+adopt-info: peruse
 apps:
     peruse:
         # extensions:
