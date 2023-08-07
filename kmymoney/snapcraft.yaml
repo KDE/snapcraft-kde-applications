@@ -129,6 +129,7 @@ parts:
         - qtdeclarative5-dev
         - qtkeychain-qt5-dev
         - qtwebengine5-dev
+        - libkf5doctools-dev
         stage-packages:
         - libalkimia5-8
         - libaqbanking44
