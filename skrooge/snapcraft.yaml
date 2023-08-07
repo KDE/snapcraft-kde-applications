@@ -50,7 +50,7 @@ environment:
     GST_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
-    QTWEBENGINEPROCESS_PATH: "$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
+    QTWEBENGINEPROCESS_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
     QT_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/kf5:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/plugins"
 hooks:
     configure:
@@ -66,7 +66,7 @@ layout:
     "/usr/share/alsa":
         bind: "$SNAP/usr/share/alsa"
     /usr/share/qt5:
-        bind: $SNAP/kf5/usr/share/qt5
+        bind: $SNAP/usr/share/qt5
 slots:
     session-dbus-interface:
         interface: dbus
@@ -113,6 +113,7 @@ parts:
         - libsqlcipher-dev
         - xsltproc
         - qtbase5-private-dev
+        - qtwebengine5-dev
         stage-packages:
         - libgrantlee-templates5
         - libgrantlee-textdocument5
@@ -123,6 +124,7 @@ parts:
         - freeglut3
         - libslang2
         - libkf5grantleetheme-plugins
+        - qtwebengine5-dev
         source: https://download.kde.org/stable/skrooge/skrooge-2.30.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
