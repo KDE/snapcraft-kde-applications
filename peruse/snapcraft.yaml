@@ -1,6 +1,6 @@
 ---
 name: peruse
-version: '1.2'
+version: '1.80'
 confinement: strict
 grade: stable
 base: core22
@@ -99,15 +99,13 @@ parts:
         parse-info:
         - usr/share/appdata/org.kde.peruse.appdata.xml
         plugin: cmake
-        build-environment:
-        - CMAKE_BUILD_PARALLEL_LEVEL: "4"
         build-packages:
         - libkf5doctools-dev
         stage-packages:
         - qml-module-org-kde-kirigami
         - qml-module-org-kde-newstuff
         - qml-module-qt-labs-folderlistmodel
-        source: http://download.kde.org/stable/peruse/peruse-1.2.tar.xz
+        source: http://download.kde.org/stable/peruse/peruse-1.80.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -132,6 +130,7 @@ parts:
         - *id002
         - *id003
         - *id004
+        - CMAKE_BUILD_PARALLEL_LEVEL: "4"
     cleanup:
         after:
         - kde-neon
