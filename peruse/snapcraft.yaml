@@ -50,7 +50,7 @@ environment:
     GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
     LIBGL_DRIVERS_PATH: "$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/dri"
     QML2_IMPORT_PATH: $QML2_IMPORT_PATH:$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/qml
-    QT_QUICK_CONTROLS_STYLE: org.kde.desktopstyle
+    QT_QUICK_CONTROLS_STYLE: org.kde.qqc2desktopstyle
 hooks:
     configure:
         plugs:
