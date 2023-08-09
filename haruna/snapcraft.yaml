@@ -55,6 +55,7 @@ environment:
     QT_PLUGIN_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins
     QML2_IMPORT_PATH: $CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
     LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/blas:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/lapack"
+    QT_QUICK_CONTROLS_STYLE: org.kde.qqc2desktopstyle
 hooks:
     configure:
         plugs:
@@ -167,6 +168,7 @@ parts:
         - samba-libs
         - libblas3
         - liblapack3
+        - qml-module-org-kde-qqc2desktopstyle
         source: https://download.kde.org/stable/haruna/haruna-0.11.3.tar.xz
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
