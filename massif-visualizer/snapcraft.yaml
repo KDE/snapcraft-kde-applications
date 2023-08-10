@@ -96,7 +96,7 @@ parts:
         - libkchart-dev
         - libkgraphviewer-dev
         stage-packages:
-        - libkchart
+        - libkchart2
         - libkgraphviewer3
         - kgraphviewer
         - valgrind
