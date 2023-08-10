@@ -7,7 +7,11 @@ grade: stable
 base: core22
 apps:
     valgrind:
-        command: "usr/bin/valgrind --tool=massif"
+        command: usr/bin/valgrind
+        plugs:
+        - home
+        - network
+        - network-bind
     massif-visualizer:
         # extensions:
         # - kde-neon
