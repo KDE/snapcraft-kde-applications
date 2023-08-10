@@ -169,7 +169,7 @@ parts:
         - libblas3
         - liblapack3
         - qml-module-org-kde-breeze
-        - libnvidia-gl-470
+        - libnvidia-gl-525
         source: https://download.kde.org/stable/haruna/haruna-0.11.3.tar.xz
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
