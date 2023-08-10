@@ -135,7 +135,7 @@ parts:
         - qml-module-qtquick-dialogs
         - qml-module-qtquick-layouts
         - qml-module-org-kde-breeze
-        - kded
+        - kded5
         source: http://download.kde.org/stable/peruse/peruse-1.80.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
