@@ -54,8 +54,8 @@ environment:
     XDG_DATA_DIRS: $SNAP/current/usr/share:/snap/kf5-5-108-qt-5-15-10-core22/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
     QT_PLUGIN_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins
     QML2_IMPORT_PATH: $CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
-    LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/blas:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/lapack"
-    QT_QUICK_CONTROLS_STYLE: org.kde.qqc2desktopstyle
+    LD_LIBRARY_PATH: "$SNAP/usr/lib:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/blas:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/lapack"
+    QT_QUICK_CONTROLS_STYLE: org.kde.breeze
 hooks:
     configure:
         plugs:
@@ -168,7 +168,8 @@ parts:
         - samba-libs
         - libblas3
         - liblapack3
-        - qml-module-org-kde-qqc2desktopstyle
+        - qml-module-org-kde-breeze
+        - libnvidia-gl-470
         source: https://download.kde.org/stable/haruna/haruna-0.11.3.tar.xz
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
