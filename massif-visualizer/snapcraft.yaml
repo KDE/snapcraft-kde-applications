@@ -51,6 +51,7 @@ plugs:
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
+    VALGRIND_LIB: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/valgrind
 hooks:
     configure:
         plugs:
