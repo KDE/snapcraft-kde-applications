@@ -24,6 +24,9 @@ apps:
         - unity7
         - network
         - network-bind
+        - network-manager-observe
+        - password-manager-service
+        - online-accounts-service
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
