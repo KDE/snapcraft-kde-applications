@@ -50,7 +50,7 @@ environment:
     GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
     LIBGL_DRIVERS_PATH: "$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/dri"
-    QML2_IMPORT_PATH: $QML2_IMPORT_PATH:$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/qml
+    QML2_IMPORT_PATH: "$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/qml:$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/qt5/qml:$QML2_IMPORT_PATH"
     QT_QUICK_CONTROLS_STYLE: org.kde.breeze
 hooks:
     configure:
@@ -134,8 +134,11 @@ parts:
         - qml-module-qtquick-controls
         - qml-module-qtquick-dialogs
         - qml-module-qtquick-layouts
-        - qml-module-org-kde-breeze
+        - qml-module-org-kde-qqc2breezestyle
         - kded5
+        - kinit
+        - kio
+        - kio-extras
         source: http://download.kde.org/stable/peruse/peruse-1.80.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
