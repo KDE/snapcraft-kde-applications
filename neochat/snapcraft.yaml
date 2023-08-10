@@ -26,6 +26,7 @@ apps:
         - network-bind
         - network-manager-observe
         - password-manager-service
+        - online-accounts-service
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -52,7 +53,7 @@ environment:
     QML2_IMPORT_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/qml"
     QT_QPA_PLATFORMTHEME: flatpak
     QT_QPA_FLATPAK_PLATFORMTHEME: kde
-    QT_QUICK_CONTROLS_STYLE: org.kde.qqc2desktopstyle
+    QT_QUICK_CONTROLS_STYLE: org.kde.breeze
 hooks:
     configure:
         plugs:
@@ -157,7 +158,7 @@ parts:
         - libkf5doctools-dev
         - qtbase5-private-dev
         - qml-module-org-kde-kquickimageeditor
-        - qml-module-org-kde-qqc2desktopstyle
+        - qml-module-org-kde-qqc2breezestyle
         - kirigami-addons-data
         - qml-module-org-kde-kirigami-addons-datetime
         - qml-module-org-kde-kirigami-addons-labs-components
@@ -212,8 +213,6 @@ parts:
         - kde-neon
         - neochat
         plugin: nil
-        build-snaps:
-        - kf5-5-105-qt-5-15-9-core22-sdk
         override-prime:  |
             set -eux
             # find $CRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
