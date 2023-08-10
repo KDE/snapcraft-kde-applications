@@ -181,7 +181,6 @@ parts:
         - reuse
         - libsqlite3-0
         - libolm3
-        - qml-module-org-kde-qqc2desktopstyle
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
