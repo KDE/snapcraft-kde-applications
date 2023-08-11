@@ -175,7 +175,7 @@ parts:
         - libkf5holidays5
         - qml-module-org-kde-kholidays
         - qml-module-qtcharts
-        source: http://download.kde.org/stable/release-service/$CRAFT_PROJECT_VERSION/src/kweather-$CRAFT_PROJECT_VERSION.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.3/src/kweather-23.04.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
