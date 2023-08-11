@@ -135,6 +135,7 @@ parts:
         - qml-module-qtquick-dialogs
         - qml-module-qtquick-layouts
         - qml-module-org-kde-qqc2breezestyle
+        - qml-module-org-kde-quickcharts
         - kded5
         - kinit
         - kio
