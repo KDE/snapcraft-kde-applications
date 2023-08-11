@@ -122,7 +122,6 @@ parts:
         - libkf5calendarutils-dev
         - libkf5contacteditor-dev
         - libkf5contacts-dev
-        - libkf5doctools-dev
         - libkf5grantleetheme-dev
         - libkf5gravatar-dev
         - libkf5holidays-dev
@@ -157,9 +156,6 @@ parts:
         - shared-mime-info
         - xsltproc
         - zlib1g-dev
-        - akonadi-server
-        - sqlite
-        - akonadi-backend-sqlite
         stage-packages:
         - libboost1.74.0
         - libboost-graph1.74.0
@@ -212,6 +208,9 @@ parts:
         - shared-mime-info
         - xsltproc
         - zlib1g-dev
+        - akonadi-server
+        - sqlite
+        - akonadi-backend-sqlite
         source: http://download.kde.org/stable/release-service/$CRAFT_PROJECT_VERSION/src/kaddressbook-$CRAFT_PROJECT_VERSION.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
