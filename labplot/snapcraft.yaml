@@ -99,6 +99,7 @@ parts:
         plugin: cmake
         source: https://github.com/QtExcel/QXlsx.git
         source-tag: v1.4.6
+        source-subdir: QXlsx
         build-packages:
         - cmake
         cmake-parameters:
