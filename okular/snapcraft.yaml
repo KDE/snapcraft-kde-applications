@@ -220,6 +220,8 @@ parts:
         - libglu1-mesa
         - libmarkdown2
         - kio
+        - xdg-desktop-portal-kde
+        - qt5-xdgdesktopportal-platformtheme
         source: http://download.kde.org/stable/release-service/23.04.3/src/okular-23.04.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
