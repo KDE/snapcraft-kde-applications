@@ -168,7 +168,7 @@ parts:
         - samba-libs
         - libblas3
         - liblapack3
-        - qml-module-org-kde-breeze
+        - qml-module-org-kde-qqc2breezestyle
         - libnvidia-gl-525
         source: https://download.kde.org/stable/haruna/haruna-0.11.3.tar.xz
         cmake-parameters:
