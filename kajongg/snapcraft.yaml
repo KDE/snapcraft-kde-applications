@@ -115,7 +115,7 @@ parts:
         - python3-pyqt5
         - python3-qtpy
         - vorbis-tools
-        source: http://download.kde.org/stable/release-service/$CRAFT_PROJECT_VERSION/src/kajongg-$CRAFT_PROJECT_VERSION.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.3/src/kajongg-23.04.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
