@@ -102,6 +102,7 @@ parts:
         source-subdir: QXlsx
         build-packages:
         - cmake
+        - qtbase5-private-dev
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
