@@ -152,7 +152,7 @@ parts:
         - libkpimgapi-dev
         - libx11-dev
         - pkg-config
-        - qt5-phonon-dev
+        - libphonon4qt5-dev
         - shared-mime-info
         - xsltproc
         - zlib1g-dev
@@ -203,7 +203,7 @@ parts:
         - libkgantt5
         - libkpimgapi5
         - pkg-config
-        - qt5-phonon
+        - phonon4qt5-4
         - phonon4qt5-backend-gstreamer
         - shared-mime-info
         - xsltproc
@@ -211,7 +211,7 @@ parts:
         - akonadi-server
         - sqlite
         - akonadi-backend-sqlite
-        source: http://download.kde.org/stable/release-service/$CRAFT_PROJECT_VERSION/src/kaddressbook-$CRAFT_PROJECT_VERSION.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.3/src/kaddressbook-23.04.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
