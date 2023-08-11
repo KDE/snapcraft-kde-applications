@@ -102,6 +102,7 @@ parts:
         - xvfb
         stage-packages:
         - libqca-qt5-2
+        - konsole-kpart
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
