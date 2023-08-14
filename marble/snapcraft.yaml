@@ -138,6 +138,7 @@ parts:
         override-pull: |
             craftctl default
             patch -p1 < ../../patches/src/patches/allow_plugin_path_to_be_set.patch
+            patch -p1 < ../../patches/src/patches/marble-libs-install-appimage.patch
         build-environment: &id005
         - *id001
         - *id002
