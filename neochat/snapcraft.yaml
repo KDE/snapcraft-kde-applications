@@ -68,6 +68,10 @@ slots:
         interface: dbus
         name: org.kde.neochat
         bus: session
+    dbus-freedesktop-secrets:
+        interface: dbus
+        bus: session
+        name: org.freedesktop.secrets
 package-repositories:
 -   type: apt
     components:
