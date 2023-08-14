@@ -6,6 +6,13 @@ grade: stable
 base: core22
 adopt-info: peruse
 apps:
+    kded-service:
+        command: usr/bin/kded5
+        daemon: dbus
+        passthrough:
+            daemon-scope: user
+        activates-on:
+            - kded-dbus-interface
     peruse:
         # extensions:
         # - kde-neon
@@ -26,7 +33,7 @@ apps:
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
-- snapd2.43
+- snapd2.55.3
 compression: lzo
 plugs:
     desktop:
@@ -50,8 +57,8 @@ environment:
     GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
     GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
     LIBGL_DRIVERS_PATH: "$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/dri"
-    QML2_IMPORT_PATH: "$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/qml:$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/qt5/qml:$QML2_IMPORT_PATH"
-    QT_QUICK_CONTROLS_STYLE: org.kde.breeze
+    QML2_IMPORT_PATH: "$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/qml:$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/qt5/qml:$SNAP/kf5/$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/qt5/qml:$QML2_IMPORT_PATH"
+    QT_QUICK_CONTROLS_STYLE: org.kde.desktop
 hooks:
     configure:
         plugs:
@@ -69,6 +76,10 @@ slots:
     session-dbus-interface:
         interface: dbus
         name: org.kde.peruse
+        bus: session
+    kded-dbus-interface:
+        interface: dbus
+        name: org.kde.kded5
         bus: session
 package-repositories:
 -   type: apt

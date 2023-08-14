@@ -652,9 +652,6 @@ kweather:
 kwordquiz:
   extends: .prepone-extension-update
 
-kwrite:
-  extends: .prepone-extension-update
-
 labplot:
   extends: .prepone-extension-update
 

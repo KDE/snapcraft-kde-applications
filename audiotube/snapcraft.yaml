@@ -1,7 +1,7 @@
 # Trigger rebuild
 ---
 name: audiotube
-version: 23.04.2
+version: 23.04.3
 confinement: strict
 grade: stable
 base: core22
@@ -42,10 +42,10 @@ plugs:
         interface: content
         target: $SNAP/data-dir/sounds
         default-provider: gtk-common-themes
-    kf5-5-106-qt-5-15-9-core22:
-        content: kf5-5-106-qt-5-15-9-core22-all
+    kf5-5-108-qt-5-15-10-core22:
+        content: kf5-5-108-qt-5-15-10-core22-all
         interface: content
-        default-provider: kf5-5-106-qt-5-15-9-core22
+        default-provider: kf5-5-108-qt-5-15-10-core22
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
