@@ -162,7 +162,7 @@ parts:
         - libgpgme11
         - libgpgmepp6
         - libgrantlee5
-        - libkf5akonadi5
+        - libkf5akonadicore5
         - libkf5akonadicalendar5
         - libkf5akonadicontact5
         - libkf5akonadimime5
