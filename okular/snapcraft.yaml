@@ -9,9 +9,16 @@ apps:
         command: usr/lib/$CRAFT_ARCH_TRIPLET/libexec/xdg-desktop-portal-kde
         daemon: dbus
         passthrough:
-        daemon-scope: user
+            daemon-scope: user
         activates-on:
             - kde-portal-dbus
+    xdg-document-portal:
+        command: usr/libexec/xdg-document-portal
+        daemon: dbus
+        passthrough:
+            daemon-scope: user
+        activates-on:
+            - document-portal-dbus
     okular:
         # extensions:
         # - kde-neon
@@ -19,7 +26,6 @@ apps:
         common-id: org.kde.okular.desktop
         command: usr/bin/okular
         plugs:
-        - home
         - desktop
         - desktop-legacy
         - opengl
@@ -63,6 +69,10 @@ environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     QT_QPA_PLATFORMTHEME: flatpak
     QT_QPA_FLATPAK_PLATFORMTHEME: kde
+    HOME: $SNAP_REAL_HOME
+    XDG_CACHE_HOME: $SNAP_USER_COMMON/.cache
+    XDG_CONFIG_HOME: $SNAP_USER_COMMON/.config
+    XDG_DATA_HOME: $SNAP_USER_COMMON/.local/share
 hooks:
     configure:
         plugs:
@@ -80,6 +90,10 @@ slots:
     kde-portal-dbus:
         interface: dbus
         name: org.freedesktop.impl.portal.desktop.kde
+        bus: session
+    document-portal-dbus:
+        interface: dbus
+        name: org.freedesktop.portal.Documents
         bus: session
 package-repositories:
 -   type: apt
