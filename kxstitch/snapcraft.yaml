@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kxstitch
-version: 2.2.0
+version: git
 apps:
     kxstitch:
         # extensions:
@@ -24,7 +24,7 @@ apps:
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
-- snapd2.43
+- snapd2.55.3
 compression: lzo
 plugs:
     desktop:
@@ -100,7 +100,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/2.2.0/kxstitch-2.2.0.tar.xz
+        source: https://invent.kde.org/graphics/kxstitch.git
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
