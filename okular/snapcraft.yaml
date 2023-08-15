@@ -5,12 +5,21 @@ grade: stable
 base: core22
 adopt-info: okular
 apps:
+    xdg-desktop-portal-kde:
+        command: usr/lib/$CRAFT_ARCH_TRIPLET/libexec/xdg-desktop-portal-kde
+        daemon: dbus
+        passthrough:
+        daemon-scope: user
+        activates-on:
+            - kde-portal-dbus
     okular:
         # extensions:
         # - kde-neon
+        desktop: usr/share/applications/org.kde.okular.desktop
         common-id: org.kde.okular.desktop
         command: usr/bin/okular
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
@@ -23,10 +32,11 @@ apps:
         - cups-control
         - removable-media
         - system-packages-doc
+        - udisks2
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
-- snapd2.43
+- snapd2.55.3
 compression: lzo
 plugs:
     desktop:
@@ -44,6 +54,11 @@ plugs:
         interface: content
         default-provider: kf5-5-108-qt-5-15-10-core22
         target: $SNAP/kf5
+    foo-install-cups:
+        interface: content
+        content: foo
+        default-provider: cups
+        target: $SNAP_DATA/foo
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     QT_QPA_PLATFORMTHEME: flatpak
@@ -61,6 +76,10 @@ slots:
     session-dbus-interface:
         interface: dbus
         name: org.kde.okular
+        bus: session
+    kde-portal-dbus:
+        interface: dbus
+        name: org.freedesktop.impl.portal.desktop.kde
         bus: session
 package-repositories:
 -   type: apt
@@ -220,6 +239,7 @@ parts:
         - libglu1-mesa
         - libmarkdown2
         - kio
+        - xdg-desktop-portal
         - xdg-desktop-portal-kde
         - qt5-xdgdesktopportal-platformtheme
         source: http://download.kde.org/stable/release-service/23.04.3/src/okular-23.04.3.tar.xz
