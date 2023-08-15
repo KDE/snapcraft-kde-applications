@@ -105,7 +105,7 @@ parts:
         after:
         - kde-neon
         - patches
-        source: http://download.kde.org/stable/krita/5.1.6/krita-5.1.6.tar.gz
+        source: https://invent.kde.org/graphics/krita/-/archive/5.1.6/krita-5.1.6.tar.gz
         plugin: cmake
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
