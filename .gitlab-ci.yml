@@ -640,7 +640,7 @@ kturtle:
 kubrick:
   extends: .prepone-extension-update
 
-kuiviewer:
+kde-dev-utils:
   extends: .prepone-extension-update
 
 kwave:
