@@ -26,11 +26,11 @@ apps:
         - network-bind
         - network-manager-observe
         - password-manager-service
-        - online-accounts-service
+        - accounts-service
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
-- snapd2.43
+- snapd2.55.3
 compression: lzo
 plugs:
     desktop:
@@ -68,10 +68,6 @@ slots:
         interface: dbus
         name: org.kde.neochat
         bus: session
-    dbus-freedesktop-secrets:
-        interface: dbus
-        bus: session
-        name: org.freedesktop.secrets
 package-repositories:
 -   type: apt
     components:
@@ -186,6 +182,9 @@ parts:
         - reuse
         - libsqlite3-0
         - libolm3
+        - xdg-desktop-portal
+        - xdg-desktop-portal-kde
+        - qt5-xdgdesktopportal-platformtheme
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
         - "-DCMAKE_INSTALL_PREFIX=/usr"
