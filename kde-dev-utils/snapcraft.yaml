@@ -101,7 +101,7 @@ parts:
         after:
         - kde-neon
         parse-info:
-        - usr/share/metainfo/org.kde.kuiviewer.appdata.xml
+        - usr/share/metainfo/org.kde.kuiviewer.metainfo.xml
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
