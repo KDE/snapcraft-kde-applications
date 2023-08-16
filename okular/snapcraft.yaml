@@ -5,20 +5,6 @@ grade: stable
 base: core22
 adopt-info: okular
 apps:
-    xdg-desktop-portal-kde:
-        command: usr/lib/$CRAFT_ARCH_TRIPLET/libexec/xdg-desktop-portal-kde
-        daemon: dbus
-        passthrough:
-            daemon-scope: user
-        activates-on:
-            - kde-portal-dbus
-    xdg-document-portal:
-        command: usr/libexec/xdg-document-portal
-        daemon: dbus
-        passthrough:
-            daemon-scope: user
-        activates-on:
-            - document-portal-dbus
     okular:
         # extensions:
         # - kde-neon
@@ -86,14 +72,6 @@ slots:
     session-dbus-interface:
         interface: dbus
         name: org.kde.okular
-        bus: session
-    kde-portal-dbus:
-        interface: dbus
-        name: org.freedesktop.impl.portal.desktop.kde
-        bus: session
-    document-portal-dbus:
-        interface: dbus
-        name: org.freedesktop.portal.Documents
         bus: session
 package-repositories:
 -   type: apt
