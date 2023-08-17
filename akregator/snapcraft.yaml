@@ -170,7 +170,6 @@ parts:
         - libkf5akonadimime5
         - libkf5akonadinotes5
         - libkf5akonadisearch5
-        - libkf5akonadiserver5
         - libkf5calendarcore5
         - libkf5calendarsupport5
         - libkf5calendarutils5
