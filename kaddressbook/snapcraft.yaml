@@ -157,7 +157,6 @@ parts:
         - xsltproc
         - zlib1g-dev
         stage-packages:
-        - libboost1.74.0
         - libboost-graph1.74.0
         - libgpgme11
         - libgpgmepp6
