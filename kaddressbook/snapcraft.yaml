@@ -200,7 +200,7 @@ parts:
         - libkf5pimtextedit5
         - libkf5syndication5
         - libkf5tnef5
-        - libkgantt5
+        - libkgantt2
         - libkpimgapi5
         - pkg-config
         - phonon4qt5-4
