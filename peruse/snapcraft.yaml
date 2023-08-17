@@ -24,6 +24,7 @@ apps:
         - network-bind
         - network-manager-observe
         - udisks2
+        - browser-support
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -128,7 +129,7 @@ parts:
         - zlib1g
         - libkf5declarative-data
         - libkf5declarative5
-        - okular-backends
+        - okular
         source: http://download.kde.org/stable/peruse/peruse-1.80.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -138,7 +139,6 @@ parts:
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-108-qt-5-15-10-core22-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
-        - "-DUSE_PERUSE_PDFTHUMBNAILER=ON"
         stage:
         - "-usr/lib/${CRAFT_ARCH_TRIPLET}/dri"
         prime:
