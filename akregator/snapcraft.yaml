@@ -204,7 +204,7 @@ parts:
         - libkgantt2
         - libkpimgapi5
         - pkg-config
-        - phonon4qt5-4
+        - phonon4qt5
         - phonon4qt5-backend-gstreamer
         - shared-mime-info
         - xsltproc
