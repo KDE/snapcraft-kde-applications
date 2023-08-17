@@ -5,7 +5,7 @@ confinement: classic
 grade: stable
 base: core22
 adopt-info: konsole
-version: 23.04.2
+version: 23.04.3
 icon: $CRAFT_PROJECT_DIR/snap/gui/logo.png
 apps:
     konsole:
@@ -14,7 +14,7 @@ apps:
         command: usr/bin/konsole
         common-id: org.kde.konsole.desktop
 assumes:
-- snapd2.43
+- snapd2.55.3
 compression: lzo
 environment:
     QTWEBENGINEPROCESS_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
@@ -22,6 +22,10 @@ environment:
     XDG_CONFIG_DIRS: "$XDG_CONFIG_DIRS:$SNAP/etc/xdg"
     __EGL_VENDOR_LIBRARY_DIRS: "$SNAP/etc/glvnd/egl_vendor.d:$SNAP/usr/share/glvnd/egl_vendor.d"
     LIBGL_DRIVERS_PATH: "$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/dri"
+    HOME: $SNAP_REAL_HOME
+    XDG_CACHE_HOME: $SNAP_USER_COMMON/.cache
+    XDG_CONFIG_HOME: $SNAP_USER_COMMON/.config
+    XDG_DATA_HOME: $SNAP_USER_COMMON/.local/share
 layout:
     /usr/share/X11:
         symlink: $SNAP/usr/share/X11
@@ -34,7 +38,7 @@ package-repositories:
     suites:
     - jammy
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: http://archive.neon.kde.org/tmp/user-snap2
+    url: http://origin.archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
     mesa-patchelf:
@@ -162,4 +166,5 @@ parts:
         - "-usr/bin/X11"
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
+        - "-usr/lib/${CRAFT_ARCH_TRIPLET}/dri"
 
