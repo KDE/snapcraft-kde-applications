@@ -6,7 +6,7 @@ grade: stable
 base: core22
 adopt-info: konsole
 version: 23.04.3
-icon: $CRAFT_PROJECT_DIR/snap/gui/logo.png
+icon: $CRAFT_PROJECT_DIR/snap/gui/konsole.png
 apps:
     konsole:
         # extensions:
