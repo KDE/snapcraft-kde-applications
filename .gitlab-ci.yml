@@ -219,6 +219,9 @@ kde-frameworks-core22:
 
 akregator:
   extends: .prepone-extension-update
+  variables:
+    ON_BRANCH: akregator
+    DIR: akregator
 
 alligator:
   extends: .prepone-extension-update
