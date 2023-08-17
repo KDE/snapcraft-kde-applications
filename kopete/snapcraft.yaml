@@ -81,7 +81,7 @@ parts:
     kopete:
         after:
         - kde-neon
-         parse-info:
+        parse-info:
         - usr/share/metainfo/org.kde.kopete.appdata.xml
         source: http://download.kde.org/stable/release-service/23.04.3/src/kopete-23.04.3.tar.xz
         plugin: cmake
