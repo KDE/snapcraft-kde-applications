@@ -23,10 +23,11 @@ apps:
         - unity7
         - network
         - network-bind
+        - cups
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
-- snapd2.43
+- snapd2.55.3
 compression: lzo
 plugs:
     desktop:
@@ -44,6 +45,11 @@ plugs:
         interface: content
         default-provider: kf5-5-108-qt-5-15-10-core22
         target: $SNAP/kf5
+    foo-install-cups:
+        interface: content
+        content: foo
+        default-provider: cups
+        target: $SNAP_DATA/foo
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     GST_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
