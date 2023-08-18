@@ -92,7 +92,7 @@ parts:
         - libkf5identitymanagement-dev
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
-        - libkf5textaddons-dev
+        - libkf5ktextaddons-dev
         - libkf5libkleo-dev
         stage-packages:
         - libkf5contacts5
