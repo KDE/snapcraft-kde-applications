@@ -4,7 +4,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kxstitch
-version: git
+version: 2.2.0
 apps:
     kxstitch:
         # extensions:
@@ -101,6 +101,8 @@ parts:
         build-packages:
         - libkf5doctools-dev
         - libmagick++-6.q16-dev
+        stage-packages:
+        - libmagick++-6.q16-8
         source: https://invent.kde.org/graphics/kxstitch.git
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
