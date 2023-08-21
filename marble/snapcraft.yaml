@@ -58,6 +58,10 @@ hooks:
         command-chain:
         - snap/command-chain/hooks-configure-desktop
 layout:
+    /usr/share/marble:
+        symlink: $SNAP/usr/share/marble
+    /usr/lib/marble:
+        symlink: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/marble
     /usr/share/X11:
         symlink: $SNAP/kf5/usr/share/X11
     /usr/share/qt5:
