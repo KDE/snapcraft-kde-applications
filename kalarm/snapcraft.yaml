@@ -118,6 +118,7 @@ parts:
         - pkg-config
         - xsltproc
         - zlib1g-dev
+        - libkf5textedittexttospeech-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -147,6 +148,7 @@ parts:
         - libkf5pimtextedit5
         - libkf5pimtextedit-plugins
         - libkf5pimtextedit-data
+        - libkf5textedittexttospeech1
         source: http://download.kde.org/stable/release-service/23.04.3/src/kalarm-23.04.3.tar.xz
         cmake-parameters:
         - "-DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE"
