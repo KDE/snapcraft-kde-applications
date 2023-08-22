@@ -176,7 +176,7 @@ parts:
         - *id003
         - *id004
         - LDFLAGS: "-L$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET"
-        - CFLAGS: "-I$CRAFT_STAGE/usr/include/qt5"
+        - CFLAGS: "-I$CRAFT_STAGE/usr/include/$CRAFT_ARCH_TRIPLET/qt5"
         - LD_LIBRARY_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/"
         - QML2_IMPORT_PATH: $CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
     cleanup:
