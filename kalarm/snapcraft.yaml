@@ -106,6 +106,7 @@ parts:
         - libboost-graph-dev
         - libkf5akonadi-dev
         - libkf5akonadicontact-dev
+        - libkf5akonadimime-dev
         - libkf5calendarcore-dev
         - libkf5calendarutils-dev
         - libkf5contacts-dev
@@ -126,6 +127,7 @@ parts:
         - libasound2-data
         - libasound2-plugins
         - libkf5akonadicontact5
+        - libkf5akonadimime5
         - libkf5calendarcore5
         - libkf5calendarutils5
         - libkf5contacts5
