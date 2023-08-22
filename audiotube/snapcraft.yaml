@@ -1249,6 +1249,7 @@ parts:
         - libqcoro5qml0
         - libqcoro5quick0
         - libqcoro5websockets0
+        - python3-m3u8
         source: http://download.kde.org/stable/release-service/23.04.3/src/audiotube-23.04.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
