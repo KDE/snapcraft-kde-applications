@@ -52,10 +52,10 @@ environment:
     GST_PLUGIN_SYSTEM_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0
     GST_PLUGIN_SCANNER: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner
     XDG_DATA_DIRS: $SNAP/current/usr/share:/snap/kf5-5-108-qt-5-15-10-core22/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
-    QT_PLUGIN_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins
-    QML2_IMPORT_PATH: $CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
+    QT_PLUGIN_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins
+    QML2_IMPORT_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml
     LD_LIBRARY_PATH: "$SNAP/usr/lib:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/blas:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/lapack"
-    QT_QUICK_CONTROLS_STYLE: org.kde.breeze
+    QT_QUICK_CONTROLS_STYLE: org.kde.breeze.impl
 hooks:
     configure:
         plugs:
@@ -168,7 +168,7 @@ parts:
         - samba-libs
         - libblas3
         - liblapack3
-        - qml-module-org-kde-qqc2breezestyle
+        - qml-module-org-kde-breeze
         - libnvidia-gl-525
         source: https://download.kde.org/stable/haruna/haruna-0.11.3.tar.xz
         cmake-parameters:
@@ -177,7 +177,7 @@ parts:
         - -DENABLE_TESTING=OFF
         - -DBUILD_TESTING=OFF
         - -DKDE_SKIP_TEST_SETTINGS=ON
-        - -DCMAKE_FIND_ROOT_PATH=/usr\;$CRAFT_STAGE\;/snap/kf5-5-108-qt-5-15-10-core22-sdk/current
+        - -DCMAKE_FIND_ROOT_PATH=$CRAFT_STAGE\;/snap/kf5-5-108-qt-5-15-10-core22-sdk/current
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
