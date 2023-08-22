@@ -120,6 +120,7 @@ parts:
         - zlib1g-dev
         - libkf5pimtextedittexttospeech-dev
         - libkf5texteditor-dev
+        - libkf5ktextaddons-dev
         stage-packages:
         - libasound2
         - libasound2-data
