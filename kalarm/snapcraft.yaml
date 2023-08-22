@@ -107,6 +107,8 @@ parts:
         - libkf5akonadi-dev
         - libkf5akonadicontact-dev
         - libkf5akonadimime-dev
+        - kmailtransport-akonadi
+        - libkf5mailtransport-dev
         - libkf5calendarcore-dev
         - libkf5calendarutils-dev
         - libkf5contacts-dev
@@ -128,6 +130,9 @@ parts:
         - libasound2-plugins
         - libkf5akonadicontact5
         - libkf5akonadimime5
+        - libkf5mailtransport-data
+        - libkf5mailtransport5
+        - libkf5mailtransportakonadi5
         - libkf5calendarcore5
         - libkf5calendarutils5
         - libkf5contacts5
