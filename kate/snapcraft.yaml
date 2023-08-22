@@ -4,7 +4,7 @@ confinement: classic
 grade: stable
 base: core22
 adopt-info: kate
-version: 23.04.2
+version: 23.04.3
 apps:
     kate:
         # extensions:
@@ -12,7 +12,7 @@ apps:
         command: usr/bin/kate
         common-id: org.kde.kate.desktop
 assumes:
-- snapd2.43
+- snapd2.55.3
 compression: lzo
 environment:
     QTWEBENGINEPROCESS_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
@@ -115,7 +115,7 @@ parts:
         - libssl3
         - kio
         - kio-extras
-        source: http://download.kde.org/stable/release-service/23.04.2/src/kate-23.04.2.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.3/src/kate-23.04.3.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -136,4 +136,5 @@ parts:
         - "-usr/bin/X11"
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
+        - "-usr/lib/${CRAFT_ARCH_TRIPLET}/dri"
 
