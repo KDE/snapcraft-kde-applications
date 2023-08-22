@@ -119,6 +119,7 @@ parts:
         - xsltproc
         - zlib1g-dev
         - libkf5pimtextedittexttospeech-dev
+        - libkf5texteditor-dev
         stage-packages:
         - libasound2
         - libasound2-data
