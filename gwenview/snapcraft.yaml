@@ -168,22 +168,5 @@ parts:
         - gwenview
         plugin: nil
         override-prime: |
-           kde-neon:
-        source: /snap/snapcraft/current/share/snapcraft/extensions/desktop/kde-neon
-        source-type: local
-        plugin: make
-        make-parameters:
-        - PLATFORM_PLUG=kf5-5-106-qt-5-15-9-core22
-        build-snaps:
-        - kf5-5-106-qt-5-15-9-core22-sdk
-        build-environment:
-        - &id001
-            PATH: /snap/kf5-5-106-qt-5-15-9-core22-sdk/current/usr/bin${PATH:+:$PATH}
-        - &id002
-            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-106-qt-5-15-9-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
-        - &id003
-            XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/snap/kf5-5-106-qt-5-15-9-core22-sdk/current/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
-        - &id004
-            CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-106-qt-5-15-9-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}     set -eux
             #unused libs found by linters
 
