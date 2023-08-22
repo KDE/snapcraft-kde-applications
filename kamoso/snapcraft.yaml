@@ -5,6 +5,7 @@ grade: stable
 base: core22
 adopt-info: kamoso
 version: 23.04.3
+apps:
     kamoso:
         # extensions:
         # - kde-neon
