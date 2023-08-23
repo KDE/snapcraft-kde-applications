@@ -134,6 +134,7 @@ parts:
         - shared-mime-info
         - zlib1g
         - qml-module-org-kde-solid
+        - qml-module-org-kde-kirigami-addons-labs-mobileform
         source: http://download.kde.org/stable/release-service/23.04.3/src/itinerary-23.04.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
