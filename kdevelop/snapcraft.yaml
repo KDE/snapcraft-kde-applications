@@ -5,7 +5,7 @@ confinement: classic
 grade: stable
 base: core22
 adopt-info: kdevelop
-version: 23.04.2
+version: 23.04.3
 compression: lzo
 apps:
     kdevelop:
@@ -13,7 +13,7 @@ apps:
         desktop: usr/share/applications/org.kde.kdevelop.desktop
         common-id: org.kde.kdevelop.desktop
 assumes:
-- snapd2.43
+- snapd2.55.3
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     KDEV_CLANG_BUILTIN_DIR: "$SNAP/usr/lib/llvm-14/lib/clang/14.0.0/include"
@@ -28,7 +28,7 @@ environment:
     LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/:$SNAP/usr/lib:/$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio"
 layout:
     /usr/share/X11:
-        symlink: $SNAP/kf5/usr/share/X11
+        symlink: $SNAP/usr/share/X11
 package-repositories:
 -   type: apt
     components:
@@ -36,7 +36,7 @@ package-repositories:
     suites:
     - jammy
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: http://archive.neon.kde.org/tmp/user-snap2
+    url: http://archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
     mesa-patchelf:
@@ -194,7 +194,7 @@ parts:
         - libpulse0
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
-        source: http://download.kde.org/stable/release-service/23.04.2/src/kdevelop-23.04.2.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.3/src/kdevelop-23.04.3.tar.xz
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
         - -DCMAKE_BUILD_TYPE=Release
@@ -213,6 +213,7 @@ parts:
         - -usr/bin/X11
         - -usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0
         - -usr/lib/aspell/*
+        - -usr/lib/${CRAFT_ARCH_TRIPLET}/dri
         override-pull: |
             craftctl default
             patch -p1 < ../../patches/src/patches/kdevelop_unset_env.patch
