@@ -233,7 +233,7 @@ parts:
         - "-DENABLE_QWEBENGINE=ON"
         - "-DOpenCV_DIR=$CRAFT_STAGE/usr/share/OpenCV"
         - "-DENABLE_FACESENGINE_DNN=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=$CRAFT_STAGE\\;/snap/kf5-5-108-qt-5-15-10-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-108-qt-5-15-10-core22-sdk/current"
         - "-Wno-dev"
         override-build: |
             craftctl default
