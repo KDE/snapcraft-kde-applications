@@ -147,7 +147,7 @@ parts:
         - shared-mime-info
         - xsltproc
         - zlib1g-dev
-        - krigami2-dev
+        - kirigami2-dev
         stage-packages:
         - libboost-graph1.74.0
         - libgpgme11
