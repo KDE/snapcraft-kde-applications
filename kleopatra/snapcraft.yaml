@@ -99,8 +99,10 @@ parts:
         - libboost-dev
         - libkf5pimtextedit-dev
         - libgpg-error-dev
+        - libqgpgme-dev
         stage-packages:
         - libgpgmepp6
+        - libqgpgme7
         source: http://download.kde.org/stable/release-service/23.04.3/src/libkleo-23.04.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
