@@ -146,6 +146,7 @@ parts:
         - libkf5mimetreeparser-dev
         - libkf5pimcommon-dev
         - libkf5pimtextedit-dev
+        - libkf5prison-dev
         - libkf5syndication-dev
         - libkf5tnef-dev
         - libkgantt-dev
@@ -195,6 +196,7 @@ parts:
         - libkf5mimetreeparser5
         - libkf5pimcommon5
         - libkf5pimtextedit5
+        - libkf5prison5
         - libkf5syndication5
         - libkf5tnef5
         - libkgantt2
