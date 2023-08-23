@@ -137,6 +137,7 @@ parts:
         - libkf5pimcommon-dev
         - libkf5pimtextedit-dev
         - libkf5syndication-dev
+        - libkf5qqc2desktopstyle-dev
         - libkf5tnef-dev
         - libkgantt-dev
         - libkpimgapi-dev
