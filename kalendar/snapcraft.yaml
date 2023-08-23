@@ -189,7 +189,7 @@ parts:
         - libkf5syndication5
         - libkf5tnef5
         - libkgantt2
-        - libkpimgapi5
+        - libkpimgapicore5
         - pkg-config
         - phonon4qt5
         - phonon4qt5-backend-gstreamer
