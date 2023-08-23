@@ -160,7 +160,7 @@ parts:
         - libboost-graph1.74.0
         - libgpgme11
         - libgpgmepp6
-        - libgrantlee5
+        - libkf5grantleetheme5
         - libkf5akonadicore5
         - libkf5akonadicalendar5
         - libkf5akonadicontact5
