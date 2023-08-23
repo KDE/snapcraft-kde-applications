@@ -100,7 +100,6 @@ parts:
         - libboost-graph-dev
         - libgpgme11-dev
         - libgpgmepp-dev
-        - libgrantlee5-dev
         - libkf5akonadi-dev
         - libkf5akonadicalendar-dev
         - libkf5akonadicontact-dev
