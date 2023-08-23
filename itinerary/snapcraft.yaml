@@ -24,6 +24,7 @@ apps:
         - network
         - network-bind
         - cups
+        - network-manager-observe
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -131,6 +132,7 @@ parts:
         - libquotient0.6
         - shared-mime-info
         - zlib1g
+        - qml-module-org-kde-solid
         source: http://download.kde.org/stable/release-service/23.04.3/src/itinerary-23.04.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
