@@ -204,7 +204,6 @@ parts:
         - libkf5kirigami2-5
         - qml-module-org-kde-qqc2desktopstyle
         - qml-module-org-kde-kirigami2
-        - qml-module-org-kde-kirigami-addons-components
         - qml-module-org-kde-kirigami-addons-datetime
         - qml-module-org-kde-kirigami-addons-delegates
         - qml-module-org-kde-kirigami-addons-formcard
