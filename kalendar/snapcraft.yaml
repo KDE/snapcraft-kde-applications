@@ -206,7 +206,6 @@ parts:
         - qml-module-org-kde-kirigami2
         - qml-module-org-kde-kirigami-addons-datetime
         - qml-module-org-kde-kirigami-addons-delegates
-        - qml-module-org-kde-kirigami-addons-formcard
         - qml-module-org-kde-kirigami-addons-labs-components
         - qml-module-org-kde-kirigami-addons-labs-mobileform
         - qml-module-org-kde-kirigami-addons-settings
