@@ -87,67 +87,6 @@ parts:
             XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/snap/kf5-5-108-qt-5-15-10-core22-sdk/current/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
         - &id004
             CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-108-qt-5-15-10-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
-    akonadi-contacts:
-        after:
-        - kde-neon
-        plugin: cmake
-        build-packages:
-        - cmake
-        - libkf5prison-dev
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kmime-23.04.3.tar.xz
-        cmake-parameters:
-        - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DENABLE_TESTING=OFF"
-        - "-DBUILD_TESTING=OFF"
-        - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - -DCMAKE_FIND_ROOT_PATH=$CRAFT_STAGE:/snap/kf5-5-108-qt-5-15-10-core22-sdk/current
-        build-environment: &id005
-        - *id001
-        - *id002
-        - *id003
-        - *id004
-        prime:
-        - "-usr/lib/*/cmake/*"
-        - "-usr/include/*"
-        - "-usr/share/ECM/*"
-        - "-usr/share/doc/*"
-        - "-usr/share/man/*"
-        - "-usr/share/icons/breeze-dark*"
-        - "-usr/bin/X11"
-        - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
-        - "-usr/lib/aspell/*"
-        - "-etc/alsa/conf.d/99-pulse.conf"
-    akonadi-contacts:
-        after:
-        - kde-neon
-        - kmime
-        plugin: cmake
-        build-packages:
-        - cmake
-        - libkf5prison-dev
-        source: http://download.kde.org/stable/release-service/23.04.3/src/akonadi-contacts-23.04.3.tar.xz
-        cmake-parameters:
-        - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
-        - "-DCMAKE_INSTALL_PREFIX=/usr"
-        - "-DCMAKE_BUILD_TYPE=Release"
-        - "-DENABLE_TESTING=OFF"
-        - "-DBUILD_TESTING=OFF"
-        - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - -DCMAKE_FIND_ROOT_PATH=$CRAFT_STAGE:/snap/kf5-5-108-qt-5-15-10-core22-sdk/current
-        build-environment: *id005
-        prime:
-        - "-usr/lib/*/cmake/*"
-        - "-usr/include/*"
-        - "-usr/share/ECM/*"
-        - "-usr/share/doc/*"
-        - "-usr/share/man/*"
-        - "-usr/share/icons/breeze-dark*"
-        - "-usr/bin/X11"
-        - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
-        - "-usr/lib/aspell/*"
-        - "-etc/alsa/conf.d/99-pulse.conf"
     kgpg:
         after:
         - kde-neon
@@ -157,16 +96,113 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        - libkf5contacts-dev
-        - libgpgme-dev
+        - libassuan-dev
+        - libboost-dev
+        - libboost-graph-dev
+        - libgpgme11-dev
         - libgpgmepp-dev
+        - libkf5akonadi-dev
+        - libkf5akonadicalendar-dev
+        - libkf5akonadicontact-dev
+        - libkf5akonadimime-dev
+        - libkf5akonadinotes-dev
+        - libkf5akonadisearch-dev
+        - libkf5akonadiserver-dev
+        - libkf5calendarcore-dev
+        - libkf5calendarsupport-dev
+        - libkf5calendarutils-dev
+        - libkf5contacteditor-dev
+        - libkf5contacts-dev
+        - libkf5grantleetheme-dev
+        - libkf5gravatar-dev
+        - libkf5holidays-dev
+        - libkf5identitymanagement-dev
+        - libkf5imap-dev
+        - libkf5incidenceeditor-dev
+        - libkf5kontactinterface-dev
+        - libkf5ksieve-dev
+        - libkf5ktextaddons-dev
+        - libkf5ldap-dev
+        - libkf5libkdepim-dev
+        - libkf5libkleo-dev
+        - libkf5mailcommon-dev
+        - libkf5mailimporter-dev
+        - libkf5mailtransport-dev
+        - libkf5mbox-dev
+        - libkf5messagecomposer-dev
+        - libkf5messagecore-dev
+        - libkf5messagelist-dev
+        - libkf5messageviewer-dev
+        - libkf5mime-dev
+        - libkf5mimetreeparser-dev
+        - libkf5pimcommon-dev
+        - libkf5pimtextedit-dev
+        - libkf5syndication-dev
+        - libkf5qqc2desktopstyle-dev
+        - libkf5tnef-dev
+        - libkgantt-dev
+        - libkpimgapi-dev
+        - libx11-dev
+        - pkg-config
+        - libphonon4qt5-dev
+        - shared-mime-info
+        - xsltproc
+        - zlib1g-dev
+        - kirigami2-dev
+        - kirigami-addons-dev
         - libgpg-error-dev
         stage-packages:
-        - libkf5contacts5
+        - libboost-graph1.74.0
         - libgpgme11
         - libgpgmepp6
-        - libqgpgme7
-        - gpg
+        - libkf5akonadicore5
+        - libkf5akonadicalendar5
+        - libkf5akonadicontact5
+        - libkf5akonadimime5
+        - libkf5akonadinotes5
+        - libkf5akonadisearchpim5
+        - libkf5calendarcore5
+        - libkf5calendarsupport5
+        - libkf5calendarutils5
+        - libkf5contacteditor5
+        - libkf5contacts5
+        - libkf5doctools5
+        - libkf5grantleetheme5
+        - libkf5gravatar5
+        - libkf5holidays5
+        - libkf5identitymanagement5
+        - libkf5imap5
+        - libkf5incidenceeditor5
+        - libkf5kontactinterface5
+        - libkf5ksieve5
+        - libkf5ldap5
+        - libkf5libkdepim5
+        - libkf5libkleo5
+        - libkf5mailcommon5
+        - libkf5mailimporter5
+        - libkf5mailtransport5
+        - libkf5mbox5
+        - libkf5messagecomposer5
+        - libkf5messagecore5
+        - libkf5messagelist5
+        - libkf5messageviewer5
+        - libkf5mime5
+        - libkf5mimetreeparser5
+        - libkf5pimcommon5
+        - libkf5pimtextedit5
+        - libkf5syndication5
+        - libkf5tnef5
+        - libkgantt2
+        - libkpimgapicore5
+        - pkg-config
+        - phonon4qt5
+        - phonon4qt5-backend-gstreamer
+        - shared-mime-info
+        - xsltproc
+        - zlib1g-dev
+        - akonadi-server
+        - sqlite
+        - akonadi-backend-sqlite
         source: http://download.kde.org/stable/release-service/23.04.3/src/kgpg-23.04.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
