@@ -208,9 +208,6 @@ parts:
         - qml-module-org-kde-kirigami-addons-delegates
         - qml-module-org-kde-kirigami-addons-labs-components
         - qml-module-org-kde-kirigami-addons-labs-mobileform
-        - qml-module-org-kde-kirigami-addons-settings
-        - qml-module-org-kde-kirigami-addons-sounds
-        - qml-module-org-kde-kirigami-addons-treeview
         source: http://download.kde.org/stable/release-service/23.04.3/src/kalendar-23.04.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
