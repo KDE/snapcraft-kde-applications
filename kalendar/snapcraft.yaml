@@ -148,6 +148,7 @@ parts:
         - xsltproc
         - zlib1g-dev
         - kirigami2-dev
+        - kirigami-addons-dev
         stage-packages:
         - libboost-graph1.74.0
         - libgpgme11
@@ -203,6 +204,15 @@ parts:
         - libkf5kirigami2-5
         - qml-module-org-kde-qqc2desktopstyle
         - qml-module-org-kde-kirigami2
+        - qml-module-org-kde-kirigami-addons-components
+        - qml-module-org-kde-kirigami-addons-datetime
+        - qml-module-org-kde-kirigami-addons-delegates
+        - qml-module-org-kde-kirigami-addons-formcard
+        - qml-module-org-kde-kirigami-addons-labs-components
+        - qml-module-org-kde-kirigami-addons-labs-mobileform
+        - qml-module-org-kde-kirigami-addons-settings
+        - qml-module-org-kde-kirigami-addons-sounds
+        - qml-module-org-kde-kirigami-addons-treeview
         source: http://download.kde.org/stable/release-service/23.04.3/src/kalendar-23.04.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
