@@ -75,7 +75,7 @@ package-repositories:
     suites:
     - jammy
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: http://archive.neon.kde.org/tmp/user-snap2
+    url: http://archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
     kde-neon:
