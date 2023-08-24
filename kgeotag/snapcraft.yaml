@@ -24,7 +24,7 @@ apps:
         - network
         - network-bind
         - browser-support
-        - udisk2
+        - udisks2
         - mount-observe
         command-chain:
         - snap/command-chain/desktop-launch
