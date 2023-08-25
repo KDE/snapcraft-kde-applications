@@ -107,6 +107,7 @@ parts:
         - libtag1-dev
         - libqca-qt5-2-dev
         - libkf5pulseaudioqt-dev
+        - libwayland-client0
         stage-packages:
         - phonon4qt5
         - libgstreamer1.0-0
@@ -118,6 +119,7 @@ parts:
         - phonon4qt5-backend-gstreamer
         - libqca-qt5-2
         - libkf5pulseaudioqt3
+        - libwayland-client0
         source: https://download.kde.org/stable/release-service/23.04.3/src/kdeconnect-kde-23.04.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
