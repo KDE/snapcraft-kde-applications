@@ -138,7 +138,7 @@ parts:
         - libgmp-dev
         - libgcrypt20-dev
         - libmms-dev
-        - libqgpgme15
+        - libqgpgme-dev
         stage-packages:
         - libgcrypt20
         - libmms0
