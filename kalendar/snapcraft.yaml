@@ -23,6 +23,7 @@ apps:
         - network
         - network-bind
         - gpg-public-keys
+        - browser-support
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -140,6 +141,7 @@ parts:
         - libkf5syndication-dev
         - libkf5templateparser-dev
         - libkf5qqc2desktopstyle-dev
+        - libkf5webengineviewer-dev
         - libkf5tnef-dev
         - libkgantt-dev
         - libkpimgapi-dev
@@ -193,6 +195,7 @@ parts:
         - libkf5pimtextedit5
         - libkf5syndication5
         - libkf5templateparser5
+        - libkf5webengineviewer5
         - libkf5tnef5
         - libkgantt2
         - libkpimgapicore5
