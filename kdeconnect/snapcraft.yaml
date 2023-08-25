@@ -117,7 +117,7 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - libqca-qt5-2
-        - libkf5pulseaudioqt4
+        - libkf5pulseaudioqt3
         source: https://download.kde.org/stable/release-service/23.04.3/src/kdeconnect-kde-23.04.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
