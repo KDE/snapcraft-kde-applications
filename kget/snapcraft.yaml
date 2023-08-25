@@ -11,6 +11,7 @@ apps:
         # extensions:
         # - kde-neon
         common-id: org.kde.kget.desktop
+        desktop: usr/share/applications/org.kde.kget.desktop
         command: usr/bin/kget
         plugs:
         - home
@@ -147,6 +148,7 @@ parts:
         - libqca-qt5-2
         - libqgpgme15
         - ca-certificates
+        - kio
         source: http://download.kde.org/stable/release-service/23.04.3/src/kget-23.04.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
