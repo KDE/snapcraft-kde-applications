@@ -108,6 +108,7 @@ parts:
         - libqca-qt5-2-dev
         - libkf5pulseaudioqt-dev
         - libwayland-client0
+        - libwayland-dev
         stage-packages:
         - phonon4qt5
         - libgstreamer1.0-0
