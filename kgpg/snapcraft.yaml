@@ -151,6 +151,7 @@ parts:
         - kirigami2-dev
         - kirigami-addons-dev
         - libgpg-error-dev
+        - libwayland-client0
         stage-packages:
         - libboost-graph1.74.0
         - libgpgme11
@@ -204,6 +205,7 @@ parts:
         - akonadi-server
         - sqlite
         - akonadi-backend-sqlite
+        - libwayland-client0
         source: http://download.kde.org/stable/release-service/23.04.3/src/kgpg-23.04.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
