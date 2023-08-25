@@ -90,7 +90,6 @@ parts:
     kgpg:
         after:
         - kde-neon
-        - akonadi-contacts
         parse-info:
         - usr/share/metainfo/org.kde.kgpg.appdata.xml
         plugin: cmake
