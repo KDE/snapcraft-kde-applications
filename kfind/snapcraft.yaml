@@ -95,7 +95,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kfind-23.04.8.tar.xz
+        source: http://download.kde.org/stable/release-service/23.04.3/src/kfind-23.04.3.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
