@@ -166,7 +166,6 @@ parts:
         - libkf5ktextaddons-dev
         - libkf5ldap-dev
         - libkf5libkdepim-dev
-        - libkf5libkleo-dev
         - libkf5mailcommon-dev
         - libkf5mailimporter-dev
         - libkf5mailtransport-dev
@@ -215,7 +214,6 @@ parts:
         - libkf5ksieve5
         - libkf5ldap5
         - libkf5libkdepim5
-        - libkf5libkleo5
         - libkf5mailcommon5
         - libkf5mailimporter5
         - libkf5mailtransport5
