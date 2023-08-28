@@ -250,6 +250,8 @@ parts:
         - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-108-qt-5-15-10-core22-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
         build-environment: *id005
+        stage:
+        - "-usr/lib/$CRAFT_ARCH_TRIPLET/libKPim5Libkleo.so*"
         prime:
         - "-usr/lib/*/cmake/*"
         - "-usr/include/*"
@@ -260,7 +262,7 @@ parts:
         - "-usr/bin/X11"
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
-        - "-usr/lib/$CRAFT_ARCH_TRIPLET/libKPim5Libkleo.so.5.23.3"
+
     cleanup:
         after:
         - kleopatra
