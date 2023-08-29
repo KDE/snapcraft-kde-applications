@@ -4,6 +4,7 @@ name: kdeconnect
 confinement: strict
 grade: stable
 base: core22
+version: 23.08.0
 adopt-info: kdeconnect
 apps:
     kdeconnect:
