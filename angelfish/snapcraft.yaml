@@ -116,6 +116,7 @@ parts:
         - libkf5qqc2desktopstyle-dev
         - libkf5purpose-dev
         - libfuturesql-dev
+        - qcoro-qt5-dev
         stage-packages:
         - libasound2
         - libasound2-data
@@ -141,6 +142,7 @@ parts:
         - libkf5purpose-bin
         - qml-module-org-kde-purpose
         - libfuturesql
+        - libqcoro5core0
         source: http://download.kde.org/stable/release-service/23.08.0/src/angelfish-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
