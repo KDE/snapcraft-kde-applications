@@ -5,11 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: zanshin
-version: 23.04.3
 apps:
     akonadiserver:
         command: usr/bin/akonadiserver
-        daemon: simple
+        daemon: dbus
+        activates-on:
+        - org.freedesktop.Akonadi.Control.lock
         plugs:
         - network
         - network-bind
@@ -17,7 +18,7 @@ apps:
         # extensions:
         # - kde-neon
         common-id: Zanshin
-        command: usr/bin/zanshin
+        command: bin/snapcraft-preload $SNAP/usr/bin/zanshin
         plugs:
         - home
         - desktop
@@ -31,7 +32,7 @@ apps:
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
-- snapd2.43
+- snapd2.55.3
 compression: lzo
 plugs:
     desktop:
@@ -49,6 +50,11 @@ plugs:
         interface: content
         default-provider: kf5-5-108-qt-5-15-10-core22
         target: $SNAP/kf5
+    foo-install-cups:
+        interface: content
+        content: foo
+        default-provider: cups
+        target: $SNAP_DATA/foo
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
 hooks:
@@ -64,10 +70,6 @@ slots:
     session-dbus-interface:
         interface: dbus
         name: org.kde.zanshin
-        bus: session
-    akonadi-dbus:
-        interface: dbus
-        name: org.freedesktop.Akonadi
         bus: session
 package-repositories:
 -   type: apt
@@ -96,6 +98,15 @@ parts:
             XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/snap/kf5-5-108-qt-5-15-10-core22-sdk/current/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
         - &id004
             CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-108-qt-5-15-10-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
+    snapcraft-preload:
+        source: https://github.com/sergiusens/snapcraft-preload.git
+        plugin: cmake
+        cmake-parameters:
+          - -DCMAKE_INSTALL_PREFIX=/
+        build-packages:
+          - on amd64:
+            - gcc-multilib
+            - g++-multilib
     zanshin:
         after:
         - kde-neon
