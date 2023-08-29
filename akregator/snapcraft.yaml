@@ -5,10 +5,19 @@ adopt-info: akregator
 confinement: strict
 grade: stable
 apps:
+    akonadiserver:
+        command: usr/bin/akonadiserver
+        daemon: dbus
+        activates-on:
+        - org.freedesktop.Akonadi.*
+        plugs:
+        - network
+        - network-bind
     akregator:
         # extensions:
         # - kde-neon
         common-id: org.kde.akregator.desktop
+        desktop: usr/share/applications/og.kde.akregator.desktop
         command: usr/bin/akregator
         plugs:
         - home
@@ -22,6 +31,7 @@ apps:
         - network
         - network-bind
         - cups
+        - network-observe
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
