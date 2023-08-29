@@ -3,6 +3,7 @@ name: peruse
 confinement: strict
 grade: stable
 base: core22
+version: git
 adopt-info: peruse
 apps:
     peruse:
@@ -143,7 +144,7 @@ parts:
         - libkf5declarative5
         - okular
         - qml-module-org-kde-okular
-        source: http://download.kde.org/stable/peruse/peruse-1.80.tar.xz
+        source: https://invent.kde.org/graphics/peruse.git
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
