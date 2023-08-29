@@ -1,7 +1,6 @@
 # Trigger rebuild 1
 ---
 name: alligator
-version: 23.04.3
 confinement: strict
 grade: stable
 base: core22
@@ -25,6 +24,7 @@ apps:
         - unity7
         - network
         - network-bind
+        - cups
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -46,6 +46,11 @@ plugs:
         interface: content
         default-provider: kf5-5-108-qt-5-15-10-core22
         target: $SNAP/kf5
+    foo-install-cups:
+        interface: content
+        content: foo
+        default-provider: cups
+        target: $SNAP_DATA/foo
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     GST_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
@@ -128,7 +133,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
         - libkf5syndication5
-        source: http://download.kde.org/stable/release-service/23.04.2/src/alligator-23.04.2.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/alligator-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
