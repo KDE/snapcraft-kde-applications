@@ -2,6 +2,7 @@ name: arkade
 confinement: strict
 grade: stable
 base: core22
+version: git
 adopt-info: arkade
 icon: $CRAFT_PROJECT_DIR/snap/gui/logo.png
 apps:
