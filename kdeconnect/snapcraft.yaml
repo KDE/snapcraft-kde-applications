@@ -5,7 +5,6 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kdeconnect
-version: 23.04.3
 apps:
     kdeconnect:
         # extensions:
@@ -110,6 +109,7 @@ parts:
         - libwayland-client0
         - libwayland-dev
         - wayland-protocols
+        - kirigami2-dev
         stage-packages:
         - phonon4qt5
         - libgstreamer1.0-0
@@ -123,7 +123,9 @@ parts:
         - libkf5pulseaudioqt3
         - libwayland-client0
         - wayland-protocols
-        source: https://download.kde.org/stable/release-service/23.04.3/src/kdeconnect-kde-23.04.3.tar.xz
+        - libkf5kirigami2-5
+        - qml-module-org-kde-kirigami2
+        source: https://download.kde.org/stable/release-service/23.08.0/src/kdeconnect-kde-23.08.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
