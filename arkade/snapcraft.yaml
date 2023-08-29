@@ -2,12 +2,12 @@ name: arkade
 confinement: strict
 grade: stable
 base: core22
-version: git
 adopt-info: arkade
 icon: $CRAFT_PROJECT_DIR/snap/gui/logo.png
 apps:
     arkade:
         common-id: org.kde.arkade.desktop
+        desktop: usr/share/applications/org.kde.arkade.desktop
         command: usr/bin/arkade
         plugs:
         - desktop
@@ -20,7 +20,7 @@ apps:
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
-- snapd2.43
+- snapd2.55.3
 compression: lzo
 plugs:
     desktop:
