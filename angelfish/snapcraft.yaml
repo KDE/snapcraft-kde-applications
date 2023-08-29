@@ -1,6 +1,5 @@
 ---
 name: angelfish
-version: 23.04.3
 confinement: strict
 grade: stable
 base: core22
@@ -25,6 +24,7 @@ apps:
         - network
         - network-bind
         - browser-support
+        - cups
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -46,6 +46,11 @@ plugs:
         interface: content
         default-provider: kf5-5-108-qt-5-15-10-core22
         target: $SNAP/kf5
+    foo-install-cups:
+        interface: content
+        content: foo
+        default-provider: cups
+        target: $SNAP_DATA/foo
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     GST_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/gstreamer-1.0"
@@ -134,7 +139,7 @@ parts:
         - libkf5purpose5
         - libkf5purpose-bin
         - qml-module-org-kde-purpose
-        source: http://download.kde.org/stable/release-service/23.04.3/src/angelfish-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/angelfish-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
