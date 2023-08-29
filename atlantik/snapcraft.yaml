@@ -2,12 +2,12 @@ name: atlantik
 confinement: strict
 grade: stable
 base: core22
-version: 0.7.80
 adopt-info: atlantik
 icon: $CRAFT_PROJECT_DIR/snap/gui/logo.png
 apps:
     atlantik:
         common-id: org.kde.atlantik.desktop
+        desktop: usr/share/applications/org.kde.atlantik.desktop
         command: usr/bin/atlantik
         plugs:
         - desktop
