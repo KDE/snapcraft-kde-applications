@@ -1,6 +1,5 @@
 ---
 name: peruse
-version: '1.80'
 confinement: strict
 grade: stable
 base: core22
@@ -10,6 +9,7 @@ apps:
         # extensions:
         # - kde-neon
         common-id: org.kde.peruse.desktop
+        desktop: usr/share/applications/org.kde.peruse.desktop
         command: usr/bin/peruse
         plugs:
         - home
@@ -60,6 +60,12 @@ environment:
     LIBGL_DRIVERS_PATH: "$SNAP/kf5/usr/lib/${CRAFT_ARCH_TRIPLET}/dri"
     QML2_IMPORT_PATH: "$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/qml:$SNAP/usr/lib/${CRAFT_ARCH_TRIPLET}/qt5/qml:$SNAP/kf5/usr/lib/${CRAFT_ARCH_TRIPLET}/qt5/qml:$QML2_IMPORT_PATH"
     QT_QUICK_CONTROLS_STYLE: org.kde.breeze.impl
+    QT_QPA_PLATFORMTHEME: flatpak
+    QT_QPA_FLATPAK_PLATFORMTHEME: kde
+    HOME: $SNAP_REAL_HOME
+    XDG_CACHE_HOME: $SNAP_USER_COMMON/.cache
+    XDG_CONFIG_HOME: $SNAP_USER_COMMON/.config
+    XDG_DATA_HOME: $SNAP_USER_COMMON/.local/share
 hooks:
     configure:
         plugs:
