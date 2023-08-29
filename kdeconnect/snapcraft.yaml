@@ -113,6 +113,8 @@ parts:
         - libxkbcommon-dev
         - libgio-qt-dev
         - libglib2.0-dev
+        - libkf5networkmanagerqt-dev
+        - libkf5qqc2desktopstyle-dev
         stage-packages:
         - phonon4qt5
         - libgstreamer1.0-0
@@ -131,6 +133,8 @@ parts:
         - libxkbcommon0
         - libgio-qt0
         - libglib2.0-0
+        - libkf5networkmanagerqt6
+        - qml-module-org-kde-qqc2desktopstyle
         source: https://download.kde.org/stable/release-service/23.08.0/src/kdeconnect-kde-23.08.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
