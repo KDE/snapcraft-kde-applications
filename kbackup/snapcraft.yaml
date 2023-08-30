@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kbackup
-version: 23.04.3
 apps:
     kbackup:
         # extensions:
         # - kde-neon
         common-id: org.kde.kbackup
+        desktop: usr/share/applications/org.kde.kbackup.desktop
         command: usr/bin/kbackup
         plugs:
         - home
@@ -99,7 +99,7 @@ parts:
         - libarchive-dev
         stage-packages:
         - libarchive13
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kbackup-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kbackup-23.08.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
