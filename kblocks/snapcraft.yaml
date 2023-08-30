@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kblocks
-version: 23.04.3
 apps:
     kblocks:
         # extensions:
         # - kde-neon
         common-id: org.kde.kblocks.desktop
+        desktop: usr/share/applications/org.kde.kblocks.desktop
         command: usr/bin/kblocks
         plugs:
         - desktop
@@ -114,7 +114,7 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kblocks-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kblocks-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
