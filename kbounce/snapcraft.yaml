@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kbounce
-version: 23.04.3
 apps:
     kbounce:
         # extensions:
         # - kde-neon
         common-id: org.kde.kbounce.desktop
+        desktop: usr/share/applications/org.kde.kbounce.desktop
         command: usr/bin/kbounce
         plugs:
         - desktop
@@ -106,7 +106,7 @@ parts:
         - libphonon4qt5experimental4
         - libasound2-data
         - libasound2-plugins
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kbounce-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kbounce-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
