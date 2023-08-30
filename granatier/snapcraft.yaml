@@ -4,7 +4,6 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: granatier
-version: 23.04.3
 apps:
     granatier:
         # extensions:
@@ -97,7 +96,7 @@ parts:
         after:
         - kde-neon
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/23.04.3/src/granatier-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/granatier-23.08.0.tar.xz
         build-packages:
         - cmake
         - libkf5doctools-dev
