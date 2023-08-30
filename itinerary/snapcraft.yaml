@@ -5,12 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: itinerary
-version: 23.04.3
 apps:
     itinerary:
         # extensions:
         # - kde-neon
         common-id: org.kde.itinerary
+        desktop: usr/share/applications/org.kde.itinerary.desktop
         command: usr/bin/itinerary
         plugs:
         - home
@@ -137,7 +137,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-labs-mobileform
         - qml-module-org-kde-prison
         - qml-module-org-kde-kopeninghours
-        source: http://download.kde.org/stable/release-service/23.04.3/src/itinerary-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/itinerary-23.08.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
