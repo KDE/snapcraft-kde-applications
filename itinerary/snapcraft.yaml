@@ -108,6 +108,7 @@ parts:
         - kosmindoormap-dev
         - libkf5calendarcore-dev
         - libkf5contacts-dev
+        - libkf5holidays-dev
         - libkf5qqc2desktopstyle-dev
         - libkhealthcertificate-dev
         - libkpimitinerary-dev
@@ -123,6 +124,7 @@ parts:
         - qml-module-org-kde-kosmindoormap
         - libkf5calendarcore5
         - libkf5contacts5
+        - libkf5holidays5
         - qml-module-org-kde-qqc2desktopstyle
         - libkhealthcertificate1
         - qml-module-org-kde-khealthcertificate
