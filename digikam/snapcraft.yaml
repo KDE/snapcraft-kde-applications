@@ -2,7 +2,6 @@
 ---
 name: digikam
 base: core22
-version: 8.1.0
 adopt-info: digikam
 grade: stable
 confinement: strict
@@ -29,6 +28,7 @@ apps:
         - removable-media
         - udisks2
         - unity7
+        - cups
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -50,6 +50,11 @@ plugs:
         interface: content
         default-provider: kf5-5-108-qt-5-15-10-core22
         target: $SNAP/kf5
+    foo-install-cups:
+        interface: content
+        content: foo
+        default-provider: cups
+        target: $SNAP_DATA/foo
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     DK_PLUGIN_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/plugins/digikam"
