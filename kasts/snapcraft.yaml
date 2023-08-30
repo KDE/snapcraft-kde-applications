@@ -1,7 +1,6 @@
 # Trigger rebuild
 ---
 name: kasts
-version: 23.04.3
 confinement: strict
 grade: stable
 base: core22
@@ -138,7 +137,7 @@ parts:
         - libgstreamer1.0-0
         - libvlc5
         - libnm0
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kasts-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kasts-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
