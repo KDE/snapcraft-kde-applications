@@ -111,7 +111,7 @@ parts:
         - python3-dev
         python-packages:
         - yt-dlp
-        - ytmusicapi == 0.25.0
+        - ytmusicapi
         stage:
         - -bin/activate
         - -bin/activate.csh
