@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: juk
-version: 23.04.3
 apps:
     juk:
         # extensions:
         # - kde-neon
         common-id: org.kde.juk
+        desktop: usr/share/applications/org.kde.juk.desktop
         command: usr/bin/juk
         plugs:
         - home
@@ -113,7 +113,7 @@ parts:
         - gstreamer1.0-plugins-bad
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
-        source: http://download.kde.org/stable/release-service/23.04.3/src/juk-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/juk-23.08.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
