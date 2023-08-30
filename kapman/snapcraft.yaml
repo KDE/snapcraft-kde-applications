@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kapman
-version: 23.04.3
 apps:
     kapman:
         # extensions:
         # - kde-neon
         common-id: org.kde.kapman.desktop
+        desktop: usr/share/applications/org.kde.kapman.desktop
         command: usr/bin/kapman
         plugs:
         - desktop
@@ -113,7 +113,7 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kapman-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kapman-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
