@@ -5,12 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: haruna
-version: 0.11.3
 apps:
     haruna:
         # extensions:
         # - kde-neon
         common-id: org.kde.haruna
+        desktop: usr/share/applications/org.kde.haruna.desktop
         command: usr/bin/haruna
         plugs:
         - desktop
@@ -170,7 +170,7 @@ parts:
         - liblapack3
         - qml-module-org-kde-breeze
         - libnvidia-gl-525
-        source: https://download.kde.org/stable/haruna/haruna-0.11.3.tar.xz
+        source: https://download.kde.org/stable/haruna/haruna-0.12.0.tar.xz
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
         - -DCMAKE_BUILD_TYPE=Release
