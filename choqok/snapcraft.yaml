@@ -7,6 +7,7 @@ adopt-info: choqok
 apps:
     choqok:
         common-id: org.kde.choqok.desktop
+        desktop: usr/share/applications/org.kde.choqok.desktop
         command: usr/bin/choqok
         plugs:
         - desktop
