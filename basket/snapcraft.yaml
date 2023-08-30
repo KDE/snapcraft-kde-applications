@@ -2,6 +2,7 @@ name: basket
 confinement: strict
 grade: stable
 base: core22
+version: git
 adopt-info: basket
 apps:
     basket:
