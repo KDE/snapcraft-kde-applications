@@ -1,7 +1,6 @@
 # Trigger rebuild
 ---
 name: kclock
-version: 23.04.3
 confinement: strict
 grade: stable
 base: core22
@@ -138,7 +137,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-treeview
         - libkf5notifications5
         - libpulse0
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kclock-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kclock-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
