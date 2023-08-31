@@ -5,7 +5,6 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kdenlive
-version: 23.04.3
 apps:
     kdenlive:
         # extensions:
@@ -120,73 +119,6 @@ parts:
         - pip
         stage:
         - "-pyvenv.cfg"
-    # glaxnimate:
-    #     after:
-    #     - kde-neon
-    #     - python-deps
-    #     plugin: cmake
-    #     source: https://gitlab.com/mattbas/glaxnimate.git
-    #     source-tag: 0.5.1
-    #     build-packages:
-    #     - cmake
-    #     - libpython3-dev
-    #     - zlib1g-dev
-    #     - libpotrace-dev
-    #     - libarchive-dev
-    #     - libavformat-dev
-    #     - libswscale-dev
-    #     - libavcodec-dev
-    #     - libavutil-dev
-    #     - qt5-image-formats-plugins
-    #     cmake-parameters:
-    #     - "-DCMAKE_INSTALL_PREFIX=/usr"
-    #     - "-DCMAKE_BUILD_TYPE=Release"
-    #     - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-106-qt-5-15-9-core22-sdk/current"
-    #     - "-DBUILD_TESTING=OFF"
-    #     build-environment: &id007
-    #     - *id001
-    #     - *id002
-    #     - *id003
-    #     - *id004
-    #     - *id005
-    # mlt:
-    #     after:
-    #     - kde-neon
-    #     - python-deps
-    #     - glaxnimate
-    #     plugin: cmake
-    #     source: https://github.com/mltframework/mlt/releases/download/v7.14.0/mlt-7.14.0.tar.gz
-    #     build-packages:
-    #     - cmake
-    #     - libxml2-dev
-    #     - libmovit-dev
-    #     - libvorbis-dev
-    #     - libjack-dev
-    #     - libsox-dev
-    #     - libsdl1.2-dev
-    #     - libsamplerate0-dev
-    #     - frei0r-plugins-dev
-    #     - libpng-dev
-    #     - swig
-    #     - libvpx-dev
-    #     - libx264-dev
-    #     - libswscale-dev
-    #     - libswresample-dev
-    #     - libavformat-dev
-    #     - libpostproc-dev
-    #     - libavutil-dev
-    #     - libavfilter-dev
-    #     - libavdevice-dev
-    #     - libavcodec-dev
-    #     - libmp3lame-dev
-    #     - libgdk-pixbuf2.0-dev
-    #     cmake-parameters:
-    #     - "-DCMAKE_INSTALL_PREFIX=/usr"
-    #     - "-DCMAKE_BUILD_TYPE=Release"
-    #     - "-DMOD_GLAXNIMATE=ON"
-    #     - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-106-qt-5-15-9-core22-sdk/current"
-    #     - "-DBUILD_TESTING=OFF"
-        # build-environment: *id007
     kdenlive:
         after:
         - kde-neon
@@ -233,7 +165,7 @@ parts:
         - libavformat58
         - libavformat-extra
         - libcudart11.0
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kdenlive-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kdenlive-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -247,7 +179,7 @@ parts:
         - *id003
         - *id004
         override-build: |
-            snapcraftctl build
+            craftctl default
             sed -i "${CRAFT_PART_INSTALL}/usr/share/applications/org.kde.kdenlive.desktop" -e 's|Icon=kdenlive$|Icon=${SNAP}/usr/share/icons/hicolor/scalable/apps/kdenlive.svg|'
             cd "${CRAFT_PART_INSTALL}/usr/share/icons/hicolor/scalable/apps"
             gzip -d -c kdenlive.svgz > kdenlive.svg
@@ -264,23 +196,10 @@ parts:
         - -usr/bin/X11
         - -usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0
         - -usr/lib/aspell/*
-    # cleanup:
-    #     after:
-    #     - kdenlive
-    #     - python-deps
-    #     - glaxnimate
-    #     - mlt
-    #     plugin: nil
-    #     build-snaps:
-    #     - kde-frameworks-5-99-qt-5-15-7-core20
-    #     override-prime: |
-    #         set -eux
-    #         for snap in "kde-frameworks-5-99-qt-5-15-7-core20"; do  # List all content-snaps you're using here
-    #             cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
-    #         done
-    #         for CRUFT in bug lintian man; do
-    #             rm -rf $SNAPCRAFT_PRIME/usr/share/$CRUFT
-    #         done
-    #         find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
-    #         find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-
+    cleanup:
+        after:
+        - kdenlive
+        plugin: nil
+        override-prime: |
+            set -eux
+            #unused libs found by linter
