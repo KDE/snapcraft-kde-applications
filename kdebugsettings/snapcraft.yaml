@@ -5,12 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kdebugsettings
-version: 23.04.3
 apps:
     kdebugsettings:
         # extensions:
         # - kde-neon
         common-id: org.kde.kdebugsettings
+        desktop: usr/share/applications/org.kde.kdebugsettings.desktop
         command: usr/bin/kdebugsettings
         plugs:
         - home
@@ -99,7 +99,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kdebugsettings-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kdebugsettings-23.08.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
