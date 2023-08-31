@@ -5,12 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: khelpcenter
-version: 23.04.2
 apps:
     khelpcenter:
         # extensions:
         # - kde-neon
         common-id: org.kde.khelpcenter.desktop
+        desktop: usr/share/applications/org.kde.khelpcenter.desktop
         command: usr/bin/khelpcenter
         plugs:
         - home
@@ -25,6 +25,7 @@ apps:
         - network-bind
         - browser-support
         - system-packages-doc
+        - cups
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -46,6 +47,11 @@ plugs:
         interface: content
         default-provider: kf5-5-108-qt-5-15-10-core22
         target: $SNAP/kf5
+    foo-install-cups:
+        interface: content
+        content: foo
+        default-provider: cups
+        target: $SNAP_DATA/foo
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
 hooks:
@@ -113,7 +119,7 @@ parts:
         - kio
         - xapian-tools
         - shared-mime-info
-        source: http://download.kde.org/stable/release-service/23.04.3/src/khelpcenter-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/khelpcenter-23.08.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
