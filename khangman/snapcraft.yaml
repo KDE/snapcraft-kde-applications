@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: khangman
-version: 23.04.3
 apps:
     khangman:
         # extensions:
         # - kde-neon
         common-id: org.kde.khangman.desktop
+        desktop: usr/share/applications/org.kde.khangman.desktop
         command: usr/bin/khangman
         plugs:
         - desktop
@@ -96,7 +96,7 @@ parts:
         - libkeduvocdocument-dev
         stage-packages:
         - libkeduvocdocument5
-        source: http://download.kde.org/stable/release-service/23.04.3/src/khangman-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/khangman-23.08.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
