@@ -4,14 +4,15 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kimagemapeditor
-version: 23.04.3
 apps:
     kimagemapeditor:
         # extensions:
         # - kde-neon
         common-id: org.kde.kimagemapeditor.desktop
+        desktop: usr/share/applications/org.kde.kimagemapeditor.desktop
         command: usr/bin/kimagemapeditor
         plugs:
+        - home
         - desktop
         - desktop-legacy
         - opengl
@@ -93,7 +94,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kimagemapeditor-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kimagemapeditor-23.08.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
