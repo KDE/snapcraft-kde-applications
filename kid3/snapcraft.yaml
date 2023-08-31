@@ -4,13 +4,12 @@ name: kid3
 confinement: strict
 grade: stable
 base: core22
-adopt-info: kid3
-version: 3.9.4
 apps:
     kid3:
         # extensions:
         # - kde-neon
         common-id: org.kde.kid3.desktop
+        desktop: usr/share/applications/org.kde.kid3.desktop
         command: usr/bin/kid3
         plugs:
         - home
