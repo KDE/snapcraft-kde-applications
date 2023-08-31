@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kgoldrunner
-version: 23.04.3
 apps:
     kgoldrunner:
         # extensions:
         # - kde-neon
         common-id: org.kde.kgoldrunner.desktop
+        desktop: usr/share/applications/org.kde.kgoldrunner.desktop
         command: usr/bin/kgoldrunner
         plugs:
         - desktop
@@ -100,7 +100,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kgoldrunner-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.03/src/kgoldrunner-23.08.0.tar.xz
         stage-packages:
         - libasound2-data
         - libasound2-plugins
