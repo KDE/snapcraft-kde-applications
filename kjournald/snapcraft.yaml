@@ -2,7 +2,6 @@
 name: kjournald
 confinement: strict
 grade: stable
-version: 23.04.3
 base: core22
 adopt-info: kjournald
 apps:
@@ -94,7 +93,7 @@ parts:
         - pkg-config
         stage-packages:
         - oxygen-icon-theme
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kjournald-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kjournald-23.08.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
