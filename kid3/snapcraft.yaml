@@ -4,6 +4,7 @@ name: kid3
 confinement: strict
 grade: stable
 base: core22
+adopt-info: kid3
 apps:
     kid3:
         # extensions:
