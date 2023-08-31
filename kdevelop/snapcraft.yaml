@@ -5,7 +5,6 @@ confinement: classic
 grade: stable
 base: core22
 adopt-info: kdevelop
-version: 23.04.3
 compression: lzo
 apps:
     kdevelop:
@@ -194,7 +193,7 @@ parts:
         - libpulse0
         parse-info:
         - usr/share/metainfo/org.kde.kdevelop.appdata.xml
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kdevelop-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kdevelop-23.08.0.tar.xz
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
         - -DCMAKE_BUILD_TYPE=Release
