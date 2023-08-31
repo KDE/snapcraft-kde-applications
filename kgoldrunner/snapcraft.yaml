@@ -100,7 +100,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.08.03/src/kgoldrunner-23.08.0.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kgoldrunner-23.08.0.tar.xz
         stage-packages:
         - libasound2-data
         - libasound2-plugins
