@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kmousetool
-version: 23.04.2
 apps:
     kmousetool:
         # extensions:
         # - kde-neon
         common-id: org.kde.kmousetool.desktop
+        desktop: usr/share/applications/org.kde.kmousetool.desktop
         command: usr/bin/kmousetool
         plugs:
         - desktop
@@ -22,7 +22,7 @@ apps:
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
-- snapd2.43
+- snapd2.55.3
 compression: lzo
 plugs:
     desktop:
@@ -35,10 +35,10 @@ plugs:
         interface: content
         target: $SNAP/data-dir/sounds
         default-provider: gtk-common-themes
-    kf5-5-106-qt-5-15-9-core22:
-        content: kf5-5-106-qt-5-15-9-core22-all
+    kf5-5-108-qt-5-15-10-core22:
+        content: kf5-5-108-qt-5-15-10-core22-all
         interface: content
-        default-provider: kf5-5-106-qt-5-15-9-core22
+        default-provider: kf5-5-108-qt-5-15-10-core22
         target: $SNAP/kf5
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
@@ -63,7 +63,7 @@ package-repositories:
     suites:
     - jammy
     key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: http://archive.neon.kde.org/tmp/user-snap2
+    url: http://archive.neon.kde.org/user
     key-server: keyserver.ubuntu.com
 parts:
     kde-neon:
@@ -71,18 +71,18 @@ parts:
         source-type: local
         plugin: make
         make-parameters:
-        - PLATFORM_PLUG=kf5-5-106-qt-5-15-9-core22
+        - PLATFORM_PLUG=kf5-5-108-qt-5-15-10-core22
         build-snaps:
-        - kf5-5-106-qt-5-15-9-core22-sdk
+        - kf5-5-108-qt-5-15-10-core22-sdk
         build-environment:
         - &id001
-            PATH: /snap/kf5-5-106-qt-5-15-9-core22-sdk/current/usr/bin${PATH:+:$PATH}
+            PATH: /snap/kf5-5-108-qt-5-15-10-core22-sdk/current/usr/bin${PATH:+:$PATH}
         - &id002
-            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-106-qt-5-15-9-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-108-qt-5-15-10-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
         - &id003
-            XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/snap/kf5-5-106-qt-5-15-9-core22-sdk/current/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
+            XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/snap/kf5-5-108-qt-5-15-10-core22-sdk/current/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
         - &id004
-            CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-106-qt-5-15-9-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
+            CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-108-qt-5-15-10-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
     kmousetool:
         after:
         - kde-neon
@@ -100,7 +100,7 @@ parts:
         - libasound2-data
         - libasound2-plugins
         - oxygen-sounds
-        source: http://download.kde.org/stable/release-service/23.04.2/src/kmousetool-23.04.2.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kmousetool-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
