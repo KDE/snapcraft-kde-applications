@@ -5,12 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kcharselect
-version: 23.04.3
 apps:
     kcharselect:
         # extensions:
         # - kde-neon
         common-id: org.kde.kcharselect.desktop
+        desktop: usr/share/applications/org.kde.kcharselect.desktop
         command: usr/bin/kcharselect
         plugs:
         - desktop
@@ -94,7 +94,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kcharselect-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kcharselect-23.08.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
