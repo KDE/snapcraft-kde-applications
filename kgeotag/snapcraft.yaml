@@ -5,12 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kgeotag
-version: 1.4.0
 apps:
     kgeotag:
         # extensions:
         # - kde-neon
         common-id: org.kde.kgeotag
+        desktop: usr/share/applications/org.kde.kgeotag.desktop
         command: usr/bin/kgeotag
         plugs:
         - home
