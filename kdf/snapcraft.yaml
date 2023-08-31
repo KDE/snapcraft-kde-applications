@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kdf
-version: 23.04.3
 apps:
     kdf:
         # extensions:
         # - kde-neon
         common-id: org.kde.kdf
+        desktop: usr/share/applications/org.kde.kdf.desktop
         command: usr/bin/kdf
         plugs:
         - home
@@ -94,7 +94,7 @@ parts:
         - cmake
         stage-packages:
         - coreutils
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kdf-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kdf-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -119,17 +119,10 @@ parts:
         - *id002
         - *id003
         - *id004
-    # cleanup:
-    #     after:
-    #     - artikulate
-    #     plugin: nil
-    #     build-snaps:
-    #     - kde-frameworks-5-99-qt-5-15-7-core20
-    #     override-prime: |
-    #         set -eux
-    #         for snap in "kde-frameworks-5-99-qt-5-15-7-core20"; do  # List all content-snaps you're using here
-    #             cd "/snap/$snap/current" && find . -type f,l -exec rm -f "$SNAPCRAFT_PRIME/{}" "$SNAPCRAFT_PRIME/usr/{}" \;
-    #         done
-    #         find $SNAPCRAFT_PRIME/usr/share/doc/ -type f -not -name 'copyright' -delete
-    #         find $SNAPCRAFT_PRIME/usr/share -type d -empty -delete
-
+    cleanup:
+        after:
+        - kdf
+        plugin: nil
+        override-prime: |
+            set -eux
+            #unused libs found by linter
