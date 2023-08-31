@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kcachegrind
-version: 23.04.3
 apps:
     kcachegrind:
         # extensions:
         # - kde-neon
         common-id: org.kde.kcachegrind.desktop
+        desktop: usr/share/applications/org.kde.kcachegrind.desktop
         command: usr/bin/kcachegrind
         plugs:
         - home
@@ -96,7 +96,7 @@ parts:
         - libkf5doctools-dev
         stage-packages:
         - valgrind
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kcachegrind-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kcachegrind-23.08.0.tar.xz
         cmake-parameters:
         - -DCMAKE_INSTALL_PREFIX=/usr
         - -DCMAKE_BUILD_TYPE=Release
