@@ -5,12 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kiten
-version: 23.04.3
 apps:
     kiten:
         # extensions:
         # - kde-neon
         common-id: org.kde.kiten.desktop
+        desktop: usr/share/applications/org.kde.kiten.desktop
         command: usr/bin/kiten
         plugs:
         - home
@@ -102,7 +102,7 @@ parts:
         - imagemagick
         - kio
         - libkf5khtml5
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kiten-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kiten-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
