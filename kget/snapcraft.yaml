@@ -5,7 +5,6 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kget
-version: 23.04.3
 apps:
     kget:
         # extensions:
@@ -101,7 +100,7 @@ parts:
         - libgpgmepp-dev
         stage-packages:
         - libqgpgme7
-        source: http://download.kde.org/stable/release-service/23.04.3/src/libktorrent-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/libktorrent-23.08.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
@@ -149,7 +148,7 @@ parts:
         - libqgpgme15
         - ca-certificates
         - kio
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kget-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kget-23.08.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
