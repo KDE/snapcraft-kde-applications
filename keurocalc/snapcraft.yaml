@@ -5,12 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: keurocalc
-version: git
 apps:
     keurocalc:
         # extensions:
         # - kde-neon
         common-id: org.kde.keurocalc
+        desktop: usr/share/applications/org.kde.keurocalc.desktop
         command: usr/bin/keurocalc
         plugs:
         - home
