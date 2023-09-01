@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: ksquares
-version: 23.04.3
 apps:
     ksquares:
         # extensions:
         # - kde-neon
         common-id: org.kde.ksquares.desktop
+        desktop: usr/share/applications/org.kde.ksquares.desktop
         command: usr/bin/ksquares
         plugs:
         - desktop
@@ -98,7 +98,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.3/src/ksquares-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/ksquares-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
