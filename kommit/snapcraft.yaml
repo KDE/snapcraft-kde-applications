@@ -5,6 +5,7 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kommit
+version: 1.0.2
 apps:
     kommit:
         # extensions:
