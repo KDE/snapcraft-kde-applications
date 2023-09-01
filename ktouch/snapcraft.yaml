@@ -97,6 +97,7 @@ parts:
         - libxcb-xkb-dev
         - libxkbfile-dev
         - libkf5doctools-dev
+        - qtdeclarative5-dev
         stage-packages:
         - qml-module-org-kde-charts
         - libxcb-xkb1
