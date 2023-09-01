@@ -5,12 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: krfb
-version: 23.04.3
 apps:
     krfb:
         # extensions:
         # - kde-neon
         common-id: org.kde.krfb
+        desktop: usr/share/applications/org.kde.krfb.desktop
         command: usr/bin/krfb
         plugs:
         - home
@@ -125,7 +125,7 @@ parts:
         - libwayland-client0
         - libxdamage1
         - libxtst6
-        source: http://download.kde.org/stable/release-service/23.04.3/src/krfb-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/krfb-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
