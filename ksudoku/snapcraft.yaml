@@ -5,17 +5,13 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: ksudoku
-version: 23.04.3
 apps:
     ksudoku:
         # extensions:
         # - kde-neon
         common-id: org.kde.ksudoku.desktop
+        desktop: usr/share/applications/org.kde.ksudoku.desktop
         command: usr/bin/ksudoku
-        environment:
-            GST_PLUGIN_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
-            GST_PLUGIN_SYSTEM_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer-1.0"
-            GST_PLUGIN_SCANNER: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gstreamer1.0/gstreamer-1.0/gst-plugin-scanner"
         plugs:
         - desktop
         - desktop-legacy
@@ -114,7 +110,7 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
-        source: http://download.kde.org/stable/release-service/23.04.3/src/ksudoku-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/ksudoku-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
