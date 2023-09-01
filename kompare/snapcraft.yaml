@@ -92,17 +92,49 @@ parts:
             XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/snap/kf5-5-108-qt-5-15-10-core22-sdk/current/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
         - &id004
             CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-108-qt-5-15-10-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
-    kompare:
+    libkomparediff2:
         after:
         - kde-neon
+        plugin: cmake
+        build-packages:
+        - libkf5doctools-dev
+        override-build: |
+            craftctl default
+            update-mime-database $SNAPCRAFT_PART_INSTALL/usr/share/mime/
+        source: https://download.kde.org/stable/release-service/23.08.0/src/libkomparediff2-23.08.0.tar.xz
+        cmake-parameters:
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=/usr\\;$CRAFT_STAGE\\;/snap/kf5-5-108-qt-5-15-10-core22-sdk/current"
+        - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
+        prime:
+        - "-usr/lib/*/cmake/*"
+        - "-usr/include/*"
+        - "-usr/share/ECM/*"
+        - "-usr/share/doc/*"
+        - "-usr/share/man/*"
+        - "-usr/share/icons/breeze-dark*"
+        - "-usr/bin/X11"
+        - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
+        - "-usr/lib/aspell/*"
+        - "-usr/share/lintain"
+        build-environment: &id005
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+    kompare:
+        after:
+        - libkomparediff2
         parse-info:
         - usr/share/metainfo/org.kde.kompare.appdata.xml
         plugin: cmake
         build-packages:
-        - libkomparediff2-dev
         - libkf5doctools-dev
         stage-packages:
-        - libkomparediff2-5
         - kde-cli-tools
         - kio-extras
         - shared-mime-info
