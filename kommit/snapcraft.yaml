@@ -5,12 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kommit
-version: 1.0.2
 apps:
     kommit:
         # extensions:
         # - kde-neon
         common-id: org.kde.kommit.desktop
+        desktop: usr/share/applications/org.kde.kommit.desktop
         command: bin/snap_connect_advise $SNAP/usr/bin/kommit
         plugs:
         - home
