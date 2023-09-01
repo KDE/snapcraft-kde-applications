@@ -91,11 +91,11 @@ parts:
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         - kirigami2-dev
-        - futuresql
+        - libfuturesql-dev
         stage-packages:
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
-        - futuresql
+        - libfuturesql
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - -DCMAKE_INSTALL_PREFIX=/usr
