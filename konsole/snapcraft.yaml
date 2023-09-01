@@ -5,7 +5,6 @@ confinement: classic
 grade: stable
 base: core22
 adopt-info: konsole
-version: 23.04.3
 icon: $CRAFT_PROJECT_DIR/snap/gui/konsole.png
 apps:
     konsole:
@@ -13,6 +12,7 @@ apps:
         # - kde-neon
         command: usr/bin/konsole
         common-id: org.kde.konsole.desktop
+        desktop: usr/share/applications/org.kde.konsole.desktop
 assumes:
 - snapd2.55.3
 compression: lzo
@@ -143,7 +143,7 @@ parts:
         - libglu1-mesa
         - bash
         - breeze
-        source: http://download.kde.org/stable/release-service/23.04.2/src/konsole-23.04.2.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/konsole-23.08.0.tar.xz
         cmake-parameters:
         - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
         - "-DCMAKE_INSTALL_PREFIX=/usr"
