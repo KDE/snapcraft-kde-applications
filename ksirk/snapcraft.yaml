@@ -5,12 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: ksirk
-version: 23.04.3
 apps:
     ksirk:
         # extensions:
         # - kde-neon
         common-id: org.kde.ksirk.desktop
+        desktop: usr/share/applications/org.kde.ksirk.desktop
         command: usr/bin/ksirk
         plugs:
         - desktop
@@ -121,7 +121,7 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
-        source: http://download.kde.org/stable/release-service/23.04.3/src/ksirk-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/ksirk-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
