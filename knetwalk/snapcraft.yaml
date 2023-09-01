@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: knetwalk
-version: 23.04.3
 apps:
     knetwalk:
         # extensions:
         # - kde-neon
         common-id: org.kde.knetwalk.desktop
+        desktop: usr/share/applications/org.kde.knetwalk.desktop
         command: usr/bin/knetwalk
         plugs:
         - home
@@ -99,7 +99,7 @@ parts:
         stage-packages:
         - libasound2-data
         - libasound2-plugins
-        source: http://download.kde.org/stable/release-service/23.04.3/src/knetwalk-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/knetwalk-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
