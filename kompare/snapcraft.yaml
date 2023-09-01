@@ -98,9 +98,6 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        override-build: |
-            craftctl default
-            update-mime-database $SNAPCRAFT_PART_INSTALL/usr/share/mime/
         source: https://download.kde.org/stable/release-service/23.08.0/src/libkomparediff2-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
