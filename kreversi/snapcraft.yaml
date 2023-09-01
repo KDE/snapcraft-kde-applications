@@ -3,13 +3,12 @@ name: kreversi
 confinement: strict
 grade: stable
 base: core22
-adopt-info: kreversi
-version: 23.04.3
 apps:
     kreversi:
         # extensions:
         # - kde-neon
         common-id: org.kde.kreversi.desktop
+        desktop: usr/share/applications/og.kde.kreversi.desktop
         command: usr/bin/kreversi
         plugs:
         - desktop
@@ -93,7 +92,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kreversi-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kreversi-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
