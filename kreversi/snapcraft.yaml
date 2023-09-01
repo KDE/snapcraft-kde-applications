@@ -3,6 +3,7 @@ name: kreversi
 confinement: strict
 grade: stable
 base: core22
+adopt-info: kreversi
 apps:
     kreversi:
         # extensions:
