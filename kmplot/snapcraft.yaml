@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kmplot
-version: 23.04.3
 apps:
     kmplot:
         # extensions:
         # - kde-neon
         common-id: org.kde.kmplot.desktop
+        desktop: usr/share/applications/org.kde.kmplot.desktop
         command: usr/bin/kmplot
         plugs:
         - home
@@ -98,7 +98,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kmplot-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kmplot-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -118,7 +118,7 @@ parts:
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/lintain"
-        build-environment: &id0075
+        build-environment: &id005
         - *id001
         - *id002
         - *id003
