@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kolf
-version: 23.04.3
 apps:
     kolf:
         # extensions:
         # - kde-neon
         common-id: org.kde.kolf.desktop
+        desktop: usr/share/applications/og.kde.kolf.desktop
         command: usr/bin/kolf
         plugs:
         - home
@@ -97,7 +97,7 @@ parts:
         parse-info:
         - usr/share/metainfo/org.kde.kolf.appdata.xml
         plugin: cmake
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kolf-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kolf-23.08.0.tar.xz
         build-packages:
         - libkf5doctools-dev
         - libphonon4qt5-dev
