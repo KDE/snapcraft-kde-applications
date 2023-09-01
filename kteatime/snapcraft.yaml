@@ -5,12 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kteatime
-version: 23.04.3
 apps:
     kteatime:
         # extensions:
         # - kde-neon
         common-id: org.kde.kteatime.desktop
+        desktop: usr/share/applications/org.kde.kteatime.desktop
         command: usr/bin/kteatime
         plugs:
         - desktop
@@ -108,7 +108,7 @@ parts:
         - gstreamer1.0-plugins-ugly
         - phonon4qt5-backend-gstreamer
         - oxygen-sounds
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kteatime-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kteatime-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
