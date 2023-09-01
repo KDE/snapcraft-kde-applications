@@ -4,7 +4,6 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: ksnakeduel
-version: 23.04.3
 apps:
     ksnakeduel:
         # extensions:
@@ -112,7 +111,7 @@ parts:
         - libxcb-shm0
         - libxcb-damage0
         - libxcb-image0
-        source: http://download.kde.org/stable/release-service/23.04.3/src/ksnakeduel-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/ksnakeduel-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
