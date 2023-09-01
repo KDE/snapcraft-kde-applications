@@ -5,12 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kstars
-version: 3.6.6
 apps:
     kstars:
         # extensions:
         # - kde-neon
         common-id: org.kde.kstars.desktop
+        desktop: usr/share/applications/org.kde.kstars.desktop
         command: usr/bin/kstars
         plugs:
         - home
