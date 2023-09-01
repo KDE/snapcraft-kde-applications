@@ -5,12 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kompare
-version: 23.04.3
 apps:
     kompare:
         # extensions:
         # - kde-neon
         common-id: org.kde.kompare.desktop
+        desktop: usr/share/applications/org.kde.kompare.desktop
         command: usr/bin/kompare
         plugs:
         - home
@@ -120,7 +120,7 @@ parts:
         override-build: |
             craftctl default
             update-mime-database $SNAPCRAFT_PART_INSTALL/usr/share/mime/
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kompare-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kompare-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
