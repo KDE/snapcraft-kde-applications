@@ -4,10 +4,10 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: kbruch
-version: 23.04.3
 apps:
     kbruch:
         common-id: org.kde.kbruch.desktop
+        desktop: usr/share/applications/org.kde.kbruch.desktop
         command: usr/bin/kbruch
         # extensions:
         # - kde-neon
@@ -101,7 +101,7 @@ parts:
         build-packages:
         - cmake
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.3/src/kbruch-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/kbruch-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
