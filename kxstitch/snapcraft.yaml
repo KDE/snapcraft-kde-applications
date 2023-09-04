@@ -10,6 +10,7 @@ apps:
         # extensions:
         # - kde-neon
         common-id: org.kde.kxstitch.desktop
+        desktop: usr/share/applications/org.kde.kxstitch.desktop
         command: usr/bin/kxstitch
         plugs:
         - desktop
