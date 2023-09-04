@@ -9,7 +9,7 @@ apps:
         # extensions:
         # - kde-neon
         common-id: org.kde.kreversi.desktop
-        desktop: usr/share/applications/og.kde.kreversi.desktop
+        desktop: usr/share/applications/org.kde.kreversi.desktop
         command: usr/bin/kreversi
         plugs:
         - desktop
