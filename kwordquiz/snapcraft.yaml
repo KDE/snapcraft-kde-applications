@@ -104,8 +104,13 @@ parts:
         - libphonon4qt5-dev
         - libphonon4qt5experimental-dev
         - libkf5doctools-dev
+        - kirigami2-dev
+        - kirigami-addons-dev
         stage-packages:
         - libkeduvocdocument5
+        - libkf5kirigami2-5
+        - qml-module-org-kde-kirigami-addons-components
+        - qml-module-org-kde-kirigami2
         source: http://download.kde.org/stable/release-service/23.08.0/src/kwordquiz-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
