@@ -99,6 +99,7 @@ parts:
         - libkf5doctools-dev
         - qtdeclarative5-dev
         - qtquickcontrols2-5-dev
+        - libqt5xmlpatterns5-dev
         stage-packages:
         - qml-module-org-kde-charts
         - libxcb-xkb1
@@ -111,6 +112,7 @@ parts:
         - qml-module-qtquick-layouts
         - qml-module-qtquick2
         - libqt5quickcontrols2-5
+        - libqt5xmlpatterns5
         source: http://download.kde.org/stable/release-service/23.08.0/src/ktouch-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
