@@ -1,21 +1,15 @@
 ---
 name: massif-visualizer
 adopt-info: massif-visualizer
-version: git
 confinement: strict
 grade: stable
 base: core22
 apps:
-    valgrind:
-        command: usr/bin/valgrind
-        plugs:
-        - home
-        - network
-        - network-bind
     massif-visualizer:
         # extensions:
         # - kde-neon
         command: usr/bin/massif-visualizer
+        desktop: usr/share/applications/org.kde.massif-visualizer.desktop
         plugs:
         - home
         - desktop
@@ -28,6 +22,7 @@ apps:
         - network
         - network-bind
         - browser-support
+        - cups
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -49,6 +44,11 @@ plugs:
         interface: content
         default-provider: kf5-5-108-qt-5-15-10-core22
         target: $SNAP/kf5
+    foo-install-cups:
+        interface: content
+        content: foo
+        default-provider: cups
+        target: $SNAP_DATA/foo
 environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     VALGRIND_LIB: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/valgrind
