@@ -5,12 +5,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: lskat
-version: 23.04.3
 apps:
     lskat:
         # extensions:
         # - kde-neon
         common-id: org.kde.lskat.desktop
+        desktop: usr/share/applications/org.kde.lskat.desktop
         command: usr/bin/lskat
         plugs:
         - desktop
@@ -94,7 +94,7 @@ parts:
         plugin: cmake
         build-packages:
         - libkf5doctools-dev
-        source: http://download.kde.org/stable/release-service/23.04.3/src/lskat-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/lskat-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
