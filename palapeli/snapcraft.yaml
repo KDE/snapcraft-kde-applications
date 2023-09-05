@@ -4,12 +4,12 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: palapeli
-version: 23.04.3
 apps:
     palapeli:
         # extensions:
         # - kde-neon
         common-id: org.kde.palapeli.desktop
+        desktop: usr/share/applications/org.kde.palapeli.desktop
         command: usr/bin/palapeli
         plugs:
         - desktop
@@ -24,7 +24,7 @@ apps:
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
-- snapd2.43
+- snapd2.55.3
 compression: lzo
 plugs:
     desktop:
@@ -97,7 +97,7 @@ parts:
         - libkf5doctools-dev
         stage-packages:
         - qhull-bin
-        source: http://download.kde.org/stable/release-service/23.04.3/src/palapeli-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/palapeli-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
