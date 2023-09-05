@@ -4,12 +4,13 @@ confinement: strict
 grade: stable
 base: core22
 adopt-info: marble
-version: 23.04.3
+version: 23.08.0
 apps:
     marble:
         # extensions:
         # - kde-neon
         common-id: org.kde.marble.desktop
+        desktop: usr/share/applications/org.kde.marble.desktop
         command: usr/bin/marble
         plugs:
         - home
@@ -49,8 +50,6 @@ environment:
     SNAP_DESKTOP_RUNTIME: $SNAP/kf5
     QTWEBENGINEPROCESS_PATH: "$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/libexec/QtWebEngineProcess"
     QT_PLUGIN_PATH: "$QT_PLUGIN_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/marble"
-    MARBLE_PLUGIN_PATH: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/marble/plugins
-    MARBLE_DATA_PATH: $SNAP/usr/share/marble/data
 hooks:
     configure:
         plugs:
@@ -98,18 +97,18 @@ parts:
             XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/snap/kf5-5-108-qt-5-15-10-core22-sdk/current/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
         - &id004
             CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-108-qt-5-15-10-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
-    patches:
-        after:
-        - kde-neon
-        source: .
-        source-type: local
-        plugin: dump
-        stage:
-        - patches/allow_plugin_path_to_be_set.patch
+    # patches:
+    #     after:
+    #     - kde-neon
+    #     source: .
+    #     source-type: local
+    #     plugin: dump
+    #     stage:
+    #     - patches/allow_plugin_path_to_be_set.patch
     marble:
         after:
         - kde-neon
-        - patches
+        # - patches
         parse-info:
         - usr/share/metainfo/org.kde.marble.appdata.xml
         plugin: cmake
@@ -119,7 +118,7 @@ parts:
         stage-packages:
         - libqt5webengine5
         - libqt5webenginecore5
-        source: http://download.kde.org/stable/release-service/23.04.3/src/marble-23.04.3.tar.xz
+        source: http://download.kde.org/stable/release-service/23.08.0/src/marble-23.08.0.tar.xz
         cmake-parameters:
         - "-DCMAKE_INSTALL_PREFIX=/usr"
         - "-DCMAKE_BUILD_TYPE=Release"
@@ -139,10 +138,10 @@ parts:
         - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
         - "-usr/lib/aspell/*"
         - "-usr/share/lintain"
-        override-pull: |
-            craftctl default
-            patch -p1 < ../../patches/src/patches/allow_plugin_path_to_be_set.patch
-            patch -p1 < ../../patches/src/patches/marble-libs-install-appimage.patch
+        # override-pull: |
+        #     craftctl default
+        #     patch -p1 < ../../patches/src/patches/allow_plugin_path_to_be_set.patch
+        #     patch -p1 < ../../patches/src/patches/marble-libs-install-appimage.patch
         build-environment: &id005
         - *id001
         - *id002
