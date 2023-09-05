@@ -210,7 +210,7 @@ parts:
         - akonadi-server
         - sqlite
         - akonadi-backend-sqlite
-        stage-snap:
+        stage-snaps:
         - akonadi/edge
         source: http://download.kde.org/stable/release-service/23.08.0/src/kaddressbook-23.08.0.tar.xz
         cmake-parameters:
