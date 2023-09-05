@@ -3,11 +3,11 @@ name: qrca
 confinement: strict
 grade: stable
 base: core22
-version: git
 adopt-info: qrca
 apps:
     qrca:
         common-id: org.kde.qrca.desktop
+        desktop: usr/share/applications/org.kde.qrca.desktop
         command: usr/bin/qrca
         plugs:
         - desktop
@@ -20,7 +20,7 @@ apps:
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
-- snapd2.43
+- snapd2.55.3
 compression: lzo
 plugs:
     desktop:
