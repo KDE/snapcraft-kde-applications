@@ -1,6 +1,5 @@
 ---
 name: okteta
-version: 0.26.12
 confinement: strict
 grade: stable
 base: core22
@@ -27,7 +26,7 @@ apps:
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
-- snapd2.43
+- snapd2.55.3
 compression: lzo
 plugs:
     desktop:
@@ -94,7 +93,7 @@ parts:
         parse-info:
         - usr/share/metainfo/org.kde.okteta.appdata.xml
         plugin: cmake
-        source: https://download.kde.org/stable/okteta/0.26.12/src/okteta-0.26.12.tar.xz
+        source: https://download.kde.org/stable/okteta/0.26.13/src/okteta-0.26.13.tar.xz
         build-packages:
         - libkf5doctools-dev
         - libqca-qt5-2-dev
