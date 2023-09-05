@@ -24,7 +24,7 @@ apps:
         - network-bind
         - cups
         command-chain:
-        - local/launchers/tmpdir
+        - $SNAP/local/launchers/tmpdir
         - snap/command-chain/desktop-launch
 assumes:
 - snapd2.55.3
