@@ -166,7 +166,7 @@ parts:
         - qml-module-org-kde-kquickimageeditor
         - qml-module-org-kde-qqc2desktopstyle
         - kirigami-addons-data
-        - qml-module-org-kde-kirigami-addons
+        - qml-module-org-kde-kirigamiaddons
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
         - reuse
