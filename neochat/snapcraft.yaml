@@ -158,12 +158,7 @@ parts:
         - qml-module-org-kde-kquickimageeditor
         - qml-module-org-kde-qqc2breezestyle
         - kirigami-addons-data
-        - qml-module-org-kde-kirigami-addons-datetime
-        - qml-module-org-kde-kirigami-addons-labs-components
-        - qml-module-org-kde-kirigami-addons-labs-mobileform
-        - qml-module-org-kde-kirigami-addons-sounds
-        - qml-module-org-kde-kirigami-addons-treeview
-        - qml-module-org-kde-kirigami-addons-delegates
+        - qml-module-org-kde-kirigami-addons
         - libsqlite3-dev
         - libolm-dev
         stage-packages:
@@ -171,12 +166,7 @@ parts:
         - qml-module-org-kde-kquickimageeditor
         - qml-module-org-kde-qqc2desktopstyle
         - kirigami-addons-data
-        - qml-module-org-kde-kirigami-addons-datetime
-        - qml-module-org-kde-kirigami-addons-labs-components
-        - qml-module-org-kde-kirigami-addons-labs-mobileform
-        - qml-module-org-kde-kirigami-addons-sounds
-        - qml-module-org-kde-kirigami-addons-treeview
-        - qml-module-org-kde-kirigami-addons-delegates
+        - qml-module-org-kde-kirigami-addons
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
         - reuse
