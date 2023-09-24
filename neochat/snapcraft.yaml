@@ -159,6 +159,7 @@ parts:
         - qml-module-org-kde-qqc2breezestyle
         - kirigami-addons-data
         - qml-module-org-kde-kirigamiaddons
+        - qml-module-org-kde-quickcharts
         - libsqlite3-dev
         - libolm-dev
         stage-packages:
@@ -167,6 +168,7 @@ parts:
         - qml-module-org-kde-qqc2desktopstyle
         - kirigami-addons-data
         - qml-module-org-kde-kirigamiaddons
+        - qml-module-org-kde-quickcharts
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
         - reuse
