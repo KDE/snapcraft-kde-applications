@@ -158,7 +158,7 @@ parts:
         - qml-module-org-kde-kquickimageeditor
         - qml-module-org-kde-qqc2breezestyle
         - kirigami-addons-data
-        - qml-module-org-kde-kirigami-addons
+        - qml-module-org-kde-kirigamiaddons
         - libsqlite3-dev
         - libolm-dev
         stage-packages:
