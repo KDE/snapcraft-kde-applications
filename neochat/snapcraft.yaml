@@ -163,6 +163,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-labs-mobileform
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
+        - qml-module-org-kde-kirigami-addons-delegates
         - libsqlite3-dev
         - libolm-dev
         stage-packages:
@@ -175,6 +176,7 @@ parts:
         - qml-module-org-kde-kirigami-addons-labs-mobileform
         - qml-module-org-kde-kirigami-addons-sounds
         - qml-module-org-kde-kirigami-addons-treeview
+        - qml-module-org-kde-kirigami-addons-delegates
         - libkf5kirigami2-5
         - qml-module-org-kde-kirigami2
         - reuse
