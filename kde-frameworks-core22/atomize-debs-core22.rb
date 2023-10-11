@@ -115,7 +115,8 @@ class Source
                 qtdeclarative-opensource-src
                 qttools-opensource-src
                 qtsvg-opensource-src
-                qtx11extras-opensource-src],
+                qtx11extras-opensource-src
+                qtnetworkauth-opensource-src],
     'kwallet' => %w[kwallet-kf5],
     'kdnssd' => %w[kdnssd-kf5],
     'baloo' => %w[baloo-kf5],
