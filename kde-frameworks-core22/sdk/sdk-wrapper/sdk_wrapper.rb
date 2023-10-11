@@ -27,7 +27,7 @@ ENV['KF5_SNAP_WRAPPING'] = '1'
 gnu_arch_map = {amd64: "x86_64", arm64: "aarch64"}
 gnu_arch = gnu_arch_map[ENV["SNAP_ARCH"].to_sym]
 
-root = Pathname.new(ENV["SNAPCRAFT_STAGE"]).parent.to_s
+root = Pathname.new(ENV["CRAFT_STAGE"]).parent.to_s
 
 # qmlcachegen for reasons beyond me is not actually an imported target but
 # set as a variable and then directly passed into execute_process.
