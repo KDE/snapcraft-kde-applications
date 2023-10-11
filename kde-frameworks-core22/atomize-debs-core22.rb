@@ -116,7 +116,7 @@ class Source
                 qttools-opensource-src
                 qtsvg-opensource-src
                 qtx11extras-opensource-src
-                qtnetworkauth-opensource-src],
+                ],
     'kwallet' => %w[kwallet-kf5],
     'kdnssd' => %w[kdnssd-kf5],
     'baloo' => %w[baloo-kf5],
@@ -390,7 +390,8 @@ parts += %w[qtwebkit qtbase qtdeclarative qtgraphicaleffects qtlocation
             qtmultimedia qtquickcontrols qtquickcontrols2 qtscript qtsensors
             qtserialport qtsvg qttools qttranslations qtvirtualkeyboard
             qtwayland qtwebchannel qtwebengine qtwebsockets qtwebview qtx11extras
-            qtxmlpatterns qtconnectivity qtnetworkauth].collect { |x| x + '-opensource-src' }
+            qtxmlpatterns qtconnectivity].collect { |x| x + '-opensource-src' }
+parts += %w[qtnetworkauth].collect { |x| x + '-everywhere-src' }
 #
 # oxygen-icons5 only one icon set
 # Not Runtime Relevant! FIXME: need to seperate these out to only end up in -dev but not content!
