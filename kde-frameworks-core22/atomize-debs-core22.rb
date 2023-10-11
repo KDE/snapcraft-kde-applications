@@ -378,8 +378,7 @@ parts = %w(extra-cmake-modules kcoreaddons) + # kdesupport/polkit-qt-1
            kdesu ktexteditor kactivities kactivities-stats
            kdnssd kidletime kitemmodels threadweaver
            plasma-framework kxmlrpcclient kpeople frameworkintegration
-           kdoctools
-           kdesignerplugin
+           kdoctools kirigami kdesignerplugin
            ksyntax-highlighting
            krunner kwayland baloo breeze
            libkdegames
@@ -389,7 +388,7 @@ parts += %w[qtwebkit qtbase qtdeclarative qtgraphicaleffects qtlocation
             qtmultimedia qtquickcontrols qtquickcontrols2 qtscript qtsensors
             qtserialport qtsvg qttools qttranslations qtvirtualkeyboard
             qtwayland qtwebchannel qtwebengine qtwebsockets qtwebview qtx11extras
-            qtxmlpatterns qtconnectivity].collect { |x| x + '-opensource-src' }
+            qtxmlpatterns qtconnectivity qtnetworkauth].collect { |x| x + '-opensource-src' }
 #
 # oxygen-icons5 only one icon set
 # Not Runtime Relevant! FIXME: need to seperate these out to only end up in -dev but not content!
@@ -587,16 +586,16 @@ config.parts['sdk-wrapper'] = sdk_wrapper
 config.parts['kf5'].prime = ['-usr/lib/*/qt5/bin/qmake']
 # wrap the exectuable cmake targets to have a suitable LD_LIBRARY_PATH
 config.parts['kf5'].build_packages = ['ruby']
-config.parts['kf5'].override_build = "pwd; $SNAPCRAFT_STAGE/sdk_wrapper.sh\n$SNAPCRAFT_STAGE/sdk_wrapper.rb kf5\nsnapcraftctl build"
+config.parts['kf5'].override_build = "pwd; $CRAFT_STAGE/sdk_wrapper.sh\n$CRAFT_STAGE/sdk_wrapper.rb kf5\nsnapcraftctl build"
 config.parts['kf5'].after = ['sdk-wrapper']
 
 config.parts['kf5-dev'].prime = nil
 # wrap the exectuable cmake targets to have a suitable LD_LIBRARY_PATH
-config.parts['kf5-dev'].override_build = "pwd; $SNAPCRAFT_STAGE/sdk_wrapper.rb kf5-dev\nsnapcraftctl build"
+config.parts['kf5-dev'].override_build = "pwd; $CRAFT_STAGE/sdk_wrapper.rb kf5-dev\nsnapcraftctl build"
 
 config.parts['plasma-integration'].prime = nil
 # wrap the exectuable cmake targets to have a suitable LD_LIBRARY_PATH
-#config.parts['plasma-integration'].override_build = "pwd; /sdk_wrapper.rb plasma-integration\nsnapcraftctl build"
+#config.parts['plasma-integration'].override_build = "pwd; /sdk_wrapper.rb plasma-integration\ncraftctl default"
 
 FileUtils.mkpath('sdk')
 puts File.write('sdk/snapcraft.yaml', YAML.dump(config, indentation: 4))
