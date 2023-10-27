@@ -381,7 +381,7 @@ parts = %w(extra-cmake-modules kcoreaddons) + # kdesupport/polkit-qt-1
            kdnssd kidletime kitemmodels threadweaver
            plasma-framework kxmlrpcclient kpeople frameworkintegration
            kdoctools kirigami kdesignerplugin
-           ksyntax-highlighting kpurpose
+           ksyntax-highlighting purpose
            krunner kwayland baloo breeze
            libkdegames
            kross kdelibs4support)
