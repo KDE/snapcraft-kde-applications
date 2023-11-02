@@ -380,8 +380,8 @@ parts = %w(extra-cmake-modules kcoreaddons) + # kdesupport/polkit-qt-1
            kdesu ktexteditor kactivities kactivities-stats
            kdnssd kidletime kitemmodels threadweaver
            plasma-framework kxmlrpcclient kpeople frameworkintegration
-           kdoctools kirigami kdesignerplugin
-           ksyntax-highlighting purpose
+           kdoctools kirigami kdesignerplugin kcontacts
+           ksyntax-highlighting purpose kholidays
            krunner kwayland baloo breeze
            libkdegames
            kross kdelibs4support)
@@ -525,6 +525,7 @@ dev.stage = (dev.stage + %w[
   -usr/lib/*/dri/*
   -usr/share/qtchooser/qt5-*.conf
   -usr/lib/*/libexec/kf5/kconf_update
+  -usr/lib/*/*.a
 ]).uniq
 dev.prime = ['-*']
 dev.after = %w(kf5)
