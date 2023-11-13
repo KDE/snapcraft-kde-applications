@@ -258,7 +258,7 @@ class SnapcraftConfig
         -usr/share/menu
         -usr/bin/*vlc
         -usr/bin/dh_*
-        -usr/lib/*/*.a
+        -usr/lib/*/libfreetype.a
         -usr/lib/*/*.pri
         -usr/share/kf5/kdoctools/*
         -usr/bin/make
@@ -382,7 +382,7 @@ parts = %w(extra-cmake-modules kcoreaddons) + # kdesupport/polkit-qt-1
            plasma-framework kxmlrpcclient kpeople frameworkintegration
            kdoctools kirigami kdesignerplugin kcontacts
            ksyntax-highlighting purpose kholidays
-           krunner kwayland baloo breeze
+           krunner kwayland baloo breeze prison
            libkdegames
            kross kdelibs4support)
            # plasma-integration) # extra integration pulls in breeze pulls in kde4/qt4
