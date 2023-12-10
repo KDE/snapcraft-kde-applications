@@ -384,7 +384,7 @@ parts = %w(extra-cmake-modules kcoreaddons) + # kdesupport/polkit-qt-1
            kdoctools kirigami kdesignerplugin kcontacts
            ksyntax-highlighting purpose kholidays
            krunner kwayland baloo breeze prison
-           libkdegames
+           libkdegames kcalendarcore
            kross kdelibs4support)
            # plasma-integration) # extra integration pulls in breeze pulls in kde4/qt4
 parts += %w[qtwebkit qtbase qtdeclarative qtgraphicaleffects qtlocation
