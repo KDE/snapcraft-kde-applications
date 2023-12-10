@@ -329,7 +329,7 @@ class SnapcraftConfig
 end
 
 config = SnapcraftConfig.new
-config.name = 'kf5-5-111-qt-5-15-11-core22'
+config.name = 'kf5-5-113-qt-5-15-11-core22'
 config.version = 'unknown'
 config.summary = 'KDE Frameworks 5'
 config.description = 'KDE Frameworks are addons and useful extensions to Qt'
@@ -339,10 +339,10 @@ config.base = 'core22'
 config.compression = 'lzo'
 
 slot = SnapcraftConfig::Slot.new
-slot.content = 'kf5-5-111-qt-5-15-11-core22-all'
+slot.content = 'kf5-5-113-qt-5-15-11-core22-all'
 slot.interface = 'content'
 slot.read = %w[.]
-config.slots['kf5-5-111-qt-5-15-11-core22-slot'] = slot
+config.slots['kf5-5-113-qt-5-15-11-core22-slot'] = slot
 
 package_repo = SnapcraftConfig::PackageRepository.new
 package_repo.type = 'apt'
@@ -445,7 +445,7 @@ parts.each_cons(2) do |first_name, second_name|
   runs += source.runtime_binaries
   if source.upstream_name == 'extra-cmake-modules' && config.version
     kf5_version = source.upstream_version
-    config.version = '5.111'
+    config.version = '5.113'
   end
   if source.upstream_name == 'qtbase-opensource-src'
     qt5_version = '5.15.11'
@@ -456,7 +456,7 @@ end
 # This is the only way we can version a content snap.
 #kf5_version = 'kf5-' + kf5_version.split('.')[0..1].join('-')
 #qt5_version = 'qt-' + qt5_version.split('.')[0..0].join('-')
-kf5_version = 'kf5-5-111'
+kf5_version = 'kf5-5-113'
 qt5_version = 'qt-5-15-11'
 platform_version = 'core22'
 
@@ -577,7 +577,7 @@ puts File.write('stage-dev.json', JSON.generate(runs + devs))
 
 ### sdk snap
 
-config.name = 'kf5-5-111-qt-5-15-11-core22-sdk'
+config.name = 'kf5-5-113-qt-5-15-11-core22-sdk'
 # We mustn't define the slots in the SDK, it'd confuse snapd on what to
 # autoconnect when both snaps are installed.
 config.slots.clear
