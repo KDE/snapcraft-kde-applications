@@ -125,7 +125,8 @@ class Source
     'attica' => %w[attica-kf5],
     'kactivities' => %w[kactivities-kf5],
     'prison' => %w[prison-kf5],
-    'kirigami' => %w[kirigami2]
+    'kirigami' => %w[kirigami2],
+    'kcalcore' => %w[kcalendarcore]
   }.freeze
 
   def sources
