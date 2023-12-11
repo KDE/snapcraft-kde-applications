@@ -126,7 +126,7 @@ class Source
     'kactivities' => %w[kactivities-kf5],
     'prison' => %w[prison-kf5],
     'kirigami' => %w[kirigami2],
-    'kcalcore' => %w[kcalendarcore]
+    'kcalendarcore' => %w[kcalcore]
   }.freeze
 
   def sources
