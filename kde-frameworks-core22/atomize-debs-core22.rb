@@ -527,7 +527,6 @@ dev.stage = (dev.stage + %w[
   -usr/lib/*/dri/*
   -usr/share/qtchooser/qt5-*.conf
   -usr/lib/*/libexec/kf5/kconf_update
-  -usr/lib/*/*.a
 ]).uniq
 dev.prime = ['-*']
 dev.after = %w(kf5)
