@@ -57,18 +57,18 @@ variables:
     - |
         curl -L $(curl -H 'X-Ubuntu-Series: 16' 'https://api.snapcraft.io/api/v1/snaps/details/core20' | jq '.download_url' -r) --output core20.snap
     - mkdir -p /snap/core20 && unsquashfs -d /snap/core20/current core20.snap && rm core20.snap
-    - |
-        curl -L $(curl -H 'X-Ubuntu-Series: 16' 'https://api.snapcraft.io/api/v1/snaps/details/snapcraft' | jq '.download_url' -r) --output snapcraft.snap
-    - mkdir -p /snap/snapcraft && unsquashfs -d /snap/snapcraft/current snapcraft.snap && rm snapcraft.snap
+    # - |
+    #     curl -L $(curl -H 'X-Ubuntu-Series: 16' 'https://api.snapcraft.io/api/v1/snaps/details/snapcraft' | jq '.download_url' -r) --output snapcraft.snap
+    # - mkdir -p /snap/snapcraft && unsquashfs -d /snap/snapcraft/current snapcraft.snap && rm snapcraft.snap
 #     - rm -rfv /snap/snapcraft
 #     - apt update && apt -y install jq curl squashfs-tools
 #     - |
-#         curl -L $(curl -s -H "Snap-Device-Series: 16" http://api.snapcraft.io/v2/snaps/info/snapcraft | jq '."channel-map" | map(select(.channel.name == "stable")) | .[0].download.url' -r) --output snapcraft.snap
+        curl -L $(curl -s -H "Snap-Device-Series: 16" http://api.snapcraft.io/v2/snaps/info/snapcraft | jq '."channel-map" | map(select(.channel.name == "edge")) | .[0].download.url' -r) --output snapcraft.snap
 # #    - |
 # #        curl -L $(curl -H 'X-Ubuntu-Series: 16' 'https://api.snapcraft.io/api/v1/snaps/details/snapcraft' | jq '.download_url' -r) --output snapcraft.snap
-#     - mkdir -p /snap/snapcraft && unsquashfs -d /snap/snapcraft/current snapcraft.snap && rm snapcraft.snap
-#     - ls -la /snap/snapcraft/current/bin/
-#     - ls -la /snap/snapcraft/current/usr/bin/
+    - mkdir -p /snap/snapcraft && unsquashfs -d /snap/snapcraft/current snapcraft.snap && rm snapcraft.snap
+    - ls -la /snap/snapcraft/current/bin/
+    - ls -la /snap/snapcraft/current/usr/bin/
     - mkdir -p /snap/bin
     - echo "#!/bin/sh" > /snap/bin/snapcraft
     - snap_version="$(awk '/^version:/{print $2}' /snap/snapcraft/current/meta/snap.yaml)" && echo "export SNAP_VERSION=\"$snap_version\"" >> /snap/bin/snapcraft
