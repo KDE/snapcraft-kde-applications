@@ -1,0 +1,13 @@
+Workaround for https://github.com/ImageMagick/ImageMagick/commit/c322ab10641c1a89e16924cce259828232e079c
+
+--- core/app/main/main.cpp.orig	2024-07-10 22:05:47.227397462 -0300
++++ core/app/main/main.cpp	2024-07-10 22:05:24.243467018 -0300
+@@ -55,6 +55,8 @@
+ #       pragma clang diagnostic ignored "-Wkeyword-macro"
+ #   endif
+ 
++#   include <math.h>
++#   define isnan
+ #   include <Magick++.h>
+ using namespace Magick;
+ 
